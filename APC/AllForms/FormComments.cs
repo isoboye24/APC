@@ -21,5 +21,15 @@ namespace APC
         {
 
         }
+
+        private void FormComments_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormComments_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

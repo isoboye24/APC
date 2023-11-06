@@ -16,5 +16,29 @@ namespace APC.AllForms
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormComments open = new FormComments();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FormComments open = new FormComments();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            FormComments open = new FormComments();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

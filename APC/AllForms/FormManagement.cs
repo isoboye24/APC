@@ -205,58 +205,63 @@ namespace APC.AllForms
             }
         }
 
-        private void btnAttendance_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormAttendanceList());
-        }
-
+        private bool buttonWasClicked = false;
         private void btnPosition_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormPositionList());
         }
 
         private void btnCountry_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormCountryList());
         }
 
         private void btnMaritalStatus_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormMaritalStatusList());
         }
 
         private void btnEmploymentStatus_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormEmploymentStatusList());
         }
 
         private void btnProfession_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormProfessionList());
-        }
-
-        private void btnEvents_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormEventsList());
-        }
+        }        
 
         private void btnYear_Click(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormYearList());
+        }        
+
+        private void btnComments_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormCommentsList());
         }
 
-        private void btnDeletedData_Click(object sender, EventArgs e)
+        private void btnManagement_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormDeletedData());
-        }        
+            if (buttonWasClicked)
+            {
+                currentChildForm.Close();
+                Reset();
+            }
+        }
     }
 }

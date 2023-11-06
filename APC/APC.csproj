@@ -180,18 +180,6 @@
     <Compile Include="AllForms\FormFinancialReport.Designer.cs">
       <DependentUpon>FormFinancialReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormGender.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormGender.Designer.cs">
-      <DependentUpon>FormGender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AllForms\FormGenderList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormGenderList.Designer.cs">
-      <DependentUpon>FormGenderList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormMaritalStatus.cs">
       <SubType>Form</SubType>
     </Compile>

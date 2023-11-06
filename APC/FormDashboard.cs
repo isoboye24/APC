@@ -128,12 +128,12 @@ namespace APC
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
         {
-            iconClose.BackColor = Color.DeepSkyBlue;
+            iconClose.BackColor = Color.Orange;
         }
 
         private void iconClose_MouseHover(object sender, EventArgs e)
         {
-            iconClose.BackColor = Color.DeepSkyBlue;
+            iconClose.BackColor = Color.Orange;
         }
 
         private void iconClose_MouseLeave(object sender, EventArgs e)
@@ -142,17 +142,21 @@ namespace APC
         }
         private void picBoxMin_Click_1(object sender, EventArgs e)
         {
+            
+        }
+        private void iconClose_Click(object sender, EventArgs e)
+        {
             Application.Exit();
-        }       
+        }
 
         private void iconMaximize_MouseEnter(object sender, EventArgs e)
         {
-            iconMaximize.BackColor = Color.DeepSkyBlue;
+            iconMaximize.BackColor = Color.Orange;
         }
 
         private void iconMaximize_MouseHover(object sender, EventArgs e)
         {
-            iconMaximize.BackColor = Color.DeepSkyBlue;
+            iconMaximize.BackColor = Color.Orange;
         }
 
         private void iconMaximize_MouseLeave(object sender, EventArgs e)
@@ -186,45 +190,45 @@ namespace APC
 
         private void iconMinimize_MouseEnter(object sender, EventArgs e)
         {
-            iconMinimize.BackColor = Color.DeepSkyBlue;
+            iconMinimize.BackColor = Color.Orange;
         }
 
         private void iconMinimize_MouseHover(object sender, EventArgs e)
         {
-            iconMinimize.BackColor = Color.DeepSkyBlue;
+            iconMinimize.BackColor = Color.Orange;
         }
 
         private void iconMinimize_MouseLeave(object sender, EventArgs e)
         {
             iconMinimize.BackColor = Color.DarkOrange;
         }
+        private bool buttonWasClicked = false;
         private void btnDashboard_Click_1(object sender, EventArgs e)
         {
-            // work on this
-            currentChildForm.Close();
-            Reset();
+            if (buttonWasClicked)
+            {
+                currentChildForm.Close();
+                Reset();
+            }            
         }
 
         private void btnMembers_Click_1(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormMembersList());
         }
 
         private void btnChildren_Click_1(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormChildrenList());
-        }
-
-        private void btnComments_Click_1(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormCommentsList());
-        }
+        }        
 
         private void btnFinancialReport_Click_1(object sender, EventArgs e)
         {
+            buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormFinancialReportList());
         }
@@ -239,8 +243,11 @@ namespace APC
 
         private void labelLogo_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
-            Reset();
+            if (buttonWasClicked)
+            {
+                currentChildForm.Close();
+                Reset();
+            }
         }
 
         private void panelDesktop_MouseDown(object sender, MouseEventArgs e)
@@ -265,5 +272,28 @@ namespace APC
         {
             
         }
+
+        private void btnAttendance_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color2);
+            OpenChildForm(new FormAttendanceList());
+        }
+
+        private void btnEvents_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormEventsList());
+        }
+
+        private void btnDeletedData_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormDeletedData());
+        }
+
+        
     }
 }

@@ -28,125 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
+            this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLogo = new System.Windows.Forms.Label();
+            this.btnManage = new FontAwesome.Sharp.IconButton();
+            this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
+            this.btnChildren = new FontAwesome.Sharp.IconButton();
+            this.btnMembers = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.labelUsername = new System.Windows.Forms.Label();
+            this.iconProfilePic = new FontAwesome.Sharp.IconPictureBox();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
+            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panelTotalProfession = new System.Windows.Forms.Panel();
+            this.iconProfessionCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelTotalProfession = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panelRegMembers = new System.Windows.Forms.Panel();
+            this.iconRegMemCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelNoOfRegMem = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelMeetingAttend = new System.Windows.Forms.Panel();
+            this.iconLastMeetingAttCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelLastMeetingAttendance = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelMonthlyDues = new System.Windows.Forms.Panel();
+            this.iconMonthlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelMonthlyDues = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.labelMonthName = new System.Windows.Forms.Label();
             this.panelNoOfChildren = new System.Windows.Forms.Panel();
+            this.iconNoOfChildrenCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelNoOfChildren = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panelLastEvent = new System.Windows.Forms.Panel();
+            this.iconEventsCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelLastEventDate = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panelYearlyDues = new System.Windows.Forms.Panel();
+            this.iconYearlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelYearlyDues = new System.Windows.Forms.Label();
             this.labelYear = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panelTotalPosition = new System.Windows.Forms.Panel();
+            this.iconTotalPositionCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelTotalPosition = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.iconProfessionCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconRegMemCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconLastMeetingAttCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMonthlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconNoOfChildrenCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconEventsCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconYearlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconTotalPositionCard = new FontAwesome.Sharp.IconPictureBox();
-            this.iconProfilePic = new FontAwesome.Sharp.IconPictureBox();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
-            this.btnDashboard = new FontAwesome.Sharp.IconButton();
-            this.btnManage = new FontAwesome.Sharp.IconButton();
-            this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
-            this.btnComments = new FontAwesome.Sharp.IconButton();
-            this.btnChildren = new FontAwesome.Sharp.IconButton();
-            this.btnMembers = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEvents = new FontAwesome.Sharp.IconButton();
+            this.btnDeletedData = new FontAwesome.Sharp.IconButton();
+            this.btnAttendance = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panelTotalProfession.SuspendLayout();
-            this.panelRegMembers.SuspendLayout();
-            this.panelMeetingAttend.SuspendLayout();
-            this.panelMonthlyDues.SuspendLayout();
-            this.panelNoOfChildren.SuspendLayout();
-            this.panelLastEvent.SuspendLayout();
-            this.panelYearlyDues.SuspendLayout();
-            this.panelTotalPosition.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
+            this.panelDesktop.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panelTotalProfession.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).BeginInit();
+            this.panelRegMembers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).BeginInit();
+            this.panelMeetingAttend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).BeginInit();
+            this.panelMonthlyDues.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).BeginInit();
+            this.panelNoOfChildren.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).BeginInit();
+            this.panelLastEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).BeginInit();
+            this.panelYearlyDues.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).BeginInit();
+            this.panelTotalPosition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelMenu.Controls.Add(this.btnEvents);
+            this.panelMenu.Controls.Add(this.btnMembers);
+            this.panelMenu.Controls.Add(this.btnDeletedData);
+            this.panelMenu.Controls.Add(this.btnAttendance);
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnDashboard);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.btnManage);
             this.panelMenu.Controls.Add(this.btnFinancialReport);
-            this.panelMenu.Controls.Add(this.btnComments);
             this.panelMenu.Controls.Add(this.btnChildren);
-            this.panelMenu.Controls.Add(this.btnMembers);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 700);
             this.panelMenu.TabIndex = 7;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.btnLogout.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 24;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 510);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnLogout.Size = new System.Drawing.Size(200, 40);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "    Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.btnDashboard.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDashboard.IconSize = 24;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 118);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(200, 40);
+            this.btnDashboard.TabIndex = 0;
+            this.btnDashboard.Text = "    Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click_1);
             // 
             // panelLogo
             // 
@@ -180,6 +228,94 @@
             this.labelLogo.Text = "APC";
             this.labelLogo.Click += new System.EventHandler(this.labelLogo_Click);
             // 
+            // btnManage
+            // 
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnManage.IconSize = 24;
+            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.Location = new System.Drawing.Point(0, 566);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnManage.Size = new System.Drawing.Size(200, 40);
+            this.btnManage.TabIndex = 6;
+            this.btnManage.Text = "    Mangement";
+            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
+            // 
+            // btnFinancialReport
+            // 
+            this.btnFinancialReport.FlatAppearance.BorderSize = 0;
+            this.btnFinancialReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinancialReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinancialReport.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFinancialReport.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            this.btnFinancialReport.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFinancialReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFinancialReport.IconSize = 24;
+            this.btnFinancialReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinancialReport.Location = new System.Drawing.Point(0, 342);
+            this.btnFinancialReport.Name = "btnFinancialReport";
+            this.btnFinancialReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnFinancialReport.Size = new System.Drawing.Size(200, 40);
+            this.btnFinancialReport.TabIndex = 4;
+            this.btnFinancialReport.Text = "    Financial Report";
+            this.btnFinancialReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinancialReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFinancialReport.UseVisualStyleBackColor = true;
+            this.btnFinancialReport.Click += new System.EventHandler(this.btnFinancialReport_Click_1);
+            // 
+            // btnChildren
+            // 
+            this.btnChildren.FlatAppearance.BorderSize = 0;
+            this.btnChildren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChildren.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChildren.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnChildren.IconChar = FontAwesome.Sharp.IconChar.Children;
+            this.btnChildren.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnChildren.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChildren.IconSize = 24;
+            this.btnChildren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChildren.Location = new System.Drawing.Point(0, 286);
+            this.btnChildren.Name = "btnChildren";
+            this.btnChildren.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnChildren.Size = new System.Drawing.Size(200, 40);
+            this.btnChildren.TabIndex = 2;
+            this.btnChildren.Text = "    Children";
+            this.btnChildren.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChildren.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChildren.UseVisualStyleBackColor = true;
+            this.btnChildren.Click += new System.EventHandler(this.btnChildren_Click_1);
+            // 
+            // btnMembers
+            // 
+            this.btnMembers.FlatAppearance.BorderSize = 0;
+            this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnMembers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnMembers.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMembers.IconSize = 24;
+            this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMembers.Location = new System.Drawing.Point(0, 230);
+            this.btnMembers.Name = "btnMembers";
+            this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnMembers.Size = new System.Drawing.Size(200, 40);
+            this.btnMembers.TabIndex = 1;
+            this.btnMembers.Text = "    Members";
+            this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMembers.UseVisualStyleBackColor = true;
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click_1);
+            // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.DarkOrange;
@@ -208,6 +344,32 @@
             this.labelUsername.TabIndex = 15;
             this.labelUsername.Text = "Vincent2023";
             // 
+            // iconProfilePic
+            // 
+            this.iconProfilePic.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconProfilePic.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconProfilePic.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconProfilePic.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconProfilePic.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconProfilePic.IconSize = 35;
+            this.iconProfilePic.Location = new System.Drawing.Point(502, 12);
+            this.iconProfilePic.Name = "iconProfilePic";
+            this.iconProfilePic.Size = new System.Drawing.Size(53, 35);
+            this.iconProfilePic.TabIndex = 14;
+            this.iconProfilePic.TabStop = false;
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 16);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.iconCurrentChildForm.TabIndex = 13;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
             // labelTitleChildForm
             // 
             this.labelTitleChildForm.AutoSize = true;
@@ -218,6 +380,60 @@
             this.labelTitleChildForm.Size = new System.Drawing.Size(166, 40);
             this.labelTitleChildForm.TabIndex = 12;
             this.labelTitleChildForm.Text = "Dashboard";
+            // 
+            // iconMinimize
+            // 
+            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconMinimize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMinimize.Location = new System.Drawing.Point(843, 12);
+            this.iconMinimize.Name = "iconMinimize";
+            this.iconMinimize.Size = new System.Drawing.Size(32, 32);
+            this.iconMinimize.TabIndex = 12;
+            this.iconMinimize.TabStop = false;
+            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
+            this.iconMinimize.MouseEnter += new System.EventHandler(this.iconMinimize_MouseEnter);
+            this.iconMinimize.MouseLeave += new System.EventHandler(this.iconMinimize_MouseLeave);
+            this.iconMinimize.MouseHover += new System.EventHandler(this.iconMinimize_MouseHover);
+            // 
+            // iconMaximize
+            // 
+            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMaximize.Location = new System.Drawing.Point(886, 12);
+            this.iconMaximize.Name = "iconMaximize";
+            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
+            this.iconMaximize.TabIndex = 12;
+            this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click_1);
+            this.iconMaximize.MouseEnter += new System.EventHandler(this.iconMaximize_MouseEnter);
+            this.iconMaximize.MouseLeave += new System.EventHandler(this.iconMaximize_MouseLeave);
+            this.iconMaximize.MouseHover += new System.EventHandler(this.iconMaximize_MouseHover);
+            // 
+            // iconClose
+            // 
+            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconClose.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.iconClose.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconClose.Location = new System.Drawing.Point(929, 12);
+            this.iconClose.Name = "iconClose";
+            this.iconClose.Size = new System.Drawing.Size(32, 32);
+            this.iconClose.TabIndex = 12;
+            this.iconClose.TabStop = false;
+            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
+            this.iconClose.MouseEnter += new System.EventHandler(this.iconClose_MouseEnter);
+            this.iconClose.MouseLeave += new System.EventHandler(this.iconClose_MouseLeave);
+            this.iconClose.MouseHover += new System.EventHandler(this.iconClose_MouseHover);
             // 
             // panel2
             // 
@@ -297,6 +513,18 @@
             this.panelTotalProfession.Size = new System.Drawing.Size(211, 94);
             this.panelTotalProfession.TabIndex = 7;
             // 
+            // iconProfessionCard
+            // 
+            this.iconProfessionCard.BackColor = System.Drawing.Color.Magenta;
+            this.iconProfessionCard.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.iconProfessionCard.IconColor = System.Drawing.Color.White;
+            this.iconProfessionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconProfessionCard.Location = new System.Drawing.Point(18, 39);
+            this.iconProfessionCard.Name = "iconProfessionCard";
+            this.iconProfessionCard.Size = new System.Drawing.Size(32, 32);
+            this.iconProfessionCard.TabIndex = 1;
+            this.iconProfessionCard.TabStop = false;
+            // 
             // labelTotalProfession
             // 
             this.labelTotalProfession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -334,6 +562,18 @@
             this.panelRegMembers.Click += new System.EventHandler(this.panelRegMembers_Click);
             this.panelRegMembers.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
+            // iconRegMemCard
+            // 
+            this.iconRegMemCard.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.iconRegMemCard.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconRegMemCard.IconColor = System.Drawing.Color.White;
+            this.iconRegMemCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconRegMemCard.Location = new System.Drawing.Point(18, 39);
+            this.iconRegMemCard.Name = "iconRegMemCard";
+            this.iconRegMemCard.Size = new System.Drawing.Size(32, 32);
+            this.iconRegMemCard.TabIndex = 1;
+            this.iconRegMemCard.TabStop = false;
+            // 
             // labelNoOfRegMem
             // 
             this.labelNoOfRegMem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -368,6 +608,18 @@
             this.panelMeetingAttend.Name = "panelMeetingAttend";
             this.panelMeetingAttend.Size = new System.Drawing.Size(211, 95);
             this.panelMeetingAttend.TabIndex = 1;
+            // 
+            // iconLastMeetingAttCard
+            // 
+            this.iconLastMeetingAttCard.BackColor = System.Drawing.Color.DeepPink;
+            this.iconLastMeetingAttCard.IconChar = FontAwesome.Sharp.IconChar.Handshake;
+            this.iconLastMeetingAttCard.IconColor = System.Drawing.Color.White;
+            this.iconLastMeetingAttCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconLastMeetingAttCard.Location = new System.Drawing.Point(18, 39);
+            this.iconLastMeetingAttCard.Name = "iconLastMeetingAttCard";
+            this.iconLastMeetingAttCard.Size = new System.Drawing.Size(32, 32);
+            this.iconLastMeetingAttCard.TabIndex = 1;
+            this.iconLastMeetingAttCard.TabStop = false;
             // 
             // labelLastMeetingAttendance
             // 
@@ -404,6 +656,18 @@
             this.panelMonthlyDues.Name = "panelMonthlyDues";
             this.panelMonthlyDues.Size = new System.Drawing.Size(211, 94);
             this.panelMonthlyDues.TabIndex = 5;
+            // 
+            // iconMonthlyDuesCard
+            // 
+            this.iconMonthlyDuesCard.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMonthlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.iconMonthlyDuesCard.IconColor = System.Drawing.Color.White;
+            this.iconMonthlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMonthlyDuesCard.Location = new System.Drawing.Point(18, 39);
+            this.iconMonthlyDuesCard.Name = "iconMonthlyDuesCard";
+            this.iconMonthlyDuesCard.Size = new System.Drawing.Size(32, 32);
+            this.iconMonthlyDuesCard.TabIndex = 1;
+            this.iconMonthlyDuesCard.TabStop = false;
             // 
             // labelMonthlyDues
             // 
@@ -451,6 +715,18 @@
             this.panelNoOfChildren.Size = new System.Drawing.Size(211, 94);
             this.panelNoOfChildren.TabIndex = 4;
             // 
+            // iconNoOfChildrenCard
+            // 
+            this.iconNoOfChildrenCard.BackColor = System.Drawing.Color.Green;
+            this.iconNoOfChildrenCard.IconChar = FontAwesome.Sharp.IconChar.Children;
+            this.iconNoOfChildrenCard.IconColor = System.Drawing.Color.White;
+            this.iconNoOfChildrenCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconNoOfChildrenCard.Location = new System.Drawing.Point(18, 39);
+            this.iconNoOfChildrenCard.Name = "iconNoOfChildrenCard";
+            this.iconNoOfChildrenCard.Size = new System.Drawing.Size(32, 32);
+            this.iconNoOfChildrenCard.TabIndex = 1;
+            this.iconNoOfChildrenCard.TabStop = false;
+            // 
             // labelNoOfChildren
             // 
             this.labelNoOfChildren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -485,6 +761,18 @@
             this.panelLastEvent.Name = "panelLastEvent";
             this.panelLastEvent.Size = new System.Drawing.Size(211, 95);
             this.panelLastEvent.TabIndex = 2;
+            // 
+            // iconEventsCard
+            // 
+            this.iconEventsCard.BackColor = System.Drawing.Color.DarkOrchid;
+            this.iconEventsCard.IconChar = FontAwesome.Sharp.IconChar.GlassCheers;
+            this.iconEventsCard.IconColor = System.Drawing.Color.White;
+            this.iconEventsCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconEventsCard.Location = new System.Drawing.Point(18, 39);
+            this.iconEventsCard.Name = "iconEventsCard";
+            this.iconEventsCard.Size = new System.Drawing.Size(32, 32);
+            this.iconEventsCard.TabIndex = 1;
+            this.iconEventsCard.TabStop = false;
             // 
             // labelLastEventDate
             // 
@@ -521,6 +809,18 @@
             this.panelYearlyDues.Name = "panelYearlyDues";
             this.panelYearlyDues.Size = new System.Drawing.Size(211, 94);
             this.panelYearlyDues.TabIndex = 6;
+            // 
+            // iconYearlyDuesCard
+            // 
+            this.iconYearlyDuesCard.BackColor = System.Drawing.Color.DarkRed;
+            this.iconYearlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
+            this.iconYearlyDuesCard.IconColor = System.Drawing.Color.White;
+            this.iconYearlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconYearlyDuesCard.Location = new System.Drawing.Point(18, 39);
+            this.iconYearlyDuesCard.Name = "iconYearlyDuesCard";
+            this.iconYearlyDuesCard.Size = new System.Drawing.Size(32, 32);
+            this.iconYearlyDuesCard.TabIndex = 1;
+            this.iconYearlyDuesCard.TabStop = false;
             // 
             // labelYearlyDues
             // 
@@ -568,6 +868,18 @@
             this.panelTotalPosition.Size = new System.Drawing.Size(211, 95);
             this.panelTotalPosition.TabIndex = 3;
             // 
+            // iconTotalPositionCard
+            // 
+            this.iconTotalPositionCard.BackColor = System.Drawing.Color.MidnightBlue;
+            this.iconTotalPositionCard.IconChar = FontAwesome.Sharp.IconChar.Couch;
+            this.iconTotalPositionCard.IconColor = System.Drawing.Color.White;
+            this.iconTotalPositionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconTotalPositionCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalPositionCard.Name = "iconTotalPositionCard";
+            this.iconTotalPositionCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalPositionCard.TabIndex = 1;
+            this.iconTotalPositionCard.TabStop = false;
+            // 
             // labelTotalPosition
             // 
             this.labelTotalPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -590,24 +902,6 @@
             this.label10.Size = new System.Drawing.Size(105, 20);
             this.label10.TabIndex = 0;
             this.label10.Text = "Total Position";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(200, 695);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 5);
-            this.panel1.TabIndex = 18;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1168, 61);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 634);
-            this.panel3.TabIndex = 19;
             // 
             // tableLayoutPanel3
             // 
@@ -633,17 +927,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(22, 116);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(448, 251);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "ble";
@@ -671,6 +965,16 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(448, 107);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Monthly Attendance";
+            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -685,16 +989,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(448, 107);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Monthly Attendance";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -705,335 +999,89 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Recent Comments";
             // 
-            // iconProfessionCard
+            // panel1
             // 
-            this.iconProfessionCard.BackColor = System.Drawing.Color.Magenta;
-            this.iconProfessionCard.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
-            this.iconProfessionCard.IconColor = System.Drawing.Color.White;
-            this.iconProfessionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconProfessionCard.Location = new System.Drawing.Point(18, 39);
-            this.iconProfessionCard.Name = "iconProfessionCard";
-            this.iconProfessionCard.Size = new System.Drawing.Size(32, 32);
-            this.iconProfessionCard.TabIndex = 1;
-            this.iconProfessionCard.TabStop = false;
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(200, 695);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 5);
+            this.panel1.TabIndex = 18;
             // 
-            // iconRegMemCard
+            // panel3
             // 
-            this.iconRegMemCard.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.iconRegMemCard.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconRegMemCard.IconColor = System.Drawing.Color.White;
-            this.iconRegMemCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconRegMemCard.Location = new System.Drawing.Point(18, 39);
-            this.iconRegMemCard.Name = "iconRegMemCard";
-            this.iconRegMemCard.Size = new System.Drawing.Size(32, 32);
-            this.iconRegMemCard.TabIndex = 1;
-            this.iconRegMemCard.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1168, 61);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 634);
+            this.panel3.TabIndex = 19;
             // 
-            // iconLastMeetingAttCard
+            // btnEvents
             // 
-            this.iconLastMeetingAttCard.BackColor = System.Drawing.Color.DeepPink;
-            this.iconLastMeetingAttCard.IconChar = FontAwesome.Sharp.IconChar.Handshake;
-            this.iconLastMeetingAttCard.IconColor = System.Drawing.Color.White;
-            this.iconLastMeetingAttCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconLastMeetingAttCard.Location = new System.Drawing.Point(18, 39);
-            this.iconLastMeetingAttCard.Name = "iconLastMeetingAttCard";
-            this.iconLastMeetingAttCard.Size = new System.Drawing.Size(32, 32);
-            this.iconLastMeetingAttCard.TabIndex = 1;
-            this.iconLastMeetingAttCard.TabStop = false;
+            this.btnEvents.FlatAppearance.BorderSize = 0;
+            this.btnEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvents.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnEvents.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
+            this.btnEvents.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnEvents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEvents.IconSize = 24;
+            this.btnEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvents.Location = new System.Drawing.Point(0, 398);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnEvents.Size = new System.Drawing.Size(200, 40);
+            this.btnEvents.TabIndex = 14;
+            this.btnEvents.Text = "    Events";
+            this.btnEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
             // 
-            // iconMonthlyDuesCard
+            // btnDeletedData
             // 
-            this.iconMonthlyDuesCard.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMonthlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
-            this.iconMonthlyDuesCard.IconColor = System.Drawing.Color.White;
-            this.iconMonthlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMonthlyDuesCard.Location = new System.Drawing.Point(18, 39);
-            this.iconMonthlyDuesCard.Name = "iconMonthlyDuesCard";
-            this.iconMonthlyDuesCard.Size = new System.Drawing.Size(32, 32);
-            this.iconMonthlyDuesCard.TabIndex = 1;
-            this.iconMonthlyDuesCard.TabStop = false;
+            this.btnDeletedData.FlatAppearance.BorderSize = 0;
+            this.btnDeletedData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletedData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletedData.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDeletedData.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDeletedData.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDeletedData.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeletedData.IconSize = 24;
+            this.btnDeletedData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletedData.Location = new System.Drawing.Point(0, 454);
+            this.btnDeletedData.Name = "btnDeletedData";
+            this.btnDeletedData.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDeletedData.Size = new System.Drawing.Size(200, 40);
+            this.btnDeletedData.TabIndex = 15;
+            this.btnDeletedData.Text = "    Deleted Data";
+            this.btnDeletedData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletedData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeletedData.UseVisualStyleBackColor = true;
+            this.btnDeletedData.Click += new System.EventHandler(this.btnDeletedData_Click);
             // 
-            // iconNoOfChildrenCard
+            // btnAttendance
             // 
-            this.iconNoOfChildrenCard.BackColor = System.Drawing.Color.Green;
-            this.iconNoOfChildrenCard.IconChar = FontAwesome.Sharp.IconChar.Children;
-            this.iconNoOfChildrenCard.IconColor = System.Drawing.Color.White;
-            this.iconNoOfChildrenCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconNoOfChildrenCard.Location = new System.Drawing.Point(18, 39);
-            this.iconNoOfChildrenCard.Name = "iconNoOfChildrenCard";
-            this.iconNoOfChildrenCard.Size = new System.Drawing.Size(32, 32);
-            this.iconNoOfChildrenCard.TabIndex = 1;
-            this.iconNoOfChildrenCard.TabStop = false;
-            // 
-            // iconEventsCard
-            // 
-            this.iconEventsCard.BackColor = System.Drawing.Color.DarkOrchid;
-            this.iconEventsCard.IconChar = FontAwesome.Sharp.IconChar.GlassCheers;
-            this.iconEventsCard.IconColor = System.Drawing.Color.White;
-            this.iconEventsCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconEventsCard.Location = new System.Drawing.Point(18, 39);
-            this.iconEventsCard.Name = "iconEventsCard";
-            this.iconEventsCard.Size = new System.Drawing.Size(32, 32);
-            this.iconEventsCard.TabIndex = 1;
-            this.iconEventsCard.TabStop = false;
-            // 
-            // iconYearlyDuesCard
-            // 
-            this.iconYearlyDuesCard.BackColor = System.Drawing.Color.DarkRed;
-            this.iconYearlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
-            this.iconYearlyDuesCard.IconColor = System.Drawing.Color.White;
-            this.iconYearlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconYearlyDuesCard.Location = new System.Drawing.Point(18, 39);
-            this.iconYearlyDuesCard.Name = "iconYearlyDuesCard";
-            this.iconYearlyDuesCard.Size = new System.Drawing.Size(32, 32);
-            this.iconYearlyDuesCard.TabIndex = 1;
-            this.iconYearlyDuesCard.TabStop = false;
-            // 
-            // iconTotalPositionCard
-            // 
-            this.iconTotalPositionCard.BackColor = System.Drawing.Color.MidnightBlue;
-            this.iconTotalPositionCard.IconChar = FontAwesome.Sharp.IconChar.Couch;
-            this.iconTotalPositionCard.IconColor = System.Drawing.Color.White;
-            this.iconTotalPositionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalPositionCard.Location = new System.Drawing.Point(18, 39);
-            this.iconTotalPositionCard.Name = "iconTotalPositionCard";
-            this.iconTotalPositionCard.Size = new System.Drawing.Size(32, 32);
-            this.iconTotalPositionCard.TabIndex = 1;
-            this.iconTotalPositionCard.TabStop = false;
-            // 
-            // iconProfilePic
-            // 
-            this.iconProfilePic.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconProfilePic.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconProfilePic.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconProfilePic.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconProfilePic.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconProfilePic.IconSize = 35;
-            this.iconProfilePic.Location = new System.Drawing.Point(502, 12);
-            this.iconProfilePic.Name = "iconProfilePic";
-            this.iconProfilePic.Size = new System.Drawing.Size(53, 35);
-            this.iconProfilePic.TabIndex = 14;
-            this.iconProfilePic.TabStop = false;
-            // 
-            // iconCurrentChildForm
-            // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 16);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
-            this.iconCurrentChildForm.TabIndex = 13;
-            this.iconCurrentChildForm.TabStop = false;
-            // 
-            // iconMinimize
-            // 
-            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimize.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconMinimize.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMinimize.Location = new System.Drawing.Point(843, 12);
-            this.iconMinimize.Name = "iconMinimize";
-            this.iconMinimize.Size = new System.Drawing.Size(32, 32);
-            this.iconMinimize.TabIndex = 12;
-            this.iconMinimize.TabStop = false;
-            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
-            this.iconMinimize.MouseEnter += new System.EventHandler(this.iconMinimize_MouseEnter);
-            this.iconMinimize.MouseLeave += new System.EventHandler(this.iconMinimize_MouseLeave);
-            this.iconMinimize.MouseHover += new System.EventHandler(this.iconMinimize_MouseHover);
-            // 
-            // iconMaximize
-            // 
-            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMaximize.Location = new System.Drawing.Point(886, 12);
-            this.iconMaximize.Name = "iconMaximize";
-            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
-            this.iconMaximize.TabIndex = 12;
-            this.iconMaximize.TabStop = false;
-            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click_1);
-            this.iconMaximize.MouseEnter += new System.EventHandler(this.iconMaximize_MouseEnter);
-            this.iconMaximize.MouseLeave += new System.EventHandler(this.iconMaximize_MouseLeave);
-            this.iconMaximize.MouseHover += new System.EventHandler(this.iconMaximize_MouseHover);
-            // 
-            // iconClose
-            // 
-            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconClose.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconClose.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.iconClose.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconClose.Location = new System.Drawing.Point(929, 12);
-            this.iconClose.Name = "iconClose";
-            this.iconClose.Size = new System.Drawing.Size(32, 32);
-            this.iconClose.TabIndex = 12;
-            this.iconClose.TabStop = false;
-            this.iconClose.Click += new System.EventHandler(this.picBoxMin_Click_1);
-            this.iconClose.MouseEnter += new System.EventHandler(this.iconClose_MouseEnter);
-            this.iconClose.MouseLeave += new System.EventHandler(this.iconClose_MouseLeave);
-            this.iconClose.MouseHover += new System.EventHandler(this.iconClose_MouseHover);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.Gear;
-            this.btnLogout.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 24;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 399);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLogout.Size = new System.Drawing.Size(200, 40);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "    Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDashboard.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.btnDashboard.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDashboard.IconSize = 24;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 118);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(200, 40);
-            this.btnDashboard.TabIndex = 0;
-            this.btnDashboard.Text = "    Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click_1);
-            // 
-            // btnManage
-            // 
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnManage.IconSize = 24;
-            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.Location = new System.Drawing.Point(0, 454);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnManage.Size = new System.Drawing.Size(200, 40);
-            this.btnManage.TabIndex = 6;
-            this.btnManage.Text = "    Mangement";
-            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
-            // 
-            // btnFinancialReport
-            // 
-            this.btnFinancialReport.FlatAppearance.BorderSize = 0;
-            this.btnFinancialReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinancialReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinancialReport.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnFinancialReport.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            this.btnFinancialReport.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnFinancialReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFinancialReport.IconSize = 24;
-            this.btnFinancialReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinancialReport.Location = new System.Drawing.Point(0, 341);
-            this.btnFinancialReport.Name = "btnFinancialReport";
-            this.btnFinancialReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnFinancialReport.Size = new System.Drawing.Size(200, 40);
-            this.btnFinancialReport.TabIndex = 4;
-            this.btnFinancialReport.Text = "    Financial Report";
-            this.btnFinancialReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinancialReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFinancialReport.UseVisualStyleBackColor = true;
-            this.btnFinancialReport.Click += new System.EventHandler(this.btnFinancialReport_Click_1);
-            // 
-            // btnComments
-            // 
-            this.btnComments.FlatAppearance.BorderSize = 0;
-            this.btnComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComments.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnComments.IconChar = FontAwesome.Sharp.IconChar.CommentDots;
-            this.btnComments.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnComments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnComments.IconSize = 24;
-            this.btnComments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.Location = new System.Drawing.Point(0, 285);
-            this.btnComments.Name = "btnComments";
-            this.btnComments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnComments.Size = new System.Drawing.Size(200, 40);
-            this.btnComments.TabIndex = 3;
-            this.btnComments.Text = "    Comments";
-            this.btnComments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnComments.UseVisualStyleBackColor = true;
-            this.btnComments.Click += new System.EventHandler(this.btnComments_Click_1);
-            // 
-            // btnChildren
-            // 
-            this.btnChildren.FlatAppearance.BorderSize = 0;
-            this.btnChildren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChildren.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChildren.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnChildren.IconChar = FontAwesome.Sharp.IconChar.Children;
-            this.btnChildren.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnChildren.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChildren.IconSize = 24;
-            this.btnChildren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChildren.Location = new System.Drawing.Point(0, 229);
-            this.btnChildren.Name = "btnChildren";
-            this.btnChildren.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnChildren.Size = new System.Drawing.Size(200, 40);
-            this.btnChildren.TabIndex = 2;
-            this.btnChildren.Text = "    Children";
-            this.btnChildren.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChildren.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChildren.UseVisualStyleBackColor = true;
-            this.btnChildren.Click += new System.EventHandler(this.btnChildren_Click_1);
-            // 
-            // btnMembers
-            // 
-            this.btnMembers.FlatAppearance.BorderSize = 0;
-            this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnMembers.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.btnMembers.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMembers.IconSize = 24;
-            this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 173);
-            this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnMembers.Size = new System.Drawing.Size(200, 40);
-            this.btnMembers.TabIndex = 1;
-            this.btnMembers.Text = "    Members";
-            this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMembers.UseVisualStyleBackColor = true;
-            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click_1);
+            this.btnAttendance.FlatAppearance.BorderSize = 0;
+            this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttendance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendance.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAttendance.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnAttendance.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAttendance.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAttendance.IconSize = 24;
+            this.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.Location = new System.Drawing.Point(0, 174);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnAttendance.Size = new System.Drawing.Size(200, 40);
+            this.btnAttendance.TabIndex = 13;
+            this.btnAttendance.Text = "    Attendance";
+            this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
             // 
             // FormDashboard
             // 
@@ -1057,25 +1105,38 @@
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panelTotalProfession.ResumeLayout(false);
             this.panelTotalProfession.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).EndInit();
             this.panelRegMembers.ResumeLayout(false);
             this.panelRegMembers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).EndInit();
             this.panelMeetingAttend.ResumeLayout(false);
             this.panelMeetingAttend.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).EndInit();
             this.panelMonthlyDues.ResumeLayout(false);
             this.panelMonthlyDues.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).EndInit();
             this.panelNoOfChildren.ResumeLayout(false);
             this.panelNoOfChildren.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).EndInit();
             this.panelLastEvent.ResumeLayout(false);
             this.panelLastEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).EndInit();
             this.panelYearlyDues.ResumeLayout(false);
             this.panelYearlyDues.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).EndInit();
             this.panelTotalPosition.ResumeLayout(false);
             this.panelTotalPosition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1083,19 +1144,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1106,7 +1154,6 @@
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconButton btnManage;
         private FontAwesome.Sharp.IconButton btnFinancialReport;
-        private FontAwesome.Sharp.IconButton btnComments;
         private FontAwesome.Sharp.IconButton btnChildren;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label labelLogo;
@@ -1167,5 +1214,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconButton btnEvents;
+        private FontAwesome.Sharp.IconButton btnDeletedData;
+        private FontAwesome.Sharp.IconButton btnAttendance;
     }
 }
