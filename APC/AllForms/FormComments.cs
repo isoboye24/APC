@@ -1,4 +1,6 @@
-﻿using System;
+﻿using APC.BLL;
+using APC.DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,10 +28,20 @@ namespace APC
         {
 
         }
-
+        GenderDTO dto = new GenderDTO();
+        GenderBLL bll = new GenderBLL();
         private void FormComments_Load(object sender, EventArgs e)
         {
+            dto = bll.Select();
+            cmbGender.DataSource = dto.Genders;
+            cmbGender.DisplayMember = "GenderName";
+            cmbGender.ValueMember = "GenderID";
+            cmbGender.SelectedIndex = -1;
+        }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
