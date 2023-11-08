@@ -23,6 +23,8 @@
           </Key>
           <Property Name="attendanceDateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="attendanceDate" Type="date" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
@@ -30,6 +32,8 @@
           </Key>
           <Property Name="attendanceStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="attendanceStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="CHILD">
           <Key>
@@ -42,6 +46,8 @@
           <Property Name="imagePath" Type="varchar(max)" />
           <Property Name="genderID" Type="int" Nullable="false" />
           <Property Name="nationalityID" Type="int" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="COMMENT">
           <Key>
@@ -60,6 +66,8 @@
           </Key>
           <Property Name="countryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="countryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="DEATH_MEMBER">
           <Key>
@@ -88,6 +96,8 @@
           </Key>
           <Property Name="dualNationalityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dualNationality" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="EMPLOYMENT_STATUS">
           <Key>
@@ -95,6 +105,8 @@
           </Key>
           <Property Name="employmentStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employmentStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="EVENT_IMAGE">
           <Key>
@@ -154,6 +166,8 @@
           </Key>
           <Property Name="maritalStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="maritalStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="MEMBER">
           <Key>
@@ -202,6 +216,8 @@
           </Key>
           <Property Name="nationalityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -209,6 +225,8 @@
           </Key>
           <Property Name="permissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="permission" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="PHONE_NUMBERS">
           <Key>
@@ -226,6 +244,8 @@
           </Key>
           <Property Name="positionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="positionName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="PROFESSION">
           <Key>
@@ -233,6 +253,8 @@
           </Key>
           <Property Name="professionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="profession" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="YEAR">
           <Key>
@@ -290,6 +312,8 @@
           </Key>
           <Property Name="attendanceDateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="attendanceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
@@ -297,6 +321,8 @@
           </Key>
           <Property Name="attendanceStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="attendanceStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CHILD">
           <Key>
@@ -309,6 +335,8 @@
           <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="genderID" Type="Int32" Nullable="false" />
           <Property Name="nationalityID" Type="Int32" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="COMMENT">
           <Key>
@@ -327,6 +355,8 @@
           </Key>
           <Property Name="countryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="countryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="DEATH_MEMBER">
           <Key>
@@ -355,6 +385,8 @@
           </Key>
           <Property Name="dualNationalityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dualNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="EMPLOYMENT_STATUS">
           <Key>
@@ -362,6 +394,8 @@
           </Key>
           <Property Name="employmentStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employmentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="EVENT_IMAGE">
           <Key>
@@ -421,6 +455,8 @@
           </Key>
           <Property Name="maritalStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="maritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="MEMBER">
           <Key>
@@ -469,6 +505,8 @@
           </Key>
           <Property Name="nationalityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nationality1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -476,6 +514,8 @@
           </Key>
           <Property Name="permissionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="permission1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="PHONE_NUMBERS">
           <Key>
@@ -493,6 +533,8 @@
           </Key>
           <Property Name="positionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="positionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="PROFESSION">
           <Key>
@@ -500,6 +542,8 @@
           </Key>
           <Property Name="professionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="profession1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="YEAR">
           <Key>
@@ -508,7 +552,7 @@
           <Property Name="yearID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="year1" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="APCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="APCEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
           <EntitySet Name="ATTENDANCE_DATE" EntityType="Self.ATTENDANCE_DATE" />
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" />
@@ -539,7 +583,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities">
+        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities1">
           <EntitySetMapping Name="ATTENDANCEs">
             <EntityTypeMapping TypeName="APCModel.ATTENDANCE">
               <MappingFragment StoreEntitySet="ATTENDANCE">
@@ -558,6 +602,8 @@
               <MappingFragment StoreEntitySet="ATTENDANCE_DATE">
                 <ScalarProperty Name="attendanceDateID" ColumnName="attendanceDateID" />
                 <ScalarProperty Name="attendanceDate" ColumnName="attendanceDate" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -566,6 +612,8 @@
               <MappingFragment StoreEntitySet="ATTENDANCE_STATUS">
                 <ScalarProperty Name="attendanceStatusID" ColumnName="attendanceStatusID" />
                 <ScalarProperty Name="attendanceStatus" ColumnName="attendanceStatus" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -579,6 +627,8 @@
                 <ScalarProperty Name="imagePath" ColumnName="imagePath" />
                 <ScalarProperty Name="genderID" ColumnName="genderID" />
                 <ScalarProperty Name="nationalityID" ColumnName="nationalityID" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -599,6 +649,8 @@
               <MappingFragment StoreEntitySet="COUNTRY">
                 <ScalarProperty Name="countryID" ColumnName="countryID" />
                 <ScalarProperty Name="countryName" ColumnName="countryName" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -629,6 +681,8 @@
               <MappingFragment StoreEntitySet="DUAL_NATIONALITY">
                 <ScalarProperty Name="dualNationalityID" ColumnName="dualNationalityID" />
                 <ScalarProperty Name="dualNationality" ColumnName="dualNationality" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -637,6 +691,8 @@
               <MappingFragment StoreEntitySet="EMPLOYMENT_STATUS">
                 <ScalarProperty Name="employmentStatusID" ColumnName="employmentStatusID" />
                 <ScalarProperty Name="employmentStatus" ColumnName="employmentStatus" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -702,6 +758,8 @@
               <MappingFragment StoreEntitySet="MARITAL_STATUS">
                 <ScalarProperty Name="maritalStatusID" ColumnName="maritalStatusID" />
                 <ScalarProperty Name="maritalStatus" ColumnName="maritalStatus" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -754,6 +812,8 @@
               <MappingFragment StoreEntitySet="NATIONALITY">
                 <ScalarProperty Name="nationalityID" ColumnName="nationalityID" />
                 <ScalarProperty Name="nationality1" ColumnName="nationality" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -762,6 +822,8 @@
               <MappingFragment StoreEntitySet="PERMISSION">
                 <ScalarProperty Name="permissionID" ColumnName="permissionID" />
                 <ScalarProperty Name="permission1" ColumnName="permission" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -781,6 +843,8 @@
               <MappingFragment StoreEntitySet="POSITION">
                 <ScalarProperty Name="positionID" ColumnName="positionID" />
                 <ScalarProperty Name="positionName" ColumnName="positionName" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -789,6 +853,8 @@
               <MappingFragment StoreEntitySet="PROFESSION">
                 <ScalarProperty Name="professionID" ColumnName="professionID" />
                 <ScalarProperty Name="profession1" ColumnName="profession" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

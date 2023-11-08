@@ -32,14 +32,15 @@ namespace APC
         GenderBLL bll = new GenderBLL();
         private void FormComments_Load(object sender, EventArgs e)
         {
-            dto = bll.Select();
-            cmbGender.DataSource = dto.Genders;
-            cmbGender.DisplayMember = "GenderName";
-            cmbGender.ValueMember = "GenderID";
-            cmbGender.SelectedIndex = -1;
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

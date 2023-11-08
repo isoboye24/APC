@@ -153,8 +153,10 @@
     <Compile Include="AllForms\FormYearList.Designer.cs">
       <DependentUpon>FormYearList.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
+    <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="DAL\ATTENDANCE.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -174,8 +176,10 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
+    <Compile Include="DAL\DAO\CountryDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
+    <Compile Include="DAL\DAO\PositionDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,8 +198,12 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
+    <Compile Include="DAL\DTO\CountryDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDTO.cs" />
+    <Compile Include="DAL\DTO\PositionDetailDTO.cs" />
+    <Compile Include="DAL\DTO\PositionDTO.cs" />
     <Compile Include="DAL\DUAL_NATIONALITY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -556,12 +564,11 @@
   <ItemGroup>
     <None Include="Resources\P90360274-oliver-zipse-member-of-the-board-of-management-of-bmw-ag-production-as-of-16-august-2019-chairman-of-600px.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
       <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DAL\DataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

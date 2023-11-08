@@ -16,5 +16,7 @@ namespace APC.DAL
     {
         public int nationalityID { get; set; }
         public string nationality1 { get; set; }
+        public bool isDeleted { get; set; }
+        public Nullable<System.DateTime> deletedDate { get; set; }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APC.BLL;
+using APC.DAL.DTO;
 
 namespace APC.AllForms
 {
@@ -39,6 +41,16 @@ namespace APC.AllForms
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+        }
+        GenderDTO dto = new GenderDTO();
+        GenderBLL bll = new GenderBLL();
+        private void FormCommentsList_Load(object sender, EventArgs e)
+        {
+            dto = bll.Select();
+            cmbGender.DataSource = dto.Genders;
+            cmbGender.DisplayMember = "GenderName";
+            cmbGender.ValueMember = "GenderID";
+            cmbGender.SelectedIndex = -1;
         }
     }
 }

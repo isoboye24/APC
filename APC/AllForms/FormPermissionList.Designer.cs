@@ -34,7 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(952, 595);
+            this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormPermissionList";
             this.Text = "Permission List";
             this.ResumeLayout(false);

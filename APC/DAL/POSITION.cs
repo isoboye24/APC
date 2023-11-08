@@ -16,5 +16,7 @@ namespace APC.DAL
     {
         public int positionID { get; set; }
         public string positionName { get; set; }
+        public bool isDeleted { get; set; }
+        public Nullable<System.DateTime> deletedDate { get; set; }
     }
 }

@@ -16,5 +16,7 @@ namespace APC.DAL
     {
         public int employmentStatusID { get; set; }
         public string employmentStatus { get; set; }
+        public bool isDeleted { get; set; }
+        public Nullable<System.DateTime> deletedDate { get; set; }
     }
 }

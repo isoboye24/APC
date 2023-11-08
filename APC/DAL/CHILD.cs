@@ -21,5 +21,7 @@ namespace APC.DAL
         public string imagePath { get; set; }
         public int genderID { get; set; }
         public int nationalityID { get; set; }
+        public bool isDeleted { get; set; }
+        public Nullable<System.DateTime> deletedDate { get; set; }
     }
 }

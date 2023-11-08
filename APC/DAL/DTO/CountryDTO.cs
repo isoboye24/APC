@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APC.DAL.DAO
+namespace APC.DAL.DTO
 {
-    public class APCContexts
+    public class CountryDTO
     {
-        public APCEntities1 db = new APCEntities1();
+        public List<CountryDetailDTO> Countries { get; set; }
     }
 }

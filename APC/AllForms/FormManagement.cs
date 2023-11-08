@@ -263,5 +263,12 @@ namespace APC.AllForms
                 Reset();
             }
         }
+
+        private void btnPermission_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormPermissionList());
+        }
     }
 }

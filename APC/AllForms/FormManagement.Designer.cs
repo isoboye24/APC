@@ -53,6 +53,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnPermission = new FontAwesome.Sharp.IconButton();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -216,8 +218,8 @@
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelMenu.Controls.Add(this.btnManagement);
             this.panelMenu.Controls.Add(this.btnComments);
+            this.panelMenu.Controls.Add(this.btnPermission);
             this.panelMenu.Controls.Add(this.btnYear);
-            this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.btnProfession);
@@ -308,7 +310,7 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogout.IconSize = 24;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 526);
+            this.btnLogout.Location = new System.Drawing.Point(3, 15);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLogout.Size = new System.Drawing.Size(200, 40);
@@ -321,10 +323,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 673);
+            this.panel1.Location = new System.Drawing.Point(0, 600);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 27);
+            this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
             // btnProfession
@@ -464,6 +467,28 @@
             this.panelDesktop.TabIndex = 18;
             this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
             // 
+            // btnPermission
+            // 
+            this.btnPermission.FlatAppearance.BorderSize = 0;
+            this.btnPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPermission.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnPermission.IconChar = FontAwesome.Sharp.IconChar.Bomb;
+            this.btnPermission.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnPermission.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPermission.IconSize = 24;
+            this.btnPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermission.Location = new System.Drawing.Point(0, 530);
+            this.btnPermission.Name = "btnPermission";
+            this.btnPermission.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnPermission.Size = new System.Drawing.Size(200, 40);
+            this.btnPermission.TabIndex = 7;
+            this.btnPermission.Text = "    Permission";
+            this.btnPermission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPermission.UseVisualStyleBackColor = true;
+            this.btnPermission.Click += new System.EventHandler(this.btnPermission_Click);
+            // 
             // FormManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -519,5 +545,6 @@
         private FontAwesome.Sharp.IconButton btnYear;
         private FontAwesome.Sharp.IconButton btnComments;
         private FontAwesome.Sharp.IconButton btnManagement;
+        private FontAwesome.Sharp.IconButton btnPermission;
     }
 }
