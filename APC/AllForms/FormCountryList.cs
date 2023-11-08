@@ -51,7 +51,7 @@ namespace APC
         }
         CountryBLL bll = new CountryBLL();
         CountryDTO dto = new CountryDTO();
-        public CountryDetailDTO detail = new CountryDetailDTO();
+        CountryDetailDTO detail = new CountryDetailDTO();
         
         private void FormCountryList_Load(object sender, EventArgs e)
         {

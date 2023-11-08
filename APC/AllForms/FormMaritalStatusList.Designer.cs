@@ -67,6 +67,7 @@
             this.txtMaritalStatus.Name = "txtMaritalStatus";
             this.txtMaritalStatus.Size = new System.Drawing.Size(209, 29);
             this.txtMaritalStatus.TabIndex = 0;
+            this.txtMaritalStatus.TextChanged += new System.EventHandler(this.txtMaritalStatus_TextChanged);
             // 
             // label1
             // 
@@ -103,12 +104,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(22, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(907, 374);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // tableLayoutPanel3
             // 
@@ -178,6 +181,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FormMaritalStatusList
             // 
@@ -188,6 +192,7 @@
             this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormMaritalStatusList";
             this.Text = "Marital Status List";
+            this.Load += new System.EventHandler(this.FormMaritalStatusList_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

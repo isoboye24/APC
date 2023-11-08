@@ -156,6 +156,7 @@
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
+    <Compile Include="BLL\MaritalStatusBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="DAL\ATTENDANCE.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
@@ -179,6 +180,7 @@
     <Compile Include="DAL\DAO\CountryDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
+    <Compile Include="DAL\DAO\MaritalStatusDAO.cs" />
     <Compile Include="DAL\DAO\PositionDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -202,6 +204,8 @@
     <Compile Include="DAL\DTO\CountryDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDTO.cs" />
+    <Compile Include="DAL\DTO\MaritalStatusDetailDTO.cs" />
+    <Compile Include="DAL\DTO\MaritalStatusDTO.cs" />
     <Compile Include="DAL\DTO\PositionDetailDTO.cs" />
     <Compile Include="DAL\DTO\PositionDTO.cs" />
     <Compile Include="DAL\DUAL_NATIONALITY.cs">

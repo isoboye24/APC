@@ -55,7 +55,7 @@ namespace APC
                     {
                         MessageBox.Show("There is no change");
                     }
-                    else
+                    else if(isUpdate)
                     {
                         detail.CountryName = txtCountry.Text;
                         if (bll.Update(detail))
