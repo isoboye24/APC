@@ -154,6 +154,7 @@
       <DependentUpon>FormYearList.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\CountryBLL.cs" />
+    <Compile Include="BLL\EmploymentStatusBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\MaritalStatusBLL.cs" />
@@ -178,6 +179,7 @@
     </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
+    <Compile Include="DAL\DAO\EmploymentStatusDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\MaritalStatusDAO.cs" />
@@ -202,6 +204,8 @@
     </Compile>
     <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CountryDTO.cs" />
+    <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
+    <Compile Include="DAL\DTO\EmploymentStatusDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDTO.cs" />
     <Compile Include="DAL\DTO\MaritalStatusDetailDTO.cs" />
