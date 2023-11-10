@@ -240,14 +240,6 @@ namespace APC.AllForms
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormProfessionList());
         }        
-
-        private void btnYear_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormYearList());
-        }        
-
         private void btnComments_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;

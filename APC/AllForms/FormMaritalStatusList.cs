@@ -85,6 +85,7 @@ namespace APC
                 {
                     if (bll.Delete(detail))
                     {
+                        MessageBox.Show("Marital status was deleted");
                         bll = new MaritalStatusBLL();
                         dto = bll.Select();
                         dataGridView1.DataSource = dto.MaritalStatuses;

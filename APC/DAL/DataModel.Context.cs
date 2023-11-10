@@ -13,10 +13,10 @@ namespace APC.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class APCEntities1 : DbContext
+    public partial class APCEntities : DbContext
     {
-        public APCEntities1()
-            : base("name=APCEntities1")
+        public APCEntities()
+            : base("name=APCEntities")
         {
         }
     
@@ -48,6 +48,5 @@ namespace APC.DAL
         public virtual DbSet<PHONE_NUMBERS> PHONE_NUMBERS { get; set; }
         public virtual DbSet<POSITION> POSITIONs { get; set; }
         public virtual DbSet<PROFESSION> PROFESSIONs { get; set; }
-        public virtual DbSet<YEAR> YEARs { get; set; }
     }
 }

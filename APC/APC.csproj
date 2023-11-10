@@ -147,18 +147,13 @@
     <Compile Include="AllForms\FormSingleImage.Designer.cs">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormYearList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormYearList.Designer.cs">
-      <DependentUpon>FormYearList.cs</DependentUpon>
-    </Compile>
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\MaritalStatusBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
+    <Compile Include="BLL\ProfessionBLL.cs" />
     <Compile Include="DAL\ATTENDANCE.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -184,6 +179,7 @@
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\MaritalStatusDAO.cs" />
     <Compile Include="DAL\DAO\PositionDAO.cs" />
+    <Compile Include="DAL\DAO\ProfessionDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +208,8 @@
     <Compile Include="DAL\DTO\MaritalStatusDTO.cs" />
     <Compile Include="DAL\DTO\PositionDetailDTO.cs" />
     <Compile Include="DAL\DTO\PositionDTO.cs" />
+    <Compile Include="DAL\DTO\ProfessionDetailDTO.cs" />
+    <Compile Include="DAL\DTO\ProfessionDTO.cs" />
     <Compile Include="DAL\DUAL_NATIONALITY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -258,9 +256,6 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PROFESSION.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\YEAR.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FormDashboard.cs">
@@ -359,12 +354,6 @@
     <Compile Include="AllForms\FormProfessionList.Designer.cs">
       <DependentUpon>FormProfessionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormYear.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormYear.Designer.cs">
-      <DependentUpon>FormYear.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,12 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormSingleImage.resx">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormYear.resx">
-      <DependentUpon>FormYear.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormYearList.resx">
-      <DependentUpon>FormYearList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
@@ -573,6 +556,9 @@
     <None Include="Resources\P90360274-oliver-zipse-member-of-the-board-of-management-of-bmw-ag-production-as-of-16-august-2019-chairman-of-600px.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DAL\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModel.edmx</DependentUpon>
@@ -583,9 +569,6 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

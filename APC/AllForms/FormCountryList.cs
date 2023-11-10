@@ -88,6 +88,7 @@ namespace APC
                 {
                     if (bll.Delete(detail))
                     {
+                        MessageBox.Show("Country was deleted");
                         bll = new CountryBLL();
                         dto = bll.Select();
                         dataGridView1.DataSource = dto.Countries;

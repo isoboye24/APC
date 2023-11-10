@@ -78,6 +78,7 @@ namespace APC
                 {
                     if (bll.Delete(detail))
                     {
+                        MessageBox.Show("Employment status was deleted");
                         bll = new EmploymentStatusBLL();
                         dto = bll.Select();
                         dataGridView1.DataSource = dto.EmploymentStatuses;

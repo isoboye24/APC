@@ -42,9 +42,9 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnManagement = new FontAwesome.Sharp.IconButton();
             this.btnComments = new FontAwesome.Sharp.IconButton();
-            this.btnYear = new FontAwesome.Sharp.IconButton();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
+            this.btnPermission = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnProfession = new FontAwesome.Sharp.IconButton();
             this.btnEmploymentStatus = new FontAwesome.Sharp.IconButton();
             this.btnMaritalStatus = new FontAwesome.Sharp.IconButton();
@@ -53,7 +53,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnPermission = new FontAwesome.Sharp.IconButton();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).BeginInit();
@@ -219,7 +218,6 @@
             this.panelMenu.Controls.Add(this.btnManagement);
             this.panelMenu.Controls.Add(this.btnComments);
             this.panelMenu.Controls.Add(this.btnPermission);
-            this.panelMenu.Controls.Add(this.btnYear);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.btnProfession);
@@ -266,7 +264,7 @@
             this.btnComments.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnComments.IconSize = 24;
             this.btnComments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.Location = new System.Drawing.Point(0, 162);
+            this.btnComments.Location = new System.Drawing.Point(0, 161);
             this.btnComments.Name = "btnComments";
             this.btnComments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnComments.Size = new System.Drawing.Size(200, 40);
@@ -277,27 +275,36 @@
             this.btnComments.UseVisualStyleBackColor = true;
             this.btnComments.Click += new System.EventHandler(this.btnComments_Click);
             // 
-            // btnYear
+            // btnPermission
             // 
-            this.btnYear.FlatAppearance.BorderSize = 0;
-            this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYear.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnYear.IconChar = FontAwesome.Sharp.IconChar.Bomb;
-            this.btnYear.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnYear.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnYear.IconSize = 24;
-            this.btnYear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnYear.Location = new System.Drawing.Point(0, 474);
-            this.btnYear.Name = "btnYear";
-            this.btnYear.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnYear.Size = new System.Drawing.Size(200, 40);
-            this.btnYear.TabIndex = 7;
-            this.btnYear.Text = "    Year";
-            this.btnYear.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnYear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnYear.UseVisualStyleBackColor = true;
-            this.btnYear.Click += new System.EventHandler(this.btnYear_Click);
+            this.btnPermission.FlatAppearance.BorderSize = 0;
+            this.btnPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPermission.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnPermission.IconChar = FontAwesome.Sharp.IconChar.Bomb;
+            this.btnPermission.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnPermission.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPermission.IconSize = 24;
+            this.btnPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermission.Location = new System.Drawing.Point(0, 473);
+            this.btnPermission.Name = "btnPermission";
+            this.btnPermission.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnPermission.Size = new System.Drawing.Size(200, 40);
+            this.btnPermission.TabIndex = 7;
+            this.btnPermission.Text = "    Permission";
+            this.btnPermission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPermission.UseVisualStyleBackColor = true;
+            this.btnPermission.Click += new System.EventHandler(this.btnPermission_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 600);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
             // 
             // btnLogout
             // 
@@ -321,15 +328,6 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 600);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
-            // 
             // btnProfession
             // 
             this.btnProfession.FlatAppearance.BorderSize = 0;
@@ -341,7 +339,7 @@
             this.btnProfession.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProfession.IconSize = 24;
             this.btnProfession.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProfession.Location = new System.Drawing.Point(0, 422);
+            this.btnProfession.Location = new System.Drawing.Point(0, 421);
             this.btnProfession.Name = "btnProfession";
             this.btnProfession.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnProfession.Size = new System.Drawing.Size(200, 40);
@@ -363,7 +361,7 @@
             this.btnEmploymentStatus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmploymentStatus.IconSize = 24;
             this.btnEmploymentStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmploymentStatus.Location = new System.Drawing.Point(0, 370);
+            this.btnEmploymentStatus.Location = new System.Drawing.Point(0, 369);
             this.btnEmploymentStatus.Name = "btnEmploymentStatus";
             this.btnEmploymentStatus.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnEmploymentStatus.Size = new System.Drawing.Size(200, 40);
@@ -385,7 +383,7 @@
             this.btnMaritalStatus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaritalStatus.IconSize = 24;
             this.btnMaritalStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaritalStatus.Location = new System.Drawing.Point(0, 318);
+            this.btnMaritalStatus.Location = new System.Drawing.Point(0, 317);
             this.btnMaritalStatus.Name = "btnMaritalStatus";
             this.btnMaritalStatus.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMaritalStatus.Size = new System.Drawing.Size(200, 40);
@@ -407,7 +405,7 @@
             this.btnCountry.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCountry.IconSize = 24;
             this.btnCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCountry.Location = new System.Drawing.Point(0, 266);
+            this.btnCountry.Location = new System.Drawing.Point(0, 265);
             this.btnCountry.Name = "btnCountry";
             this.btnCountry.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCountry.Size = new System.Drawing.Size(200, 40);
@@ -429,7 +427,7 @@
             this.btnPosition.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPosition.IconSize = 24;
             this.btnPosition.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPosition.Location = new System.Drawing.Point(0, 214);
+            this.btnPosition.Location = new System.Drawing.Point(0, 213);
             this.btnPosition.Name = "btnPosition";
             this.btnPosition.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPosition.Size = new System.Drawing.Size(200, 40);
@@ -466,28 +464,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(968, 634);
             this.panelDesktop.TabIndex = 18;
             this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
-            // 
-            // btnPermission
-            // 
-            this.btnPermission.FlatAppearance.BorderSize = 0;
-            this.btnPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPermission.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnPermission.IconChar = FontAwesome.Sharp.IconChar.Bomb;
-            this.btnPermission.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnPermission.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPermission.IconSize = 24;
-            this.btnPermission.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPermission.Location = new System.Drawing.Point(0, 530);
-            this.btnPermission.Name = "btnPermission";
-            this.btnPermission.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPermission.Size = new System.Drawing.Size(200, 40);
-            this.btnPermission.TabIndex = 7;
-            this.btnPermission.Text = "    Permission";
-            this.btnPermission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPermission.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPermission.UseVisualStyleBackColor = true;
-            this.btnPermission.Click += new System.EventHandler(this.btnPermission_Click);
             // 
             // FormManagement
             // 
@@ -542,7 +518,6 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelDesktop;
-        private FontAwesome.Sharp.IconButton btnYear;
         private FontAwesome.Sharp.IconButton btnComments;
         private FontAwesome.Sharp.IconButton btnManagement;
         private FontAwesome.Sharp.IconButton btnPermission;

@@ -15,7 +15,6 @@ namespace APC.DAL
     public partial class PHONE_NUMBERS
     {
         public int phoneNumberID { get; set; }
-        public int memberID { get; set; }
         public string phoneNumber1 { get; set; }
         public string phoneNumber2 { get; set; }
         public string phoneNumber3 { get; set; }

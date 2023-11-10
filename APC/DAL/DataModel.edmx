@@ -194,6 +194,7 @@
           <Property Name="permissionID" Type="int" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
+          <Property Name="phoneNumberID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="MEMBER_CHILD">
           <Key>
@@ -233,7 +234,6 @@
             <PropertyRef Name="phoneNumberID" />
           </Key>
           <Property Name="phoneNumberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="memberID" Type="int" Nullable="false" />
           <Property Name="phoneNumber1" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="phoneNumber2" Type="varchar" MaxLength="50" />
           <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
@@ -255,13 +255,6 @@
           <Property Name="profession" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
-        </EntityType>
-        <EntityType Name="YEAR">
-          <Key>
-            <PropertyRef Name="yearID" />
-          </Key>
-          <Property Name="yearID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="year" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="APCModelStoreContainer">
           <EntitySet Name="ATTENDANCE" EntityType="Self.ATTENDANCE" Schema="dbo" store:Type="Tables" />
@@ -287,7 +280,6 @@
           <EntitySet Name="PHONE_NUMBERS" EntityType="Self.PHONE_NUMBERS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSITION" EntityType="Self.POSITION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROFESSION" EntityType="Self.PROFESSION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="YEAR" EntityType="Self.YEAR" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -483,6 +475,7 @@
           <Property Name="permissionID" Type="Int32" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="phoneNumberID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="MEMBER_CHILD">
           <Key>
@@ -522,7 +515,6 @@
             <PropertyRef Name="phoneNumberID" />
           </Key>
           <Property Name="phoneNumberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="memberID" Type="Int32" Nullable="false" />
           <Property Name="phoneNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="phoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -545,14 +537,7 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="YEAR">
-          <Key>
-            <PropertyRef Name="yearID" />
-          </Key>
-          <Property Name="yearID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="year1" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityContainer Name="APCEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="APCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
           <EntitySet Name="ATTENDANCE_DATE" EntityType="Self.ATTENDANCE_DATE" />
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" />
@@ -576,14 +561,13 @@
           <EntitySet Name="PHONE_NUMBERS" EntityType="Self.PHONE_NUMBERS" />
           <EntitySet Name="POSITIONs" EntityType="Self.POSITION" />
           <EntitySet Name="PROFESSIONs" EntityType="Self.PROFESSION" />
-          <EntitySet Name="YEARs" EntityType="Self.YEAR" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities1">
+        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities">
           <EntitySetMapping Name="ATTENDANCEs">
             <EntityTypeMapping TypeName="APCModel.ATTENDANCE">
               <MappingFragment StoreEntitySet="ATTENDANCE">
@@ -787,6 +771,7 @@
                 <ScalarProperty Name="permissionID" ColumnName="permissionID" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="phoneNumberID" ColumnName="phoneNumberID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -831,7 +816,6 @@
             <EntityTypeMapping TypeName="APCModel.PHONE_NUMBERS">
               <MappingFragment StoreEntitySet="PHONE_NUMBERS">
                 <ScalarProperty Name="phoneNumberID" ColumnName="phoneNumberID" />
-                <ScalarProperty Name="memberID" ColumnName="memberID" />
                 <ScalarProperty Name="phoneNumber1" ColumnName="phoneNumber1" />
                 <ScalarProperty Name="phoneNumber2" ColumnName="phoneNumber2" />
                 <ScalarProperty Name="phoneNumber3" ColumnName="phoneNumber3" />
@@ -855,14 +839,6 @@
                 <ScalarProperty Name="profession1" ColumnName="profession" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="YEARs">
-            <EntityTypeMapping TypeName="APCModel.YEAR">
-              <MappingFragment StoreEntitySet="YEAR">
-                <ScalarProperty Name="yearID" ColumnName="yearID" />
-                <ScalarProperty Name="year1" ColumnName="year" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

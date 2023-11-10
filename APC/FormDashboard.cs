@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APC.AllForms;
+using APC.BLL;
 using FontAwesome.Sharp;
 
 namespace APC
@@ -120,10 +121,11 @@ namespace APC
         {
             
         }
-
+        ProfessionBLL bll = new ProfessionBLL();
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            labelTotalProfession.Text = bll.ProfessionCount().ToString();
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

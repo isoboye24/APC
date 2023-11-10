@@ -84,6 +84,7 @@ namespace APC
                 {
                     if (bll.Delete(detail))
                     {
+                        MessageBox.Show("Position was deleted");
                         bll = new PositionBLL();
                         dto = bll.Select();
                         dataGridView1.DataSource = dto.Positions;

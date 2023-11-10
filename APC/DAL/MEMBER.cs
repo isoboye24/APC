@@ -35,5 +35,6 @@ namespace APC.DAL
         public int permissionID { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
+        public string phoneNumberID { get; set; }
     }
 }

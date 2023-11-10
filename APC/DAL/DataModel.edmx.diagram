@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="52d119faf0ed41dbb6f00d5f5729f060" Name="Diagram1">
+      <Diagram DiagramId="20eed790a4d04e0d94bb595321ec0fda" Name="Diagram1">
         <EntityTypeShape EntityType="APCModel.ATTENDANCE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.ATTENDANCE_DATE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.ATTENDANCE_STATUS" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
@@ -28,7 +28,6 @@
         <EntityTypeShape EntityType="APCModel.PHONE_NUMBERS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.POSITION" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.PROFESSION" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="APCModel.YEAR" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

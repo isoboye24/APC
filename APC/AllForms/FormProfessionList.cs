@@ -1,4 +1,6 @@
-﻿using System;
+﻿using APC.BLL;
+using APC.DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,14 +25,67 @@ namespace APC
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Professions;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             FormProfession open = new FormProfession();
+            open.detail = detail;
+            open.isUpdate = true;
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+            bll = new ProfessionBLL();
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Professions;
+        }
+        ProfessionBLL bll = new ProfessionBLL();
+        ProfessionDTO dto = new ProfessionDTO();
+        private void FormProfessionList_Load(object sender, EventArgs e)
+        {            
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Professions;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "Profession Name";
+        }
+
+        private void txtProfession_TextChanged(object sender, EventArgs e)
+        {
+            List<ProfessionDetailDTO> list = dto.Professions;
+            list = list.Where(x => x.Profession.Contains(txtProfession.Text)).ToList();
+            dataGridView1.DataSource = list;
+        }
+        ProfessionDetailDTO detail = new ProfessionDetailDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new ProfessionDetailDTO();
+            detail.ProfessionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.Profession = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ProfessionID == 0)
+            {
+                MessageBox.Show("Please select a profession from the table");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?","Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Profession was deleted");
+                        bll = new ProfessionBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Professions;
+                        txtProfession.Clear();
+                    }
+                }
+            }
         }
     }
 }
