@@ -64,6 +64,18 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public int PositionCount()
+        {
+            try
+            {
+                int position = db.POSITIONs.Count(x => x.isDeleted == false);
+                return position;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool Update(POSITION entity)
         {

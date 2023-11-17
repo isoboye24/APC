@@ -121,11 +121,11 @@ namespace APC
         {
             
         }
-        ProfessionBLL bll = new ProfessionBLL();
+        MemberBLL memberBLL = new MemberBLL();
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            labelTotalProfession.Text = bll.ProfessionCount().ToString();
+            General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), 150, 29);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -296,6 +296,11 @@ namespace APC
             OpenChildForm(new FormDeletedData());
         }
 
-        
+        private void btnExpenditure_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormExpenditureList());
+        }
     }
 }

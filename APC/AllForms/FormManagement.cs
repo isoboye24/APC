@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APC.BLL;
 using FontAwesome.Sharp;
 
 namespace APC.AllForms
@@ -127,9 +128,16 @@ namespace APC.AllForms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        ProfessionBLL profBll = new ProfessionBLL();
+        PositionBLL posBll = new PositionBLL();
+        
         private void FormManagement_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            posBll = new PositionBLL();
+            profBll = new ProfessionBLL();
+            General.ValueCount(labelTotalProfession, profBll.ProfessionCount(), 150, 29);
+            General.ValueCount(labelTotalPosition, posBll.PositionCount(), 150, 29);            
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -261,6 +269,20 @@ namespace APC.AllForms
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormPermissionList());
+        }
+
+        private void btnNationality_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormNationalityList());
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormContactList());
         }
     }
 }

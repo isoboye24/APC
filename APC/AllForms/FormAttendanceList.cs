@@ -15,35 +15,35 @@ namespace APC
         public FormAttendanceList()
         {
             InitializeComponent();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FormAttendance open = new FormAttendance();
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            FormAttendance open = new FormAttendance();
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-        }
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            FormAttendance open = new FormAttendance();
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-        }
+        }        
 
         private void FormAttendanceList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            FormAttendance open = new FormAttendance();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            FormAttendance open = new FormAttendance();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnView_Click_1(object sender, EventArgs e)
+        {
+            FormAttendance open = new FormAttendance();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
         }
     }
 }

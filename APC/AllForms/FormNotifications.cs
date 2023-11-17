@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APC
+namespace APC.AllForms
 {
-    public partial class FormYearAndMonthList : Form
+    public partial class FormNotifications : Form
     {
-        public FormYearAndMonthList()
+        public FormNotifications()
         {
             InitializeComponent();
         }

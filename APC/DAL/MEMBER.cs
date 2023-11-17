@@ -26,7 +26,6 @@ namespace APC.DAL
         public Nullable<System.DateTime> membershipDate { get; set; }
         public int countryID { get; set; }
         public int nationalityID { get; set; }
-        public Nullable<int> dualNationalityID { get; set; }
         public int professionID { get; set; }
         public int positionID { get; set; }
         public int genderID { get; set; }
@@ -35,6 +34,8 @@ namespace APC.DAL
         public int permissionID { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
-        public string phoneNumberID { get; set; }
+        public string phoneNumber { get; set; }
+        public string phoneNumber2 { get; set; }
+        public string phoneNumber3 { get; set; }
     }
 }

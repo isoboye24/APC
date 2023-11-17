@@ -47,8 +47,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEventTitle = new System.Windows.Forms.TextBox();
             this.txtEventSummary = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -286,7 +286,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txtEventTitle, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.comboBox1, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(13, 13);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -320,16 +320,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Event";
             // 
-            // txtEventTitle
-            // 
-            this.txtEventTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEventTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEventTitle.Location = new System.Drawing.Point(100, 3);
-            this.txtEventTitle.Multiline = true;
-            this.txtEventTitle.Name = "txtEventTitle";
-            this.txtEventTitle.Size = new System.Drawing.Size(175, 40);
-            this.txtEventTitle.TabIndex = 1;
-            // 
             // txtEventSummary
             // 
             this.txtEventSummary.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -339,6 +329,16 @@
             this.txtEventSummary.Name = "txtEventSummary";
             this.txtEventSummary.Size = new System.Drawing.Size(278, 390);
             this.txtEventSummary.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(100, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 29);
+            this.comboBox1.TabIndex = 1;
             // 
             // FormSingleImage
             // 
@@ -390,9 +390,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEventTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEventSummary;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

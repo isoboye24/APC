@@ -37,6 +37,10 @@ namespace APC.BLL
             dto.Positions = dao.Select();
             return dto;
         }
+        public int PositionCount()
+        {
+            return dao.PositionCount();
+        }
 
         public bool Update(PositionDetailDTO entity)
         {

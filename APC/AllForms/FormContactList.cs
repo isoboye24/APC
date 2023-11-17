@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APC
+namespace APC.AllForms
 {
-    public partial class FormPermission : Form
+    public partial class FormContactList : Form
     {
-        public FormPermission()
+        public FormContactList()
         {
             InitializeComponent();
         }

@@ -32,7 +32,6 @@ namespace APC.DAL
         public virtual DbSet<COMMENT> COMMENTs { get; set; }
         public virtual DbSet<COUNTRY> COUNTRies { get; set; }
         public virtual DbSet<DEATH_MEMBER> DEATH_MEMBER { get; set; }
-        public virtual DbSet<DUAL_NATIONALITY> DUAL_NATIONALITY { get; set; }
         public virtual DbSet<EMPLOYMENT_STATUS> EMPLOYMENT_STATUS { get; set; }
         public virtual DbSet<EVENT_IMAGE> EVENT_IMAGE { get; set; }
         public virtual DbSet<EVENT> EVENTS { get; set; }
@@ -45,7 +44,6 @@ namespace APC.DAL
         public virtual DbSet<MONTH> MONTHs { get; set; }
         public virtual DbSet<NATIONALITY> NATIONALITies { get; set; }
         public virtual DbSet<PERMISSION> PERMISSIONs { get; set; }
-        public virtual DbSet<PHONE_NUMBERS> PHONE_NUMBERS { get; set; }
         public virtual DbSet<POSITION> POSITIONs { get; set; }
         public virtual DbSet<PROFESSION> PROFESSIONs { get; set; }
     }

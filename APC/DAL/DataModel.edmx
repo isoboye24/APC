@@ -90,15 +90,6 @@
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
         </EntityType>
-        <EntityType Name="DUAL_NATIONALITY">
-          <Key>
-            <PropertyRef Name="dualNationalityID" />
-          </Key>
-          <Property Name="dualNationalityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="dualNationality" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="isDeleted" Type="bit" Nullable="false" />
-          <Property Name="deletedDate" Type="date" />
-        </EntityType>
         <EntityType Name="EMPLOYMENT_STATUS">
           <Key>
             <PropertyRef Name="employmentStatusID" />
@@ -185,7 +176,6 @@
           <Property Name="membershipDate" Type="date" />
           <Property Name="countryID" Type="int" Nullable="false" />
           <Property Name="nationalityID" Type="int" Nullable="false" />
-          <Property Name="dualNationalityID" Type="int" />
           <Property Name="professionID" Type="int" Nullable="false" />
           <Property Name="positionID" Type="int" Nullable="false" />
           <Property Name="genderID" Type="int" Nullable="false" />
@@ -194,7 +184,9 @@
           <Property Name="permissionID" Type="int" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
-          <Property Name="phoneNumberID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phoneNumber2" Type="varchar" MaxLength="50" />
+          <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MEMBER_CHILD">
           <Key>
@@ -229,15 +221,6 @@
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
         </EntityType>
-        <EntityType Name="PHONE_NUMBERS">
-          <Key>
-            <PropertyRef Name="phoneNumberID" />
-          </Key>
-          <Property Name="phoneNumberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="phoneNumber1" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="phoneNumber2" Type="varchar" MaxLength="50" />
-          <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="POSITION">
           <Key>
             <PropertyRef Name="positionID" />
@@ -264,7 +247,6 @@
           <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COUNTRY" EntityType="Self.COUNTRY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DEATH_MEMBER" EntityType="Self.DEATH_MEMBER" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMPLOYMENT_STATUS" EntityType="Self.EMPLOYMENT_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EVENT_IMAGE" EntityType="Self.EVENT_IMAGE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EVENTS" EntityType="Self.EVENTS" Schema="dbo" store:Type="Tables" />
@@ -277,7 +259,6 @@
           <EntitySet Name="MONTH" EntityType="Self.MONTH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NATIONALITY" EntityType="Self.NATIONALITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PHONE_NUMBERS" EntityType="Self.PHONE_NUMBERS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSITION" EntityType="Self.POSITION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROFESSION" EntityType="Self.PROFESSION" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -371,15 +352,6 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="DUAL_NATIONALITY">
-          <Key>
-            <PropertyRef Name="dualNationalityID" />
-          </Key>
-          <Property Name="dualNationalityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dualNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="deletedDate" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="EMPLOYMENT_STATUS">
           <Key>
             <PropertyRef Name="employmentStatusID" />
@@ -466,7 +438,6 @@
           <Property Name="membershipDate" Type="DateTime" Precision="0" />
           <Property Name="countryID" Type="Int32" Nullable="false" />
           <Property Name="nationalityID" Type="Int32" Nullable="false" />
-          <Property Name="dualNationalityID" Type="Int32" />
           <Property Name="professionID" Type="Int32" Nullable="false" />
           <Property Name="positionID" Type="Int32" Nullable="false" />
           <Property Name="genderID" Type="Int32" Nullable="false" />
@@ -475,7 +446,9 @@
           <Property Name="permissionID" Type="Int32" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
-          <Property Name="phoneNumberID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MEMBER_CHILD">
           <Key>
@@ -510,15 +483,6 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="PHONE_NUMBERS">
-          <Key>
-            <PropertyRef Name="phoneNumberID" />
-          </Key>
-          <Property Name="phoneNumberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="phoneNumber1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="phoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="POSITION">
           <Key>
             <PropertyRef Name="positionID" />
@@ -545,7 +509,6 @@
           <EntitySet Name="COMMENTs" EntityType="Self.COMMENT" />
           <EntitySet Name="COUNTRies" EntityType="Self.COUNTRY" />
           <EntitySet Name="DEATH_MEMBER" EntityType="Self.DEATH_MEMBER" />
-          <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" />
           <EntitySet Name="EMPLOYMENT_STATUS" EntityType="Self.EMPLOYMENT_STATUS" />
           <EntitySet Name="EVENT_IMAGE" EntityType="Self.EVENT_IMAGE" />
           <EntitySet Name="EVENTS" EntityType="Self.EVENT" />
@@ -558,7 +521,6 @@
           <EntitySet Name="MONTHs" EntityType="Self.MONTH" />
           <EntitySet Name="NATIONALITies" EntityType="Self.NATIONALITY" />
           <EntitySet Name="PERMISSIONs" EntityType="Self.PERMISSION" />
-          <EntitySet Name="PHONE_NUMBERS" EntityType="Self.PHONE_NUMBERS" />
           <EntitySet Name="POSITIONs" EntityType="Self.POSITION" />
           <EntitySet Name="PROFESSIONs" EntityType="Self.PROFESSION" />
         </EntityContainer>
@@ -660,16 +622,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DUAL_NATIONALITY">
-            <EntityTypeMapping TypeName="APCModel.DUAL_NATIONALITY">
-              <MappingFragment StoreEntitySet="DUAL_NATIONALITY">
-                <ScalarProperty Name="dualNationalityID" ColumnName="dualNationalityID" />
-                <ScalarProperty Name="dualNationality" ColumnName="dualNationality" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="EMPLOYMENT_STATUS">
             <EntityTypeMapping TypeName="APCModel.EMPLOYMENT_STATUS">
               <MappingFragment StoreEntitySet="EMPLOYMENT_STATUS">
@@ -762,7 +714,6 @@
                 <ScalarProperty Name="membershipDate" ColumnName="membershipDate" />
                 <ScalarProperty Name="countryID" ColumnName="countryID" />
                 <ScalarProperty Name="nationalityID" ColumnName="nationalityID" />
-                <ScalarProperty Name="dualNationalityID" ColumnName="dualNationalityID" />
                 <ScalarProperty Name="professionID" ColumnName="professionID" />
                 <ScalarProperty Name="positionID" ColumnName="positionID" />
                 <ScalarProperty Name="genderID" ColumnName="genderID" />
@@ -771,7 +722,9 @@
                 <ScalarProperty Name="permissionID" ColumnName="permissionID" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
-                <ScalarProperty Name="phoneNumberID" ColumnName="phoneNumberID" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="phoneNumber2" ColumnName="phoneNumber2" />
+                <ScalarProperty Name="phoneNumber3" ColumnName="phoneNumber3" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -809,16 +762,6 @@
                 <ScalarProperty Name="permission1" ColumnName="permission" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PHONE_NUMBERS">
-            <EntityTypeMapping TypeName="APCModel.PHONE_NUMBERS">
-              <MappingFragment StoreEntitySet="PHONE_NUMBERS">
-                <ScalarProperty Name="phoneNumberID" ColumnName="phoneNumberID" />
-                <ScalarProperty Name="phoneNumber1" ColumnName="phoneNumber1" />
-                <ScalarProperty Name="phoneNumber2" ColumnName="phoneNumber2" />
-                <ScalarProperty Name="phoneNumber3" ColumnName="phoneNumber3" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -16,5 +16,21 @@ namespace APC
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormChildren open = new FormChildren();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FormChildren open = new FormChildren();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

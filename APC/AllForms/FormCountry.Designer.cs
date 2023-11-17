@@ -179,7 +179,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCountry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCountry";
             this.Load += new System.EventHandler(this.FormCountry_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

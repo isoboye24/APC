@@ -99,6 +99,12 @@
     <Compile Include="AllForms\FormCommentsList.Designer.cs">
       <DependentUpon>FormCommentsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormContactList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormContactList.Designer.cs">
+      <DependentUpon>FormContactList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,18 @@
     <Compile Include="AllForms\FormEvenImages.Designer.cs">
       <DependentUpon>FormEvenImages.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormExpenditure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormExpenditure.Designer.cs">
+      <DependentUpon>FormExpenditure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormExpenditureList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormExpenditureList.Designer.cs">
+      <DependentUpon>FormExpenditureList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormFinancialReportList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,17 +159,44 @@
     <Compile Include="AllForms\FormManagement.Designer.cs">
       <DependentUpon>FormManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormNationality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormNationality.Designer.cs">
+      <DependentUpon>FormNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormNationalityList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormNationalityList.Designer.cs">
+      <DependentUpon>FormNationalityList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormNotifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormNotifications.Designer.cs">
+      <DependentUpon>FormNotifications.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormSingleImage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FormSingleImage.Designer.cs">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewMember.Designer.cs">
+      <DependentUpon>FormViewMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\MaritalStatusBLL.cs" />
+    <Compile Include="BLL\MemberBLL.cs" />
+    <Compile Include="BLL\NationalityBLL.cs" />
+    <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="BLL\ProfessionBLL.cs" />
     <Compile Include="DAL\ATTENDANCE.cs">
@@ -178,6 +223,9 @@
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\MaritalStatusDAO.cs" />
+    <Compile Include="DAL\DAO\MemberDAO.cs" />
+    <Compile Include="DAL\DAO\NationalityDAO.cs" />
+    <Compile Include="DAL\DAO\PermissionDAO.cs" />
     <Compile Include="DAL\DAO\PositionDAO.cs" />
     <Compile Include="DAL\DAO\ProfessionDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
@@ -200,19 +248,23 @@
     </Compile>
     <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CountryDTO.cs" />
+    <Compile Include="DAL\DTO\DualNationalityDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDTO.cs" />
     <Compile Include="DAL\DTO\MaritalStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\MaritalStatusDTO.cs" />
+    <Compile Include="DAL\DTO\MemberDetailDTO.cs" />
+    <Compile Include="DAL\DTO\MemberDTO.cs" />
+    <Compile Include="DAL\DTO\NationalityDetailDTO.cs" />
+    <Compile Include="DAL\DTO\NationalityDTO.cs" />
+    <Compile Include="DAL\DTO\PermissionDetailDTO.cs" />
+    <Compile Include="DAL\DTO\PermissionDTO.cs" />
     <Compile Include="DAL\DTO\PositionDetailDTO.cs" />
     <Compile Include="DAL\DTO\PositionDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDetailDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDTO.cs" />
-    <Compile Include="DAL\DUAL_NATIONALITY.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\EMPLOYMENT_STATUS.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -249,15 +301,13 @@
     <Compile Include="DAL\PERMISSION.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\PHONE_NUMBERS.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\POSITION.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PROFESSION.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FillComboBox.cs" />
     <Compile Include="FormDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,12 +368,6 @@
     <Compile Include="AllForms\FormMembersList.Designer.cs">
       <DependentUpon>FormMembersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormPermission.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormPermission.Designer.cs">
-      <DependentUpon>FormPermission.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormPermissionList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,13 +398,6 @@
     <Compile Include="AllForms\FormProfessionList.Designer.cs">
       <DependentUpon>FormProfessionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\.Designer.cs">
-      <DependentUpon>.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -381,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormCommentsList.resx">
       <DependentUpon>FormCommentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormContactList.resx">
+      <DependentUpon>FormContactList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormCountry.resx">
       <DependentUpon>FormCountry.cs</DependentUpon>
@@ -406,6 +446,12 @@
     <EmbeddedResource Include="AllForms\FormEventsList.resx">
       <DependentUpon>FormEventsList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormExpenditure.resx">
+      <DependentUpon>FormExpenditure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormExpenditureList.resx">
+      <DependentUpon>FormExpenditureList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormFinancialReportList.resx">
       <DependentUpon>FormFinancialReportList.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +467,15 @@
     <EmbeddedResource Include="AllForms\FormMaritalStatusList.resx">
       <DependentUpon>FormMaritalStatusList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormNationality.resx">
+      <DependentUpon>FormNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormNationalityList.resx">
+      <DependentUpon>FormNationalityList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormNotifications.resx">
+      <DependentUpon>FormNotifications.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormProfession.resx">
       <DependentUpon>FormProfession.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormSingleImage.resx">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewMember.resx">
+      <DependentUpon>FormViewMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>
