@@ -62,7 +62,7 @@ namespace APC.BLL
         public MemberDTO Select()
         {
             MemberDTO dto = new MemberDTO();
-            dto.Members = memberDAO.Select();
+            dto.Members = memberDAO.Select();            
             dto.Professions = professionDAO.Select();
             dto.Countries = countryDAO.Select();
             dto.Nationalities = nationalityDAO.Select();
@@ -76,6 +76,7 @@ namespace APC.BLL
         {
             return memberDAO.SelectAllMembersCount();
         }
+        
         public int SelectCountMale()
         {
             return memberDAO.SelectCountMale();
@@ -88,6 +89,11 @@ namespace APC.BLL
         {
             return memberDAO.SelectCountDivisor();
         }
+        public int SelectCountUniqueNationality()
+        {
+            return memberDAO.SelectCountUniqueNationality();
+        }
+
         public bool Update(MemberDetailDTO entity)
         {
             MEMBER member = new MEMBER();

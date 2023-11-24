@@ -22,7 +22,8 @@ namespace APC
         {
             InitializeComponent();
         }
-
+        MemberBLL memberbll = new MemberBLL();
+        MemberDTO memberDTO = new MemberDTO();
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FormMembers open = new FormMembers();
@@ -30,7 +31,7 @@ namespace APC
             open.ShowDialog();
             this.Visible = true;
             memberDTO = memberbll.Select();
-            FillDataGridView();
+            dataGridView1.DataSource = memberDTO.Members;
             ClearFilters();
             GetMemberCounts();
         }
@@ -49,8 +50,10 @@ namespace APC
                 open.isUpdate = true;
                 this.Hide();
                 open.ShowDialog();
-                this.Visible = true;               
-                FillDataGridView();
+                this.Visible = true;
+                memberbll = new MemberBLL();
+                memberDTO = memberbll.Select();
+                dataGridView1.DataSource = memberDTO.Members;
                 ClearFilters();
                 GetMemberCounts();
             }            
@@ -70,26 +73,29 @@ namespace APC
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
-                FillDataGridView();
+                memberDTO = memberbll.Select();
+                dataGridView1.DataSource = memberDTO.Members;
                 ClearFilters();
             }            
         }
-
-        GenderBLL genderBLL = new GenderBLL();
-        GenderDTO genderDTO = new GenderDTO();
-        ProfessionBLL professionBLL = new ProfessionBLL();
-        ProfessionDTO professionDTO = new ProfessionDTO();
-        PositionBLL positionBLL = new PositionBLL();
-        PositionDTO positionDTO = new PositionDTO();
-        NationalityBLL nationalityBLL = new NationalityBLL();
-        NationalityDTO nationalityDTO = new NationalityDTO();
-        MemberBLL memberbll = new MemberBLL();
-        MemberDTO memberDTO = new MemberDTO();
+       
         private void FormMembersList_Load(object sender, EventArgs e)
         {
-            FillInFilters();
+            memberDTO = memberbll.Select();
 
-            FillDataGridView();
+            cmbGender.DataSource = memberDTO.Genders;
+            General.ComboBoxProps(cmbGender, "GenderName", "genderID");
+
+            cmbProfession.DataSource = memberDTO.Professions;
+            General.ComboBoxProps(cmbProfession, "Profession", "professionID");
+
+            cmbPosition.DataSource = memberDTO.Positions;
+            General.ComboBoxProps(cmbPosition, "PositionName", "positionID");
+
+            cmbNationality.DataSource = memberDTO.Nationalities;
+            General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
+
+            dataGridView1.DataSource = memberDTO.Members;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].Visible = false;
@@ -119,7 +125,7 @@ namespace APC
             dataGridView1.Columns[26].Visible = false;
             dataGridView1.Columns[27].Visible = false;
             dataGridView1.Columns[28].Visible = false;
-
+            
             GetMemberCounts();
         }
         private void GetMemberCounts()
@@ -128,25 +134,7 @@ namespace APC
             labelNoOfFemale.Text = memberbll.SelectCountFemale().ToString();
             labelNoOfDivisor.Text = memberbll.SelectCountDivisor().ToString();
         }
-        private void FillInFilters()
-        {
-            genderDTO = genderBLL.Select();
-            cmbGender.DataSource = genderDTO.Genders;
-            General.ComboBoxProps(cmbGender, "GenderName", "genderID");
-
-            professionDTO = professionBLL.Select();
-            cmbProfession.DataSource = professionDTO.Professions;
-            General.ComboBoxProps(cmbProfession, "Profession", "professionID");
-
-            positionDTO = positionBLL.Select();
-            cmbPosition.DataSource = positionDTO.Positions;
-            General.ComboBoxProps(cmbPosition, "PositionName", "positionID");
-
-            nationalityDTO = nationalityBLL.Select();
-            cmbNationality.DataSource = nationalityDTO.Nationalities;
-            General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
-        }
-
+        
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             List<MemberDetailDTO> list = memberDTO.Members;
@@ -182,29 +170,20 @@ namespace APC
             }
             dataGridView1.DataSource = list;
         }
-        private void FillDataGridView()
-        {
-            memberbll = new MemberBLL();
-            memberDTO = memberbll.Select();
-            dataGridView1.DataSource = memberDTO.Members;
-        }
+        
         private void btnClear_Click(object sender, EventArgs e)
         {
-            ClearFilters();
-            FillDataGridView();
+            ClearFilters();            
         }
         private void ClearFilters()
         {
             txtName.Clear();
-            txtSurname.Clear();
+            txtSurname.Clear();            
             cmbNationality.SelectedIndex = -1;
-            cmbNationality.DataSource = nationalityDTO.Nationalities;
             cmbGender.SelectedIndex = -1;
-            cmbGender.DataSource = genderDTO.Genders;
             cmbPosition.SelectedIndex = -1;
-            cmbPosition.DataSource = positionDTO.Positions;
             cmbProfession.SelectedIndex = -1;
-            cmbProfession.DataSource = professionDTO.Professions;
+            dataGridView1.DataSource = memberDTO.Members;
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -257,9 +236,8 @@ namespace APC
                         MessageBox.Show("Member was deleted");
                         memberbll = new MemberBLL();
                         memberDTO = memberbll.Select();
-                        FillDataGridView();
-                        ClearFilters();
-                        FillInFilters();
+                        dataGridView1.DataSource = memberDTO.Members;
+                        ClearFilters();                        
                         GetMemberCounts();
                     }
                 }

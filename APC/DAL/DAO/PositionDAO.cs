@@ -49,7 +49,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<PositionDetailDTO> positions = new List<PositionDetailDTO>();
-                var list = db.POSITIONs.Where(x =>x.isDeleted==false).ToList();
+                var list = db.POSITIONs.Where(x =>x.isDeleted==false).OrderBy(x => x.positionName).ToList();
                 foreach (var item in list)
                 {
                     PositionDetailDTO dto = new PositionDetailDTO();

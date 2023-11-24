@@ -13,10 +13,10 @@ namespace APC.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class APCEntities : DbContext
+    public partial class APCEntities2 : DbContext
     {
-        public APCEntities()
-            : base("name=APCEntities")
+        public APCEntities2()
+            : base("name=APCEntities2")
         {
         }
     
@@ -40,7 +40,6 @@ namespace APC.DAL
         public virtual DbSet<GENDER> GENDERs { get; set; }
         public virtual DbSet<MARITAL_STATUS> MARITAL_STATUS { get; set; }
         public virtual DbSet<MEMBER> MEMBERs { get; set; }
-        public virtual DbSet<MEMBER_CHILD> MEMBER_CHILD { get; set; }
         public virtual DbSet<MONTH> MONTHs { get; set; }
         public virtual DbSet<NATIONALITY> NATIONALITies { get; set; }
         public virtual DbSet<PERMISSION> PERMISSIONs { get; set; }

@@ -122,10 +122,15 @@ namespace APC
             
         }
         MemberBLL memberBLL = new MemberBLL();
+        CommentBLL commentBLL = new CommentBLL();
+        ChildBLL childBLL = new ChildBLL();
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
             General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), 150, 29);
+            General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), 150, 29);
+            General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), 150, 29);
+            //General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), 150, 29);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -289,18 +294,25 @@ namespace APC
             OpenChildForm(new FormEventsList());
         }
 
-        private void btnDeletedData_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormDeletedData());
-        }
-
         private void btnExpenditure_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormExpenditureList());
+        }
+
+        private void btnComments_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormCommentsList());
+        }
+
+        private void btnDeadMembers_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormDeadMembersList());
         }
     }
 }

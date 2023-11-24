@@ -87,6 +87,12 @@
     <Compile Include="AllForms\FormChildrenList.Designer.cs">
       <DependentUpon>FormChildrenList.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormChildrenOfSingleParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormChildrenOfSingleParent.Designer.cs">
+      <DependentUpon>FormChildrenOfSingleParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormComments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,18 @@
     </Compile>
     <Compile Include="AllForms\FormCountryList.Designer.cs">
       <DependentUpon>FormCountryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormDeadMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormDeadMembers.Designer.cs">
+      <DependentUpon>FormDeadMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormDeadMembersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormDeadMembersList.Designer.cs">
+      <DependentUpon>FormDeadMembersList.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormDeletedData.cs">
       <SubType>Form</SubType>
@@ -183,18 +201,41 @@
     <Compile Include="AllForms\FormSingleImage.Designer.cs">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewChild.Designer.cs">
+      <DependentUpon>FormViewChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormViewChildrenList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewChildrenList.Designer.cs">
+      <DependentUpon>FormViewChildrenList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormViewComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewComment.Designer.cs">
+      <DependentUpon>FormViewComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormViewMember.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FormViewMember.Designer.cs">
       <DependentUpon>FormViewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ChildBLL.cs" />
+    <Compile Include="BLL\CommentBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
+    <Compile Include="BLL\FatherBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\MaritalStatusBLL.cs" />
     <Compile Include="BLL\MemberBLL.cs" />
+    <Compile Include="BLL\MonthBLL.cs" />
+    <Compile Include="BLL\MotherBLL.cs" />
     <Compile Include="BLL\NationalityBLL.cs" />
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
@@ -218,12 +259,17 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
+    <Compile Include="DAL\DAO\ChildDAO.cs" />
+    <Compile Include="DAL\DAO\CommentDAO.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
     <Compile Include="DAL\DAO\EmploymentStatusDAO.cs" />
+    <Compile Include="DAL\DAO\FatherDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\MaritalStatusDAO.cs" />
     <Compile Include="DAL\DAO\MemberDAO.cs" />
+    <Compile Include="DAL\DAO\MonthDAO.cs" />
+    <Compile Include="DAL\DAO\MotherDAO.cs" />
     <Compile Include="DAL\DAO\NationalityDAO.cs" />
     <Compile Include="DAL\DAO\PermissionDAO.cs" />
     <Compile Include="DAL\DAO\PositionDAO.cs" />
@@ -246,17 +292,27 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\ChildDetailDTO.cs" />
+    <Compile Include="DAL\DTO\ChildDTO.cs" />
+    <Compile Include="DAL\DTO\CommentDetailDTO.cs" />
+    <Compile Include="DAL\DTO\CommentDTO.cs" />
     <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CountryDTO.cs" />
     <Compile Include="DAL\DTO\DualNationalityDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDTO.cs" />
+    <Compile Include="DAL\DTO\FatherDTO.cs" />
+    <Compile Include="DAL\DTO\FathersDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDTO.cs" />
     <Compile Include="DAL\DTO\MaritalStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\MaritalStatusDTO.cs" />
     <Compile Include="DAL\DTO\MemberDetailDTO.cs" />
     <Compile Include="DAL\DTO\MemberDTO.cs" />
+    <Compile Include="DAL\DTO\MonthDetailDTO.cs" />
+    <Compile Include="DAL\DTO\MonthDTO.cs" />
+    <Compile Include="DAL\DTO\MotherDTO.cs" />
+    <Compile Include="DAL\DTO\MothersDetailDTO.cs" />
     <Compile Include="DAL\DTO\NationalityDetailDTO.cs" />
     <Compile Include="DAL\DTO\NationalityDTO.cs" />
     <Compile Include="DAL\DTO\PermissionDetailDTO.cs" />
@@ -287,9 +343,6 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\MEMBER.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MEMBER_CHILD.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\MONTH.cs">
@@ -413,6 +466,9 @@
     <EmbeddedResource Include="AllForms\FormChildrenList.resx">
       <DependentUpon>FormChildrenList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormChildrenOfSingleParent.resx">
+      <DependentUpon>FormChildrenOfSingleParent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormComments.resx">
       <DependentUpon>FormComments.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +483,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormCountryList.resx">
       <DependentUpon>FormCountryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormDeadMembers.resx">
+      <DependentUpon>FormDeadMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormDeadMembersList.resx">
+      <DependentUpon>FormDeadMembersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormDeletedData.resx">
       <DependentUpon>FormDeletedData.cs</DependentUpon>
@@ -484,6 +546,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormSingleImage.resx">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewChild.resx">
+      <DependentUpon>FormViewChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewChildrenList.resx">
+      <DependentUpon>FormViewChildrenList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewComment.resx">
+      <DependentUpon>FormViewComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewMember.resx">
       <DependentUpon>FormViewMember.cs</DependentUpon>

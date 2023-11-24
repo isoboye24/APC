@@ -49,7 +49,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<ProfessionDetailDTO> professions = new List<ProfessionDetailDTO>();
-                var list = db.PROFESSIONs.Where(x => x.isDeleted == false).ToList();
+                var list = db.PROFESSIONs.Where(x => x.isDeleted == false).OrderBy(x => x.profession1).ToList();
                 foreach (var item in list)
                 {
                     ProfessionDetailDTO dto = new ProfessionDetailDTO();

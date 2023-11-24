@@ -50,7 +50,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<EmploymentStatusDetailDTO> employmentStatuses = new List<EmploymentStatusDetailDTO>();
-                var list = db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false).ToList();
+                var list = db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false).OrderBy(x => x.employmentStatus).ToList();
                 foreach (var item in list)
                 {
                     EmploymentStatusDetailDTO dto = new EmploymentStatusDetailDTO();

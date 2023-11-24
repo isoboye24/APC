@@ -130,6 +130,7 @@ namespace APC.AllForms
         }
         ProfessionBLL profBll = new ProfessionBLL();
         PositionBLL posBll = new PositionBLL();
+        MemberBLL memberBLL = new MemberBLL();
         
         private void FormManagement_Load(object sender, EventArgs e)
         {
@@ -137,7 +138,8 @@ namespace APC.AllForms
             posBll = new PositionBLL();
             profBll = new ProfessionBLL();
             General.ValueCount(labelTotalProfession, profBll.ProfessionCount(), 150, 29);
-            General.ValueCount(labelTotalPosition, posBll.PositionCount(), 150, 29);            
+            General.ValueCount(labelTotalPosition, posBll.PositionCount(), 150, 29);
+            General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), 150, 29);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -248,12 +250,6 @@ namespace APC.AllForms
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormProfessionList());
         }        
-        private void btnComments_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormCommentsList());
-        }
 
         private void btnManagement_Click(object sender, EventArgs e)
         {
@@ -283,6 +279,13 @@ namespace APC.AllForms
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormContactList());
+        }
+
+        private void btnDeletedData_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormDeletedData());
         }
     }
 }

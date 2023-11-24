@@ -17,8 +17,10 @@ namespace APC.DAL
         public int commentID { get; set; }
         public string comment1 { get; set; }
         public int memberID { get; set; }
-        public System.DateTime dateAndTime { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
+        public int day { get; set; }
+        public int monthID { get; set; }
+        public int year { get; set; }
     }
 }

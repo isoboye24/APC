@@ -38,7 +38,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<NationalityDetailDTO> nationalities = new List<NationalityDetailDTO>();
-                var list = db.NATIONALITies.Where(x=>x.isDeleted==false);
+                var list = db.NATIONALITies.Where(x=>x.isDeleted==false).OrderBy(x=>x.nationality1).ToList();
                 foreach (var item in list)
                 {
                     NationalityDetailDTO dto = new NationalityDetailDTO();

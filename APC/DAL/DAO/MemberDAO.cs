@@ -1,6 +1,7 @@
 ﻿using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -131,7 +132,6 @@ namespace APC.DAL.DAO
                 throw ex;
             }            
         }
-
         public int SelectAllMembersCount()
         {
             try
@@ -180,8 +180,36 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-
-
+        public int SelectCountUniqueNationality()
+        {
+            try
+            {
+                List<string> nationalityList = new List<string>();
+                List<MemberDetailDTO> uniqueNationality = new List<MemberDetailDTO>();
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
+                            join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
+                            select new
+                            {
+                                memberID = m.memberID,
+                                nationalityID = m.nationalityID,
+                                nationality = n.nationality1,
+                            }).Distinct().ToList();
+                foreach (var item in list)
+                {
+                    MemberDetailDTO dto = new MemberDetailDTO();
+                    dto.NationalityName = item.nationality;
+                    nationalityList.Add(item.nationality);
+                    uniqueNationality.Add(dto);
+                }
+                var getUniqueList = nationalityList.Distinct().ToList();
+                int nationalityCount = getUniqueList.Count();
+                return nationalityCount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool Update(MEMBER entity)
         {
             try

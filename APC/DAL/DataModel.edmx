@@ -48,6 +48,8 @@
           <Property Name="nationalityID" Type="int" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
+          <Property Name="motherID" Type="int" />
+          <Property Name="fatherID" Type="int" />
         </EntityType>
         <EntityType Name="COMMENT">
           <Key>
@@ -56,9 +58,11 @@
           <Property Name="commentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="comment" Type="text" Nullable="false" />
           <Property Name="memberID" Type="int" Nullable="false" />
-          <Property Name="dateAndTime" Type="datetime" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
+          <Property Name="day" Type="int" Nullable="false" />
+          <Property Name="monthID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="COUNTRY">
           <Key>
@@ -188,14 +192,6 @@
           <Property Name="phoneNumber2" Type="varchar" MaxLength="50" />
           <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="MEMBER_CHILD">
-          <Key>
-            <PropertyRef Name="memberChildID" />
-          </Key>
-          <Property Name="memberChildID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="memberID" Type="int" Nullable="false" />
-          <Property Name="childID" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="MONTH">
           <Key>
             <PropertyRef Name="monthID" />
@@ -255,7 +251,6 @@
           <EntitySet Name="GENDER" EntityType="Self.GENDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MEMBER_CHILD" EntityType="Self.MEMBER_CHILD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MONTH" EntityType="Self.MONTH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NATIONALITY" EntityType="Self.NATIONALITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
@@ -310,6 +305,8 @@
           <Property Name="nationalityID" Type="Int32" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="motherID" Type="Int32" />
+          <Property Name="fatherID" Type="Int32" />
         </EntityType>
         <EntityType Name="COMMENT">
           <Key>
@@ -318,9 +315,11 @@
           <Property Name="commentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="memberID" Type="Int32" Nullable="false" />
-          <Property Name="dateAndTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="day" Type="Int32" Nullable="false" />
+          <Property Name="monthID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="COUNTRY">
           <Key>
@@ -450,14 +449,6 @@
           <Property Name="phoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="MEMBER_CHILD">
-          <Key>
-            <PropertyRef Name="memberChildID" />
-          </Key>
-          <Property Name="memberChildID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="memberID" Type="Int32" Nullable="false" />
-          <Property Name="childID" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="MONTH">
           <Key>
             <PropertyRef Name="monthID" />
@@ -501,7 +492,7 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityContainer Name="APCEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="APCEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
           <EntitySet Name="ATTENDANCE_DATE" EntityType="Self.ATTENDANCE_DATE" />
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" />
@@ -517,7 +508,6 @@
           <EntitySet Name="GENDERs" EntityType="Self.GENDER" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" />
           <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
-          <EntitySet Name="MEMBER_CHILD" EntityType="Self.MEMBER_CHILD" />
           <EntitySet Name="MONTHs" EntityType="Self.MONTH" />
           <EntitySet Name="NATIONALITies" EntityType="Self.NATIONALITY" />
           <EntitySet Name="PERMISSIONs" EntityType="Self.PERMISSION" />
@@ -529,7 +519,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities">
+        <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities2">
           <EntitySetMapping Name="ATTENDANCEs">
             <EntityTypeMapping TypeName="APCModel.ATTENDANCE">
               <MappingFragment StoreEntitySet="ATTENDANCE">
@@ -575,6 +565,8 @@
                 <ScalarProperty Name="nationalityID" ColumnName="nationalityID" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="motherID" ColumnName="motherID" />
+                <ScalarProperty Name="fatherID" ColumnName="fatherID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -584,9 +576,11 @@
                 <ScalarProperty Name="commentID" ColumnName="commentID" />
                 <ScalarProperty Name="comment1" ColumnName="comment" />
                 <ScalarProperty Name="memberID" ColumnName="memberID" />
-                <ScalarProperty Name="dateAndTime" ColumnName="dateAndTime" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="monthID" ColumnName="monthID" />
+                <ScalarProperty Name="year" ColumnName="year" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -725,15 +719,6 @@
                 <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
                 <ScalarProperty Name="phoneNumber2" ColumnName="phoneNumber2" />
                 <ScalarProperty Name="phoneNumber3" ColumnName="phoneNumber3" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MEMBER_CHILD">
-            <EntityTypeMapping TypeName="APCModel.MEMBER_CHILD">
-              <MappingFragment StoreEntitySet="MEMBER_CHILD">
-                <ScalarProperty Name="memberChildID" ColumnName="memberChildID" />
-                <ScalarProperty Name="memberID" ColumnName="memberID" />
-                <ScalarProperty Name="childID" ColumnName="childID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

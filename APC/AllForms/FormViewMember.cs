@@ -1,4 +1,5 @@
 ﻿using APC.DAL.DTO;
+using APC.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,10 +22,25 @@ namespace APC.AllForms
 
         private void btnViewChildren_Click(object sender, EventArgs e)
         {
-
+            if (noOfChildren > 1)
+            {
+                FormViewChildrenList open = new FormViewChildrenList();
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else if(noOfChildren < 2 && noOfChildren > 0)
+            {
+                FormViewChild open = new FormViewChild();
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }            
         }
         public MemberDetailDTO detail = new MemberDetailDTO();
         public bool isView = false;
+
+        int noOfChildren = 2;
         private void FormViewMember_Load(object sender, EventArgs e)
         {
             txtPhone2.Hide();
@@ -32,7 +48,7 @@ namespace APC.AllForms
             labelPhone2.Hide();
             labelPhone3.Hide();
             btnViewChildren.Hide();
-            labelNoOfChildren.Text = 3.ToString();
+            labelNoOfChildren.Text = noOfChildren.ToString();
             if (Convert.ToInt32(labelNoOfChildren.Text) > 0)
             {
                 labelChildren.Text = "Child";

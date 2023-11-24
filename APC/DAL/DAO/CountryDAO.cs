@@ -50,7 +50,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<CountryDetailDTO> countries = new List<CountryDetailDTO>();
-                var list = db.COUNTRies.Where(x=>x.isDeleted==false).ToList();
+                var list = db.COUNTRies.Where(x=>x.isDeleted==false).OrderBy(x=>x.countryName).ToList();
                 foreach (var item in list)
                 {
                     CountryDetailDTO dto = new CountryDetailDTO();
@@ -77,7 +77,7 @@ namespace APC.DAL.DAO
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

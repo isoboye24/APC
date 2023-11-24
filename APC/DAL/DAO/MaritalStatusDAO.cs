@@ -49,7 +49,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MaritalStatusDetailDTO> maritalStatuses = new List<MaritalStatusDetailDTO>();
-                var list = db.MARITAL_STATUS.Where(x => x.isDeleted == false).ToList();
+                var list = db.MARITAL_STATUS.Where(x => x.isDeleted == false).OrderBy(x => x.maritalStatus).ToList();
                 foreach (var item in list)
                 {
                     MaritalStatusDetailDTO dto = new MaritalStatusDetailDTO();

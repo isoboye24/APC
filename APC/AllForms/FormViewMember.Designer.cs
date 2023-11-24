@@ -32,9 +32,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelMemberNameTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimize = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,12 +63,12 @@
             this.labelChildren = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
-            this.labelPhone3 = new System.Windows.Forms.Label();
-            this.txtPhone3 = new System.Windows.Forms.TextBox();
-            this.labelPhone2 = new System.Windows.Forms.Label();
-            this.txtPhone2 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtPhone1 = new System.Windows.Forms.TextBox();
+            this.labelPhone2 = new System.Windows.Forms.Label();
+            this.txtPhone2 = new System.Windows.Forms.TextBox();
+            this.labelPhone3 = new System.Windows.Forms.Label();
+            this.txtPhone3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -90,9 +90,9 @@
             this.labelBirthday = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
-            this.panel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -146,6 +146,18 @@
             this.labelMemberNameTitle.TabIndex = 5;
             this.labelMemberNameTitle.Text = "MEMBER_NAME";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.labelMemberNameTitle);
+            this.panel1.Controls.Add(this.picClose);
+            this.panel1.Controls.Add(this.picMinimize);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 51);
+            this.panel1.TabIndex = 32;
+            // 
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,18 +182,6 @@
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel1.Controls.Add(this.labelMemberNameTitle);
-            this.panel1.Controls.Add(this.picClose);
-            this.panel1.Controls.Add(this.picMinimize);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 51);
-            this.panel1.TabIndex = 32;
             // 
             // tableLayoutPanel11
             // 
@@ -576,26 +576,26 @@
             this.txtNationality.Size = new System.Drawing.Size(176, 29);
             this.txtNationality.TabIndex = 0;
             // 
-            // labelPhone3
+            // label19
             // 
-            this.labelPhone3.AutoSize = true;
-            this.labelPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone3.Location = new System.Drawing.Point(3, 268);
-            this.labelPhone3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelPhone3.Name = "labelPhone3";
-            this.labelPhone3.Size = new System.Drawing.Size(103, 21);
-            this.labelPhone3.TabIndex = 1;
-            this.labelPhone3.Text = "Phone No. 3";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(3, 182);
+            this.label19.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(90, 21);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Phone No.";
             // 
-            // txtPhone3
+            // txtPhone1
             // 
-            this.txtPhone3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone3.Location = new System.Drawing.Point(123, 261);
-            this.txtPhone3.Name = "txtPhone3";
-            this.txtPhone3.ReadOnly = true;
-            this.txtPhone3.Size = new System.Drawing.Size(176, 29);
-            this.txtPhone3.TabIndex = 0;
+            this.txtPhone1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone1.Location = new System.Drawing.Point(123, 175);
+            this.txtPhone1.Name = "txtPhone1";
+            this.txtPhone1.ReadOnly = true;
+            this.txtPhone1.Size = new System.Drawing.Size(176, 29);
+            this.txtPhone1.TabIndex = 0;
             // 
             // labelPhone2
             // 
@@ -618,26 +618,26 @@
             this.txtPhone2.Size = new System.Drawing.Size(176, 29);
             this.txtPhone2.TabIndex = 0;
             // 
-            // label19
+            // labelPhone3
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 182);
-            this.label19.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 21);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Phone No.";
+            this.labelPhone3.AutoSize = true;
+            this.labelPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone3.Location = new System.Drawing.Point(3, 268);
+            this.labelPhone3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelPhone3.Name = "labelPhone3";
+            this.labelPhone3.Size = new System.Drawing.Size(103, 21);
+            this.labelPhone3.TabIndex = 1;
+            this.labelPhone3.Text = "Phone No. 3";
             // 
-            // txtPhone1
+            // txtPhone3
             // 
-            this.txtPhone1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhone1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone1.Location = new System.Drawing.Point(123, 175);
-            this.txtPhone1.Name = "txtPhone1";
-            this.txtPhone1.ReadOnly = true;
-            this.txtPhone1.Size = new System.Drawing.Size(176, 29);
-            this.txtPhone1.TabIndex = 0;
+            this.txtPhone3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone3.Location = new System.Drawing.Point(123, 261);
+            this.txtPhone3.Name = "txtPhone3";
+            this.txtPhone3.ReadOnly = true;
+            this.txtPhone3.Size = new System.Drawing.Size(176, 29);
+            this.txtPhone3.TabIndex = 0;
             // 
             // tableLayoutPanel9
             // 
@@ -928,10 +928,10 @@
             this.Name = "FormViewMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormViewMember_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

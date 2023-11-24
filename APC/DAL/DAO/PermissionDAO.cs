@@ -28,7 +28,7 @@ namespace APC.DAL.DAO
         public List<PermissionDetailDTO> Select()
         {
             List<PermissionDetailDTO> permissions = new List<PermissionDetailDTO>();
-            var list = db.PERMISSIONs.Where(x => x.isDeleted == false);
+            var list = db.PERMISSIONs.Where(x => x.isDeleted == false).OrderBy(x => x.permission1).ToList(); ;
             foreach ( var item in list)
             {
                 PermissionDetailDTO dto = new PermissionDetailDTO();

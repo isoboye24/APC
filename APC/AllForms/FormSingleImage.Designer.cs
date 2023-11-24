@@ -47,8 +47,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEventSummary = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtEventSummary = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -320,16 +320,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Event";
             // 
-            // txtEventSummary
-            // 
-            this.txtEventSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEventSummary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEventSummary.Location = new System.Drawing.Point(13, 112);
-            this.txtEventSummary.Multiline = true;
-            this.txtEventSummary.Name = "txtEventSummary";
-            this.txtEventSummary.Size = new System.Drawing.Size(278, 390);
-            this.txtEventSummary.TabIndex = 1;
-            // 
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -339,6 +329,16 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 29);
             this.comboBox1.TabIndex = 1;
+            // 
+            // txtEventSummary
+            // 
+            this.txtEventSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEventSummary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEventSummary.Location = new System.Drawing.Point(13, 112);
+            this.txtEventSummary.Multiline = true;
+            this.txtEventSummary.Name = "txtEventSummary";
+            this.txtEventSummary.Size = new System.Drawing.Size(278, 390);
+            this.txtEventSummary.TabIndex = 1;
             // 
             // FormSingleImage
             // 
