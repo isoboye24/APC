@@ -22,16 +22,16 @@ namespace APC
         {
             InitializeComponent();
         }
-        MemberBLL memberbll = new MemberBLL();
-        MemberDTO memberDTO = new MemberDTO();
+        MemberBLL bll = new MemberBLL();
+        MemberDTO dto = new MemberDTO();
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FormMembers open = new FormMembers();
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
-            memberDTO = memberbll.Select();
-            dataGridView1.DataSource = memberDTO.Members;
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Members;
             ClearFilters();
             GetMemberCounts();
         }
@@ -51,12 +51,12 @@ namespace APC
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
-                memberbll = new MemberBLL();
-                memberDTO = memberbll.Select();
-                dataGridView1.DataSource = memberDTO.Members;
+                bll = new MemberBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Members;
                 ClearFilters();
                 GetMemberCounts();
-            }            
+            }                 
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -73,29 +73,29 @@ namespace APC
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
-                memberDTO = memberbll.Select();
-                dataGridView1.DataSource = memberDTO.Members;
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Members;
                 ClearFilters();
             }            
         }
        
         private void FormMembersList_Load(object sender, EventArgs e)
         {
-            memberDTO = memberbll.Select();
+            dto = bll.Select();
 
-            cmbGender.DataSource = memberDTO.Genders;
+            cmbGender.DataSource = dto.Genders;
             General.ComboBoxProps(cmbGender, "GenderName", "genderID");
 
-            cmbProfession.DataSource = memberDTO.Professions;
+            cmbProfession.DataSource = dto.Professions;
             General.ComboBoxProps(cmbProfession, "Profession", "professionID");
 
-            cmbPosition.DataSource = memberDTO.Positions;
+            cmbPosition.DataSource = dto.Positions;
             General.ComboBoxProps(cmbPosition, "PositionName", "positionID");
 
-            cmbNationality.DataSource = memberDTO.Nationalities;
+            cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
 
-            dataGridView1.DataSource = memberDTO.Members;
+            dataGridView1.DataSource = dto.Members;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[2].Visible = false;
@@ -130,28 +130,28 @@ namespace APC
         }
         private void GetMemberCounts()
         {
-            labelNoOfMen.Text = memberbll.SelectCountMale().ToString();
-            labelNoOfFemale.Text = memberbll.SelectCountFemale().ToString();
-            labelNoOfDivisor.Text = memberbll.SelectCountDivisor().ToString();
+            labelNoOfMen.Text = bll.SelectCountMale().ToString();
+            labelNoOfFemale.Text = bll.SelectCountFemale().ToString();
+            labelNoOfDivisor.Text = bll.SelectCountDivisor().ToString();
         }
         
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            List<MemberDetailDTO> list = memberDTO.Members;
+            List<MemberDetailDTO> list = dto.Members;
             list = list.Where(x => x.Name.Contains(txtName.Text)).ToList();
             dataGridView1.DataSource = list;
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)
         {
-            List<MemberDetailDTO> list = memberDTO.Members;
+            List<MemberDetailDTO> list = dto.Members;
             list = list.Where(x => x.Surname.Contains(txtSurname.Text)).ToList();
             dataGridView1.DataSource = list;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            List<MemberDetailDTO> list = memberDTO.Members;
+            List<MemberDetailDTO> list = dto.Members;
             if (cmbNationality.SelectedIndex != -1)
             {
                 list = list.Where(x => x.NationalityID == Convert.ToInt32(cmbNationality.SelectedValue)).ToList();
@@ -183,10 +183,34 @@ namespace APC
             cmbGender.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             cmbProfession.SelectedIndex = -1;
-            dataGridView1.DataSource = memberDTO.Members;
+            dataGridView1.DataSource = dto.Members;
         }
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.MemberID == 0)
+            {
+                MessageBox.Show("Please select a member from the table");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Member was deleted");
+                        bll = new MemberBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Members;
+                        ClearFilters();                        
+                        GetMemberCounts();
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             detail = new MemberDetailDTO();
             detail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -218,30 +242,6 @@ namespace APC
             detail.PhoneNumber = dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString();
             detail.PhoneNumber2 = dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString();
             detail.PhoneNumber3 = dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (detail.MemberID == 0)
-            {
-                MessageBox.Show("Please select a member from the table");
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    if (memberbll.Delete(detail))
-                    {
-                        MessageBox.Show("Member was deleted");
-                        memberbll = new MemberBLL();
-                        memberDTO = memberbll.Select();
-                        dataGridView1.DataSource = memberDTO.Members;
-                        ClearFilters();                        
-                        GetMemberCounts();
-                    }
-                }
-            }
         }
     }
 }

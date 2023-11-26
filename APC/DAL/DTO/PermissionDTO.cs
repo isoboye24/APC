@@ -9,5 +9,6 @@ namespace APC.DAL.DTO
     public class PermissionDTO
     {
         public List<PermissionDetailDTO> Permissions { get; set; }
+        public List<MemberDetailDTO> Members { get; set; }
     }
 }

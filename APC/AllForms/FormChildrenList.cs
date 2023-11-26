@@ -155,7 +155,30 @@ namespace APC
             dataGridView1.DataSource = dto.Children;
         }
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ChildID == 0)
+            {
+                MessageBox.Show("Please select a child from the table");
+            }          
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Child was deleted");
+                        bll = new ChildBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Children;
+                        ClearFilters();
+                    }                                       
+                }
+            }
+        }
+
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             detail = new ChildDetailDTO();
             detail.ChildID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -179,29 +202,6 @@ namespace APC
             detail.FatherNationalityID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[18].Value);
             detail.FatherNationalityName = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
             detail.FatherImagePath = dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (detail.ChildID == 0)
-            {
-                MessageBox.Show("Please select a child from the table");
-            }          
-            else
-            {
-                DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    if (bll.Delete(detail))
-                    {
-                        MessageBox.Show("Child was deleted");
-                        bll = new ChildBLL();
-                        dto = bll.Select();
-                        dataGridView1.DataSource = dto.Children;
-                        ClearFilters();
-                    }                                       
-                }
-            }
         }
     }
 }

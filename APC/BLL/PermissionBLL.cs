@@ -11,6 +11,7 @@ namespace APC.BLL
     public class PermissionBLL : IBLL<PermissionDTO, PermissionDetailDTO>
     {
         PermissionDAO dao = new PermissionDAO();
+        MemberDAO memberDAO = new MemberDAO();
         public bool Delete(PermissionDetailDTO entity)
         {
             throw new NotImplementedException();
@@ -29,8 +30,13 @@ namespace APC.BLL
         public PermissionDTO Select()
         {
             PermissionDTO dto = new PermissionDTO();
-            dto.Permissions = dao.Select();
+            dto.Permissions = dao.SelectOnlySpecialPermissions();
+            dto.Members = memberDAO.SelectMembersWithAccess();
             return dto;
+        }
+        public int SelectPermittedMembersCount()
+        {            
+            return memberDAO.SelectPermittedMembersCount();
         }
 
         public bool Update(PermissionDetailDTO entity)

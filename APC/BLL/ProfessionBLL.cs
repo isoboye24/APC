@@ -12,6 +12,7 @@ namespace APC.BLL
     public class ProfessionBLL : IBLL<ProfessionDTO, ProfessionDetailDTO>
     {
         ProfessionDAO dao = new ProfessionDAO();
+        MemberDAO memberDAO = new MemberDAO();
         public bool Delete(ProfessionDetailDTO entity)
         {
             PROFESSION profession = new PROFESSION();
@@ -38,9 +39,9 @@ namespace APC.BLL
             return profession;
         }
 
-        public int ProfessionCount()
+        public int SelectUniqueProfessionCount()
         {
-            return dao.Count();
+            return memberDAO.SelectUniqueProfessionCount();
         }
 
         public bool Update(ProfessionDetailDTO entity)

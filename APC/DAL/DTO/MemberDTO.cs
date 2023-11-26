@@ -18,5 +18,6 @@ namespace APC.DAL.DTO
         public List<NationalityDetailDTO> Nationalities { get; set; }
         public List<FathersDetailDTO> Fathers { get; set; }
         public List<MothersDetailDTO> Mothers { get; set; }
+        public List<PermissionDetailDTO> Permissions { get; set; }
     }
 }

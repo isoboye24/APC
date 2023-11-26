@@ -12,6 +12,7 @@ namespace APC.BLL
     public class PositionBLL : IBLL<PositionDTO, PositionDetailDTO>
     {
         PositionDAO dao = new PositionDAO();
+        MemberDAO memberDAO = new MemberDAO();
         public bool Delete(PositionDetailDTO entity)
         {
             POSITION position = new POSITION();
@@ -37,9 +38,9 @@ namespace APC.BLL
             dto.Positions = dao.Select();
             return dto;
         }
-        public int PositionCount()
+        public int SelectUniquePositionCount()
         {
-            return dao.PositionCount();
+            return memberDAO.SelectUniquePositionCount();
         }
 
         public bool Update(PositionDetailDTO entity)

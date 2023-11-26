@@ -28,6 +28,13 @@ namespace APC.BLL
             return memberDAO.Delete(member);
         }
 
+        public bool DeletePermission(MemberDetailDTO entity)
+        {
+            MEMBER member = new MEMBER();
+            member.memberID = entity.MemberID;
+            return memberDAO.DeletePermission(member);
+        }
+
         public bool GetBack(MemberDetailDTO entity)
         {
             throw new NotImplementedException();
@@ -70,6 +77,7 @@ namespace APC.BLL
             dto.Genders = genderDAO.Select();
             dto.Positions = positionDAO.Select();
             dto.MaritalStatuses = marStatusDAO.Select();
+            dto.Permissions = permissionDAO.Select();
             return dto;
         }
         public int SelectAllMembersCount()

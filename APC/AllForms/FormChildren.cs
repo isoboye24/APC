@@ -110,7 +110,7 @@ namespace APC
                 picProfilePic.ImageLocation = imagePath;
                 txtName.Text = detail.Name;
                 txtSurname.Text = detail.Surname;
-                dateTimePickerBirthday.Value = detail.Birthday;
+                dateTimePickerBirthday.Value = Convert.ToDateTime(detail.Birthday);
                 cmbGender.SelectedValue = detail.GenderID;
                 cmbNationality.SelectedValue = detail.NationalityID;
                 txtImagePath.Text = detail.ImagePath;

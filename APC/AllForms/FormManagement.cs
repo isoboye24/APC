@@ -131,15 +131,17 @@ namespace APC.AllForms
         ProfessionBLL profBll = new ProfessionBLL();
         PositionBLL posBll = new PositionBLL();
         MemberBLL memberBLL = new MemberBLL();
+        PermissionBLL permissionBLL = new PermissionBLL();
         
         private void FormManagement_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
             posBll = new PositionBLL();
             profBll = new ProfessionBLL();
-            General.ValueCount(labelTotalProfession, profBll.ProfessionCount(), 150, 29);
-            General.ValueCount(labelTotalPosition, posBll.PositionCount(), 150, 29);
+            General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), 150, 29);
+            General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), 150, 29);
             General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), 150, 29);
+            General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), 150, 29);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

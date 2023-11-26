@@ -35,71 +35,42 @@ namespace APC
         {
             this.Close();
         }
-        CountryBLL countryBLL = new CountryBLL();
-        CountryDTO countryDTO = new CountryDTO();
-        GenderBLL genderBLL = new GenderBLL();
-        GenderDTO genderDTO = new GenderDTO();
-        ProfessionBLL professionBLL = new ProfessionBLL();
-        ProfessionDTO professionDTO = new ProfessionDTO();
-        PositionBLL positionBLL = new PositionBLL();
-        PositionDTO positionDTO = new PositionDTO();
-        MaritalStatusBLL maritalStatusBLL = new MaritalStatusBLL();
-        MaritalStatusDTO maritalStatusDTO = new MaritalStatusDTO();
-        EmploymentStatusBLL empStatusBLL = new EmploymentStatusBLL();
-        EmploymentStatusDTO empStatusDTO = new EmploymentStatusDTO();
-        NationalityBLL nationalityBLL = new NationalityBLL();
-        NationalityDTO nationalityDTO = new NationalityDTO();
-        PermissionBLL permissionBLL = new PermissionBLL();
-        PermissionDTO permissionDTO = new PermissionDTO();
 
-        MemberBLL memberBLL = new MemberBLL();
+        MemberBLL bll = new MemberBLL();
+        MemberDTO dto = new MemberDTO();
         private void FormMembers_Load(object sender, EventArgs e)
         {
-            countryDTO = countryBLL.Select();
-            cmbCountry.DataSource = countryDTO.Countries;
+            dto = bll.Select();
+
+            cmbCountry.DataSource = dto.Countries;
             General.ComboBoxProps(cmbCountry, "CountryName", "countryID");
-
-            genderDTO = genderBLL.Select();
-            cmbGender.DataSource = genderDTO.Genders;
+            cmbGender.DataSource = dto.Genders;
             General.ComboBoxProps(cmbGender, "GenderName", "genderID");
-
-            professionDTO = professionBLL.Select();
-            cmbProfession.DataSource = professionDTO.Professions;
+            cmbProfession.DataSource = dto.Professions;
             General.ComboBoxProps(cmbProfession, "Profession", "professionID");
-
-            positionDTO = positionBLL.Select();
-            cmbPosition.DataSource = positionDTO.Positions;
+            cmbPosition.DataSource = dto.Positions;
             General.ComboBoxProps(cmbPosition, "PositionName", "positionID");
-
-            maritalStatusDTO = maritalStatusBLL.Select();
-            cmbMaritalStatus.DataSource = maritalStatusDTO.MaritalStatuses;
+            cmbMaritalStatus.DataSource = dto.MaritalStatuses;
             General.ComboBoxProps(cmbMaritalStatus, "MaritalStatus", "MaritalStatusID");
-
-            empStatusDTO = empStatusBLL.Select();
-            cmbEmpStatus.DataSource = empStatusDTO.EmploymentStatuses;
+            cmbEmpStatus.DataSource = dto.EmploymentStatuses;
             General.ComboBoxProps(cmbEmpStatus, "EmploymentStatus", "EmploymentStatusID");
-
-            nationalityDTO = nationalityBLL.Select();
-            cmbNationality.DataSource = nationalityDTO.Nationalities;
+            cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
-
-            permissionDTO = permissionBLL.Select();
-            cmbPermission.DataSource = permissionDTO.Permissions;
+            cmbPermission.DataSource = dto.Permissions;
             General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
 
             txtPhone2.Hide();
             txtPhone3.Hide();
             labelPhone2.Hide();
             labelPhone3.Hide();
-
             if (isUpdate)
             {                
                 txtName.Text = detail.Name;
                 txtSurname.Text = detail.Surname;
                 txtAddress.Text = detail.HouseAddress;
                 cmbPosition.SelectedValue = detail.PositionID;
-                dateTimePickerBirthday.Value = detail.Birthday;
-                dateTimePickerMemSince.Value = detail.MembershipDate;
+                dateTimePickerBirthday.Value = Convert.ToDateTime(detail.Birthday);
+                dateTimePickerMemSince.Value = Convert.ToDateTime(detail.MembershipDate);
                 txtUsername.Text = detail.Username;
                 txtPassword.Text = detail.Password;
                 txtEmail.Text = detail.EmailAddress;
@@ -221,7 +192,7 @@ namespace APC
                     member.PhoneNumber2 = txtPhone2.Text;
                     member.PhoneNumber3 = txtPhone3.Text;       
                     member.MembershipDate = dateTimePickerMemSince.Value;
-                    if (memberBLL.Insert(member))
+                    if (bll.Insert(member))
                     {
                         MessageBox.Show("Member was added");
                         try
@@ -245,22 +216,26 @@ namespace APC
                         txtPhone2.Clear();
                         txtPhone3.Clear();
                         cmbCountry.SelectedIndex = -1;
-                        cmbCountry.DataSource = countryDTO.Countries;
+                        cmbCountry.DataSource = dto.Countries;
                         cmbNationality.SelectedIndex = -1;
-                        cmbNationality.DataSource = nationalityDTO.Nationalities;
+                        cmbNationality.DataSource = dto.Nationalities;
                         cmbEmpStatus.SelectedIndex = -1;
-                        cmbEmpStatus.DataSource = empStatusDTO.EmploymentStatuses;
+                        cmbEmpStatus.DataSource = dto.EmploymentStatuses;
                         cmbGender.SelectedIndex = -1;
-                        cmbGender.DataSource = genderDTO.Genders;
+                        cmbGender.DataSource = dto.Genders;
                         cmbMaritalStatus.SelectedIndex = -1;
-                        cmbMaritalStatus.DataSource = maritalStatusDTO.MaritalStatuses;
+                        cmbMaritalStatus.DataSource = dto.MaritalStatuses;
                         cmbPosition.SelectedIndex = -1;
-                        cmbPosition.DataSource = positionDTO.Positions;
+                        cmbPosition.DataSource = dto.Positions;
                         cmbProfession.SelectedIndex = -1;
-                        cmbProfession.DataSource = professionDTO.Professions;
+                        cmbProfession.DataSource = dto.Professions;
                         cmbPermission.SelectedIndex = -1;
-                        cmbPermission.DataSource = permissionDTO.Permissions;
+                        cmbPermission.DataSource = dto.Permissions;
                         picProfilePic.Image = null;
+                        txtPhone2.Hide();
+                        txtPhone3.Hide();
+                        labelPhone2.Hide();
+                        labelPhone3.Hide();
                     }
                 }
                 else if(isUpdate)
@@ -314,7 +289,7 @@ namespace APC
                         detail.NationalityID = Convert.ToInt32(cmbNationality.SelectedValue);
                         detail.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
                         detail.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
-                        if (memberBLL.Update(detail))
+                        if (bll.Update(detail))
                         {
                             MessageBox.Show("Member was updated");
                             this.Close();
