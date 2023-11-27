@@ -16,6 +16,7 @@ namespace APC.BLL
         FatherDAO fatherDAO = new FatherDAO();
         NationalityDAO nationalityDAO = new NationalityDAO();
         GenderDAO genderDAO = new GenderDAO();
+        MemberDetailDTO detail = new MemberDetailDTO();
         public bool Delete(ChildDetailDTO entity)
         {
             CHILD child = new CHILD();
@@ -55,6 +56,16 @@ namespace APC.BLL
         public int SelectAllChildren()
         {
             return dao.SelectAllChildren();
+        }
+        public int SelectAllChildrenCount(int ID)
+        {
+            return dao.SelectAllChildrenCount(ID);
+        }
+        public ChildDTO SelectViewParentChild(int ID)
+        {
+            ChildDTO dto = new ChildDTO();
+            dto.Children = dao.SelectViewParentChild(ID);
+            return dto;
         }
         public int SelectAllMaleChildren()
         {

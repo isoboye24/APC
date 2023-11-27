@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APC.DAL;
 
 namespace APC.AllForms
 {
@@ -25,6 +26,8 @@ namespace APC.AllForms
             if (noOfChildren > 1)
             {
                 FormViewChildrenList open = new FormViewChildrenList();
+                open.memberID = detail.MemberID;
+                open.isParent = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
@@ -32,6 +35,8 @@ namespace APC.AllForms
             else if(noOfChildren < 2 && noOfChildren > 0)
             {
                 FormViewChild open = new FormViewChild();
+                open.memberID = detail.MemberID;
+                open.isParent = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
@@ -39,10 +44,13 @@ namespace APC.AllForms
         }
         public MemberDetailDTO detail = new MemberDetailDTO();
         public bool isView = false;
+        ChildBLL childBLL = new ChildBLL();
 
-        int noOfChildren = 2;
+        int noOfChildren = 0;
         private void FormViewMember_Load(object sender, EventArgs e)
         {
+            noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
+
             txtPhone2.Hide();
             txtPhone3.Hide();
             labelPhone2.Hide();
