@@ -142,14 +142,13 @@ namespace APC.DAL.DAO
             try
             {
                 List<ChildDetailDTO> children = new List<ChildDetailDTO>();
-                var list = (from c in db.Children.Where(x => x.isDeleted == false)
+                var list = (from c in db.Children.Where(x => x.isDeleted == false && x.motherID ==ID || x.fatherID==ID)
                             join g in db.GENDERs on c.genderID equals g.genderID
                             join n in db.NATIONALITies on c.nationalityID equals n.nationalityID
                             join mm in db.MEMBERs on c.motherID equals mm.memberID
                             join mn in db.NATIONALITies on mm.nationalityID equals mn.nationalityID
                             join mf in db.MEMBERs on c.fatherID equals mf.memberID
                             join fn in db.NATIONALITies on mf.nationalityID equals fn.nationalityID
-                            where mm.memberID == ID || mf.memberID == ID
                             select new
                             {
                                 childID = c.childID,

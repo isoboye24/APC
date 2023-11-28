@@ -219,6 +219,12 @@
     <Compile Include="AllForms\FormViewComment.Designer.cs">
       <DependentUpon>FormViewComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewDeadMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewDeadMember.Designer.cs">
+      <DependentUpon>FormViewDeadMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormViewMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,7 @@
     <Compile Include="BLL\ChildBLL.cs" />
     <Compile Include="BLL\CommentBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
+    <Compile Include="BLL\DeadMembersBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
     <Compile Include="BLL\FatherBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
@@ -262,6 +269,7 @@
     <Compile Include="DAL\DAO\ChildDAO.cs" />
     <Compile Include="DAL\DAO\CommentDAO.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
+    <Compile Include="DAL\DAO\DeadMembersDAO.cs" />
     <Compile Include="DAL\DAO\EmploymentStatusDAO.cs" />
     <Compile Include="DAL\DAO\FatherDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
@@ -298,6 +306,8 @@
     <Compile Include="DAL\DTO\CommentDTO.cs" />
     <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CountryDTO.cs" />
+    <Compile Include="DAL\DTO\DeadMembersDetailDTO.cs" />
+    <Compile Include="DAL\DTO\DeadMembersDTO.cs" />
     <Compile Include="DAL\DTO\DualNationalityDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDTO.cs" />
@@ -555,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewComment.resx">
       <DependentUpon>FormViewComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewDeadMember.resx">
+      <DependentUpon>FormViewDeadMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewMember.resx">
       <DependentUpon>FormViewMember.cs</DependentUpon>
