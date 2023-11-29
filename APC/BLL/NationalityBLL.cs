@@ -14,7 +14,9 @@ namespace APC.BLL
         NationalityDAO dao = new NationalityDAO();
         public bool Delete(NationalityDetailDTO entity)
         {
-            throw new NotImplementedException();
+            NATIONALITY nationality = new NATIONALITY();
+            nationality.nationalityID = entity.NationalityID;
+            return dao.Delete(nationality);
         }
 
         public bool GetBack(NationalityDetailDTO entity)

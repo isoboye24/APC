@@ -314,5 +314,11 @@ namespace APC
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormDeadMembersList());
         }
+
+        private void labelRefresh_Click(object sender, EventArgs e)
+        {
+            this.Invalidate();
+            this.Refresh();
+        }
     }
 }

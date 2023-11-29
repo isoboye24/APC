@@ -21,6 +21,7 @@ namespace APC.BLL
         EmploymentStatusDAO empStatusDAO = new EmploymentStatusDAO();
         PermissionDAO permissionDAO = new PermissionDAO();
         CountryDAO countryDAO = new CountryDAO();
+        DualNationalityDAO dualNationalityDAO = new DualNationalityDAO();
         public bool Delete(MemberDetailDTO entity)
         {
             MEMBER member = new MEMBER();

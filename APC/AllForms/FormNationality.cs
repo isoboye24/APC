@@ -24,8 +24,10 @@ namespace APC.AllForms
             this.Close();
         }
         NationalityBLL bll = new NationalityBLL();
+        DualNationalityBLL dualNationalityBLL = new DualNationalityBLL();
         public NationalityDetailDTO detail = new NationalityDetailDTO();
         public bool isUpdate = false;
+        DualNationalityDetailDTO dualNatDetail = new DualNationalityDetailDTO();
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtNationality.Text.Trim() == "")
@@ -38,7 +40,9 @@ namespace APC.AllForms
                 {
                     NationalityDetailDTO nationality = new NationalityDetailDTO();
                     nationality.Nationality = txtNationality.Text;
-                    if (bll.Insert(nationality))
+                    DualNationalityDetailDTO dualNationality = new DualNationalityDetailDTO();
+                    dualNationality.DualNationalityName = txtNationality.Text;
+                    if (bll.Insert(nationality) && dualNationalityBLL.Insert(dualNationality))
                     {
                         MessageBox.Show("Nationality was added");
                         txtNationality.Clear();
@@ -53,7 +57,9 @@ namespace APC.AllForms
                     else
                     {
                         detail.Nationality = txtNationality.Text;
-                        if (bll.Update(detail))
+                        dualNatDetail.DualNationalityID = detail.NationalityID;
+                        dualNatDetail.DualNationalityName = txtNationality.Text;
+                        if (bll.Update(detail) && dualNationalityBLL.Update(dualNatDetail))
                         {
                             MessageBox.Show("Nationality was update");
                             this.Close();
@@ -66,7 +72,10 @@ namespace APC.AllForms
 
         private void FormNationality_Load(object sender, EventArgs e)
         {
-            txtNationality.Text = detail.Nationality;
+            if (isUpdate)
+            {
+                txtNationality.Text = detail.Nationality;
+            }
         }
     }
 }

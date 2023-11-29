@@ -26,9 +26,7 @@ namespace APC
             FormChildren open = new FormChildren();
             this.Hide();
             open.ShowDialog();
-            this.Visible = true;
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.Children;
+            this.Visible = true;            
             ClearFilters();
         }
 
@@ -38,9 +36,7 @@ namespace APC
             open.detail = detail;
             this.Hide();
             open.ShowDialog();
-            this.Visible = true;
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.Children;
+            this.Visible = true;            
             ClearFilters();
         }
 
@@ -51,10 +47,7 @@ namespace APC
             open.isUpdate = true;
             this.Hide();
             open.ShowDialog();
-            this.Visible = true;
-            bll = new ChildBLL();
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.Children;
+            this.Visible = true;            
             ClearFilters();
         }
         ChildBLL bll = new ChildBLL();
@@ -92,6 +85,10 @@ namespace APC
             dataGridView1.Columns[19].Visible = false;
             dataGridView1.Columns[20].Visible = false;
 
+            GetChildrenCount();
+        }
+        private void GetChildrenCount()
+        {
             labelMaleChildren.Text = bll.SelectAllMaleChildren().ToString();
             labelFemaleChildren.Text = bll.SelectAllFemaleChildren().ToString();
         }
@@ -151,8 +148,10 @@ namespace APC
             txtMothersName.Clear();
             cmbGender.SelectedIndex = -1;
             cmbNationality.SelectedIndex = -1;
+            bll = new ChildBLL();            
             dto = bll.Select();
             dataGridView1.DataSource = dto.Children;
+            GetChildrenCount();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

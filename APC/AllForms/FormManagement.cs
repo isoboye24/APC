@@ -289,5 +289,11 @@ namespace APC.AllForms
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormDeletedData());
         }
+
+        private void labelRefresh_Click(object sender, EventArgs e)
+        {
+            this.Invalidate();
+            this.Update();
+        }
     }
 }

@@ -55,28 +55,30 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelTotalNationality = new System.Windows.Forms.Panel();
-            this.iconTotalCountryCard = new FontAwesome.Sharp.IconPictureBox();
-            this.labelTotalNationality = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panelTotalPosition = new System.Windows.Forms.Panel();
-            this.iconTotalPositionCard = new FontAwesome.Sharp.IconPictureBox();
-            this.labelTotalPosition = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panelTotalPermission = new System.Windows.Forms.Panel();
-            this.iconTotalPermissionCard = new FontAwesome.Sharp.IconPictureBox();
-            this.labelTotalPermission = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panelTotalEvent = new System.Windows.Forms.Panel();
-            this.labelTotalEvent = new System.Windows.Forms.Label();
-            this.iconTotalEventCard = new FontAwesome.Sharp.IconPictureBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelTotalProfession = new System.Windows.Forms.Panel();
-            this.iconProfessionCard = new FontAwesome.Sharp.IconPictureBox();
-            this.labelTotalProfession = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.labelTotalProfession = new System.Windows.Forms.Label();
+            this.iconProfessionCard = new FontAwesome.Sharp.IconPictureBox();
+            this.panelTotalEvent = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.iconTotalEventCard = new FontAwesome.Sharp.IconPictureBox();
+            this.labelTotalEvent = new System.Windows.Forms.Label();
+            this.panelTotalPermission = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelTotalPermission = new System.Windows.Forms.Label();
+            this.iconTotalPermissionCard = new FontAwesome.Sharp.IconPictureBox();
+            this.panelTotalPosition = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelTotalPosition = new System.Windows.Forms.Label();
+            this.iconTotalPositionCard = new FontAwesome.Sharp.IconPictureBox();
+            this.panelTotalNationality = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelTotalNationality = new System.Windows.Forms.Label();
+            this.iconTotalCountryCard = new FontAwesome.Sharp.IconPictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelRefresh = new System.Windows.Forms.Label();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).BeginInit();
@@ -87,18 +89,19 @@
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDesktop.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panelTotalNationality.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalCountryCard)).BeginInit();
-            this.panelTotalPosition.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).BeginInit();
-            this.panelTotalPermission.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPermissionCard)).BeginInit();
-            this.panelTotalEvent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalEventCard)).BeginInit();
             this.panelTotalProfession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).BeginInit();
+            this.panelTotalEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalEventCard)).BeginInit();
+            this.panelTotalPermission.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPermissionCard)).BeginInit();
+            this.panelTotalPosition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).BeginInit();
+            this.panelTotalNationality.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalCountryCard)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -549,24 +552,6 @@
             this.panelDesktop.TabIndex = 18;
             this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(968, 634);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 9;
@@ -585,7 +570,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panelTotalEvent, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelTotalProfession, 5, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(23, 23);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(23, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
@@ -593,196 +578,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 231);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 215);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // panelTotalNationality
-            // 
-            this.panelTotalNationality.BackColor = System.Drawing.Color.DeepPink;
-            this.panelTotalNationality.Controls.Add(this.iconTotalCountryCard);
-            this.panelTotalNationality.Controls.Add(this.labelTotalNationality);
-            this.panelTotalNationality.Controls.Add(this.label4);
-            this.panelTotalNationality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalNationality.Location = new System.Drawing.Point(21, 13);
-            this.panelTotalNationality.Name = "panelTotalNationality";
-            this.panelTotalNationality.Size = new System.Drawing.Size(201, 95);
-            this.panelTotalNationality.TabIndex = 1;
-            // 
-            // iconTotalCountryCard
-            // 
-            this.iconTotalCountryCard.BackColor = System.Drawing.Color.DeepPink;
-            this.iconTotalCountryCard.IconChar = FontAwesome.Sharp.IconChar.EarthAfrica;
-            this.iconTotalCountryCard.IconColor = System.Drawing.Color.White;
-            this.iconTotalCountryCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalCountryCard.Location = new System.Drawing.Point(18, 39);
-            this.iconTotalCountryCard.Name = "iconTotalCountryCard";
-            this.iconTotalCountryCard.Size = new System.Drawing.Size(32, 32);
-            this.iconTotalCountryCard.TabIndex = 1;
-            this.iconTotalCountryCard.TabStop = false;
-            // 
-            // labelTotalNationality
-            // 
-            this.labelTotalNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalNationality.AutoSize = true;
-            this.labelTotalNationality.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalNationality.ForeColor = System.Drawing.Color.White;
-            this.labelTotalNationality.Location = new System.Drawing.Point(150, 29);
-            this.labelTotalNationality.Name = "labelTotalNationality";
-            this.labelTotalNationality.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalNationality.TabIndex = 0;
-            this.labelTotalNationality.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Total Nationality";
-            // 
-            // panelTotalPosition
-            // 
-            this.panelTotalPosition.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panelTotalPosition.Controls.Add(this.iconTotalPositionCard);
-            this.panelTotalPosition.Controls.Add(this.labelTotalPosition);
-            this.panelTotalPosition.Controls.Add(this.label10);
-            this.panelTotalPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalPosition.Location = new System.Drawing.Point(21, 123);
-            this.panelTotalPosition.Name = "panelTotalPosition";
-            this.panelTotalPosition.Size = new System.Drawing.Size(201, 94);
-            this.panelTotalPosition.TabIndex = 3;
-            // 
-            // iconTotalPositionCard
-            // 
-            this.iconTotalPositionCard.BackColor = System.Drawing.Color.MidnightBlue;
-            this.iconTotalPositionCard.IconChar = FontAwesome.Sharp.IconChar.Couch;
-            this.iconTotalPositionCard.IconColor = System.Drawing.Color.White;
-            this.iconTotalPositionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalPositionCard.Location = new System.Drawing.Point(18, 39);
-            this.iconTotalPositionCard.Name = "iconTotalPositionCard";
-            this.iconTotalPositionCard.Size = new System.Drawing.Size(32, 32);
-            this.iconTotalPositionCard.TabIndex = 1;
-            this.iconTotalPositionCard.TabStop = false;
-            // 
-            // labelTotalPosition
-            // 
-            this.labelTotalPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalPosition.AutoSize = true;
-            this.labelTotalPosition.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPosition.ForeColor = System.Drawing.Color.White;
-            this.labelTotalPosition.Location = new System.Drawing.Point(150, 29);
-            this.labelTotalPosition.Name = "labelTotalPosition";
-            this.labelTotalPosition.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalPosition.TabIndex = 0;
-            this.labelTotalPosition.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(14, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Total Positions";
-            // 
-            // panelTotalPermission
-            // 
-            this.panelTotalPermission.BackColor = System.Drawing.Color.Green;
-            this.panelTotalPermission.Controls.Add(this.iconTotalPermissionCard);
-            this.panelTotalPermission.Controls.Add(this.labelTotalPermission);
-            this.panelTotalPermission.Controls.Add(this.label6);
-            this.panelTotalPermission.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalPermission.Location = new System.Drawing.Point(696, 13);
-            this.panelTotalPermission.Name = "panelTotalPermission";
-            this.panelTotalPermission.Size = new System.Drawing.Size(201, 95);
-            this.panelTotalPermission.TabIndex = 4;
-            // 
-            // iconTotalPermissionCard
-            // 
-            this.iconTotalPermissionCard.BackColor = System.Drawing.Color.Green;
-            this.iconTotalPermissionCard.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
-            this.iconTotalPermissionCard.IconColor = System.Drawing.Color.White;
-            this.iconTotalPermissionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalPermissionCard.Location = new System.Drawing.Point(18, 39);
-            this.iconTotalPermissionCard.Name = "iconTotalPermissionCard";
-            this.iconTotalPermissionCard.Size = new System.Drawing.Size(32, 32);
-            this.iconTotalPermissionCard.TabIndex = 1;
-            this.iconTotalPermissionCard.TabStop = false;
-            // 
-            // labelTotalPermission
-            // 
-            this.labelTotalPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalPermission.AutoSize = true;
-            this.labelTotalPermission.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPermission.ForeColor = System.Drawing.Color.White;
-            this.labelTotalPermission.Location = new System.Drawing.Point(150, 29);
-            this.labelTotalPermission.Name = "labelTotalPermission";
-            this.labelTotalPermission.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalPermission.TabIndex = 0;
-            this.labelTotalPermission.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Total Permission";
-            // 
-            // panelTotalEvent
-            // 
-            this.panelTotalEvent.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panelTotalEvent.Controls.Add(this.labelTotalEvent);
-            this.panelTotalEvent.Controls.Add(this.iconTotalEventCard);
-            this.panelTotalEvent.Controls.Add(this.label12);
-            this.panelTotalEvent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalEvent.Location = new System.Drawing.Point(246, 13);
-            this.panelTotalEvent.Name = "panelTotalEvent";
-            this.panelTotalEvent.Size = new System.Drawing.Size(201, 95);
-            this.panelTotalEvent.TabIndex = 2;
-            // 
-            // labelTotalEvent
-            // 
-            this.labelTotalEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalEvent.AutoSize = true;
-            this.labelTotalEvent.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalEvent.ForeColor = System.Drawing.Color.White;
-            this.labelTotalEvent.Location = new System.Drawing.Point(150, 29);
-            this.labelTotalEvent.Name = "labelTotalEvent";
-            this.labelTotalEvent.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalEvent.TabIndex = 2;
-            this.labelTotalEvent.Text = "0";
-            // 
-            // iconTotalEventCard
-            // 
-            this.iconTotalEventCard.BackColor = System.Drawing.Color.DarkOrchid;
-            this.iconTotalEventCard.IconChar = FontAwesome.Sharp.IconChar.GlassCheers;
-            this.iconTotalEventCard.IconColor = System.Drawing.Color.White;
-            this.iconTotalEventCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalEventCard.Location = new System.Drawing.Point(18, 39);
-            this.iconTotalEventCard.Name = "iconTotalEventCard";
-            this.iconTotalEventCard.Size = new System.Drawing.Size(32, 32);
-            this.iconTotalEventCard.TabIndex = 1;
-            this.iconTotalEventCard.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Total Event";
             // 
             // panelTotalProfession
             // 
@@ -796,17 +593,16 @@
             this.panelTotalProfession.Size = new System.Drawing.Size(201, 95);
             this.panelTotalProfession.TabIndex = 7;
             // 
-            // iconProfessionCard
+            // label16
             // 
-            this.iconProfessionCard.BackColor = System.Drawing.Color.Magenta;
-            this.iconProfessionCard.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
-            this.iconProfessionCard.IconColor = System.Drawing.Color.White;
-            this.iconProfessionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconProfessionCard.Location = new System.Drawing.Point(18, 39);
-            this.iconProfessionCard.Name = "iconProfessionCard";
-            this.iconProfessionCard.Size = new System.Drawing.Size(32, 32);
-            this.iconProfessionCard.TabIndex = 1;
-            this.iconProfessionCard.TabStop = false;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(3, 6);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(129, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Total Professions";
             // 
             // labelTotalProfession
             // 
@@ -820,16 +616,250 @@
             this.labelTotalProfession.TabIndex = 0;
             this.labelTotalProfession.Text = "0";
             // 
-            // label16
+            // iconProfessionCard
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(3, 6);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 20);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Total Professions";
+            this.iconProfessionCard.BackColor = System.Drawing.Color.Magenta;
+            this.iconProfessionCard.IconChar = FontAwesome.Sharp.IconChar.GraduationCap;
+            this.iconProfessionCard.IconColor = System.Drawing.Color.White;
+            this.iconProfessionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconProfessionCard.Location = new System.Drawing.Point(18, 39);
+            this.iconProfessionCard.Name = "iconProfessionCard";
+            this.iconProfessionCard.Size = new System.Drawing.Size(32, 32);
+            this.iconProfessionCard.TabIndex = 1;
+            this.iconProfessionCard.TabStop = false;
+            // 
+            // panelTotalEvent
+            // 
+            this.panelTotalEvent.BackColor = System.Drawing.Color.DarkOrchid;
+            this.panelTotalEvent.Controls.Add(this.labelTotalEvent);
+            this.panelTotalEvent.Controls.Add(this.iconTotalEventCard);
+            this.panelTotalEvent.Controls.Add(this.label12);
+            this.panelTotalEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalEvent.Location = new System.Drawing.Point(246, 13);
+            this.panelTotalEvent.Name = "panelTotalEvent";
+            this.panelTotalEvent.Size = new System.Drawing.Size(201, 95);
+            this.panelTotalEvent.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(3, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Total Event";
+            // 
+            // iconTotalEventCard
+            // 
+            this.iconTotalEventCard.BackColor = System.Drawing.Color.DarkOrchid;
+            this.iconTotalEventCard.IconChar = FontAwesome.Sharp.IconChar.GlassCheers;
+            this.iconTotalEventCard.IconColor = System.Drawing.Color.White;
+            this.iconTotalEventCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconTotalEventCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalEventCard.Name = "iconTotalEventCard";
+            this.iconTotalEventCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalEventCard.TabIndex = 1;
+            this.iconTotalEventCard.TabStop = false;
+            // 
+            // labelTotalEvent
+            // 
+            this.labelTotalEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalEvent.AutoSize = true;
+            this.labelTotalEvent.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalEvent.ForeColor = System.Drawing.Color.White;
+            this.labelTotalEvent.Location = new System.Drawing.Point(150, 29);
+            this.labelTotalEvent.Name = "labelTotalEvent";
+            this.labelTotalEvent.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalEvent.TabIndex = 2;
+            this.labelTotalEvent.Text = "0";
+            // 
+            // panelTotalPermission
+            // 
+            this.panelTotalPermission.BackColor = System.Drawing.Color.Green;
+            this.panelTotalPermission.Controls.Add(this.iconTotalPermissionCard);
+            this.panelTotalPermission.Controls.Add(this.labelTotalPermission);
+            this.panelTotalPermission.Controls.Add(this.label6);
+            this.panelTotalPermission.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalPermission.Location = new System.Drawing.Point(696, 13);
+            this.panelTotalPermission.Name = "panelTotalPermission";
+            this.panelTotalPermission.Size = new System.Drawing.Size(201, 95);
+            this.panelTotalPermission.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(14, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Total Permission";
+            // 
+            // labelTotalPermission
+            // 
+            this.labelTotalPermission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalPermission.AutoSize = true;
+            this.labelTotalPermission.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPermission.ForeColor = System.Drawing.Color.White;
+            this.labelTotalPermission.Location = new System.Drawing.Point(150, 29);
+            this.labelTotalPermission.Name = "labelTotalPermission";
+            this.labelTotalPermission.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalPermission.TabIndex = 0;
+            this.labelTotalPermission.Text = "0";
+            // 
+            // iconTotalPermissionCard
+            // 
+            this.iconTotalPermissionCard.BackColor = System.Drawing.Color.Green;
+            this.iconTotalPermissionCard.IconChar = FontAwesome.Sharp.IconChar.UniversalAccess;
+            this.iconTotalPermissionCard.IconColor = System.Drawing.Color.White;
+            this.iconTotalPermissionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconTotalPermissionCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalPermissionCard.Name = "iconTotalPermissionCard";
+            this.iconTotalPermissionCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalPermissionCard.TabIndex = 1;
+            this.iconTotalPermissionCard.TabStop = false;
+            // 
+            // panelTotalPosition
+            // 
+            this.panelTotalPosition.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelTotalPosition.Controls.Add(this.iconTotalPositionCard);
+            this.panelTotalPosition.Controls.Add(this.labelTotalPosition);
+            this.panelTotalPosition.Controls.Add(this.label10);
+            this.panelTotalPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalPosition.Location = new System.Drawing.Point(21, 123);
+            this.panelTotalPosition.Name = "panelTotalPosition";
+            this.panelTotalPosition.Size = new System.Drawing.Size(201, 94);
+            this.panelTotalPosition.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(14, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 20);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Total Positions";
+            // 
+            // labelTotalPosition
+            // 
+            this.labelTotalPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalPosition.AutoSize = true;
+            this.labelTotalPosition.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPosition.ForeColor = System.Drawing.Color.White;
+            this.labelTotalPosition.Location = new System.Drawing.Point(150, 29);
+            this.labelTotalPosition.Name = "labelTotalPosition";
+            this.labelTotalPosition.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalPosition.TabIndex = 0;
+            this.labelTotalPosition.Text = "0";
+            // 
+            // iconTotalPositionCard
+            // 
+            this.iconTotalPositionCard.BackColor = System.Drawing.Color.MidnightBlue;
+            this.iconTotalPositionCard.IconChar = FontAwesome.Sharp.IconChar.Couch;
+            this.iconTotalPositionCard.IconColor = System.Drawing.Color.White;
+            this.iconTotalPositionCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconTotalPositionCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalPositionCard.Name = "iconTotalPositionCard";
+            this.iconTotalPositionCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalPositionCard.TabIndex = 1;
+            this.iconTotalPositionCard.TabStop = false;
+            // 
+            // panelTotalNationality
+            // 
+            this.panelTotalNationality.BackColor = System.Drawing.Color.DeepPink;
+            this.panelTotalNationality.Controls.Add(this.iconTotalCountryCard);
+            this.panelTotalNationality.Controls.Add(this.labelTotalNationality);
+            this.panelTotalNationality.Controls.Add(this.label4);
+            this.panelTotalNationality.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalNationality.Location = new System.Drawing.Point(21, 13);
+            this.panelTotalNationality.Name = "panelTotalNationality";
+            this.panelTotalNationality.Size = new System.Drawing.Size(201, 95);
+            this.panelTotalNationality.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Total Nationality";
+            // 
+            // labelTotalNationality
+            // 
+            this.labelTotalNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalNationality.AutoSize = true;
+            this.labelTotalNationality.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalNationality.ForeColor = System.Drawing.Color.White;
+            this.labelTotalNationality.Location = new System.Drawing.Point(150, 29);
+            this.labelTotalNationality.Name = "labelTotalNationality";
+            this.labelTotalNationality.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalNationality.TabIndex = 0;
+            this.labelTotalNationality.Text = "0";
+            // 
+            // iconTotalCountryCard
+            // 
+            this.iconTotalCountryCard.BackColor = System.Drawing.Color.DeepPink;
+            this.iconTotalCountryCard.IconChar = FontAwesome.Sharp.IconChar.EarthAfrica;
+            this.iconTotalCountryCard.IconColor = System.Drawing.Color.White;
+            this.iconTotalCountryCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconTotalCountryCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalCountryCard.Name = "iconTotalCountryCard";
+            this.iconTotalCountryCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalCountryCard.TabIndex = 1;
+            this.iconTotalCountryCard.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(968, 634);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.labelRefresh, 1, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(23, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(922, 54);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // labelRefresh
+            // 
+            this.labelRefresh.AutoSize = true;
+            this.labelRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRefresh.Location = new System.Drawing.Point(825, 27);
+            this.labelRefresh.Name = "labelRefresh";
+            this.labelRefresh.Size = new System.Drawing.Size(66, 21);
+            this.labelRefresh.TabIndex = 0;
+            this.labelRefresh.Text = "Refresh";
+            this.labelRefresh.Click += new System.EventHandler(this.labelRefresh_Click);
             // 
             // FormManagement
             // 
@@ -858,23 +888,25 @@
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelDesktop.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelTotalNationality.ResumeLayout(false);
-            this.panelTotalNationality.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalCountryCard)).EndInit();
-            this.panelTotalPosition.ResumeLayout(false);
-            this.panelTotalPosition.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).EndInit();
-            this.panelTotalPermission.ResumeLayout(false);
-            this.panelTotalPermission.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPermissionCard)).EndInit();
-            this.panelTotalEvent.ResumeLayout(false);
-            this.panelTotalEvent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTotalEventCard)).EndInit();
             this.panelTotalProfession.ResumeLayout(false);
             this.panelTotalProfession.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconProfessionCard)).EndInit();
+            this.panelTotalEvent.ResumeLayout(false);
+            this.panelTotalEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalEventCard)).EndInit();
+            this.panelTotalPermission.ResumeLayout(false);
+            this.panelTotalPermission.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPermissionCard)).EndInit();
+            this.panelTotalPosition.ResumeLayout(false);
+            this.panelTotalPosition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalPositionCard)).EndInit();
+            this.panelTotalNationality.ResumeLayout(false);
+            this.panelTotalNationality.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTotalCountryCard)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -905,16 +937,15 @@
         private System.Windows.Forms.Panel panelDesktop;
         private FontAwesome.Sharp.IconButton btnManagement;
         private FontAwesome.Sharp.IconButton btnPermission;
+        private FontAwesome.Sharp.IconButton btnNationality;
+        private FontAwesome.Sharp.IconButton btnContact;
+        private FontAwesome.Sharp.IconButton btnDeletedData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panelTotalNationality;
         private FontAwesome.Sharp.IconPictureBox iconTotalCountryCard;
         private System.Windows.Forms.Label labelTotalNationality;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelTotalEvent;
-        private System.Windows.Forms.Label labelTotalEvent;
-        private FontAwesome.Sharp.IconPictureBox iconTotalEventCard;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panelTotalPosition;
         private FontAwesome.Sharp.IconPictureBox iconTotalPositionCard;
         private System.Windows.Forms.Label labelTotalPosition;
@@ -923,12 +954,15 @@
         private FontAwesome.Sharp.IconPictureBox iconTotalPermissionCard;
         private System.Windows.Forms.Label labelTotalPermission;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelTotalEvent;
+        private System.Windows.Forms.Label labelTotalEvent;
+        private FontAwesome.Sharp.IconPictureBox iconTotalEventCard;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panelTotalProfession;
         private FontAwesome.Sharp.IconPictureBox iconProfessionCard;
         private System.Windows.Forms.Label labelTotalProfession;
         private System.Windows.Forms.Label label16;
-        private FontAwesome.Sharp.IconButton btnNationality;
-        private FontAwesome.Sharp.IconButton btnContact;
-        private FontAwesome.Sharp.IconButton btnDeletedData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label labelRefresh;
     }
 }

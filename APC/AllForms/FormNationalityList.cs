@@ -29,20 +29,29 @@ namespace APC.AllForms
             dataGridView1.DataSource = dto.Nationalities;
         }
         NationalityDetailDTO detail = new NationalityDetailDTO();
+        DualNationalityDetailDTO dualNatDetail = new DualNationalityDetailDTO();
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormNationality open = new FormNationality();
-            open.detail = detail;
-            open.isUpdate = true;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            bll = new NationalityBLL();
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.Nationalities;
+            if (detail.NationalityID == 0)
+            {
+                MessageBox.Show("Please choose a nationality from the table");
+            }
+            else
+            {
+                FormNationality open = new FormNationality();
+                open.detail = detail;
+                open.isUpdate = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                bll = new NationalityBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Nationalities;
+            }            
         }
         NationalityBLL bll = new NationalityBLL();
         NationalityDTO dto = new NationalityDTO();
+        DualNationalityBLL dualNatBLL = new DualNationalityBLL();
         private void FormNationalityList_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -56,13 +65,37 @@ namespace APC.AllForms
             List<NationalityDetailDTO> list = dto.Nationalities;
             list = list.Where(x => x.Nationality.Contains(txtNationality.Text)).ToList();
             dataGridView1.DataSource = list;
-        }
+        }        
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             detail = new NationalityDetailDTO();
             detail.NationalityID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             detail.Nationality = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            dualNatDetail.DualNationalityID = detail.NationalityID;
+            if (detail.NationalityID==0 || dualNatDetail.DualNationalityID==0)
+            {
+                MessageBox.Show("Please choose a nationality from the table");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?","Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail) && dualNatBLL.Delete(dualNatDetail))
+                    {
+                        MessageBox.Show("Nationality was deleted");
+                        bll = new NationalityBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Nationalities;
+                        txtNationality.Clear();
+                    }
+                }
+            }
         }
     }
 }

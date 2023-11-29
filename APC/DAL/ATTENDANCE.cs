@@ -18,8 +18,10 @@ namespace APC.DAL
         public int attendanceStatusID { get; set; }
         public int memberID { get; set; }
         public Nullable<int> monthlyDues { get; set; }
-        public int attendanceDateID { get; set; }
+        public Nullable<int> day { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
+        public int monthID { get; set; }
+        public int year { get; set; }
     }
 }

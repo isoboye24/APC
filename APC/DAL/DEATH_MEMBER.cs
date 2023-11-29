@@ -30,5 +30,6 @@ namespace APC.DAL
         public Nullable<int> dualNationalityID { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
+        public Nullable<int> spouseID { get; set; }
     }
 }

@@ -11,7 +11,18 @@ namespace APC.DAL.DAO
     {
         public bool Delete(NATIONALITY entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                NATIONALITY nationality = db.NATIONALITies.First(x=>x.nationalityID == entity.nationalityID);
+                nationality.isDeleted = true;
+                nationality.deletedDate = DateTime.Today;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }           
         }
 
         public bool GetBack(int ID)

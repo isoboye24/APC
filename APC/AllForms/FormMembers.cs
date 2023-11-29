@@ -92,7 +92,7 @@ namespace APC
                 cmbProfession.SelectedValue = detail.ProfessionID;
                 cmbEmpStatus.SelectedValue = detail.EmploymentStatusID;
                 cmbGender.SelectedValue = detail.GenderID;
-                cmbNationality.SelectedValue = detail.NationalityID;
+                cmbNationality.SelectedValue = detail.NationalityID;                             
                 cmbMaritalStatus.SelectedValue = detail.MaritalStatusID;
                 cmbPermission.SelectedValue = detail.PermissionID;
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;

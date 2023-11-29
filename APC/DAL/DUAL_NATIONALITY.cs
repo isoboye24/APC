@@ -12,11 +12,11 @@ namespace APC.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class ATTENDANCE_DATE
+    public partial class DUAL_NATIONALITY
     {
-        public int attendanceDateID { get; set; }
-        public System.DateTime attendanceDate { get; set; }
-        public Nullable<System.DateTime> deletedDate { get; set; }
+        public int dualNationalityID { get; set; }
+        public string dualNationality { get; set; }
         public bool isDeleted { get; set; }
+        public Nullable<System.DateTime> deletedDate { get; set; }
     }
 }

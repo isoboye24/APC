@@ -225,6 +225,12 @@
     <Compile Include="AllForms\FormViewDeadMember.Designer.cs">
       <DependentUpon>FormViewDeadMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewExpenditure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewExpenditure.Designer.cs">
+      <DependentUpon>FormViewExpenditure.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormViewMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,7 +241,9 @@
     <Compile Include="BLL\CommentBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\DeadMembersBLL.cs" />
+    <Compile Include="BLL\DualNationalityBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
+    <Compile Include="BLL\ExpenditureBLL.cs" />
     <Compile Include="BLL\FatherBLL.cs" />
     <Compile Include="BLL\GenderBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
@@ -248,9 +256,6 @@
     <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="BLL\ProfessionBLL.cs" />
     <Compile Include="DAL\ATTENDANCE.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\ATTENDANCE_DATE.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\ATTENDANCE_STATUS.cs">
@@ -270,7 +275,9 @@
     <Compile Include="DAL\DAO\CommentDAO.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
     <Compile Include="DAL\DAO\DeadMembersDAO.cs" />
+    <Compile Include="DAL\DAO\DualNationalityDAO.cs" />
     <Compile Include="DAL\DAO\EmploymentStatusDAO.cs" />
+    <Compile Include="DAL\DAO\ExpenditureDAO.cs" />
     <Compile Include="DAL\DAO\FatherDAO.cs" />
     <Compile Include="DAL\DAO\GenderDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
@@ -309,8 +316,11 @@
     <Compile Include="DAL\DTO\DeadMembersDetailDTO.cs" />
     <Compile Include="DAL\DTO\DeadMembersDTO.cs" />
     <Compile Include="DAL\DTO\DualNationalityDetailDTO.cs" />
+    <Compile Include="DAL\DTO\DualNationalityDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDTO.cs" />
+    <Compile Include="DAL\DTO\ExpenditureDetailDTO.cs" />
+    <Compile Include="DAL\DTO\ExpenditureDTO.cs" />
     <Compile Include="DAL\DTO\FatherDTO.cs" />
     <Compile Include="DAL\DTO\FathersDetailDTO.cs" />
     <Compile Include="DAL\DTO\GenderDetailDTO.cs" />
@@ -331,6 +341,9 @@
     <Compile Include="DAL\DTO\PositionDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDetailDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDTO.cs" />
+    <Compile Include="DAL\DUAL_NATIONALITY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\EMPLOYMENT_STATUS.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -568,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewDeadMember.resx">
       <DependentUpon>FormViewDeadMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewExpenditure.resx">
+      <DependentUpon>FormViewExpenditure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewMember.resx">
       <DependentUpon>FormViewMember.cs</DependentUpon>
