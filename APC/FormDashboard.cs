@@ -127,10 +127,24 @@ namespace APC
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            RefreshAllCards();
+        }
+
+        private void RefreshAllCards()
+        {
             General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), 150, 29);
             General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), 150, 29);
+            General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), 150, 29);
             General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), 150, 29);
-            //General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), 150, 29);
+            if (Convert.ToInt32(labelMonthlyComments.Text) > 1)
+            {
+                labelComment.Text = "comments";
+            }
+            else
+            {
+                labelComment.Text = "comment";
+            }
+            labelCommentMonthName.Text = DateTime.Now.ToString("MMMM");
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -245,7 +259,6 @@ namespace APC
             FormManagement open = new FormManagement();
             this.Hide();
             open.ShowDialog();
-            this.Visible = true;
         }
 
         private void labelLogo_Click(object sender, EventArgs e)
@@ -254,6 +267,7 @@ namespace APC
             {
                 currentChildForm.Close();
                 Reset();
+                RefreshAllCards();
             }
         }
 
@@ -312,13 +326,27 @@ namespace APC
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormDeadMembersList());
+            OpenChildForm(new FormDeadMembersList());            
         }
 
-        private void labelRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.Invalidate();
-            this.Refresh();
+            RefreshAllCards();
+        }
+
+        private void btnRefresh_MouseHover(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.DarkOrange;
+        }
+
+        private void btnRefresh_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.DarkOrange;
+        }
+
+        private void btnRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.White;
         }
     }
 }

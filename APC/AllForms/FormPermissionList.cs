@@ -62,7 +62,12 @@ namespace APC
             dataGridView1.Columns[27].Visible = false;
             dataGridView1.Columns[28].Visible = false;
         }
-
+        private void FillDataGrid()
+        {
+            bll = new PermissionBLL();
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Members;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             List<MemberDetailDTO> list = dto.Members;
@@ -83,9 +88,7 @@ namespace APC
 
                 }
                 MessageBox.Show("Member was deleted");
-                bll = new PermissionBLL();
-                dto = bll.Select();
-                dataGridView1.DataSource = dto.Members;
+                FillDataGrid();
                 cmbPermission.SelectedIndex = -1;
             }
         }
@@ -122,6 +125,12 @@ namespace APC
             detail.PhoneNumber = dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString();
             detail.PhoneNumber2 = dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString();
             detail.PhoneNumber3 = dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            cmbPermission.SelectedIndex = -1;
+            FillDataGrid();
         }
     }
 }

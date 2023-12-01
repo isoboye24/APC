@@ -136,14 +136,15 @@ namespace APC.AllForms
         private void FormManagement_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            posBll = new PositionBLL();
-            profBll = new ProfessionBLL();
+            RefreshAllCards();
+        }
+        private void RefreshAllCards()
+        {
             General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), 150, 29);
             General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), 150, 29);
             General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), 150, 29);
             General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), 150, 29);
         }
-
         private void iconClose_MouseEnter(object sender, EventArgs e)
         {
             iconClose.BackColor = RBGColors.color1;
@@ -259,6 +260,7 @@ namespace APC.AllForms
             {
                 currentChildForm.Close();
                 Reset();
+                RefreshAllCards();
             }
         }
 
@@ -288,12 +290,26 @@ namespace APC.AllForms
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormDeletedData());
+        }        
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshAllCards();
         }
 
-        private void labelRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_MouseHover(object sender, EventArgs e)
         {
-            this.Invalidate();
-            this.Update();
+            btnRefresh.BackColor = Color.DarkOrange;
+        }
+
+        private void btnRefresh_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.DarkOrange;
+        }
+
+        private void btnRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.White;
         }
     }
 }

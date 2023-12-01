@@ -63,9 +63,9 @@ namespace APC.BLL
         {
             return commentDAO.SelectAllCommentsCount();
         }
-        //public int SelectMonthlyCommentsCount()
-        //{
-        //    return commentDAO.SelectMonthlyCommentsCount();
-        //}
+        public int SelectMonthlyCommentsCount()
+        {
+            return commentDAO.SelectMonthlyCommentsCount();
+        }
     }
 }

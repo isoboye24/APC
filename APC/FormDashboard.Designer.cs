@@ -92,8 +92,9 @@
             this.panelMonthlyComment = new System.Windows.Forms.Panel();
             this.iconMonthlyCommentsCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelMonthlyComments = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelComment = new System.Windows.Forms.Label();
+            this.labelCommentMonthName = new System.Windows.Forms.Label();
+            this.btnRefresh = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -103,7 +104,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelRefresh = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -594,7 +594,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panelNoOfChildren, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelLastEvent, 7, 1);
             this.tableLayoutPanel2.Controls.Add(this.panelMonthlyComment, 5, 3);
-            this.tableLayoutPanel2.Controls.Add(this.labelRefresh, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnRefresh, 7, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -978,8 +978,8 @@
             this.panelMonthlyComment.BackColor = System.Drawing.Color.DarkOrange;
             this.panelMonthlyComment.Controls.Add(this.iconMonthlyCommentsCard);
             this.panelMonthlyComment.Controls.Add(this.labelMonthlyComments);
-            this.panelMonthlyComment.Controls.Add(this.label8);
-            this.panelMonthlyComment.Controls.Add(this.label9);
+            this.panelMonthlyComment.Controls.Add(this.labelComment);
+            this.panelMonthlyComment.Controls.Add(this.labelCommentMonthName);
             this.panelMonthlyComment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonthlyComment.Location = new System.Drawing.Point(494, 146);
             this.panelMonthlyComment.Name = "panelMonthlyComment";
@@ -1010,27 +1010,48 @@
             this.labelMonthlyComments.TabIndex = 0;
             this.labelMonthlyComments.Text = "0";
             // 
-            // label8
+            // labelComment
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(95, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Comments";
+            this.labelComment.AutoSize = true;
+            this.labelComment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComment.ForeColor = System.Drawing.Color.White;
+            this.labelComment.Location = new System.Drawing.Point(95, 7);
+            this.labelComment.Name = "labelComment";
+            this.labelComment.Size = new System.Drawing.Size(85, 20);
+            this.labelComment.TabIndex = 0;
+            this.labelComment.Text = "Comments";
             // 
-            // label9
+            // labelCommentMonthName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(14, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "September";
+            this.labelCommentMonthName.AutoSize = true;
+            this.labelCommentMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommentMonthName.ForeColor = System.Drawing.Color.White;
+            this.labelCommentMonthName.Location = new System.Drawing.Point(14, 6);
+            this.labelCommentMonthName.Name = "labelCommentMonthName";
+            this.labelCommentMonthName.Size = new System.Drawing.Size(85, 20);
+            this.labelCommentMonthName.TabIndex = 0;
+            this.labelCommentMonthName.Text = "September";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.IconChar = FontAwesome.Sharp.IconChar.ArrowsRotate;
+            this.btnRefresh.IconColor = System.Drawing.Color.Black;
+            this.btnRefresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRefresh.IconSize = 24;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(817, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(124, 32);
+            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.MouseEnter += new System.EventHandler(this.btnRefresh_MouseEnter);
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
+            this.btnRefresh.MouseHover += new System.EventHandler(this.btnRefresh_MouseHover);
             // 
             // tableLayoutPanel3
             // 
@@ -1147,19 +1168,6 @@
             this.panel3.Size = new System.Drawing.Size(5, 634);
             this.panel3.TabIndex = 19;
             // 
-            // labelRefresh
-            // 
-            this.labelRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRefresh.AutoSize = true;
-            this.labelRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRefresh.Location = new System.Drawing.Point(875, 9);
-            this.labelRefresh.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.labelRefresh.Name = "labelRefresh";
-            this.labelRefresh.Size = new System.Drawing.Size(66, 21);
-            this.labelRefresh.TabIndex = 9;
-            this.labelRefresh.Text = "Refresh";
-            this.labelRefresh.Click += new System.EventHandler(this.labelRefresh_Click);
-            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1191,7 +1199,6 @@
             this.panelDesktop.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.panelTotalComment.ResumeLayout(false);
             this.panelTotalComment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconTotalCommentsCard)).EndInit();
@@ -1296,10 +1303,10 @@
         private System.Windows.Forms.Panel panelMonthlyComment;
         private FontAwesome.Sharp.IconPictureBox iconMonthlyCommentsCard;
         private System.Windows.Forms.Label labelMonthlyComments;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelComment;
+        private System.Windows.Forms.Label labelCommentMonthName;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton btnDeadMembers;
-        private System.Windows.Forms.Label labelRefresh;
+        private FontAwesome.Sharp.IconButton btnRefresh;
     }
 }

@@ -106,19 +106,18 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-        // public int SelectMonthlyCommentsCount()
-        // {
-            //var dateTime = DateTime.ParseExact(textContainingDate, "MM/dd/yyyy", CultureInfo.CurrentCulture);
-            //try
-            //{
-            //    int totalComments = db.COMMENTs.Count(x => x.isDeleted == false);
-            //    return totalComments;
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw ex;
-            //}
-        // }        
+        public int SelectMonthlyCommentsCount()
+        {            
+            try
+            {
+                int totalComments = db.COMMENTs.Count(x => x.isDeleted == false && x.monthID == DateTime.Today.Month);
+                return totalComments;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool Update(COMMENT entity)
         {
             try
