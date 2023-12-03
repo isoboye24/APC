@@ -23,5 +23,7 @@ namespace APC.DAL
         public Nullable<System.DateTime> deletedDate { get; set; }
         public int monthID { get; set; }
         public int year { get; set; }
+        public int expectedMonthlyDue { get; set; }
+        public int balance { get; set; }
     }
 }

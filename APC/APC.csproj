@@ -237,6 +237,8 @@
     <Compile Include="AllForms\FormViewMember.Designer.cs">
       <DependentUpon>FormViewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\AttendanceBLL.cs" />
+    <Compile Include="BLL\AttendanceStatusBLL.cs" />
     <Compile Include="BLL\ChildBLL.cs" />
     <Compile Include="BLL\CommentBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
@@ -271,6 +273,8 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
+    <Compile Include="DAL\DAO\AttendanceDAO.cs" />
+    <Compile Include="DAL\DAO\AttendanceStatusDAO.cs" />
     <Compile Include="DAL\DAO\ChildDAO.cs" />
     <Compile Include="DAL\DAO\CommentDAO.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
@@ -307,6 +311,12 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\AttendanceDetailDTO.cs" />
+    <Compile Include="DAL\DTO\AttendanceDTO.cs" />
+    <Compile Include="DAL\DTO\AttendanceListDetailDTO.cs" />
+    <Compile Include="DAL\DTO\AttendanceListDTO.cs" />
+    <Compile Include="DAL\DTO\AttendanceStatusDetailDTO.cs" />
+    <Compile Include="DAL\DTO\AttendanceStatusDTO.cs" />
     <Compile Include="DAL\DTO\ChildDetailDTO.cs" />
     <Compile Include="DAL\DTO\ChildDTO.cs" />
     <Compile Include="DAL\DTO\CommentDetailDTO.cs" />
@@ -329,6 +339,8 @@
     <Compile Include="DAL\DTO\MaritalStatusDTO.cs" />
     <Compile Include="DAL\DTO\MemberDetailDTO.cs" />
     <Compile Include="DAL\DTO\MemberDTO.cs" />
+    <Compile Include="DAL\DTO\MonthAndYearListDetailDTO.cs" />
+    <Compile Include="DAL\DTO\MonthAndYearListDTO.cs" />
     <Compile Include="DAL\DTO\MonthDetailDTO.cs" />
     <Compile Include="DAL\DTO\MonthDTO.cs" />
     <Compile Include="DAL\DTO\MotherDTO.cs" />

@@ -18,6 +18,8 @@
           <Property Name="deletedDate" Type="date" />
           <Property Name="monthID" Type="int" Nullable="false" />
           <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="int" Nullable="false" />
+          <Property Name="balance" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
@@ -282,6 +284,8 @@
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
           <Property Name="monthID" Type="Int32" Nullable="false" />
           <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="Int32" Nullable="false" />
+          <Property Name="balance" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
@@ -546,6 +550,8 @@
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
                 <ScalarProperty Name="monthID" ColumnName="monthID" />
                 <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="expectedMonthlyDue" ColumnName="expectedMonthlyDue" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

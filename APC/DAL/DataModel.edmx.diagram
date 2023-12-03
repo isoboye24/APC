@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="10d401ac6c2a440d89319b8000f6ea07" Name="Diagram1">
+      <Diagram DiagramId="9820fc8e375e4575b8f5b853960c39a9" Name="Diagram1">
         <EntityTypeShape EntityType="APCModel.ATTENDANCE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.ATTENDANCE_STATUS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="APCModel.CHILD" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
