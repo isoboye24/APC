@@ -63,17 +63,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllForms\FormAttendance.cs">
+    <Compile Include="AllForms\FormPersonalAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllForms\FormAttendance.Designer.cs">
-      <DependentUpon>FormAttendance.cs</DependentUpon>
+    <Compile Include="AllForms\FormPersonalAttendance.Designer.cs">
+      <DependentUpon>FormPersonalAttendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormAttendanceList.cs">
+    <Compile Include="AllForms\FormGeneralAttendanceList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllForms\FormAttendanceList.Designer.cs">
-      <DependentUpon>FormAttendanceList.cs</DependentUpon>
+    <Compile Include="AllForms\FormGeneralAttendanceList.Designer.cs">
+      <DependentUpon>FormGeneralAttendanceList.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormChildren.cs">
       <SubType>Form</SubType>
@@ -165,6 +165,12 @@
     <Compile Include="AllForms\FormFinancialReportList.Designer.cs">
       <DependentUpon>FormFinancialReportList.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormGeneralAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormGeneralAttendance.Designer.cs">
+      <DependentUpon>FormGeneralAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,12 @@
     </Compile>
     <Compile Include="AllForms\FormSingleImage.Designer.cs">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormViewGeneralAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewGeneralAttendance.Designer.cs">
+      <DependentUpon>FormViewGeneralAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormViewChild.cs">
       <SubType>Form</SubType>
@@ -237,7 +249,8 @@
     <Compile Include="AllForms\FormViewMember.Designer.cs">
       <DependentUpon>FormViewMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\AttendanceBLL.cs" />
+    <Compile Include="BLL\GeneralAttendanceBLL.cs" />
+    <Compile Include="BLL\PersonalAttendanceBLL.cs" />
     <Compile Include="BLL\AttendanceStatusBLL.cs" />
     <Compile Include="BLL\ChildBLL.cs" />
     <Compile Include="BLL\CommentBLL.cs" />
@@ -257,9 +270,6 @@
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="BLL\ProfessionBLL.cs" />
-    <Compile Include="DAL\ATTENDANCE.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\ATTENDANCE_STATUS.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -273,7 +283,8 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
-    <Compile Include="DAL\DAO\AttendanceDAO.cs" />
+    <Compile Include="DAL\DAO\GeneralAttendanceDAO.cs" />
+    <Compile Include="DAL\DAO\PersonalAttendanceDAO.cs" />
     <Compile Include="DAL\DAO\AttendanceStatusDAO.cs" />
     <Compile Include="DAL\DAO\ChildDAO.cs" />
     <Compile Include="DAL\DAO\CommentDAO.cs" />
@@ -311,10 +322,10 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\DTO\AttendanceDetailDTO.cs" />
-    <Compile Include="DAL\DTO\AttendanceDTO.cs" />
-    <Compile Include="DAL\DTO\AttendanceListDetailDTO.cs" />
-    <Compile Include="DAL\DTO\AttendanceListDTO.cs" />
+    <Compile Include="DAL\DTO\PersonalAttendanceDetailDTO.cs" />
+    <Compile Include="DAL\DTO\PersonalAttendanceDTO.cs" />
+    <Compile Include="DAL\DTO\GeneralAttendanceDetailDTO.cs" />
+    <Compile Include="DAL\DTO\GeneralAttendanceDTO.cs" />
     <Compile Include="DAL\DTO\AttendanceStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\AttendanceStatusDTO.cs" />
     <Compile Include="DAL\DTO\ChildDetailDTO.cs" />
@@ -374,6 +385,9 @@
     <Compile Include="DAL\GENDER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\GENERAL_ATTENDANCE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\MARITAL_STATUS.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -387,6 +401,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PERMISSION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PERSONAL_ATTENDANCE.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\POSITION.cs">
@@ -489,11 +506,14 @@
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AllForms\FormAttendance.resx">
-      <DependentUpon>FormAttendance.cs</DependentUpon>
+    <EmbeddedResource Include="AllForms\FormGeneralAttendance.resx">
+      <DependentUpon>FormGeneralAttendance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormAttendanceList.resx">
-      <DependentUpon>FormAttendanceList.cs</DependentUpon>
+    <EmbeddedResource Include="AllForms\FormPersonalAttendance.resx">
+      <DependentUpon>FormPersonalAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormGeneralAttendanceList.resx">
+      <DependentUpon>FormGeneralAttendanceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormChildren.resx">
       <DependentUpon>FormChildren.cs</DependentUpon>
@@ -581,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormSingleImage.resx">
       <DependentUpon>FormSingleImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewGeneralAttendance.resx">
+      <DependentUpon>FormViewGeneralAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewChild.resx">
       <DependentUpon>FormViewChild.cs</DependentUpon>

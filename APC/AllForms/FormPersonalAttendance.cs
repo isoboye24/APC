@@ -1,4 +1,6 @@
 ﻿using APC.BLL;
+using APC.DAL.DAO;
+using APC.DAL;
 using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,9 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace APC
 {
-    public partial class FormAttendance : Form
+    public partial class FormPersonalAttendance : Form
     {
-        public FormAttendance()
+        public FormPersonalAttendance()
         {
             InitializeComponent();
         }
@@ -29,10 +31,11 @@ namespace APC
         {
 
         }
-        AttendanceBLL bll = new AttendanceBLL();
-        AttendanceDTO dto = new AttendanceDTO();
+        PersonalAttendanceBLL bll = new PersonalAttendanceBLL();
+        PersonalAttendanceDTO dto = new PersonalAttendanceDTO();
         MemberDetailDTO memberDetail = new MemberDetailDTO();
         AttendanceStatusDetailDTO attStatusDetail = new AttendanceStatusDetailDTO();
+        public GeneralAttendanceDetailDTO generalAttendanceDetail = new GeneralAttendanceDetailDTO();
         private void FormAttendance_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -112,12 +115,11 @@ namespace APC
             attStatusDetail.AttendanceStatusID = Convert.ToInt32(dataGridViewAttendanceStatuses.Rows[e.RowIndex].Cells[0].Value);
             txtAttendanceStatus.Text = dataGridViewAttendanceStatuses.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
-
+        
         private void txtSearchSurname_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (memberDetail.MemberID == 0)
@@ -127,35 +129,38 @@ namespace APC
             if (attStatusDetail.AttendanceStatusID == 0)
             {
                 MessageBox.Show("Please choose an attendance status from the table");
-            }
-            if (txtExpectedMonthlyDue.Text.Trim() =="")
-            {
-                MessageBox.Show("Enter expected monthly due");
-            }
+            }            
             else
             {
-                AttendanceDetailDTO attendance = new AttendanceDetailDTO();
-                attendance.AttendanceStatusID = attStatusDetail.AttendanceStatusID;
-                attendance.MemberID = memberDetail.MemberID;
-                attendance.ExpectedDue = Convert.ToInt32(txtExpectedMonthlyDue.Text);                
-                if (txtMonthlyDues.Text.Trim() =="")
+                bool isUnique = bll.IsUnique(memberDetail.MemberID, generalAttendanceDetail.GeneralAttendanceID);
+                if (!isUnique)
                 {
-                    attendance.MonthlyDue = 0;
+                    MessageBox.Show("This member has been added");
                 }
                 else
                 {
-                    attendance.MonthlyDue = Convert.ToInt32(txtMonthlyDues.Text);
-                }
-                attendance.Balance = attendance.ExpectedDue - attendance.MonthlyDue;
-                attendance.Day = dateTimePickerAttDate.Value.Day;
-                attendance.MonthID = dateTimePickerAttDate.Value.Month;
-                attendance.Year = dateTimePickerAttDate.Value.Year.ToString();
-                if (bll.Insert(attendance))
-                {
-                    MessageBox.Show("Attendance was added");
-                    txtMonthlyDues.Clear();
-                    txtExpectedMonthlyDue.Clear();
-                    dateTimePickerAttDate.Value = DateTime.Today;
+                    PersonalAttendanceDetailDTO attendance = new PersonalAttendanceDetailDTO();
+                    attendance.AttendanceStatusID = attStatusDetail.AttendanceStatusID;
+                    attendance.MemberID = memberDetail.MemberID;
+                    attendance.ExpectedDue = 10;
+                    if (txtMonthlyDues.Text.Trim() == "")
+                    {
+                        attendance.MonthlyDue = 0;
+                    }
+                    else
+                    {
+                        attendance.MonthlyDue = Convert.ToInt32(txtMonthlyDues.Text);
+                    }
+                    attendance.Balance = attendance.ExpectedDue - attendance.MonthlyDue;
+                    attendance.Day = generalAttendanceDetail.Day;
+                    attendance.MonthID = generalAttendanceDetail.MonthID;
+                    attendance.Year = generalAttendanceDetail.Year;
+                    attendance.GeneralAttendanceID = generalAttendanceDetail.GeneralAttendanceID;
+                    if (bll.Insert(attendance))
+                    {
+                        MessageBox.Show("Attendance was added");
+                        txtMonthlyDues.Clear();                        
+                    }
                 }
             }
         }

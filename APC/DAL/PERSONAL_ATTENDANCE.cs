@@ -12,7 +12,7 @@ namespace APC.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class ATTENDANCE
+    public partial class PERSONAL_ATTENDANCE
     {
         public int attendanceID { get; set; }
         public int attendanceStatusID { get; set; }
@@ -25,5 +25,6 @@ namespace APC.DAL
         public int year { get; set; }
         public int expectedMonthlyDue { get; set; }
         public int balance { get; set; }
+        public int generalAttendanceID { get; set; }
     }
 }

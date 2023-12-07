@@ -298,7 +298,7 @@ namespace APC
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormAttendanceList());
+            OpenChildForm(new FormGeneralAttendanceList());
         }
 
         private void btnEvents_Click(object sender, EventArgs e)

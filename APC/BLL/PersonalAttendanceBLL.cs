@@ -9,26 +9,26 @@ using System.Threading.Tasks;
 
 namespace APC.BLL
 {
-    internal class AttendanceBLL : IBLL<AttendanceDTO, AttendanceDetailDTO>
+    internal class PersonalAttendanceBLL : IBLL<PersonalAttendanceDTO, PersonalAttendanceDetailDTO>
     {
         MemberDAO memberDAO = new MemberDAO();
         GenderDAO genderDAO = new GenderDAO();
         AttendanceStatusDAO attendStatusDAO = new AttendanceStatusDAO();
         MonthDAO monthDAO = new MonthDAO();
-        AttendanceDAO dao = new AttendanceDAO();
-        public bool Delete(AttendanceDetailDTO entity)
+        PersonalAttendanceDAO dao = new PersonalAttendanceDAO();
+        public bool Delete(PersonalAttendanceDetailDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool GetBack(AttendanceDetailDTO entity)
+        public bool GetBack(PersonalAttendanceDetailDTO entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Insert(AttendanceDetailDTO entity)
+        public bool Insert(PersonalAttendanceDetailDTO entity)
         {
-            ATTENDANCE attendance = new ATTENDANCE();
+            PERSONAL_ATTENDANCE attendance = new PERSONAL_ATTENDANCE();
             attendance.attendanceStatusID = entity.AttendanceStatusID;
             attendance.memberID = entity.MemberID;
             attendance.monthlyDues = entity.MonthlyDue;
@@ -36,23 +36,41 @@ namespace APC.BLL
             attendance.balance = entity.Balance;
             attendance.day = entity.Day;
             attendance.monthID = entity.MonthID;
+            attendance.generalAttendanceID = entity.GeneralAttendanceID;
             attendance.year = Convert.ToInt32(entity.Year);
             return dao.Insert(attendance);
         }
-
-        public AttendanceDTO Select()
+        public PersonalAttendanceDTO Select()
         {
-            AttendanceDTO dto = new AttendanceDTO();
+            PersonalAttendanceDTO dto = new PersonalAttendanceDTO();
             dto.Months = monthDAO.Select();
             dto.AttendanceStatuses = attendStatusDAO.Select();
             dto.Genders = genderDAO.Select();
             dto.Members = memberDAO.Select();
-            dto.Attendances = dao.Select();
-            dto.AttendanceLists = dao.SelectAttendanceList();
             return dto;
         }
 
-        public bool Update(AttendanceDetailDTO entity)
+        public PersonalAttendanceDTO SelectMembersSet(int ID)
+        {
+            PersonalAttendanceDTO dto = new PersonalAttendanceDTO();            
+            dto.PersonalAttendances = dao.SelectMembers(ID);
+            return dto;
+        }
+
+        public bool IsUnique(int personID, int attendanceID)
+        {
+            List<PERSONAL_ATTENDANCE> list = dao.IsUnique(personID, attendanceID);
+            if (list.Count > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool Update(PersonalAttendanceDetailDTO entity)
         {
             throw new NotImplementedException();
         }

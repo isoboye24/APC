@@ -5,22 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="APCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ATTENDANCE">
-          <Key>
-            <PropertyRef Name="attendanceID" />
-          </Key>
-          <Property Name="attendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="attendanceStatusID" Type="int" Nullable="false" />
-          <Property Name="memberID" Type="int" Nullable="false" />
-          <Property Name="monthlyDues" Type="int" />
-          <Property Name="day" Type="int" />
-          <Property Name="isDeleted" Type="bit" Nullable="false" />
-          <Property Name="deletedDate" Type="date" />
-          <Property Name="monthID" Type="int" Nullable="false" />
-          <Property Name="year" Type="int" Nullable="false" />
-          <Property Name="expectedMonthlyDue" Type="int" Nullable="false" />
-          <Property Name="balance" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
             <PropertyRef Name="attendanceStatusID" />
@@ -164,6 +148,23 @@
           <Property Name="genderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="genderName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="GENERAL_ATTENDANCE">
+          <Key>
+            <PropertyRef Name="generalAttendanceID" />
+          </Key>
+          <Property Name="generalAttendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="monthID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="totalMembersPresent" Type="int" />
+          <Property Name="totalMembersAbsent" Type="int" />
+          <Property Name="totalDuesPaid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalDuesExpected" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="totalDuesBalance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="summary" Type="text" />
+          <Property Name="day" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="MARITAL_STATUS">
           <Key>
             <PropertyRef Name="maritalStatusID" />
@@ -226,6 +227,23 @@
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
         </EntityType>
+        <EntityType Name="PERSONAL_ATTENDANCE">
+          <Key>
+            <PropertyRef Name="attendanceID" />
+          </Key>
+          <Property Name="attendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="attendanceStatusID" Type="int" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="monthlyDues" Type="int" />
+          <Property Name="day" Type="int" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="monthID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="int" Nullable="false" />
+          <Property Name="balance" Type="int" Nullable="false" />
+          <Property Name="generalAttendanceID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="POSITION">
           <Key>
             <PropertyRef Name="positionID" />
@@ -245,7 +263,6 @@
           <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityContainer Name="APCModelStoreContainer">
-          <EntitySet Name="ATTENDANCE" EntityType="Self.ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHILD" EntityType="Self.CHILD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
@@ -258,11 +275,13 @@
           <EntitySet Name="EXPENDITURE" EntityType="Self.EXPENDITURE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FINANCIAL_REPORT" EntityType="Self.FINANCIAL_REPORT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GENDER" EntityType="Self.GENDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GENERAL_ATTENDANCE" EntityType="Self.GENERAL_ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MONTH" EntityType="Self.MONTH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NATIONALITY" EntityType="Self.NATIONALITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONAL_ATTENDANCE" EntityType="Self.PERSONAL_ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSITION" EntityType="Self.POSITION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROFESSION" EntityType="Self.PROFESSION" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -271,22 +290,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="APCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ATTENDANCE">
-          <Key>
-            <PropertyRef Name="attendanceID" />
-          </Key>
-          <Property Name="attendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="attendanceStatusID" Type="Int32" Nullable="false" />
-          <Property Name="memberID" Type="Int32" Nullable="false" />
-          <Property Name="monthlyDues" Type="Int32" />
-          <Property Name="day" Type="Int32" />
-          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="deletedDate" Type="DateTime" Precision="0" />
-          <Property Name="monthID" Type="Int32" Nullable="false" />
-          <Property Name="year" Type="Int32" Nullable="false" />
-          <Property Name="expectedMonthlyDue" Type="Int32" Nullable="false" />
-          <Property Name="balance" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="ATTENDANCE_STATUS">
           <Key>
             <PropertyRef Name="attendanceStatusID" />
@@ -430,6 +433,23 @@
           <Property Name="genderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="genderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
+        <EntityType Name="GENERAL_ATTENDANCE">
+          <Key>
+            <PropertyRef Name="generalAttendanceID" />
+          </Key>
+          <Property Name="generalAttendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="monthID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="totalMembersPresent" Type="Int32" />
+          <Property Name="totalMembersAbsent" Type="Int32" />
+          <Property Name="totalDuesPaid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalDuesExpected" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalDuesBalance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="day" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="MARITAL_STATUS">
           <Key>
             <PropertyRef Name="maritalStatusID" />
@@ -492,6 +512,23 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
+        <EntityType Name="PERSONAL_ATTENDANCE">
+          <Key>
+            <PropertyRef Name="attendanceID" />
+          </Key>
+          <Property Name="attendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="attendanceStatusID" Type="Int32" Nullable="false" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="monthlyDues" Type="Int32" />
+          <Property Name="day" Type="Int32" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="monthID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="Int32" Nullable="false" />
+          <Property Name="balance" Type="Int32" Nullable="false" />
+          <Property Name="generalAttendanceID" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="POSITION">
           <Key>
             <PropertyRef Name="positionID" />
@@ -511,7 +548,6 @@
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityContainer Name="APCEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ATTENDANCEs" EntityType="Self.ATTENDANCE" />
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" />
           <EntitySet Name="Children" EntityType="Self.CHILD" />
           <EntitySet Name="COMMENTs" EntityType="Self.COMMENT" />
@@ -524,11 +560,13 @@
           <EntitySet Name="EXPENDITUREs" EntityType="Self.EXPENDITURE" />
           <EntitySet Name="FINANCIAL_REPORT" EntityType="Self.FINANCIAL_REPORT" />
           <EntitySet Name="GENDERs" EntityType="Self.GENDER" />
+          <EntitySet Name="GENERAL_ATTENDANCE" EntityType="Self.GENERAL_ATTENDANCE" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" />
           <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
           <EntitySet Name="MONTHs" EntityType="Self.MONTH" />
           <EntitySet Name="NATIONALITies" EntityType="Self.NATIONALITY" />
           <EntitySet Name="PERMISSIONs" EntityType="Self.PERMISSION" />
+          <EntitySet Name="PERSONAL_ATTENDANCE" EntityType="Self.PERSONAL_ATTENDANCE" />
           <EntitySet Name="POSITIONs" EntityType="Self.POSITION" />
           <EntitySet Name="PROFESSIONs" EntityType="Self.PROFESSION" />
         </EntityContainer>
@@ -538,23 +576,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="APCModelStoreContainer" CdmEntityContainer="APCEntities3">
-          <EntitySetMapping Name="ATTENDANCEs">
-            <EntityTypeMapping TypeName="APCModel.ATTENDANCE">
-              <MappingFragment StoreEntitySet="ATTENDANCE">
-                <ScalarProperty Name="attendanceID" ColumnName="attendanceID" />
-                <ScalarProperty Name="attendanceStatusID" ColumnName="attendanceStatusID" />
-                <ScalarProperty Name="memberID" ColumnName="memberID" />
-                <ScalarProperty Name="monthlyDues" ColumnName="monthlyDues" />
-                <ScalarProperty Name="day" ColumnName="day" />
-                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
-                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
-                <ScalarProperty Name="monthID" ColumnName="monthID" />
-                <ScalarProperty Name="year" ColumnName="year" />
-                <ScalarProperty Name="expectedMonthlyDue" ColumnName="expectedMonthlyDue" />
-                <ScalarProperty Name="balance" ColumnName="balance" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ATTENDANCE_STATUS">
             <EntityTypeMapping TypeName="APCModel.ATTENDANCE_STATUS">
               <MappingFragment StoreEntitySet="ATTENDANCE_STATUS">
@@ -710,6 +731,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="GENERAL_ATTENDANCE">
+            <EntityTypeMapping TypeName="APCModel.GENERAL_ATTENDANCE">
+              <MappingFragment StoreEntitySet="GENERAL_ATTENDANCE">
+                <ScalarProperty Name="generalAttendanceID" ColumnName="generalAttendanceID" />
+                <ScalarProperty Name="monthID" ColumnName="monthID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="totalMembersPresent" ColumnName="totalMembersPresent" />
+                <ScalarProperty Name="totalMembersAbsent" ColumnName="totalMembersAbsent" />
+                <ScalarProperty Name="totalDuesPaid" ColumnName="totalDuesPaid" />
+                <ScalarProperty Name="totalDuesExpected" ColumnName="totalDuesExpected" />
+                <ScalarProperty Name="totalDuesBalance" ColumnName="totalDuesBalance" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
+                <ScalarProperty Name="day" ColumnName="day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MARITAL_STATUS">
             <EntityTypeMapping TypeName="APCModel.MARITAL_STATUS">
               <MappingFragment StoreEntitySet="MARITAL_STATUS">
@@ -774,6 +813,24 @@
                 <ScalarProperty Name="permission1" ColumnName="permission" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAL_ATTENDANCE">
+            <EntityTypeMapping TypeName="APCModel.PERSONAL_ATTENDANCE">
+              <MappingFragment StoreEntitySet="PERSONAL_ATTENDANCE">
+                <ScalarProperty Name="attendanceID" ColumnName="attendanceID" />
+                <ScalarProperty Name="attendanceStatusID" ColumnName="attendanceStatusID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="monthlyDues" ColumnName="monthlyDues" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="monthID" ColumnName="monthID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="expectedMonthlyDue" ColumnName="expectedMonthlyDue" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="generalAttendanceID" ColumnName="generalAttendanceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

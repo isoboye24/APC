@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace APC.DAL.DTO
 {
-    public class AttendanceListDetailDTO
+    public class GeneralAttendanceDetailDTO
     {
-        public int AttendanceListID { get; set; }
+        public int GeneralAttendanceID { get; set; }
+        public int Day { get; set; }
+        public int MonthID { get; set; }
         public string Month { get; set; }
         public string Year { get; set; }
-        public int TotalMembers { get; set; }
-        public int TotalFemale { get; set; }
-        public int TotalMale { get; set; }
+        public int TotalMembersPresent { get; set; }
+        public int TotalMembersAbsent { get; set; }
         public int TotalDuesPaid { get; set; }
         public int TotalDuesExpected { get; set; }
         public int TotalDuesBalance { get; set; }
-        public int MonthID { get; set; }
+        public string Summary { get; set; }
     }
 }
