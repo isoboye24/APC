@@ -36,6 +36,8 @@ namespace APC
         MemberDetailDTO memberDetail = new MemberDetailDTO();
         AttendanceStatusDetailDTO attStatusDetail = new AttendanceStatusDetailDTO();
         public GeneralAttendanceDetailDTO generalAttendanceDetail = new GeneralAttendanceDetailDTO();
+        public PersonalAttendanceDetailDTO personalDetail = new PersonalAttendanceDetailDTO();
+        public bool isUpdate = false;
         private void FormAttendance_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -77,7 +79,18 @@ namespace APC
             dataGridViewMembers.Columns[28].Visible = false;
             #endregion
 
+            if (isUpdate)
+            {
+                txtSurname.Text = personalDetail.Surname;
+                txtName.Text = personalDetail.Name;
+                txtGender.Text = personalDetail.Gender;
+                txtAttendanceStatus.Text = personalDetail.AttendanceStatusName;
+                txtMonthlyDues.Text = personalDetail.MonthlyDue.ToString();
+                string imagePath = Application.StartupPath + "\\images\\" + personalDetail.ImagePath;
+                picProfilePic.ImageLocation = imagePath;
 
+                tableLayoutPanelMemberList.Hide();
+            }
         }
 
         private void txtMonthlyDues_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,34 +145,67 @@ namespace APC
             }            
             else
             {
-                bool isUnique = bll.IsUnique(memberDetail.MemberID, generalAttendanceDetail.GeneralAttendanceID);
-                if (!isUnique)
+                if (!isUpdate)
                 {
-                    MessageBox.Show("This member has been added");
-                }
-                else
-                {
-                    PersonalAttendanceDetailDTO attendance = new PersonalAttendanceDetailDTO();
-                    attendance.AttendanceStatusID = attStatusDetail.AttendanceStatusID;
-                    attendance.MemberID = memberDetail.MemberID;
-                    attendance.ExpectedDue = 10;
-                    if (txtMonthlyDues.Text.Trim() == "")
+                    bool isUnique = bll.IsUnique(memberDetail.MemberID, generalAttendanceDetail.GeneralAttendanceID);
+                    if (!isUnique)
                     {
-                        attendance.MonthlyDue = 0;
+                        MessageBox.Show("This member has been added");
                     }
                     else
                     {
-                        attendance.MonthlyDue = Convert.ToInt32(txtMonthlyDues.Text);
+                        PersonalAttendanceDetailDTO attendance = new PersonalAttendanceDetailDTO();
+                        attendance.AttendanceStatusID = attStatusDetail.AttendanceStatusID;
+                        attendance.MemberID = memberDetail.MemberID;
+                        attendance.ExpectedDue = 10;
+                        if (txtMonthlyDues.Text.Trim() == "")
+                        {
+                            attendance.MonthlyDue = 0;
+                        }
+                        else
+                        {
+                            attendance.MonthlyDue = Convert.ToDecimal(txtMonthlyDues.Text);
+                        }
+                        attendance.Balance = attendance.ExpectedDue - attendance.MonthlyDue;
+                        attendance.Day = generalAttendanceDetail.Day;
+                        attendance.MonthID = generalAttendanceDetail.MonthID;
+                        attendance.Year = generalAttendanceDetail.Year;
+                        attendance.GeneralAttendanceID = generalAttendanceDetail.GeneralAttendanceID;
+                        if (bll.Insert(attendance))
+                        {
+                            MessageBox.Show("Attendance was added");
+                            txtMonthlyDues.Clear();
+                        }               
                     }
-                    attendance.Balance = attendance.ExpectedDue - attendance.MonthlyDue;
-                    attendance.Day = generalAttendanceDetail.Day;
-                    attendance.MonthID = generalAttendanceDetail.MonthID;
-                    attendance.Year = generalAttendanceDetail.Year;
-                    attendance.GeneralAttendanceID = generalAttendanceDetail.GeneralAttendanceID;
-                    if (bll.Insert(attendance))
+                }
+                else if (isUpdate)
+                {
+                    if (personalDetail.AttendanceStatusName == txtAttendanceStatus.Text && personalDetail.MonthlyDue == Convert.ToDecimal(txtMonthlyDues.Text))
                     {
-                        MessageBox.Show("Attendance was added");
-                        txtMonthlyDues.Clear();                        
+                        MessageBox.Show("There is no change");
+                    }
+                    else
+                    {
+                        personalDetail.AttendanceStatusID = attStatusDetail.AttendanceStatusID;
+                        personalDetail.ExpectedDue = 10;
+                        if (txtMonthlyDues.Text.Trim() == "")
+                        {
+                            personalDetail.MonthlyDue = 0;
+                        }
+                        else
+                        {
+                            personalDetail.MonthlyDue = Convert.ToDecimal(txtMonthlyDues.Text);
+                        }
+                        personalDetail.Balance = personalDetail.ExpectedDue - personalDetail.MonthlyDue;
+                        personalDetail.Day = personalDetail.Day;
+                        personalDetail.MonthID = personalDetail.MonthID;
+                        personalDetail.Year = personalDetail.Year;
+                        personalDetail.GeneralAttendanceID = personalDetail.GeneralAttendanceID;
+                        if (bll.Update(personalDetail))
+                        {
+                            MessageBox.Show("The member was updated");
+                            this.Close();
+                        }
                     }
                 }
             }

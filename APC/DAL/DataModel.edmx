@@ -123,7 +123,7 @@
             <PropertyRef Name="expenditureID" />
           </Key>
           <Property Name="expenditureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="amountSpent" Type="int" Nullable="false" />
+          <Property Name="amountSpent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="summary" Type="text" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
@@ -136,10 +136,12 @@
             <PropertyRef Name="financialReportID" />
           </Key>
           <Property Name="financialReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="attendanceID" Type="int" Nullable="false" />
-          <Property Name="expenditureID" Type="int" Nullable="false" />
+          <Property Name="totalAmountRaised" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalAmountSpent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="summary" Type="text" />
         </EntityType>
         <EntityType Name="GENDER">
           <Key>
@@ -234,14 +236,14 @@
           <Property Name="attendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="attendanceStatusID" Type="int" Nullable="false" />
           <Property Name="memberID" Type="int" Nullable="false" />
-          <Property Name="monthlyDues" Type="int" />
+          <Property Name="monthlyDues" Type="decimal" Precision="18" Scale="2" />
           <Property Name="day" Type="int" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
           <Property Name="monthID" Type="int" Nullable="false" />
           <Property Name="year" Type="int" Nullable="false" />
-          <Property Name="expectedMonthlyDue" Type="int" Nullable="false" />
-          <Property Name="balance" Type="int" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="balance" Type="decimal" Precision="18" Scale="2" />
           <Property Name="generalAttendanceID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="POSITION">
@@ -408,7 +410,7 @@
             <PropertyRef Name="expenditureID" />
           </Key>
           <Property Name="expenditureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="amountSpent" Type="Int32" Nullable="false" />
+          <Property Name="amountSpent" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
@@ -421,10 +423,12 @@
             <PropertyRef Name="financialReportID" />
           </Key>
           <Property Name="financialReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="attendanceID" Type="Int32" Nullable="false" />
-          <Property Name="expenditureID" Type="Int32" Nullable="false" />
+          <Property Name="totalAmountRaised" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="totalAmountSpent" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="GENDER">
           <Key>
@@ -519,14 +523,14 @@
           <Property Name="attendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="attendanceStatusID" Type="Int32" Nullable="false" />
           <Property Name="memberID" Type="Int32" Nullable="false" />
-          <Property Name="monthlyDues" Type="Int32" />
+          <Property Name="monthlyDues" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="day" Type="Int32" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
           <Property Name="monthID" Type="Int32" Nullable="false" />
           <Property Name="year" Type="Int32" Nullable="false" />
-          <Property Name="expectedMonthlyDue" Type="Int32" Nullable="false" />
-          <Property Name="balance" Type="Int32" Nullable="false" />
+          <Property Name="expectedMonthlyDue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="balance" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="generalAttendanceID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="POSITION">
@@ -716,10 +720,12 @@
             <EntityTypeMapping TypeName="APCModel.FINANCIAL_REPORT">
               <MappingFragment StoreEntitySet="FINANCIAL_REPORT">
                 <ScalarProperty Name="financialReportID" ColumnName="financialReportID" />
-                <ScalarProperty Name="attendanceID" ColumnName="attendanceID" />
-                <ScalarProperty Name="expenditureID" ColumnName="expenditureID" />
+                <ScalarProperty Name="totalAmountRaised" ColumnName="totalAmountRaised" />
+                <ScalarProperty Name="totalAmountSpent" ColumnName="totalAmountSpent" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

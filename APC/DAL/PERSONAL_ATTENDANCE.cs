@@ -17,14 +17,14 @@ namespace APC.DAL
         public int attendanceID { get; set; }
         public int attendanceStatusID { get; set; }
         public int memberID { get; set; }
-        public Nullable<int> monthlyDues { get; set; }
+        public Nullable<decimal> monthlyDues { get; set; }
         public Nullable<int> day { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
         public int monthID { get; set; }
         public int year { get; set; }
-        public int expectedMonthlyDue { get; set; }
-        public int balance { get; set; }
+        public Nullable<decimal> expectedMonthlyDue { get; set; }
+        public Nullable<decimal> balance { get; set; }
         public int generalAttendanceID { get; set; }
     }
 }

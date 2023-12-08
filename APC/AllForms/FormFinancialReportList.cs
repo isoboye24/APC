@@ -32,5 +32,10 @@ namespace APC.AllForms
             open.ShowDialog();
             this.Visible = true;
         }
+
+        private void FormFinancialReportList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

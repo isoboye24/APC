@@ -15,7 +15,7 @@ namespace APC.DAL
     public partial class EXPENDITURE
     {
         public int expenditureID { get; set; }
-        public int amountSpent { get; set; }
+        public decimal amountSpent { get; set; }
         public string summary { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }

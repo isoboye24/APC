@@ -72,7 +72,18 @@ namespace APC.BLL
 
         public bool Update(PersonalAttendanceDetailDTO entity)
         {
-            throw new NotImplementedException();
+            PERSONAL_ATTENDANCE attendance = new PERSONAL_ATTENDANCE();
+            attendance.attendanceID = entity.AttendanceID;
+            attendance.attendanceStatusID = entity.AttendanceStatusID;
+            attendance.memberID = entity.MemberID;
+            attendance.monthlyDues = entity.MonthlyDue;
+            attendance.expectedMonthlyDue = entity.ExpectedDue;
+            attendance.balance = entity.Balance;
+            attendance.day = entity.Day;
+            attendance.monthID = entity.MonthID;
+            attendance.generalAttendanceID = entity.GeneralAttendanceID;
+            attendance.year = Convert.ToInt32(entity.Year);
+            return dao.Update(attendance);
         }
     }
 }

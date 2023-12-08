@@ -104,6 +104,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDocuments = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -143,13 +144,14 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelMenu.Controls.Add(this.btnDeadMembers);
+            this.panelMenu.Controls.Add(this.btnManage);
             this.panelMenu.Controls.Add(this.btnComments);
             this.panelMenu.Controls.Add(this.panel4);
             this.panelMenu.Controls.Add(this.btnEvents);
             this.panelMenu.Controls.Add(this.btnMembers);
             this.panelMenu.Controls.Add(this.btnAttendance);
             this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Controls.Add(this.btnManage);
+            this.panelMenu.Controls.Add(this.btnDocuments);
             this.panelMenu.Controls.Add(this.btnExpenditure);
             this.panelMenu.Controls.Add(this.btnFinancialReport);
             this.panelMenu.Controls.Add(this.btnChildren);
@@ -170,7 +172,7 @@
             this.btnDeadMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeadMembers.IconSize = 24;
             this.btnDeadMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeadMembers.Location = new System.Drawing.Point(0, 461);
+            this.btnDeadMembers.Location = new System.Drawing.Point(0, 454);
             this.btnDeadMembers.Name = "btnDeadMembers";
             this.btnDeadMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDeadMembers.Size = new System.Drawing.Size(200, 40);
@@ -192,7 +194,7 @@
             this.btnComments.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnComments.IconSize = 24;
             this.btnComments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.Location = new System.Drawing.Point(0, 167);
+            this.btnComments.Location = new System.Drawing.Point(0, 166);
             this.btnComments.Name = "btnComments";
             this.btnComments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnComments.Size = new System.Drawing.Size(200, 40);
@@ -246,7 +248,7 @@
             this.btnEvents.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEvents.IconSize = 24;
             this.btnEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvents.Location = new System.Drawing.Point(0, 412);
+            this.btnEvents.Location = new System.Drawing.Point(0, 406);
             this.btnEvents.Name = "btnEvents";
             this.btnEvents.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnEvents.Size = new System.Drawing.Size(200, 40);
@@ -268,7 +270,7 @@
             this.btnMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMembers.IconSize = 24;
             this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(0, 216);
+            this.btnMembers.Location = new System.Drawing.Point(0, 214);
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMembers.Size = new System.Drawing.Size(200, 40);
@@ -344,7 +346,7 @@
             this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnManage.IconSize = 24;
             this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.Location = new System.Drawing.Point(0, 510);
+            this.btnManage.Location = new System.Drawing.Point(0, 550);
             this.btnManage.Name = "btnManage";
             this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnManage.Size = new System.Drawing.Size(200, 40);
@@ -366,7 +368,7 @@
             this.btnExpenditure.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExpenditure.IconSize = 24;
             this.btnExpenditure.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpenditure.Location = new System.Drawing.Point(0, 363);
+            this.btnExpenditure.Location = new System.Drawing.Point(0, 358);
             this.btnExpenditure.Name = "btnExpenditure";
             this.btnExpenditure.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnExpenditure.Size = new System.Drawing.Size(200, 40);
@@ -388,7 +390,7 @@
             this.btnFinancialReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFinancialReport.IconSize = 24;
             this.btnFinancialReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinancialReport.Location = new System.Drawing.Point(0, 314);
+            this.btnFinancialReport.Location = new System.Drawing.Point(0, 310);
             this.btnFinancialReport.Name = "btnFinancialReport";
             this.btnFinancialReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnFinancialReport.Size = new System.Drawing.Size(200, 40);
@@ -410,7 +412,7 @@
             this.btnChildren.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChildren.IconSize = 24;
             this.btnChildren.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChildren.Location = new System.Drawing.Point(0, 265);
+            this.btnChildren.Location = new System.Drawing.Point(0, 262);
             this.btnChildren.Name = "btnChildren";
             this.btnChildren.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnChildren.Size = new System.Drawing.Size(200, 40);
@@ -1168,6 +1170,28 @@
             this.panel3.Size = new System.Drawing.Size(5, 634);
             this.panel3.TabIndex = 19;
             // 
+            // btnDocuments
+            // 
+            this.btnDocuments.FlatAppearance.BorderSize = 0;
+            this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDocuments.IconSize = 24;
+            this.btnDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.Location = new System.Drawing.Point(0, 502);
+            this.btnDocuments.Name = "btnDocuments";
+            this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDocuments.Size = new System.Drawing.Size(200, 40);
+            this.btnDocuments.TabIndex = 6;
+            this.btnDocuments.Text = "    Documents";
+            this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocuments.UseVisualStyleBackColor = true;
+            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
+            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1308,5 +1332,6 @@
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton btnDeadMembers;
         private FontAwesome.Sharp.IconButton btnRefresh;
+        private FontAwesome.Sharp.IconButton btnDocuments;
     }
 }

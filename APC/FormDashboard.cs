@@ -348,5 +348,10 @@ namespace APC
         {
             btnRefresh.BackColor = Color.White;
         }
+
+        private void btnDocuments_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

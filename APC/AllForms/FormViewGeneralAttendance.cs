@@ -38,20 +38,16 @@ namespace APC.AllForms
             rbEqual.Checked = false;
             cmbAttendanceStatus.SelectedIndex = -1;
         }
-        private void FillDateGrid()
-        {
-            bll = new PersonalAttendanceBLL();
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.GeneralAttendance;
-        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            ClearFilters();
+            FillDataGrid();
         }
         PersonalAttendanceBLL bll = new PersonalAttendanceBLL();
         PersonalAttendanceDTO dto = new PersonalAttendanceDTO();
         public GeneralAttendanceDetailDTO detail = new GeneralAttendanceDetailDTO();
+        PersonalAttendanceDetailDTO personalDetail = new PersonalAttendanceDetailDTO();
         private void FormViewAttendance_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -91,6 +87,13 @@ namespace APC.AllForms
             labelTotalDuesBalance.Text = detail.TotalDuesBalance.ToString();
         }
 
+        private void FillDataGrid()
+        {
+            bll = new PersonalAttendanceBLL();
+            dto = bll.SelectMembersSet(detail.GeneralAttendanceID);
+            dataGridView1.DataSource = dto.PersonalAttendances;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FormPersonalAttendance open = new FormPersonalAttendance();
@@ -98,14 +101,88 @@ namespace APC.AllForms
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
-            dto = bll.SelectMembersSet(detail.GeneralAttendanceID);
-            dataGridView1.DataSource = dto.PersonalAttendances;
+            FillDataGrid();
             ShowRecordData();
         }
 
-        private void btnView_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (personalDetail.AttendanceID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table");
+            }
+            else
+            {
+                FormPersonalAttendance open = new FormPersonalAttendance();
+                open.personalDetail = personalDetail;
+                open.isUpdate = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                FillDataGrid();
+                ShowRecordData();
+            }
+        }
 
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            personalDetail = new PersonalAttendanceDetailDTO();
+            personalDetail.AttendanceID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            personalDetail.AttendanceStatusID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            personalDetail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            personalDetail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+            personalDetail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            personalDetail.Year = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            personalDetail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+            personalDetail.Surname = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            personalDetail.Name = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+            personalDetail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+            personalDetail.GenderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
+            personalDetail.Gender = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+            personalDetail.AttendanceStatusName = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+            personalDetail.MonthlyDue = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
+            personalDetail.ExpectedDue = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            personalDetail.Balance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[15].Value);
+            personalDetail.GeneralAttendanceID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[16].Value);
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+            List<PersonalAttendanceDetailDTO> list = dto.PersonalAttendances;
+            list = list.Where(x => x.Surname.Contains(txtSurname.Text.Trim())).ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            List<PersonalAttendanceDetailDTO> list = dto.PersonalAttendances;
+            list = list.Where(x => x.Name.Contains(txtName.Text.Trim())).ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<PersonalAttendanceDetailDTO> list = dto.PersonalAttendances;
+            if (cmbAttendanceStatus.SelectedIndex != -1)
+            {
+                list = list.Where(x => x.AttendanceStatusID == Convert.ToInt32(cmbAttendanceStatus.SelectedValue)).ToList();
+            }
+            if (txtMonthlyDues.Text.Trim() != "")
+            {
+                if (rbEqual.Checked)
+                {
+                    list = list.Where(x => x.MonthlyDue == Convert.ToDecimal(txtMonthlyDues.Text)).ToList();
+                }
+                if (rbLess.Checked)
+                {
+                    list = list.Where(x => x.MonthlyDue < Convert.ToDecimal(txtMonthlyDues.Text)).ToList();
+                }
+                if (rbMore.Checked)
+                {
+                    list = list.Where(x => x.MonthlyDue > Convert.ToDecimal(txtMonthlyDues.Text)).ToList();
+                }
+            }
+            dataGridView1.DataSource = list;
         }
     }
 }

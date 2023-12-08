@@ -15,9 +15,11 @@ namespace APC.DAL
     public partial class FINANCIAL_REPORT
     {
         public int financialReportID { get; set; }
-        public int attendanceID { get; set; }
-        public int expenditureID { get; set; }
+        public decimal totalAmountRaised { get; set; }
+        public decimal totalAmountSpent { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> deletedDate { get; set; }
+        public int year { get; set; }
+        public string summary { get; set; }
     }
 }

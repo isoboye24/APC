@@ -21,9 +21,9 @@ namespace APC.DAL.DTO
         public int GenderID { get; set; }
         public string Gender { get; set; }
         public string AttendanceStatusName { get; set; }
-        public int MonthlyDue { get; set; }
-        public int ExpectedDue { get; set; }
-        public int Balance { get; set; }
+        public decimal MonthlyDue { get; set; }
+        public decimal ExpectedDue { get; set; }
+        public decimal Balance { get; set; }
         public int GeneralAttendanceID { get; set; }
     }
 }

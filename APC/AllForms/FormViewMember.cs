@@ -45,7 +45,6 @@ namespace APC.AllForms
         public MemberDetailDTO detail = new MemberDetailDTO();
         public bool isView = false;
         ChildBLL childBLL = new ChildBLL();
-
         int noOfChildren = 0;
         private void FormViewMember_Load(object sender, EventArgs e)
         {

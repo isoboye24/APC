@@ -94,6 +94,7 @@ namespace APC.DAL.DAO
                     dto.AttendanceStatusName = item.attendanceStatusName;
                     dto.Day = (int)item.day;
                     dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
                     dto.Year = item.year.ToString();
                     dto.MemberID = item.memberID;
                     dto.Surname = item.surname;
@@ -101,9 +102,9 @@ namespace APC.DAL.DAO
                     dto.ImagePath = item.imagePath;
                     dto.GenderID = item.genderID;
                     dto.Gender = item.genderName;
-                    dto.MonthlyDue = (int)item.monthlyDue;
-                    dto.ExpectedDue = item.expectedMonthlyDue;
-                    dto.Balance = item.balance;
+                    dto.MonthlyDue = (decimal)item.monthlyDue;
+                    dto.ExpectedDue = (decimal)item.expectedMonthlyDue;
+                    dto.Balance = (decimal)item.balance;
                     dto.GeneralAttendanceID = item.generalAttendanceID;
                     personalAttendance.Add(dto);
                 }
@@ -115,8 +116,6 @@ namespace APC.DAL.DAO
             }            
         }
 
-       
-
         public List<PERSONAL_ATTENDANCE> IsUnique(int personID, int attendanceID)
         {
             return db.PERSONAL_ATTENDANCE.Where(x => x.memberID == personID && x.generalAttendanceID == attendanceID).ToList();
@@ -124,7 +123,25 @@ namespace APC.DAL.DAO
 
         public bool Update(PERSONAL_ATTENDANCE entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PERSONAL_ATTENDANCE personalAttendance = db.PERSONAL_ATTENDANCE.First(x=>x.attendanceID == entity.attendanceID);
+                personalAttendance.attendanceStatusID = entity.attendanceStatusID;
+                personalAttendance.memberID = entity.memberID;
+                personalAttendance.monthlyDues = entity.monthlyDues;
+                personalAttendance.expectedMonthlyDue = entity.expectedMonthlyDue;
+                personalAttendance.balance = entity.balance;
+                personalAttendance.day = entity.day;
+                personalAttendance.monthID = entity.monthID;
+                personalAttendance.generalAttendanceID = entity.generalAttendanceID;
+                personalAttendance.year = entity.year;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

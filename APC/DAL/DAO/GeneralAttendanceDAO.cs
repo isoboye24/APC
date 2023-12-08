@@ -75,9 +75,9 @@ namespace APC.DAL.DAO
                     dto.Year = item.year.ToString();
                     dto.TotalMembersPresent = (int)item.totalMembersPresent;
                     dto.TotalMembersAbsent = (int)item.totalMembersAbsent;
-                    dto.TotalDuesPaid = (int)item.totalDuesPaid;
-                    dto.TotalDuesExpected = (int)item.totalDuesExpected;
-                    dto.TotalDuesBalance = (int)item.totalDuesBalance;
+                    dto.TotalDuesPaid = (decimal)item.totalDuesPaid;
+                    dto.TotalDuesExpected = (decimal)item.totalDuesExpected;
+                    dto.TotalDuesBalance = (decimal)item.totalDuesBalance;
                     dto.Summary = item.summary;
                     generalAttendance.Add(dto);
                 }

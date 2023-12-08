@@ -322,6 +322,7 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\FinancialReportDetailDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDetailDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDTO.cs" />
     <Compile Include="DAL\DTO\GeneralAttendanceDetailDTO.cs" />
