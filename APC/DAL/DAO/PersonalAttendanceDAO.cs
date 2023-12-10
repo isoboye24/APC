@@ -116,6 +116,28 @@ namespace APC.DAL.DAO
             }            
         }
 
+        public int SelectLastMeetingAttendance(int month, int year)
+        {
+            try
+            {
+                List<int> lastAttendance = new List<int>();
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == year && x.monthID == month);
+                foreach (var item in list)
+                {
+                    PersonalAttendanceDetailDTO dto = new PersonalAttendanceDetailDTO();
+                    dto.AttendanceID = item.attendanceID;
+                    lastAttendance.Add(item.memberID);
+                }
+                int result = lastAttendance.Count();
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<PERSONAL_ATTENDANCE> IsUnique(int personID, int attendanceID)
         {
             return db.PERSONAL_ATTENDANCE.Where(x => x.memberID == personID && x.generalAttendanceID == attendanceID).ToList();

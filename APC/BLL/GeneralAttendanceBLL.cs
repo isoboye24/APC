@@ -52,6 +52,16 @@ namespace APC.BLL
             dto.GeneralAttendance = dao.Select();
             return dto;
         }
+        
+        public decimal SelectMonthlyDues(int month)
+        {            
+            return dao.SelectMonthlyDues(month);
+        }
+        
+        public decimal SelectYearlyDues(int year)
+        {            
+            return dao.SelectYearlyDues(year);
+        }
 
         public bool Update(GeneralAttendanceDetailDTO entity)
         {

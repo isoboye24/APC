@@ -124,6 +124,8 @@ namespace APC
         MemberBLL memberBLL = new MemberBLL();
         CommentBLL commentBLL = new CommentBLL();
         ChildBLL childBLL = new ChildBLL();
+        GeneralAttendanceBLL generalAttendanceBLL = new GeneralAttendanceBLL();
+        PersonalAttendanceBLL personalAttendanceBLL = new PersonalAttendanceBLL();
         private void FormDashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
@@ -136,6 +138,9 @@ namespace APC
             General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), 150, 29);
             General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), 150, 29);
             General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), 150, 29);
+            General.ValueCount(labelLastMeetingAttendance, personalAttendanceBLL.SelectLastMeetingAttendance(DateTime.Now.Month, DateTime.Now.Year), 150, 29);
+            string monthToday = DateTime.Now.ToString("MMMM");
+            string yearToday = DateTime.Now.Year.ToString();
             if (Convert.ToInt32(labelMonthlyComments.Text) > 1)
             {
                 labelComment.Text = "comments";
@@ -143,8 +148,16 @@ namespace APC
             else
             {
                 labelComment.Text = "comment";
-            }
-            labelCommentMonthName.Text = DateTime.Now.ToString("MMMM");
+            }            
+            int todayMonth = DateTime.Now.Month;
+            int todayYear = DateTime.Today.Year;
+            labelCommentMonthName.Text = monthToday;
+            labelDuesMonthName.Text = monthToday;
+            labelMonthlyDuesYearName.Text = yearToday;
+            labelTotalDuesYear.Text = yearToday;
+
+            General.ValueCountInDecimal(labelMonthlyDues, generalAttendanceBLL.SelectMonthlyDues(DateTime.Now.Month), 109, 42);
+            General.ValueCountInDecimal(labelYearlyDues, generalAttendanceBLL.SelectYearlyDues(DateTime.Now.Year), 109, 42);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

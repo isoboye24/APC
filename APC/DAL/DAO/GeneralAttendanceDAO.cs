@@ -89,8 +89,56 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-
         
+        public decimal SelectMonthlyDues(int month)
+        {
+            try
+            {
+                List<decimal> monthlyDues = new List<decimal>();
+                var list = (from g in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false)
+                            join m in db.MONTHs.Where(x=>x.monthID == month) on g.monthID equals m.monthID
+                            select new
+                            {
+                                generalAttendanceID = g.generalAttendanceID,                               
+                                totalDuesPaid = g.totalDuesPaid,                                
+                            }).ToList();
+                foreach (var item in list)
+                {
+                    GeneralAttendanceDetailDTO dto = new GeneralAttendanceDetailDTO();
+                    dto.GeneralAttendanceID = item.generalAttendanceID;
+                    monthlyDues.Add((decimal)item.totalDuesPaid);                    
+                }
+                decimal totalMonthlyDues = monthlyDues.Sum();
+                return totalMonthlyDues;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public decimal SelectYearlyDues(int year)
+        {
+            try
+            {
+                List<decimal> yearlyDues = new List<decimal>();
+                var list = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == year);          
+                foreach (var item in list)
+                {
+                    GeneralAttendanceDetailDTO dto = new GeneralAttendanceDetailDTO();
+                    dto.GeneralAttendanceID = item.generalAttendanceID;
+                    yearlyDues.Add((decimal)item.totalDuesPaid);
+                }
+                decimal totalyearlyDues = yearlyDues.Sum();
+                return totalyearlyDues;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public bool Update(GENERAL_ATTENDANCE entity)
         {

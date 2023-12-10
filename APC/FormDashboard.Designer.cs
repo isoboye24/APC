@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDeadMembers = new FontAwesome.Sharp.IconButton();
+            this.btnManage = new FontAwesome.Sharp.IconButton();
             this.btnComments = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLogo = new System.Windows.Forms.Label();
-            this.btnManage = new FontAwesome.Sharp.IconButton();
+            this.btnDocuments = new FontAwesome.Sharp.IconButton();
             this.btnExpenditure = new FontAwesome.Sharp.IconButton();
             this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
             this.btnChildren = new FontAwesome.Sharp.IconButton();
@@ -70,12 +71,12 @@
             this.iconMonthlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelMonthlyDues = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.labelMonthName = new System.Windows.Forms.Label();
+            this.labelMonthlyDuesYearName = new System.Windows.Forms.Label();
+            this.labelDuesMonthName = new System.Windows.Forms.Label();
             this.panelYearlyDues = new System.Windows.Forms.Panel();
             this.iconYearlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelYearlyDues = new System.Windows.Forms.Label();
-            this.labelYear = new System.Windows.Forms.Label();
+            this.labelTotalDuesYear = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panelMeetingAttend = new System.Windows.Forms.Panel();
             this.iconLastMeetingAttCard = new FontAwesome.Sharp.IconPictureBox();
@@ -104,7 +105,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnDocuments = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -182,6 +182,28 @@
             this.btnDeadMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeadMembers.UseVisualStyleBackColor = true;
             this.btnDeadMembers.Click += new System.EventHandler(this.btnDeadMembers_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnManage.IconSize = 24;
+            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.Location = new System.Drawing.Point(0, 550);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnManage.Size = new System.Drawing.Size(200, 40);
+            this.btnManage.TabIndex = 6;
+            this.btnManage.Text = "    Mangement";
+            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
             // 
             // btnComments
             // 
@@ -335,27 +357,27 @@
             this.labelLogo.Text = "APC";
             this.labelLogo.Click += new System.EventHandler(this.labelLogo_Click);
             // 
-            // btnManage
+            // btnDocuments
             // 
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnManage.IconSize = 24;
-            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.Location = new System.Drawing.Point(0, 550);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnManage.Size = new System.Drawing.Size(200, 40);
-            this.btnManage.TabIndex = 6;
-            this.btnManage.Text = "    Mangement";
-            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
+            this.btnDocuments.FlatAppearance.BorderSize = 0;
+            this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDocuments.IconSize = 24;
+            this.btnDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.Location = new System.Drawing.Point(0, 502);
+            this.btnDocuments.Name = "btnDocuments";
+            this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDocuments.Size = new System.Drawing.Size(200, 40);
+            this.btnDocuments.TabIndex = 6;
+            this.btnDocuments.Text = "    Documents";
+            this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocuments.UseVisualStyleBackColor = true;
+            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
             // 
             // btnExpenditure
             // 
@@ -710,8 +732,8 @@
             this.panelMonthlyDues.Controls.Add(this.iconMonthlyDuesCard);
             this.panelMonthlyDues.Controls.Add(this.labelMonthlyDues);
             this.panelMonthlyDues.Controls.Add(this.label17);
-            this.panelMonthlyDues.Controls.Add(this.label10);
-            this.panelMonthlyDues.Controls.Add(this.labelMonthName);
+            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDuesYearName);
+            this.panelMonthlyDues.Controls.Add(this.labelDuesMonthName);
             this.panelMonthlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonthlyDues.Location = new System.Drawing.Point(22, 146);
             this.panelMonthlyDues.Name = "panelMonthlyDues";
@@ -736,7 +758,7 @@
             this.labelMonthlyDues.AutoSize = true;
             this.labelMonthlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyDues.Location = new System.Drawing.Point(165, 30);
+            this.labelMonthlyDues.Location = new System.Drawing.Point(109, 42);
             this.labelMonthlyDues.Name = "labelMonthlyDues";
             this.labelMonthlyDues.Size = new System.Drawing.Size(43, 50);
             this.labelMonthlyDues.TabIndex = 0;
@@ -753,34 +775,34 @@
             this.label17.TabIndex = 0;
             this.label17.Text = "Dues in";
             // 
-            // label10
+            // labelMonthlyDuesYearName
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(151, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "2023";
+            this.labelMonthlyDuesYearName.AutoSize = true;
+            this.labelMonthlyDuesYearName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyDuesYearName.ForeColor = System.Drawing.Color.White;
+            this.labelMonthlyDuesYearName.Location = new System.Drawing.Point(151, 6);
+            this.labelMonthlyDuesYearName.Name = "labelMonthlyDuesYearName";
+            this.labelMonthlyDuesYearName.Size = new System.Drawing.Size(45, 20);
+            this.labelMonthlyDuesYearName.TabIndex = 0;
+            this.labelMonthlyDuesYearName.Text = "2023";
             // 
-            // labelMonthName
+            // labelDuesMonthName
             // 
-            this.labelMonthName.AutoSize = true;
-            this.labelMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthName.ForeColor = System.Drawing.Color.White;
-            this.labelMonthName.Location = new System.Drawing.Point(67, 6);
-            this.labelMonthName.Name = "labelMonthName";
-            this.labelMonthName.Size = new System.Drawing.Size(85, 20);
-            this.labelMonthName.TabIndex = 0;
-            this.labelMonthName.Text = "September";
+            this.labelDuesMonthName.AutoSize = true;
+            this.labelDuesMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDuesMonthName.ForeColor = System.Drawing.Color.White;
+            this.labelDuesMonthName.Location = new System.Drawing.Point(67, 6);
+            this.labelDuesMonthName.Name = "labelDuesMonthName";
+            this.labelDuesMonthName.Size = new System.Drawing.Size(85, 20);
+            this.labelDuesMonthName.TabIndex = 0;
+            this.labelDuesMonthName.Text = "September";
             // 
             // panelYearlyDues
             // 
             this.panelYearlyDues.BackColor = System.Drawing.Color.DarkRed;
             this.panelYearlyDues.Controls.Add(this.iconYearlyDuesCard);
             this.panelYearlyDues.Controls.Add(this.labelYearlyDues);
-            this.panelYearlyDues.Controls.Add(this.labelYear);
+            this.panelYearlyDues.Controls.Add(this.labelTotalDuesYear);
             this.panelYearlyDues.Controls.Add(this.label14);
             this.panelYearlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelYearlyDues.Location = new System.Drawing.Point(258, 146);
@@ -806,22 +828,22 @@
             this.labelYearlyDues.AutoSize = true;
             this.labelYearlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYearlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelYearlyDues.Location = new System.Drawing.Point(165, 29);
+            this.labelYearlyDues.Location = new System.Drawing.Point(109, 42);
             this.labelYearlyDues.Name = "labelYearlyDues";
             this.labelYearlyDues.Size = new System.Drawing.Size(43, 50);
             this.labelYearlyDues.TabIndex = 0;
             this.labelYearlyDues.Text = "0";
             // 
-            // labelYear
+            // labelTotalDuesYear
             // 
-            this.labelYear.AutoSize = true;
-            this.labelYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYear.ForeColor = System.Drawing.Color.White;
-            this.labelYear.Location = new System.Drawing.Point(102, 6);
-            this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(45, 20);
-            this.labelYear.TabIndex = 0;
-            this.labelYear.Text = "2023";
+            this.labelTotalDuesYear.AutoSize = true;
+            this.labelTotalDuesYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalDuesYear.ForeColor = System.Drawing.Color.White;
+            this.labelTotalDuesYear.Location = new System.Drawing.Point(102, 6);
+            this.labelTotalDuesYear.Name = "labelTotalDuesYear";
+            this.labelTotalDuesYear.Size = new System.Drawing.Size(45, 20);
+            this.labelTotalDuesYear.TabIndex = 0;
+            this.labelTotalDuesYear.Text = "2023";
             // 
             // label14
             // 
@@ -1079,17 +1101,17 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(22, 116);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(448, 251);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "ble";
@@ -1169,28 +1191,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 634);
             this.panel3.TabIndex = 19;
-            // 
-            // btnDocuments
-            // 
-            this.btnDocuments.FlatAppearance.BorderSize = 0;
-            this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDocuments.IconSize = 24;
-            this.btnDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocuments.Location = new System.Drawing.Point(0, 502);
-            this.btnDocuments.Name = "btnDocuments";
-            this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDocuments.Size = new System.Drawing.Size(200, 40);
-            this.btnDocuments.TabIndex = 6;
-            this.btnDocuments.Text = "    Documents";
-            this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocuments.UseVisualStyleBackColor = true;
-            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
             // 
             // FormDashboard
             // 
@@ -1293,7 +1293,7 @@
         private System.Windows.Forms.Panel panelMonthlyDues;
         private FontAwesome.Sharp.IconPictureBox iconMonthlyDuesCard;
         private System.Windows.Forms.Label labelMonthlyDues;
-        private System.Windows.Forms.Label labelMonthName;
+        private System.Windows.Forms.Label labelDuesMonthName;
         private System.Windows.Forms.Panel panelNoOfChildren;
         private FontAwesome.Sharp.IconPictureBox iconNoOfChildrenCard;
         private System.Windows.Forms.Label labelNoOfChildren;
@@ -1307,7 +1307,7 @@
         private System.Windows.Forms.Label labelYearlyDues;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label labelYear;
+        private System.Windows.Forms.Label labelTotalDuesYear;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -1329,7 +1329,7 @@
         private System.Windows.Forms.Label labelMonthlyComments;
         private System.Windows.Forms.Label labelComment;
         private System.Windows.Forms.Label labelCommentMonthName;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelMonthlyDuesYearName;
         private FontAwesome.Sharp.IconButton btnDeadMembers;
         private FontAwesome.Sharp.IconButton btnRefresh;
         private FontAwesome.Sharp.IconButton btnDocuments;
