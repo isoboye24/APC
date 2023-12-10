@@ -10,7 +10,7 @@ namespace APC.DAL.DTO
     {
         public int ExpenditureID { get; set; }
         public string Summary { get; set; }
-        public int AmountSpent { get; set; }
+        public decimal AmountSpent { get; set; }
         public int Day { get; set; }
         public int MonthID { get; set; }
         public string Month { get; set; }

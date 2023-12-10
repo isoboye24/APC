@@ -116,7 +116,7 @@ namespace APC.AllForms
             detail = new ExpenditureDetailDTO();
             detail.ExpenditureID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            detail.AmountSpent = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            detail.AmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
             detail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
             detail.Month = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();

@@ -46,7 +46,7 @@ namespace APC.AllForms
                 if (!isUpdate)
                 {
                     ExpenditureDetailDTO expenditure = new ExpenditureDetailDTO();
-                    expenditure.AmountSpent = Convert.ToInt32(txtAmountSpent.Text);
+                    expenditure.AmountSpent = Convert.ToDecimal(txtAmountSpent.Text);
                     expenditure.Summary = txtSummary.Text;
                     expenditure.Day = dateTimePickerExpDate.Value.Day;
                     expenditure.MonthID = dateTimePickerExpDate.Value.Month;
@@ -62,7 +62,7 @@ namespace APC.AllForms
                 else if(isUpdate)
                 {
                     
-                    if (detail.AmountSpent == Convert.ToInt32(txtAmountSpent.Text) && detail.Summary == txtSummary.Text
+                    if (detail.AmountSpent == Convert.ToDecimal(txtAmountSpent.Text) && detail.Summary == txtSummary.Text
                         && detail.Day == Convert.ToInt32(dateTimePickerExpDate.Value.Day) && detail.MonthID == Convert.ToInt32(dateTimePickerExpDate.Value.Month)
                         && detail.Year == dateTimePickerExpDate.Value.Year.ToString())
                     {
@@ -70,7 +70,7 @@ namespace APC.AllForms
                     }
                     else
                     {
-                        detail.AmountSpent = Convert.ToInt32(txtAmountSpent.Text);
+                        detail.AmountSpent = Convert.ToDecimal(txtAmountSpent.Text);
                         detail.Summary = txtSummary.Text;
                         detail.Day = dateTimePickerExpDate.Value.Day;
                         detail.MonthID = dateTimePickerExpDate.Value.Month;

@@ -194,10 +194,10 @@ namespace APC
             detail.Year = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             detail.TotalMembersPresent = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
             detail.TotalMembersAbsent = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
-            detail.TotalDuesPaid = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
-            detail.TotalDuesExpected = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
-            detail.TotalDuesBalance = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
-            detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();            
+            detail.TotalDuesPaid = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            detail.TotalDuesExpected = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detail.TotalDuesBalance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

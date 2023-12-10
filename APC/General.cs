@@ -68,6 +68,61 @@ namespace APC
             }
         }
 
+        public static void ValueCountInDecimal(Label property, decimal value, int horizontalPoint, int verticalPoint)
+        {
+            if (value.ToString("0.00").Length < 5)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint, verticalPoint + 40);
+            }
+            else if (value.ToString("0.00").Length > 4 && value.ToString("0.00").Length < 6)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 20, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 5 && value.ToString("0.00").Length < 7)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 40, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 6 && value.ToString("0.00").Length < 8)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 60, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 7 && value.ToString("0.00").Length < 9)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 80, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 8 && value.ToString("0.00").Length < 10)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 100, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 9 && value.ToString("0.00").Length < 11)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 120, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 10 && value.ToString("0.00").Length < 12)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 140, verticalPoint);
+            }
+            else if (value.ToString("0.00").Length > 11 && value.ToString("0.00").Length < 13)
+            {
+                property.Text = value.ToString("0.00");
+                property.Location = new Point(horizontalPoint - 160, verticalPoint);
+            }            
+            else if (value.ToString("0.00").Length > 12)
+            {
+                MessageBox.Show("The digit of " + property.Name + " is too big. The panel needs adjustment.");
+                property.Text = "###########";
+                property.Location = new Point(horizontalPoint - 180, verticalPoint);
+            }
+        }
+
         public static void ComboBoxProps(ComboBox cmb, string name, string ID)
         {
             cmb.DisplayMember = name;
