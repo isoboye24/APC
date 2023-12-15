@@ -75,7 +75,7 @@ namespace APC.AllForms
         EventImageDTO dto = new EventImageDTO();
         private void FormEvenImages_Load(object sender, EventArgs e)
         {
-            dto = bll.Select();
+            dto = bll.SelectSpecificImage(detail.EventID);
 
             dataGridView1.DataSource = dto.EventImages;
             dataGridView1.Columns[0].Visible = false;
@@ -92,7 +92,7 @@ namespace APC.AllForms
         private void FillDataGrid()
         {
             bll = new EventImageBLL();
-            dto = bll.Select();
+            dto = bll.SelectSpecificImage(detail.EventID);
             dataGridView1.DataSource = dto.EventImages;
             txtImageCaption.Clear();
         }

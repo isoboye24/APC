@@ -43,14 +43,18 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-
         public List<EventImageDetailDTO> Select()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<EventImageDetailDTO> SelectSpecificImage(int ID)
         {
             try
             {
                 List<EventImageDetailDTO> eventImages = new List<EventImageDetailDTO>();
                 int counter = 0;
-                var list = (from ei in db.EVENT_IMAGE.Where(x => x.isDeleted == false)
+                var list = (from ei in db.EVENT_IMAGE.Where(x => x.isDeleted == false && x.eventID==ID)
                             join e in db.EVENTS on ei.eventID equals e.eventID
                             select new 
                             {

@@ -36,8 +36,12 @@ namespace APC.BLL
 
         public EventImageDTO Select()
         {
+            throw new NotImplementedException();
+        }
+        public EventImageDTO SelectSpecificImage(int ID)
+        {
             EventImageDTO dto = new EventImageDTO();
-            dto.EventImages = dao.Select();
+            dto.EventImages = dao.SelectSpecificImage(ID);
             return dto;
         }
 
