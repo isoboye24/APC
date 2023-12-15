@@ -111,7 +111,7 @@
           <Property Name="eventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="summary" Type="text" />
-          <Property Name="coverImage" Type="varchar(max)" Nullable="false" />
+          <Property Name="coverImagePath" Type="varchar(max)" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
           <Property Name="day" Type="int" Nullable="false" />
@@ -398,7 +398,7 @@
           <Property Name="eventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="coverImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="coverImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
           <Property Name="day" Type="Int32" Nullable="false" />
@@ -693,7 +693,7 @@
                 <ScalarProperty Name="eventID" ColumnName="eventID" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="summary" ColumnName="summary" />
-                <ScalarProperty Name="coverImage" ColumnName="coverImage" />
+                <ScalarProperty Name="coverImagePath" ColumnName="coverImagePath" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
                 <ScalarProperty Name="day" ColumnName="day" />

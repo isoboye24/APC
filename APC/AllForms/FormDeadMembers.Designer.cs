@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,6 +42,29 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePickerDied = new System.Windows.Forms.DateTimePicker();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbProfession = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
+            this.cmbNationality = new System.Windows.Forms.ComboBox();
+            this.cmbCountry = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePickerMemSince = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
@@ -48,44 +73,19 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbCountry = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbNationality = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtImagePath = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbProfession = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDied = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.picProfilePic = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +110,31 @@
             this.labelTitle.Size = new System.Drawing.Size(237, 25);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "ADD DECEASED MEMBER";
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
+            this.picClose.Location = new System.Drawing.Point(922, 7);
+            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(32, 32);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.TabIndex = 6;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
+            this.picMinimize.Location = new System.Drawing.Point(879, 7);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(32, 32);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picMinimize.TabIndex = 5;
+            this.picMinimize.TabStop = false;
             // 
             // panel3
             // 
@@ -253,6 +278,290 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click_1);
             // 
+            // picProfilePic
+            // 
+            this.picProfilePic.BackColor = System.Drawing.Color.DarkOrange;
+            this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picProfilePic.Location = new System.Drawing.Point(3, 3);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(284, 405);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 1;
+            this.picProfilePic.TabStop = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel5.Controls.Add(this.txtName, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.cmbMaritalStatus, 1, 12);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 12);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerDied, 1, 6);
+            this.tableLayoutPanel5.Controls.Add(this.txtSurname, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerBirthday, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 8);
+            this.tableLayoutPanel5.Controls.Add(this.cmbProfession, 1, 8);
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 10);
+            this.tableLayoutPanel5.Controls.Add(this.cmbGender, 1, 10);
+            this.tableLayoutPanel5.Controls.Add(this.label14, 0, 18);
+            this.tableLayoutPanel5.Controls.Add(this.txtImagePath, 1, 18);
+            this.tableLayoutPanel5.Controls.Add(this.cmbNationality, 1, 16);
+            this.tableLayoutPanel5.Controls.Add(this.cmbCountry, 1, 14);
+            this.tableLayoutPanel5.Controls.Add(this.label15, 0, 16);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.label6, 0, 20);
+            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 14);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(8, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 21;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.153183F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045038F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(302, 475);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // txtName
+            // 
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(123, 46);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(176, 29);
+            this.txtName.TabIndex = 0;
+            // 
+            // cmbMaritalStatus
+            // 
+            this.cmbMaritalStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaritalStatus.FormattingEnabled = true;
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(123, 261);
+            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(176, 29);
+            this.cmbMaritalStatus.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 96);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Birthday";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 268);
+            this.label11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 21);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Mar. Status";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Name";
+            // 
+            // dateTimePickerDied
+            // 
+            this.dateTimePickerDied.CustomFormat = "12/31/2023";
+            this.dateTimePickerDied.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerDied.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDied.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDied.Location = new System.Drawing.Point(123, 132);
+            this.dateTimePickerDied.Name = "dateTimePickerDied";
+            this.dateTimePickerDied.Size = new System.Drawing.Size(176, 29);
+            this.dateTimePickerDied.TabIndex = 2;
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.Location = new System.Drawing.Point(123, 3);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(176, 29);
+            this.txtSurname.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Surname";
+            // 
+            // dateTimePickerBirthday
+            // 
+            this.dateTimePickerBirthday.CustomFormat = "12/31/2023";
+            this.dateTimePickerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerBirthday.Location = new System.Drawing.Point(123, 89);
+            this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
+            this.dateTimePickerBirthday.Size = new System.Drawing.Size(176, 29);
+            this.dateTimePickerBirthday.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 182);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 21);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Profession";
+            // 
+            // cmbProfession
+            // 
+            this.cmbProfession.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbProfession.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProfession.FormattingEnabled = true;
+            this.cmbProfession.Location = new System.Drawing.Point(123, 175);
+            this.cmbProfession.Name = "cmbProfession";
+            this.cmbProfession.Size = new System.Drawing.Size(176, 29);
+            this.cmbProfession.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 225);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Gender";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Location = new System.Drawing.Point(123, 218);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(176, 29);
+            this.cmbGender.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 397);
+            this.label14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 21);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Image Path";
+            // 
+            // txtImagePath
+            // 
+            this.txtImagePath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImagePath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImagePath.Location = new System.Drawing.Point(123, 390);
+            this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.Size = new System.Drawing.Size(176, 29);
+            this.txtImagePath.TabIndex = 0;
+            // 
+            // cmbNationality
+            // 
+            this.cmbNationality.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNationality.FormattingEnabled = true;
+            this.cmbNationality.Location = new System.Drawing.Point(123, 347);
+            this.cmbNationality.Name = "cmbNationality";
+            this.cmbNationality.Size = new System.Drawing.Size(176, 29);
+            this.cmbNationality.TabIndex = 3;
+            // 
+            // cmbCountry
+            // 
+            this.cmbCountry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCountry.FormattingEnabled = true;
+            this.cmbCountry.Location = new System.Drawing.Point(123, 304);
+            this.cmbCountry.Name = "cmbCountry";
+            this.cmbCountry.Size = new System.Drawing.Size(176, 29);
+            this.cmbCountry.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 354);
+            this.label15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 21);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Nationality";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 139);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Died";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 440);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 21);
+            this.label6.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 311);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 21);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Country";
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -383,315 +692,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 139);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Died";
-            // 
-            // cmbCountry
-            // 
-            this.cmbCountry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(123, 304);
-            this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(176, 29);
-            this.cmbCountry.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 311);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 21);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Country";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 440);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 21);
-            this.label6.TabIndex = 1;
-            // 
-            // cmbNationality
-            // 
-            this.cmbNationality.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNationality.FormattingEnabled = true;
-            this.cmbNationality.Location = new System.Drawing.Point(123, 347);
-            this.cmbNationality.Name = "cmbNationality";
-            this.cmbNationality.Size = new System.Drawing.Size(176, 29);
-            this.cmbNationality.TabIndex = 3;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 354);
-            this.label15.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(97, 21);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Nationality";
-            // 
-            // txtImagePath
-            // 
-            this.txtImagePath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtImagePath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagePath.Location = new System.Drawing.Point(123, 390);
-            this.txtImagePath.Name = "txtImagePath";
-            this.txtImagePath.Size = new System.Drawing.Size(176, 29);
-            this.txtImagePath.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 397);
-            this.label14.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 21);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Image Path";
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(123, 218);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(176, 29);
-            this.cmbGender.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 225);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 21);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Gender";
-            // 
-            // cmbProfession
-            // 
-            this.cmbProfession.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbProfession.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(123, 175);
-            this.cmbProfession.Name = "cmbProfession";
-            this.cmbProfession.Size = new System.Drawing.Size(176, 29);
-            this.cmbProfession.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 182);
-            this.label8.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 21);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Profession";
-            // 
-            // dateTimePickerBirthday
-            // 
-            this.dateTimePickerBirthday.CustomFormat = "12/31/2023";
-            this.dateTimePickerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirthday.Location = new System.Drawing.Point(123, 89);
-            this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
-            this.dateTimePickerBirthday.Size = new System.Drawing.Size(176, 29);
-            this.dateTimePickerBirthday.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Surname";
-            // 
-            // txtSurname
-            // 
-            this.txtSurname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(123, 3);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(176, 29);
-            this.txtSurname.TabIndex = 0;
-            // 
-            // dateTimePickerDied
-            // 
-            this.dateTimePickerDied.CustomFormat = "12/31/2023";
-            this.dateTimePickerDied.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDied.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDied.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDied.Location = new System.Drawing.Point(123, 132);
-            this.dateTimePickerDied.Name = "dateTimePickerDied";
-            this.dateTimePickerDied.Size = new System.Drawing.Size(176, 29);
-            this.dateTimePickerDied.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 268);
-            this.label11.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 21);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Mar. Status";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 96);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 21);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Birthday";
-            // 
-            // cmbMaritalStatus
-            // 
-            this.cmbMaritalStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(123, 261);
-            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(176, 29);
-            this.cmbMaritalStatus.TabIndex = 3;
-            // 
-            // txtName
-            // 
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(123, 46);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(176, 29);
-            this.txtName.TabIndex = 0;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel5.Controls.Add(this.txtName, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.cmbMaritalStatus, 1, 12);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.label11, 0, 12);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerDied, 1, 6);
-            this.tableLayoutPanel5.Controls.Add(this.txtSurname, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePickerBirthday, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 8);
-            this.tableLayoutPanel5.Controls.Add(this.cmbProfession, 1, 8);
-            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 10);
-            this.tableLayoutPanel5.Controls.Add(this.cmbGender, 1, 10);
-            this.tableLayoutPanel5.Controls.Add(this.label14, 0, 18);
-            this.tableLayoutPanel5.Controls.Add(this.txtImagePath, 1, 18);
-            this.tableLayoutPanel5.Controls.Add(this.cmbNationality, 1, 16);
-            this.tableLayoutPanel5.Controls.Add(this.cmbCountry, 1, 14);
-            this.tableLayoutPanel5.Controls.Add(this.label15, 0, 16);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 6);
-            this.tableLayoutPanel5.Controls.Add(this.label6, 0, 20);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 14);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(8, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 21;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.14939F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045728F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.153183F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.045038F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(302, 475);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // picProfilePic
-            // 
-            this.picProfilePic.BackColor = System.Drawing.Color.DarkOrange;
-            this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picProfilePic.Location = new System.Drawing.Point(3, 3);
-            this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(284, 405);
-            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 1;
-            this.picProfilePic.TabStop = false;
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
-            this.picClose.Location = new System.Drawing.Point(922, 7);
-            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(32, 32);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picClose.TabIndex = 6;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
-            this.picMinimize.Location = new System.Drawing.Point(879, 7);
-            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(32, 32);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 5;
-            this.picMinimize.TabStop = false;
-            // 
             // FormDeadMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,20 +709,20 @@
             this.Load += new System.EventHandler(this.FormDeadMembers_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }

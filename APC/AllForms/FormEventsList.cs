@@ -1,4 +1,6 @@
 ﻿using APC.AllForms;
+using APC.BLL;
+using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,22 +26,85 @@ namespace APC
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+            FillDataGrid();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             FormEvent open = new FormEvent();
+            open.isUpdate = true;
+            open.detail = detail;
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+            FillDataGrid();
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
             FormEvenImages open = new FormEvenImages();
+            open.isView = true;
+            open.detail = detail;
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+            FillDataGrid();
+        }
+        EventsBLL bll = new EventsBLL();
+        EventsDTO dto = new EventsDTO();
+        private void FormEventsList_Load(object sender, EventArgs e)
+        {
+            dto = bll.Select();
+
+            dataGridView1.DataSource = dto.Events;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].HeaderText = "Year";
+            dataGridView1.Columns[5].HeaderText = "Event Title";
+            dataGridView1.Columns[6].HeaderText = "Summary";
+            dataGridView1.Columns[7].Visible = false;
+        }
+        private void FillDataGrid()
+        {
+            bll = new EventsBLL();
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Events;
+        }
+
+        private void txtEventTitle_TextChanged(object sender, EventArgs e)
+        {
+            List<EventsDetailDTO> list = dto.Events;
+            list = list.Where(x => x.EventTitle.Contains(txtEventTitle.Text)).ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void txtEventYear_TextChanged(object sender, EventArgs e)
+        {
+            List<EventsDetailDTO> list = dto.Events;
+            list = list.Where(x => x.Year.Contains(txtEventYear.Text)).ToList();
+            dataGridView1.DataSource = list;
+        }
+
+        private void txtEventYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = General.isNumber(e);
+        }
+        EventsDetailDTO detail = new EventsDetailDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new EventsDetailDTO();
+            detail.EventID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            detail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detail.Year = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            detail.EventTitle = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            detail.CoverImagePath = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            string imagePath = Application.StartupPath + "\\images\\" + detail.CoverImagePath;
+            picViewEventCoverImage.ImageLocation = imagePath;
         }
     }
 }
