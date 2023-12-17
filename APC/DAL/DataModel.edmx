@@ -74,6 +74,20 @@
           <Property Name="deletedDate" Type="date" />
           <Property Name="spouseID" Type="int" />
         </EntityType>
+        <EntityType Name="DOCUMENT">
+          <Key>
+            <PropertyRef Name="documentID" />
+          </Key>
+          <Property Name="documentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="documentPath" Type="varchar(max)" Nullable="false" />
+          <Property Name="documentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="day" Type="int" Nullable="false" />
+          <Property Name="monthID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="documentName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="DUAL_NATIONALITY">
           <Key>
             <PropertyRef Name="dualNationalityID" />
@@ -270,6 +284,7 @@
           <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COUNTRY" EntityType="Self.COUNTRY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DEATH_MEMBER" EntityType="Self.DEATH_MEMBER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCUMENT" EntityType="Self.DOCUMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMPLOYMENT_STATUS" EntityType="Self.EMPLOYMENT_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EVENT_IMAGE" EntityType="Self.EVENT_IMAGE" Schema="dbo" store:Type="Tables" />
@@ -360,6 +375,20 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
           <Property Name="spouseID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DOCUMENT">
+          <Key>
+            <PropertyRef Name="documentID" />
+          </Key>
+          <Property Name="documentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="documentPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="documentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="day" Type="Int32" Nullable="false" />
+          <Property Name="monthID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="documentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="DUAL_NATIONALITY">
           <Key>
@@ -557,6 +586,7 @@
           <EntitySet Name="COMMENTs" EntityType="Self.COMMENT" />
           <EntitySet Name="COUNTRies" EntityType="Self.COUNTRY" />
           <EntitySet Name="DEATH_MEMBER" EntityType="Self.DEATH_MEMBER" />
+          <EntitySet Name="DOCUMENTs" EntityType="Self.DOCUMENT" />
           <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" />
           <EntitySet Name="EMPLOYMENT_STATUS" EntityType="Self.EMPLOYMENT_STATUS" />
           <EntitySet Name="EVENT_IMAGE" EntityType="Self.EVENT_IMAGE" />
@@ -651,6 +681,21 @@
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
                 <ScalarProperty Name="spouseID" ColumnName="spouseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCUMENTs">
+            <EntityTypeMapping TypeName="APCModel.DOCUMENT">
+              <MappingFragment StoreEntitySet="DOCUMENT">
+                <ScalarProperty Name="documentID" ColumnName="documentID" />
+                <ScalarProperty Name="documentPath" ColumnName="documentPath" />
+                <ScalarProperty Name="documentType" ColumnName="documentType" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="monthID" ColumnName="monthID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="documentName" ColumnName="documentName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

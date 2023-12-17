@@ -63,6 +63,21 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllForms\FormDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormDocument.Designer.cs">
+      <DependentUpon>FormDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\DocumentBLL.cs" />
+    <Compile Include="DAL\DAO\DocumentDAO.cs" />
+    <Compile Include="DAL\DTO\DocumentDetailDTO.cs" />
+    <Compile Include="AllForms\FormDocumentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormDocumentList.Designer.cs">
+      <DependentUpon>FormDocumentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormPersonalAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +349,10 @@
     <Compile Include="DAL\DEATH_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DOCUMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DTO\DocumentDTO.cs" />
     <Compile Include="DAL\DTO\EventImageDetailDTO.cs" />
     <Compile Include="DAL\DTO\EventImageDTO.cs" />
     <Compile Include="DAL\DTO\EventsDetailDTO.cs" />
@@ -524,6 +543,12 @@
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllForms\FormDocument.resx">
+      <DependentUpon>FormDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormDocumentList.resx">
+      <DependentUpon>FormDocumentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormGeneralAttendance.resx">
       <DependentUpon>FormGeneralAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -783,6 +808,8 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\fileImage.png" />
+    <None Include="Resources\docIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

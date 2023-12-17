@@ -167,7 +167,7 @@
             this.btnDeadMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeadMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeadMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDeadMembers.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnDeadMembers.IconChar = FontAwesome.Sharp.IconChar.UserSlash;
             this.btnDeadMembers.IconColor = System.Drawing.Color.PaleTurquoise;
             this.btnDeadMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeadMembers.IconSize = 24;
@@ -363,7 +363,7 @@
             this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.Dochub;
             this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
             this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDocuments.IconSize = 24;

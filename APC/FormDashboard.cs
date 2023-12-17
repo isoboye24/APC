@@ -342,6 +342,13 @@ namespace APC
             OpenChildForm(new FormDeadMembersList());            
         }
 
+        private void btnDocuments_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormDocumentList());
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshAllCards();
@@ -360,11 +367,6 @@ namespace APC
         private void btnRefresh_MouseLeave(object sender, EventArgs e)
         {
             btnRefresh.BackColor = Color.White;
-        }
-
-        private void btnDocuments_Click(object sender, EventArgs e)
-        {
-
-        }
+        }       
     }
 }

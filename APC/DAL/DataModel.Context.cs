@@ -30,6 +30,7 @@ namespace APC.DAL
         public virtual DbSet<COMMENT> COMMENTs { get; set; }
         public virtual DbSet<COUNTRY> COUNTRies { get; set; }
         public virtual DbSet<DEATH_MEMBER> DEATH_MEMBER { get; set; }
+        public virtual DbSet<DOCUMENT> DOCUMENTs { get; set; }
         public virtual DbSet<DUAL_NATIONALITY> DUAL_NATIONALITY { get; set; }
         public virtual DbSet<EMPLOYMENT_STATUS> EMPLOYMENT_STATUS { get; set; }
         public virtual DbSet<EVENT_IMAGE> EVENT_IMAGE { get; set; }

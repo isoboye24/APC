@@ -77,7 +77,8 @@ namespace APC
                     }
                     else
                     {
-                        if (txtImagePath.Text != detail.CoverImagePath)
+                        string imagePath = Application.StartupPath + "\\images\\" + detail.CoverImagePath;
+                        if (txtImagePath.Text != imagePath)
                         {
                             if (File.Exists(@"images\\" + detail.CoverImagePath))
                             {

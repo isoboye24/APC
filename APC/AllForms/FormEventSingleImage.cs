@@ -17,11 +17,7 @@ namespace APC.AllForms
     {
         public FormEventSingleImage()
         {
-            InitializeComponent();
-            if (isView)
-            {
-                txtImageCaption.TextChanged += txtImageCaption_TextChanged; // enhance the expansion of this textbox
-            }            
+            InitializeComponent();                        
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

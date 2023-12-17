@@ -123,9 +123,29 @@ namespace APC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap docIcon {
+            get {
+                object obj = ResourceManager.GetObject("docIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap employment {
             get {
                 object obj = ResourceManager.GetObject("employment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fileImage {
+            get {
+                object obj = ResourceManager.GetObject("fileImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

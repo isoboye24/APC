@@ -266,7 +266,7 @@ namespace APC
                         detail.Username = txtUsername.Text;
                         detail.Password = txtPassword.Text;
                         detail.EmailAddress = txtEmail.Text;
-                        if (txtImagePath.Text != detail.ImagePath)
+                        if (detail.ImagePath != txtImagePath.Text.Trim())
                         {
                             if (File.Exists(@"images\\" + detail.ImagePath))
                             {
@@ -275,7 +275,7 @@ namespace APC
                             File.Copy(txtImagePath.Text, @"images\\" + fileName);
                             detail.ImagePath = fileName;
                         }
-                        else if (txtImagePath.Text == detail.ImagePath)
+                        else if (detail.ImagePath == txtImagePath.Text.Trim())
                         {
                             detail.ImagePath = txtImagePath.Text;
                         }

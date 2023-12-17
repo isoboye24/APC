@@ -129,5 +129,37 @@ namespace APC
             cmb.ValueMember = ID;
             cmb.SelectedIndex = -1;
         }
+
+        public static string GetDocumentType(string fileExtension)
+        {
+            if (fileExtension.ToLower() == ".txt")
+            {
+                return "Text Document";
+            }
+            else if (fileExtension.ToLower() == ".docx" || fileExtension.ToLower() == ".doc")
+            {
+                return "Word Document";
+            }
+            else if (fileExtension.ToLower() == ".pdf")
+            {
+                return "PDF Document";
+            }
+            else if (fileExtension.ToLower() == ".html")
+            {
+                return "HTML Document";
+            }
+            else if (fileExtension.ToLower() == ".xlsx")
+            {
+                return "Excel Document";
+            }
+            else if (fileExtension.ToLower() == ".ppt")
+            {
+                return "PowerPoint Document";
+            }
+            else
+            {
+                return "Unknown Document";
+            }
+        }
     }
 }
