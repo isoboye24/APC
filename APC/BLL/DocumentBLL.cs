@@ -15,7 +15,9 @@ namespace APC.BLL
         MonthDAO monthDAO = new MonthDAO();
         public bool Delete(DocumentDetailDTO entity)
         {
-            throw new NotImplementedException();
+            DOCUMENT document = new DOCUMENT();
+            document.documentID = entity.DocumentID;
+            return dao.Delete(document);
         }
 
         public bool GetBack(DocumentDetailDTO entity)

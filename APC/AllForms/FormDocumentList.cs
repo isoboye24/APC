@@ -32,7 +32,7 @@ namespace APC.AllForms
         {
             if (detail.DocumentID==0)
             {
-                MessageBox.Show("Please select a document from the table");
+                MessageBox.Show("Please select a document from the table");                
             }
             else
             {
@@ -48,11 +48,31 @@ namespace APC.AllForms
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            FormDocument open = new FormDocument();
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            ClearFilters();
+            if (detail.DocumentID == 0)
+            {
+                MessageBox.Show("Please select a document from the table");
+            }
+            else
+            {
+                if (detail.DocumentType != "Word Document")
+                {
+                    ReadFiles.CopyDocument(detail.DocumentPath, detail.DocumentName);
+                    ClearFilters();
+                }
+                else if (detail.DocumentType == "Word Document")
+                {
+                    DialogResult result = MessageBox.Show("Open document \"" + detail.DocumentName + " ?\"", "Warning!", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        FormViewDocument open = new FormViewDocument();
+                        open.detail = detail;
+                        this.Hide();
+                        open.ShowDialog();
+                        this.Visible = true;
+                        ClearFilters();
+                    }
+                }                
+            }           
         }
         DocumentBLL bll = new DocumentBLL();
         DocumentDTO dto = new DocumentDTO();
@@ -131,13 +151,59 @@ namespace APC.AllForms
             detail = new DocumentDetailDTO();
             detail.DocumentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             detail.DocumentName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            detail.DocumentType = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.DocumentType = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();            
             detail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
             detail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             detail.Year = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
             detail.Date = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
             detail.DocumentPath = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.Value != null)
+            {
+                if (e.Value.ToString() == "Excel Document")
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.DarkOrange;
+                }
+                else if (e.Value.ToString() == "PDF Document")
+                {
+                    e.CellStyle.ForeColor = Color.White;
+                    e.CellStyle.BackColor = Color.Purple;
+                }
+                else if (e.Value.ToString() == "PowerPoint Document")
+                {
+                    e.CellStyle.ForeColor = Color.White;
+                    e.CellStyle.BackColor = Color.Brown;
+                }
+                else
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.DocumentID == 0)
+            {
+                MessageBox.Show("Please choose a document from the table");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?","Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+                        MessageBox.Show("Document was deleted");
+                        ClearFilters();
+                    }
+                }
+            }
         }
     }
 }

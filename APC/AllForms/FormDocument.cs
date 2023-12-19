@@ -33,7 +33,6 @@ namespace APC.AllForms
         }
         public DocumentDetailDTO detail = new DocumentDetailDTO();
         public bool isUpdate = false;
-        public bool isView = false;
         System.Windows.Forms.OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
         string fileName;
         string fileExtension;
@@ -128,7 +127,6 @@ namespace APC.AllForms
                 }
             }
         }
-
         private void FormDocument_Load(object sender, EventArgs e)
         {
             picFileImage.Hide();
@@ -137,7 +135,7 @@ namespace APC.AllForms
                 picFileImage.Visible = true;
                 txtDocumentName.Text = detail.DocumentName;
                 txtDocumentPath.Text = detail.DocumentPath;
-            }
+            }            
         }
     }
 }

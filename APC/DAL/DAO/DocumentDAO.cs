@@ -12,7 +12,18 @@ namespace APC.DAL.DAO
     {
         public bool Delete(DOCUMENT entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DOCUMENT document = db.DOCUMENTs.First(x=>x.documentID==entity.documentID);
+                document.isDeleted = true;
+                document.deletedDate = DateTime.Today;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool GetBack(int ID)
