@@ -27,7 +27,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EXPENDITURE expenditure = db.EXPENDITUREs.First(x=>x.expenditureID==ID);
+                expenditure.isDeleted = false;
+                expenditure.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(EXPENDITURE entity)
@@ -50,6 +61,42 @@ namespace APC.DAL.DAO
             {
                 List<ExpenditureDetailDTO> expenditures = new List<ExpenditureDetailDTO>();
                 var list = (from e in db.EXPENDITUREs.Where(x => x.isDeleted == false)
+                            join m in db.MONTHs on e.monthID equals m.monthID
+                            select new
+                            {
+                                expenditureID = e.expenditureID,
+                                amountSpent = e.amountSpent,
+                                summary = e.summary,
+                                day = e.day,
+                                monthID = e.monthID,
+                                monthName = m.monthName,
+                                year = e.year,
+                            }).OrderByDescending(x => x.year).ToList();
+                foreach (var item in list)
+                {
+                    ExpenditureDetailDTO dto = new ExpenditureDetailDTO();
+                    dto.ExpenditureID = item.expenditureID;
+                    dto.Summary = item.summary;
+                    dto.AmountSpent = item.amountSpent;
+                    dto.Day = item.day;
+                    dto.MonthID = item.monthID;
+                    dto.Month = item.monthName;
+                    dto.Year = item.year.ToString();
+                    expenditures.Add(dto);
+                }
+                return expenditures;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<ExpenditureDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<ExpenditureDetailDTO> expenditures = new List<ExpenditureDetailDTO>();
+                var list = (from e in db.EXPENDITUREs.Where(x => x.isDeleted == isDeleted)
                             join m in db.MONTHs on e.monthID equals m.monthID
                             select new
                             {

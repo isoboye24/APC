@@ -304,7 +304,7 @@ namespace APC
 
         private void panelRegMembers_Click(object sender, EventArgs e)
         {
-            
+            btnMembers.PerformClick();
         }
 
         private void btnAttendance_Click(object sender, EventArgs e)
@@ -367,6 +367,41 @@ namespace APC
         private void btnRefresh_MouseLeave(object sender, EventArgs e)
         {
             btnRefresh.BackColor = Color.White;
-        }       
+        }
+
+        private void panelNoOfChildren_Click(object sender, EventArgs e)
+        {
+            btnChildren.PerformClick();
+        }
+
+        private void panelMeetingAttend_Click(object sender, EventArgs e)
+        {
+            btnAttendance.PerformClick();
+        }
+
+        private void panelLastEvent_Click(object sender, EventArgs e)
+        {
+            btnEvents.PerformClick();
+        }
+
+        private void panelTotalComment_Click(object sender, EventArgs e)
+        {
+            btnComments.PerformClick();
+        }
+
+        private void panelMonthlyComment_Click(object sender, EventArgs e)
+        {
+            btnComments.PerformClick();
+        }
+
+        private void panelMonthlyDues_Click(object sender, EventArgs e)
+        {
+            btnAttendance.PerformClick();
+        }
+
+        private void panelYearlyDues_Click(object sender, EventArgs e)
+        {
+            btnAttendance.PerformClick();
+        }
     }
 }

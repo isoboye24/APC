@@ -12,6 +12,7 @@ namespace APC.BLL
     public class EventImageBLL : IBLL<EventImageDTO, EventImageDetailDTO>
     {
         EventImageDAO dao = new EventImageDAO();
+        EventsDAO eventDAO = new EventsDAO();
         public bool Delete(EventImageDetailDTO entity)
         {
             EVENT_IMAGE eventImage = new EVENT_IMAGE();
@@ -21,7 +22,7 @@ namespace APC.BLL
 
         public bool GetBack(EventImageDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.EventImageID);            
         }
 
         public bool Insert(EventImageDetailDTO entity)

@@ -16,5 +16,6 @@ namespace APC.DAL.DTO
         public string ImagePath { get; set; }
         public int Counter { get; set; }
         public string ImageCaption { get; set; }
+        public bool isEventDeleted { get; set; }
     }
 }

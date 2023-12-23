@@ -27,7 +27,7 @@ namespace APC.BLL
 
         public bool GetBack(GeneralAttendanceDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.GeneralAttendanceID);
         }
 
         public bool Insert(GeneralAttendanceDetailDTO entity)
@@ -52,14 +52,14 @@ namespace APC.BLL
             dto.GeneralAttendance = dao.Select();
             return dto;
         }
-        
+
         public decimal SelectMonthlyDues(int month)
-        {            
+        {
             return dao.SelectMonthlyDues(month);
         }
-        
+
         public decimal SelectYearlyDues(int year)
-        {            
+        {
             return dao.SelectYearlyDues(year);
         }
 

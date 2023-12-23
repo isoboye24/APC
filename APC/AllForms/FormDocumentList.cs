@@ -92,6 +92,7 @@ namespace APC.AllForms
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].HeaderText = "Date";
             dataGridView1.Columns[8].Visible = false;
+
             labelDocCount.Text = bll.SelectDocCount().ToString();
         }
         private void FillDataGrid()

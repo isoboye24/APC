@@ -311,5 +311,30 @@ namespace APC.AllForms
         {
             btnRefresh.BackColor = Color.White;
         }
+
+        private void panelTotalNationality_Click(object sender, EventArgs e)
+        {
+            btnNationality.PerformClick();
+        }
+
+        private void panelTotalEvent_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelTotalProfession_Click(object sender, EventArgs e)
+        {
+            btnProfession.PerformClick();
+        }
+
+        private void panelTotalPermission_Click(object sender, EventArgs e)
+        {
+            btnPermission.PerformClick();
+        }
+
+        private void panelTotalPosition_Click(object sender, EventArgs e)
+        {
+            btnPosition.PerformClick();
+        }
     }
 }

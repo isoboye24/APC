@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnDeadMembers = new FontAwesome.Sharp.IconButton();
             this.btnManage = new FontAwesome.Sharp.IconButton();
@@ -641,6 +641,7 @@
             this.panelTotalComment.Name = "panelTotalComment";
             this.panelTotalComment.Size = new System.Drawing.Size(211, 100);
             this.panelTotalComment.TabIndex = 7;
+            this.panelTotalComment.Click += new System.EventHandler(this.panelTotalComment_Click);
             // 
             // iconTotalCommentsCard
             // 
@@ -739,6 +740,7 @@
             this.panelMonthlyDues.Name = "panelMonthlyDues";
             this.panelMonthlyDues.Size = new System.Drawing.Size(211, 100);
             this.panelMonthlyDues.TabIndex = 5;
+            this.panelMonthlyDues.Click += new System.EventHandler(this.panelMonthlyDues_Click);
             // 
             // iconMonthlyDuesCard
             // 
@@ -809,6 +811,7 @@
             this.panelYearlyDues.Name = "panelYearlyDues";
             this.panelYearlyDues.Size = new System.Drawing.Size(211, 100);
             this.panelYearlyDues.TabIndex = 6;
+            this.panelYearlyDues.Click += new System.EventHandler(this.panelYearlyDues_Click);
             // 
             // iconYearlyDuesCard
             // 
@@ -867,6 +870,7 @@
             this.panelMeetingAttend.Name = "panelMeetingAttend";
             this.panelMeetingAttend.Size = new System.Drawing.Size(211, 94);
             this.panelMeetingAttend.TabIndex = 1;
+            this.panelMeetingAttend.Click += new System.EventHandler(this.panelMeetingAttend_Click);
             // 
             // iconLastMeetingAttCard
             // 
@@ -914,6 +918,7 @@
             this.panelNoOfChildren.Name = "panelNoOfChildren";
             this.panelNoOfChildren.Size = new System.Drawing.Size(211, 94);
             this.panelNoOfChildren.TabIndex = 4;
+            this.panelNoOfChildren.Click += new System.EventHandler(this.panelNoOfChildren_Click);
             // 
             // iconNoOfChildrenCard
             // 
@@ -961,6 +966,7 @@
             this.panelLastEvent.Name = "panelLastEvent";
             this.panelLastEvent.Size = new System.Drawing.Size(211, 94);
             this.panelLastEvent.TabIndex = 2;
+            this.panelLastEvent.Click += new System.EventHandler(this.panelLastEvent_Click);
             // 
             // iconEventsCard
             // 
@@ -1009,6 +1015,7 @@
             this.panelMonthlyComment.Name = "panelMonthlyComment";
             this.panelMonthlyComment.Size = new System.Drawing.Size(211, 100);
             this.panelMonthlyComment.TabIndex = 8;
+            this.panelMonthlyComment.Click += new System.EventHandler(this.panelMonthlyComment_Click);
             // 
             // iconMonthlyCommentsCard
             // 
@@ -1101,17 +1108,17 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
             this.chart1.Location = new System.Drawing.Point(22, 116);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart1.Series.Add(series7);
             this.chart1.Size = new System.Drawing.Size(448, 251);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "ble";

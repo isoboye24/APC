@@ -55,6 +55,67 @@ namespace APC.DAL.DAO
             throw new NotImplementedException();
         }
 
+        public List<PersonalAttendanceDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<PersonalAttendanceDetailDTO> personalAttendance = new List<PersonalAttendanceDetailDTO>();
+
+                var list = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == isDeleted)
+                            join ats in db.ATTENDANCE_STATUS on p.attendanceStatusID equals ats.attendanceStatusID
+                            join m in db.MEMBERs.Where(x => x.isDeleted == false) on p.memberID equals m.memberID
+                            join mo in db.MONTHs on p.monthID equals mo.monthID
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            select new
+                            {
+                                attendanceID = p.attendanceID,
+                                attendanceStatusID = p.attendanceStatusID,
+                                attendanceStatusName = ats.attendanceStatus,
+                                day = p.day,
+                                monthID = p.monthID,
+                                monthName = mo.monthName,
+                                year = p.year,
+                                memberID = p.memberID,
+                                surname = m.surname,
+                                name = m.name,
+                                imagePath = m.imagePath,
+                                genderID = m.genderID,
+                                genderName = g.genderName,
+                                monthlyDue = p.monthlyDues,
+                                expectedMonthlyDue = p.expectedMonthlyDue,
+                                balance = p.balance,
+                                generalAttendanceID = p.generalAttendanceID,
+                            }).OrderBy(x => x.surname).ToList();
+                foreach (var item in list)
+                {
+                    PersonalAttendanceDetailDTO dto = new PersonalAttendanceDetailDTO();
+                    dto.AttendanceID = item.attendanceID;
+                    dto.AttendanceStatusID = item.attendanceStatusID;
+                    dto.AttendanceStatusName = item.attendanceStatusName;
+                    dto.Day = (int)item.day;
+                    dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
+                    dto.Year = item.year.ToString();
+                    dto.MemberID = item.memberID;
+                    dto.Surname = item.surname;
+                    dto.Name = item.name;
+                    dto.ImagePath = item.imagePath;
+                    dto.GenderID = item.genderID;
+                    dto.Gender = item.genderName;
+                    dto.MonthlyDue = (decimal)item.monthlyDue;
+                    dto.ExpectedDue = (decimal)item.expectedMonthlyDue;
+                    dto.Balance = (decimal)item.balance;
+                    dto.GeneralAttendanceID = item.generalAttendanceID;
+                    personalAttendance.Add(dto);
+                }
+                return personalAttendance;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
+
         public List<PersonalAttendanceDetailDTO> SelectMembers(int generalAttendanceID)
         {
             try
@@ -113,7 +174,7 @@ namespace APC.DAL.DAO
             catch (Exception ex)
             {
                 throw ex;
-            }            
+            }
         }
 
         public int SelectLastMeetingAttendance(int month, int year)

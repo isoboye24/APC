@@ -84,6 +84,7 @@ namespace APC
             dataGridView1.Columns[18].Visible = false;
             dataGridView1.Columns[19].Visible = false;
             dataGridView1.Columns[20].Visible = false;
+            dataGridView1.Columns[21].Visible = false;
 
             GetChildrenCount();
         }
@@ -201,6 +202,7 @@ namespace APC
             detail.FatherNationalityID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[18].Value);
             detail.FatherNationalityName = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
             detail.FatherImagePath = dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString();
+            detail.isNationalityDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[21].Value);
         }
     }
 }

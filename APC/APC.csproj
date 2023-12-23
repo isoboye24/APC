@@ -99,7 +99,42 @@
       <DependentUpon>FormViewDocument.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL\DocumentBLL.cs" />
+    <Compile Include="BLL\GeneralAttendanceBLL.cs" />
+    <Compile Include="DAL\ATTENDANCE_STATUS.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CHILD.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COMMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\COUNTRY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DAO\DocumentDAO.cs" />
+    <Compile Include="DAL\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DEATH_MEMBER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DOCUMENT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DTO\DeletedDataDTO.cs" />
     <Compile Include="DAL\DTO\DocumentDetailDTO.cs" />
     <Compile Include="AllForms\FormDocumentList.cs">
       <SubType>Form</SubType>
@@ -302,7 +337,6 @@
     <Compile Include="BLL\EventImageBLL.cs" />
     <Compile Include="BLL\EventsBLL.cs" />
     <Compile Include="BLL\FinancialReportBLL.cs" />
-    <Compile Include="BLL\GeneralAttendanceBLL.cs" />
     <Compile Include="BLL\PersonalAttendanceBLL.cs" />
     <Compile Include="BLL\AttendanceStatusBLL.cs" />
     <Compile Include="BLL\ChildBLL.cs" />
@@ -323,18 +357,6 @@
     <Compile Include="BLL\PermissionBLL.cs" />
     <Compile Include="BLL\PositionBLL.cs" />
     <Compile Include="BLL\ProfessionBLL.cs" />
-    <Compile Include="DAL\ATTENDANCE_STATUS.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\CHILD.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\COMMENT.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\COUNTRY.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\DAO\APCContexts.cs" />
     <Compile Include="DAL\DAO\EventImageDAO.cs" />
     <Compile Include="DAL\DAO\EventsDAO.cs" />
@@ -360,27 +382,6 @@
     <Compile Include="DAL\DAO\PermissionDAO.cs" />
     <Compile Include="DAL\DAO\PositionDAO.cs" />
     <Compile Include="DAL\DAO\ProfessionDAO.cs" />
-    <Compile Include="DAL\DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\DEATH_MEMBER.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\DOCUMENT.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\DTO\DocumentDTO.cs" />
     <Compile Include="DAL\DTO\EventImageDetailDTO.cs" />
     <Compile Include="DAL\DTO\EventImageDTO.cs" />
@@ -831,6 +832,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fileImage.png" />
+    <None Include="Resources\docIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DAL\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModel.edmx</DependentUpon>
@@ -841,8 +846,6 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\fileImage.png" />
-    <None Include="Resources\docIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

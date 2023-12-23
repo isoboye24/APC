@@ -57,6 +57,12 @@ namespace APC.AllForms
             dataGridView1.Columns[26].HeaderText = "Phone Number";
             dataGridView1.Columns[27].HeaderText = "Phone Number 2";
             dataGridView1.Columns[28].HeaderText = "Phone Number 3";
+            dataGridView1.Columns[29].Visible = false;
+            dataGridView1.Columns[30].Visible = false;
+            dataGridView1.Columns[31].Visible = false;
+            dataGridView1.Columns[32].Visible = false;
+            dataGridView1.Columns[33].Visible = false;
+            dataGridView1.Columns[34].Visible = false;
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)

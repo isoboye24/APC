@@ -26,7 +26,7 @@ namespace APC.BLL
 
         public bool GetBack(ChildDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.ChildID);
         }
 
         public bool Insert(ChildDetailDTO entity)

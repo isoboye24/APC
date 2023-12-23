@@ -22,7 +22,7 @@ namespace APC.BLL
 
         public bool GetBack(FinancialReportDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.FinancialReportID);
         }
 
         public bool Insert(FinancialReportDetailDTO entity)

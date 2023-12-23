@@ -21,7 +21,18 @@ namespace APC.BLL
         EmploymentStatusDAO empStatusDAO = new EmploymentStatusDAO();
         PermissionDAO permissionDAO = new PermissionDAO();
         CountryDAO countryDAO = new CountryDAO();
-        DualNationalityDAO dualNationalityDAO = new DualNationalityDAO();
+
+        // These classes are here for the sake of deletedData form
+        GeneralAttendanceDAO genAttendDAO = new GeneralAttendanceDAO();
+        ChildDAO childDAO = new ChildDAO();
+        PersonalAttendanceDAO perAttendDAO = new PersonalAttendanceDAO();
+        FinancialReportDAO finRepDAO = new FinancialReportDAO();
+        ExpenditureDAO expenditureDAO = new ExpenditureDAO();
+        CommentDAO commenntDAO = new CommentDAO();
+        DeadMembersDAO deadMembersDAO = new DeadMembersDAO();
+        DocumentDAO documentDAO = new DocumentDAO();
+        EventsDAO eventDAO = new EventsDAO();
+        EventImageDAO eventImageDAO = new EventImageDAO();
         public bool Delete(MemberDetailDTO entity)
         {
             MEMBER member = new MEMBER();
@@ -38,7 +49,7 @@ namespace APC.BLL
 
         public bool GetBack(MemberDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return memberDAO.GetBack(entity.MemberID);
         }
 
         public bool Insert(MemberDetailDTO entity)
@@ -79,6 +90,28 @@ namespace APC.BLL
             dto.Positions = positionDAO.Select();
             dto.MaritalStatuses = marStatusDAO.Select();
             dto.Permissions = permissionDAO.Select();
+            return dto;
+        }
+
+        public DeletedDataDTO Select(bool isDeleted)
+        {
+            DeletedDataDTO dto = new DeletedDataDTO();
+            dto.Members = memberDAO.Select(isDeleted);
+            dto.Professions = professionDAO.Select(isDeleted);
+            dto.Countries = countryDAO.Select(isDeleted);
+            dto.Nationalities = nationalityDAO.Select(isDeleted);
+            dto.EmploymentStatuses = empStatusDAO.Select(isDeleted);
+            dto.Positions = positionDAO.Select(isDeleted);
+            dto.MaritalStatuses = marStatusDAO.Select(isDeleted);
+            dto.Children = childDAO.Select(isDeleted);
+            dto.Comments = commenntDAO.Select(isDeleted);
+            dto.DeadMembers = deadMembersDAO.Select(isDeleted);
+            dto.Documents = documentDAO.Select(isDeleted);
+            dto.EventImages = eventImageDAO.Select(isDeleted);
+            dto.Events = eventDAO.Select(isDeleted);
+            dto.Expenditures = expenditureDAO.Select(isDeleted);
+            dto.FinancialReports = finRepDAO.Select(isDeleted);
+            dto.GeneralAttendance = genAttendDAO.Select(isDeleted);
             return dto;
         }
         public int SelectAllMembersCount()

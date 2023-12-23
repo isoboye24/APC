@@ -27,7 +27,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                NATIONALITY nationality = db.NATIONALITies.First(x=>x.nationalityID==ID);
+                nationality.isDeleted = false;
+                nationality.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(NATIONALITY entity)
@@ -50,6 +61,26 @@ namespace APC.DAL.DAO
             {
                 List<NationalityDetailDTO> nationalities = new List<NationalityDetailDTO>();
                 var list = db.NATIONALITies.Where(x=>x.isDeleted==false).OrderBy(x=>x.nationality1).ToList();
+                foreach (var item in list)
+                {
+                    NationalityDetailDTO dto = new NationalityDetailDTO();
+                    dto.NationalityID = item.nationalityID;
+                    dto.Nationality = item.nationality1;
+                    nationalities.Add(dto);
+                }
+                return nationalities;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<NationalityDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<NationalityDetailDTO> nationalities = new List<NationalityDetailDTO>();
+                var list = db.NATIONALITies.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.nationality1).ToList();
                 foreach (var item in list)
                 {
                     NationalityDetailDTO dto = new NationalityDetailDTO();

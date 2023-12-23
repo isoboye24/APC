@@ -24,7 +24,7 @@ namespace APC.BLL
 
         public bool GetBack(CommentDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return commentDAO.GetBack(entity.CommentID);
         }
 
         public bool Insert(CommentDetailDTO entity)

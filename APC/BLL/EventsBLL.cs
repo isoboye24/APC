@@ -19,7 +19,7 @@ namespace APC.BLL
 
         public bool GetBack(EventsDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.EventID);
         }
 
         public bool Insert(EventsDetailDTO entity)

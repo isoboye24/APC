@@ -68,6 +68,7 @@
             this.cmbDeletedData.Name = "cmbDeletedData";
             this.cmbDeletedData.Size = new System.Drawing.Size(211, 29);
             this.cmbDeletedData.TabIndex = 2;
+            this.cmbDeletedData.SelectedIndexChanged += new System.EventHandler(this.cmbDeletedData_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -128,6 +129,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(907, 374);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // tableLayoutPanel3
             // 
@@ -150,7 +152,7 @@
             // 
             // btnRetrieve
             // 
-            this.btnRetrieve.BackColor = System.Drawing.Color.Cyan;
+            this.btnRetrieve.BackColor = System.Drawing.Color.DarkOrange;
             this.btnRetrieve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRetrieve.FlatAppearance.BorderSize = 0;
             this.btnRetrieve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -161,6 +163,7 @@
             this.btnRetrieve.TabIndex = 0;
             this.btnRetrieve.Text = "Retrieve";
             this.btnRetrieve.UseVisualStyleBackColor = false;
+            this.btnRetrieve.Click += new System.EventHandler(this.btnRetrieve_Click);
             // 
             // FormDeletedData
             // 
@@ -170,6 +173,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormDeletedData";
             this.Text = "Deleted Data";
+            this.Load += new System.EventHandler(this.FormDeletedData_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

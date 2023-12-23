@@ -27,7 +27,11 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            POSITION position = db.POSITIONs.First(x => x.positionID == ID);
+            position.isDeleted = false;
+            position.deletedDate = null;
+            db.SaveChanges();
+            return true;
         }
 
         public bool Insert(POSITION entity)
@@ -64,6 +68,27 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public List<PositionDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<PositionDetailDTO> positions = new List<PositionDetailDTO>();
+                var list = db.POSITIONs.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.positionName).ToList();
+                foreach (var item in list)
+                {
+                    PositionDetailDTO dto = new PositionDetailDTO();
+                    dto.PositionID = item.positionID;
+                    dto.PositionName = item.positionName;
+                    positions.Add(dto);
+                }
+                return positions;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public int PositionCount()
         {
             try

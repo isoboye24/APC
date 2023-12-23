@@ -611,6 +611,7 @@
             this.panelTotalNationality.Name = "panelTotalNationality";
             this.panelTotalNationality.Size = new System.Drawing.Size(201, 95);
             this.panelTotalNationality.TabIndex = 1;
+            this.panelTotalNationality.Click += new System.EventHandler(this.panelTotalNationality_Click);
             // 
             // iconTotalCountryCard
             // 
@@ -658,6 +659,7 @@
             this.panelTotalPosition.Name = "panelTotalPosition";
             this.panelTotalPosition.Size = new System.Drawing.Size(201, 94);
             this.panelTotalPosition.TabIndex = 3;
+            this.panelTotalPosition.Click += new System.EventHandler(this.panelTotalPosition_Click);
             // 
             // iconTotalPositionCard
             // 
@@ -705,6 +707,7 @@
             this.panelTotalPermission.Name = "panelTotalPermission";
             this.panelTotalPermission.Size = new System.Drawing.Size(201, 95);
             this.panelTotalPermission.TabIndex = 4;
+            this.panelTotalPermission.Click += new System.EventHandler(this.panelTotalPermission_Click);
             // 
             // iconTotalPermissionCard
             // 
@@ -752,6 +755,7 @@
             this.panelTotalEvent.Name = "panelTotalEvent";
             this.panelTotalEvent.Size = new System.Drawing.Size(201, 95);
             this.panelTotalEvent.TabIndex = 2;
+            this.panelTotalEvent.Click += new System.EventHandler(this.panelTotalEvent_Click);
             // 
             // labelTotalEvent
             // 
@@ -799,6 +803,7 @@
             this.panelTotalProfession.Name = "panelTotalProfession";
             this.panelTotalProfession.Size = new System.Drawing.Size(201, 95);
             this.panelTotalProfession.TabIndex = 7;
+            this.panelTotalProfession.Click += new System.EventHandler(this.panelTotalProfession_Click);
             // 
             // iconProfessionCard
             // 

@@ -42,7 +42,18 @@ namespace APC.DAL.DAO
         }
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                MEMBER member = db.MEMBERs.First(x=>x.memberID==ID);
+                member.isDeleted = false;
+                member.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(MEMBER entity)
@@ -66,13 +77,13 @@ namespace APC.DAL.DAO
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
                 var list = (from m in db.MEMBERs.Where(x=>x.isDeleted==false)
                             join g in db.GENDERs on m.genderID equals g.genderID
-                            join e in db.EMPLOYMENT_STATUS on m.employmentStatusID equals e.employmentStatusID
-                            join p in db.PROFESSIONs on m.professionID equals p.professionID
-                            join pos in db.POSITIONs on m.positionID equals pos.positionID
-                            join mar in db.MARITAL_STATUS on m.maritalStatusID equals mar.maritalStatusID
-                            join c in db.COUNTRies on m.countryID equals c.countryID
-                            join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
-                            join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
+                            join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
+                            join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
+                            join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                            join mar in db.MARITAL_STATUS.Where(x => x.isDeleted == false) on m.maritalStatusID equals mar.maritalStatusID
+                            join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
+                            join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
+                            join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
                             select new
                             {
                                 memberID = m.memberID,
@@ -145,6 +156,105 @@ namespace APC.DAL.DAO
             {
                 throw ex;
             }            
+        }
+        public List<MemberDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<MemberDetailDTO> members = new List<MemberDetailDTO>();
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == isDeleted)
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            join e in db.EMPLOYMENT_STATUS on m.employmentStatusID equals e.employmentStatusID
+                            join p in db.PROFESSIONs on m.professionID equals p.professionID
+                            join pos in db.POSITIONs on m.positionID equals pos.positionID
+                            join mar in db.MARITAL_STATUS on m.maritalStatusID equals mar.maritalStatusID
+                            join c in db.COUNTRies on m.countryID equals c.countryID
+                            join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
+                            join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
+                            select new
+                            {
+                                memberID = m.memberID,
+                                username = m.username,
+                                name = m.name,
+                                surname = m.surname,
+                                password = m.password,
+                                birthday = m.birthday,
+                                imagePath = m.imagePath,
+                                emailAddress = m.emailAddress,
+                                houseAddress = m.houseAddress,
+                                membershipDate = m.membershipDate,
+                                countryID = m.countryID,
+                                countryName = c.countryName,
+                                nationalityID = m.nationalityID,
+                                nationalityName = n.nationality1,
+                                professionID = m.professionID,
+                                professionName = p.profession1,
+                                positionID = m.positionID,
+                                positionName = pos.positionName,
+                                genderID = m.genderID,
+                                genderName = g.genderName,
+                                employmenStatusID = m.employmentStatusID,
+                                employmenStatusName = e.employmentStatus,
+                                maritalStatusID = m.maritalStatusID,
+                                maritalStatusName = mar.maritalStatus,
+                                permissionID = m.permissionID,
+                                permissionName = perm.permission1,
+                                phoneNumber = m.phoneNumber,
+                                phoneNumber2 = m.phoneNumber2,
+                                phoneNumber3 = m.phoneNumber3,
+                                isCountryDeleted = c.isDeleted,
+                                isNationalityDeleted = n.isDeleted,
+                                isProfessionDeleted = p.isDeleted,
+                                isPositionDeleted = pos.isDeleted,
+                                isEmpStatusDeleted = e.isDeleted,
+                                isMarStatusDeleted = mar.isDeleted,
+                            }).OrderBy(x => x.surname).ToList();
+                foreach (var item in list)
+                {
+                    MemberDetailDTO dto = new MemberDetailDTO();
+                    dto.MemberID = item.memberID;
+                    dto.Username = item.username;
+                    dto.Name = item.name;
+                    dto.Surname = item.surname;
+                    dto.Password = item.password;
+                    dto.Birthday = item.birthday;
+                    dto.ImagePath = item.imagePath;
+                    dto.EmailAddress = item.emailAddress;
+                    dto.HouseAddress = item.houseAddress;
+                    dto.MembershipDate = (DateTime)item.membershipDate;
+                    dto.CountryID = item.countryID;
+                    dto.CountryName = item.countryName;
+                    dto.NationalityID = item.nationalityID;
+                    dto.NationalityName = item.nationalityName;
+                    dto.ProfessionID = item.professionID;
+                    dto.ProfessionName = item.professionName;
+                    dto.PositionID = item.positionID;
+                    dto.PositionName = item.positionName;
+                    dto.GenderID = item.genderID;
+                    dto.GenderName = item.genderName;
+                    dto.EmploymentStatusID = item.employmenStatusID;
+                    dto.EmploymentStatusName = item.employmenStatusName;
+                    dto.MaritalStatusID = item.maritalStatusID;
+                    dto.MaritalStatusName = item.maritalStatusName;
+                    dto.PermissionID = item.permissionID;
+                    dto.PermissionName = item.permissionName;
+                    dto.PhoneNumber = item.phoneNumber;
+                    dto.PhoneNumber2 = item.phoneNumber2;
+                    dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.isCountryDeleted = item.isCountryDeleted;
+                    dto.isNationalityDeleted = item.isNationalityDeleted;
+                    dto.isProfessionDeleted = item.isProfessionDeleted;
+                    dto.isPositionDeleted = item.isPositionDeleted;
+                    dto.isEmpStatusDeleted = item.isEmpStatusDeleted;
+                    dto.isMarStatusDeleted = item.isMarStatusDeleted;
+                    members.Add(dto);
+                }
+                return members;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public int SelectAllMembersCount()
         {

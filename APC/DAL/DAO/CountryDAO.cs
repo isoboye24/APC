@@ -28,7 +28,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                COUNTRY country = db.COUNTRies.First(x=>x.countryID==ID);
+                country.isDeleted = false;
+                country.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(COUNTRY entity)
@@ -51,6 +62,26 @@ namespace APC.DAL.DAO
             {
                 List<CountryDetailDTO> countries = new List<CountryDetailDTO>();
                 var list = db.COUNTRies.Where(x=>x.isDeleted==false).OrderBy(x=>x.countryName).ToList();
+                foreach (var item in list)
+                {
+                    CountryDetailDTO dto = new CountryDetailDTO();
+                    dto.CountryID = item.countryID;
+                    dto.CountryName = item.countryName;
+                    countries.Add(dto);
+                }
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<CountryDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<CountryDetailDTO> countries = new List<CountryDetailDTO>();
+                var list = db.COUNTRies.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.countryName).ToList();
                 foreach (var item in list)
                 {
                     CountryDetailDTO dto = new CountryDetailDTO();

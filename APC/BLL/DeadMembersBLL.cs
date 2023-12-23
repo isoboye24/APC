@@ -27,7 +27,7 @@ namespace APC.BLL
 
         public bool GetBack(DeadMembersDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.DeadMemberID);
         }
 
         public bool Insert(DeadMembersDetailDTO entity)

@@ -87,7 +87,7 @@ namespace APC.AllForms
             dataGridView1.Columns[6].HeaderText = "No.";
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[7].HeaderText = "Picture Caption";
-
+            dataGridView1.Columns[8].Visible = false;
         }
         private void FillDataGrid()
         {
@@ -113,6 +113,7 @@ namespace APC.AllForms
             imageDetail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             imageDetail.Counter = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
             imageDetail.ImageCaption = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            imageDetail.isEventDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             string imagePath = Application.StartupPath + "\\images\\" + imageDetail.ImagePath;
             picImage.ImageLocation = imagePath;
         }

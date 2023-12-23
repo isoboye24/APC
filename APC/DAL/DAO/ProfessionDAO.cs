@@ -27,7 +27,11 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            PROFESSION profession = db.PROFESSIONs.First(x=>x.professionID == ID);
+            profession.isDeleted = false;
+            profession.deletedDate = null;
+            db.SaveChanges();
+            return true;
         }
 
         public bool Insert(PROFESSION entity)
@@ -50,6 +54,26 @@ namespace APC.DAL.DAO
             {
                 List<ProfessionDetailDTO> professions = new List<ProfessionDetailDTO>();
                 var list = db.PROFESSIONs.Where(x => x.isDeleted == false).OrderBy(x => x.profession1).ToList();
+                foreach (var item in list)
+                {
+                    ProfessionDetailDTO dto = new ProfessionDetailDTO();
+                    dto.ProfessionID = item.professionID;
+                    dto.Profession = item.profession1;
+                    professions.Add(dto);
+                }
+                return professions;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<ProfessionDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<ProfessionDetailDTO> professions = new List<ProfessionDetailDTO>();
+                var list = db.PROFESSIONs.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.profession1).ToList();
                 foreach (var item in list)
                 {
                     ProfessionDetailDTO dto = new ProfessionDetailDTO();

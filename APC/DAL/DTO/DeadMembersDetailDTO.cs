@@ -27,5 +27,10 @@ namespace APC.DAL.DTO
         public string GenderName { get; set; }
         public int MaritalStatusID { get; set; }
         public string MaritalStatusName { get; set; }
+        public bool isCountryDeleted { get; set; }
+        public bool isNationalityDeleted { get; set; }
+        public bool isProfessionDeleted { get; set; }
+        public bool isPositionDeleted { get; set; }
+        public bool isMarStatusDeleted { get; set; }
     }
 }

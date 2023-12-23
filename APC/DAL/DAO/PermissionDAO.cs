@@ -8,23 +8,8 @@ using System.Windows.Navigation;
 
 namespace APC.DAL.DAO
 {
-    public class PermissionDAO : APCContexts, IDAO<PermissionDetailDTO, PERMISSION>
+    public class PermissionDAO : APCContexts
     {
-        public bool Delete(PERMISSION entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool GetBack(int ID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Insert(PERMISSION entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<PermissionDetailDTO> Select()
         {
             try
@@ -78,11 +63,6 @@ namespace APC.DAL.DAO
                 throw ex;
             }
             
-        }
-
-        public bool Update(PERMISSION entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

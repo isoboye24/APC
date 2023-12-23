@@ -94,7 +94,7 @@ namespace APC
 
             cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
-
+            #region
             dataGridView1.DataSource = dto.Members;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
@@ -125,7 +125,13 @@ namespace APC
             dataGridView1.Columns[26].Visible = false;
             dataGridView1.Columns[27].Visible = false;
             dataGridView1.Columns[28].Visible = false;
-            
+            dataGridView1.Columns[29].Visible = false;
+            dataGridView1.Columns[30].Visible = false;
+            dataGridView1.Columns[31].Visible = false;
+            dataGridView1.Columns[32].Visible = false;
+            dataGridView1.Columns[33].Visible = false;
+            dataGridView1.Columns[34].Visible = false;
+            #endregion
             GetMemberCounts();
         }
         private void GetMemberCounts()
@@ -242,6 +248,12 @@ namespace APC
             detail.PhoneNumber = dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString();
             detail.PhoneNumber2 = dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString();
             detail.PhoneNumber3 = dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString();
+            detail.isCountryDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[29].Value);
+            detail.isNationalityDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[30].Value);
+            detail.isProfessionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[31].Value);
+            detail.isPositionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[32].Value);
+            detail.isEmpStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[33].Value);
+            detail.isMarStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[34].Value);
         }
     }
 }

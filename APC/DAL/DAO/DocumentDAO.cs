@@ -28,7 +28,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DOCUMENT document = db.DOCUMENTs.First(x=>x.documentID==ID);
+                document.isDeleted = false;
+                document.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(DOCUMENT entity)
@@ -84,7 +95,45 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-
+        public List<DocumentDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<DocumentDetailDTO> documents = new List<DocumentDetailDTO>();
+                var list = (from d in db.DOCUMENTs.Where(x => x.isDeleted == isDeleted)
+                            join m in db.MONTHs on d.monthID equals m.monthID
+                            select new
+                            {
+                                documentID = d.documentID,
+                                documentName = d.documentName,
+                                documentType = d.documentType,
+                                day = d.day,
+                                monthID = d.monthID,
+                                monthName = m.monthName,
+                                year = d.year,
+                                documentPath = d.documentPath
+                            }).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).ThenByDescending(x => x.day).ThenBy(x => x.documentName).ToList();
+                foreach (var item in list)
+                {
+                    DocumentDetailDTO dto = new DocumentDetailDTO();
+                    dto.DocumentID = item.documentID;
+                    dto.DocumentName = item.documentName;
+                    dto.DocumentPath = item.documentPath;
+                    dto.DocumentType = item.documentType;
+                    dto.Day = item.day;
+                    dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
+                    dto.Year = item.year.ToString();
+                    dto.Date = item.day + "." + item.monthID + "." + item.year;
+                    documents.Add(dto);
+                }
+                return documents;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public int SelectDocCount()
         {
             try

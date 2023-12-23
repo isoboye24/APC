@@ -71,6 +71,12 @@ namespace APC
             dataGridViewFathers.Columns[26].Visible = false;
             dataGridViewFathers.Columns[27].Visible = false;
             dataGridViewFathers.Columns[28].Visible = false;
+            dataGridViewFathers.Columns[29].Visible = false;
+            dataGridViewFathers.Columns[30].Visible = false;
+            dataGridViewFathers.Columns[31].Visible = false;
+            dataGridViewFathers.Columns[32].Visible = false;
+            dataGridViewFathers.Columns[33].Visible = false;
+            dataGridViewFathers.Columns[34].Visible = false;
 
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
@@ -102,6 +108,12 @@ namespace APC
             dataGridViewMothers.Columns[26].Visible = false;
             dataGridViewMothers.Columns[27].Visible = false;
             dataGridViewMothers.Columns[28].Visible = false;
+            dataGridViewFathers.Columns[29].Visible = false;
+            dataGridViewFathers.Columns[30].Visible = false;
+            dataGridViewFathers.Columns[31].Visible = false;
+            dataGridViewFathers.Columns[32].Visible = false;
+            dataGridViewFathers.Columns[33].Visible = false;
+            dataGridViewFathers.Columns[34].Visible = false;
             #endregion
 
             if (isUpdate)
@@ -196,7 +208,7 @@ namespace APC
                         {
                             File.Copy(txtImagePath.Text, @"images\\" + fileName);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             MessageBox.Show("Cannot find the path to this picture");
                         }

@@ -30,7 +30,7 @@ namespace APC
             dto = bll.Select();
             cmbPermission.DataSource = dto.Permissions;
             General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
-
+            #region
             dataGridView1.DataSource = dto.Members;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
@@ -61,6 +61,13 @@ namespace APC
             dataGridView1.Columns[26].Visible = false;
             dataGridView1.Columns[27].Visible = false;
             dataGridView1.Columns[28].Visible = false;
+            dataGridView1.Columns[29].Visible = false;
+            dataGridView1.Columns[30].Visible = false;
+            dataGridView1.Columns[31].Visible = false;
+            dataGridView1.Columns[32].Visible = false;
+            dataGridView1.Columns[33].Visible = false;
+            dataGridView1.Columns[34].Visible = false;
+            #endregion
         }
         private void FillDataGrid()
         {

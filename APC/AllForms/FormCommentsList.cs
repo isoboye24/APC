@@ -82,6 +82,7 @@ namespace APC.AllForms
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].HeaderText = "Month";
             dataGridView1.Columns[11].HeaderText = "Year";
+            dataGridView1.Columns[12].Visible = false;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -150,6 +151,7 @@ namespace APC.AllForms
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
             detail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
             detail.Year = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+            detail.isMemberDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace APC.BLL
 
         public bool GetBack(NationalityDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.NationalityID);
         }
 
         public bool Insert(NationalityDetailDTO entity)

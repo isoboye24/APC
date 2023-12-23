@@ -28,7 +28,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EMPLOYMENT_STATUS empStatus = db.EMPLOYMENT_STATUS.First(x=>x.employmentStatusID == ID);
+                empStatus.isDeleted = false;
+                empStatus.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(EMPLOYMENT_STATUS entity)
@@ -51,6 +62,26 @@ namespace APC.DAL.DAO
             {
                 List<EmploymentStatusDetailDTO> employmentStatuses = new List<EmploymentStatusDetailDTO>();
                 var list = db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false).OrderBy(x => x.employmentStatus).ToList();
+                foreach (var item in list)
+                {
+                    EmploymentStatusDetailDTO dto = new EmploymentStatusDetailDTO();
+                    dto.EmploymentStatusID = item.employmentStatusID;
+                    dto.EmploymentStatus = item.employmentStatus;
+                    employmentStatuses.Add(dto);
+                }
+                return employmentStatuses;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<EmploymentStatusDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<EmploymentStatusDetailDTO> employmentStatuses = new List<EmploymentStatusDetailDTO>();
+                var list = db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.employmentStatus).ToList();
                 foreach (var item in list)
                 {
                     EmploymentStatusDetailDTO dto = new EmploymentStatusDetailDTO();

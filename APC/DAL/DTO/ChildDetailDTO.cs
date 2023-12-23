@@ -29,5 +29,7 @@ namespace APC.DAL.DTO
         public int FatherNationalityID { get; set; }
         public string FatherNationalityName { get; set; }
         public string FatherImagePath { get; set; }
+        public bool isNationalityDeleted { get; set; }
+
     }
 }

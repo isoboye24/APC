@@ -27,7 +27,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                MARITAL_STATUS marStatus = db.MARITAL_STATUS.First(x=>x.maritalStatusID==ID);
+                marStatus.isDeleted = false;
+                marStatus.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(MARITAL_STATUS entity)
@@ -50,6 +61,26 @@ namespace APC.DAL.DAO
             {
                 List<MaritalStatusDetailDTO> maritalStatuses = new List<MaritalStatusDetailDTO>();
                 var list = db.MARITAL_STATUS.Where(x => x.isDeleted == false).OrderBy(x => x.maritalStatus).ToList();
+                foreach (var item in list)
+                {
+                    MaritalStatusDetailDTO dto = new MaritalStatusDetailDTO();
+                    dto.MaritalStatusID = item.maritalStatusID;
+                    dto.MaritalStatus = item.maritalStatus;
+                    maritalStatuses.Add(dto);
+                }
+                return maritalStatuses;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<MaritalStatusDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<MaritalStatusDetailDTO> maritalStatuses = new List<MaritalStatusDetailDTO>();
+                var list = db.MARITAL_STATUS.Where(x => x.isDeleted == isDeleted).OrderBy(x => x.maritalStatus).ToList();
                 foreach (var item in list)
                 {
                     MaritalStatusDetailDTO dto = new MaritalStatusDetailDTO();

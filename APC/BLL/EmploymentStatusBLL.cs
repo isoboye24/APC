@@ -21,7 +21,7 @@ namespace APC.BLL
 
         public bool GetBack(EmploymentStatusDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.EmploymentStatusID);
         }
 
         public bool Insert(EmploymentStatusDetailDTO entity)

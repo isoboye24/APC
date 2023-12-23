@@ -77,6 +77,12 @@ namespace APC
             dataGridViewMembers.Columns[26].Visible = false;
             dataGridViewMembers.Columns[27].Visible = false;
             dataGridViewMembers.Columns[28].Visible = false;
+            dataGridViewMembers.Columns[29].Visible = false;
+            dataGridViewMembers.Columns[30].Visible = false;
+            dataGridViewMembers.Columns[31].Visible = false;
+            dataGridViewMembers.Columns[32].Visible = false;
+            dataGridViewMembers.Columns[33].Visible = false;
+            dataGridViewMembers.Columns[34].Visible = false;
             #endregion
 
             if (isUpdate)

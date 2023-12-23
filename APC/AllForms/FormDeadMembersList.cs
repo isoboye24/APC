@@ -102,6 +102,11 @@ namespace APC.AllForms
             dataGridView1.Columns[16].HeaderText = "Gender";
             dataGridView1.Columns[17].Visible = false;
             dataGridView1.Columns[18].Visible = false;
+            dataGridView1.Columns[19].Visible = false;
+            dataGridView1.Columns[20].Visible = false;
+            dataGridView1.Columns[21].Visible = false;
+            dataGridView1.Columns[22].Visible = false;
+            dataGridView1.Columns[23].Visible = false;
 
             GetMemberCounts();
         }

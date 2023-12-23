@@ -22,7 +22,7 @@ namespace APC.BLL
 
         public bool GetBack(PositionDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.PositionID);
         }
 
         public bool Insert(PositionDetailDTO entity)

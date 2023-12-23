@@ -20,5 +20,6 @@ namespace APC.DAL.DTO
         public int MonthID { get; set; }
         public string MonthName { get; set; }
         public string Year { get; set; }
+        public bool isMemberDeleted { get; set; }
     }
 }

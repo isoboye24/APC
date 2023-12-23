@@ -16,13 +16,13 @@ namespace APC.DAL.DAO
                 List<FathersDetailDTO> fathers = new List<FathersDetailDTO>();
                 var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
                             join g in db.GENDERs.Where(x => x.genderName == "Male") on m.genderID equals g.genderID
-                            join e in db.EMPLOYMENT_STATUS on m.employmentStatusID equals e.employmentStatusID
-                            join p in db.PROFESSIONs on m.professionID equals p.professionID
-                            join pos in db.POSITIONs on m.positionID equals pos.positionID
-                            join mar in db.MARITAL_STATUS on m.maritalStatusID equals mar.maritalStatusID
-                            join c in db.COUNTRies on m.countryID equals c.countryID
-                            join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
-                            join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
+                            join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
+                            join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
+                            join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                            join mar in db.MARITAL_STATUS.Where(x => x.isDeleted == false) on m.maritalStatusID equals mar.maritalStatusID
+                            join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
+                            join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
+                            join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
                             select new
                             {
                                 memberID = m.memberID,

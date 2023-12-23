@@ -27,7 +27,19 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                FINANCIAL_REPORT financialReport = db.FINANCIAL_REPORT.First(x=>x.financialReportID==ID);
+                financialReport.isDeleted = false;
+                financialReport.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public bool Insert(FINANCIAL_REPORT entity)
@@ -55,8 +67,32 @@ namespace APC.DAL.DAO
                 {
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
                     dto.FinancialReportID = item.financialReportID;
-                    dto.TotalAmountRaised = item.totalAmountRaised;
-                    dto.TotalAmountSpent = item.totalAmountSpent;
+                    dto.TotalAmountRaised = (decimal)item.totalAmountRaised;
+                    dto.TotalAmountSpent = (decimal)item.totalAmountSpent;
+                    dto.Year = item.year.ToString();
+                    dto.Summary = item.summary;
+                    financialReport.Add(dto);
+                }
+                return financialReport;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<FinancialReportDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<FinancialReportDetailDTO> financialReport = new List<FinancialReportDetailDTO>();
+                var list = db.FINANCIAL_REPORT.Where(x => x.isDeleted == isDeleted);
+                foreach (var item in list)
+                {
+                    FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
+                    dto.FinancialReportID = item.financialReportID;
+                    dto.TotalAmountRaised = (decimal)item.totalAmountRaised;
+                    dto.TotalAmountSpent = (decimal)item.totalAmountSpent;
                     dto.Year = item.year.ToString();
                     dto.Summary = item.summary;
                     financialReport.Add(dto);
@@ -79,7 +115,7 @@ namespace APC.DAL.DAO
                 {
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
                     dto.FinancialReportID = item.financialReportID;
-                    totalRaisedAmount.Add(item.totalAmountRaised);
+                    totalRaisedAmount.Add((decimal)item.totalAmountRaised);
                 }
                 decimal totalAmount = totalRaisedAmount.Sum();
                 return totalAmount;
@@ -100,7 +136,7 @@ namespace APC.DAL.DAO
                 {
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
                     dto.FinancialReportID = item.financialReportID;
-                    totalSpentAmount.Add(item.totalAmountSpent);
+                    totalSpentAmount.Add((decimal)item.totalAmountSpent);
                 }
                 decimal totalAmount = totalSpentAmount.Sum();
                 return totalAmount;

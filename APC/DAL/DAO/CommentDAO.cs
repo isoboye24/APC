@@ -28,7 +28,18 @@ namespace APC.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                COMMENT comment = db.COMMENTs.First(x=>x.commentID == ID);
+                comment.isDeleted = false;
+                comment.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(COMMENT entity)
@@ -93,6 +104,57 @@ namespace APC.DAL.DAO
 
                 throw ex;
             }            
+        }
+        public List<CommentDetailDTO> Select(bool isDeleted)
+        {
+            try
+            {
+                List<CommentDetailDTO> comments = new List<CommentDetailDTO>();
+                var list = (from c in db.COMMENTs.Where(x => x.isDeleted == isDeleted)
+                            join mo in db.MONTHs on c.monthID equals mo.monthID
+                            join m in db.MEMBERs.Where(x => x.isDeleted == false) on c.memberID equals m.memberID
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            select new
+                            {
+                                commentID = c.commentID,
+                                comment = c.comment1,
+                                surname = m.surname,
+                                name = m.name,
+                                genderName = g.genderName,
+                                day = c.day,
+                                monthID = c.monthID,
+                                monthName = mo.monthName,
+                                year = c.year,
+                                imagePath = m.imagePath,
+                                memberID = c.memberID,
+                                genderID = m.genderID,
+                                isMemberDeleted = m.isDeleted,
+                            }).OrderByDescending(x => x.monthID).ToList();
+                foreach (var item in list)
+                {
+                    CommentDetailDTO dto = new CommentDetailDTO();
+                    dto.CommentID = item.commentID;
+                    dto.CommentName = item.comment;
+                    dto.Surname = item.surname;
+                    dto.Name = item.name;
+                    dto.GenderName = item.genderName;
+                    dto.Day = item.day;
+                    dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
+                    dto.Year = item.year.ToString();
+                    dto.ImagePath = item.imagePath;
+                    dto.MemberID = item.memberID;
+                    dto.GenderID = item.genderID;
+                    dto.isMemberDeleted = item.isMemberDeleted;
+                    comments.Add(dto);
+                }
+                return comments;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
         public int SelectAllCommentsCount()
         {
