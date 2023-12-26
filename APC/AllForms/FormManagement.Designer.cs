@@ -891,6 +891,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormManagement_FormClosing);
             this.Load += new System.EventHandler(this.FormManagement_Load);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();

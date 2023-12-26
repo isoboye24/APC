@@ -18,6 +18,7 @@ namespace APC.AllForms
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private FormDashboard dashboardForm;
         public FormManagement()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace APC.AllForms
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
+            dashboardForm = new FormDashboard();
         }
         // Drag From
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -104,12 +106,17 @@ namespace APC.AllForms
             childForm.Show();
             labelTitleChildForm.Text = childForm.Text;
         }
+        public FormProperties formDetail = new FormProperties();
+        public FormProperties initialDetail = new FormProperties();
         private void labelHome_Click(object sender, EventArgs e)
-        {
-            FormDashboard open = new FormDashboard();
+        {            
+            dashboardForm = new FormDashboard();
+            //dashboardForm.StartPosition = formDetail.StartPosition;
+            //dashboardForm.Location = formDetail.Location;
+            //dashboardForm.Size = formDetail.Size;
+            //dashboardForm.WindowState = formDetail.WindowState;
             this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
+            dashboardForm.ShowDialog();
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -132,18 +139,27 @@ namespace APC.AllForms
         PositionBLL posBll = new PositionBLL();
         MemberBLL memberBLL = new MemberBLL();
         PermissionBLL permissionBLL = new PermissionBLL();
+        EventsBLL eventBLL = new EventsBLL();
         
         private void FormManagement_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-            RefreshAllCards();
+            if (WindowState == FormWindowState.Normal)
+            {
+                RefreshAllCards(150, 29);
+            }
+            else
+            {
+                RefreshAllCards(300, 42);
+            }
         }
-        private void RefreshAllCards()
+        private void RefreshAllCards(int x, int y)
         {
-            General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), 150, 29);
-            General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), 150, 29);
-            General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), 150, 29);
-            General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), 150, 29);
+            General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), x, y);
+            General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), x, y);
+            General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), x, y);
+            General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), x, y);
+            General.ValueCount(labelTotalEvent, eventBLL.SelectEventCount(), x, y);
         }
         private void iconClose_MouseEnter(object sender, EventArgs e)
         {
@@ -182,12 +198,30 @@ namespace APC.AllForms
         private void iconMaximize_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
+            {                
+                if (this.Owner is FormDashboard dashboardForm)
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    this.RefreshAllCards(300, 42);
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    this.RefreshAllCards(300, 42);
+                }                
             }
             else
-            {
-                WindowState = FormWindowState.Normal;
+            {                
+                if (this.Owner is FormDashboard dashboardForm)
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    this.RefreshAllCards(300, 42);
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    this.RefreshAllCards(150, 42);
+                }
             }
         }
 
@@ -260,7 +294,14 @@ namespace APC.AllForms
             {
                 currentChildForm.Close();
                 Reset();
-                RefreshAllCards();
+                if (WindowState == FormWindowState.Normal)
+                {                    
+                    RefreshAllCards(150, 42);
+                }
+                else
+                {                    
+                    RefreshAllCards(300, 42);
+                }
             }
         }
 
@@ -294,7 +335,14 @@ namespace APC.AllForms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            RefreshAllCards();
+            if (WindowState == FormWindowState.Normal)
+            {
+                RefreshAllCards(150, 42);
+            }
+            else
+            {
+                RefreshAllCards(300, 42);
+            }
         }
 
         private void btnRefresh_MouseHover(object sender, EventArgs e)
@@ -319,7 +367,7 @@ namespace APC.AllForms
 
         private void panelTotalEvent_Click(object sender, EventArgs e)
         {
-            
+            dashboardForm.TriggerEventButtonOnClick();
         }
 
         private void panelTotalProfession_Click(object sender, EventArgs e)
@@ -335,6 +383,14 @@ namespace APC.AllForms
         private void panelTotalPosition_Click(object sender, EventArgs e)
         {
             btnPosition.PerformClick();
+        }
+
+        private void FormManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Owner is FormDashboard dashboardForm)
+            {
+                dashboardForm.WindowState = this.WindowState;
+            }
         }
     }
 }

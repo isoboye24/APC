@@ -82,6 +82,44 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public string SelectRecentEvent()
+        {
+            try
+            {                
+                var recentEvent = (from e in db.EVENTS.Where(x => x.isDeleted == false)
+                            join m in db.MONTHs on e.monthID equals m.monthID
+                            select new
+                            {
+                                eventID = e.eventID,
+                                eventTitle = e.title,
+                                summary = e.summary,
+                                coverImagePath = e.coverImagePath,
+                                day = e.day,
+                                monthID = e.monthID,
+                                monthName = m.monthName,
+                                year = e.year
+                            }).OrderByDescending(x => x.year).FirstOrDefault();
+                List<EventsDetailDTO> dto = new List<EventsDetailDTO>();
+                
+                return recentEvent.day+ "." +recentEvent.monthID +"." + recentEvent.year;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int SelectEventCount()
+        {
+            try
+            {
+                int totalEvents = db.EVENTS.Count(x => x.isDeleted == false);
+                return totalEvents;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<EventsDetailDTO> Select(bool isDeleted)
         {
             try

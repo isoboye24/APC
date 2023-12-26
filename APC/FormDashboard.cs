@@ -20,6 +20,7 @@ namespace APC
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        FormManagement managementForm;
         public FormDashboard()
         {
             InitializeComponent();
@@ -92,7 +93,6 @@ namespace APC
             labelTitleChildForm.Text = "Home";
         }
 
-
         private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -115,30 +115,47 @@ namespace APC
             childForm.BringToFront();
             childForm.Show();
             labelTitleChildForm.Text = childForm.Text;
-        }     
+        }
 
         private void picBoxMin_Click(object sender, EventArgs e)
         {
-            
+
         }
         MemberBLL memberBLL = new MemberBLL();
         CommentBLL commentBLL = new CommentBLL();
         ChildBLL childBLL = new ChildBLL();
         GeneralAttendanceBLL generalAttendanceBLL = new GeneralAttendanceBLL();
         PersonalAttendanceBLL personalAttendanceBLL = new PersonalAttendanceBLL();
+        EventsBLL eventBLL = new EventsBLL();
+        FormProperties initialDetail = new FormProperties();
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            initialDetail.StartPosition = FormStartPosition.Manual;
+            initialDetail.Location = this.Location;
+            initialDetail.Size = this.Size;
+            initialDetail.WindowState = this.WindowState;
+
+
             this.ControlBox = false;
-            RefreshAllCards();
+            if (WindowState == FormWindowState.Normal)
+            {
+                RefreshAllCards(171, 42);
+            }
+            else
+            {
+                RefreshAllCards(350, 42);
+            }
         }
 
-        private void RefreshAllCards()
+        private void RefreshAllCards(int x, int y)
         {
-            General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), 150, 29);
-            General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), 150, 29);
-            General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), 150, 29);
-            General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), 150, 29);
-            General.ValueCount(labelLastMeetingAttendance, personalAttendanceBLL.SelectLastMeetingAttendance(DateTime.Now.Month, DateTime.Now.Year), 150, 29);
+            General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), x, y);
+            General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), x, y);
+            General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), x, y);
+            General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), x, y);
+            General.ValueCount(labelLastMeetingAttendance, personalAttendanceBLL.SelectLastMeetingAttendance(DateTime.Now.Month, DateTime.Now.Year), x, y);            
+            labelLastEventDate.Text = eventBLL.SelectRecentEvent();
+
             string monthToday = DateTime.Now.ToString("MMMM");
             string yearToday = DateTime.Now.Year.ToString();
             if (Convert.ToInt32(labelMonthlyComments.Text) > 1)
@@ -148,16 +165,15 @@ namespace APC
             else
             {
                 labelComment.Text = "comment";
-            }            
+            }
             int todayMonth = DateTime.Now.Month;
             int todayYear = DateTime.Today.Year;
             labelCommentMonthName.Text = monthToday;
             labelDuesMonthName.Text = monthToday;
             labelMonthlyDuesYearName.Text = yearToday;
             labelTotalDuesYear.Text = yearToday;
-
-            General.ValueCountInDecimal(labelMonthlyDues, generalAttendanceBLL.SelectMonthlyDues(DateTime.Now.Month), 109, 42);
-            General.ValueCountInDecimal(labelYearlyDues, generalAttendanceBLL.SelectYearlyDues(DateTime.Now.Year), 109, 42);
+            General.ValueCountInDecimal(labelMonthlyDues, generalAttendanceBLL.SelectMonthlyDues(todayMonth), x-50, y);            
+            General.ValueCountInDecimal(labelYearlyDues, generalAttendanceBLL.SelectYearlyDues(todayYear), x-50, y);            
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
@@ -176,7 +192,7 @@ namespace APC
         }
         private void picBoxMin_Click_1(object sender, EventArgs e)
         {
-            
+
         }
         private void iconClose_Click(object sender, EventArgs e)
         {
@@ -203,10 +219,15 @@ namespace APC
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
+                RefreshAllCards(350, 42);
             }
             else
             {
-                WindowState = FormWindowState.Normal;
+                RefreshAllCards(171, 42);                
+                this.StartPosition = initialDetail.StartPosition;
+                this.Location = initialDetail.Location;
+                this.Size = initialDetail.Size;
+                this.WindowState = initialDetail.WindowState;
             }
         }
 
@@ -243,7 +264,7 @@ namespace APC
             {
                 currentChildForm.Close();
                 Reset();
-            }            
+            }
         }
 
         private void btnMembers_Click_1(object sender, EventArgs e)
@@ -258,7 +279,7 @@ namespace APC
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormChildrenList());
-        }        
+        }
 
         private void btnFinancialReport_Click_1(object sender, EventArgs e)
         {
@@ -266,12 +287,31 @@ namespace APC
             ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormFinancialReportList());
         }
-
+        FormProperties formDetail = new FormProperties();
         private void btnManage_Click_1(object sender, EventArgs e)
         {
-            FormManagement open = new FormManagement();
+            managementForm = new FormManagement();
+            managementForm.StartPosition = FormStartPosition.Manual;
+            managementForm.Location = this.Location;
+            managementForm.Size = this.Size;
+            managementForm.WindowState = this.WindowState;
+
+            formDetail.StartPosition = FormStartPosition.Manual;
+            formDetail.Location = this.Location;
+            formDetail.Size = this.Size;
+            formDetail.WindowState = this.WindowState;
+            managementForm.formDetail = formDetail;
+
+            if (WindowState == FormWindowState.Normal)
+            {
+                RefreshAllCards(171, 42);
+            }
+            else
+            {
+                RefreshAllCards(350, 42);
+            }
             this.Hide();
-            open.ShowDialog();
+            managementForm.ShowDialog();
         }
 
         private void labelLogo_Click(object sender, EventArgs e)
@@ -280,7 +320,14 @@ namespace APC
             {
                 currentChildForm.Close();
                 Reset();
-                RefreshAllCards();
+                if (WindowState == FormWindowState.Normal)
+                {
+                    RefreshAllCards(171, 42);
+                }
+                else
+                {
+                    RefreshAllCards(350, 42);
+                }
             }
         }
 
@@ -300,7 +347,7 @@ namespace APC
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
-        }       
+        }
 
         private void panelRegMembers_Click(object sender, EventArgs e)
         {
@@ -339,7 +386,7 @@ namespace APC
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormDeadMembersList());            
+            OpenChildForm(new FormDeadMembersList());
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
@@ -347,26 +394,6 @@ namespace APC
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormDocumentList());
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshAllCards();
-        }
-
-        private void btnRefresh_MouseHover(object sender, EventArgs e)
-        {
-            btnRefresh.BackColor = Color.DarkOrange;
-        }
-
-        private void btnRefresh_MouseEnter(object sender, EventArgs e)
-        {
-            btnRefresh.BackColor = Color.DarkOrange;
-        }
-
-        private void btnRefresh_MouseLeave(object sender, EventArgs e)
-        {
-            btnRefresh.BackColor = Color.White;
         }
 
         private void panelNoOfChildren_Click(object sender, EventArgs e)
@@ -402,6 +429,21 @@ namespace APC
         private void panelYearlyDues_Click(object sender, EventArgs e)
         {
             btnAttendance.PerformClick();
+        }
+
+        public void TriggerEventButtonOnClick()
+        {
+            btnEvents.PerformClick();
+        }
+
+        private void labelLastEventDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLastEvent_Click_1(object sender, EventArgs e)
+        {
+            btnEvents.PerformClick();
         }
     }
 }

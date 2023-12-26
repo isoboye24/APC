@@ -41,6 +41,15 @@ namespace APC.BLL
             return dto;
         }
 
+        public string SelectRecentEvent()
+        {            
+            return dao.SelectRecentEvent();
+        }
+        public int SelectEventCount()
+        {            
+            return dao.SelectEventCount();
+        }
+
         public bool Update(EventsDetailDTO entity)
         {
             EVENT events = new EVENT();

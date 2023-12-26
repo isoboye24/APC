@@ -68,6 +68,51 @@ namespace APC
             }
         }
 
+        public static void ValueCount(Label property, string value, int horizontalPoint, int verticalPoint)
+        {
+            if (value.Length < 2)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint, verticalPoint);
+            }
+            else if (value.Length > 1 && value.Length < 3)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint - 10, verticalPoint);
+            }
+            else if (value.Length > 2 && value.Length < 4)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint - 30, verticalPoint);
+            }
+            else if (value.Length > 3 && value.Length < 5)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint - 50, verticalPoint);
+            }
+            else if (value.Length > 4 && value.Length < 6)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint - 70, verticalPoint);
+            }
+            else if (value.Length > 5 && value.Length < 7)
+            {
+                property.Text = value;
+                property.Location = new Point(horizontalPoint - 90, verticalPoint);
+            }
+            else if (value.Length > 6 && value.Length < 8)
+            {
+                property.Text = value.ToString();
+                property.Location = new Point(horizontalPoint - 110, verticalPoint);
+            }
+            else
+            {
+                MessageBox.Show("The digit of " + property.Name + " is too big. The panel needs adjustment.");
+                property.Text = "########";
+                property.Location = new Point(horizontalPoint - 140, verticalPoint);
+            }
+        }
+
         public static void ValueCountInDecimal(Label property, decimal value, int horizontalPoint, int verticalPoint)
         {
             if (value.ToString("0.00").Length < 5)
