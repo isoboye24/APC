@@ -84,6 +84,10 @@ namespace APC.AllForms
             General.ValueCountInDecimal(labelTotalAmountRaised, bll.SelectTotalRaisedAmount(), 148, 70);
             General.ValueCountInDecimal(labelTotalAmountSpent, bll.SelectTotalSpentAmount(), 148, 70);
             General.ValueCountInDecimal(labelTotalBalance, bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount(), 148, 70);
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
         FinancialReportDetailDTO detail = new FinancialReportDetailDTO();
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)

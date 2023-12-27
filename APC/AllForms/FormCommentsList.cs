@@ -83,6 +83,10 @@ namespace APC.AllForms
             dataGridView1.Columns[10].HeaderText = "Month";
             dataGridView1.Columns[11].HeaderText = "Year";
             dataGridView1.Columns[12].Visible = false;
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

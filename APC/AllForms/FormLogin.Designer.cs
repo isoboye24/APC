@@ -32,7 +32,7 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,13 +98,13 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtPosition
+            // txtUsername
             // 
-            this.txtPosition.Location = new System.Drawing.Point(166, 87);
-            this.txtPosition.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(203, 29);
-            this.txtPosition.TabIndex = 6;
+            this.txtUsername.Location = new System.Drawing.Point(166, 87);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(203, 29);
+            this.txtUsername.TabIndex = 6;
             // 
             // label2
             // 
@@ -189,24 +188,11 @@
             this.panel4.Size = new System.Drawing.Size(420, 5);
             this.panel4.TabIndex = 11;
             // 
-            // linkLabelRegister
-            // 
-            this.linkLabelRegister.ActiveLinkColor = System.Drawing.Color.DarkOrange;
-            this.linkLabelRegister.AutoSize = true;
-            this.linkLabelRegister.LinkColor = System.Drawing.Color.DarkOrange;
-            this.linkLabelRegister.Location = new System.Drawing.Point(162, 187);
-            this.linkLabelRegister.Name = "linkLabelRegister";
-            this.linkLabelRegister.Size = new System.Drawing.Size(112, 21);
-            this.linkLabelRegister.TabIndex = 12;
-            this.linkLabelRegister.TabStop = true;
-            this.linkLabelRegister.Text = "Register Now";
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 303);
-            this.Controls.Add(this.linkLabelRegister);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -215,7 +201,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -238,7 +224,7 @@
         private System.Windows.Forms.PictureBox picClose;
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTitle;
@@ -247,6 +233,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.LinkLabel linkLabelRegister;
     }
 }

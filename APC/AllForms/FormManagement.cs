@@ -110,13 +110,17 @@ namespace APC.AllForms
         public FormProperties initialDetail = new FormProperties();
         private void labelHome_Click(object sender, EventArgs e)
         {            
-            dashboardForm = new FormDashboard();
-            //dashboardForm.StartPosition = formDetail.StartPosition;
-            //dashboardForm.Location = formDetail.Location;
-            //dashboardForm.Size = formDetail.Size;
-            //dashboardForm.WindowState = formDetail.WindowState;
+            FormDashboard open = new FormDashboard();
+            if (LoginInfo.AccessLevel == 4)
+            {
+                open.isAdmin = true;
+            }
+            if (LoginInfo.AccessLevel == 3)
+            {
+                open.isEditor = true;
+            }
             this.Hide();
-            dashboardForm.ShowDialog();
+            open.ShowDialog();
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {

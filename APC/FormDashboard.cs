@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APC.AllForms;
 using APC.BLL;
+using APC.DAL.DTO;
 using FontAwesome.Sharp;
 
 namespace APC
@@ -128,13 +129,39 @@ namespace APC
         PersonalAttendanceBLL personalAttendanceBLL = new PersonalAttendanceBLL();
         EventsBLL eventBLL = new EventsBLL();
         FormProperties initialDetail = new FormProperties();
+        public bool isAdmin = false;
+        public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            if (!isAdmin && !isEditor)
+            {
+                tableLayoutPanelRealCards.Hide();
+                btnAttendance.Hide();
+                btnChildren.Hide();
+                btnFinancialReport.Hide();
+                btnExpenditure.Hide();
+                btnEvents.Hide();
+                btnDeadMembers.Hide();
+                btnDocuments.Hide();
+                btnManage.Hide();
+                btnMembers.Text = "    Profile";
+                btnMembers.Location = new Point(0, 118);
+
+                CommentDTO dto = commentBLL.Select();
+                int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
+                if (commentCount < 1)
+                {
+                    btnComments.Hide();
+                }
+                else
+                {
+                    btnComments.Visible = true;
+                }
+            }
             initialDetail.StartPosition = FormStartPosition.Manual;
             initialDetail.Location = this.Location;
             initialDetail.Size = this.Size;
             initialDetail.WindowState = this.WindowState;
-
 
             this.ControlBox = false;
             if (WindowState == FormWindowState.Normal)
@@ -269,9 +296,23 @@ namespace APC
 
         private void btnMembers_Click_1(object sender, EventArgs e)
         {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormMembersList());
+            if (!isAdmin && !isEditor)
+            {
+                MemberDTO dto = memberBLL.Select();
+                MemberDetailDTO detail = dto.Members.First(x => x.MemberID == LoginInfo.MemberID);
+                FormViewMember open = new FormViewMember();
+                open.detail = detail;
+                open.isView = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else
+            {
+                buttonWasClicked = true;
+                ActivateButton(sender, RBGColors.color2);
+                OpenChildForm(new FormMembersList());
+            }            
         }
 
         private void btnChildren_Click_1(object sender, EventArgs e)
@@ -377,9 +418,22 @@ namespace APC
 
         private void btnComments_Click(object sender, EventArgs e)
         {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormCommentsList());
+            if (!isAdmin && !isEditor)
+            {
+                CommentDTO dto = commentBLL.Select();
+                CommentDetailDTO detail = dto.Comments.First(x => x.MemberID == LoginInfo.MemberID);
+                FormViewComment open = new FormViewComment();
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else
+            {
+                buttonWasClicked = true;
+                ActivateButton(sender, RBGColors.color1);
+                OpenChildForm(new FormCommentsList());
+            }            
         }
 
         private void btnDeadMembers_Click(object sender, EventArgs e)

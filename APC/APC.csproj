@@ -480,6 +480,7 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FormProperties.cs" />
+    <Compile Include="LoginInfo.cs" />
     <Compile Include="ReadFiles.cs" />
     <Compile Include="FillComboBox.cs" />
     <Compile Include="FormDashboard.cs">

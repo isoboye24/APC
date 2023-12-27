@@ -133,6 +133,11 @@ namespace APC
             dataGridView1.Columns[34].Visible = false;
             #endregion
             GetMemberCounts();
+
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
         private void GetMemberCounts()
         {

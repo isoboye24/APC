@@ -59,6 +59,10 @@ namespace APC
             dataGridView1.DataSource = dto.Countries;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Country Name";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }       
 
         private void txtCountry_TextChanged(object sender, EventArgs e)

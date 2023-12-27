@@ -78,7 +78,7 @@
             this.cmbEmpStatus = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelAccessLevel = new System.Windows.Forms.Label();
             this.cmbPermission = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtPhone1 = new System.Windows.Forms.TextBox();
@@ -745,7 +745,7 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel6.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.labelAccessLevel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.cmbPermission, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label19, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.txtPhone1, 1, 2);
@@ -770,16 +770,16 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(296, 231);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
-            // label12
+            // labelAccessLevel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 10);
-            this.label12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(101, 21);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Access level";
+            this.labelAccessLevel.AutoSize = true;
+            this.labelAccessLevel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccessLevel.Location = new System.Drawing.Point(3, 10);
+            this.labelAccessLevel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelAccessLevel.Name = "labelAccessLevel";
+            this.labelAccessLevel.Size = new System.Drawing.Size(101, 21);
+            this.labelAccessLevel.TabIndex = 1;
+            this.labelAccessLevel.Text = "Access level";
             // 
             // cmbPermission
             // 
@@ -1102,7 +1102,7 @@
         private System.Windows.Forms.ComboBox cmbNationality;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelAccessLevel;
         private System.Windows.Forms.ComboBox cmbPermission;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtPhone1;

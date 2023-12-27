@@ -88,6 +88,11 @@ namespace APC.AllForms
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[7].HeaderText = "Picture Caption";
             dataGridView1.Columns[8].Visible = false;
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnClose.Hide();
+                btnDelete.Text = "Close";
+            }
         }
         private void FillDataGrid()
         {
@@ -127,22 +132,29 @@ namespace APC.AllForms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (imageDetail.EventImageID == 0)
+            if (LoginInfo.AccessLevel != 4)
             {
-                MessageBox.Show("Please choose an image from the table");
+                this.Close();
             }
             else
             {
-                DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (imageDetail.EventImageID == 0)
                 {
-                    if (bll.Delete(imageDetail))
+                    MessageBox.Show("Please choose an image from the table");
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("The picture was deleted");
-                        FillDataGrid();
+                        if (bll.Delete(imageDetail))
+                        {
+                            MessageBox.Show("The picture was deleted");
+                            FillDataGrid();
+                        }
                     }
                 }
-            }
+            }            
         }
     }
 }

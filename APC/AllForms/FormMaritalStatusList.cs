@@ -56,6 +56,10 @@ namespace APC
             dataGridView1.DataSource = dto.MaritalStatuses;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Marital Status Name";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtMaritalStatus_TextChanged(object sender, EventArgs e)

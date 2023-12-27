@@ -41,6 +41,10 @@ namespace APC
             dataGridView1.Columns[8].HeaderText = "Dues Expected";
             dataGridView1.Columns[9].HeaderText = "Balance";
             dataGridView1.Columns[10].Visible = false;
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)

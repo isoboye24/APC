@@ -78,6 +78,10 @@ namespace APC.AllForms
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "Month";
             dataGridView1.Columns[6].HeaderText = "Year";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void ClearFilters()

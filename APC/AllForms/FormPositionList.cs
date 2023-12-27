@@ -36,6 +36,10 @@ namespace APC
             dataGridView1.DataSource = dto.Positions;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Position Name";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtPosition_TextChanged(object sender, EventArgs e)

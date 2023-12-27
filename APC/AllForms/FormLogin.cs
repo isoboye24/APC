@@ -9,6 +9,8 @@ using FontAwesome.Sharp;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APC.DAL;
+using APC.BLL;
 
 namespace APC.AllForms
 {
@@ -23,34 +25,63 @@ namespace APC.AllForms
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
-
-        private void btnEnter_Click(object sender, EventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            FormDashboard open = new FormDashboard();
-            this.Hide();
-            open.ShowDialog();            
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void FormLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        MemberBLL memberBLL = new MemberBLL();
+        
+        private void btnEnter_Click(object sender, EventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);            
+            if (txtPassword.Text.Trim() == "" || txtUsername.Text.Trim() == "")
+            {
+                MessageBox.Show("Enter password and username");
+            }
+            else
+            {
+                List<MEMBER> memberList = memberBLL.CheckMember(txtPassword.Text, txtUsername.Text);
+                if (memberList.Count == 0)
+                {
+                    MessageBox.Show("Member does not exist");
+                }
+                else
+                {
+                    MEMBER member = new MEMBER();
+                    member = memberList.First();
+                    LoginInfo.MemberID = member.memberID;
+                    LoginInfo.Username = member.username;
+                    LoginInfo.Password = member.password;
+                    LoginInfo.AccessLevel = member.permissionID;
+                    FormDashboard open = new FormDashboard();
+                    if (LoginInfo.AccessLevel == 4)
+                    {
+                        open.isAdmin = true;
+                    }
+                    if (LoginInfo.AccessLevel == 3)
+                    {
+                        open.isEditor = true;
+                    }
+                    this.Hide();
+                    open.ShowDialog();
+                }
+            }
+                        
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void FormLogin_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

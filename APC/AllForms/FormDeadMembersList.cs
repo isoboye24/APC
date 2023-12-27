@@ -109,6 +109,10 @@ namespace APC.AllForms
             dataGridView1.Columns[23].Visible = false;
 
             GetMemberCounts();
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
         private void GetMemberCounts()
         {

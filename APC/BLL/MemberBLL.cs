@@ -93,6 +93,10 @@ namespace APC.BLL
             return dto;
         }
 
+        public List<MEMBER> CheckMember(string password, string username)
+        {
+            return memberDAO.CheckMember(password, username);
+        }
         public DeletedDataDTO Select(bool isDeleted)
         {
             DeletedDataDTO dto = new DeletedDataDTO();

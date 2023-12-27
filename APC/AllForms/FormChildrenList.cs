@@ -87,6 +87,10 @@ namespace APC
             dataGridView1.Columns[21].Visible = false;
 
             GetChildrenCount();
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
         private void GetChildrenCount()
         {

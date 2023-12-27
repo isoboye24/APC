@@ -58,6 +58,10 @@ namespace APC.AllForms
             dataGridView1.DataSource = dto.Nationalities;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Nationality Name";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtNationality_TextChanged(object sender, EventArgs e)

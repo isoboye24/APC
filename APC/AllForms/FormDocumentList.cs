@@ -94,6 +94,10 @@ namespace APC.AllForms
             dataGridView1.Columns[8].Visible = false;
 
             labelDocCount.Text = bll.SelectDocCount().ToString();
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
         private void FillDataGrid()
         {

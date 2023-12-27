@@ -49,6 +49,10 @@ namespace APC
             dataGridView1.DataSource = dto.Professions;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Profession Name";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtProfession_TextChanged(object sender, EventArgs e)

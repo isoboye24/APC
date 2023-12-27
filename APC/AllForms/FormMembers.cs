@@ -63,6 +63,11 @@ namespace APC
             txtPhone3.Hide();
             labelPhone2.Hide();
             labelPhone3.Hide();
+            if (LoginInfo.AccessLevel != 4)
+            {
+                labelAccessLevel.Hide();
+                cmbPermission.Hide();                
+            }
             if (isUpdate)
             {                
                 txtName.Text = detail.Name;
@@ -94,7 +99,12 @@ namespace APC
                 cmbGender.SelectedValue = detail.GenderID;
                 cmbNationality.SelectedValue = detail.NationalityID;                             
                 cmbMaritalStatus.SelectedValue = detail.MaritalStatusID;
-                cmbPermission.SelectedValue = detail.PermissionID;
+                if (LoginInfo.AccessLevel != 4)
+                {
+                    labelAccessLevel.Hide();
+                    cmbPermission.Hide();
+                    detail.PermissionID = detail.PermissionID;
+                }                
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfilePic.ImageLocation = imagePath;
             }
@@ -162,11 +172,11 @@ namespace APC
             else if (cmbProfession.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a profession");
-            }
-            else if (cmbPermission.SelectedIndex == -1)
-            {
+            }            
+            else if (LoginInfo.AccessLevel == 4 && cmbPermission.SelectedIndex == -1)
+            {                
                 MessageBox.Show("Please select an access level");
-            }
+            }                 
             else
             {
                 if (!isUpdate)
@@ -185,7 +195,15 @@ namespace APC
                     member.EmploymentStatusID = Convert.ToInt32(cmbEmpStatus.SelectedValue);
                     member.NationalityID = Convert.ToInt32(cmbNationality.SelectedValue);
                     member.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
-                    member.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
+                    if (LoginInfo.AccessLevel !=4)
+                    {                        
+                        member.PermissionID = 2;
+                    }
+                    else
+                    {
+                        member.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
+                    }
+                    
                     member.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
                     member.ImagePath = fileName;
                     member.PhoneNumber = txtPhone1.Text;

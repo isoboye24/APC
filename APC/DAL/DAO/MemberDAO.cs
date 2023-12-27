@@ -10,6 +10,18 @@ namespace APC.DAL.DAO
 {
     public class MemberDAO : APCContexts, IDAO<MemberDetailDTO, MEMBER>
     {
+        public List<MEMBER> CheckMember(string password, string username)
+        {
+            try
+            {
+                List<MEMBER> list = db.MEMBERs.Where(x => x.username == username && x.password == password).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
+        }
         public bool Delete(MEMBER entity)
         {            
             try

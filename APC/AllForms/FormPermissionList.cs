@@ -30,6 +30,10 @@ namespace APC
             dto = bll.Select();
             cmbPermission.DataSource = dto.Permissions;
             General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
             #region
             dataGridView1.DataSource = dto.Members;
             dataGridView1.Columns[0].Visible = false;

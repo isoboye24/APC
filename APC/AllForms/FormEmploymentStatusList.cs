@@ -49,6 +49,10 @@ namespace APC
             dataGridView1.DataSource = dto.EmploymentStatuses;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Employment Status";
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+            }
         }
 
         private void txtEmpStatus_TextChanged(object sender, EventArgs e)

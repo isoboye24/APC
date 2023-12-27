@@ -17,7 +17,7 @@ namespace APC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDashboard());
+            Application.Run(new FormLogin());
         }
     }
 }
