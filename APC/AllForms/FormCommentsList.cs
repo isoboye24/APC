@@ -51,13 +51,20 @@ namespace APC.AllForms
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            FormViewComment open = new FormViewComment();
-            open.detail = detail;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.Comments;
+            if (detail.CommentID == 0)
+            {
+                MessageBox.Show("Please choose a comment from the table.");
+            }
+            else
+            {
+                FormViewComment open = new FormViewComment();
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Comments;
+            }            
         }
         CommentDTO dto = new CommentDTO();
         CommentBLL bll = new CommentBLL();

@@ -90,6 +90,9 @@
             this.labelBirthday = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelCommentText = new System.Windows.Forms.Label();
+            this.labelNoOfComments = new System.Windows.Forms.Label();
+            this.btnNoComments = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
@@ -317,8 +320,8 @@
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.41379F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.58621F));
             this.tableLayoutPanel7.Controls.Add(this.txtName, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtEmail, 1, 8);
             this.tableLayoutPanel7.Controls.Add(this.label1, 0, 0);
@@ -349,21 +352,21 @@
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(133, 3);
+            this.txtName.Location = new System.Drawing.Point(126, 3);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(154, 29);
+            this.txtName.Size = new System.Drawing.Size(161, 29);
             this.txtName.TabIndex = 0;
             // 
             // txtEmail
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(133, 151);
+            this.txtEmail.Location = new System.Drawing.Point(126, 151);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(154, 56);
+            this.txtEmail.Size = new System.Drawing.Size(161, 56);
             this.txtEmail.TabIndex = 0;
             // 
             // label1
@@ -414,27 +417,27 @@
             // 
             this.txtSurname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(133, 40);
+            this.txtSurname.Location = new System.Drawing.Point(126, 40);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.ReadOnly = true;
-            this.txtSurname.Size = new System.Drawing.Size(154, 29);
+            this.txtSurname.Size = new System.Drawing.Size(161, 29);
             this.txtSurname.TabIndex = 0;
             // 
             // txtPosition
             // 
             this.txtPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPosition.Location = new System.Drawing.Point(133, 77);
+            this.txtPosition.Location = new System.Drawing.Point(126, 77);
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.ReadOnly = true;
-            this.txtPosition.Size = new System.Drawing.Size(154, 29);
+            this.txtPosition.Size = new System.Drawing.Size(161, 29);
             this.txtPosition.TabIndex = 0;
             // 
             // labelMemSince
             // 
             this.labelMemSince.AutoSize = true;
             this.labelMemSince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMemSince.Location = new System.Drawing.Point(133, 121);
+            this.labelMemSince.Location = new System.Drawing.Point(126, 121);
             this.labelMemSince.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.labelMemSince.Name = "labelMemSince";
             this.labelMemSince.Size = new System.Drawing.Size(96, 21);
@@ -470,6 +473,9 @@
             this.tableLayoutPanel6.Controls.Add(this.txtPhone2, 1, 10);
             this.tableLayoutPanel6.Controls.Add(this.labelPhone3, 0, 12);
             this.tableLayoutPanel6.Controls.Add(this.txtPhone3, 1, 12);
+            this.tableLayoutPanel6.Controls.Add(this.labelCommentText, 0, 14);
+            this.tableLayoutPanel6.Controls.Add(this.labelNoOfComments, 1, 14);
+            this.tableLayoutPanel6.Controls.Add(this.btnNoComments, 1, 16);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -913,6 +919,41 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(963, 583);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
+            // labelCommentText
+            // 
+            this.labelCommentText.AutoSize = true;
+            this.labelCommentText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommentText.Location = new System.Drawing.Point(3, 311);
+            this.labelCommentText.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelCommentText.Name = "labelCommentText";
+            this.labelCommentText.Size = new System.Drawing.Size(85, 21);
+            this.labelCommentText.TabIndex = 1;
+            this.labelCommentText.Text = "Comment";
+            // 
+            // labelNoOfComments
+            // 
+            this.labelNoOfComments.AutoSize = true;
+            this.labelNoOfComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfComments.Location = new System.Drawing.Point(123, 311);
+            this.labelNoOfComments.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelNoOfComments.Name = "labelNoOfComments";
+            this.labelNoOfComments.Size = new System.Drawing.Size(19, 21);
+            this.labelNoOfComments.TabIndex = 0;
+            this.labelNoOfComments.Text = "2";
+            // 
+            // btnNoComments
+            // 
+            this.btnNoComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoComments.Location = new System.Drawing.Point(123, 344);
+            this.btnNoComments.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnNoComments.Name = "btnNoComments";
+            this.btnNoComments.Size = new System.Drawing.Size(176, 35);
+            this.btnNoComments.TabIndex = 4;
+            this.btnNoComments.Text = "View Comments";
+            this.btnNoComments.UseVisualStyleBackColor = true;
+            this.btnNoComments.Click += new System.EventHandler(this.btnViewComments_Click);
+            // 
             // FormViewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1016,5 +1057,8 @@
         private System.Windows.Forms.Label labelBirthday;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label labelCommentText;
+        private System.Windows.Forms.Label labelNoOfComments;
+        private System.Windows.Forms.Button btnNoComments;
     }
 }

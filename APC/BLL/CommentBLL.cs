@@ -47,6 +47,12 @@ namespace APC.BLL
             dto.Comments = commentDAO.Select();
             return dto;
         }
+        public CommentDTO SelectMembersCommentList(int ID)
+        {
+            CommentDTO dto = new CommentDTO();            
+            dto.Comments = commentDAO.SelectMembersCommentList(ID);
+            return dto;
+        }
 
         public bool Update(CommentDetailDTO entity)
         {

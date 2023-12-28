@@ -104,7 +104,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(203, 29);
-            this.txtUsername.TabIndex = 6;
+            this.txtUsername.TabIndex = 0;
             // 
             // label2
             // 
@@ -159,7 +159,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(203, 29);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 1;
             // 
             // panel2
             // 

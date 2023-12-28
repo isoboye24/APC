@@ -133,6 +133,13 @@ namespace APC
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            MemberDTO memberDTO = memberBLL.Select();
+            MemberDetailDTO detail = memberDTO.Members.First(x => x.MemberID == LoginInfo.MemberID);
+            string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
+            picProfilePic.ImageLocation = imagePath;
+            labelNameSurname.Text = detail.Name + " " + detail.Surname;
+            labelAccessLevel.Text = detail.PermissionName;
+
             if (!isAdmin && !isEditor)
             {
                 tableLayoutPanelRealCards.Hide();
@@ -152,6 +159,11 @@ namespace APC
                 if (commentCount < 1)
                 {
                     btnComments.Hide();
+                }
+                else if (commentCount == 1)
+                {
+                    btnComments.Visible = true;
+                    btnComments.Text = "    Comment";
                 }
                 else
                 {
@@ -421,12 +433,24 @@ namespace APC
             if (!isAdmin && !isEditor)
             {
                 CommentDTO dto = commentBLL.Select();
+                int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
                 CommentDetailDTO detail = dto.Comments.First(x => x.MemberID == LoginInfo.MemberID);
-                FormViewComment open = new FormViewComment();
-                open.detail = detail;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
+                if (commentCount > 1)
+                {
+                    FormSingleCommentList open = new FormSingleCommentList();
+                    open.memberID = detail.MemberID;
+                    this.Hide();
+                    open.ShowDialog();
+                    this.Visible = true;
+                }
+                else
+                {
+                    FormViewComment open = new FormViewComment();
+                    open.detail = detail;
+                    this.Hide();
+                    open.ShowDialog();
+                    this.Visible = true;
+                }                
             }
             else
             {

@@ -100,7 +100,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.labelNameSurname = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelAccessLevel = new System.Windows.Forms.Label();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -133,6 +135,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -171,7 +175,7 @@
             this.btnDeadMembers.Name = "btnDeadMembers";
             this.btnDeadMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDeadMembers.Size = new System.Drawing.Size(200, 40);
-            this.btnDeadMembers.TabIndex = 17;
+            this.btnDeadMembers.TabIndex = 7;
             this.btnDeadMembers.Text = "    Dead Members";
             this.btnDeadMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeadMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,7 +197,7 @@
             this.btnManage.Name = "btnManage";
             this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnManage.Size = new System.Drawing.Size(200, 40);
-            this.btnManage.TabIndex = 6;
+            this.btnManage.TabIndex = 9;
             this.btnManage.Text = "    Mangement";
             this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,7 +219,7 @@
             this.btnComments.Name = "btnComments";
             this.btnComments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnComments.Size = new System.Drawing.Size(200, 40);
-            this.btnComments.TabIndex = 5;
+            this.btnComments.TabIndex = 1;
             this.btnComments.Text = "    Comments";
             this.btnComments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -247,7 +251,7 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLogout.Size = new System.Drawing.Size(200, 40);
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "    Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -269,7 +273,7 @@
             this.btnEvents.Name = "btnEvents";
             this.btnEvents.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnEvents.Size = new System.Drawing.Size(200, 40);
-            this.btnEvents.TabIndex = 14;
+            this.btnEvents.TabIndex = 6;
             this.btnEvents.Text = "    Events";
             this.btnEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -291,7 +295,7 @@
             this.btnMembers.Name = "btnMembers";
             this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMembers.Size = new System.Drawing.Size(200, 40);
-            this.btnMembers.TabIndex = 1;
+            this.btnMembers.TabIndex = 2;
             this.btnMembers.Text = "    Members";
             this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -313,7 +317,7 @@
             this.btnAttendance.Name = "btnAttendance";
             this.btnAttendance.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnAttendance.Size = new System.Drawing.Size(200, 40);
-            this.btnAttendance.TabIndex = 13;
+            this.btnAttendance.TabIndex = 0;
             this.btnAttendance.Text = "    Attendance";
             this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -367,7 +371,7 @@
             this.btnDocuments.Name = "btnDocuments";
             this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnDocuments.Size = new System.Drawing.Size(200, 40);
-            this.btnDocuments.TabIndex = 6;
+            this.btnDocuments.TabIndex = 8;
             this.btnDocuments.Text = "    Documents";
             this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -389,7 +393,7 @@
             this.btnExpenditure.Name = "btnExpenditure";
             this.btnExpenditure.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnExpenditure.Size = new System.Drawing.Size(200, 40);
-            this.btnExpenditure.TabIndex = 4;
+            this.btnExpenditure.TabIndex = 5;
             this.btnExpenditure.Text = "    Expenditure";
             this.btnExpenditure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExpenditure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -433,7 +437,7 @@
             this.btnChildren.Name = "btnChildren";
             this.btnChildren.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnChildren.Size = new System.Drawing.Size(200, 40);
-            this.btnChildren.TabIndex = 2;
+            this.btnChildren.TabIndex = 3;
             this.btnChildren.Text = "    Children";
             this.btnChildren.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChildren.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -700,7 +704,7 @@
             this.panelMonthlyDues.Location = new System.Drawing.Point(18, 113);
             this.panelMonthlyDues.Name = "panelMonthlyDues";
             this.panelMonthlyDues.Size = new System.Drawing.Size(223, 94);
-            this.panelMonthlyDues.TabIndex = 5;
+            this.panelMonthlyDues.TabIndex = 3;
             // 
             // iconMonthlyDuesCard
             // 
@@ -770,7 +774,7 @@
             this.panelYearlyDues.Location = new System.Drawing.Point(277, 113);
             this.panelYearlyDues.Name = "panelYearlyDues";
             this.panelYearlyDues.Size = new System.Drawing.Size(223, 94);
-            this.panelYearlyDues.TabIndex = 6;
+            this.panelYearlyDues.TabIndex = 4;
             // 
             // iconYearlyDuesCard
             // 
@@ -828,7 +832,7 @@
             this.panelMeetingAttend.Location = new System.Drawing.Point(536, 3);
             this.panelMeetingAttend.Name = "panelMeetingAttend";
             this.panelMeetingAttend.Size = new System.Drawing.Size(227, 94);
-            this.panelMeetingAttend.TabIndex = 1;
+            this.panelMeetingAttend.TabIndex = 2;
             // 
             // iconLastMeetingAttCard
             // 
@@ -875,7 +879,7 @@
             this.panelNoOfChildren.Location = new System.Drawing.Point(277, 3);
             this.panelNoOfChildren.Name = "panelNoOfChildren";
             this.panelNoOfChildren.Size = new System.Drawing.Size(223, 94);
-            this.panelNoOfChildren.TabIndex = 4;
+            this.panelNoOfChildren.TabIndex = 1;
             // 
             // iconNoOfChildrenCard
             // 
@@ -923,7 +927,7 @@
             this.panelMonthlyComment.Location = new System.Drawing.Point(536, 113);
             this.panelMonthlyComment.Name = "panelMonthlyComment";
             this.panelMonthlyComment.Size = new System.Drawing.Size(227, 94);
-            this.panelMonthlyComment.TabIndex = 8;
+            this.panelMonthlyComment.TabIndex = 5;
             // 
             // iconMonthlyCommentsCard
             // 
@@ -981,7 +985,7 @@
             this.panelLastEvent.Location = new System.Drawing.Point(18, 223);
             this.panelLastEvent.Name = "panelLastEvent";
             this.panelLastEvent.Size = new System.Drawing.Size(223, 94);
-            this.panelLastEvent.TabIndex = 2;
+            this.panelLastEvent.TabIndex = 6;
             this.panelLastEvent.Click += new System.EventHandler(this.panelLastEvent_Click_1);
             // 
             // iconEventsCard
@@ -1114,9 +1118,11 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1131,7 +1137,7 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.labelNameSurname, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.labelAccessLevel, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 112);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -1143,25 +1149,55 @@
             // 
             // labelNameSurname
             // 
+            this.labelNameSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNameSurname.AutoSize = true;
             this.labelNameSurname.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameSurname.Location = new System.Drawing.Point(3, 7);
-            this.labelNameSurname.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
+            this.labelNameSurname.Location = new System.Drawing.Point(3, 10);
+            this.labelNameSurname.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.labelNameSurname.Name = "labelNameSurname";
-            this.labelNameSurname.Size = new System.Drawing.Size(126, 17);
+            this.labelNameSurname.Size = new System.Drawing.Size(171, 17);
             this.labelNameSurname.TabIndex = 0;
             this.labelNameSurname.Text = "name and surname";
+            this.labelNameSurname.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label5
+            // labelAccessLevel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 41);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "name and surname";
+            this.labelAccessLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAccessLevel.AutoSize = true;
+            this.labelAccessLevel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccessLevel.Location = new System.Drawing.Point(3, 44);
+            this.labelAccessLevel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.labelAccessLevel.Name = "labelAccessLevel";
+            this.labelAccessLevel.Size = new System.Drawing.Size(171, 17);
+            this.labelAccessLevel.TabIndex = 0;
+            this.labelAccessLevel.Text = "Access Level";
+            this.labelAccessLevel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picProfilePic.Location = new System.Drawing.Point(38, 3);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(100, 97);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 1;
+            this.picProfilePic.TabStop = false;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.picProfilePic, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(177, 103);
+            this.tableLayoutPanel6.TabIndex = 1;
             // 
             // FormDashboard
             // 
@@ -1223,6 +1259,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1300,6 +1338,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label labelNameSurname;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelAccessLevel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.PictureBox picProfilePic;
     }
 }

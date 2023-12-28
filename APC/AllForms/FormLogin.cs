@@ -64,6 +64,7 @@ namespace APC.AllForms
                     LoginInfo.Password = member.password;
                     LoginInfo.AccessLevel = member.permissionID;
                     FormDashboard open = new FormDashboard();
+                    
                     if (LoginInfo.AccessLevel == 4)
                     {
                         open.isAdmin = true;

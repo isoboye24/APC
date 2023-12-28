@@ -46,8 +46,33 @@ namespace APC.AllForms
         public bool isView = false;
         ChildBLL childBLL = new ChildBLL();
         int noOfChildren = 0;
+        int commentCount = 0;
+        CommentBLL commentBLL = new CommentBLL();
+        CommentDetailDTO commentDetail = new CommentDetailDTO();
+        CommentDTO dto = new CommentDTO();
         private void FormViewMember_Load(object sender, EventArgs e)
         {
+            labelCommentText.Hide();
+            labelNoOfComments.Hide();
+            btnNoComments.Hide();
+
+            dto = commentBLL.SelectMembersCommentList(detail.MemberID);
+            commentCount = dto.Comments.Count(x => x.MemberID == detail.MemberID);
+            labelNoOfComments.Text = commentCount.ToString();
+            if (commentCount == 1)
+            {
+                labelCommentText.Visible = true;
+                labelNoOfComments.Visible = true;
+                btnNoComments.Visible = true;
+                btnNoComments.Text = "View Comment";
+            }
+            else if(commentCount > 1)
+            {
+                labelCommentText.Visible = true;
+                labelCommentText.Text = "Comments";
+                labelNoOfComments.Visible = true;
+                btnNoComments.Visible = true;
+            }
             noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
 
             txtPhone2.Hide();
@@ -115,6 +140,27 @@ namespace APC.AllForms
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void btnViewComments_Click(object sender, EventArgs e)
+        {
+            if (commentCount > 1)
+            {
+                FormSingleCommentList open = new FormSingleCommentList();
+                open.memberID = detail.MemberID;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else if (commentCount < 2 && commentCount > 0)
+            {
+                commentDetail = dto.Comments.First(x => x.MemberID == detail.MemberID);
+                FormViewComment open = new FormViewComment();
+                open.detail = commentDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
     }
 }

@@ -105,6 +105,55 @@ namespace APC.DAL.DAO
                 throw ex;
             }            
         }
+        public List<CommentDetailDTO> SelectMembersCommentList(int ID)
+        {
+            try
+            {
+                List<CommentDetailDTO> comments = new List<CommentDetailDTO>();
+                var list = (from c in db.COMMENTs.Where(x => x.isDeleted == false && x.memberID == ID)
+                            join mo in db.MONTHs on c.monthID equals mo.monthID
+                            join m in db.MEMBERs on c.memberID equals m.memberID
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            select new
+                            {
+                                commentID = c.commentID,
+                                comment = c.comment1,
+                                surname = m.surname,
+                                name = m.name,
+                                genderName = g.genderName,
+                                day = c.day,
+                                monthID = c.monthID,
+                                monthName = mo.monthName,
+                                year = c.year,
+                                imagePath = m.imagePath,
+                                memberID = c.memberID,
+                                genderID = m.genderID
+                            }).OrderByDescending(x => x.year).ThenByDescending(x=>x.monthID).ThenByDescending(x=>x.day).ToList();
+                foreach (var item in list)
+                {
+                    CommentDetailDTO dto = new CommentDetailDTO();
+                    dto.CommentID = item.commentID;
+                    dto.CommentName = item.comment;
+                    dto.Surname = item.surname;
+                    dto.Name = item.name;
+                    dto.GenderName = item.genderName;
+                    dto.Day = item.day;
+                    dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
+                    dto.Year = item.year.ToString();
+                    dto.ImagePath = item.imagePath;
+                    dto.MemberID = item.memberID;
+                    dto.GenderID = item.genderID;
+                    comments.Add(dto);
+                }
+                return comments;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }            
+        }
         public List<CommentDetailDTO> Select(bool isDeleted)
         {
             try
