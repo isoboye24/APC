@@ -571,203 +571,314 @@ namespace APC.AllForms
                 {
                     MessageBox.Show("Please choose member from the table");
                 }
-                if (memberDetail.isCountryDeleted)
+                else
                 {
-                    MessageBox.Show("Country was deleted. Get back the country first.");
-                }
-                else if (memberDetail.isNationalityDeleted)
-                {
-                    MessageBox.Show("Nationality was deleted. Get back the nationality first.");
-                }
-                else if (memberDetail.isProfessionDeleted)
-                {
-                    MessageBox.Show("Profession was deleted. Get back the profession first.");
-                }
-                else if (memberDetail.isPositionDeleted)
-                {
-                    MessageBox.Show("Position was deleted. Get back the position first.");
-                }
-                else if (memberDetail.isEmpStatusDeleted)
-                {
-                    MessageBox.Show("Employment status was deleted. Get back the employment status first.");
-                }
-                else if (memberDetail.isMarStatusDeleted)
-                {
-                    MessageBox.Show("marital status was deleted. Get back the marital status first.");
-                }
-                else if (bll.GetBack(memberDetail))
-                {
-                    MessageBox.Show("Member was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Members;
-                }
+                    if (memberDetail.isCountryDeleted)
+                    {
+                        MessageBox.Show("Country was deleted. Get back the country first.");
+                    }
+                    else if (memberDetail.isNationalityDeleted)
+                    {
+                        MessageBox.Show("Nationality was deleted. Get back the nationality first.");
+                    }
+                    else if (memberDetail.isProfessionDeleted)
+                    {
+                        MessageBox.Show("Profession was deleted. Get back the profession first.");
+                    }
+                    else if (memberDetail.isPositionDeleted)
+                    {
+                        MessageBox.Show("Position was deleted. Get back the position first.");
+                    }
+                    else if (memberDetail.isEmpStatusDeleted)
+                    {
+                        MessageBox.Show("Employment status was deleted. Get back the employment status first.");
+                    }
+                    else if (memberDetail.isMarStatusDeleted)
+                    {
+                        MessageBox.Show("marital status was deleted. Get back the marital status first.");
+                    }
+                    else
+                    {
+                        if (bll.GetBack(memberDetail))
+                        {
+                            MessageBox.Show("Member was retrieved");
+                            dto = bll.Select(true);
+                            dataGridView1.DataSource = dto.Members;
+                        }
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 1)
             {
-                if (countryBLL.GetBack(countryDetail))
+                if (countryDetail.CountryID == 0)
                 {
-                    MessageBox.Show("Country was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Countries;
+                    MessageBox.Show("Please choose a country from the table");
                 }
+                else
+                {
+                    if (countryBLL.GetBack(countryDetail))
+                    {
+                        MessageBox.Show("Country was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Countries;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 2)
             {
-                if (nationalityBLL.GetBack(nationalityDetail))
+                if (nationalityDetail.NationalityID == 0)
                 {
-                    MessageBox.Show("Nationality was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Nationalities;
+                    MessageBox.Show("Please choose a nationality from the table");
                 }
+                else
+                {
+                    if (nationalityBLL.GetBack(nationalityDetail))
+                    {
+                        MessageBox.Show("Nationality was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Nationalities;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 3)
             {
-                if (professionBLL.GetBack(professionDetail))
+                if (professionDetail.ProfessionID == 0)
                 {
-                    MessageBox.Show("Profession was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Professions;
+                    MessageBox.Show("Please choose a profession from the table");
                 }
+                else
+                {
+                    if (professionBLL.GetBack(professionDetail))
+                    {
+                        MessageBox.Show("Profession was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Professions;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 4)
             {
-                if (positionBLL.GetBack(positionDetail))
+                if (positionDetail.PositionID == 0)
                 {
-                    MessageBox.Show("Position was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Positions;
+                    MessageBox.Show("Please choose a position from the table");
                 }
+                else
+                {
+                    if (positionBLL.GetBack(positionDetail))
+                    {
+                        MessageBox.Show("Position was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Positions;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 5)
             {
-                if (empStatusBLL.GetBack(empStatusDetail))
+                if (empStatusDetail.EmploymentStatusID == 0)
                 {
-                    MessageBox.Show("Employment status was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.EmploymentStatuses;
+                    MessageBox.Show("Please choose an employment status from the table");
                 }
+                else
+                {
+                    if (empStatusBLL.GetBack(empStatusDetail))
+                    {
+                        MessageBox.Show("Employment status was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.EmploymentStatuses;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 6)
             {
-                if (marStatusBLL.GetBack(marStatusDetail))
+                if (marStatusDetail.MaritalStatusID == 0)
                 {
-                    MessageBox.Show("Marital status was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.MaritalStatuses;
+                    MessageBox.Show("Please choose a marital status from the table");
                 }
+                else
+                {
+                    if (marStatusBLL.GetBack(marStatusDetail))
+                    {
+                        MessageBox.Show("Marital status was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.MaritalStatuses;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 7)
             {
-                if (childDetail.isNationalityDeleted)
+                if (childDetail.ChildID == 0)
                 {
-                    MessageBox.Show("Nationality was deleted. Get back the nationality first.");
+                    MessageBox.Show("Please choose a child from the table");
                 }
-                else if (childBLL.GetBack(childDetail))
+                else
                 {
-                    MessageBox.Show("Child was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Children;
-                }
+                    if (childDetail.isNationalityDeleted)
+                    {
+                        MessageBox.Show("Nationality was deleted. Get back the nationality first.");
+                    }
+                    else if (childBLL.GetBack(childDetail))
+                    {
+                        MessageBox.Show("Child was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Children;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 8)
             {
-                if (commentDetail.isMemberDeleted)
+                if (commentDetail.CommentID == 0)
                 {
-                    MessageBox.Show("Member was deleted. Get back the member first.");
+                    MessageBox.Show("Please choose a comment from the table");
                 }
-                else if (commentBLL.GetBack(commentDetail))
+                else
                 {
-                    MessageBox.Show("Comment was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Comments;
-                }
+                    if (commentDetail.isMemberDeleted)
+                    {
+                        MessageBox.Show("Member was deleted. Get back the member first.");
+                    }
+                    else if (commentBLL.GetBack(commentDetail))
+                    {
+                        MessageBox.Show("Comment was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Comments;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 9)
             {
-                if (deadMemDetail.isCountryDeleted)
+                if (deadMemDetail.DeadMemberID == 0)
                 {
-                    MessageBox.Show("Country was deleted. Get back the country first.");
+                    MessageBox.Show("Please choose a dead member from the table");
                 }
-                else if (deadMemDetail.isNationalityDeleted)
+                else
                 {
-                    MessageBox.Show("Nationality was deleted. Get back the nationality first.");
-                }
-                else if (deadMemDetail.isProfessionDeleted)
-                {
-                    MessageBox.Show("Profession was deleted. Get back the profession first.");
-                }
-                else if (deadMemDetail.isPositionDeleted)
-                {
-                    MessageBox.Show("Position was deleted. Get back the position first.");
+                    if (deadMemDetail.isCountryDeleted)
+                    {
+                        MessageBox.Show("Country was deleted. Get back the country first.");
+                    }
+                    else if (deadMemDetail.isNationalityDeleted)
+                    {
+                        MessageBox.Show("Nationality was deleted. Get back the nationality first.");
+                    }
+                    else if (deadMemDetail.isProfessionDeleted)
+                    {
+                        MessageBox.Show("Profession was deleted. Get back the profession first.");
+                    }
+                    else if (deadMemDetail.isPositionDeleted)
+                    {
+                        MessageBox.Show("Position was deleted. Get back the position first.");
+                    }
+                    else if (deadMemDetail.isMarStatusDeleted)
+                    {
+                        MessageBox.Show("marital status was deleted. Get back the marital status first.");
+                    }
+                    else if (deadMemberBLL.GetBack(deadMemDetail))
+                    {
+                        MessageBox.Show("Dead member's info was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.DeadMembers;
+                    }
                 }                
-                else if (deadMemDetail.isMarStatusDeleted)
-                {
-                    MessageBox.Show("marital status was deleted. Get back the marital status first.");
-                }
-                else if (deadMemberBLL.GetBack(deadMemDetail))
-                {
-                    MessageBox.Show("Dead member's info was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.DeadMembers;
-                }
             }
             else if (cmbDeletedData.SelectedIndex == 10)
-            {                
-                if (documentBLL.GetBack(documentDetail))
+            {
+                if (documentDetail.DocumentID == 0)
                 {
-                    MessageBox.Show("Document was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Documents;
+                    MessageBox.Show("Please choose a document from the table");
                 }
+                else
+                {
+                    if (documentBLL.GetBack(documentDetail))
+                    {
+                        MessageBox.Show("Document was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Documents;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 11)
             {
-                if (eventImageDetail.isEventDeleted)
+                if (eventImageDetail.EventImageID == 0)
                 {
-                    MessageBox.Show("Event was deleted. Get back the event first.");
+                    MessageBox.Show("Please choose an event image from the table");
                 }
-                else if (eventImageBLL.GetBack(eventImageDetail))
+                else
                 {
-                    MessageBox.Show("Picture was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.EventImages;
-                }
+                    if (eventImageDetail.isEventDeleted)
+                    {
+                        MessageBox.Show("Event was deleted. Get back the event first.");
+                    }
+                    else if (eventImageBLL.GetBack(eventImageDetail))
+                    {
+                        MessageBox.Show("Picture was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.EventImages;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 12)
-            {                
-                if (eventBLL.GetBack(eventDetail))
+            {
+                if (eventDetail.EventID == 0)
                 {
-                    MessageBox.Show("Event was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Events;
+                    MessageBox.Show("Please choose an event from the table");
+                }
+                else
+                {
+                    if (eventBLL.GetBack(eventDetail))
+                    {
+                        MessageBox.Show("Event was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Events;
+                    }
                 }
             }
             else if (cmbDeletedData.SelectedIndex == 13)
             {
-                if (genAttendBLL.GetBack(genAttendDetail))
+                if (genAttendDetail.GeneralAttendanceID == 0)
                 {
-                    MessageBox.Show("Attendance was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.GeneralAttendance;
+                    MessageBox.Show("Please choose an attendance from the table");
                 }
+                else
+                {
+                    if (genAttendBLL.GetBack(genAttendDetail))
+                    {
+                        MessageBox.Show("Attendance was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.GeneralAttendance;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 14)
             {
-                if (expendutureBLL.GetBack(expenditureDetail))
+                if (expenditureDetail.ExpenditureID == 0)
                 {
-                    MessageBox.Show("Expenditure was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.Expenditures;
+                    MessageBox.Show("Please choose an expenditure from the table");
                 }
+                else
+                {
+                    if (expendutureBLL.GetBack(expenditureDetail))
+                    {
+                        MessageBox.Show("Expenditure was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.Expenditures;
+                    }
+                }                
             }
             else if (cmbDeletedData.SelectedIndex == 15)
             {
-                if (financialRepBLl.GetBack(financialRepDetail))
+                if (financialRepDetail.FinancialReportID == 0)
                 {
-                    MessageBox.Show("Financial report was retrieved");
-                    dto = bll.Select(true);
-                    dataGridView1.DataSource = dto.FinancialReports;
+                    MessageBox.Show("Please choose a financial report from the table");
                 }
+                else
+                {
+                    if (financialRepBLl.GetBack(financialRepDetail))
+                    {
+                        MessageBox.Show("Financial report was retrieved");
+                        dto = bll.Select(true);
+                        dataGridView1.DataSource = dto.FinancialReports;
+                    }
+                }                
             }
         }
     }
