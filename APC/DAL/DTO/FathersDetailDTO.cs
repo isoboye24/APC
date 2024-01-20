@@ -37,5 +37,11 @@ namespace APC.DAL.DTO
         public string PhoneNumber { get; set; }
         public string PhoneNumber2 { get; set; }
         public string PhoneNumber3 { get; set; }
+        public bool isCountryDeleted { get; set; }
+        public bool isNationalityDeleted { get; set; }
+        public bool isProfessionDeleted { get; set; }
+        public bool isPositionDeleted { get; set; }
+        public bool isEmpStatusDeleted { get; set; }
+        public bool isMarStatusDeleted { get; set; }
     }
 }

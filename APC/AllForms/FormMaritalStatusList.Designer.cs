@@ -209,7 +209,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormMaritalStatusList";
-            this.Text = "Marital Status List";
+            this.Text = "Marital Statuses";
             this.Load += new System.EventHandler(this.FormMaritalStatusList_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

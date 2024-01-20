@@ -98,6 +98,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(425, 51);
             this.panel1.TabIndex = 10;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // labelTitle
             // 
@@ -180,6 +181,7 @@
             this.Name = "FormPosition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormPosition_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPosition_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

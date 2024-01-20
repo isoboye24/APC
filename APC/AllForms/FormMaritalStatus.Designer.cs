@@ -55,6 +55,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 51);
             this.panel1.TabIndex = 27;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // labelTitle
             // 
@@ -180,6 +181,7 @@
             this.Name = "FormMaritalStatus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormMaritalStatus_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormMaritalStatus_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

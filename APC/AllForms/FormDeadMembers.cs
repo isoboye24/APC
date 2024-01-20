@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,19 @@ namespace APC.AllForms
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        ///  Drag
+        /// </summary>
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
+       
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -214,6 +227,6 @@ namespace APC.AllForms
                 string unique = Guid.NewGuid().ToString();
                 fileName += unique + OpenFileDialog1.SafeFileName;
             }
-        }
+        }        
     }
 }

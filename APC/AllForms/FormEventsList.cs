@@ -31,24 +31,38 @@ namespace APC
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormEvent open = new FormEvent();
-            open.isUpdate = true;
-            open.detail = detail;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            FillDataGrid();
+            if (detail.EventID == 0)
+            {
+                MessageBox.Show("Please choose an event from the table.");
+            }
+            else
+            {
+                FormEvent open = new FormEvent();
+                open.isUpdate = true;
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                FillDataGrid();
+            }            
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            FormEvenImages open = new FormEvenImages();
-            open.isView = true;
-            open.detail = detail;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            FillDataGrid();
+            if (detail.EventID == 0)
+            {
+                MessageBox.Show("Please choose an event from the table.");
+            }
+            else
+            {
+                FormEvenImages open = new FormEvenImages();
+                open.isView = true;
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                FillDataGrid();
+            }            
         }
         EventsBLL bll = new EventsBLL();
         EventsDTO dto = new EventsDTO();

@@ -193,7 +193,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(973, 639);
             this.Name = "FormNationalityList";
-            this.Text = "Nationality List";
+            this.Text = "Nationalities";
             this.Load += new System.EventHandler(this.FormNationalityList_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

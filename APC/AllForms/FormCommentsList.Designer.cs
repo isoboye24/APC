@@ -390,7 +390,7 @@
             this.ClientSize = new System.Drawing.Size(957, 600);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormCommentsList";
-            this.Text = "List of Comments";
+            this.Text = "Comments";
             this.Load += new System.EventHandler(this.FormCommentsList_Load);
             this.panelDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -212,7 +212,7 @@
             this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormPositionList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Position List";
+            this.Text = "Positions";
             this.Load += new System.EventHandler(this.FormPositionList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

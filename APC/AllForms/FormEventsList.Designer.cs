@@ -283,7 +283,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormEventsList";
-            this.Text = "Events List";
+            this.Text = "Events";
             this.Load += new System.EventHandler(this.FormEventsList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

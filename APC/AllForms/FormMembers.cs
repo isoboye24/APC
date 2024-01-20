@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,16 @@ namespace APC
         {
             InitializeComponent();
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
+        
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void FormMembers_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -41,7 +51,6 @@ namespace APC
         private void FormMembers_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
-
             cmbCountry.DataSource = dto.Countries;
             General.ComboBoxProps(cmbCountry, "CountryName", "countryID");
             cmbGender.DataSource = dto.Genders;
@@ -57,27 +66,31 @@ namespace APC
             cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
             cmbPermission.DataSource = dto.Permissions;
-            General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
+            General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");            
 
             txtPhone2.Hide();
             txtPhone3.Hide();
             labelPhone2.Hide();
             labelPhone3.Hide();
+            label13.Hide();
+            labelLastEnteredUsername.Hide();
             if (LoginInfo.AccessLevel != 4)
             {
                 labelAccessLevel.Hide();
-                cmbPermission.Hide();                
-            }
+                cmbPermission.Hide();
+            }            
+            //if (!isUpdate)
+            //{
+            //    labelLastEnteredUsername.Text = bll.GetLastMemberUsername();
+            //}
             if (isUpdate)
-            {                
+            {
                 txtName.Text = detail.Name;
                 txtSurname.Text = detail.Surname;
                 txtAddress.Text = detail.HouseAddress;
                 cmbPosition.SelectedValue = detail.PositionID;
                 dateTimePickerBirthday.Value = Convert.ToDateTime(detail.Birthday);
                 dateTimePickerMemSince.Value = Convert.ToDateTime(detail.MembershipDate);
-                txtUsername.Text = detail.Username;
-                txtPassword.Text = detail.Password;
                 txtEmail.Text = detail.EmailAddress;
                 txtImagePath.Text = detail.ImagePath;                
                 txtPhone1.Text = detail.PhoneNumber;
@@ -99,12 +112,17 @@ namespace APC
                 cmbGender.SelectedValue = detail.GenderID;
                 cmbNationality.SelectedValue = detail.NationalityID;                             
                 cmbMaritalStatus.SelectedValue = detail.MaritalStatusID;
+                detail.PermissionID = detail.PermissionID;
                 if (LoginInfo.AccessLevel != 4)
                 {
                     labelAccessLevel.Hide();
-                    cmbPermission.Hide();
-                    detail.PermissionID = detail.PermissionID;
-                }                
+                    cmbPermission.Hide();                    
+                }
+                else
+                {
+                    labelAccessLevel.Visible = true;
+                    cmbPermission.Visible = true;
+                }
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfilePic.ImageLocation = imagePath;
             }
@@ -128,14 +146,6 @@ namespace APC
             else if (txtSurname.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter surname");
-            }
-            else if (txtUsername.Text.Trim() == "")
-            {
-                MessageBox.Show("Please enter username");
-            }
-            else if (txtPassword.Text.Trim() == "")
-            {
-                MessageBox.Show("Please enter password");
             }
             else if (txtPhone1.Text.Trim() == "")
             {
@@ -180,13 +190,51 @@ namespace APC
             else
             {
                 if (!isUpdate)
-                {                
+                {                    
                     MemberDetailDTO member = new MemberDetailDTO();
-                    member.Name = txtName.Text;
+                    member.Name = txtName.Text;                    
                     member.Surname = txtSurname.Text;
-                    member.Username = txtUsername.Text;
-                    member.Password = txtPassword.Text;
                     member.Birthday = dateTimePickerBirthday.Value;
+                    int day, month, yearDigit;
+                    string year;
+                    day = dateTimePickerBirthday.Value.Day;
+                    month = dateTimePickerBirthday.Value.Month;
+                    yearDigit = dateTimePickerBirthday.Value.Year % 100;
+                    if (yearDigit == 0)
+                    {
+                        year = "0" + yearDigit;
+                    }
+                    else
+                    {
+                        year = (dateTimePickerBirthday.Value.Year % 100).ToString();
+                    }
+                    string lastUsername = bll.GetLastMemberUsername();
+                    if (lastUsername == null)
+                    {
+                        member.Username = "apc20001";
+                    }
+                    else
+                    {
+                        string getDigits = lastUsername.Substring(3);
+                        int convertDigits = Convert.ToInt32(getDigits) + 1;
+                        member.Username = "apc" + convertDigits;
+                    }                    
+                    if (day < 10 && month < 10)
+                    {
+                        member.Password = "0"+ day + "0" + month + "" + year;
+                    }
+                    else if (day < 10 && month >= 10)
+                    {
+                        member.Password = "0" + day + "" + month + "" + year;
+                    }
+                    else if (day >= 10 && month < 10)
+                    {
+                        member.Password = "" + day + "0" + month + "" + year;
+                    }
+                    else
+                    {
+                        member.Password = "" + day + "" + month + "" + year;
+                    }
                     member.EmailAddress = txtEmail.Text;
                     member.HouseAddress = txtAddress.Text;
                     member.CountryID = Convert.ToInt32(cmbCountry.SelectedValue);
@@ -195,15 +243,15 @@ namespace APC
                     member.EmploymentStatusID = Convert.ToInt32(cmbEmpStatus.SelectedValue);
                     member.NationalityID = Convert.ToInt32(cmbNationality.SelectedValue);
                     member.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
-                    if (LoginInfo.AccessLevel !=4)
-                    {                        
+                    if (LoginInfo.AccessLevel != 4)
+                    {
                         member.PermissionID = 2;
                     }
                     else
                     {
                         member.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
                     }
-                    
+                    member.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
                     member.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
                     member.ImagePath = fileName;
                     member.PhoneNumber = txtPhone1.Text;
@@ -223,8 +271,6 @@ namespace APC
                         }
                         txtName.Clear();
                         txtSurname.Clear();
-                        txtUsername.Clear();
-                        txtPassword.Clear();
                         dateTimePickerBirthday.Value = DateTime.Today;
                         dateTimePickerMemSince.Value = DateTime.Today;
                         txtEmail.Clear();
@@ -257,13 +303,12 @@ namespace APC
                     }
                 }
                 else if(isUpdate)
-                {
+                {                    
                     if (
                             detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim()
                             && detail.EmailAddress == txtEmail.Text.Trim() && detail.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)
                             && detail.Birthday == dateTimePickerBirthday.Value && detail.MembershipDate == dateTimePickerMemSince.Value
-                            && detail.HouseAddress == txtAddress.Text.Trim() && detail.Username == txtUsername.Text.Trim()
-                            && detail.Password == txtPassword.Text.Trim() && detail.ImagePath == txtImagePath.Text.Trim()
+                            && detail.HouseAddress == txtAddress.Text.Trim() && detail.ImagePath == txtImagePath.Text.Trim()
                             && detail.PhoneNumber == txtPhone1.Text.Trim() && detail.PhoneNumber2 == txtPhone2.Text.Trim()
                             && detail.PhoneNumber3 == txtPhone3.Text.Trim() && detail.CountryID == Convert.ToInt32(cmbCountry.SelectedValue)
                             && detail.ProfessionID == Convert.ToInt32(cmbProfession.SelectedValue) && detail.EmploymentStatusID == Convert.ToInt32(cmbEmpStatus.SelectedValue)
@@ -278,11 +323,47 @@ namespace APC
                         detail.Name = txtName.Text;
                         detail.Surname = txtSurname.Text;
                         detail.HouseAddress = txtAddress.Text;
-                        detail.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
-                        detail.Birthday = dateTimePickerBirthday.Value;
+                        detail.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);                        
                         detail.MembershipDate = dateTimePickerMemSince.Value;
-                        detail.Username = txtUsername.Text;
-                        detail.Password = txtPassword.Text;
+                        detail.Username = detail.Username;
+                        if (detail.Birthday == dateTimePickerBirthday.Value)
+                        {
+                            detail.Password = detail.Password;
+                            detail.Birthday = detail.Birthday;
+                        }
+                        else if (detail.Birthday != dateTimePickerBirthday.Value)
+                        {
+                            int day, month, yearDigit;
+                            string year;
+                            day = dateTimePickerBirthday.Value.Day;
+                            month = dateTimePickerBirthday.Value.Month;
+                            yearDigit = dateTimePickerBirthday.Value.Year % 100;
+                            if (yearDigit == 0 )
+                            {
+                                year = "0" + yearDigit;
+                            }
+                            else
+                            {
+                                year = (dateTimePickerBirthday.Value.Year % 100).ToString();
+                            }
+                            if (day < 10 && month < 10)
+                            {
+                                detail.Password = "0" + day + "0" + month + "" + year;
+                            }
+                            else if (day < 10 && month >= 10)
+                            {
+                                detail.Password = "0" + day + "" + month + "" + year;
+                            }
+                            else if (day >= 10 && month < 10)
+                            {
+                                detail.Password = "" + day + "0" + month + "" + year;
+                            }
+                            else if (day >= 10 && month >= 10)
+                            {
+                                detail.Password = "" + day + "" + month + "" + year;
+                            }
+                            detail.Birthday = dateTimePickerBirthday.Value;
+                        }                        
                         detail.EmailAddress = txtEmail.Text;
                         if (detail.ImagePath != txtImagePath.Text.Trim())
                         {
@@ -327,6 +408,6 @@ namespace APC
                 string unique = Guid.NewGuid().ToString();
                 fileName += unique + OpenFileDialog1.SafeFileName;
             }
-        }
+        }       
     }
 }

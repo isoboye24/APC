@@ -69,6 +69,9 @@
             this.txtPhone2 = new System.Windows.Forms.TextBox();
             this.labelPhone3 = new System.Windows.Forms.Label();
             this.txtPhone3 = new System.Windows.Forms.TextBox();
+            this.labelCommentText = new System.Windows.Forms.Label();
+            this.labelNoOfComments = new System.Windows.Forms.Label();
+            this.btnNoComments = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -90,9 +93,6 @@
             this.labelBirthday = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCommentText = new System.Windows.Forms.Label();
-            this.labelNoOfComments = new System.Windows.Forms.Label();
-            this.btnNoComments = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
@@ -160,6 +160,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 51);
             this.panel1.TabIndex = 32;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // picClose
             // 
@@ -645,6 +646,41 @@
             this.txtPhone3.Size = new System.Drawing.Size(176, 29);
             this.txtPhone3.TabIndex = 0;
             // 
+            // labelCommentText
+            // 
+            this.labelCommentText.AutoSize = true;
+            this.labelCommentText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommentText.Location = new System.Drawing.Point(3, 311);
+            this.labelCommentText.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelCommentText.Name = "labelCommentText";
+            this.labelCommentText.Size = new System.Drawing.Size(85, 21);
+            this.labelCommentText.TabIndex = 1;
+            this.labelCommentText.Text = "Comment";
+            // 
+            // labelNoOfComments
+            // 
+            this.labelNoOfComments.AutoSize = true;
+            this.labelNoOfComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfComments.Location = new System.Drawing.Point(123, 311);
+            this.labelNoOfComments.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelNoOfComments.Name = "labelNoOfComments";
+            this.labelNoOfComments.Size = new System.Drawing.Size(19, 21);
+            this.labelNoOfComments.TabIndex = 0;
+            this.labelNoOfComments.Text = "2";
+            // 
+            // btnNoComments
+            // 
+            this.btnNoComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoComments.Location = new System.Drawing.Point(123, 344);
+            this.btnNoComments.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnNoComments.Name = "btnNoComments";
+            this.btnNoComments.Size = new System.Drawing.Size(176, 35);
+            this.btnNoComments.TabIndex = 4;
+            this.btnNoComments.Text = "View Comments";
+            this.btnNoComments.UseVisualStyleBackColor = true;
+            this.btnNoComments.Click += new System.EventHandler(this.btnViewComments_Click);
+            // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
@@ -918,41 +954,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(963, 583);
             this.tableLayoutPanel1.TabIndex = 36;
-            // 
-            // labelCommentText
-            // 
-            this.labelCommentText.AutoSize = true;
-            this.labelCommentText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommentText.Location = new System.Drawing.Point(3, 311);
-            this.labelCommentText.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelCommentText.Name = "labelCommentText";
-            this.labelCommentText.Size = new System.Drawing.Size(85, 21);
-            this.labelCommentText.TabIndex = 1;
-            this.labelCommentText.Text = "Comment";
-            // 
-            // labelNoOfComments
-            // 
-            this.labelNoOfComments.AutoSize = true;
-            this.labelNoOfComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfComments.Location = new System.Drawing.Point(123, 311);
-            this.labelNoOfComments.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelNoOfComments.Name = "labelNoOfComments";
-            this.labelNoOfComments.Size = new System.Drawing.Size(19, 21);
-            this.labelNoOfComments.TabIndex = 0;
-            this.labelNoOfComments.Text = "2";
-            // 
-            // btnNoComments
-            // 
-            this.btnNoComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNoComments.Location = new System.Drawing.Point(123, 344);
-            this.btnNoComments.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.btnNoComments.Name = "btnNoComments";
-            this.btnNoComments.Size = new System.Drawing.Size(176, 35);
-            this.btnNoComments.TabIndex = 4;
-            this.btnNoComments.Text = "View Comments";
-            this.btnNoComments.UseVisualStyleBackColor = true;
-            this.btnNoComments.Click += new System.EventHandler(this.btnViewComments_Click);
             // 
             // FormViewMember
             // 

@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,18 @@ namespace APC
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        ///  Drag
+        /// </summary>
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void FormChildren_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -108,12 +120,12 @@ namespace APC
             dataGridViewMothers.Columns[26].Visible = false;
             dataGridViewMothers.Columns[27].Visible = false;
             dataGridViewMothers.Columns[28].Visible = false;
-            dataGridViewFathers.Columns[29].Visible = false;
-            dataGridViewFathers.Columns[30].Visible = false;
-            dataGridViewFathers.Columns[31].Visible = false;
-            dataGridViewFathers.Columns[32].Visible = false;
-            dataGridViewFathers.Columns[33].Visible = false;
-            dataGridViewFathers.Columns[34].Visible = false;
+            dataGridViewMothers.Columns[29].Visible = false;
+            dataGridViewMothers.Columns[30].Visible = false;
+            dataGridViewMothers.Columns[31].Visible = false;
+            dataGridViewMothers.Columns[32].Visible = false;
+            dataGridViewMothers.Columns[33].Visible = false;
+            dataGridViewMothers.Columns[34].Visible = false;
             #endregion
 
             if (isUpdate)
@@ -273,6 +285,6 @@ namespace APC
                 string unique = Guid.NewGuid().ToString();
                 fileName += unique + OpenFileDialog1.SafeFileName;
             }
-        }
+        }        
     }
 }

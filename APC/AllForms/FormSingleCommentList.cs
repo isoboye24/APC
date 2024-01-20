@@ -39,29 +39,13 @@ namespace APC.AllForms
             dataGridView1.Columns[10].HeaderText = "Month";
             dataGridView1.Columns[11].HeaderText = "Year";
             dataGridView1.Columns[12].Visible = false;
+
+            this.Text = detail.Surname + " " + detail.Name + "'s comments";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            detail = new CommentDetailDTO();
-            detail.CommentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            detail.CommentName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            detail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-            detail.Surname = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            detail.Name = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            detail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            detail.GenderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
-            detail.GenderName = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-            detail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
-            detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
-            detail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
-            detail.Year = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-            detail.isMemberDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -80,6 +64,24 @@ namespace APC.AllForms
                 dto = bll.SelectMembersCommentList(memberID);
                 dataGridView1.DataSource = dto.Comments;
             }
+        }
+
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        {
+            detail = new CommentDetailDTO();
+            detail.CommentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.CommentName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            detail.Surname = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detail.Name = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            detail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            detail.GenderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+            detail.GenderName = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            detail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            detail.Year = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+            detail.isMemberDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
         }
     }
 }

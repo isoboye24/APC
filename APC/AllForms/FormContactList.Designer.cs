@@ -170,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(952, 595);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormContactList";
-            this.Text = "Contact List";
+            this.Text = "Contacts";
             this.Load += new System.EventHandler(this.FormContactList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

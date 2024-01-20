@@ -31,15 +31,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtDocumentContent = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelWordsCount = new System.Windows.Forms.Label();
+            this.txtDocumentContent = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -93,17 +93,19 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // txtDocumentContent
+            // tableLayoutPanel2
             // 
-            this.txtDocumentContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDocumentContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumentContent.Location = new System.Drawing.Point(13, 15);
-            this.txtDocumentContent.Multiline = true;
-            this.txtDocumentContent.Name = "txtDocumentContent";
-            this.txtDocumentContent.ReadOnly = true;
-            this.txtDocumentContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDocumentContent.Size = new System.Drawing.Size(1010, 516);
-            this.txtDocumentContent.TabIndex = 8;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.78842F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.21158F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(558, 57);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(449, 30);
+            this.tableLayoutPanel2.TabIndex = 4;
             // 
             // tableLayoutPanel3
             // 
@@ -119,20 +121,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(197, 24);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.78842F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.21158F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(558, 57);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(449, 30);
-            this.tableLayoutPanel2.TabIndex = 4;
             // 
             // label1
             // 
@@ -155,6 +143,18 @@
             this.labelWordsCount.TabIndex = 0;
             this.labelWordsCount.Text = "0";
             // 
+            // txtDocumentContent
+            // 
+            this.txtDocumentContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDocumentContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumentContent.Location = new System.Drawing.Point(13, 15);
+            this.txtDocumentContent.Multiline = true;
+            this.txtDocumentContent.Name = "txtDocumentContent";
+            this.txtDocumentContent.ReadOnly = true;
+            this.txtDocumentContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDocumentContent.Size = new System.Drawing.Size(1010, 516);
+            this.txtDocumentContent.TabIndex = 8;
+            // 
             // FormViewDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,12 +165,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Document_name";
             this.Load += new System.EventHandler(this.FormViewDocument_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormViewDocument_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

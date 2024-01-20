@@ -416,7 +416,7 @@
             this.MinimumSize = new System.Drawing.Size(973, 639);
             this.Name = "FormDocumentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Document List";
+            this.Text = "Documents";
             this.Load += new System.EventHandler(this.FormDocumentList_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);

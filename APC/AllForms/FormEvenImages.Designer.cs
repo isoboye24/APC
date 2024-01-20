@@ -100,6 +100,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1027, 51);
             this.panel1.TabIndex = 16;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // iconMaximize
             // 

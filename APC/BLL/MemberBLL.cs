@@ -122,7 +122,11 @@ namespace APC.BLL
         {
             return memberDAO.SelectAllMembersCount();
         }
-        
+        public string GetLastMemberUsername()
+        {
+            return memberDAO.GetLastMemberUsername();
+        }
+
         public int SelectCountMale()
         {
             return memberDAO.SelectCountMale();

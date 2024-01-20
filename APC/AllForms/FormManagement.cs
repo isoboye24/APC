@@ -152,18 +152,32 @@ namespace APC.AllForms
             {
                 RefreshAllCards(150, 29);
             }
-            else
+            else if(WindowState == FormWindowState.Maximized)
             {
-                RefreshAllCards(300, 42);
+                //if (primaryScreen.Bounds.Width <= 1366)
+                //{
+                //    RefreshAllCards(200, 42);
+                //}
+                //else 
+                //{
+                //    RefreshAllCards(300, 42);
+                //}
+                RefreshAllCards(250, 42);
             }
         }
         private void RefreshAllCards(int x, int y)
         {
-            General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), x, y);
-            General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), x, y);
-            General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), x, y);
-            General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), x, y);
-            General.ValueCount(labelTotalEvent, eventBLL.SelectEventCount(), x, y);
+            labelTotalProfession.Text = profBll.SelectUniqueProfessionCount().ToString();
+            labelTotalPosition.Text = posBll.SelectUniquePositionCount().ToString();
+            labelTotalNationality.Text = memberBLL.SelectCountUniqueNationality().ToString();
+            labelTotalPermission.Text = permissionBLL.SelectPermittedMembersCount().ToString();
+            labelTotalEvent.Text = eventBLL.SelectEventCount().ToString();
+
+            //General.ValueCount(labelTotalProfession, profBll.SelectUniqueProfessionCount(), x, y);
+            //General.ValueCount(labelTotalPosition, posBll.SelectUniquePositionCount(), x, y);
+            //General.ValueCount(labelTotalNationality, memberBLL.SelectCountUniqueNationality(), x, y);
+            //General.ValueCount(labelTotalPermission, permissionBLL.SelectPermittedMembersCount(), x, y);
+            //General.ValueCount(labelTotalEvent, eventBLL.SelectEventCount(), x, y);
         }
         private void iconClose_MouseEnter(object sender, EventArgs e)
         {
@@ -182,51 +196,6 @@ namespace APC.AllForms
         private void iconClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void iconMaximize_MouseEnter(object sender, EventArgs e)
-        {
-            iconMaximize.BackColor = RBGColors.color1;
-        }
-
-        private void iconMaximize_MouseHover(object sender, EventArgs e)
-        {
-            iconMaximize.BackColor = RBGColors.color1;
-        }
-
-        private void iconMaximize_MouseLeave(object sender, EventArgs e)
-        {
-            iconMaximize.BackColor = Color.DarkOrange;
-        }
-
-        private void iconMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {                
-                if (this.Owner is FormDashboard dashboardForm)
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.RefreshAllCards(300, 42);
-                }
-                else
-                {
-                    this.WindowState = FormWindowState.Maximized;
-                    this.RefreshAllCards(300, 42);
-                }                
-            }
-            else
-            {                
-                if (this.Owner is FormDashboard dashboardForm)
-                {
-                    this.WindowState = FormWindowState.Normal;
-                    this.RefreshAllCards(300, 42);
-                }
-                else
-                {
-                    this.WindowState = FormWindowState.Normal;
-                    this.RefreshAllCards(150, 42);
-                }
-            }
         }
 
         private void iconMinimize_MouseEnter(object sender, EventArgs e)
@@ -298,14 +267,14 @@ namespace APC.AllForms
             {
                 currentChildForm.Close();
                 Reset();
-                if (WindowState == FormWindowState.Normal)
-                {                    
-                    RefreshAllCards(150, 42);
-                }
-                else
-                {                    
-                    RefreshAllCards(300, 42);
-                }
+                //if (WindowState == FormWindowState.Normal)
+                //{                    
+                //    RefreshAllCards(150, 42);
+                //}
+                //else
+                //{                    
+                //    RefreshAllCards(300, 42);
+                //}
             }
         }
 
@@ -339,14 +308,14 @@ namespace APC.AllForms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal)
-            {
-                RefreshAllCards(150, 42);
-            }
-            else
-            {
-                RefreshAllCards(300, 42);
-            }
+            //if (WindowState == FormWindowState.Normal)
+            //{
+            //    RefreshAllCards(150, 42);
+            //}
+            //else
+            //{
+            //    RefreshAllCards(300, 42);
+            //}
         }
 
         private void btnRefresh_MouseHover(object sender, EventArgs e)

@@ -84,5 +84,10 @@ namespace APC.AllForms
         {
 
         }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

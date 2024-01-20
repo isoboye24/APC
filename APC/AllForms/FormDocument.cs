@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using APC.DAL.DTO;
 using APC.BLL;
 using APC.DAL;
+using System.Runtime.InteropServices;
 
 namespace APC.AllForms
 {
@@ -21,7 +22,19 @@ namespace APC.AllForms
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        ///  Drag
+        /// </summary>
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
+        
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -136,6 +149,6 @@ namespace APC.AllForms
                 txtDocumentName.Text = detail.DocumentName;
                 txtDocumentPath.Text = detail.DocumentPath;
             }            
-        }
+        }       
     }
 }

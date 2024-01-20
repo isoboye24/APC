@@ -32,6 +32,7 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -60,11 +61,7 @@
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.dateTimePickerMemSince = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbCountry = new System.Windows.Forms.ComboBox();
@@ -97,6 +94,7 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.labelLastEnteredUsername = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
@@ -125,11 +123,14 @@
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.picMinimize);
+            this.panel1.Controls.Add(this.labelLastEnteredUsername);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(5, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(963, 51);
             this.panel1.TabIndex = 27;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // labelTitle
             // 
@@ -166,6 +167,17 @@
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(200, 21);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(423, 21);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Username format: \"apc20001\". Last entered username:";
             // 
             // panel3
             // 
@@ -405,6 +417,7 @@
             this.txtImagePath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImagePath.Location = new System.Drawing.Point(133, 173);
             this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.ReadOnly = true;
             this.txtImagePath.Size = new System.Drawing.Size(154, 29);
             this.txtImagePath.TabIndex = 0;
             // 
@@ -516,13 +529,9 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52F));
-            this.tableLayoutPanel5.Controls.Add(this.txtUsername, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.65563F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.34437F));
             this.tableLayoutPanel5.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.txtPassword, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.dateTimePickerBirthday, 1, 4);
             this.tableLayoutPanel5.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel5.Controls.Add(this.cmbCountry, 1, 6);
@@ -562,37 +571,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(302, 475);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(147, 3);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(152, 29);
-            this.txtUsername.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Username";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 53);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Password";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -604,25 +582,15 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Birthday";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(147, 46);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(152, 29);
-            this.txtPassword.TabIndex = 0;
-            // 
             // dateTimePickerBirthday
             // 
             this.dateTimePickerBirthday.CustomFormat = "12/31/2023";
             this.dateTimePickerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirthday.Location = new System.Drawing.Point(147, 89);
+            this.dateTimePickerBirthday.Location = new System.Drawing.Point(159, 89);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
-            this.dateTimePickerBirthday.Size = new System.Drawing.Size(152, 29);
+            this.dateTimePickerBirthday.Size = new System.Drawing.Size(140, 29);
             this.dateTimePickerBirthday.TabIndex = 2;
             // 
             // label7
@@ -640,18 +608,18 @@
             // 
             this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(147, 132);
+            this.cmbCountry.Location = new System.Drawing.Point(159, 132);
             this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(152, 29);
+            this.cmbCountry.Size = new System.Drawing.Size(140, 29);
             this.cmbCountry.TabIndex = 3;
             // 
             // cmbNationality
             // 
             this.cmbNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNationality.FormattingEnabled = true;
-            this.cmbNationality.Location = new System.Drawing.Point(147, 304);
+            this.cmbNationality.Location = new System.Drawing.Point(159, 304);
             this.cmbNationality.Name = "cmbNationality";
-            this.cmbNationality.Size = new System.Drawing.Size(152, 29);
+            this.cmbNationality.Size = new System.Drawing.Size(140, 29);
             this.cmbNationality.TabIndex = 3;
             // 
             // label15
@@ -680,9 +648,9 @@
             // 
             this.cmbProfession.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(147, 175);
+            this.cmbProfession.Location = new System.Drawing.Point(159, 175);
             this.cmbProfession.Name = "cmbProfession";
-            this.cmbProfession.Size = new System.Drawing.Size(152, 29);
+            this.cmbProfession.Size = new System.Drawing.Size(140, 29);
             this.cmbProfession.TabIndex = 3;
             // 
             // label9
@@ -700,9 +668,9 @@
             // 
             this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(147, 218);
+            this.cmbGender.Location = new System.Drawing.Point(159, 218);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(152, 29);
+            this.cmbGender.Size = new System.Drawing.Size(140, 29);
             this.cmbGender.TabIndex = 3;
             // 
             // label10
@@ -720,9 +688,9 @@
             // 
             this.cmbEmpStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpStatus.FormattingEnabled = true;
-            this.cmbEmpStatus.Location = new System.Drawing.Point(147, 261);
+            this.cmbEmpStatus.Location = new System.Drawing.Point(159, 261);
             this.cmbEmpStatus.Name = "cmbEmpStatus";
-            this.cmbEmpStatus.Size = new System.Drawing.Size(152, 29);
+            this.cmbEmpStatus.Size = new System.Drawing.Size(140, 29);
             this.cmbEmpStatus.TabIndex = 3;
             // 
             // tableLayoutPanel10
@@ -783,6 +751,7 @@
             // 
             // cmbPermission
             // 
+            this.cmbPermission.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPermission.FormattingEnabled = true;
             this.cmbPermission.Location = new System.Drawing.Point(121, 3);
@@ -995,6 +964,19 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // labelLastEnteredUsername
+            // 
+            this.labelLastEnteredUsername.AutoSize = true;
+            this.labelLastEnteredUsername.BackColor = System.Drawing.Color.Black;
+            this.labelLastEnteredUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastEnteredUsername.ForeColor = System.Drawing.Color.White;
+            this.labelLastEnteredUsername.Location = new System.Drawing.Point(626, 21);
+            this.labelLastEnteredUsername.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelLastEnteredUsername.Name = "labelLastEnteredUsername";
+            this.labelLastEnteredUsername.Size = new System.Drawing.Size(98, 21);
+            this.labelLastEnteredUsername.TabIndex = 1;
+            this.labelLastEnteredUsername.Text = "\"apc20001\"";
+            // 
             // FormMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1059,9 +1041,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -1069,7 +1048,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TextBox txtName;
@@ -1114,5 +1092,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelLastEnteredUsername;
     }
 }

@@ -574,7 +574,7 @@
             this.ClientSize = new System.Drawing.Size(957, 600);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormMembersList";
-            this.Text = "List of members";
+            this.Text = "Registered Members";
             this.Load += new System.EventHandler(this.FormMembersList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

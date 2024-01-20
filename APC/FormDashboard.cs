@@ -91,7 +91,7 @@ namespace APC
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
-            labelTitleChildForm.Text = "Home";
+            labelTitleChildForm.Text = "Dashboard";
         }
 
         private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
@@ -133,6 +133,7 @@ namespace APC
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+
             MemberDTO memberDTO = memberBLL.Select();
             MemberDetailDTO detail = memberDTO.Members.First(x => x.MemberID == LoginInfo.MemberID);
             string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -170,6 +171,7 @@ namespace APC
                     btnComments.Visible = true;
                 }
             }
+
             initialDetail.StartPosition = FormStartPosition.Manual;
             initialDetail.Location = this.Location;
             initialDetail.Size = this.Size;
@@ -258,11 +260,9 @@ namespace APC
             if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
-                RefreshAllCards(350, 42);
             }
             else
             {
-                RefreshAllCards(171, 42);                
                 this.StartPosition = initialDetail.StartPosition;
                 this.Location = initialDetail.Location;
                 this.Size = initialDetail.Size;
@@ -308,22 +308,27 @@ namespace APC
 
         private void btnMembers_Click_1(object sender, EventArgs e)
         {
-            if (!isAdmin && !isEditor)
+
+            int memberCount = memberBLL.SelectAllMembersCount();
+            if (memberCount > 0)
             {
-                MemberDTO dto = memberBLL.Select();
-                MemberDetailDTO detail = dto.Members.First(x => x.MemberID == LoginInfo.MemberID);
-                FormViewMember open = new FormViewMember();
-                open.detail = detail;
-                open.isView = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-            else
-            {
-                buttonWasClicked = true;
-                ActivateButton(sender, RBGColors.color2);
-                OpenChildForm(new FormMembersList());
+                if (!isAdmin && !isEditor)
+                {
+                    MemberDTO dto = memberBLL.Select();
+                    MemberDetailDTO detail = dto.Members.First(x => x.MemberID == LoginInfo.MemberID);
+                    FormViewMember open = new FormViewMember();
+                    open.detail = detail;
+                    open.isView = true;
+                    this.Hide();
+                    open.ShowDialog();
+                    this.Visible = true;
+                }
+                else
+                {
+                    buttonWasClicked = true;
+                    ActivateButton(sender, RBGColors.color2);
+                    OpenChildForm(new FormMembersList());
+                }                
             }            
         }
 
@@ -372,15 +377,7 @@ namespace APC
             if (buttonWasClicked)
             {
                 currentChildForm.Close();
-                Reset();
-                if (WindowState == FormWindowState.Normal)
-                {
-                    RefreshAllCards(171, 42);
-                }
-                else
-                {
-                    RefreshAllCards(350, 42);
-                }
+                Reset();                
             }
         }
 
@@ -430,34 +427,38 @@ namespace APC
 
         private void btnComments_Click(object sender, EventArgs e)
         {
-            if (!isAdmin && !isEditor)
+            int memberCount = memberBLL.SelectAllMembersCount();
+            if (memberCount > 0)
             {
-                CommentDTO dto = commentBLL.Select();
-                int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
-                CommentDetailDTO detail = dto.Comments.First(x => x.MemberID == LoginInfo.MemberID);
-                if (commentCount > 1)
+                if (!isAdmin && !isEditor)
                 {
-                    FormSingleCommentList open = new FormSingleCommentList();
-                    open.memberID = detail.MemberID;
-                    this.Hide();
-                    open.ShowDialog();
-                    this.Visible = true;
+                    CommentDTO dto = commentBLL.Select();
+                    int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
+                    CommentDetailDTO detail = dto.Comments.First(x => x.MemberID == LoginInfo.MemberID);
+                    if (commentCount > 1)
+                    {
+                        FormSingleCommentList open = new FormSingleCommentList();
+                        open.memberID = detail.MemberID;
+                        this.Hide();
+                        open.ShowDialog();
+                        this.Visible = true;
+                    }
+                    else
+                    {
+                        FormViewComment open = new FormViewComment();
+                        open.detail = detail;
+                        this.Hide();
+                        open.ShowDialog();
+                        this.Visible = true;
+                    }
                 }
                 else
                 {
-                    FormViewComment open = new FormViewComment();
-                    open.detail = detail;
-                    this.Hide();
-                    open.ShowDialog();
-                    this.Visible = true;
-                }                
+                    buttonWasClicked = true;
+                    ActivateButton(sender, RBGColors.color1);
+                    OpenChildForm(new FormCommentsList());
+                }
             }
-            else
-            {
-                buttonWasClicked = true;
-                ActivateButton(sender, RBGColors.color1);
-                OpenChildForm(new FormCommentsList());
-            }            
         }
 
         private void btnDeadMembers_Click(object sender, EventArgs e)

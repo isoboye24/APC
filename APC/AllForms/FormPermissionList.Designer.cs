@@ -207,7 +207,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(968, 634);
             this.Name = "FormPermissionList";
-            this.Text = "Permission List";
+            this.Text = "Permissions";
             this.Load += new System.EventHandler(this.FormPermissionList_Load);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

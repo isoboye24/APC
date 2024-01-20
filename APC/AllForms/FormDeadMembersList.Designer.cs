@@ -583,7 +583,7 @@
             this.ClientSize = new System.Drawing.Size(957, 600);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormDeadMembersList";
-            this.Text = "Deceased Members List";
+            this.Text = "Deceased Members";
             this.Load += new System.EventHandler(this.FormDeadMembersList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

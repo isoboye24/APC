@@ -299,7 +299,7 @@
             this.ClientSize = new System.Drawing.Size(957, 600);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormExpenditureList";
-            this.Text = "Expenditure List";
+            this.Text = "Expenditures";
             this.Load += new System.EventHandler(this.FormExpenditureList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

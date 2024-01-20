@@ -35,17 +35,24 @@ namespace APC.AllForms
         DeadMembersDTO dto = new DeadMembersDTO();
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormDeadMembers open = new FormDeadMembers();
-            open.isUpdate = true;
-            open.detail = detail;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            bll = new DeadMembersBLL();
-            dto = bll.Select();
-            dataGridView1.DataSource = dto.DeadMembers;
-            ClearFilters();
-            GetMemberCounts();
+            if (detail.DeadMemberID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                FormDeadMembers open = new FormDeadMembers();
+                open.isUpdate = true;
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                bll = new DeadMembersBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.DeadMembers;
+                ClearFilters();
+                GetMemberCounts();
+            }            
         }
         private void btnView_Click(object sender, EventArgs e)
         {

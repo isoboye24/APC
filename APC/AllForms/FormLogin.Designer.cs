@@ -69,6 +69,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 6;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // btnEnter
             // 
@@ -79,7 +80,7 @@
             this.btnEnter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(134, 43);
-            this.btnEnter.TabIndex = 7;
+            this.btnEnter.TabIndex = 2;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
@@ -93,7 +94,7 @@
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(134, 43);
-            this.btnClose.TabIndex = 8;
+            this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

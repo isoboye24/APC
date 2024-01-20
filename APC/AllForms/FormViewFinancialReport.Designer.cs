@@ -36,23 +36,23 @@
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSummary = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelTotalComment = new System.Windows.Forms.Panel();
-            this.labelTotalAmountRaised = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.labelTotalAmountSpent = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelTotalComment = new System.Windows.Forms.Panel();
+            this.labelTotalAmountRaised = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.labelTotalBalance = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSummary = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
@@ -62,8 +62,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panelTotalComment.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panelTotalComment.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 51);
             this.panel1.TabIndex = 40;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // labelTitle
             // 
@@ -160,22 +161,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1090, 617);
             this.tableLayoutPanel1.TabIndex = 44;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(481, 24);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 37);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
@@ -192,6 +177,22 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1064, 86);
             this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(481, 24);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 37);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -237,6 +238,28 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(840, 34);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Summary:";
+            // 
+            // txtSummary
+            // 
+            this.txtSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSummary.Location = new System.Drawing.Point(3, 43);
+            this.txtSummary.Multiline = true;
+            this.txtSummary.Name = "txtSummary";
+            this.txtSummary.ReadOnly = true;
+            this.txtSummary.Size = new System.Drawing.Size(840, 457);
+            this.txtSummary.TabIndex = 1;
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -256,44 +279,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(206, 503);
             this.tableLayoutPanel6.TabIndex = 1;
-            // 
-            // panelTotalComment
-            // 
-            this.panelTotalComment.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelTotalComment.Controls.Add(this.labelTotalAmountRaised);
-            this.panelTotalComment.Controls.Add(this.label7);
-            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalComment.Location = new System.Drawing.Point(3, 43);
-            this.panelTotalComment.Name = "panelTotalComment";
-            this.panelTotalComment.Size = new System.Drawing.Size(200, 132);
-            this.panelTotalComment.TabIndex = 9;
-            // 
-            // labelTotalAmountRaised
-            // 
-            this.labelTotalAmountRaised.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalAmountRaised.AutoSize = true;
-            this.labelTotalAmountRaised.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAmountRaised.ForeColor = System.Drawing.Color.White;
-            this.labelTotalAmountRaised.Location = new System.Drawing.Point(87, 78);
-            this.labelTotalAmountRaised.Name = "labelTotalAmountRaised";
-            this.labelTotalAmountRaised.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalAmountRaised.TabIndex = 0;
-            this.labelTotalAmountRaised.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(28, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.label7.Size = new System.Drawing.Size(138, 53);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Amount \r\nRaised";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel5
             // 
@@ -334,6 +319,44 @@
             this.label2.Text = "Total Amount \r\nSpent";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panelTotalComment
+            // 
+            this.panelTotalComment.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelTotalComment.Controls.Add(this.labelTotalAmountRaised);
+            this.panelTotalComment.Controls.Add(this.label7);
+            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalComment.Location = new System.Drawing.Point(3, 43);
+            this.panelTotalComment.Name = "panelTotalComment";
+            this.panelTotalComment.Size = new System.Drawing.Size(200, 132);
+            this.panelTotalComment.TabIndex = 9;
+            // 
+            // labelTotalAmountRaised
+            // 
+            this.labelTotalAmountRaised.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalAmountRaised.AutoSize = true;
+            this.labelTotalAmountRaised.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalAmountRaised.ForeColor = System.Drawing.Color.White;
+            this.labelTotalAmountRaised.Location = new System.Drawing.Point(87, 78);
+            this.labelTotalAmountRaised.Name = "labelTotalAmountRaised";
+            this.labelTotalAmountRaised.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalAmountRaised.TabIndex = 0;
+            this.labelTotalAmountRaised.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(28, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.label7.Size = new System.Drawing.Size(138, 53);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Amount \r\nRaised";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.SeaGreen;
@@ -371,28 +394,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Total Balance";
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Summary:";
-            // 
-            // txtSummary
-            // 
-            this.txtSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSummary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSummary.Location = new System.Drawing.Point(3, 43);
-            this.txtSummary.Multiline = true;
-            this.txtSummary.Name = "txtSummary";
-            this.txtSummary.ReadOnly = true;
-            this.txtSummary.Size = new System.Drawing.Size(840, 457);
-            this.txtSummary.TabIndex = 1;
-            // 
             // FormViewFinancialReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,10 +422,10 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.panelTotalComment.ResumeLayout(false);
-            this.panelTotalComment.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panelTotalComment.ResumeLayout(false);
+            this.panelTotalComment.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);

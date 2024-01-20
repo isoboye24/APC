@@ -459,7 +459,7 @@
             this.ClientSize = new System.Drawing.Size(952, 595);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormGeneralAttendanceList";
-            this.Text = "General Attendance List";
+            this.Text = "Meetings";
             this.Load += new System.EventHandler(this.FormAttendanceList_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

@@ -85,23 +85,31 @@ namespace APC.DAL.DAO
         public string SelectRecentEvent()
         {
             try
-            {                
-                var recentEvent = (from e in db.EVENTS.Where(x => x.isDeleted == false)
-                            join m in db.MONTHs on e.monthID equals m.monthID
-                            select new
-                            {
-                                eventID = e.eventID,
-                                eventTitle = e.title,
-                                summary = e.summary,
-                                coverImagePath = e.coverImagePath,
-                                day = e.day,
-                                monthID = e.monthID,
-                                monthName = m.monthName,
-                                year = e.year
-                            }).OrderByDescending(x => x.year).FirstOrDefault();
-                List<EventsDetailDTO> dto = new List<EventsDetailDTO>();
-                
-                return recentEvent.day+ "." +recentEvent.monthID +"." + recentEvent.year;
+            {
+                int eventCount = db.EVENTS.Count(x=>x.isDeleted == false);
+                if (eventCount > 0)
+                {
+                    var recentEvent = (from e in db.EVENTS.Where(x => x.isDeleted == false)
+                                       join m in db.MONTHs on e.monthID equals m.monthID
+                                       select new
+                                       {
+                                           eventID = e.eventID,
+                                           eventTitle = e.title,
+                                           summary = e.summary,
+                                           coverImagePath = e.coverImagePath,
+                                           day = e.day,
+                                           monthID = e.monthID,
+                                           monthName = m.monthName,
+                                           year = e.year
+                                       }).OrderByDescending(x => x.year).FirstOrDefault();
+                    List<EventsDetailDTO> dto = new List<EventsDetailDTO>();
+
+                    return recentEvent.day + "." + recentEvent.monthID + "." + recentEvent.year;
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {

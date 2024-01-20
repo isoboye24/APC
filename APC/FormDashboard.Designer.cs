@@ -45,98 +45,116 @@
             this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
             this.btnChildren = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.iconProfilePic = new FontAwesome.Sharp.IconPictureBox();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
             this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
             this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.iconClose = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanelCards = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRealCards = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelRegMembers = new System.Windows.Forms.Panel();
             this.iconRegMemCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelNoOfRegMem = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelMonthlyDues = new System.Windows.Forms.Panel();
             this.iconMonthlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelMonthlyDues = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.labelMonthlyDuesYearName = new System.Windows.Forms.Label();
             this.labelDuesMonthName = new System.Windows.Forms.Label();
-            this.panelYearlyDues = new System.Windows.Forms.Panel();
             this.iconYearlyDuesCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelYearlyDues = new System.Windows.Forms.Label();
             this.labelTotalDuesYear = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.panelMeetingAttend = new System.Windows.Forms.Panel();
             this.iconLastMeetingAttCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelLastMeetingAttendance = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelNoOfChildren = new System.Windows.Forms.Panel();
             this.iconNoOfChildrenCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelNoOfChildren = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panelMonthlyComment = new System.Windows.Forms.Panel();
-            this.iconMonthlyCommentsCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelMonthlyComments = new System.Windows.Forms.Label();
             this.labelComment = new System.Windows.Forms.Label();
             this.labelCommentMonthName = new System.Windows.Forms.Label();
-            this.panelLastEvent = new System.Windows.Forms.Panel();
             this.iconEventsCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelLastEventDate = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panelTotalComment = new System.Windows.Forms.Panel();
             this.iconTotalCommentsCard = new FontAwesome.Sharp.IconPictureBox();
             this.labelTotalComments = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.labelNameSurname = new System.Windows.Forms.Label();
             this.labelAccessLevel = new System.Windows.Forms.Label();
-            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panelRegMembers = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelNoOfChildren = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMeetingAttend = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMonthlyDues = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelLastEvent = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelYearlyDues = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelMonthlyComment = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelTotalComment = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
-            this.panelDesktop.SuspendLayout();
             this.tableLayoutPanelCards.SuspendLayout();
             this.tableLayoutPanelRealCards.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panelRegMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).BeginInit();
-            this.panelMonthlyDues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).BeginInit();
-            this.panelYearlyDues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).BeginInit();
-            this.panelMeetingAttend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).BeginInit();
-            this.panelNoOfChildren.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).BeginInit();
-            this.panelMonthlyComment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyCommentsCard)).BeginInit();
-            this.panelLastEvent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).BeginInit();
-            this.panelTotalComment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconTotalCommentsCard)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            this.panelDesktop.SuspendLayout();
+            this.panelRegMembers.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.panelNoOfChildren.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.panelMeetingAttend.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.panelMonthlyDues.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.panelLastEvent.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.panelYearlyDues.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            this.panelMonthlyComment.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.panelTotalComment.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -318,7 +336,7 @@
             this.btnAttendance.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnAttendance.Size = new System.Drawing.Size(200, 40);
             this.btnAttendance.TabIndex = 0;
-            this.btnAttendance.Text = "    Attendance";
+            this.btnAttendance.Text = "    Meetings";
             this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAttendance.UseVisualStyleBackColor = true;
@@ -447,8 +465,6 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelTitleBar.Controls.Add(this.labelUsername);
-            this.panelTitleBar.Controls.Add(this.iconProfilePic);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconMinimize);
@@ -460,31 +476,6 @@
             this.panelTitleBar.Size = new System.Drawing.Size(973, 56);
             this.panelTitleBar.TabIndex = 11;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown_1);
-            // 
-            // labelUsername
-            // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(561, 27);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(83, 17);
-            this.labelUsername.TabIndex = 15;
-            this.labelUsername.Text = "Vincent2023";
-            // 
-            // iconProfilePic
-            // 
-            this.iconProfilePic.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconProfilePic.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconProfilePic.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconProfilePic.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconProfilePic.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconProfilePic.IconSize = 35;
-            this.iconProfilePic.Location = new System.Drawing.Point(502, 12);
-            this.iconProfilePic.Name = "iconProfilePic";
-            this.iconProfilePic.Size = new System.Drawing.Size(53, 35);
-            this.iconProfilePic.TabIndex = 14;
-            this.iconProfilePic.TabStop = false;
             // 
             // iconCurrentChildForm
             // 
@@ -572,15 +563,23 @@
             this.panel2.Size = new System.Drawing.Size(973, 5);
             this.panel2.TabIndex = 12;
             // 
-            // panelDesktop
+            // panel1
             // 
-            this.panelDesktop.Controls.Add(this.tableLayoutPanelCards);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 61);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(973, 639);
-            this.panelDesktop.TabIndex = 13;
-            this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(200, 695);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(973, 5);
+            this.panel1.TabIndex = 18;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1168, 61);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 634);
+            this.panel3.TabIndex = 19;
             // 
             // tableLayoutPanelCards
             // 
@@ -603,14 +602,13 @@
             this.tableLayoutPanelRealCards.ColumnCount = 1;
             this.tableLayoutPanelRealCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelRealCards.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanelRealCards.Controls.Add(this.tableLayoutPanel4, 0, 2);
             this.tableLayoutPanelRealCards.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelRealCards.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelRealCards.Name = "tableLayoutPanelRealCards";
             this.tableLayoutPanelRealCards.RowCount = 3;
-            this.tableLayoutPanelRealCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanelRealCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanelRealCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanelRealCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanelRealCards.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanelRealCards.Size = new System.Drawing.Size(772, 633);
             this.tableLayoutPanelRealCards.TabIndex = 1;
             // 
@@ -624,10 +622,10 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel3.Controls.Add(this.panelRegMembers, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panelNoOfChildren, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panelMeetingAttend, 5, 1);
             this.tableLayoutPanel3.Controls.Add(this.panelMonthlyDues, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.panelYearlyDues, 3, 3);
-            this.tableLayoutPanel3.Controls.Add(this.panelMeetingAttend, 5, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panelNoOfChildren, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.panelMonthlyComment, 5, 3);
             this.tableLayoutPanel3.Controls.Add(this.panelLastEvent, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.panelTotalComment, 3, 5);
@@ -636,36 +634,27 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(766, 367);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(766, 398);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // panelRegMembers
-            // 
-            this.panelRegMembers.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panelRegMembers.Controls.Add(this.iconRegMemCard);
-            this.panelRegMembers.Controls.Add(this.labelNoOfRegMem);
-            this.panelRegMembers.Controls.Add(this.label2);
-            this.panelRegMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRegMembers.Location = new System.Drawing.Point(18, 3);
-            this.panelRegMembers.Name = "panelRegMembers";
-            this.panelRegMembers.Size = new System.Drawing.Size(223, 94);
-            this.panelRegMembers.TabIndex = 0;
             // 
             // iconRegMemCard
             // 
             this.iconRegMemCard.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.iconRegMemCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconRegMemCard.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.iconRegMemCard.IconColor = System.Drawing.Color.White;
             this.iconRegMemCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconRegMemCard.Location = new System.Drawing.Point(18, 39);
+            this.iconRegMemCard.IconSize = 31;
+            this.iconRegMemCard.Location = new System.Drawing.Point(183, 10);
+            this.iconRegMemCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconRegMemCard.Name = "iconRegMemCard";
-            this.iconRegMemCard.Size = new System.Drawing.Size(32, 32);
+            this.iconRegMemCard.Size = new System.Drawing.Size(31, 38);
             this.iconRegMemCard.TabIndex = 1;
             this.iconRegMemCard.TabStop = false;
             // 
@@ -675,7 +664,7 @@
             this.labelNoOfRegMem.AutoSize = true;
             this.labelNoOfRegMem.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoOfRegMem.ForeColor = System.Drawing.Color.White;
-            this.labelNoOfRegMem.Location = new System.Drawing.Point(171, 42);
+            this.labelNoOfRegMem.Location = new System.Drawing.Point(177, 57);
             this.labelNoOfRegMem.Name = "labelNoOfRegMem";
             this.labelNoOfRegMem.Size = new System.Drawing.Size(43, 50);
             this.labelNoOfRegMem.TabIndex = 0;
@@ -683,38 +672,28 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 6);
+            this.label2.Location = new System.Drawing.Point(3, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.Size = new System.Drawing.Size(174, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Registered Members";
-            // 
-            // panelMonthlyDues
-            // 
-            this.panelMonthlyDues.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelMonthlyDues.Controls.Add(this.iconMonthlyDuesCard);
-            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDues);
-            this.panelMonthlyDues.Controls.Add(this.label17);
-            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDuesYearName);
-            this.panelMonthlyDues.Controls.Add(this.labelDuesMonthName);
-            this.panelMonthlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonthlyDues.Location = new System.Drawing.Point(18, 113);
-            this.panelMonthlyDues.Name = "panelMonthlyDues";
-            this.panelMonthlyDues.Size = new System.Drawing.Size(223, 94);
-            this.panelMonthlyDues.TabIndex = 3;
             // 
             // iconMonthlyDuesCard
             // 
             this.iconMonthlyDuesCard.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMonthlyDuesCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconMonthlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
             this.iconMonthlyDuesCard.IconColor = System.Drawing.Color.White;
             this.iconMonthlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMonthlyDuesCard.Location = new System.Drawing.Point(13, 47);
+            this.iconMonthlyDuesCard.IconSize = 31;
+            this.iconMonthlyDuesCard.Location = new System.Drawing.Point(183, 10);
+            this.iconMonthlyDuesCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconMonthlyDuesCard.Name = "iconMonthlyDuesCard";
-            this.iconMonthlyDuesCard.Size = new System.Drawing.Size(32, 32);
+            this.iconMonthlyDuesCard.Size = new System.Drawing.Size(31, 38);
             this.iconMonthlyDuesCard.TabIndex = 1;
             this.iconMonthlyDuesCard.TabStop = false;
             // 
@@ -724,7 +703,7 @@
             this.labelMonthlyDues.AutoSize = true;
             this.labelMonthlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyDues.Location = new System.Drawing.Point(171, 42);
+            this.labelMonthlyDues.Location = new System.Drawing.Point(177, 57);
             this.labelMonthlyDues.Name = "labelMonthlyDues";
             this.labelMonthlyDues.Size = new System.Drawing.Size(43, 50);
             this.labelMonthlyDues.TabIndex = 0;
@@ -732,21 +711,23 @@
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(9, 6);
+            this.label17.Location = new System.Drawing.Point(3, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 20);
+            this.label17.Size = new System.Drawing.Size(62, 16);
             this.label17.TabIndex = 0;
             this.label17.Text = "Dues in";
             // 
             // labelMonthlyDuesYearName
             // 
+            this.labelMonthlyDuesYearName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMonthlyDuesYearName.AutoSize = true;
             this.labelMonthlyDuesYearName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyDuesYearName.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyDuesYearName.Location = new System.Drawing.Point(151, 6);
+            this.labelMonthlyDuesYearName.Location = new System.Drawing.Point(129, 22);
             this.labelMonthlyDuesYearName.Name = "labelMonthlyDuesYearName";
             this.labelMonthlyDuesYearName.Size = new System.Drawing.Size(45, 20);
             this.labelMonthlyDuesYearName.TabIndex = 0;
@@ -757,34 +738,24 @@
             this.labelDuesMonthName.AutoSize = true;
             this.labelDuesMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDuesMonthName.ForeColor = System.Drawing.Color.White;
-            this.labelDuesMonthName.Location = new System.Drawing.Point(67, 6);
+            this.labelDuesMonthName.Location = new System.Drawing.Point(71, 0);
             this.labelDuesMonthName.Name = "labelDuesMonthName";
-            this.labelDuesMonthName.Size = new System.Drawing.Size(85, 20);
+            this.labelDuesMonthName.Size = new System.Drawing.Size(85, 16);
             this.labelDuesMonthName.TabIndex = 0;
             this.labelDuesMonthName.Text = "September";
-            // 
-            // panelYearlyDues
-            // 
-            this.panelYearlyDues.BackColor = System.Drawing.Color.DarkRed;
-            this.panelYearlyDues.Controls.Add(this.iconYearlyDuesCard);
-            this.panelYearlyDues.Controls.Add(this.labelYearlyDues);
-            this.panelYearlyDues.Controls.Add(this.labelTotalDuesYear);
-            this.panelYearlyDues.Controls.Add(this.label14);
-            this.panelYearlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelYearlyDues.Location = new System.Drawing.Point(277, 113);
-            this.panelYearlyDues.Name = "panelYearlyDues";
-            this.panelYearlyDues.Size = new System.Drawing.Size(223, 94);
-            this.panelYearlyDues.TabIndex = 4;
             // 
             // iconYearlyDuesCard
             // 
             this.iconYearlyDuesCard.BackColor = System.Drawing.Color.DarkRed;
+            this.iconYearlyDuesCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconYearlyDuesCard.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
             this.iconYearlyDuesCard.IconColor = System.Drawing.Color.White;
             this.iconYearlyDuesCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconYearlyDuesCard.Location = new System.Drawing.Point(7, 47);
+            this.iconYearlyDuesCard.IconSize = 31;
+            this.iconYearlyDuesCard.Location = new System.Drawing.Point(183, 10);
+            this.iconYearlyDuesCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconYearlyDuesCard.Name = "iconYearlyDuesCard";
-            this.iconYearlyDuesCard.Size = new System.Drawing.Size(32, 32);
+            this.iconYearlyDuesCard.Size = new System.Drawing.Size(31, 38);
             this.iconYearlyDuesCard.TabIndex = 1;
             this.iconYearlyDuesCard.TabStop = false;
             // 
@@ -794,7 +765,7 @@
             this.labelYearlyDues.AutoSize = true;
             this.labelYearlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYearlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelYearlyDues.Location = new System.Drawing.Point(171, 42);
+            this.labelYearlyDues.Location = new System.Drawing.Point(177, 57);
             this.labelYearlyDues.Name = "labelYearlyDues";
             this.labelYearlyDues.Size = new System.Drawing.Size(43, 50);
             this.labelYearlyDues.TabIndex = 0;
@@ -802,47 +773,39 @@
             // 
             // labelTotalDuesYear
             // 
+            this.labelTotalDuesYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotalDuesYear.AutoSize = true;
             this.labelTotalDuesYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalDuesYear.ForeColor = System.Drawing.Color.White;
-            this.labelTotalDuesYear.Location = new System.Drawing.Point(102, 6);
+            this.labelTotalDuesYear.Location = new System.Drawing.Point(124, 12);
             this.labelTotalDuesYear.Name = "labelTotalDuesYear";
-            this.labelTotalDuesYear.Size = new System.Drawing.Size(45, 20);
+            this.labelTotalDuesYear.Size = new System.Drawing.Size(47, 20);
             this.labelTotalDuesYear.TabIndex = 0;
             this.labelTotalDuesYear.Text = "2023";
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 6);
+            this.label14.Location = new System.Drawing.Point(18, 12);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "Total Dues in";
             // 
-            // panelMeetingAttend
-            // 
-            this.panelMeetingAttend.BackColor = System.Drawing.Color.DeepPink;
-            this.panelMeetingAttend.Controls.Add(this.iconLastMeetingAttCard);
-            this.panelMeetingAttend.Controls.Add(this.labelLastMeetingAttendance);
-            this.panelMeetingAttend.Controls.Add(this.label4);
-            this.panelMeetingAttend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMeetingAttend.Location = new System.Drawing.Point(536, 3);
-            this.panelMeetingAttend.Name = "panelMeetingAttend";
-            this.panelMeetingAttend.Size = new System.Drawing.Size(227, 94);
-            this.panelMeetingAttend.TabIndex = 2;
-            // 
             // iconLastMeetingAttCard
             // 
             this.iconLastMeetingAttCard.BackColor = System.Drawing.Color.DeepPink;
+            this.iconLastMeetingAttCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconLastMeetingAttCard.IconChar = FontAwesome.Sharp.IconChar.Handshake;
             this.iconLastMeetingAttCard.IconColor = System.Drawing.Color.White;
             this.iconLastMeetingAttCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconLastMeetingAttCard.Location = new System.Drawing.Point(18, 53);
+            this.iconLastMeetingAttCard.Location = new System.Drawing.Point(186, 10);
+            this.iconLastMeetingAttCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconLastMeetingAttCard.Name = "iconLastMeetingAttCard";
-            this.iconLastMeetingAttCard.Size = new System.Drawing.Size(32, 32);
+            this.iconLastMeetingAttCard.Size = new System.Drawing.Size(32, 38);
             this.iconLastMeetingAttCard.TabIndex = 1;
             this.iconLastMeetingAttCard.TabStop = false;
             // 
@@ -852,7 +815,7 @@
             this.labelLastMeetingAttendance.AutoSize = true;
             this.labelLastMeetingAttendance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLastMeetingAttendance.ForeColor = System.Drawing.Color.White;
-            this.labelLastMeetingAttendance.Location = new System.Drawing.Point(171, 42);
+            this.labelLastMeetingAttendance.Location = new System.Drawing.Point(181, 57);
             this.labelLastMeetingAttendance.Name = "labelLastMeetingAttendance";
             this.labelLastMeetingAttendance.Size = new System.Drawing.Size(43, 50);
             this.labelLastMeetingAttendance.TabIndex = 0;
@@ -860,36 +823,28 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Location = new System.Drawing.Point(3, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 20);
+            this.label4.Size = new System.Drawing.Size(177, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "Last Meeting\'s Attendance";
-            // 
-            // panelNoOfChildren
-            // 
-            this.panelNoOfChildren.BackColor = System.Drawing.Color.Green;
-            this.panelNoOfChildren.Controls.Add(this.iconNoOfChildrenCard);
-            this.panelNoOfChildren.Controls.Add(this.labelNoOfChildren);
-            this.panelNoOfChildren.Controls.Add(this.label6);
-            this.panelNoOfChildren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNoOfChildren.Location = new System.Drawing.Point(277, 3);
-            this.panelNoOfChildren.Name = "panelNoOfChildren";
-            this.panelNoOfChildren.Size = new System.Drawing.Size(223, 94);
-            this.panelNoOfChildren.TabIndex = 1;
             // 
             // iconNoOfChildrenCard
             // 
             this.iconNoOfChildrenCard.BackColor = System.Drawing.Color.Green;
+            this.iconNoOfChildrenCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconNoOfChildrenCard.IconChar = FontAwesome.Sharp.IconChar.Children;
             this.iconNoOfChildrenCard.IconColor = System.Drawing.Color.White;
             this.iconNoOfChildrenCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconNoOfChildrenCard.Location = new System.Drawing.Point(18, 39);
+            this.iconNoOfChildrenCard.IconSize = 31;
+            this.iconNoOfChildrenCard.Location = new System.Drawing.Point(183, 10);
+            this.iconNoOfChildrenCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconNoOfChildrenCard.Name = "iconNoOfChildrenCard";
-            this.iconNoOfChildrenCard.Size = new System.Drawing.Size(32, 32);
+            this.iconNoOfChildrenCard.Size = new System.Drawing.Size(31, 38);
             this.iconNoOfChildrenCard.TabIndex = 1;
             this.iconNoOfChildrenCard.TabStop = false;
             // 
@@ -899,7 +854,7 @@
             this.labelNoOfChildren.AutoSize = true;
             this.labelNoOfChildren.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoOfChildren.ForeColor = System.Drawing.Color.White;
-            this.labelNoOfChildren.Location = new System.Drawing.Point(171, 42);
+            this.labelNoOfChildren.Location = new System.Drawing.Point(177, 57);
             this.labelNoOfChildren.Name = "labelNoOfChildren";
             this.labelNoOfChildren.Size = new System.Drawing.Size(43, 50);
             this.labelNoOfChildren.TabIndex = 0;
@@ -907,39 +862,15 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 6);
+            this.label6.Location = new System.Drawing.Point(3, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 20);
+            this.label6.Size = new System.Drawing.Size(174, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "No. of Children";
-            // 
-            // panelMonthlyComment
-            // 
-            this.panelMonthlyComment.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelMonthlyComment.Controls.Add(this.iconMonthlyCommentsCard);
-            this.panelMonthlyComment.Controls.Add(this.labelMonthlyComments);
-            this.panelMonthlyComment.Controls.Add(this.labelComment);
-            this.panelMonthlyComment.Controls.Add(this.labelCommentMonthName);
-            this.panelMonthlyComment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonthlyComment.Location = new System.Drawing.Point(536, 113);
-            this.panelMonthlyComment.Name = "panelMonthlyComment";
-            this.panelMonthlyComment.Size = new System.Drawing.Size(227, 94);
-            this.panelMonthlyComment.TabIndex = 5;
-            // 
-            // iconMonthlyCommentsCard
-            // 
-            this.iconMonthlyCommentsCard.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMonthlyCommentsCard.IconChar = FontAwesome.Sharp.IconChar.Comment;
-            this.iconMonthlyCommentsCard.IconColor = System.Drawing.Color.White;
-            this.iconMonthlyCommentsCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMonthlyCommentsCard.Location = new System.Drawing.Point(18, 47);
-            this.iconMonthlyCommentsCard.Name = "iconMonthlyCommentsCard";
-            this.iconMonthlyCommentsCard.Size = new System.Drawing.Size(32, 32);
-            this.iconMonthlyCommentsCard.TabIndex = 1;
-            this.iconMonthlyCommentsCard.TabStop = false;
             // 
             // labelMonthlyComments
             // 
@@ -947,7 +878,7 @@
             this.labelMonthlyComments.AutoSize = true;
             this.labelMonthlyComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyComments.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyComments.Location = new System.Drawing.Point(171, 42);
+            this.labelMonthlyComments.Location = new System.Drawing.Point(181, 57);
             this.labelMonthlyComments.Name = "labelMonthlyComments";
             this.labelMonthlyComments.Size = new System.Drawing.Size(43, 50);
             this.labelMonthlyComments.TabIndex = 0;
@@ -955,48 +886,40 @@
             // 
             // labelComment
             // 
+            this.labelComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelComment.AutoSize = true;
             this.labelComment.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelComment.ForeColor = System.Drawing.Color.White;
-            this.labelComment.Location = new System.Drawing.Point(95, 7);
+            this.labelComment.Location = new System.Drawing.Point(110, 12);
             this.labelComment.Name = "labelComment";
-            this.labelComment.Size = new System.Drawing.Size(85, 20);
+            this.labelComment.Size = new System.Drawing.Size(102, 20);
             this.labelComment.TabIndex = 0;
             this.labelComment.Text = "Comments";
             // 
             // labelCommentMonthName
             // 
+            this.labelCommentMonthName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelCommentMonthName.AutoSize = true;
             this.labelCommentMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCommentMonthName.ForeColor = System.Drawing.Color.White;
-            this.labelCommentMonthName.Location = new System.Drawing.Point(14, 6);
+            this.labelCommentMonthName.Location = new System.Drawing.Point(19, 12);
             this.labelCommentMonthName.Name = "labelCommentMonthName";
             this.labelCommentMonthName.Size = new System.Drawing.Size(85, 20);
             this.labelCommentMonthName.TabIndex = 0;
             this.labelCommentMonthName.Text = "September";
             // 
-            // panelLastEvent
-            // 
-            this.panelLastEvent.BackColor = System.Drawing.Color.DarkOrchid;
-            this.panelLastEvent.Controls.Add(this.iconEventsCard);
-            this.panelLastEvent.Controls.Add(this.labelLastEventDate);
-            this.panelLastEvent.Controls.Add(this.label12);
-            this.panelLastEvent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLastEvent.Location = new System.Drawing.Point(18, 223);
-            this.panelLastEvent.Name = "panelLastEvent";
-            this.panelLastEvent.Size = new System.Drawing.Size(223, 94);
-            this.panelLastEvent.TabIndex = 6;
-            this.panelLastEvent.Click += new System.EventHandler(this.panelLastEvent_Click_1);
-            // 
             // iconEventsCard
             // 
-            this.iconEventsCard.BackColor = System.Drawing.Color.DarkOrchid;
+            this.iconEventsCard.BackColor = System.Drawing.Color.Indigo;
+            this.iconEventsCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconEventsCard.IconChar = FontAwesome.Sharp.IconChar.GlassCheers;
             this.iconEventsCard.IconColor = System.Drawing.Color.White;
             this.iconEventsCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconEventsCard.Location = new System.Drawing.Point(18, 39);
+            this.iconEventsCard.IconSize = 31;
+            this.iconEventsCard.Location = new System.Drawing.Point(183, 10);
+            this.iconEventsCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconEventsCard.Name = "iconEventsCard";
-            this.iconEventsCard.Size = new System.Drawing.Size(32, 32);
+            this.iconEventsCard.Size = new System.Drawing.Size(31, 38);
             this.iconEventsCard.TabIndex = 1;
             this.iconEventsCard.TabStop = false;
             // 
@@ -1006,7 +929,7 @@
             this.labelLastEventDate.AutoSize = true;
             this.labelLastEventDate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLastEventDate.ForeColor = System.Drawing.Color.White;
-            this.labelLastEventDate.Location = new System.Drawing.Point(59, 34);
+            this.labelLastEventDate.Location = new System.Drawing.Point(56, 57);
             this.labelLastEventDate.Name = "labelLastEventDate";
             this.labelLastEventDate.Size = new System.Drawing.Size(164, 45);
             this.labelLastEventDate.TabIndex = 0;
@@ -1018,33 +941,23 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 6);
+            this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "Last Event";
             // 
-            // panelTotalComment
-            // 
-            this.panelTotalComment.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panelTotalComment.Controls.Add(this.iconTotalCommentsCard);
-            this.panelTotalComment.Controls.Add(this.labelTotalComments);
-            this.panelTotalComment.Controls.Add(this.label7);
-            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalComment.Location = new System.Drawing.Point(277, 223);
-            this.panelTotalComment.Name = "panelTotalComment";
-            this.panelTotalComment.Size = new System.Drawing.Size(223, 94);
-            this.panelTotalComment.TabIndex = 7;
-            // 
             // iconTotalCommentsCard
             // 
-            this.iconTotalCommentsCard.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.iconTotalCommentsCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconTotalCommentsCard.IconChar = FontAwesome.Sharp.IconChar.CommentDots;
             this.iconTotalCommentsCard.IconColor = System.Drawing.Color.White;
             this.iconTotalCommentsCard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconTotalCommentsCard.Location = new System.Drawing.Point(18, 39);
+            this.iconTotalCommentsCard.IconSize = 31;
+            this.iconTotalCommentsCard.Location = new System.Drawing.Point(183, 10);
+            this.iconTotalCommentsCard.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.iconTotalCommentsCard.Name = "iconTotalCommentsCard";
-            this.iconTotalCommentsCard.Size = new System.Drawing.Size(32, 32);
+            this.iconTotalCommentsCard.Size = new System.Drawing.Size(31, 38);
             this.iconTotalCommentsCard.TabIndex = 1;
             this.iconTotalCommentsCard.TabStop = false;
             // 
@@ -1054,7 +967,7 @@
             this.labelTotalComments.AutoSize = true;
             this.labelTotalComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalComments.ForeColor = System.Drawing.Color.White;
-            this.labelTotalComments.Location = new System.Drawing.Point(172, 29);
+            this.labelTotalComments.Location = new System.Drawing.Point(177, 57);
             this.labelTotalComments.Name = "labelTotalComments";
             this.labelTotalComments.Size = new System.Drawing.Size(43, 50);
             this.labelTotalComments.TabIndex = 0;
@@ -1065,42 +978,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(14, 6);
+            this.label7.Location = new System.Drawing.Point(3, 10);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Total Comments";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 386);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(491, 237);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(200, 695);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 5);
-            this.panel1.TabIndex = 18;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1168, 61);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 634);
-            this.panel3.TabIndex = 19;
             // 
             // tableLayoutPanel1
             // 
@@ -1118,7 +1001,7 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
@@ -1173,16 +1056,6 @@
             this.labelAccessLevel.Text = "Access Level";
             this.labelAccessLevel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // picProfilePic
-            // 
-            this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picProfilePic.Location = new System.Drawing.Point(38, 3);
-            this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(100, 97);
-            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 1;
-            this.picProfilePic.TabStop = false;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 3;
@@ -1195,9 +1068,344 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(177, 103);
             this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picProfilePic.Location = new System.Drawing.Point(38, 3);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(100, 97);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 1;
+            this.picProfilePic.TabStop = false;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Controls.Add(this.tableLayoutPanelCards);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(200, 61);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(973, 639);
+            this.panelDesktop.TabIndex = 13;
+            this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
+            // 
+            // panelRegMembers
+            // 
+            this.panelRegMembers.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panelRegMembers.ColumnCount = 1;
+            this.panelRegMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.Controls.Add(this.labelNoOfRegMem, 0, 1);
+            this.panelRegMembers.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.panelRegMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRegMembers.Location = new System.Drawing.Point(18, 3);
+            this.panelRegMembers.Name = "panelRegMembers";
+            this.panelRegMembers.RowCount = 2;
+            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.Size = new System.Drawing.Size(223, 114);
+            this.panelRegMembers.TabIndex = 9;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel8.Controls.Add(this.iconRegMemCard, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel8.TabIndex = 8;
+            // 
+            // panelNoOfChildren
+            // 
+            this.panelNoOfChildren.BackColor = System.Drawing.Color.Green;
+            this.panelNoOfChildren.ColumnCount = 1;
+            this.panelNoOfChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.Controls.Add(this.labelNoOfChildren, 0, 1);
+            this.panelNoOfChildren.Controls.Add(this.tableLayoutPanel9, 0, 0);
+            this.panelNoOfChildren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNoOfChildren.Location = new System.Drawing.Point(277, 3);
+            this.panelNoOfChildren.Name = "panelNoOfChildren";
+            this.panelNoOfChildren.RowCount = 2;
+            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.Size = new System.Drawing.Size(223, 114);
+            this.panelNoOfChildren.TabIndex = 9;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel9.Controls.Add(this.iconNoOfChildrenCard, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel9.TabIndex = 8;
+            // 
+            // panelMeetingAttend
+            // 
+            this.panelMeetingAttend.BackColor = System.Drawing.Color.DeepPink;
+            this.panelMeetingAttend.ColumnCount = 1;
+            this.panelMeetingAttend.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.panelMeetingAttend.Controls.Add(this.labelLastMeetingAttendance, 0, 1);
+            this.panelMeetingAttend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMeetingAttend.Location = new System.Drawing.Point(536, 3);
+            this.panelMeetingAttend.Name = "panelMeetingAttend";
+            this.panelMeetingAttend.RowCount = 2;
+            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.Size = new System.Drawing.Size(227, 114);
+            this.panelMeetingAttend.TabIndex = 9;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel7.Controls.Add(this.iconLastMeetingAttCard, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(221, 51);
+            this.tableLayoutPanel7.TabIndex = 8;
+            // 
+            // panelMonthlyDues
+            // 
+            this.panelMonthlyDues.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelMonthlyDues.ColumnCount = 1;
+            this.panelMonthlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDues, 0, 1);
+            this.panelMonthlyDues.Controls.Add(this.tableLayoutPanel11, 0, 0);
+            this.panelMonthlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonthlyDues.Location = new System.Drawing.Point(18, 133);
+            this.panelMonthlyDues.Name = "panelMonthlyDues";
+            this.panelMonthlyDues.RowCount = 2;
+            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.Size = new System.Drawing.Size(223, 114);
+            this.panelMonthlyDues.TabIndex = 9;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel11.Controls.Add(this.iconMonthlyDuesCard, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel13, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel11.TabIndex = 8;
+            // 
+            // panelLastEvent
+            // 
+            this.panelLastEvent.BackColor = System.Drawing.Color.Indigo;
+            this.panelLastEvent.ColumnCount = 1;
+            this.panelLastEvent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.Controls.Add(this.labelLastEventDate, 0, 1);
+            this.panelLastEvent.Controls.Add(this.tableLayoutPanel12, 0, 0);
+            this.panelLastEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLastEvent.Location = new System.Drawing.Point(18, 263);
+            this.panelLastEvent.Name = "panelLastEvent";
+            this.panelLastEvent.RowCount = 2;
+            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.Size = new System.Drawing.Size(223, 114);
+            this.panelLastEvent.TabIndex = 9;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel12.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.iconEventsCard, 1, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel12.TabIndex = 8;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.labelMonthlyDuesYearName, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(174, 45);
+            this.tableLayoutPanel13.TabIndex = 2;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 2;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel14.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.labelDuesMonthName, 1, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 1;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(171, 16);
+            this.tableLayoutPanel14.TabIndex = 0;
+            // 
+            // panelYearlyDues
+            // 
+            this.panelYearlyDues.BackColor = System.Drawing.Color.DarkRed;
+            this.panelYearlyDues.ColumnCount = 1;
+            this.panelYearlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.Controls.Add(this.labelYearlyDues, 0, 1);
+            this.panelYearlyDues.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.panelYearlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelYearlyDues.Location = new System.Drawing.Point(277, 133);
+            this.panelYearlyDues.Name = "panelYearlyDues";
+            this.panelYearlyDues.RowCount = 2;
+            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.Size = new System.Drawing.Size(223, 114);
+            this.panelYearlyDues.TabIndex = 9;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel15.Controls.Add(this.iconYearlyDuesCard, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 0, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel15.TabIndex = 8;
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 2;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel16.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.labelTotalDuesYear, 1, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 1;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(174, 45);
+            this.tableLayoutPanel16.TabIndex = 2;
+            // 
+            // panelMonthlyComment
+            // 
+            this.panelMonthlyComment.BackColor = System.Drawing.Color.Olive;
+            this.panelMonthlyComment.ColumnCount = 1;
+            this.panelMonthlyComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.Controls.Add(this.labelMonthlyComments, 0, 1);
+            this.panelMonthlyComment.Controls.Add(this.tableLayoutPanel17, 0, 0);
+            this.panelMonthlyComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonthlyComment.Location = new System.Drawing.Point(536, 133);
+            this.panelMonthlyComment.Name = "panelMonthlyComment";
+            this.panelMonthlyComment.RowCount = 2;
+            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.Size = new System.Drawing.Size(227, 114);
+            this.panelMonthlyComment.TabIndex = 9;
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 1;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel18, 0, 0);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 1;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(221, 51);
+            this.tableLayoutPanel17.TabIndex = 8;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel18.Controls.Add(this.labelCommentMonthName, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.labelComment, 1, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 1;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(215, 45);
+            this.tableLayoutPanel18.TabIndex = 2;
+            // 
+            // panelTotalComment
+            // 
+            this.panelTotalComment.BackColor = System.Drawing.Color.Black;
+            this.panelTotalComment.ColumnCount = 1;
+            this.panelTotalComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.Controls.Add(this.labelTotalComments, 0, 1);
+            this.panelTotalComment.Controls.Add(this.tableLayoutPanel10, 0, 0);
+            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalComment.Location = new System.Drawing.Point(277, 263);
+            this.panelTotalComment.Name = "panelTotalComment";
+            this.panelTotalComment.RowCount = 2;
+            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.Size = new System.Drawing.Size(223, 114);
+            this.panelTotalComment.TabIndex = 9;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel10.Controls.Add(this.iconTotalCommentsCard, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(217, 51);
+            this.tableLayoutPanel10.TabIndex = 8;
             // 
             // FormDashboard
             // 
@@ -1222,45 +1430,64 @@
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconProfilePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
-            this.panelDesktop.ResumeLayout(false);
             this.tableLayoutPanelCards.ResumeLayout(false);
             this.tableLayoutPanelRealCards.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panelRegMembers.ResumeLayout(false);
-            this.panelRegMembers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconRegMemCard)).EndInit();
-            this.panelMonthlyDues.ResumeLayout(false);
-            this.panelMonthlyDues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyDuesCard)).EndInit();
-            this.panelYearlyDues.ResumeLayout(false);
-            this.panelYearlyDues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconYearlyDuesCard)).EndInit();
-            this.panelMeetingAttend.ResumeLayout(false);
-            this.panelMeetingAttend.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconLastMeetingAttCard)).EndInit();
-            this.panelNoOfChildren.ResumeLayout(false);
-            this.panelNoOfChildren.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconNoOfChildrenCard)).EndInit();
-            this.panelMonthlyComment.ResumeLayout(false);
-            this.panelMonthlyComment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMonthlyCommentsCard)).EndInit();
-            this.panelLastEvent.ResumeLayout(false);
-            this.panelLastEvent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconEventsCard)).EndInit();
-            this.panelTotalComment.ResumeLayout(false);
-            this.panelTotalComment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconTotalCommentsCard)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panelRegMembers.ResumeLayout(false);
+            this.panelRegMembers.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.panelNoOfChildren.ResumeLayout(false);
+            this.panelNoOfChildren.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.panelMeetingAttend.ResumeLayout(false);
+            this.panelMeetingAttend.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.panelMonthlyDues.ResumeLayout(false);
+            this.panelMonthlyDues.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.panelLastEvent.ResumeLayout(false);
+            this.panelLastEvent.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.panelYearlyDues.ResumeLayout(false);
+            this.panelYearlyDues.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            this.panelMonthlyComment.ResumeLayout(false);
+            this.panelMonthlyComment.PerformLayout();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
+            this.panelTotalComment.ResumeLayout(false);
+            this.panelTotalComment.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1280,10 +1507,7 @@
         private System.Windows.Forms.Label labelTitleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelDesktop;
-        private FontAwesome.Sharp.IconPictureBox iconProfilePic;
         private FontAwesome.Sharp.IconButton btnLogout;
-        private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
@@ -1296,41 +1520,31 @@
         private FontAwesome.Sharp.IconButton btnDocuments;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCards;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRealCards;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Panel panelRegMembers;
-        private System.Windows.Forms.Panel panelMonthlyDues;
+        private FontAwesome.Sharp.IconPictureBox iconRegMemCard;
+        private System.Windows.Forms.Label labelNoOfRegMem;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconMonthlyDuesCard;
         private System.Windows.Forms.Label labelMonthlyDues;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label labelMonthlyDuesYearName;
         private System.Windows.Forms.Label labelDuesMonthName;
-        private System.Windows.Forms.Panel panelYearlyDues;
         private FontAwesome.Sharp.IconPictureBox iconYearlyDuesCard;
         private System.Windows.Forms.Label labelYearlyDues;
         private System.Windows.Forms.Label labelTotalDuesYear;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panelMeetingAttend;
         private FontAwesome.Sharp.IconPictureBox iconLastMeetingAttCard;
         private System.Windows.Forms.Label labelLastMeetingAttendance;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelNoOfChildren;
-        private FontAwesome.Sharp.IconPictureBox iconRegMemCard;
         private FontAwesome.Sharp.IconPictureBox iconNoOfChildrenCard;
-        private System.Windows.Forms.Label labelNoOfRegMem;
         private System.Windows.Forms.Label labelNoOfChildren;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panelMonthlyComment;
-        private FontAwesome.Sharp.IconPictureBox iconMonthlyCommentsCard;
         private System.Windows.Forms.Label labelMonthlyComments;
         private System.Windows.Forms.Label labelComment;
         private System.Windows.Forms.Label labelCommentMonthName;
-        private System.Windows.Forms.Panel panelLastEvent;
         private FontAwesome.Sharp.IconPictureBox iconEventsCard;
         private System.Windows.Forms.Label labelLastEventDate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panelTotalComment;
         private FontAwesome.Sharp.IconPictureBox iconTotalCommentsCard;
         private System.Windows.Forms.Label labelTotalComments;
         private System.Windows.Forms.Label label7;
@@ -1341,5 +1555,26 @@
         private System.Windows.Forms.Label labelAccessLevel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.PictureBox picProfilePic;
+        private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.TableLayoutPanel panelRegMembers;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel panelNoOfChildren;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TableLayoutPanel panelMonthlyDues;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.TableLayoutPanel panelMeetingAttend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel panelLastEvent;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.TableLayoutPanel panelYearlyDues;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        private System.Windows.Forms.TableLayoutPanel panelMonthlyComment;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel panelTotalComment;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
     }
 }

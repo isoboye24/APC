@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace APC.DAL.DAO
 {
@@ -286,6 +288,27 @@ namespace APC.DAL.DAO
             {
                 int numberOfMembers = db.MEMBERs.Count(x=>x.isDeleted==false && x.genderID==1);
                 return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public string GetLastMemberUsername()
+        {            
+            try
+            {
+                string username;
+                var lastMemberUsername = db.MEMBERs.OrderByDescending(x=>x.memberID).FirstOrDefault();
+                if (lastMemberUsername != null)
+                {
+                    username = lastMemberUsername.username;
+                    return username;
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {

@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,16 +50,16 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBrowse = new System.Windows.Forms.Button();
+            this.picEventCoverImage = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.txtImagePath = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSummary = new System.Windows.Forms.TextBox();
-            this.picEventCoverImage = new System.Windows.Forms.PictureBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -66,11 +68,9 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventCoverImage)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEventCoverImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +84,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(958, 51);
             this.panel1.TabIndex = 37;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
             // labelTitle
             // 
@@ -95,6 +96,31 @@
             this.labelTitle.Size = new System.Drawing.Size(117, 25);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "ADD EVENT";
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
+            this.picClose.Location = new System.Drawing.Point(912, 11);
+            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(32, 32);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.TabIndex = 6;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
+            this.picMinimize.Location = new System.Drawing.Point(853, 11);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(32, 32);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picMinimize.TabIndex = 5;
+            this.picMinimize.TabStop = false;
             // 
             // panel3
             // 
@@ -346,6 +372,16 @@
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
+            // picEventCoverImage
+            // 
+            this.picEventCoverImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picEventCoverImage.Location = new System.Drawing.Point(3, 3);
+            this.picEventCoverImage.Name = "picEventCoverImage";
+            this.picEventCoverImage.Size = new System.Drawing.Size(264, 162);
+            this.picEventCoverImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picEventCoverImage.TabIndex = 2;
+            this.picEventCoverImage.TabStop = false;
+            // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 2;
@@ -418,41 +454,6 @@
             this.txtSummary.Size = new System.Drawing.Size(648, 424);
             this.txtSummary.TabIndex = 0;
             // 
-            // picEventCoverImage
-            // 
-            this.picEventCoverImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picEventCoverImage.Location = new System.Drawing.Point(3, 3);
-            this.picEventCoverImage.Name = "picEventCoverImage";
-            this.picEventCoverImage.Size = new System.Drawing.Size(264, 162);
-            this.picEventCoverImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picEventCoverImage.TabIndex = 2;
-            this.picEventCoverImage.TabStop = false;
-            // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
-            this.picClose.Location = new System.Drawing.Point(912, 11);
-            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(32, 32);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picClose.TabIndex = 6;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
-            this.picMinimize.Location = new System.Drawing.Point(853, 11);
-            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(32, 32);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 5;
-            this.picMinimize.TabStop = false;
-            // 
             // FormEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +471,8 @@
             this.Load += new System.EventHandler(this.FormEvent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -480,13 +483,11 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picEventCoverImage)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEventCoverImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }

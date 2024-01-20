@@ -32,23 +32,37 @@ namespace APC
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            FormViewChild open = new FormViewChild();
-            open.detail = detail;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;            
-            ClearFilters();
+            if (detail.ChildID == 0)
+            {
+                MessageBox.Show("Please choose a child from the table");
+            }
+            else
+            {
+                FormViewChild open = new FormViewChild();
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FormChildren open = new FormChildren();
-            open.detail = detail;
-            open.isUpdate = true;
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;            
-            ClearFilters();
+            if (detail.ChildID == 0)
+            {
+                MessageBox.Show("Please choose a child from the table");
+            }
+            else
+            {
+                FormChildren open = new FormChildren();
+                open.detail = detail;
+                open.isUpdate = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }            
         }
         ChildBLL bll = new ChildBLL();
         ChildDTO dto = new ChildDTO();

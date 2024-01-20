@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,16 @@ namespace APC.AllForms
         {
             InitializeComponent();
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
+       
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -80,11 +90,11 @@ namespace APC.AllForms
         }
         private void ShowRecordData()
         {
-            labelTotalMembersPresent.Text = detail.TotalMembersPresent.ToString();
-            labelTotalMembersAbsent.Text = detail.TotalMembersAbsent.ToString();
-            labelTotalDuesPaid.Text = detail.TotalDuesPaid.ToString();
-            labelTotalDuesExpected.Text = detail.TotalDuesExpected.ToString();
-            labelTotalDuesBalance.Text = detail.TotalDuesBalance.ToString();
+            General.ValueCount(labelTotalMembersPresent, detail.TotalMembersPresent, 100, 57);
+            General.ValueCount(labelTotalMembersAbsent, detail.TotalMembersAbsent, 100, 57);
+            General.ValueCountInDecimal(labelTotalDuesPaid, detail.TotalDuesPaid, 73, 57);
+            General.ValueCountInDecimal(labelTotalDuesExpected, detail.TotalDuesExpected, 73, 57);
+            General.ValueCountInDecimal(labelTotalDuesBalance, detail.TotalDuesBalance, 73, 26);
         }
 
         private void FillDataGrid()
@@ -183,6 +193,6 @@ namespace APC.AllForms
                 }
             }
             dataGridView1.DataSource = list;
-        }
+        }        
     }
 }
