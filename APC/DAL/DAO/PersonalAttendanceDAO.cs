@@ -52,9 +52,65 @@ namespace APC.DAL.DAO
 
         public List<PersonalAttendanceDetailDTO> Select()
         {
-            throw new NotImplementedException();
+            //List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
+            //var list = (from p in db.PERSONAL_ATTENDANCE.Where(x=>x.isDeleted ==false)
+            //            join m in db.MONTHs on p.monthID equals m.monthID
+            //            join mem in db.MEMBERs.Where(x=>x.isDeleted==false) on p.memberID equals mem.memberID
+            //            join ats in db.ATTENDANCE_STATUS on p.attendanceStatusID equals ats.attendanceStatusID
+            //            join g in db.GENERAL_ATTENDANCE.Where(x=>x.isDeleted ==false) on p.generalAttendanceID equals g.generalAttendanceID
+            //            select new
+            //            {
+            //                attendanceID = p.attendanceID,
+            //                attendanceStatusID = p.attendanceStatusID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //            })
+            throw null;
         }
 
+        public List<PersonalAttendanceDetailDTO> Select(int ID)
+        {
+            //List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
+            //var list = (from p in db.PERSONAL_ATTENDANCE.Where(x=>x.isDeleted ==false)
+            //            join m in db.MONTHs on p.monthID equals m.monthID
+            //            join mem in db.MEMBERs.Where(x=>x.isDeleted==false) on p.memberID equals mem.memberID
+            //            join ats in db.ATTENDANCE_STATUS on p.attendanceStatusID equals ats.attendanceStatusID
+            //            join g in db.GENERAL_ATTENDANCE.Where(x=>x.isDeleted ==false) on p.generalAttendanceID equals g.generalAttendanceID
+            //            select new
+            //            {
+            //                attendanceID = p.attendanceID,
+            //                attendanceStatusID = p.attendanceStatusID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //                attendanceID = p.attendanceID,
+            //            })
+            throw null;
+        }
         public List<PersonalAttendanceDetailDTO> Select(bool isDeleted)
         {
             try

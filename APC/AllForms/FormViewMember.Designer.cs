@@ -72,6 +72,9 @@
             this.labelCommentText = new System.Windows.Forms.Label();
             this.labelNoOfComments = new System.Windows.Forms.Label();
             this.btnNoComments = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelNoOfAttendance = new System.Windows.Forms.Label();
+            this.btnViewAttendance = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -477,6 +480,9 @@
             this.tableLayoutPanel6.Controls.Add(this.labelCommentText, 0, 14);
             this.tableLayoutPanel6.Controls.Add(this.labelNoOfComments, 1, 14);
             this.tableLayoutPanel6.Controls.Add(this.btnNoComments, 1, 16);
+            this.tableLayoutPanel6.Controls.Add(this.label13, 0, 18);
+            this.tableLayoutPanel6.Controls.Add(this.labelNoOfAttendance, 1, 18);
+            this.tableLayoutPanel6.Controls.Add(this.btnViewAttendance, 1, 20);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -680,6 +686,41 @@
             this.btnNoComments.Text = "View Comments";
             this.btnNoComments.UseVisualStyleBackColor = true;
             this.btnNoComments.Click += new System.EventHandler(this.btnViewComments_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 397);
+            this.label13.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 21);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Attendance";
+            // 
+            // labelNoOfAttendance
+            // 
+            this.labelNoOfAttendance.AutoSize = true;
+            this.labelNoOfAttendance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfAttendance.Location = new System.Drawing.Point(123, 397);
+            this.labelNoOfAttendance.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelNoOfAttendance.Name = "labelNoOfAttendance";
+            this.labelNoOfAttendance.Size = new System.Drawing.Size(19, 21);
+            this.labelNoOfAttendance.TabIndex = 0;
+            this.labelNoOfAttendance.Text = "2";
+            // 
+            // btnViewAttendance
+            // 
+            this.btnViewAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAttendance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewAttendance.Location = new System.Drawing.Point(123, 430);
+            this.btnViewAttendance.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnViewAttendance.Name = "btnViewAttendance";
+            this.btnViewAttendance.Size = new System.Drawing.Size(176, 35);
+            this.btnViewAttendance.TabIndex = 4;
+            this.btnViewAttendance.Text = "View Attendance";
+            this.btnViewAttendance.UseVisualStyleBackColor = true;
+            this.btnViewAttendance.Click += new System.EventHandler(this.btnViewAttendance_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -1061,5 +1102,8 @@
         private System.Windows.Forms.Label labelCommentText;
         private System.Windows.Forms.Label labelNoOfComments;
         private System.Windows.Forms.Button btnNoComments;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelNoOfAttendance;
+        private System.Windows.Forms.Button btnViewAttendance;
     }
 }

@@ -56,6 +56,7 @@ namespace APC.AllForms
                 generalAttendance.TotalDuesPaid = 0;
                 generalAttendance.TotalDuesExpected = 0;
                 generalAttendance.TotalDuesBalance = generalAttendance.TotalDuesExpected - generalAttendance.TotalDuesPaid;
+                generalAttendance.AttendanceDate = dateTimePickerGenAttDate.Value;
                 
                 if (bll.Insert(generalAttendance))
                 {
@@ -66,7 +67,7 @@ namespace APC.AllForms
             }
             else if (isUpdate)
             {
-                if (dateTimePickerGenAttDate.Value == Convert.ToDateTime(detail.MonthID + "/" + detail.Day + "/" + detail.Year) && detail.Summary == txtSummary.Text.Trim())
+                if (dateTimePickerGenAttDate.Value == detail.AttendanceDate && detail.Summary == txtSummary.Text.Trim())
                 {
                     MessageBox.Show("There is no change");
                 }
@@ -76,6 +77,7 @@ namespace APC.AllForms
                     detail.MonthID = dateTimePickerGenAttDate.Value.Month;
                     detail.Year = dateTimePickerGenAttDate.Value.Year.ToString();
                     detail.Summary = txtSummary.Text.Trim();
+                    detail.AttendanceDate = dateTimePickerGenAttDate.Value;
                     if (bll.Update(detail))
                     {
                         MessageBox.Show("Attendance was updated");
@@ -90,7 +92,7 @@ namespace APC.AllForms
             if (isUpdate)
             {
                 labelTitle.Text = "Edit meeting on " + detail.Day + "." + detail.MonthID +"."+ detail.Year;
-                dateTimePickerGenAttDate.Value = Convert.ToDateTime(detail.MonthID + "/" + detail.Day + "/" + detail.Year);
+                dateTimePickerGenAttDate.Value = detail.AttendanceDate;
                 txtSummary.Text = detail.Summary;
             }
         }        

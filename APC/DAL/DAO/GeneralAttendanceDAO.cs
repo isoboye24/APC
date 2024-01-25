@@ -39,6 +39,13 @@ namespace APC.DAL.DAO
                 GENERAL_ATTENDANCE genAttendance = db.GENERAL_ATTENDANCE.First(x=>x.generalAttendanceID==ID);
                 genAttendance.isDeleted = false;
                 genAttendance.deletedDate = null;
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.generalAttendanceID == ID).ToList();
+                foreach (var item in list)
+                {
+                    item.isDeleted = false;
+                    item.deletedDate = null;
+                    db.SaveChanges();
+                }
                 db.SaveChanges();
                 return true;
             }
@@ -82,6 +89,7 @@ namespace APC.DAL.DAO
                                 totalDuesExpected = g.totalDuesExpected,
                                 totalDuesBalance = g.totalDuesBalance,
                                 summary = g.summary,
+                                attendanceDate = g.attendanceDate,
                             }).OrderByDescending(x => x.year).ThenByDescending(x=>x.monthID).ToList();
                 foreach (var item in list)
                 {
@@ -97,6 +105,7 @@ namespace APC.DAL.DAO
                     dto.TotalDuesExpected = (decimal)item.totalDuesExpected;
                     dto.TotalDuesBalance = (decimal)item.totalDuesBalance;
                     dto.Summary = item.summary;
+                    dto.AttendanceDate = item.attendanceDate;
                     generalAttendance.Add(dto);
                 }
                 return generalAttendance;
@@ -127,6 +136,7 @@ namespace APC.DAL.DAO
                                 totalDuesExpected = g.totalDuesExpected,
                                 totalDuesBalance = g.totalDuesBalance,
                                 summary = g.summary,
+                                attendanceDate = g.attendanceDate,
                             }).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).ToList();
                 foreach (var item in list)
                 {
@@ -142,6 +152,7 @@ namespace APC.DAL.DAO
                     dto.TotalDuesExpected = (decimal)item.totalDuesExpected;
                     dto.TotalDuesBalance = (decimal)item.totalDuesBalance;
                     dto.Summary = item.summary;
+                    dto.AttendanceDate = item.attendanceDate;
                     generalAttendance.Add(dto);
                 }
                 return generalAttendance;
@@ -217,6 +228,7 @@ namespace APC.DAL.DAO
                 generalAttendance.totalDuesPaid = entity.totalDuesPaid;
                 generalAttendance.totalDuesExpected = entity.totalDuesExpected;
                 generalAttendance.totalDuesBalance = entity.totalDuesBalance;
+                generalAttendance.attendanceDate = entity.attendanceDate;
                 db.SaveChanges();
                 return true;
             }

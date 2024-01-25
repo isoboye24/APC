@@ -60,7 +60,8 @@ namespace APC.DAL.DAO
                                 day = e.day,
                                 monthID = e.monthID,
                                 monthName = m.monthName,
-                                year = e.year
+                                year = e.year,
+                                eventDate = e.eventDate,
                             }).OrderByDescending(x => x.year).ToList();
                 foreach (var item in list)
                 {
@@ -73,6 +74,7 @@ namespace APC.DAL.DAO
                     dto.MonthID = item.monthID;
                     dto.MonthName = item.monthName;
                     dto.Year = item.year.ToString();
+                    dto.EventDate = item.eventDate;
                     events.Add(dto);
                 }
                 return events;
@@ -144,7 +146,8 @@ namespace APC.DAL.DAO
                                 day = e.day,
                                 monthID = e.monthID,
                                 monthName = m.monthName,
-                                year = e.year
+                                year = e.year,
+                                eventDate = e.eventDate
                             }).OrderByDescending(x => x.year).ToList();
                 foreach (var item in list)
                 {
@@ -157,6 +160,7 @@ namespace APC.DAL.DAO
                     dto.MonthID = item.monthID;
                     dto.MonthName = item.monthName;
                     dto.Year = item.year.ToString();
+                    dto.EventDate = item.eventDate;
                     events.Add(dto);
                 }
                 return events;
@@ -178,6 +182,7 @@ namespace APC.DAL.DAO
                 events.day = entity.day;
                 events.monthID = entity.monthID;
                 events.year = entity.year;
+                events.eventDate = entity.eventDate;
                 db.SaveChanges();
                 return true;
             }

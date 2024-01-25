@@ -89,6 +89,10 @@ namespace APC
             dataGridViewFathers.Columns[32].Visible = false;
             dataGridViewFathers.Columns[33].Visible = false;
             dataGridViewFathers.Columns[34].Visible = false;
+            dataGridViewFathers.Columns[35].Visible = false;
+            dataGridViewFathers.Columns[36].Visible = false;
+            dataGridViewFathers.Columns[37].Visible = false;
+            dataGridViewFathers.Columns[38].Visible = false;
 
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
@@ -126,6 +130,10 @@ namespace APC
             dataGridViewMothers.Columns[32].Visible = false;
             dataGridViewMothers.Columns[33].Visible = false;
             dataGridViewMothers.Columns[34].Visible = false;
+            dataGridViewMothers.Columns[35].Visible = false;
+            dataGridViewMothers.Columns[36].Visible = false;
+            dataGridViewMothers.Columns[37].Visible = false;
+            dataGridViewMothers.Columns[38].Visible = false;
             #endregion
 
             if (isUpdate)

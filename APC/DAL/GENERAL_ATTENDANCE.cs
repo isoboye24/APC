@@ -26,5 +26,6 @@ namespace APC.DAL
         public Nullable<System.DateTime> deletedDate { get; set; }
         public string summary { get; set; }
         public int day { get; set; }
+        public System.DateTime attendanceDate { get; set; }
     }
 }

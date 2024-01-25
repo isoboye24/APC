@@ -38,8 +38,6 @@ namespace APC.AllForms
         ChildDetailDTO childDetail = new ChildDetailDTO();
         CommentBLL commentBLL = new CommentBLL();
         CommentDetailDTO commentDetail = new CommentDetailDTO();
-        DeadMembersBLL deadMemberBLL = new DeadMembersBLL();
-        DeadMembersDetailDTO deadMemDetail = new DeadMembersDetailDTO();
         DocumentBLL documentBLL = new DocumentBLL();
         DocumentDetailDTO documentDetail = new DocumentDetailDTO();
         EventImageBLL eventImageBLL = new EventImageBLL();
@@ -63,7 +61,6 @@ namespace APC.AllForms
             cmbDeletedData.Items.Add("Marital Statuses");
             cmbDeletedData.Items.Add("Children");
             cmbDeletedData.Items.Add("Comments");
-            cmbDeletedData.Items.Add("Dead Members");
             cmbDeletedData.Items.Add("Documents");
             cmbDeletedData.Items.Add("Event Images");
             cmbDeletedData.Items.Add("Events");
@@ -109,6 +106,10 @@ namespace APC.AllForms
             dataGridView1.Columns[32].Visible = false;
             dataGridView1.Columns[33].Visible = false;
             dataGridView1.Columns[34].Visible = false;
+            dataGridView1.Columns[35].Visible = false;
+            dataGridView1.Columns[36].Visible = false;
+            dataGridView1.Columns[37].Visible = false;
+            dataGridView1.Columns[38].Visible = false;
             #endregion
         }
 
@@ -152,6 +153,10 @@ namespace APC.AllForms
                 dataGridView1.Columns[32].Visible = false;
                 dataGridView1.Columns[33].Visible = false;
                 dataGridView1.Columns[34].Visible = false;
+                dataGridView1.Columns[35].Visible = false;
+                dataGridView1.Columns[36].Visible = false;
+                dataGridView1.Columns[37].Visible = false;
+                dataGridView1.Columns[38].Visible = false;
             }
             else if (cmbDeletedData.SelectedIndex == 1)
             {
@@ -235,34 +240,6 @@ namespace APC.AllForms
             }
             else if (cmbDeletedData.SelectedIndex == 9)
             {
-                dataGridView1.DataSource = dto.DeadMembers;
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "Surname";
-                dataGridView1.Columns[2].HeaderText = "Name";
-                dataGridView1.Columns[3].HeaderText = "Birth Date";
-                dataGridView1.Columns[4].Visible = false;
-                dataGridView1.Columns[5].Visible = false;
-                dataGridView1.Columns[6].HeaderText = "Died";
-                dataGridView1.Columns[7].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
-                dataGridView1.Columns[9].Visible = false;
-                dataGridView1.Columns[10].HeaderText = "Nationality";
-                dataGridView1.Columns[11].Visible = false;
-                dataGridView1.Columns[12].HeaderText = "Profession";
-                dataGridView1.Columns[13].Visible = false;
-                dataGridView1.Columns[14].HeaderText = "Position";
-                dataGridView1.Columns[15].Visible = false;
-                dataGridView1.Columns[16].HeaderText = "Gender";
-                dataGridView1.Columns[17].Visible = false;
-                dataGridView1.Columns[18].Visible = false;
-                dataGridView1.Columns[19].Visible = false;
-                dataGridView1.Columns[20].Visible = false;
-                dataGridView1.Columns[21].Visible = false;
-                dataGridView1.Columns[22].Visible = false;
-                dataGridView1.Columns[23].Visible = false;
-            }
-            else if (cmbDeletedData.SelectedIndex == 10)
-            {
                 dataGridView1.DataSource = dto.Documents;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Document Name";
@@ -274,7 +251,7 @@ namespace APC.AllForms
                 dataGridView1.Columns[7].HeaderText = "Date";
                 dataGridView1.Columns[8].Visible = false;
             }
-            else if (cmbDeletedData.SelectedIndex == 11)
+            else if (cmbDeletedData.SelectedIndex == 10)
             {
                 dataGridView1.DataSource = dto.EventImages;
                 dataGridView1.Columns[0].Visible = false;
@@ -288,7 +265,7 @@ namespace APC.AllForms
                 dataGridView1.Columns[7].HeaderText = "Picture Caption";
                 dataGridView1.Columns[8].Visible = false;
             }
-            else if (cmbDeletedData.SelectedIndex == 12)
+            else if (cmbDeletedData.SelectedIndex == 11)
             {
                 dataGridView1.DataSource = dto.Events;
                 dataGridView1.Columns[0].Visible = false;
@@ -299,8 +276,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[5].HeaderText = "Event Title";
                 dataGridView1.Columns[6].HeaderText = "Summary";
                 dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
             }
-            else if (cmbDeletedData.SelectedIndex == 13)
+            else if (cmbDeletedData.SelectedIndex == 12)
             {
                 dataGridView1.DataSource = dto.GeneralAttendance;
                 dataGridView1.Columns[0].Visible = false;
@@ -314,8 +292,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[8].HeaderText = "Dues Expected";
                 dataGridView1.Columns[9].HeaderText = "Balance";
                 dataGridView1.Columns[10].Visible = false;
+                dataGridView1.Columns[11].Visible = false;
             }
-            else if (cmbDeletedData.SelectedIndex == 14)
+            else if (cmbDeletedData.SelectedIndex == 13)
             {
                 dataGridView1.DataSource = dto.Expenditures;
                 dataGridView1.Columns[0].Visible = false;
@@ -325,8 +304,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[4].Visible = false;
                 dataGridView1.Columns[5].HeaderText = "Month";
                 dataGridView1.Columns[6].HeaderText = "Year";
+                dataGridView1.Columns[7].Visible = false;
             }
-            else if (cmbDeletedData.SelectedIndex == 15)
+            else if (cmbDeletedData.SelectedIndex == 14)
             {
                 dataGridView1.DataSource = dto.FinancialReports;
                 dataGridView1.Columns[0].Visible = false;
@@ -381,6 +361,10 @@ namespace APC.AllForms
                 memberDetail.isPositionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[32].Value);
                 memberDetail.isEmpStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[33].Value);
                 memberDetail.isMarStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[34].Value);
+                memberDetail.MembershipStatusID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[35].Value);
+                memberDetail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
+                memberDetail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
+                memberDetail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
             }
             else if (cmbDeletedData.SelectedIndex == 1)
             {
@@ -460,36 +444,8 @@ namespace APC.AllForms
                 commentDetail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
                 commentDetail.Year = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
                 commentDetail.isMemberDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
-            }
+            }            
             else if (cmbDeletedData.SelectedIndex == 9)
-            {
-                deadMemDetail = new DeadMembersDetailDTO();
-                deadMemDetail.DeadMemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                deadMemDetail.Surname = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                deadMemDetail.Name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                deadMemDetail.Birthday = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
-                deadMemDetail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                deadMemDetail.MembershipDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
-                deadMemDetail.DeathDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
-                deadMemDetail.CountryID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
-                deadMemDetail.CountryName = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                deadMemDetail.NationalityID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
-                deadMemDetail.NationalityName = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
-                deadMemDetail.ProfessionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
-                deadMemDetail.ProfessionName = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
-                deadMemDetail.PositionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
-                deadMemDetail.PositionName = dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString();
-                deadMemDetail.GenderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[15].Value);
-                deadMemDetail.GenderName = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
-                deadMemDetail.MaritalStatusID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[17].Value);
-                deadMemDetail.MaritalStatusName = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
-                deadMemDetail.isCountryDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[19].Value);
-                deadMemDetail.isNationalityDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[20].Value);
-                deadMemDetail.isProfessionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[21].Value);
-                deadMemDetail.isPositionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[22].Value);
-                deadMemDetail.isMarStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[23].Value);
-            }
-            else if (cmbDeletedData.SelectedIndex == 10)
             {
                 documentDetail = new DocumentDetailDTO();
                 documentDetail.DocumentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -502,7 +458,7 @@ namespace APC.AllForms
                 documentDetail.Date = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 documentDetail.DocumentPath = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
             }
-            else if (cmbDeletedData.SelectedIndex == 11)
+            else if (cmbDeletedData.SelectedIndex == 10)
             {
                 eventImageDetail = new EventImageDetailDTO();
                 eventImageDetail.EventImageID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -515,7 +471,7 @@ namespace APC.AllForms
                 eventImageDetail.ImageCaption = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 eventImageDetail.isEventDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             }
-            else if (cmbDeletedData.SelectedIndex == 12)
+            else if (cmbDeletedData.SelectedIndex == 11)
             {
                 eventDetail = new EventsDetailDTO();
                 eventDetail.EventID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -526,8 +482,9 @@ namespace APC.AllForms
                 eventDetail.EventTitle = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 eventDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 eventDetail.CoverImagePath = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                eventDetail.EventDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             }
-            else if (cmbDeletedData.SelectedIndex == 13)
+            else if (cmbDeletedData.SelectedIndex == 12)
             {
                 genAttendDetail = new GeneralAttendanceDetailDTO();
                 genAttendDetail.GeneralAttendanceID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -541,8 +498,9 @@ namespace APC.AllForms
                 genAttendDetail.TotalDuesExpected = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
                 genAttendDetail.TotalDuesBalance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
                 genAttendDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+                genAttendDetail.AttendanceDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
             }
-            else if (cmbDeletedData.SelectedIndex == 14)
+            else if (cmbDeletedData.SelectedIndex == 13)
             {
                 expenditureDetail = new ExpenditureDetailDTO();
                 expenditureDetail.ExpenditureID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -552,8 +510,9 @@ namespace APC.AllForms
                 expenditureDetail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                 expenditureDetail.Month = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 expenditureDetail.Year = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                expenditureDetail.ExpenditureDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
             }
-            else if (cmbDeletedData.SelectedIndex == 15)
+            else if (cmbDeletedData.SelectedIndex == 14)
             {
                 financialRepDetail = new FinancialReportDetailDTO();
                 financialRepDetail.FinancialReportID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -746,42 +705,6 @@ namespace APC.AllForms
             }
             else if (cmbDeletedData.SelectedIndex == 9)
             {
-                if (deadMemDetail.DeadMemberID == 0)
-                {
-                    MessageBox.Show("Please choose a dead member from the table");
-                }
-                else
-                {
-                    if (deadMemDetail.isCountryDeleted)
-                    {
-                        MessageBox.Show("Country was deleted. Get back the country first.");
-                    }
-                    else if (deadMemDetail.isNationalityDeleted)
-                    {
-                        MessageBox.Show("Nationality was deleted. Get back the nationality first.");
-                    }
-                    else if (deadMemDetail.isProfessionDeleted)
-                    {
-                        MessageBox.Show("Profession was deleted. Get back the profession first.");
-                    }
-                    else if (deadMemDetail.isPositionDeleted)
-                    {
-                        MessageBox.Show("Position was deleted. Get back the position first.");
-                    }
-                    else if (deadMemDetail.isMarStatusDeleted)
-                    {
-                        MessageBox.Show("marital status was deleted. Get back the marital status first.");
-                    }
-                    else if (deadMemberBLL.GetBack(deadMemDetail))
-                    {
-                        MessageBox.Show("Dead member's info was retrieved");
-                        dto = bll.Select(true);
-                        dataGridView1.DataSource = dto.DeadMembers;
-                    }
-                }                
-            }
-            else if (cmbDeletedData.SelectedIndex == 10)
-            {
                 if (documentDetail.DocumentID == 0)
                 {
                     MessageBox.Show("Please choose a document from the table");
@@ -796,7 +719,7 @@ namespace APC.AllForms
                     }
                 }                
             }
-            else if (cmbDeletedData.SelectedIndex == 11)
+            else if (cmbDeletedData.SelectedIndex == 10)
             {
                 if (eventImageDetail.EventImageID == 0)
                 {
@@ -816,7 +739,7 @@ namespace APC.AllForms
                     }
                 }                
             }
-            else if (cmbDeletedData.SelectedIndex == 12)
+            else if (cmbDeletedData.SelectedIndex == 11)
             {
                 if (eventDetail.EventID == 0)
                 {
@@ -832,7 +755,7 @@ namespace APC.AllForms
                     }
                 }
             }
-            else if (cmbDeletedData.SelectedIndex == 13)
+            else if (cmbDeletedData.SelectedIndex == 12)
             {
                 if (genAttendDetail.GeneralAttendanceID == 0)
                 {
@@ -848,7 +771,7 @@ namespace APC.AllForms
                     }
                 }                
             }
-            else if (cmbDeletedData.SelectedIndex == 14)
+            else if (cmbDeletedData.SelectedIndex == 13)
             {
                 if (expenditureDetail.ExpenditureID == 0)
                 {
@@ -864,7 +787,7 @@ namespace APC.AllForms
                     }
                 }                
             }
-            else if (cmbDeletedData.SelectedIndex == 15)
+            else if (cmbDeletedData.SelectedIndex == 14)
             {
                 if (financialRepDetail.FinancialReportID == 0)
                 {

@@ -79,6 +79,7 @@ namespace APC
             dataGridView1.Columns[5].HeaderText = "Event Title";
             dataGridView1.Columns[6].HeaderText = "Summary";
             dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
         }
         private void FillDataGrid()
         {
@@ -117,6 +118,7 @@ namespace APC
             detail.EventTitle = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
             detail.CoverImagePath = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            detail.EventDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             string imagePath = Application.StartupPath + "\\images\\" + detail.CoverImagePath;
             picViewEventCoverImage.ImageLocation = imagePath;
         }

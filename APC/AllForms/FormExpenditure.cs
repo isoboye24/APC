@@ -61,6 +61,7 @@ namespace APC.AllForms
                     expenditure.Day = dateTimePickerExpDate.Value.Day;
                     expenditure.MonthID = dateTimePickerExpDate.Value.Month;
                     expenditure.Year = dateTimePickerExpDate.Value.Year.ToString();
+                    expenditure.ExpenditureDate = dateTimePickerExpDate.Value;
                     if (bll.Insert(expenditure))
                     {
                         MessageBox.Show("Expenditure was added");
@@ -73,8 +74,7 @@ namespace APC.AllForms
                 {
                     
                     if (detail.AmountSpent == Convert.ToDecimal(txtAmountSpent.Text) && detail.Summary == txtSummary.Text
-                        && detail.Day == Convert.ToInt32(dateTimePickerExpDate.Value.Day) && detail.MonthID == Convert.ToInt32(dateTimePickerExpDate.Value.Month)
-                        && detail.Year == dateTimePickerExpDate.Value.Year.ToString())
+                        && detail.ExpenditureDate == dateTimePickerExpDate.Value)
                     {
                         MessageBox.Show("There is no change");
                     }
@@ -85,6 +85,7 @@ namespace APC.AllForms
                         detail.Day = dateTimePickerExpDate.Value.Day;
                         detail.MonthID = dateTimePickerExpDate.Value.Month;
                         detail.Year = dateTimePickerExpDate.Value.Year.ToString();
+                        detail.ExpenditureDate = dateTimePickerExpDate.Value;
                         if (bll.Update(detail))
                         {
                             MessageBox.Show("Expenditure was updated");
@@ -106,15 +107,7 @@ namespace APC.AllForms
             {
                 txtAmountSpent.Text = detail.AmountSpent.ToString();
                 txtSummary.Text = detail.Summary;
-                try
-                {
-                    string dateValue = detail.Day + "/" + detail.MonthID + "/" + detail.Year;
-                    dateTimePickerExpDate.Value = DateTime.Parse(dateValue);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Invalid date format. Just click on Ok to continue.");
-                }                
+                dateTimePickerExpDate.Value = detail.ExpenditureDate;                              
             }
         }        
     }

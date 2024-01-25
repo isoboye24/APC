@@ -31,6 +31,7 @@ namespace APC.BLL
             events.day = entity.Day;
             events.monthID = entity.MonthID;
             events.year = Convert.ToInt32(entity.Year);
+            events.eventDate = entity.EventDate;
             return dao.Insert(events);
         }
 
@@ -60,6 +61,7 @@ namespace APC.BLL
             events.day = entity.Day;
             events.monthID = entity.MonthID;
             events.year = Convert.ToInt32(entity.Year);
+            events.eventDate = entity.EventDate;
             return dao.Update(events);
         }
     }

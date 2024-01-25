@@ -16,5 +16,6 @@ namespace APC.DAL.DTO
         public string EventTitle { get; set; }
         public string Summary { get; set; }
         public string CoverImagePath { get; set; }
+        public DateTime EventDate { get; set; }
     }
 }

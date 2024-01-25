@@ -49,7 +49,7 @@ namespace APC
         MemberBLL bll = new MemberBLL();
         MemberDTO dto = new MemberDTO();
         private void FormMembers_Load(object sender, EventArgs e)
-        {
+        {            
             dto = bll.Select();
             cmbCountry.DataSource = dto.Countries;
             General.ComboBoxProps(cmbCountry, "CountryName", "countryID");
@@ -66,23 +66,36 @@ namespace APC
             cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
             cmbPermission.DataSource = dto.Permissions;
-            General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");            
+            General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
+            cmbMembershipStatus.DataSource = dto.MembershipStatuses;
+            General.ComboBoxProps(cmbMembershipStatus, "MembershipStatus", "MembershipStatusID");
 
             txtPhone2.Hide();
             txtPhone3.Hide();
             labelPhone2.Hide();
             labelPhone3.Hide();
-            label13.Hide();
-            labelLastEnteredUsername.Hide();
-            if (LoginInfo.AccessLevel != 4)
+            txtImagePath.Hide();
+            tableLayoutPanelDeceasedDate.Hide();
+            if (isUpdateDeadMember)
             {
-                labelAccessLevel.Hide();
-                cmbPermission.Hide();
-            }            
-            //if (!isUpdate)
-            //{
-            //    labelLastEnteredUsername.Text = bll.GetLastMemberUsername();
-            //}
+                tableLayoutPanelDeceasedDate.Visible = true;
+                if (detail.DeadDate == null)
+                {
+                    dateTimePickerDeceasedDate.Value = DateTime.Today;
+                }
+                else if (detail.DeadDate != null)
+                {
+                    TimeSpan difference = DateTime.Today - (DateTime)detail.DeadDate;
+                    if (difference.TotalDays > 0)
+                    {
+                        dateTimePickerDeceasedDate.Value = (DateTime)detail.DeadDate;
+                    }
+                    else
+                    {
+                        dateTimePickerDeceasedDate.Value = DateTime.Today;
+                    }
+                }                
+            }
             if (isUpdate)
             {
                 txtName.Text = detail.Name;
@@ -110,18 +123,20 @@ namespace APC
                 cmbProfession.SelectedValue = detail.ProfessionID;
                 cmbEmpStatus.SelectedValue = detail.EmploymentStatusID;
                 cmbGender.SelectedValue = detail.GenderID;
-                cmbNationality.SelectedValue = detail.NationalityID;                             
+                cmbNationality.SelectedValue = detail.NationalityID;
                 cmbMaritalStatus.SelectedValue = detail.MaritalStatusID;
-                detail.PermissionID = detail.PermissionID;
+                cmbMembershipStatus.SelectedValue = detail.MembershipStatusID;
                 if (LoginInfo.AccessLevel != 4)
                 {
                     labelAccessLevel.Hide();
-                    cmbPermission.Hide();                    
+                    cmbPermission.Hide();
+                    detail.PermissionID = detail.PermissionID;
                 }
                 else
                 {
                     labelAccessLevel.Visible = true;
                     cmbPermission.Visible = true;
+                    cmbPermission.SelectedValue = detail.PermissionID;
                 }
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfilePic.ImageLocation = imagePath;
@@ -137,6 +152,7 @@ namespace APC
         }
         public MemberDetailDTO detail = new MemberDetailDTO();
         public bool isUpdate = false;
+        public bool isUpdateDeadMember = false;
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Trim() == "")
@@ -182,7 +198,11 @@ namespace APC
             else if (cmbProfession.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a profession");
-            }            
+            }
+            else if (cmbMembershipStatus.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a membership status");
+            }
             else if (LoginInfo.AccessLevel == 4 && cmbPermission.SelectedIndex == -1)
             {                
                 MessageBox.Show("Please select an access level");
@@ -253,11 +273,13 @@ namespace APC
                     }
                     member.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
                     member.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);
+                    member.MembershipStatusID = Convert.ToInt32(cmbMembershipStatus.SelectedValue);
                     member.ImagePath = fileName;
                     member.PhoneNumber = txtPhone1.Text;
                     member.PhoneNumber2 = txtPhone2.Text;
                     member.PhoneNumber3 = txtPhone3.Text;       
                     member.MembershipDate = dateTimePickerMemSince.Value;
+                    member.DeadDate = null;
                     if (bll.Insert(member))
                     {
                         MessageBox.Show("Member was added");
@@ -295,6 +317,8 @@ namespace APC
                         cmbProfession.DataSource = dto.Professions;
                         cmbPermission.SelectedIndex = -1;
                         cmbPermission.DataSource = dto.Permissions;
+                        cmbMembershipStatus.SelectedIndex = -1;
+                        cmbMembershipStatus.DataSource = dto.MembershipStatuses;
                         picProfilePic.Image = null;
                         txtPhone2.Hide();
                         txtPhone3.Hide();
@@ -303,8 +327,9 @@ namespace APC
                     }
                 }
                 else if(isUpdate)
-                {                    
+                {
                     if (
+                            !isUpdateDeadMember &&
                             detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim()
                             && detail.EmailAddress == txtEmail.Text.Trim() && detail.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)
                             && detail.Birthday == dateTimePickerBirthday.Value && detail.MembershipDate == dateTimePickerMemSince.Value
@@ -314,6 +339,23 @@ namespace APC
                             && detail.ProfessionID == Convert.ToInt32(cmbProfession.SelectedValue) && detail.EmploymentStatusID == Convert.ToInt32(cmbEmpStatus.SelectedValue)
                             && detail.GenderID == Convert.ToInt32(cmbGender.SelectedValue) && detail.NationalityID == Convert.ToInt32(cmbNationality.SelectedValue)
                             && detail.MaritalStatusID == Convert.ToInt32(cmbMaritalStatus.SelectedValue) && detail.PermissionID == Convert.ToInt32(cmbPermission.SelectedValue)
+                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue)
+                        )
+                    {
+                        MessageBox.Show("There is no change");
+                    }
+                    else if (
+                            isUpdateDeadMember && detail.DeadDate == dateTimePickerDeceasedDate.Value
+                            && detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim()
+                            && detail.EmailAddress == txtEmail.Text.Trim() && detail.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)
+                            && detail.Birthday == dateTimePickerBirthday.Value && detail.MembershipDate == dateTimePickerMemSince.Value
+                            && detail.HouseAddress == txtAddress.Text.Trim() && detail.ImagePath == txtImagePath.Text.Trim()
+                            && detail.PhoneNumber == txtPhone1.Text.Trim() && detail.PhoneNumber2 == txtPhone2.Text.Trim()
+                            && detail.PhoneNumber3 == txtPhone3.Text.Trim() && detail.CountryID == Convert.ToInt32(cmbCountry.SelectedValue)
+                            && detail.ProfessionID == Convert.ToInt32(cmbProfession.SelectedValue) && detail.EmploymentStatusID == Convert.ToInt32(cmbEmpStatus.SelectedValue)
+                            && detail.GenderID == Convert.ToInt32(cmbGender.SelectedValue) && detail.NationalityID == Convert.ToInt32(cmbNationality.SelectedValue)
+                            && detail.MaritalStatusID == Convert.ToInt32(cmbMaritalStatus.SelectedValue) && detail.PermissionID == Convert.ToInt32(cmbPermission.SelectedValue)
+                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue)
                         )
                     {
                         MessageBox.Show("There is no change");
@@ -388,6 +430,15 @@ namespace APC
                         detail.NationalityID = Convert.ToInt32(cmbNationality.SelectedValue);
                         detail.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
                         detail.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
+                        detail.MembershipStatusID = Convert.ToInt32(cmbMembershipStatus.SelectedValue);
+                        if (isUpdateDeadMember)
+                        {
+                            detail.DeadDate = dateTimePickerDeceasedDate.Value;
+                        }
+                        if (!isUpdateDeadMember)
+                        {
+                            detail.DeadDate = null;
+                        }                        
                         if (bll.Update(detail))
                         {
                             MessageBox.Show("Member was updated");

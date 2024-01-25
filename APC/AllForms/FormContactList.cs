@@ -63,6 +63,10 @@ namespace APC.AllForms
             dataGridView1.Columns[32].Visible = false;
             dataGridView1.Columns[33].Visible = false;
             dataGridView1.Columns[34].Visible = false;
+            dataGridView1.Columns[35].Visible = false;
+            dataGridView1.Columns[36].Visible = false;
+            dataGridView1.Columns[37].Visible = false;
+            dataGridView1.Columns[38].Visible = false;
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)

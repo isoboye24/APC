@@ -38,13 +38,13 @@ namespace APC.AllForms
         {
             this.Close();
         }
-        public DeadMembersDetailDTO detail = new DeadMembersDetailDTO();
+        public MemberDetailDTO detail = new MemberDetailDTO();
         public bool isView = false;
         ChildBLL childBLL = new ChildBLL();
         int noOfChildren =  0;
         private void FormViewDeadMember_Load(object sender, EventArgs e)
         {
-            noOfChildren = childBLL.SelectAllChildrenCount(detail.DeadMemberID);
+            noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
             
             btnViewChildren.Hide();
             labelNoOfChildren.Text = noOfChildren.ToString();
@@ -71,16 +71,25 @@ namespace APC.AllForms
                 txtSurname.Text = detail.Surname;
                 txtPosition.Text = detail.PositionName;
                 labelBirthday.Text = detail.Birthday.ToShortDateString();
-                labelMemSince.Text = detail.MembershipDate.ToShortDateString();                
-                labelDeadDate.Text = detail.DeathDate.ToShortDateString();                
+                labelMemSince.Text = detail.MembershipDate.ToShortDateString();
                 txtCountry.Text = detail.CountryName;
                 txtProfession.Text = detail.ProfessionName;
                 txtGender.Text = detail.GenderName;
                 txtNationality.Text = detail.NationalityName;
                 txtMaritalStatus.Text = detail.MaritalStatusName;
-
-                TimeSpan difference = detail.DeathDate - detail.Birthday;
-                labelAge.Text = Math.Floor(difference.TotalDays / 365.25).ToString() + " years";
+                TimeSpan difference;
+                if (detail.DeadDate != null)
+                {
+                    DateTime died = Convert.ToDateTime(detail.DeadDate);
+                    labelDeadDate.Text = died.ToShortDateString();
+                    difference = (DateTime)detail.DeadDate - detail.Birthday;
+                    labelAge.Text = Math.Floor(difference.TotalDays / 365.25).ToString() + " years";
+                }
+                else
+                {
+                    labelDeadDate.Text = detail.DeadDate.ToString();
+                    labelAge.Text = null;
+                }
             }
         }
 
@@ -89,7 +98,7 @@ namespace APC.AllForms
             if (noOfChildren > 1)
             {
                 FormViewChildrenList open = new FormViewChildrenList();
-                open.memberID = detail.DeadMemberID;
+                open.memberID = detail.MemberID;
                 open.isParent = true;
                 this.Hide();
                 open.ShowDialog();
@@ -98,7 +107,7 @@ namespace APC.AllForms
             else if (noOfChildren < 2 && noOfChildren > 0)
             {
                 FormViewChild open = new FormViewChild();
-                open.memberID = detail.DeadMemberID;
+                open.memberID = detail.MemberID;
                 open.isParent = true;
                 this.Hide();
                 open.ShowDialog();

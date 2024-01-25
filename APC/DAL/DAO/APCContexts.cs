@@ -8,6 +8,6 @@ namespace APC.DAL.DAO
 {
     public class APCContexts
     {
-        public APCEntities3 db = new APCEntities3();
+        public APCEntities db = new APCEntities();
     }
 }

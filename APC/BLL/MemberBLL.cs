@@ -21,6 +21,7 @@ namespace APC.BLL
         EmploymentStatusDAO empStatusDAO = new EmploymentStatusDAO();
         PermissionDAO permissionDAO = new PermissionDAO();
         CountryDAO countryDAO = new CountryDAO();
+        MembershipStatusDAO memStatus = new MembershipStatusDAO();
 
         // These classes are here for the sake of deletedData form
         GeneralAttendanceDAO genAttendDAO = new GeneralAttendanceDAO();
@@ -29,7 +30,6 @@ namespace APC.BLL
         FinancialReportDAO finRepDAO = new FinancialReportDAO();
         ExpenditureDAO expenditureDAO = new ExpenditureDAO();
         CommentDAO commenntDAO = new CommentDAO();
-        DeadMembersDAO deadMembersDAO = new DeadMembersDAO();
         DocumentDAO documentDAO = new DocumentDAO();
         EventsDAO eventDAO = new EventsDAO();
         EventImageDAO eventImageDAO = new EventImageDAO();
@@ -75,13 +75,15 @@ namespace APC.BLL
             member.phoneNumber = entity.PhoneNumber;
             member.phoneNumber2 = entity.PhoneNumber2;
             member.phoneNumber3 = entity.PhoneNumber3;
+            member.deadDate = entity.DeadDate;
+            member.membershipStatusID = entity.MembershipStatusID;
             return memberDAO.Insert(member);
         }
 
         public MemberDTO Select()
         {
             MemberDTO dto = new MemberDTO();
-            dto.Members = memberDAO.Select();            
+            dto.Members = memberDAO.Select();
             dto.Professions = professionDAO.Select();
             dto.Countries = countryDAO.Select();
             dto.Nationalities = nationalityDAO.Select();
@@ -90,6 +92,30 @@ namespace APC.BLL
             dto.Positions = positionDAO.Select();
             dto.MaritalStatuses = marStatusDAO.Select();
             dto.Permissions = permissionDAO.Select();
+            dto.MembershipStatuses = memStatus.Select();
+            return dto;
+        }
+        public MemberDTO SelectSelectFormerMembers()
+        {
+            MemberDTO dto = new MemberDTO();
+            dto.Members = memberDAO.SelectFormerMembers();
+            dto.Countries = countryDAO.Select();
+            dto.Nationalities = nationalityDAO.Select();
+            dto.Genders = genderDAO.Select();
+            dto.Positions = positionDAO.Select();
+            return dto;
+        }
+
+        public MemberDTO SelectDeadMembers()
+        {
+            MemberDTO dto = new MemberDTO();
+            dto.Members = memberDAO.SelectDeadMembers();
+            dto.Professions = professionDAO.Select();
+            dto.Countries = countryDAO.Select();
+            dto.Nationalities = nationalityDAO.Select();
+            dto.Genders = genderDAO.Select();
+            dto.Positions = positionDAO.Select();
+            dto.MaritalStatuses = marStatusDAO.Select();
             return dto;
         }
 
@@ -109,7 +135,6 @@ namespace APC.BLL
             dto.MaritalStatuses = marStatusDAO.Select(isDeleted);
             dto.Children = childDAO.Select(isDeleted);
             dto.Comments = commenntDAO.Select(isDeleted);
-            dto.DeadMembers = deadMembersDAO.Select(isDeleted);
             dto.Documents = documentDAO.Select(isDeleted);
             dto.EventImages = eventImageDAO.Select(isDeleted);
             dto.Events = eventDAO.Select(isDeleted);
@@ -126,18 +151,33 @@ namespace APC.BLL
         {
             return memberDAO.GetLastMemberUsername();
         }
-
+        public int GetNoOfMembersAttendance(int ID)
+        {
+            return memberDAO.GetNoOfMembersAttendance(ID);
+        }
         public int SelectCountMale()
         {
             return memberDAO.SelectCountMale();
+        }
+        public int SelectCountDeadMale()
+        {
+            return memberDAO.SelectCountDeadMale();
         }
         public int SelectCountFemale()
         {
             return memberDAO.SelectCountFemale();
         }
+        public int SelectCountDeadFemale()
+        {
+            return memberDAO.SelectCountDeadFemale();
+        }
         public int SelectCountDivisor()
         {
             return memberDAO.SelectCountDivisor();
+        }
+        public int SelectCountDeadDivisor()
+        {
+            return memberDAO.SelectCountDeadDivisor();
         }
         public int SelectCountUniqueNationality()
         {
@@ -168,6 +208,8 @@ namespace APC.BLL
             member.phoneNumber = entity.PhoneNumber;
             member.phoneNumber2 = entity.PhoneNumber2;
             member.phoneNumber3 = entity.PhoneNumber3;
+            member.deadDate = entity.DeadDate;
+            member.membershipStatusID = entity.MembershipStatusID;
             return memberDAO.Update(member);
         }
     }

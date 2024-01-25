@@ -42,6 +42,7 @@ namespace APC.BLL
             generalAttendance.totalDuesExpected = entity.TotalDuesExpected;
             generalAttendance.totalDuesBalance = entity.TotalDuesBalance;
             generalAttendance.summary = entity.Summary;
+            generalAttendance.attendanceDate = entity.AttendanceDate;
             return dao.Insert(generalAttendance);
         }
 
@@ -76,6 +77,7 @@ namespace APC.BLL
             generalAttendance.totalDuesExpected = entity.TotalDuesExpected;
             generalAttendance.totalDuesBalance = entity.TotalDuesBalance;
             generalAttendance.summary = entity.Summary;
+            generalAttendance.attendanceDate = entity.AttendanceDate;
             return dao.Update(generalAttendance);
         }
     }

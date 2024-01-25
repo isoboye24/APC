@@ -131,6 +131,9 @@ namespace APC
             dataGridView1.Columns[32].Visible = false;
             dataGridView1.Columns[33].Visible = false;
             dataGridView1.Columns[34].Visible = false;
+            dataGridView1.Columns[35].Visible = false;
+            dataGridView1.Columns[36].Visible = false;
+            dataGridView1.Columns[37].Visible = false;
             #endregion
             GetMemberCounts();
 
@@ -259,6 +262,9 @@ namespace APC
             detail.isPositionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[32].Value);
             detail.isEmpStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[33].Value);
             detail.isMarStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[34].Value);
+            detail.MembershipStatusID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[35].Value);
+            detail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
+            detail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
         }
     }
 }

@@ -27,13 +27,14 @@ namespace APC.BLL
 
         public bool Insert(ExpenditureDetailDTO entity)
         {
-            EXPENDITURE expendtiure = new EXPENDITURE();
-            expendtiure.summary = entity.Summary;
-            expendtiure.amountSpent = entity.AmountSpent;
-            expendtiure.day = entity.Day;
-            expendtiure.monthID = entity.MonthID;
-            expendtiure.year = Convert.ToInt32(entity.Year);
-            return dao.Insert(expendtiure);
+            EXPENDITURE expenditure = new EXPENDITURE();
+            expenditure.summary = entity.Summary;
+            expenditure.amountSpent = entity.AmountSpent;
+            expenditure.day = entity.Day;
+            expenditure.monthID = entity.MonthID;
+            expenditure.year = Convert.ToInt32(entity.Year);
+            expenditure.expenditureDate = entity.ExpenditureDate;
+            return dao.Insert(expenditure);
         }
 
         public ExpenditureDTO Select()
@@ -46,14 +47,15 @@ namespace APC.BLL
 
         public bool Update(ExpenditureDetailDTO entity)
         {
-            EXPENDITURE expendtiure = new EXPENDITURE();
-            expendtiure.expenditureID = entity.ExpenditureID;
-            expendtiure.summary = entity.Summary;
-            expendtiure.amountSpent = entity.AmountSpent;
-            expendtiure.day = entity.Day;
-            expendtiure.monthID = entity.MonthID;
-            expendtiure.year = Convert.ToInt32(entity.Year);
-            return dao.Update(expendtiure);
+            EXPENDITURE expenditure = new EXPENDITURE();
+            expenditure.expenditureID = entity.ExpenditureID;
+            expenditure.summary = entity.Summary;
+            expenditure.amountSpent = entity.AmountSpent;
+            expenditure.day = entity.Day;
+            expenditure.monthID = entity.MonthID;
+            expenditure.year = Convert.ToInt32(entity.Year);
+            expenditure.expenditureDate = entity.ExpenditureDate;
+            return dao.Update(expenditure);
         }
     }
 }

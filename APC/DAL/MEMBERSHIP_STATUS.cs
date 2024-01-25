@@ -12,16 +12,9 @@ namespace APC.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class EXPENDITURE
+    public partial class MEMBERSHIP_STATUS
     {
-        public int expenditureID { get; set; }
-        public decimal amountSpent { get; set; }
-        public string summary { get; set; }
-        public bool isDeleted { get; set; }
-        public Nullable<System.DateTime> deletedDate { get; set; }
-        public int day { get; set; }
-        public int monthID { get; set; }
-        public int year { get; set; }
-        public System.DateTime expenditureDate { get; set; }
+        public int membershipStatusID { get; set; }
+        public string membershipStatus { get; set; }
     }
 }

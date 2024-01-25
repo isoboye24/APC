@@ -42,11 +42,17 @@ namespace APC.BLL
         }
         public PersonalAttendanceDTO Select()
         {
+            throw new NotImplementedException();            
+        }
+        
+        public PersonalAttendanceDTO Select(int ID)
+        {
             PersonalAttendanceDTO dto = new PersonalAttendanceDTO();
             dto.Months = monthDAO.Select();
             dto.AttendanceStatuses = attendStatusDAO.Select();
             dto.Genders = genderDAO.Select();
             dto.Members = memberDAO.Select();
+            dto.PersonalAttendances = dao.Select();
             return dto;
         }
 

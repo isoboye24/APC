@@ -107,8 +107,15 @@
     <Compile Include="AllForms\FormViewDocument.Designer.cs">
       <DependentUpon>FormViewDocument.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewPersonalAttendances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewPersonalAttendances.Designer.cs">
+      <DependentUpon>FormViewPersonalAttendances.cs</DependentUpon>
+    </Compile>
     <Compile Include="BLL\DocumentBLL.cs" />
     <Compile Include="BLL\GeneralAttendanceBLL.cs" />
+    <Compile Include="BLL\MembershipStatusBLL.cs" />
     <Compile Include="CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,6 +132,7 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAO\DocumentDAO.cs" />
+    <Compile Include="DAL\DAO\MembershipStatusDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,9 +147,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\DEATH_MEMBER.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DOCUMENT.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
@@ -213,12 +218,6 @@
     </Compile>
     <Compile Include="AllForms\FormCountryList.Designer.cs">
       <DependentUpon>FormCountryList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AllForms\FormDeadMembers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormDeadMembers.Designer.cs">
-      <DependentUpon>FormDeadMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormDeadMembersList.cs">
       <SubType>Form</SubType>
@@ -354,7 +353,6 @@
     <Compile Include="BLL\ChildBLL.cs" />
     <Compile Include="BLL\CommentBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
-    <Compile Include="BLL\DeadMembersBLL.cs" />
     <Compile Include="BLL\DualNationalityBLL.cs" />
     <Compile Include="BLL\EmploymentStatusBLL.cs" />
     <Compile Include="BLL\ExpenditureBLL.cs" />
@@ -379,7 +377,6 @@
     <Compile Include="DAL\DAO\ChildDAO.cs" />
     <Compile Include="DAL\DAO\CommentDAO.cs" />
     <Compile Include="DAL\DAO\CountryDAO.cs" />
-    <Compile Include="DAL\DAO\DeadMembersDAO.cs" />
     <Compile Include="DAL\DAO\DualNationalityDAO.cs" />
     <Compile Include="DAL\DAO\EmploymentStatusDAO.cs" />
     <Compile Include="DAL\DAO\ExpenditureDAO.cs" />
@@ -401,6 +398,8 @@
     <Compile Include="DAL\DTO\EventsDTO.cs" />
     <Compile Include="DAL\DTO\FinancialReportDetailDTO.cs" />
     <Compile Include="DAL\DTO\FinancialReportDTO.cs" />
+    <Compile Include="DAL\DTO\MembershipStatusDetailDTO.cs" />
+    <Compile Include="DAL\DTO\MembershipStatusDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDetailDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDTO.cs" />
     <Compile Include="DAL\DTO\GeneralAttendanceDetailDTO.cs" />
@@ -413,8 +412,6 @@
     <Compile Include="DAL\DTO\CommentDTO.cs" />
     <Compile Include="DAL\DTO\CountryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CountryDTO.cs" />
-    <Compile Include="DAL\DTO\DeadMembersDetailDTO.cs" />
-    <Compile Include="DAL\DTO\DeadMembersDTO.cs" />
     <Compile Include="DAL\DTO\DualNationalityDetailDTO.cs" />
     <Compile Include="DAL\DTO\DualNationalityDTO.cs" />
     <Compile Include="DAL\DTO\EmploymentStatusDetailDTO.cs" />
@@ -471,6 +468,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\MEMBER.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\MEMBERSHIP_STATUS.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\MONTH.cs">
@@ -627,9 +627,6 @@
     <EmbeddedResource Include="AllForms\FormCountryList.resx">
       <DependentUpon>FormCountryList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormDeadMembers.resx">
-      <DependentUpon>FormDeadMembers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormDeadMembersList.resx">
       <DependentUpon>FormDeadMembersList.cs</DependentUpon>
     </EmbeddedResource>
@@ -719,6 +716,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewMember.resx">
       <DependentUpon>FormViewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewPersonalAttendances.resx">
+      <DependentUpon>FormViewPersonalAttendances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDashboard.resx">
       <DependentUpon>FormDashboard.cs</DependentUpon>

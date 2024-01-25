@@ -59,6 +59,7 @@ namespace APC
                     events.Day = dateTimePickerEvent.Value.Day;
                     events.MonthID = dateTimePickerEvent.Value.Month;
                     events.Year = dateTimePickerEvent.Value.Year.ToString();
+                    events.EventDate = dateTimePickerEvent.Value;
                     if (bll.Insert(events))
                     {
                         MessageBox.Show("Event was added");
@@ -79,8 +80,7 @@ namespace APC
                 }
                 else if (isUpdate)
                 {
-                    if (detail.Day == dateTimePickerEvent.Value.Day && detail.MonthID == dateTimePickerEvent.Value.Month 
-                        && detail.Year == dateTimePickerEvent.Value.Year.ToString() && txtTitle.Text.Trim() == detail.EventTitle
+                    if (detail.EventDate == dateTimePickerEvent.Value && txtTitle.Text.Trim() == detail.EventTitle
                         && detail.Summary == txtSummary.Text.Trim() && detail.CoverImagePath == txtImagePath.Text.Trim())
                     {
                         MessageBox.Show("There is no change");
@@ -107,6 +107,7 @@ namespace APC
                         detail.Summary = txtSummary.Text;
                         detail.EventTitle = txtTitle.Text;
                         detail.Summary = txtSummary.Text;
+                        detail.EventDate = dateTimePickerEvent.Value;
                         if (bll.Update(detail))
                         {
                             MessageBox.Show("Event was updated");
@@ -137,7 +138,7 @@ namespace APC
                 txtSummary.Text = detail.Summary;
                 txtTitle.Text = detail.EventTitle;
                 labelTitle.Text = "Update "+ detail.EventTitle;
-                dateTimePickerEvent.Value = Convert.ToDateTime(detail.MonthID + "/" + detail.Day + "/" + detail.Year);
+                dateTimePickerEvent.Value = detail.EventDate;
                 string imagePath = Application.StartupPath + "\\images\\" + detail.CoverImagePath;
                 picEventCoverImage.ImageLocation = imagePath;
             }

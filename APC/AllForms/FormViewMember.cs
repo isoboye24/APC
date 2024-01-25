@@ -60,6 +60,8 @@ namespace APC.AllForms
         CommentBLL commentBLL = new CommentBLL();
         CommentDetailDTO commentDetail = new CommentDetailDTO();
         CommentDTO dto = new CommentDTO();
+        MemberBLL bll = new MemberBLL();
+        int attendanceCount = 0;
         private void FormViewMember_Load(object sender, EventArgs e)
         {
             labelCommentText.Hide();
@@ -83,27 +85,35 @@ namespace APC.AllForms
                 labelNoOfComments.Visible = true;
                 btnNoComments.Visible = true;
             }
-            noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
 
-            txtPhone2.Hide();
-            txtPhone3.Hide();
-            labelPhone2.Hide();
-            labelPhone3.Hide();
+            noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
             btnViewChildren.Hide();
             labelNoOfChildren.Text = noOfChildren.ToString();
-            if (Convert.ToInt32(labelNoOfChildren.Text) > 0)
+            if (noOfChildren > 0)
             {
                 labelChildren.Text = "Child";
                 btnViewChildren.Text = "View Child";
                 btnViewChildren.Visible = true;
             }
-            if (Convert.ToInt32(labelNoOfChildren.Text) > 1)
+            if (noOfChildren > 1)
             {
                 labelChildren.Text = "Children";
                 btnViewChildren.Text = "View Children";
                 btnViewChildren.Visible = true;
             }
 
+            attendanceCount = bll.GetNoOfMembersAttendance(detail.MemberID);
+            labelNoOfAttendance.Text = attendanceCount.ToString();
+            btnViewAttendance.Hide();
+            if (attendanceCount > 0)
+            {
+                btnViewAttendance.Visible = true;
+            }            
+
+            txtPhone2.Hide();
+            txtPhone3.Hide();
+            labelPhone2.Hide();
+            labelPhone3.Hide();
             if (isView)
             {
                 labelMemberNameTitle.Text = detail.Surname + " " + detail.Name;
@@ -171,6 +181,19 @@ namespace APC.AllForms
                 open.ShowDialog();
                 this.Visible = true;
             }
-        }        
+        }
+
+        
+        private void btnViewAttendance_Click(object sender, EventArgs e)
+        {
+            if (attendanceCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                //open.detail = commentDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
     }
 }

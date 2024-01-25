@@ -307,8 +307,7 @@ namespace APC
         }
 
         private void btnMembers_Click_1(object sender, EventArgs e)
-        {
-
+        {            
             int memberCount = memberBLL.SelectAllMembersCount();
             if (memberCount > 0)
             {
@@ -328,8 +327,9 @@ namespace APC
                     buttonWasClicked = true;
                     ActivateButton(sender, RBGColors.color2);
                     OpenChildForm(new FormMembersList());
-                }                
-            }            
+                }
+
+            }
         }
 
         private void btnChildren_Click_1(object sender, EventArgs e)

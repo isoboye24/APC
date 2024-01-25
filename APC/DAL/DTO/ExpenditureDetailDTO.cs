@@ -15,5 +15,6 @@ namespace APC.DAL.DTO
         public int MonthID { get; set; }
         public string Month { get; set; }
         public string Year { get; set; }
+        public DateTime ExpenditureDate { get; set; }
     }
 }

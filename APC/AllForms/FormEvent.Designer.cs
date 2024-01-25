@@ -403,6 +403,7 @@
             this.txtImagePath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImagePath.Location = new System.Drawing.Point(123, 3);
             this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.ReadOnly = true;
             this.txtImagePath.Size = new System.Drawing.Size(144, 29);
             this.txtImagePath.TabIndex = 0;
             // 

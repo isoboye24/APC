@@ -89,7 +89,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x=>x.isDeleted==false)
+                var list = (from m in db.MEMBERs.Where(x=>x.isDeleted==false && x.membershipStatusID == 1)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
@@ -98,6 +98,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
+                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -128,7 +129,10 @@ namespace APC.DAL.DAO
                                 permissionName = perm.permission1,
                                 phoneNumber = m.phoneNumber,
                                 phoneNumber2 = m.phoneNumber2,
-                                phoneNumber3 = m.phoneNumber3
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
                             }).OrderBy(x=>x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -162,6 +166,9 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber = item.phoneNumber;
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.DeadDate = item.deadDate;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
                     members.Add(dto);
                 }
                 return members;
@@ -171,12 +178,209 @@ namespace APC.DAL.DAO
                 throw ex;
             }            
         }
+        public List<MemberDetailDTO> SelectFormerMembers()
+        {
+            try
+            {
+                List<MemberDetailDTO> members = new List<MemberDetailDTO>();
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 2)
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
+                            join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
+                            join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                            join mar in db.MARITAL_STATUS.Where(x => x.isDeleted == false) on m.maritalStatusID equals mar.maritalStatusID
+                            join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
+                            join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
+                            join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
+                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
+                            select new
+                            {
+                                memberID = m.memberID,
+                                username = m.username,
+                                name = m.name,
+                                surname = m.surname,
+                                password = m.password,
+                                birthday = m.birthday,
+                                imagePath = m.imagePath,
+                                emailAddress = m.emailAddress,
+                                houseAddress = m.houseAddress,
+                                membershipDate = m.membershipDate,
+                                countryID = m.countryID,
+                                countryName = c.countryName,
+                                nationalityID = m.nationalityID,
+                                nationalityName = n.nationality1,
+                                professionID = m.professionID,
+                                professionName = p.profession1,
+                                positionID = m.positionID,
+                                positionName = pos.positionName,
+                                genderID = m.genderID,
+                                genderName = g.genderName,
+                                employmenStatusID = m.employmentStatusID,
+                                employmenStatusName = e.employmentStatus,
+                                maritalStatusID = m.maritalStatusID,
+                                maritalStatusName = mar.maritalStatus,
+                                permissionID = m.permissionID,
+                                permissionName = perm.permission1,
+                                phoneNumber = m.phoneNumber,
+                                phoneNumber2 = m.phoneNumber2,
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
+                            }).OrderBy(x => x.surname).ToList();
+                foreach (var item in list)
+                {
+                    MemberDetailDTO dto = new MemberDetailDTO();
+                    dto.MemberID = item.memberID;
+                    dto.Username = item.username;
+                    dto.Name = item.name;
+                    dto.Surname = item.surname;
+                    dto.Password = item.password;
+                    dto.Birthday = item.birthday;
+                    dto.ImagePath = item.imagePath;
+                    dto.EmailAddress = item.emailAddress;
+                    dto.HouseAddress = item.houseAddress;
+                    dto.MembershipDate = (DateTime)item.membershipDate;
+                    dto.CountryID = item.countryID;
+                    dto.CountryName = item.countryName;
+                    dto.NationalityID = item.nationalityID;
+                    dto.NationalityName = item.nationalityName;
+                    dto.ProfessionID = item.professionID;
+                    dto.ProfessionName = item.professionName;
+                    dto.PositionID = item.positionID;
+                    dto.PositionName = item.positionName;
+                    dto.GenderID = item.genderID;
+                    dto.GenderName = item.genderName;
+                    dto.EmploymentStatusID = item.employmenStatusID;
+                    dto.EmploymentStatusName = item.employmenStatusName;
+                    dto.MaritalStatusID = item.maritalStatusID;
+                    dto.MaritalStatusName = item.maritalStatusName;
+                    dto.PermissionID = item.permissionID;
+                    dto.PermissionName = item.permissionName;
+                    dto.PhoneNumber = item.phoneNumber;
+                    dto.PhoneNumber2 = item.phoneNumber2;
+                    dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.DeadDate = item.deadDate;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
+                    members.Add(dto);
+                }
+                return members;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<MemberDetailDTO> SelectDeadMembers()
+        {
+            try
+            {
+                List<MemberDetailDTO> members = new List<MemberDetailDTO>();
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 3)
+                            join g in db.GENDERs on m.genderID equals g.genderID
+                            join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
+                            join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
+                            join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                            join mar in db.MARITAL_STATUS.Where(x => x.isDeleted == false) on m.maritalStatusID equals mar.maritalStatusID
+                            join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
+                            join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
+                            join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
+                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
+                            select new
+                            {
+                                memberID = m.memberID,
+                                username = m.username,
+                                name = m.name,
+                                surname = m.surname,
+                                password = m.password,
+                                birthday = m.birthday,
+                                imagePath = m.imagePath,
+                                emailAddress = m.emailAddress,
+                                houseAddress = m.houseAddress,
+                                membershipDate = m.membershipDate,
+                                countryID = m.countryID,
+                                countryName = c.countryName,
+                                nationalityID = m.nationalityID,
+                                nationalityName = n.nationality1,
+                                professionID = m.professionID,
+                                professionName = p.profession1,
+                                positionID = m.positionID,
+                                positionName = pos.positionName,
+                                genderID = m.genderID,
+                                genderName = g.genderName,
+                                employmenStatusID = m.employmentStatusID,
+                                employmenStatusName = e.employmentStatus,
+                                maritalStatusID = m.maritalStatusID,
+                                maritalStatusName = mar.maritalStatus,
+                                permissionID = m.permissionID,
+                                permissionName = perm.permission1,
+                                phoneNumber = m.phoneNumber,
+                                phoneNumber2 = m.phoneNumber2,
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
+                            }).OrderBy(x => x.surname).ToList();
+                foreach (var item in list)
+                {
+                    MemberDetailDTO dto = new MemberDetailDTO();
+                    dto.MemberID = item.memberID;
+                    dto.Username = item.username;
+                    dto.Name = item.name;
+                    dto.Surname = item.surname;
+                    dto.Password = item.password;
+                    dto.Birthday = item.birthday;
+                    dto.ImagePath = item.imagePath;
+                    dto.EmailAddress = item.emailAddress;
+                    dto.HouseAddress = item.houseAddress;
+                    dto.MembershipDate = (DateTime)item.membershipDate;
+                    dto.CountryID = item.countryID;
+                    dto.CountryName = item.countryName;
+                    dto.NationalityID = item.nationalityID;
+                    dto.NationalityName = item.nationalityName;
+                    dto.ProfessionID = item.professionID;
+                    dto.ProfessionName = item.professionName;
+                    dto.PositionID = item.positionID;
+                    dto.PositionName = item.positionName;
+                    dto.GenderID = item.genderID;
+                    dto.GenderName = item.genderName;
+                    dto.EmploymentStatusID = item.employmenStatusID;
+                    dto.EmploymentStatusName = item.employmenStatusName;
+                    dto.MaritalStatusID = item.maritalStatusID;
+                    dto.MaritalStatusName = item.maritalStatusName;
+                    dto.PermissionID = item.permissionID;
+                    dto.PermissionName = item.permissionName;
+                    dto.PhoneNumber = item.phoneNumber;
+                    dto.PhoneNumber2 = item.phoneNumber2;
+                    dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
+                    dto.DeadDate = item.deadDate;
+                    if (dto.DeadDate != null)
+                    {
+                        TimeSpan difference = (DateTime)dto.DeadDate - dto.Birthday;
+                        dto.DeadAge = Math.Floor(difference.TotalDays / 365.25);
+                    }
+                    else if (dto.DeadDate == null)
+                    {
+                        dto.DeadAge = 0;
+                    }
+                    members.Add(dto);
+                }
+                return members;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<MemberDetailDTO> Select(bool isDeleted)
         {
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == isDeleted)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == isDeleted && x.membershipStatusID == 1)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs on m.professionID equals p.professionID
@@ -274,7 +478,7 @@ namespace APC.DAL.DAO
         {
             try
             {
-                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false);
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.membershipStatusID == 1);
                 return numberOfMembers;
             }
             catch (Exception ex)
@@ -286,7 +490,19 @@ namespace APC.DAL.DAO
         {
             try
             {
-                int numberOfMembers = db.MEMBERs.Count(x=>x.isDeleted==false && x.genderID==1);
+                int numberOfMembers = db.MEMBERs.Count(x=>x.isDeleted==false && x.genderID==1 && x.membershipStatusID == 1);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int SelectCountDeadMale()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 1 && x.membershipStatusID == 3);
                 return numberOfMembers;
             }
             catch (Exception ex)
@@ -319,7 +535,19 @@ namespace APC.DAL.DAO
         {
             try
             {
-                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 2);
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 2 && x.membershipStatusID == 1);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int SelectCountDeadFemale()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 2 && x.membershipStatusID == 3);
                 return numberOfMembers;
             }
             catch (Exception ex)
@@ -331,7 +559,19 @@ namespace APC.DAL.DAO
         {
             try
             {
-                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 3);
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 3 && x.membershipStatusID == 1);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int SelectCountDeadDivisor()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 3 && x.membershipStatusID == 3);
                 return numberOfMembers;
             }
             catch (Exception ex)
@@ -345,7 +585,7 @@ namespace APC.DAL.DAO
             {
                 List<string> nationalityList = new List<string>();
                 List<MemberDetailDTO> uniqueNationality = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 1)
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             select new
                             {
@@ -375,7 +615,7 @@ namespace APC.DAL.DAO
             {
                 List<string> positionList = new List<string>();
                 List<MemberDetailDTO> uniquePosition = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 1)
                             join p in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals p.positionID
                             select new
                             {
@@ -405,7 +645,7 @@ namespace APC.DAL.DAO
             {
                 List<string> professionList = new List<string>();
                 List<MemberDetailDTO> uniqueProfession = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 1)
                             join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
                             select new
                             {
@@ -434,7 +674,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 1)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs on m.professionID equals p.professionID
@@ -607,7 +847,7 @@ namespace APC.DAL.DAO
         {
             try
             {
-                int permittedMembers = db.MEMBERs.Count(x => x.permissionID > 2);
+                int permittedMembers = db.MEMBERs.Count(x => x.permissionID > 2 && x.membershipStatusID == 1);
                 return permittedMembers;
             }
             catch (Exception ex)
@@ -616,6 +856,26 @@ namespace APC.DAL.DAO
             }           
         }
 
+        public int GetNoOfMembersAttendance(int ID)
+        {
+            try
+            {
+                int NoOfAttendance = db.PERSONAL_ATTENDANCE.Count(x => x.memberID == ID && x.isDeleted == false && x.attendanceStatusID == 2);
+                if (NoOfAttendance != 0)
+                {
+                    return NoOfAttendance;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
         public bool Update(MEMBER entity)
         {
             try
@@ -641,6 +901,7 @@ namespace APC.DAL.DAO
                 member.phoneNumber = entity.phoneNumber;
                 member.phoneNumber2 = entity.phoneNumber2;
                 member.phoneNumber3 = entity.phoneNumber3;
+                member.deadDate = entity.deadDate;
                 db.SaveChanges();
                 return true;
             }
