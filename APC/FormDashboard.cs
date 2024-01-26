@@ -524,5 +524,12 @@ namespace APC
         {
             btnEvents.PerformClick();
         }
+
+        private void btnFormerMembers_Click(object sender, EventArgs e)
+        {
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color1);
+            OpenChildForm(new FormFormerMembersList());
+        }
     }
 }

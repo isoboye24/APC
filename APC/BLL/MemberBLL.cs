@@ -95,7 +95,7 @@ namespace APC.BLL
             dto.MembershipStatuses = memStatus.Select();
             return dto;
         }
-        public MemberDTO SelectSelectFormerMembers()
+        public MemberDTO SelectFormerMembers()
         {
             MemberDTO dto = new MemberDTO();
             dto.Members = memberDAO.SelectFormerMembers();
@@ -103,6 +103,7 @@ namespace APC.BLL
             dto.Nationalities = nationalityDAO.Select();
             dto.Genders = genderDAO.Select();
             dto.Positions = positionDAO.Select();
+            dto.Professions = professionDAO.Select();
             return dto;
         }
 
@@ -163,6 +164,10 @@ namespace APC.BLL
         {
             return memberDAO.SelectCountDeadMale();
         }
+        public int SelectCountFormerMale()
+        {
+            return memberDAO.SelectCountFormerMale();
+        }
         public int SelectCountFemale()
         {
             return memberDAO.SelectCountFemale();
@@ -171,6 +176,10 @@ namespace APC.BLL
         {
             return memberDAO.SelectCountDeadFemale();
         }
+        public int SelectCountFormerFemale()
+        {
+            return memberDAO.SelectCountFormerFemale();
+        }
         public int SelectCountDivisor()
         {
             return memberDAO.SelectCountDivisor();
@@ -178,6 +187,10 @@ namespace APC.BLL
         public int SelectCountDeadDivisor()
         {
             return memberDAO.SelectCountDeadDivisor();
+        }
+        public int SelectCountFormerDivisor()
+        {
+            return memberDAO.SelectCountFormerDivisor();
         }
         public int SelectCountUniqueNationality()
         {

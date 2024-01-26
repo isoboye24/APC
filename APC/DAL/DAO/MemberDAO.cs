@@ -510,6 +510,18 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public int SelectCountFormerMale()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 1 && x.membershipStatusID == 2);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public string GetLastMemberUsername()
         {            
             try
@@ -555,6 +567,18 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public int SelectCountFormerFemale()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 2 && x.membershipStatusID == 2);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public int SelectCountDivisor()
         {
             try
@@ -572,6 +596,18 @@ namespace APC.DAL.DAO
             try
             {
                 int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 3 && x.membershipStatusID == 3);
+                return numberOfMembers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int SelectCountFormerDivisor()
+        {
+            try
+            {
+                int numberOfMembers = db.MEMBERs.Count(x => x.isDeleted == false && x.genderID == 3 && x.membershipStatusID == 2);
                 return numberOfMembers;
             }
             catch (Exception ex)
