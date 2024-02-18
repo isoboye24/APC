@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnFormerMembers = new FontAwesome.Sharp.IconButton();
             this.btnDeadMembers = new FontAwesome.Sharp.IconButton();
             this.btnManage = new FontAwesome.Sharp.IconButton();
             this.btnComments = new FontAwesome.Sharp.IconButton();
@@ -111,7 +112,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -161,7 +161,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.btnFormerMembers);
             this.panelMenu.Controls.Add(this.btnDeadMembers);
             this.panelMenu.Controls.Add(this.btnManage);
             this.panelMenu.Controls.Add(this.btnComments);
@@ -179,6 +179,28 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 700);
             this.panelMenu.TabIndex = 7;
+            // 
+            // btnFormerMembers
+            // 
+            this.btnFormerMembers.FlatAppearance.BorderSize = 0;
+            this.btnFormerMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormerMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormerMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFormerMembers.IconChar = FontAwesome.Sharp.IconChar.UserSlash;
+            this.btnFormerMembers.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFormerMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFormerMembers.IconSize = 24;
+            this.btnFormerMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormerMembers.Location = new System.Drawing.Point(3, 486);
+            this.btnFormerMembers.Name = "btnFormerMembers";
+            this.btnFormerMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnFormerMembers.Size = new System.Drawing.Size(217, 40);
+            this.btnFormerMembers.TabIndex = 7;
+            this.btnFormerMembers.Text = "    Former Members";
+            this.btnFormerMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormerMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFormerMembers.UseVisualStyleBackColor = true;
+            this.btnFormerMembers.Click += new System.EventHandler(this.btnFormerMembers_Click);
             // 
             // btnDeadMembers
             // 
@@ -1410,28 +1432,6 @@
             this.panelDesktop.TabIndex = 13;
             this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
             // 
-            // iconButton1
-            // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.UserSlash;
-            this.iconButton1.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 24;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(3, 486);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton1.Size = new System.Drawing.Size(217, 40);
-            this.iconButton1.TabIndex = 7;
-            this.iconButton1.Text = "    Former Members";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.btnFormerMembers_Click);
-            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1601,6 +1601,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.TableLayoutPanel panelTotalComment;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnFormerMembers;
     }
 }

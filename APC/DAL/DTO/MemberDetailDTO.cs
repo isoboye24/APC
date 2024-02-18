@@ -47,5 +47,8 @@ namespace APC.DAL.DTO
         public string MembershipStatus { get; set; }
         public DateTime? DeadDate { get; set; }
         public double DeadAge { get; set; }
+        //public string NextOfKin { get; set; }
+        //public int RelationshipToNextOfKinID { get; set; }
+        //public string RelationshipToNextOfKin { get; set; }
     }
 }

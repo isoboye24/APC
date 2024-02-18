@@ -52,7 +52,7 @@ namespace APC.AllForms
                     txtSurname.Text = item.Surname;
                     txtGender.Text = item.GenderName;
                     txtNationality.Text = item.NationalityName;
-                    txtBirthday.Text = item.Birthday.ToString();
+                    txtBirthday.Text = item.Birthday.ToShortDateString();
                     string fatherImagePath = Application.StartupPath + "\\images\\" + item.FatherImagePath;
                     picFather.ImageLocation = fatherImagePath;
                     txtFathersName.Text = item.FathersName;
@@ -74,7 +74,7 @@ namespace APC.AllForms
                 txtSurname.Text = detail.Surname;
                 txtGender.Text = detail.GenderName;
                 txtNationality.Text = detail.NationalityName;
-                txtBirthday.Text = detail.Birthday.ToString();
+                txtBirthday.Text = detail.Birthday.ToShortDateString();
                 string fatherImagePath = Application.StartupPath + "\\images\\" + detail.FatherImagePath;
                 picFather.ImageLocation = fatherImagePath;
                 txtFathersName.Text = detail.FathersName;

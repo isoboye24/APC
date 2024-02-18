@@ -115,7 +115,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(112, 42);
             this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Edit";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 

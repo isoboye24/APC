@@ -200,6 +200,7 @@
           <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
           <Property Name="membershipStatusID" Type="int" Nullable="false" />
           <Property Name="deadDate" Type="date" />
+          <Property Name="nextOfKin" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -223,6 +224,13 @@
           <Property Name="nationality" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="isDeleted" Type="bit" Nullable="false" />
           <Property Name="deletedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="NEXT_OF_KIN_RELATIONSHIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationToNextOfKin" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -287,6 +295,7 @@
           <EntitySet Name="MEMBERSHIP_STATUS" EntityType="Self.MEMBERSHIP_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MONTH" EntityType="Self.MONTH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NATIONALITY" EntityType="Self.NATIONALITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NEXT_OF_KIN_RELATIONSHIP" EntityType="Self.NEXT_OF_KIN_RELATIONSHIP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERMISSION" EntityType="Self.PERMISSION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSONAL_ATTENDANCE" EntityType="Self.PERSONAL_ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="POSITION" EntityType="Self.POSITION" Schema="dbo" store:Type="Tables" />
@@ -492,6 +501,7 @@
           <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="membershipStatusID" Type="Int32" Nullable="false" />
           <Property Name="deadDate" Type="DateTime" Precision="0" />
+          <Property Name="nextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -515,6 +525,13 @@
           <Property Name="nationality1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="NEXT_OF_KIN_RELATIONSHIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelationToNextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -579,6 +596,7 @@
           <EntitySet Name="MEMBERSHIP_STATUS" EntityType="Self.MEMBERSHIP_STATUS" />
           <EntitySet Name="MONTHs" EntityType="Self.MONTH" />
           <EntitySet Name="NATIONALITies" EntityType="Self.NATIONALITY" />
+          <EntitySet Name="NEXT_OF_KIN_RELATIONSHIP" EntityType="Self.NEXT_OF_KIN_RELATIONSHIP" />
           <EntitySet Name="PERMISSIONs" EntityType="Self.PERMISSION" />
           <EntitySet Name="PERSONAL_ATTENDANCE" EntityType="Self.PERSONAL_ATTENDANCE" />
           <EntitySet Name="POSITIONs" EntityType="Self.POSITION" />
@@ -798,6 +816,7 @@
                 <ScalarProperty Name="phoneNumber3" ColumnName="phoneNumber3" />
                 <ScalarProperty Name="membershipStatusID" ColumnName="membershipStatusID" />
                 <ScalarProperty Name="deadDate" ColumnName="deadDate" />
+                <ScalarProperty Name="nextOfKin" ColumnName="nextOfKin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -824,6 +843,14 @@
                 <ScalarProperty Name="nationality1" ColumnName="nationality" />
                 <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEXT_OF_KIN_RELATIONSHIP">
+            <EntityTypeMapping TypeName="APCModel.NEXT_OF_KIN_RELATIONSHIP">
+              <MappingFragment StoreEntitySet="NEXT_OF_KIN_RELATIONSHIP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RelationToNextOfKin" ColumnName="RelationToNextOfKin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

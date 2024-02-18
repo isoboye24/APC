@@ -52,64 +52,120 @@ namespace APC.DAL.DAO
 
         public List<PersonalAttendanceDetailDTO> Select()
         {
-            //List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
-            //var list = (from p in db.PERSONAL_ATTENDANCE.Where(x=>x.isDeleted ==false)
-            //            join m in db.MONTHs on p.monthID equals m.monthID
-            //            join mem in db.MEMBERs.Where(x=>x.isDeleted==false) on p.memberID equals mem.memberID
-            //            join ats in db.ATTENDANCE_STATUS on p.attendanceStatusID equals ats.attendanceStatusID
-            //            join g in db.GENERAL_ATTENDANCE.Where(x=>x.isDeleted ==false) on p.generalAttendanceID equals g.generalAttendanceID
-            //            select new
-            //            {
-            //                attendanceID = p.attendanceID,
-            //                attendanceStatusID = p.attendanceStatusID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //            })
-            throw null;
+            List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
+            return attendances;
         }
 
-        public List<PersonalAttendanceDetailDTO> Select(int ID)
+        public List<PersonalAttendanceDetailDTO> SelectPresentMember(int ID)
         {
-            //List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
-            //var list = (from p in db.PERSONAL_ATTENDANCE.Where(x=>x.isDeleted ==false)
-            //            join m in db.MONTHs on p.monthID equals m.monthID
-            //            join mem in db.MEMBERs.Where(x=>x.isDeleted==false) on p.memberID equals mem.memberID
-            //            join ats in db.ATTENDANCE_STATUS on p.attendanceStatusID equals ats.attendanceStatusID
-            //            join g in db.GENERAL_ATTENDANCE.Where(x=>x.isDeleted ==false) on p.generalAttendanceID equals g.generalAttendanceID
-            //            select new
-            //            {
-            //                attendanceID = p.attendanceID,
-            //                attendanceStatusID = p.attendanceStatusID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //                attendanceID = p.attendanceID,
-            //            })
-            throw null;
+            List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
+            List<int> members = new List<int>();
+            List<int> absentMembers = new List<int>();
+            var list = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
+                            join mem in db.MEMBERs.Where(x => x.isDeleted == false && x.memberID ==ID) on p.memberID equals mem.memberID
+                            join m in db.MONTHs on p.monthID equals m.monthID
+                            join g in db.GENDERs on mem.genderID equals g.genderID
+                            join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Present") on p.attendanceStatusID equals ats.attendanceStatusID
+                            join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.generalAttendanceID) on p.generalAttendanceID equals gen.generalAttendanceID
+                            select new
+                            {
+                                attendanceID = p.attendanceID,
+                                attendanceStatusID = p.attendanceStatusID,
+                                attendanceStatus = ats.attendanceStatus,
+                                day = p.day,
+                                monthID = p.monthID,
+                                monthName = m.monthName,
+                                year = p.year,
+                                memberID = p.memberID,
+                                surname = mem.surname,
+                                name = mem.name,
+                                imagePath = mem.imagePath,
+                                genderID = mem.genderID,
+                                gender = g.genderName,
+                                monthlyDues = p.monthlyDues,
+                                expectedDue = p.expectedMonthlyDue,
+                                balance = p.balance,
+                                meetingID = p.generalAttendanceID,
+                            }).ToList();
+                foreach (var item in list)
+                {
+                    PersonalAttendanceDetailDTO dto = new PersonalAttendanceDetailDTO();
+                    dto.AttendanceID = item.attendanceID;
+                    dto.AttendanceStatusID = item.attendanceStatusID;
+                    dto.Day = (int)item.day;
+                    dto.MonthID = item.monthID;
+                    dto.MonthName = item.monthName;
+                    dto.Year = item.year.ToString();
+                    dto.MemberID = item.memberID;
+                    dto.Surname = item.surname;
+                    dto.Name = item.name;
+                    dto.ImagePath = item.imagePath;
+                    dto.GenderID = item.genderID;
+                    dto.Gender = item.gender;
+                    dto.AttendanceStatusName = item.attendanceStatus;
+                    dto.MonthlyDue = (decimal)item.monthlyDues;
+                    dto.ExpectedDue = (decimal)item.expectedDue;
+                    dto.Balance = (decimal)item.balance;
+                    dto.GeneralAttendanceID = item.meetingID;
+                    attendances.Add(dto);
+                }
+            return attendances;
+        }
+
+        public List<PersonalAttendanceDetailDTO> SelectAbsentMember(int ID)
+        {
+            List<PersonalAttendanceDetailDTO> attendances = new List<PersonalAttendanceDetailDTO>();
+            List<int> members = new List<int>();
+            List<int> absentMembers = new List<int>();
+            var list = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
+                        join mem in db.MEMBERs.Where(x => x.isDeleted == false && x.memberID == ID) on p.memberID equals mem.memberID
+                        join m in db.MONTHs on p.monthID equals m.monthID
+                        join g in db.GENDERs on mem.genderID equals g.genderID
+                        join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Absent") on p.attendanceStatusID equals ats.attendanceStatusID
+                        join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.generalAttendanceID) on p.generalAttendanceID equals gen.generalAttendanceID
+                        select new
+                        {
+                            attendanceID = p.attendanceID,
+                            attendanceStatusID = p.attendanceStatusID,
+                            attendanceStatus = ats.attendanceStatus,
+                            day = p.day,
+                            monthID = p.monthID,
+                            monthName = m.monthName,
+                            year = p.year,
+                            memberID = p.memberID,
+                            surname = mem.surname,
+                            name = mem.name,
+                            imagePath = mem.imagePath,
+                            genderID = mem.genderID,
+                            gender = g.genderName,
+                            monthlyDues = p.monthlyDues,
+                            expectedDue = p.expectedMonthlyDue,
+                            balance = p.balance,
+                            meetingID = p.generalAttendanceID,
+                        }).ToList();
+            foreach (var item in list)
+            {
+                PersonalAttendanceDetailDTO dto = new PersonalAttendanceDetailDTO();
+                dto.AttendanceID = item.attendanceID;
+                dto.AttendanceStatusID = item.attendanceStatusID;
+                dto.Day = (int)item.day;
+                dto.MonthID = item.monthID;
+                dto.MonthName = item.monthName;
+                dto.Year = item.year.ToString();
+                dto.MemberID = item.memberID;
+                dto.Surname = item.surname;
+                dto.Name = item.name;
+                dto.ImagePath = item.imagePath;
+                dto.GenderID = item.genderID;
+                dto.Gender = item.gender;
+                dto.AttendanceStatusName = item.attendanceStatus;
+                dto.MonthlyDue = (decimal)item.monthlyDues;
+                dto.ExpectedDue = (decimal)item.expectedDue;
+                dto.Balance = (decimal)item.balance;
+                dto.GeneralAttendanceID = item.meetingID;
+                attendances.Add(dto);
+            }
+            return attendances;
         }
         public List<PersonalAttendanceDetailDTO> Select(bool isDeleted)
         {

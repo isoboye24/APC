@@ -43,6 +43,7 @@ namespace APC.DAL
         public virtual DbSet<MEMBERSHIP_STATUS> MEMBERSHIP_STATUS { get; set; }
         public virtual DbSet<MONTH> MONTHs { get; set; }
         public virtual DbSet<NATIONALITY> NATIONALITies { get; set; }
+        public virtual DbSet<NEXT_OF_KIN_RELATIONSHIP> NEXT_OF_KIN_RELATIONSHIP { get; set; }
         public virtual DbSet<PERMISSION> PERMISSIONs { get; set; }
         public virtual DbSet<PERSONAL_ATTENDANCE> PERSONAL_ATTENDANCE { get; set; }
         public virtual DbSet<POSITION> POSITIONs { get; set; }

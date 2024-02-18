@@ -74,7 +74,7 @@ namespace APC.AllForms
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Summary";
             dataGridView1.Columns[2].HeaderText = "Amount Spent (€)";
-            dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[3].HeaderText = "Day";
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "Month";
             dataGridView1.Columns[6].HeaderText = "Year";

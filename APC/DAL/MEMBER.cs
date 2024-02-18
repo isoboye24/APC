@@ -39,5 +39,6 @@ namespace APC.DAL
         public string phoneNumber3 { get; set; }
         public int membershipStatusID { get; set; }
         public Nullable<System.DateTime> deadDate { get; set; }
+        public string nextOfKin { get; set; }
     }
 }

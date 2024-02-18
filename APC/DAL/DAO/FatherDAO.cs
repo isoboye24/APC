@@ -23,6 +23,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -53,7 +54,10 @@ namespace APC.DAL.DAO
                                 permissionName = perm.permission1,
                                 phoneNumber = m.phoneNumber,
                                 phoneNumber2 = m.phoneNumber2,
-                                phoneNumber3 = m.phoneNumber3
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {

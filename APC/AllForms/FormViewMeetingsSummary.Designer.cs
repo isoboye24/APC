@@ -1,6 +1,6 @@
 ﻿namespace APC.AllForms
 {
-    partial class FormViewDocument
+    partial class FormViewMeetingsSummary
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormViewDocument));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormViewMeetingsSummary));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -36,7 +36,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelWordsCount = new System.Windows.Forms.Label();
-            this.txtDocumentContent = new System.Windows.Forms.TextBox();
+            this.txtSummary = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtDocumentContent, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtSummary, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1036, 630);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel11
             // 
@@ -144,30 +144,29 @@
             this.labelWordsCount.TabIndex = 0;
             this.labelWordsCount.Text = "0";
             // 
-            // txtDocumentContent
+            // txtSummary
             // 
-            this.txtDocumentContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDocumentContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumentContent.Location = new System.Drawing.Point(13, 15);
-            this.txtDocumentContent.Multiline = true;
-            this.txtDocumentContent.Name = "txtDocumentContent";
-            this.txtDocumentContent.ReadOnly = true;
-            this.txtDocumentContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDocumentContent.Size = new System.Drawing.Size(1010, 516);
-            this.txtDocumentContent.TabIndex = 8;
+            this.txtSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSummary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSummary.Location = new System.Drawing.Point(13, 15);
+            this.txtSummary.Multiline = true;
+            this.txtSummary.Name = "txtSummary";
+            this.txtSummary.ReadOnly = true;
+            this.txtSummary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSummary.Size = new System.Drawing.Size(1010, 516);
+            this.txtSummary.TabIndex = 8;
             // 
-            // FormViewDocument
+            // FormViewMeetingsSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 630);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormViewDocument";
+            this.Name = "FormViewMeetingsSummary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Document_name";
-            this.Load += new System.EventHandler(this.FormViewDocument_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormViewDocument_MouseDown);
+            this.Text = "Meeting on date";
+            this.Load += new System.EventHandler(this.FormViewMeetingsSummary_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -183,10 +182,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtDocumentContent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelWordsCount;
+        private System.Windows.Forms.TextBox txtSummary;
     }
 }

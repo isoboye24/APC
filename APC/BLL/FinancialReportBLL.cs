@@ -41,6 +41,10 @@ namespace APC.BLL
             dto.FinancialReports = dao.Select();
             return dto;
         }
+        public bool CheckTotalRaisedAmountAndTotalSpentAmount(int year)
+        {
+            return dao.CheckTotalRaisedAmountAndTotalSpentAmount(year);
+        }
 
         public decimal SelectTotalRaisedAmount()
         {

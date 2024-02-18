@@ -132,6 +132,8 @@ namespace APC
 
         private void FormEvent_Load(object sender, EventArgs e)
         {
+            txtImagePath.Hide();
+            label4.Hide();
             if (isUpdate)
             {
                 txtImagePath.Text = detail.CoverImagePath;

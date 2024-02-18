@@ -61,7 +61,9 @@ namespace APC.AllForms
         CommentDetailDTO commentDetail = new CommentDetailDTO();
         CommentDTO dto = new CommentDTO();
         MemberBLL bll = new MemberBLL();
-        int attendanceCount = 0;
+        int attendancePresentCount = 0;
+        int attendanceAbsentCount = 0;
+        public bool isFormer = false;
         private void FormViewMember_Load(object sender, EventArgs e)
         {
             labelCommentText.Hide();
@@ -102,13 +104,30 @@ namespace APC.AllForms
                 btnViewChildren.Visible = true;
             }
 
-            attendanceCount = bll.GetNoOfMembersAttendance(detail.MemberID);
-            labelNoOfAttendance.Text = attendanceCount.ToString();
-            btnViewAttendance.Hide();
-            if (attendanceCount > 0)
+            attendancePresentCount = bll.GetNoOfMembersPresentAttendance(detail.MemberID);
+            labelNoOfPresent.Text = attendancePresentCount.ToString();
+            btnViewPresentAttendance.Hide();
+            if (attendancePresentCount > 0)
             {
-                btnViewAttendance.Visible = true;
-            }            
+                btnViewPresentAttendance.Visible = true;
+            }
+
+            attendanceAbsentCount = bll.GetNoOfMembersAbsentAttendance(detail.MemberID);
+            labelNoOfAbsent.Text = attendanceAbsentCount.ToString();
+            btnViewAbsentAttendance.Hide();
+            if (attendanceAbsentCount > 0)
+            {
+                btnViewAbsentAttendance.Visible = true;
+            }
+            //if (isFormer)
+            //{
+            //    label13.Hide();
+            //    label18.Hide();
+            //    labelNoOfPresent.Hide();
+            //    labelNoOfAbsent.Hide();
+            //    btnViewPresentAttendance.Hide();
+            //    btnViewAbsentAttendance.Hide();
+            //}
 
             txtPhone2.Hide();
             txtPhone3.Hide();
@@ -149,6 +168,8 @@ namespace APC.AllForms
                 txtNationality.Text = detail.NationalityName;
                 txtMaritalStatus.Text = detail.MaritalStatusName;
                 txtPermission.Text = detail.PermissionName;
+                //txtNextOfKin.Text = detail.NextOfKin;
+                //txtNextOfKinRelationship.Text = detail.RelationshipToNextOfKin;
             }
         }
 
@@ -182,14 +203,26 @@ namespace APC.AllForms
                 this.Visible = true;
             }
         }
-
-        
         private void btnViewAttendance_Click(object sender, EventArgs e)
         {
-            if (attendanceCount > 0)
+            if (attendancePresentCount > 0)
             {
                 FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                //open.detail = commentDetail;
+                open.detail = detail;
+                open.isPresent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAbsentAttendance_Click(object sender, EventArgs e)
+        {
+            if (attendanceAbsentCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAbsent = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;

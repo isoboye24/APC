@@ -9,11 +9,14 @@ namespace APC.DAL.DTO
     public class PersonalAttendanceDTO
     {
         public List<MemberDetailDTO> Members { get; set; }
+        public List<MemberDetailDTO> Members3MonthsAbsentees { get; set; }
         public List<MonthDetailDTO> Months { get; set; }
         public List<AttendanceStatusDetailDTO> AttendanceStatuses { get; set; }
         public List<GenderDetailDTO> Genders { get; set; }
+        public List<PersonalAttendanceDetailDTO> PresentMember { get; set; }
+        public List<PersonalAttendanceDetailDTO> AbsentMember { get; set; }
         public List<PersonalAttendanceDetailDTO> PersonalAttendances { get; set; }
         public List<GeneralAttendanceDetailDTO> GeneralAttendance { get; set; }
-        public List<MonthAndYearListDetailDTO> MonthsAndYears { get; set; }
+        public List<int> Years { get; set; }
     }
 }

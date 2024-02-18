@@ -133,7 +133,6 @@ namespace APC
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-
             MemberDTO memberDTO = memberBLL.Select();
             MemberDetailDTO detail = memberDTO.Members.First(x => x.MemberID == LoginInfo.MemberID);
             string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -150,6 +149,7 @@ namespace APC
                 btnExpenditure.Hide();
                 btnEvents.Hide();
                 btnDeadMembers.Hide();
+                btnFormerMembers.Hide();
                 btnDocuments.Hide();
                 btnManage.Hide();
                 btnMembers.Text = "    Profile";

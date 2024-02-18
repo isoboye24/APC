@@ -113,6 +113,12 @@
     <Compile Include="AllForms\FormViewDocument.Designer.cs">
       <DependentUpon>FormViewDocument.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewMeetingsSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewMeetingsSummary.Designer.cs">
+      <DependentUpon>FormViewMeetingsSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormViewPersonalAttendances.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,7 @@
     <Compile Include="BLL\DocumentBLL.cs" />
     <Compile Include="BLL\GeneralAttendanceBLL.cs" />
     <Compile Include="BLL\MembershipStatusBLL.cs" />
+    <Compile Include="BLL\RelationshipsToKinBLL.cs" />
     <Compile Include="CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -139,6 +146,7 @@
     </Compile>
     <Compile Include="DAL\DAO\DocumentDAO.cs" />
     <Compile Include="DAL\DAO\MembershipStatusDAO.cs" />
+    <Compile Include="DAL\DAO\RelationshipToNextOfKinDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +165,8 @@
     <Compile Include="DAL\DOCUMENT.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\AbsenteesDetailDTO.cs" />
+    <Compile Include="DAL\DTO\AbsenteesDTO.cs" />
     <Compile Include="DAL\DTO\DeletedDataDTO.cs" />
     <Compile Include="DAL\DTO\DocumentDetailDTO.cs" />
     <Compile Include="AllForms\FormDocumentList.cs">
@@ -446,6 +456,8 @@
     <Compile Include="DAL\DTO\PositionDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDetailDTO.cs" />
     <Compile Include="DAL\DTO\ProfessionDTO.cs" />
+    <Compile Include="DAL\DTO\RelationshipToNextOfKinDetailDTO.cs" />
+    <Compile Include="DAL\DTO\RelationshipToNextOfKinDTO.cs" />
     <Compile Include="DAL\DUAL_NATIONALITY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -483,6 +495,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\NATIONALITY.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NEXT_OF_KIN_RELATIONSHIP.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\PERMISSION.cs">
@@ -722,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewExpenditure.resx">
       <DependentUpon>FormViewExpenditure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewMeetingsSummary.resx">
+      <DependentUpon>FormViewMeetingsSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewMember.resx">
       <DependentUpon>FormViewMember.cs</DependentUpon>

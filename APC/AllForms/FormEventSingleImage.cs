@@ -121,6 +121,8 @@ namespace APC.AllForms
 
         private void FormEventSingleImage_Load(object sender, EventArgs e)
         {
+            txtImagePath.Hide();
+            label3.Hide();
             if (isUdate)
             {
                 txtImagePath.Text = detail.ImagePath;

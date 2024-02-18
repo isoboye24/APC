@@ -22,6 +22,7 @@ namespace APC.BLL
         PermissionDAO permissionDAO = new PermissionDAO();
         CountryDAO countryDAO = new CountryDAO();
         MembershipStatusDAO memStatus = new MembershipStatusDAO();
+        RelationshipToNextOfKinDAO kinsDAO = new RelationshipToNextOfKinDAO();
 
         // These classes are here for the sake of deletedData form
         GeneralAttendanceDAO genAttendDAO = new GeneralAttendanceDAO();
@@ -77,6 +78,8 @@ namespace APC.BLL
             member.phoneNumber3 = entity.PhoneNumber3;
             member.deadDate = entity.DeadDate;
             member.membershipStatusID = entity.MembershipStatusID;
+            //member.nextOfKin = entity.NextOfKin;
+            //member.relationshipToKinID = entity.RelationshipToNextOfKinID;
             return memberDAO.Insert(member);
         }
 
@@ -93,6 +96,8 @@ namespace APC.BLL
             dto.MaritalStatuses = marStatusDAO.Select();
             dto.Permissions = permissionDAO.Select();
             dto.MembershipStatuses = memStatus.Select();
+            dto.Absentees = memberDAO.Select3MonthsAbsentes();
+            dto.RelationshipsToNextOfKin = kinsDAO.Select();
             return dto;
         }
         public MemberDTO SelectFormerMembers()
@@ -152,9 +157,17 @@ namespace APC.BLL
         {
             return memberDAO.GetLastMemberUsername();
         }
-        public int GetNoOfMembersAttendance(int ID)
+        public int GetNoOfMembersPresentAttendance(int ID)
         {
-            return memberDAO.GetNoOfMembersAttendance(ID);
+            return memberDAO.GetNoOfMembersPresentAttendance(ID);
+        }
+        public int GetNoOfMembersAbsentAttendance(int ID)
+        {
+            return memberDAO.GetNoOfMembersAbsentAttendance(ID);
+        }
+        public int Select3MonthsAbsentesCount()
+        {
+            return memberDAO.Select3MonthsAbsentesCount();
         }
         public int SelectCountMale()
         {
@@ -223,6 +236,8 @@ namespace APC.BLL
             member.phoneNumber3 = entity.PhoneNumber3;
             member.deadDate = entity.DeadDate;
             member.membershipStatusID = entity.MembershipStatusID;
+            //member.nextOfKin = entity.NextOfKin;
+            //member.relationshipToKinID = entity.RelationshipToNextOfKinID;
             return memberDAO.Update(member);
         }
     }

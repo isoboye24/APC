@@ -69,12 +69,16 @@ namespace APC
             General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
             cmbMembershipStatus.DataSource = dto.MembershipStatuses;
             General.ComboBoxProps(cmbMembershipStatus, "MembershipStatus", "MembershipStatusID");
+            //cmbRelationshipToNextOfKin.DataSource = dto.RelationshipsToNextOfKin;
+            //General.ComboBoxProps(cmbRelationshipToNextOfKin, "Relationship", "RelationshipToNextOfKinID");
 
             txtPhone2.Hide();
             txtPhone3.Hide();
             labelPhone2.Hide();
             labelPhone3.Hide();
             txtImagePath.Hide();
+            txtNextOfKin.Hide();
+            cmbRelationshipToNextOfKin.Hide();
             tableLayoutPanelDeceasedDate.Hide();
             if (isUpdateDeadMember)
             {
@@ -119,6 +123,7 @@ namespace APC
                 }
                 txtPhone2.Text = detail.PhoneNumber2;
                 txtPhone3.Text = detail.PhoneNumber3;
+                //txtNextOfKin.Text = detail.NextOfKin;
                 cmbCountry.SelectedValue = detail.CountryID;
                 cmbProfession.SelectedValue = detail.ProfessionID;
                 cmbEmpStatus.SelectedValue = detail.EmploymentStatusID;
@@ -126,6 +131,7 @@ namespace APC
                 cmbNationality.SelectedValue = detail.NationalityID;
                 cmbMaritalStatus.SelectedValue = detail.MaritalStatusID;
                 cmbMembershipStatus.SelectedValue = detail.MembershipStatusID;
+                //cmbRelationshipToNextOfKin.SelectedValue = detail.RelationshipToNextOfKinID;
                 if (LoginInfo.AccessLevel != 4)
                 {
                     labelAccessLevel.Hide();
@@ -203,6 +209,10 @@ namespace APC
             {
                 MessageBox.Show("Please select a membership status");
             }
+            //else if (cmbRelationshipToNextOfKin.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Please select a relationship to next of kin");
+            //}
             else if (LoginInfo.AccessLevel == 4 && cmbPermission.SelectedIndex == -1)
             {                
                 MessageBox.Show("Please select an access level");
@@ -257,12 +267,14 @@ namespace APC
                     }
                     member.EmailAddress = txtEmail.Text;
                     member.HouseAddress = txtAddress.Text;
+                    //member.NextOfKin = txtNextOfKin.Text;
                     member.CountryID = Convert.ToInt32(cmbCountry.SelectedValue);
                     member.ProfessionID = Convert.ToInt32(cmbProfession.SelectedValue);
                     member.GenderID = Convert.ToInt32(cmbGender.SelectedValue);
                     member.EmploymentStatusID = Convert.ToInt32(cmbEmpStatus.SelectedValue);
                     member.NationalityID = Convert.ToInt32(cmbNationality.SelectedValue);
                     member.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
+                    //member.RelationshipToNextOfKinID = Convert.ToInt32(cmbRelationshipToNextOfKin.SelectedValue);
                     if (LoginInfo.AccessLevel != 4)
                     {
                         member.PermissionID = 2;
@@ -301,6 +313,7 @@ namespace APC
                         txtPhone1.Clear();
                         txtPhone2.Clear();
                         txtPhone3.Clear();
+                        //txtNextOfKin.Clear();
                         cmbCountry.SelectedIndex = -1;
                         cmbCountry.DataSource = dto.Countries;
                         cmbNationality.SelectedIndex = -1;
@@ -319,6 +332,8 @@ namespace APC
                         cmbPermission.DataSource = dto.Permissions;
                         cmbMembershipStatus.SelectedIndex = -1;
                         cmbMembershipStatus.DataSource = dto.MembershipStatuses;
+                        cmbRelationshipToNextOfKin.SelectedIndex = -1;
+                        //cmbRelationshipToNextOfKin.DataSource = dto.RelationshipsToNextOfKin;
                         picProfilePic.Image = null;
                         txtPhone2.Hide();
                         txtPhone3.Hide();
@@ -339,7 +354,7 @@ namespace APC
                             && detail.ProfessionID == Convert.ToInt32(cmbProfession.SelectedValue) && detail.EmploymentStatusID == Convert.ToInt32(cmbEmpStatus.SelectedValue)
                             && detail.GenderID == Convert.ToInt32(cmbGender.SelectedValue) && detail.NationalityID == Convert.ToInt32(cmbNationality.SelectedValue)
                             && detail.MaritalStatusID == Convert.ToInt32(cmbMaritalStatus.SelectedValue) && detail.PermissionID == Convert.ToInt32(cmbPermission.SelectedValue)
-                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue)
+                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue) 
                         )
                     {
                         MessageBox.Show("There is no change");
@@ -355,7 +370,7 @@ namespace APC
                             && detail.ProfessionID == Convert.ToInt32(cmbProfession.SelectedValue) && detail.EmploymentStatusID == Convert.ToInt32(cmbEmpStatus.SelectedValue)
                             && detail.GenderID == Convert.ToInt32(cmbGender.SelectedValue) && detail.NationalityID == Convert.ToInt32(cmbNationality.SelectedValue)
                             && detail.MaritalStatusID == Convert.ToInt32(cmbMaritalStatus.SelectedValue) && detail.PermissionID == Convert.ToInt32(cmbPermission.SelectedValue)
-                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue)
+                            && detail.MembershipStatusID == Convert.ToInt32(cmbMembershipStatus.SelectedValue) 
                         )
                     {
                         MessageBox.Show("There is no change");
@@ -365,6 +380,7 @@ namespace APC
                         detail.Name = txtName.Text;
                         detail.Surname = txtSurname.Text;
                         detail.HouseAddress = txtAddress.Text;
+                        //detail.NextOfKin = txtNextOfKin.Text;
                         detail.PositionID = Convert.ToInt32(cmbPosition.SelectedValue);                        
                         detail.MembershipDate = dateTimePickerMemSince.Value;
                         detail.Username = detail.Username;
@@ -431,6 +447,7 @@ namespace APC
                         detail.MaritalStatusID = Convert.ToInt32(cmbMaritalStatus.SelectedValue);
                         detail.PermissionID = Convert.ToInt32(cmbPermission.SelectedValue);
                         detail.MembershipStatusID = Convert.ToInt32(cmbMembershipStatus.SelectedValue);
+                        //detail.RelationshipToNextOfKinID = Convert.ToInt32(cmbRelationshipToNextOfKin.SelectedValue);
                         if (isUpdateDeadMember)
                         {
                             detail.DeadDate = dateTimePickerDeceasedDate.Value;

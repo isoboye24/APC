@@ -41,6 +41,8 @@ namespace APC
             dataGridView1.Columns[8].HeaderText = "Dues Expected";
             dataGridView1.Columns[9].HeaderText = "Balance";
             dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            //dataGridView1.Columns[12].Visible = false;
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();
@@ -202,6 +204,7 @@ namespace APC
             detail.TotalDuesExpected = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             detail.TotalDuesBalance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
             detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            detail.AttendanceDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -223,6 +226,14 @@ namespace APC
                     }
                 }
             }
+        }
+
+        private void btnAbsentees_Click(object sender, EventArgs e)
+        {
+            FormNotifications open = new FormNotifications();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
         }
     }
 }

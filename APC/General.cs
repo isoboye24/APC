@@ -206,5 +206,11 @@ namespace APC
                 return "Unknown Document";
             }
         }
+
+        public static IEnumerable<int> FindMembersAppearingThreeTimes(List<int> list)
+        {
+            var groupedMembers = list.GroupBy(x => x);
+            return groupedMembers.Where(group => group.Count() == 3).Select(group => group.Key);
+        }
     }
 }

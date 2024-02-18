@@ -92,6 +92,9 @@ namespace APC
             dataGridView1.Columns[36].Visible = false;
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
+            //dataGridView1.Columns[39].Visible = false;
+            //dataGridView1.Columns[40].Visible = false;
+            //dataGridView1.Columns[41].Visible = false;
             #endregion
             labelCommentDate.Hide();
             labelCommentTime.Hide();
@@ -182,6 +185,9 @@ namespace APC
             memberDetail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtSurnameReadOnly.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            memberDetail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            string imagePath = Application.StartupPath + "\\images\\" + memberDetail.ImagePath;
+            picProfilePic.ImageLocation = imagePath;
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)

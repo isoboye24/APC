@@ -21,5 +21,7 @@ namespace APC.DAL.DTO
         public List<MothersDetailDTO> Mothers { get; set; }
         public List<PermissionDetailDTO> Permissions { get; set; }
         public List<MembershipStatusDetailDTO> MembershipStatuses { get; set; }
+        public List<AbsenteesDetailDTO> Absentees { get; set; }
+        public List<RelationshipToNextOfKinDetailDTO> RelationshipsToNextOfKin { get; set; }
     }
 }

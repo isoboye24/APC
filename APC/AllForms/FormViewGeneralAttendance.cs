@@ -86,6 +86,7 @@ namespace APC.AllForms
             dataGridView1.Columns[16].Visible = false;
 
             labelTitle.Text = "Meeting on " + detail.Day + "." + detail.MonthID + "." + detail.Year;
+            txtSummary.Text = detail.Summary;
             ShowRecordData();
         }
         private void ShowRecordData()
@@ -193,6 +194,17 @@ namespace APC.AllForms
                 }
             }
             dataGridView1.DataSource = list;
-        }        
+        }
+
+        private void btnViewSummary_Click(object sender, EventArgs e)
+        {
+            FormViewMeetingsSummary open = new FormViewMeetingsSummary();            
+            open.detail = detail;
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+            FillDataGrid();
+            ShowRecordData();
+        }
     }
 }

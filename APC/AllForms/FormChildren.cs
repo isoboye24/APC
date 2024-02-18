@@ -51,6 +51,8 @@ namespace APC
             cmbNationality.DataSource = dto.Nationalities;
             General.ComboBoxProps(cmbGender, "GenderName", "GenderID");
             General.ComboBoxProps(cmbNationality, "Nationality", "NationalityID");
+            txtImagePath.Hide();
+            label3.Hide();
 
             #region
             dataGridViewFathers.DataSource = dto.Fathers;
@@ -93,6 +95,9 @@ namespace APC
             dataGridViewFathers.Columns[36].Visible = false;
             dataGridViewFathers.Columns[37].Visible = false;
             dataGridViewFathers.Columns[38].Visible = false;
+            //dataGridViewFathers.Columns[39].Visible = false;
+            //dataGridViewFathers.Columns[40].Visible = false;
+            //dataGridViewFathers.Columns[41].Visible = false;
 
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
@@ -134,6 +139,9 @@ namespace APC
             dataGridViewMothers.Columns[36].Visible = false;
             dataGridViewMothers.Columns[37].Visible = false;
             dataGridViewMothers.Columns[38].Visible = false;
+            //dataGridViewMothers.Columns[39].Visible = false;
+            //dataGridViewMothers.Columns[40].Visible = false;
+            //dataGridViewMothers.Columns[41].Visible = false;
             #endregion
 
             if (isUpdate)

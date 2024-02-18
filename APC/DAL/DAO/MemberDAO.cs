@@ -16,7 +16,7 @@ namespace APC.DAL.DAO
         {
             try
             {
-                List<MEMBER> list = db.MEMBERs.Where(x => x.username == username && x.password == password).ToList();
+                List<MEMBER> list = db.MEMBERs.Where(x => x.username == username && x.password == password && x.membershipStatusID == 1).ToList();
                 return list;
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x=>x.isDeleted==false && x.membershipStatusID == 1)
+                var list = (from m in db.MEMBERs.Where(x=>x.isDeleted==false)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
@@ -98,7 +98,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -133,6 +134,9 @@ namespace APC.DAL.DAO
                                 deadDate = m.deadDate,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x=>x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -169,6 +173,9 @@ namespace APC.DAL.DAO
                     dto.DeadDate = item.deadDate;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     members.Add(dto);
                 }
                 return members;
@@ -183,7 +190,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 2)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
@@ -192,7 +199,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Former") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -227,6 +235,9 @@ namespace APC.DAL.DAO
                                 deadDate = m.deadDate,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -263,6 +274,9 @@ namespace APC.DAL.DAO
                     dto.DeadDate = item.deadDate;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     members.Add(dto);
                 }
                 return members;
@@ -277,7 +291,7 @@ namespace APC.DAL.DAO
             try
             {
                 List<MemberDetailDTO> members = new List<MemberDetailDTO>();
-                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.membershipStatusID == 3)
+                var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false)
                             join g in db.GENDERs on m.genderID equals g.genderID
                             join e in db.EMPLOYMENT_STATUS.Where(x => x.isDeleted == false) on m.employmentStatusID equals e.employmentStatusID
                             join p in db.PROFESSIONs.Where(x => x.isDeleted == false) on m.professionID equals p.professionID
@@ -286,7 +300,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            join ms in db.MEMBERSHIP_STATUS on m.membershipStatusID equals ms.membershipStatusID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x=>x.membershipStatus=="Deceased") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -321,6 +336,9 @@ namespace APC.DAL.DAO
                                 deadDate = m.deadDate,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -357,6 +375,9 @@ namespace APC.DAL.DAO
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     dto.DeadDate = item.deadDate;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     if (dto.DeadDate != null)
                     {
                         TimeSpan difference = (DateTime)dto.DeadDate - dto.Birthday;
@@ -389,6 +410,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies on m.countryID equals c.countryID
                             join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -426,6 +449,12 @@ namespace APC.DAL.DAO
                                 isPositionDeleted = pos.isDeleted,
                                 isEmpStatusDeleted = e.isDeleted,
                                 isMarStatusDeleted = mar.isDeleted,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -465,6 +494,12 @@ namespace APC.DAL.DAO
                     dto.isPositionDeleted = item.isPositionDeleted;
                     dto.isEmpStatusDeleted = item.isEmpStatusDeleted;
                     dto.isMarStatusDeleted = item.isMarStatusDeleted;
+                    dto.DeadDate = item.deadDate;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     members.Add(dto);
                 }
                 return members;
@@ -719,6 +754,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies on m.countryID equals c.countryID
                             join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x=>x.permission1 != "Member") on m.permissionID equals perm.permissionID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -749,7 +786,13 @@ namespace APC.DAL.DAO
                                 permissionName = perm.permission1,
                                 phoneNumber = m.phoneNumber,
                                 phoneNumber2 = m.phoneNumber2,
-                                phoneNumber3 = m.phoneNumber3
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x => x.permissionName).ToList();
                 foreach (var item in list)
                 {
@@ -783,6 +826,12 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber = item.phoneNumber;
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.DeadDate = item.deadDate;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     members.Add(dto);
                 }
                 return members;
@@ -806,6 +855,8 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies on m.countryID equals c.countryID
                             join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
+                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
                                 memberID = m.memberID,
@@ -836,7 +887,13 @@ namespace APC.DAL.DAO
                                 permissionName = perm.permission1,
                                 phoneNumber = m.phoneNumber,
                                 phoneNumber2 = m.phoneNumber2,
-                                phoneNumber3 = m.phoneNumber3
+                                phoneNumber3 = m.phoneNumber3,
+                                deadDate = m.deadDate,
+                                membershipStatusID = m.membershipStatusID,
+                                membershipStatus = ms.membershipStatus,
+                                //nextOfKin = m.nextOfKin,
+                                //relationshipToNextOfKinID = m.relationshipToKinID,
+                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
                             }).OrderBy(x => x.permissionName).ToList();
                 foreach (var item in list)
                 {
@@ -870,6 +927,12 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber = item.phoneNumber;
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
+                    dto.DeadDate = item.deadDate;
+                    dto.MembershipStatusID = item.membershipStatusID;
+                    dto.MembershipStatus = item.membershipStatus;
+                    //dto.NextOfKin = item.nextOfKin;
+                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
+                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
                     members.Add(dto);
                 }
                 return members;
@@ -891,15 +954,102 @@ namespace APC.DAL.DAO
                 throw ex;
             }           
         }
+        public List<AbsenteesDetailDTO> Select3MonthsAbsentes()
+        {
+            List<AbsenteesDetailDTO> absentees = new List<AbsenteesDetailDTO>();
+            List<int> members = new List<int>();
+            List<int> absentMembers = new List<int>();
+            List<string> absentCheckList = new List<string>();
+            var Absentees = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
+                            join mem in db.MEMBERs.Where(x => x.isDeleted == false) on p.memberID equals mem.memberID
+                            join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Absent") on p.attendanceStatusID equals ats.attendanceStatusID
+                            join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.year).ThenByDescending(x=>x.monthID).Take(3) on p.generalAttendanceID equals gen.generalAttendanceID
+                            select new
+                            {
+                                attendanceID = p.attendanceID,
+                                memberID = mem.memberID,
+                            }).ToList();
+            foreach (var item in Absentees)
+            {
+                members.Add(item.memberID);
+            }
+            var membersAppearingThreeTimes = General.FindMembersAppearingThreeTimes(members);
+            if (membersAppearingThreeTimes.Any())
+            {
+                foreach (var memberID in membersAppearingThreeTimes)
+                {
+                    var list = (from m in db.MEMBERs.Where(x => x.memberID == memberID)
+                                join g in db.GENDERs on m.genderID equals g.genderID
+                                join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                                join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
+                                select new
+                                {
+                                    memberID = m.memberID,
+                                    name = m.name,
+                                    surname = m.surname,
+                                    imagePath = m.imagePath,
+                                    positionID = m.positionID,
+                                    positionName = pos.positionName,
+                                    genderID = m.genderID,
+                                    genderName = g.genderName,
+                                    membershipStatusID = m.membershipStatusID,
+                                    membershipStatus = ms.membershipStatus,
+                                }).OrderBy(x => x.surname).ToList();
+                    foreach (var item2 in list)
+                    {
+                        AbsenteesDetailDTO dto = new AbsenteesDetailDTO();
+                        dto.MemberID = item2.memberID;
+                        dto.Name = item2.name;
+                        dto.Surname = item2.surname;
+                        dto.ImagePath = item2.imagePath;
+                        dto.PositionID = item2.positionID;
+                        dto.PositionName = item2.positionName;
+                        dto.GenderID = item2.genderID;
+                        dto.GenderName = item2.genderName;
+                        absentees.Add(dto);
+                    }
+                }
+            }
+            //else
+            //{
+            //    Console.WriteLine("No numbers appear three times in the list.");
+            //}
+            //absentMembers = members.Distinct().ToList();
+            
+            return absentees;
+        }
 
-        public int GetNoOfMembersAttendance(int ID)
+        public int Select3MonthsAbsentesCount()
+        {
+            List<AbsenteesDetailDTO> absentees = new List<AbsenteesDetailDTO>();
+            List<int> members = new List<int>();
+            List<int> absentMembers = new List<int>();
+            List<string> absentCheckList = new List<string>();
+            var Absentees = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
+                             join mem in db.MEMBERs.Where(x => x.isDeleted == false) on p.memberID equals mem.memberID
+                             join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Absent") on p.attendanceStatusID equals ats.attendanceStatusID
+                             join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).Take(3) on p.generalAttendanceID equals gen.generalAttendanceID
+                             select new
+                             {
+                                 attendanceID = p.attendanceID,
+                                 memberID = mem.memberID,
+                             }).ToList();
+            foreach (var item in Absentees)
+            {
+                members.Add(item.memberID);
+            }
+            var membersAppearingThreeTimes = General.FindMembersAppearingThreeTimes(members);
+            int memberCount = membersAppearingThreeTimes.Count();
+            return memberCount;
+        }
+        public int GetNoOfMembersPresentAttendance(int ID)
         {
             try
             {
-                int NoOfAttendance = db.PERSONAL_ATTENDANCE.Count(x => x.memberID == ID && x.isDeleted == false && x.attendanceStatusID == 2);
-                if (NoOfAttendance != 0)
+                int NoOfPresent = db.PERSONAL_ATTENDANCE.Count(x => x.memberID == ID && x.isDeleted == false && x.attendanceStatusID == 2);
+                if (NoOfPresent != 0)
                 {
-                    return NoOfAttendance;
+                    return NoOfPresent;
                 }
                 else
                 {
@@ -911,7 +1061,27 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-        
+
+        public int GetNoOfMembersAbsentAttendance(int ID)
+        {
+            try
+            {
+                int NoOfAbsent = db.PERSONAL_ATTENDANCE.Count(x => x.memberID == ID && x.isDeleted == false && x.attendanceStatusID == 3);
+                if (NoOfAbsent != 0)
+                {
+                    return NoOfAbsent;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool Update(MEMBER entity)
         {
             try
@@ -938,6 +1108,9 @@ namespace APC.DAL.DAO
                 member.phoneNumber2 = entity.phoneNumber2;
                 member.phoneNumber3 = entity.phoneNumber3;
                 member.deadDate = entity.deadDate;
+                member.membershipStatusID = entity.membershipStatusID;
+                member.nextOfKin = entity.nextOfKin;
+                //member.relationshipToKinID = entity.relationshipToKinID;
                 db.SaveChanges();
                 return true;
             }

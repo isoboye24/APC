@@ -92,6 +92,9 @@ namespace APC.AllForms
             dataGridView1.Columns[36].Visible = false;
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
+            //dataGridView1.Columns[39].Visible = false;
+            //dataGridView1.Columns[40].Visible = false;
+            //dataGridView1.Columns[41].Visible = false;
             #endregion
             GetMemberCounts();
         }
@@ -123,8 +126,6 @@ namespace APC.AllForms
                 GetMemberCounts();
             }
         }
-
-
         private void btnView_Click(object sender, EventArgs e)
         {
             if (detail.MemberID == 0)
@@ -136,6 +137,7 @@ namespace APC.AllForms
                 FormViewMember open = new FormViewMember();
                 open.detail = detail;
                 open.isView = true;
+                open.isFormer = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
@@ -188,6 +190,9 @@ namespace APC.AllForms
             detail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
             detail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
             detail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
+            //detail.NextOfKin = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
+            //detail.RelationshipToNextOfKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[40].Value);
+            //detail.RelationshipToNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[41].Value.ToString();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

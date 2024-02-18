@@ -56,14 +56,21 @@ namespace APC
         FinancialReportBLL bll = new FinancialReportBLL();
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int conpareYear = Convert.ToInt32(txtYear.Text);
+            bool newFinReport = bll.CheckTotalRaisedAmountAndTotalSpentAmount(conpareYear);
             if (txtYear.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter year");
             }
+            else if (!newFinReport)
+            {
+                MessageBox.Show("There is neither total Raised amount nor total expenditure for " + txtYear.Text);
+            }
             else
             {
                 if (!isUpdate)
-                {
+                {                    
+                    
                     FinancialReportDetailDTO financialReport = new FinancialReportDetailDTO();
                     financialReport.Year = txtYear.Text;
                     financialReport.Summary = txtSummary.Text;
@@ -74,7 +81,7 @@ namespace APC
                         MessageBox.Show("Financial Report is created");
                         txtSummary.Clear();
                         txtYear.Clear();
-                    }
+                    }                                       
                 }
                 else if (isUpdate)
                 {

@@ -42,7 +42,10 @@ namespace APC.BLL
         }
         public PersonalAttendanceDTO Select()
         {
-            throw new NotImplementedException();            
+            PersonalAttendanceDTO dto = new PersonalAttendanceDTO();
+            dto.Members = memberDAO.Select();
+            dto.AttendanceStatuses = attendStatusDAO.Select();
+            return dto;
         }
         
         public PersonalAttendanceDTO Select(int ID)
@@ -52,7 +55,8 @@ namespace APC.BLL
             dto.AttendanceStatuses = attendStatusDAO.Select();
             dto.Genders = genderDAO.Select();
             dto.Members = memberDAO.Select();
-            dto.PersonalAttendances = dao.Select();
+            dto.PresentMember = dao.SelectPresentMember(ID);
+            dto.AbsentMember = dao.SelectAbsentMember(ID);
             return dto;
         }
 

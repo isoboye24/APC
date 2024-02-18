@@ -63,21 +63,51 @@ namespace APC.AllForms
                     LoginInfo.Username = member.username;
                     LoginInfo.Password = member.password;
                     LoginInfo.AccessLevel = member.permissionID;
-                    FormDashboard open = new FormDashboard();
-                    
+                    int absenteesCount = memberBLL.Select3MonthsAbsentesCount();
                     if (LoginInfo.AccessLevel == 4)
                     {
-                        open.isAdmin = true;
+                        if (absenteesCount > 0)
+                        {
+                            FormNotifications open = new FormNotifications();
+                            open.isAdmin = true;
+                            open.isLogin = true;
+                            this.Hide();
+                            open.ShowDialog();
+                        }
+                        else
+                        {
+                            FormDashboard open = new FormDashboard();
+                            this.Hide();
+                            open.isAdmin = true;
+                            open.ShowDialog();
+                        }
                     }
-                    if (LoginInfo.AccessLevel == 3)
+                    else if (LoginInfo.AccessLevel == 3)
                     {
-                        open.isEditor = true;
+                        if (absenteesCount > 0)
+                        {
+                            FormNotifications open = new FormNotifications();
+                            open.isEditor = true;
+                            open.isLogin = true;
+                            this.Hide();
+                            open.ShowDialog();
+                        }
+                        else
+                        {
+                            FormDashboard open = new FormDashboard();
+                            this.Hide();
+                            open.isEditor = true;
+                            open.ShowDialog();
+                        }                        
                     }
-                    this.Hide();
-                    open.ShowDialog();
+                    else
+                    {
+                        FormDashboard open = new FormDashboard();
+                        this.Hide();
+                        open.ShowDialog();
+                    }                    
                 }
-            }
-                        
+            }            
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

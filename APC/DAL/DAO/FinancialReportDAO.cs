@@ -126,6 +126,38 @@ namespace APC.DAL.DAO
             }
         }
 
+        public bool CheckTotalRaisedAmountAndTotalSpentAmount(int year)
+        {
+            try
+            {
+                List<decimal> totalRaisedAmount = new List<decimal>();
+                var list = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == year);
+                foreach (var item in list)
+                {
+                    totalRaisedAmount.Add((decimal)item.totalDuesPaid);
+                }
+                decimal totalAmountRaised = totalRaisedAmount.Sum();
+                List<decimal> totalSpentAmount = new List<decimal>();
+                var listSpent = db.EXPENDITUREs.Where(x => x.isDeleted == false && x.year == year);
+                foreach (var item in listSpent)
+                {
+                    totalSpentAmount.Add(item.amountSpent);
+                }
+                decimal totalAmountSpent = totalSpentAmount.Sum();
+                if (totalAmountRaised > 0 || totalAmountSpent > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public decimal SelectTotalSpentAmount()
         {
             try
