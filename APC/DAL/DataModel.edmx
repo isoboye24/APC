@@ -181,7 +181,7 @@
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="surname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="birthday" Type="date" Nullable="false" />
-          <Property Name="imagePath" Type="varchar(max)" />
+          <Property Name="imagePath" Type="varchar(max)" Nullable="false" />
           <Property Name="houseAddress" Type="varchar(max)" Nullable="false" />
           <Property Name="emailAddress" Type="varchar" MaxLength="50" />
           <Property Name="membershipDate" Type="date" />
@@ -199,8 +199,9 @@
           <Property Name="phoneNumber2" Type="varchar" MaxLength="50" />
           <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
           <Property Name="membershipStatusID" Type="int" Nullable="false" />
-          <Property Name="deadDate" Type="date" />
+          <Property Name="deadDate" Type="date" Nullable="false" />
           <Property Name="nextOfKin" Type="varchar" MaxLength="50" />
+          <Property Name="LGAOfCountryOrigin" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -482,7 +483,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="birthday" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="imagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="houseAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="membershipDate" Type="DateTime" Precision="0" />
@@ -500,8 +501,9 @@
           <Property Name="phoneNumber2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="membershipStatusID" Type="Int32" Nullable="false" />
-          <Property Name="deadDate" Type="DateTime" Precision="0" />
+          <Property Name="deadDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="nextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LGAOfCountryOrigin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -817,6 +819,7 @@
                 <ScalarProperty Name="membershipStatusID" ColumnName="membershipStatusID" />
                 <ScalarProperty Name="deadDate" ColumnName="deadDate" />
                 <ScalarProperty Name="nextOfKin" ColumnName="nextOfKin" />
+                <ScalarProperty Name="LGAOfCountryOrigin" ColumnName="LGAOfCountryOrigin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -72,7 +72,6 @@ namespace APC.AllForms
                 }
                 else if(isUpdate)
                 {
-                    
                     if (detail.AmountSpent == Convert.ToDecimal(txtAmountSpent.Text) && detail.Summary == txtSummary.Text
                         && detail.ExpenditureDate == dateTimePickerExpDate.Value)
                     {
@@ -107,7 +106,7 @@ namespace APC.AllForms
             {
                 txtAmountSpent.Text = detail.AmountSpent.ToString();
                 txtSummary.Text = detail.Summary;
-                dateTimePickerExpDate.Value = detail.ExpenditureDate;                              
+                dateTimePickerExpDate.Value = detail.ExpenditureDate;
             }
         }        
     }

@@ -159,7 +159,6 @@ namespace APC.DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

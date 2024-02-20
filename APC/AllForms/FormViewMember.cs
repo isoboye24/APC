@@ -149,6 +149,7 @@ namespace APC.AllForms
                 txtPassword.Text = detail.Password;
                 txtEmail.Text = detail.EmailAddress;
                 txtPhone1.Text = detail.PhoneNumber;
+                txtLGA.Text = detail.LGA;
                 if (detail.PhoneNumber2 != "")
                 {
                     txtPhone2.Visible = true;

@@ -77,6 +77,7 @@ namespace APC.BLL
             member.phoneNumber2 = entity.PhoneNumber2;
             member.phoneNumber3 = entity.PhoneNumber3;
             member.deadDate = entity.DeadDate;
+            member.LGAOfCountryOrigin = entity.LGA;
             member.membershipStatusID = entity.MembershipStatusID;
             //member.nextOfKin = entity.NextOfKin;
             //member.relationshipToKinID = entity.RelationshipToNextOfKinID;
@@ -235,6 +236,7 @@ namespace APC.BLL
             member.phoneNumber2 = entity.PhoneNumber2;
             member.phoneNumber3 = entity.PhoneNumber3;
             member.deadDate = entity.DeadDate;
+            member.LGAOfCountryOrigin = entity.LGA;
             member.membershipStatusID = entity.MembershipStatusID;
             //member.nextOfKin = entity.NextOfKin;
             //member.relationshipToKinID = entity.RelationshipToNextOfKinID;

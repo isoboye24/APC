@@ -134,6 +134,7 @@ namespace APC.DAL.DAO
                                 deadDate = m.deadDate,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
+                                LGA = m.LGAOfCountryOrigin,
                                 //nextOfKin = m.nextOfKin,
                                 //relationshipToNextOfKinID = m.relationshipToKinID,
                                 //relationshipToNextOfKin = kin.RelationToNextOfKin,
@@ -171,6 +172,7 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     //dto.NextOfKin = item.nextOfKin;
@@ -233,6 +235,7 @@ namespace APC.DAL.DAO
                                 phoneNumber2 = m.phoneNumber2,
                                 phoneNumber3 = m.phoneNumber3,
                                 deadDate = m.deadDate,
+                                LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 //nextOfKin = m.nextOfKin,
@@ -272,6 +275,7 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     //dto.NextOfKin = item.nextOfKin;
@@ -336,6 +340,7 @@ namespace APC.DAL.DAO
                                 deadDate = m.deadDate,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
+                                LGA = m.LGAOfCountryOrigin,
                                 //nextOfKin = m.nextOfKin,
                                 //relationshipToNextOfKinID = m.relationshipToKinID,
                                 //relationshipToNextOfKin = kin.RelationToNextOfKin,
@@ -375,6 +380,7 @@ namespace APC.DAL.DAO
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     //dto.NextOfKin = item.nextOfKin;
                     //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
                     //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
@@ -450,6 +456,7 @@ namespace APC.DAL.DAO
                                 isEmpStatusDeleted = e.isDeleted,
                                 isMarStatusDeleted = mar.isDeleted,
                                 deadDate = m.deadDate,
+                                LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 //nextOfKin = m.nextOfKin,
@@ -495,6 +502,7 @@ namespace APC.DAL.DAO
                     dto.isEmpStatusDeleted = item.isEmpStatusDeleted;
                     dto.isMarStatusDeleted = item.isMarStatusDeleted;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     //dto.NextOfKin = item.nextOfKin;
@@ -788,6 +796,7 @@ namespace APC.DAL.DAO
                                 phoneNumber2 = m.phoneNumber2,
                                 phoneNumber3 = m.phoneNumber3,
                                 deadDate = m.deadDate,
+                                LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 //nextOfKin = m.nextOfKin,
@@ -827,6 +836,7 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     //dto.NextOfKin = item.nextOfKin;
@@ -889,6 +899,7 @@ namespace APC.DAL.DAO
                                 phoneNumber2 = m.phoneNumber2,
                                 phoneNumber3 = m.phoneNumber3,
                                 deadDate = m.deadDate,
+                                LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 //nextOfKin = m.nextOfKin,
@@ -928,6 +939,7 @@ namespace APC.DAL.DAO
                     dto.PhoneNumber2 = item.phoneNumber2;
                     dto.PhoneNumber3 = item.phoneNumber3;
                     dto.DeadDate = item.deadDate;
+                    dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
                     //dto.NextOfKin = item.nextOfKin;
@@ -1010,12 +1022,6 @@ namespace APC.DAL.DAO
                     }
                 }
             }
-            //else
-            //{
-            //    Console.WriteLine("No numbers appear three times in the list.");
-            //}
-            //absentMembers = members.Distinct().ToList();
-            
             return absentees;
         }
 
@@ -1108,8 +1114,10 @@ namespace APC.DAL.DAO
                 member.phoneNumber2 = entity.phoneNumber2;
                 member.phoneNumber3 = entity.phoneNumber3;
                 member.deadDate = entity.deadDate;
+                member.LGAOfCountryOrigin = entity.LGAOfCountryOrigin;
                 member.membershipStatusID = entity.membershipStatusID;
                 member.nextOfKin = entity.nextOfKin;
+                member.LGAOfCountryOrigin = entity.LGAOfCountryOrigin;
                 //member.relationshipToKinID = entity.relationshipToKinID;
                 db.SaveChanges();
                 return true;

@@ -122,6 +122,7 @@ namespace APC.AllForms
             dataGridView1.Columns[37].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[38].HeaderText = "Aged";
             dataGridView1.Columns[38].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView1.Columns[39].Visible = false;
             //dataGridView1.Columns[39].Visible = false;
             //dataGridView1.Columns[40].Visible = false;
             //dataGridView1.Columns[41].Visible = false;
@@ -176,6 +177,7 @@ namespace APC.AllForms
             detail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
             detail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
             detail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
+            detail.LGA = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

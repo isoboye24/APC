@@ -52,7 +52,6 @@ namespace APC.DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -67,8 +66,8 @@ namespace APC.DAL.DAO
                 {
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
                     dto.FinancialReportID = item.financialReportID;
-                    dto.TotalAmountRaised = (decimal)item.totalAmountRaised;
-                    dto.TotalAmountSpent = (decimal)item.totalAmountSpent;
+                    dto.TotalAmountRaised = item.totalAmountRaised;
+                    dto.TotalAmountSpent = item.totalAmountSpent;
                     dto.Year = item.year.ToString();
                     dto.Summary = item.summary;
                     financialReport.Add(dto);

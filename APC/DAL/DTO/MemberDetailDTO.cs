@@ -45,8 +45,9 @@ namespace APC.DAL.DTO
         public bool isMarStatusDeleted { get; set; }
         public int MembershipStatusID { get; set; }
         public string MembershipStatus { get; set; }
-        public DateTime? DeadDate { get; set; }
+        public DateTime DeadDate { get; set; }
         public double DeadAge { get; set; }
+        public string LGA { get; set; }
         //public string NextOfKin { get; set; }
         //public int RelationshipToNextOfKinID { get; set; }
         //public string RelationshipToNextOfKin { get; set; }

@@ -110,6 +110,7 @@ namespace APC.AllForms
             dataGridView1.Columns[36].Visible = false;
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
+            dataGridView1.Columns[39].Visible = false;
             //dataGridView1.Columns[39].Visible = false;
             //dataGridView1.Columns[40].Visible = false;
             //dataGridView1.Columns[41].Visible = false;
@@ -160,6 +161,7 @@ namespace APC.AllForms
                 dataGridView1.Columns[36].Visible = false;
                 dataGridView1.Columns[37].Visible = false;
                 dataGridView1.Columns[38].Visible = false;
+                dataGridView1.Columns[39].Visible = false;
                 //dataGridView1.Columns[39].Visible = false;
                 //dataGridView1.Columns[40].Visible = false;
                 //dataGridView1.Columns[41].Visible = false;
@@ -371,6 +373,7 @@ namespace APC.AllForms
                 memberDetail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
                 memberDetail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
                 memberDetail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
+                memberDetail.LGA = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
                 //memberDetail.NextOfKin = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
                 //memberDetail.RelationshipToNextOfKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[40].Value);
                 //memberDetail.RelationshipToNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[41].Value.ToString();

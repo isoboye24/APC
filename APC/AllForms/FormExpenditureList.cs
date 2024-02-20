@@ -78,6 +78,7 @@ namespace APC.AllForms
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "Month";
             dataGridView1.Columns[6].HeaderText = "Year";
+            dataGridView1.Columns[7].Visible = false;
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();
@@ -125,6 +126,7 @@ namespace APC.AllForms
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
             detail.Month = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             detail.Year = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            detail.ExpenditureDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

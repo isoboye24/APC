@@ -95,6 +95,7 @@ namespace APC
             dataGridViewFathers.Columns[36].Visible = false;
             dataGridViewFathers.Columns[37].Visible = false;
             dataGridViewFathers.Columns[38].Visible = false;
+            dataGridViewFathers.Columns[39].Visible = false;
             //dataGridViewFathers.Columns[39].Visible = false;
             //dataGridViewFathers.Columns[40].Visible = false;
             //dataGridViewFathers.Columns[41].Visible = false;
@@ -139,6 +140,7 @@ namespace APC
             dataGridViewMothers.Columns[36].Visible = false;
             dataGridViewMothers.Columns[37].Visible = false;
             dataGridViewMothers.Columns[38].Visible = false;
+            dataGridViewMothers.Columns[39].Visible = false;
             //dataGridViewMothers.Columns[39].Visible = false;
             //dataGridViewMothers.Columns[40].Visible = false;
             //dataGridViewMothers.Columns[41].Visible = false;

@@ -83,22 +83,7 @@ namespace APC
             if (isUpdateDeadMember)
             {
                 tableLayoutPanelDeceasedDate.Visible = true;
-                if (detail.DeadDate == null)
-                {
-                    dateTimePickerDeceasedDate.Value = DateTime.Today;
-                }
-                else if (detail.DeadDate != null)
-                {
-                    TimeSpan difference = DateTime.Today - (DateTime)detail.DeadDate;
-                    if (difference.TotalDays > 0)
-                    {
-                        dateTimePickerDeceasedDate.Value = (DateTime)detail.DeadDate;
-                    }
-                    else
-                    {
-                        dateTimePickerDeceasedDate.Value = DateTime.Today;
-                    }
-                }                
+                dateTimePickerDeceasedDate.Value = detail.DeadDate;
             }
             if (isUpdate)
             {
@@ -109,6 +94,7 @@ namespace APC
                 dateTimePickerBirthday.Value = Convert.ToDateTime(detail.Birthday);
                 dateTimePickerMemSince.Value = Convert.ToDateTime(detail.MembershipDate);
                 txtEmail.Text = detail.EmailAddress;
+                txtLGA.Text = detail.LGA;
                 txtImagePath.Text = detail.ImagePath;                
                 txtPhone1.Text = detail.PhoneNumber;
                 if (detail.PhoneNumber2 != "")
@@ -164,6 +150,14 @@ namespace APC
             if (txtName.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter name");
+            }
+            if (txtLGA.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter LGA of country of origin");
+            }
+            if (txtImagePath.Text.Trim() == "")
+            {
+                MessageBox.Show("The imagePath is empty. Choose picture");
             }
             else if (txtSurname.Text.Trim() == "")
             {
@@ -224,6 +218,7 @@ namespace APC
                     MemberDetailDTO member = new MemberDetailDTO();
                     member.Name = txtName.Text;                    
                     member.Surname = txtSurname.Text;
+                    member.LGA = txtLGA.Text;
                     member.Birthday = dateTimePickerBirthday.Value;
                     int day, month, yearDigit;
                     string year;
@@ -291,7 +286,7 @@ namespace APC
                     member.PhoneNumber2 = txtPhone2.Text;
                     member.PhoneNumber3 = txtPhone3.Text;       
                     member.MembershipDate = dateTimePickerMemSince.Value;
-                    member.DeadDate = null;
+                    member.DeadDate = DateTime.Today;
                     if (bll.Insert(member))
                     {
                         MessageBox.Show("Member was added");
@@ -308,6 +303,7 @@ namespace APC
                         dateTimePickerBirthday.Value = DateTime.Today;
                         dateTimePickerMemSince.Value = DateTime.Today;
                         txtEmail.Clear();
+                        txtLGA.Clear();
                         txtAddress.Clear();
                         txtImagePath.Clear();
                         txtPhone1.Clear();
@@ -345,7 +341,7 @@ namespace APC
                 {
                     if (
                             !isUpdateDeadMember &&
-                            detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim()
+                            detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim() && detail.LGA == txtLGA.Text.Trim()
                             && detail.EmailAddress == txtEmail.Text.Trim() && detail.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)
                             && detail.Birthday == dateTimePickerBirthday.Value && detail.MembershipDate == dateTimePickerMemSince.Value
                             && detail.HouseAddress == txtAddress.Text.Trim() && detail.ImagePath == txtImagePath.Text.Trim()
@@ -360,7 +356,7 @@ namespace APC
                         MessageBox.Show("There is no change");
                     }
                     else if (
-                            isUpdateDeadMember && detail.DeadDate == dateTimePickerDeceasedDate.Value
+                            isUpdateDeadMember && detail.DeadDate == dateTimePickerDeceasedDate.Value && detail.LGA == txtLGA.Text.Trim()
                             && detail.Name == txtName.Text.Trim() && detail.Surname == txtSurname.Text.Trim()
                             && detail.EmailAddress == txtEmail.Text.Trim() && detail.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)
                             && detail.Birthday == dateTimePickerBirthday.Value && detail.MembershipDate == dateTimePickerMemSince.Value
@@ -423,6 +419,7 @@ namespace APC
                             detail.Birthday = dateTimePickerBirthday.Value;
                         }                        
                         detail.EmailAddress = txtEmail.Text;
+                        detail.LGA = txtLGA.Text;
                         if (detail.ImagePath != txtImagePath.Text.Trim())
                         {
                             if (File.Exists(@"images\\" + detail.ImagePath))
@@ -454,7 +451,7 @@ namespace APC
                         }
                         if (!isUpdateDeadMember)
                         {
-                            detail.DeadDate = null;
+                            detail.DeadDate = detail.DeadDate;
                         }                        
                         if (bll.Update(detail))
                         {
