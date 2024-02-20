@@ -497,7 +497,6 @@
             this.tableLayoutPanel6.Controls.Add(this.labelChildren, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel13, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.label13, 0, 4);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel12, 1, 4);
             this.tableLayoutPanel6.Controls.Add(this.txtPhone3, 1, 20);
             this.tableLayoutPanel6.Controls.Add(this.labelPhone3, 0, 20);
             this.tableLayoutPanel6.Controls.Add(this.labelPhone2, 0, 18);
@@ -511,9 +510,10 @@
             this.tableLayoutPanel6.Controls.Add(this.label15, 0, 10);
             this.tableLayoutPanel6.Controls.Add(this.txtNationality, 1, 10);
             this.tableLayoutPanel6.Controls.Add(this.labelCommentText, 0, 8);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 1, 8);
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel14, 1, 6);
             this.tableLayoutPanel6.Controls.Add(this.label18, 0, 6);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel12, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel14, 1, 6);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 1, 8);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(321, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -632,7 +632,6 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Controls.Add(this.btnViewPresentAttendance, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.labelNoOfPresent, 0, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(138, 89);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;

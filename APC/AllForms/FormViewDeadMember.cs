@@ -42,6 +42,13 @@ namespace APC.AllForms
         public bool isView = false;
         ChildBLL childBLL = new ChildBLL();
         int noOfChildren =  0;
+        MemberBLL bll = new MemberBLL();
+        int attendancePresentCount = 0;
+        int attendanceAbsentCount = 0;
+        int commentCount = 0;
+        CommentBLL commentBLL = new CommentBLL();
+        CommentDTO dto = new CommentDTO();
+        CommentDetailDTO commentDetail = new CommentDetailDTO();
         private void FormViewDeadMember_Load(object sender, EventArgs e)
         {
             noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
@@ -59,6 +66,44 @@ namespace APC.AllForms
                 labelChildren.Text = "Children";
                 btnViewChildren.Text = "View Children";
                 btnViewChildren.Visible = true;
+            }
+
+            attendancePresentCount = bll.GetNoOfMembersPresentAttendance(detail.MemberID);
+            labelNoOfPresent.Text = attendancePresentCount.ToString();
+            btnViewPresentAttendance.Hide();
+            if (attendancePresentCount > 0)
+            {
+                btnViewPresentAttendance.Visible = true;
+            }
+
+            attendanceAbsentCount = bll.GetNoOfMembersAbsentAttendance(detail.MemberID);
+            labelNoOfAbsent.Text = attendanceAbsentCount.ToString();
+            btnViewAbsentAttendance.Hide();
+            if (attendanceAbsentCount > 0)
+            {
+                btnViewAbsentAttendance.Visible = true;
+            }
+
+            labelCommentText.Hide();
+            labelNoOfComments.Hide();
+            btnNoComments.Hide();
+
+            dto = commentBLL.SelectMembersCommentList(detail.MemberID);
+            commentCount = dto.Comments.Count(x => x.MemberID == detail.MemberID);
+            labelNoOfComments.Text = commentCount.ToString();
+            if (commentCount == 1)
+            {
+                labelCommentText.Visible = true;
+                labelNoOfComments.Visible = true;
+                btnNoComments.Visible = true;
+                btnNoComments.Text = "View Comment";
+            }
+            else if (commentCount > 1)
+            {
+                labelCommentText.Visible = true;
+                labelCommentText.Text = "Comments";
+                labelNoOfComments.Visible = true;
+                btnNoComments.Visible = true;
             }
 
             if (isView)
@@ -113,6 +158,53 @@ namespace APC.AllForms
                 open.ShowDialog();
                 this.Visible = true;
             }
-        }        
+        }
+
+        private void btnViewPresentAttendance_Click(object sender, EventArgs e)
+        {
+            if (attendancePresentCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isPresent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAbsentAttendance_Click(object sender, EventArgs e)
+        {
+            if (attendanceAbsentCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAbsent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnNoComments_Click(object sender, EventArgs e)
+        {
+            if (commentCount > 1)
+            {
+                FormSingleCommentList open = new FormSingleCommentList();
+                open.memberID = detail.MemberID;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else if (commentCount < 2 && commentCount > 0)
+            {
+                commentDetail = dto.Comments.First(x => x.MemberID == detail.MemberID);
+                FormViewComment open = new FormViewComment();
+                open.detail = commentDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
     }
 }
