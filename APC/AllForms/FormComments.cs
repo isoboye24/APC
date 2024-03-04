@@ -93,9 +93,9 @@ namespace APC
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
             dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[40].Visible = false;
-            //dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[40].Visible = false;
+            dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[42].Visible = false;
             #endregion
             labelCommentDate.Hide();
             labelCommentTime.Hide();

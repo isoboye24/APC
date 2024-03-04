@@ -54,9 +54,13 @@ namespace APC.BLL
             dto.Months = monthDAO.Select();
             dto.AttendanceStatuses = attendStatusDAO.Select();
             dto.Genders = genderDAO.Select();
+            dto.Years = dao.SelectOnlyYears();
             dto.Members = memberDAO.Select();
             dto.PresentMember = dao.SelectPresentMember(ID);
             dto.AbsentMember = dao.SelectAbsentMember(ID);
+            dto.AmountsContributed = dao.AmountsContributed(ID);
+            dto.AmountExpected = dao.AmountsExpected(ID);
+            dto.AmountsBalance = dao.AmountsBalance(ID);
             return dto;
         }
 

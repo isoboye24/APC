@@ -73,7 +73,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbRelationshipToNextOfKin = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNextOfKin = new System.Windows.Forms.TextBox();
+            this.txtNameOfNextOfKin = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtLGA = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -231,7 +231,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel10, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel15, 1, 0);
@@ -250,12 +250,12 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(735, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(732, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(287, 475);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 475);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -271,14 +271,14 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(281, 231);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(279, 231);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 225);
+            this.pictureBox1.Size = new System.Drawing.Size(21, 225);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -289,12 +289,12 @@
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.picProfilePic, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(31, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(30, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(218, 225);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(217, 225);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -310,7 +310,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(212, 39);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(211, 39);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // btnBrowse
@@ -318,9 +318,9 @@
             this.btnBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(56, 3);
+            this.btnBrowse.Location = new System.Drawing.Point(55, 3);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(100, 33);
+            this.btnBrowse.Size = new System.Drawing.Size(99, 33);
             this.btnBrowse.TabIndex = 4;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -329,7 +329,7 @@
             // txtImagePath
             // 
             this.txtImagePath.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagePath.Location = new System.Drawing.Point(162, 3);
+            this.txtImagePath.Location = new System.Drawing.Point(160, 3);
             this.txtImagePath.Name = "txtImagePath";
             this.txtImagePath.ReadOnly = true;
             this.txtImagePath.Size = new System.Drawing.Size(47, 29);
@@ -341,7 +341,7 @@
             this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picProfilePic.Location = new System.Drawing.Point(3, 3);
             this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(212, 174);
+            this.picProfilePic.Size = new System.Drawing.Size(211, 174);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProfilePic.TabIndex = 1;
             this.picProfilePic.TabStop = false;
@@ -353,7 +353,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 232);
+            this.groupBox1.Size = new System.Drawing.Size(279, 232);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "APC INFO";
@@ -390,16 +390,16 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88785F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.9345794F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88785F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(275, 210);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(273, 210);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // cmbMaritalStatus
             // 
             this.cmbMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(126, 139);
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(125, 139);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(146, 29);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(145, 29);
             this.cmbMaritalStatus.TabIndex = 3;
             // 
             // label11
@@ -417,9 +417,9 @@
             // 
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(126, 3);
+            this.txtName.Location = new System.Drawing.Point(125, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(146, 29);
+            this.txtName.Size = new System.Drawing.Size(145, 29);
             this.txtName.TabIndex = 0;
             // 
             // label14
@@ -473,7 +473,7 @@
             this.label26.Location = new System.Drawing.Point(3, 112);
             this.label26.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(117, 21);
+            this.label26.Size = new System.Drawing.Size(78, 23);
             this.label26.TabIndex = 1;
             this.label26.Text = "Member since";
             // 
@@ -481,9 +481,9 @@
             // 
             this.txtSurname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(126, 37);
+            this.txtSurname.Location = new System.Drawing.Point(125, 37);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(146, 29);
+            this.txtSurname.Size = new System.Drawing.Size(145, 29);
             this.txtSurname.TabIndex = 0;
             // 
             // cmbPosition
@@ -491,9 +491,9 @@
             this.cmbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Location = new System.Drawing.Point(126, 71);
+            this.cmbPosition.Location = new System.Drawing.Point(125, 71);
             this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(146, 29);
+            this.cmbPosition.Size = new System.Drawing.Size(145, 29);
             this.cmbPosition.TabIndex = 3;
             // 
             // dateTimePickerMemSince
@@ -502,18 +502,18 @@
             this.dateTimePickerMemSince.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerMemSince.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerMemSince.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerMemSince.Location = new System.Drawing.Point(126, 105);
+            this.dateTimePickerMemSince.Location = new System.Drawing.Point(125, 105);
             this.dateTimePickerMemSince.Name = "dateTimePickerMemSince";
-            this.dateTimePickerMemSince.Size = new System.Drawing.Size(146, 29);
+            this.dateTimePickerMemSince.Size = new System.Drawing.Size(145, 29);
             this.dateTimePickerMemSince.TabIndex = 2;
             // 
             // cmbMembershipStatus
             // 
             this.cmbMembershipStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMembershipStatus.FormattingEnabled = true;
-            this.cmbMembershipStatus.Location = new System.Drawing.Point(126, 173);
+            this.cmbMembershipStatus.Location = new System.Drawing.Point(125, 173);
             this.cmbMembershipStatus.Name = "cmbMembershipStatus";
-            this.cmbMembershipStatus.Size = new System.Drawing.Size(146, 29);
+            this.cmbMembershipStatus.Size = new System.Drawing.Size(145, 29);
             this.cmbMembershipStatus.TabIndex = 3;
             // 
             // tableLayoutPanel10
@@ -522,11 +522,11 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(356, 3);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(355, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(368, 475);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(366, 475);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -546,7 +546,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 6);
             this.tableLayoutPanel6.Controls.Add(this.cmbRelationshipToNextOfKin, 1, 6);
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 4);
-            this.tableLayoutPanel6.Controls.Add(this.txtNextOfKin, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.txtNameOfNextOfKin, 1, 4);
             this.tableLayoutPanel6.Controls.Add(this.label12, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.txtLGA, 1, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -573,7 +573,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(362, 469);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(360, 469);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // labelAccessLevel
@@ -591,7 +591,7 @@
             // 
             this.cmbPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPermission.FormattingEnabled = true;
-            this.cmbPermission.Location = new System.Drawing.Point(184, 3);
+            this.cmbPermission.Location = new System.Drawing.Point(183, 3);
             this.cmbPermission.Name = "cmbPermission";
             this.cmbPermission.Size = new System.Drawing.Size(172, 29);
             this.cmbPermission.TabIndex = 3;
@@ -610,7 +610,7 @@
             // txtPhone3
             // 
             this.txtPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone3.Location = new System.Drawing.Point(184, 304);
+            this.txtPhone3.Location = new System.Drawing.Point(183, 304);
             this.txtPhone3.Name = "txtPhone3";
             this.txtPhone3.Size = new System.Drawing.Size(172, 29);
             this.txtPhone3.TabIndex = 0;
@@ -629,7 +629,7 @@
             // txtPhone2
             // 
             this.txtPhone2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone2.Location = new System.Drawing.Point(184, 261);
+            this.txtPhone2.Location = new System.Drawing.Point(183, 261);
             this.txtPhone2.Name = "txtPhone2";
             this.txtPhone2.Size = new System.Drawing.Size(172, 29);
             this.txtPhone2.TabIndex = 0;
@@ -638,7 +638,7 @@
             // 
             this.labelMorePhone.AutoSize = true;
             this.labelMorePhone.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMorePhone.Location = new System.Drawing.Point(184, 215);
+            this.labelMorePhone.Location = new System.Drawing.Point(183, 215);
             this.labelMorePhone.Name = "labelMorePhone";
             this.labelMorePhone.Size = new System.Drawing.Size(103, 21);
             this.labelMorePhone.TabIndex = 1;
@@ -659,7 +659,7 @@
             // txtPhone1
             // 
             this.txtPhone1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone1.Location = new System.Drawing.Point(184, 175);
+            this.txtPhone1.Location = new System.Drawing.Point(183, 175);
             this.txtPhone1.Name = "txtPhone1";
             this.txtPhone1.Size = new System.Drawing.Size(172, 29);
             this.txtPhone1.TabIndex = 0;
@@ -679,7 +679,7 @@
             // 
             this.cmbRelationshipToNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRelationshipToNextOfKin.FormattingEnabled = true;
-            this.cmbRelationshipToNextOfKin.Location = new System.Drawing.Point(184, 132);
+            this.cmbRelationshipToNextOfKin.Location = new System.Drawing.Point(183, 132);
             this.cmbRelationshipToNextOfKin.Name = "cmbRelationshipToNextOfKin";
             this.cmbRelationshipToNextOfKin.Size = new System.Drawing.Size(172, 29);
             this.cmbRelationshipToNextOfKin.TabIndex = 3;
@@ -695,13 +695,13 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Next of Kin";
             // 
-            // txtNextOfKin
+            // txtNameOfNextOfKin
             // 
-            this.txtNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNextOfKin.Location = new System.Drawing.Point(184, 89);
-            this.txtNextOfKin.Name = "txtNextOfKin";
-            this.txtNextOfKin.Size = new System.Drawing.Size(172, 29);
-            this.txtNextOfKin.TabIndex = 0;
+            this.txtNameOfNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameOfNextOfKin.Location = new System.Drawing.Point(183, 89);
+            this.txtNameOfNextOfKin.Name = "txtNameOfNextOfKin";
+            this.txtNameOfNextOfKin.Size = new System.Drawing.Size(172, 29);
+            this.txtNameOfNextOfKin.TabIndex = 0;
             // 
             // label12
             // 
@@ -717,7 +717,7 @@
             // txtLGA
             // 
             this.txtLGA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLGA.Location = new System.Drawing.Point(184, 46);
+            this.txtLGA.Location = new System.Drawing.Point(183, 46);
             this.txtLGA.Name = "txtLGA";
             this.txtLGA.Size = new System.Drawing.Size(172, 29);
             this.txtLGA.TabIndex = 0;
@@ -735,7 +735,7 @@
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(337, 475);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(336, 475);
             this.tableLayoutPanel15.TabIndex = 4;
             // 
             // tableLayoutPanel5
@@ -772,7 +772,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.89362F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(331, 255);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(330, 255);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label5
@@ -912,7 +912,7 @@
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(331, 208);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(330, 208);
             this.tableLayoutPanel16.TabIndex = 4;
             // 
             // txtEmail
@@ -942,7 +942,7 @@
             this.txtAddress.Location = new System.Drawing.Point(3, 33);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(325, 68);
+            this.txtAddress.Size = new System.Drawing.Size(324, 68);
             this.txtAddress.TabIndex = 0;
             // 
             // label27
@@ -1163,7 +1163,7 @@
         private System.Windows.Forms.TextBox txtPhone3;
         private System.Windows.Forms.ComboBox cmbRelationshipToNextOfKin;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNextOfKin;
+        private System.Windows.Forms.TextBox txtNameOfNextOfKin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtLGA;

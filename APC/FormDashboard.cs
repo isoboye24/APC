@@ -128,6 +128,7 @@ namespace APC
         GeneralAttendanceBLL generalAttendanceBLL = new GeneralAttendanceBLL();
         PersonalAttendanceBLL personalAttendanceBLL = new PersonalAttendanceBLL();
         EventsBLL eventBLL = new EventsBLL();
+        FinancialReportBLL finBLL = new FinancialReportBLL();
         FormProperties initialDetail = new FormProperties();
         public bool isAdmin = false;
         public bool isEditor = false;
@@ -201,20 +202,18 @@ namespace APC
             string yearToday = DateTime.Now.Year.ToString();
             if (Convert.ToInt32(labelMonthlyComments.Text) > 1)
             {
-                labelComment.Text = "comments";
+                labelCommentMonthName.Text = "Comments in " + monthToday + " " + yearToday;
             }
             else
             {
-                labelComment.Text = "comment";
+                labelCommentMonthName.Text = "Comment in " + monthToday + " " + yearToday;
             }
             int todayMonth = DateTime.Now.Month;
             int todayYear = DateTime.Today.Year;
-            labelCommentMonthName.Text = monthToday;
-            labelDuesMonthName.Text = monthToday;
-            labelMonthlyDuesYearName.Text = yearToday;
-            labelTotalDuesYear.Text = yearToday;
-            General.ValueCountInDecimal(labelMonthlyDues, generalAttendanceBLL.SelectMonthlyDues(todayMonth), x-50, y);            
-            General.ValueCountInDecimal(labelYearlyDues, generalAttendanceBLL.SelectYearlyDues(todayYear), x-50, y);            
+            labelDuesMonthName.Text = "Dues in "+ monthToday + " "+ yearToday;
+            labelTotalDuesYear.Text = "Total dues in " + yearToday;
+            General.ValueCountInDecimal(labelMonthlyDues, finBLL.SelectTotalRaisedAmountMonthly(todayMonth), x-50, y);            
+            General.ValueCountInDecimal(labelYearlyDues, finBLL.SelectTotalRaisedAmountYearly(todayYear), x-50, y);            
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

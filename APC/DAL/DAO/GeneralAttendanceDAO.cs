@@ -72,47 +72,60 @@ namespace APC.DAL.DAO
         public List<GeneralAttendanceDetailDTO> Select()
         {
             try
-            {
-                List<GeneralAttendanceDetailDTO> generalAttendance = new List<GeneralAttendanceDetailDTO>();
-                var list = (from g in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false)
-                            join m in db.MONTHs on g.monthID equals m.monthID
-                            select new
-                            {
-                                generalAttendanceID = g.generalAttendanceID,
-                                day = g.day,
-                                monthID = g.monthID,
-                                monthName = m.monthName,
-                                year = g.year,
-                                totalMembersPresent = g.totalMembersPresent,
-                                totalMembersAbsent = g.totalMembersAbsent,
-                                totalDuesPaid = g.totalDuesPaid,
-                                totalDuesExpected = g.totalDuesExpected,
-                                totalDuesBalance = g.totalDuesBalance,
-                                summary = g.summary,
-                                attendanceDate = g.attendanceDate,
-                            }).OrderByDescending(x => x.year).ThenByDescending(x=>x.monthID).ToList();
-                foreach (var item in list)
+            { 
+                List<GeneralAttendanceDetailDTO> MeetingReports = new List<GeneralAttendanceDetailDTO>();
+                List<int> monthIDCollection = new List<int>();
+                List<int> monthIDs = new List<int>();
+                List<int> yearsCollection = new List<int>();
+                List<int> years = new List<int>();
+                List<decimal> totalDuesCollection = new List<decimal>();
+                List<decimal> totalExpectedDues = new List<decimal>();
+
+                var yearlyDue = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).ToList();
+                foreach (var item in yearlyDue)
                 {
-                    GeneralAttendanceDetailDTO dto = new GeneralAttendanceDetailDTO();
-                    dto.GeneralAttendanceID = item.generalAttendanceID;
-                    dto.Day = item.day;
-                    dto.MonthID = item.monthID;
-                    dto.Month = item.monthName;
-                    dto.Year = item.year.ToString();
-                    dto.TotalMembersPresent = (int)item.totalMembersPresent;
-                    dto.TotalMembersAbsent = (int)item.totalMembersAbsent;
-                    dto.TotalDuesPaid = (decimal)item.totalDuesPaid;
-                    dto.TotalDuesExpected = (decimal)item.totalDuesExpected;
-                    dto.TotalDuesBalance = (decimal)item.totalDuesBalance;
-                    dto.Summary = item.summary;
-                    dto.AttendanceDate = item.attendanceDate;
-                    generalAttendance.Add(dto);
+                    yearsCollection.Add(item.year);
                 }
-                return generalAttendance;
+                years = yearsCollection.Distinct().OrderByDescending(year => year).ToList();
+                foreach (var yearItem in years)
+                {
+                    var monthlyDues = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == yearItem).ToList();
+                    foreach (var item in monthlyDues)
+                    {
+                        monthIDCollection.Add(item.monthID);
+                    }
+                    monthIDs = monthIDCollection.Distinct().OrderByDescending(monthID => monthID).ToList();
+                    monthIDCollection.Clear();
+                    foreach (var monthItem in monthIDs)
+                    {
+                        GeneralAttendanceDetailDTO dto = new GeneralAttendanceDetailDTO();
+                        var monthlyDue = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.monthID == monthItem).ToList();
+                        foreach (var due in monthlyDue)
+                        {
+                            totalDuesCollection.Add((decimal)due.monthlyDues);
+                            totalExpectedDues.Add((decimal)due.expectedMonthlyDue);                            
+                        }
+                        dto.GeneralAttendanceID = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).generalAttendanceID;
+                        dto.Day = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).day;
+                        dto.Summary = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).summary;
+                        dto.AttendanceDate = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).attendanceDate;
+                        dto.MonthID = monthItem;
+                        dto.Year = yearItem.ToString();
+                        dto.TotalDuesPaid = totalDuesCollection.Sum();                
+                        dto.TotalDuesExpected = totalExpectedDues.Sum();
+                        dto.TotalDuesBalance = dto.TotalDuesExpected - dto.TotalDuesPaid;
+                        dto.Month = General.ConventIntToMonth(monthItem);
+                        dto.TotalMembersPresent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.monthID == monthItem && x.attendanceStatusID == 2);
+                        dto.TotalMembersAbsent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.monthID == monthItem && x.attendanceStatusID == 3);
+                        MeetingReports.Add(dto);
+                        totalDuesCollection.Clear();
+                        totalExpectedDues.Clear();
+                    }
+                }
+                return MeetingReports;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -187,6 +200,26 @@ namespace APC.DAL.DAO
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public bool CheckMeeting(int day, int month, int year)
+        {
+            try
+            {
+                int meetingCount = db.GENERAL_ATTENDANCE.Count(x=>x.isDeleted == false && x.day == day && x.monthID == month && x.year == year);
+                if (meetingCount > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

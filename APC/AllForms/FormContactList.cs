@@ -68,9 +68,9 @@ namespace APC.AllForms
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
             dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[40].Visible = false;
-            //dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[40].Visible = false;
+            dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[42].Visible = false;
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)
@@ -138,6 +138,20 @@ namespace APC.AllForms
             detail.PhoneNumber = dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString();
             detail.PhoneNumber2 = dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString();
             detail.PhoneNumber3 = dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString();
+            detail.isCountryDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[29].Value);
+            detail.isNationalityDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[30].Value);
+            detail.isProfessionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[31].Value);
+            detail.isPositionDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[32].Value);
+            detail.isEmpStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[33].Value);
+            detail.isMarStatusDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[34].Value);
+            detail.MembershipStatusID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[35].Value);
+            detail.MembershipStatus = dataGridView1.Rows[e.RowIndex].Cells[36].Value.ToString();
+            detail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
+            detail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
+            detail.LGA = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
+            detail.NameOfNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[40].Value.ToString();
+            detail.RelationshipToKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[41].Value);
+            detail.RelationshipToKin = dataGridView1.Rows[e.RowIndex].Cells[42].Value.ToString();
         }
     }
 }

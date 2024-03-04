@@ -16,8 +16,8 @@ namespace APC.DAL.DAO
             foreach (var item in list)
             {
                 RelationshipToNextOfKinDetailDTO dto = new RelationshipToNextOfKinDetailDTO();
-                dto.RelationshipToKinID = item.ID;
-                dto.Relationship = item.RelationToNextOfKin;
+                dto.RelationshipToKinID = item.RelationshipToKinID;
+                dto.Relationship = item.RelationshipToKin;
                 relationshipsToKin.Add(dto);
             }
             return relationshipsToKin;

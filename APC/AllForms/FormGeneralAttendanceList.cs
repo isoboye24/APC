@@ -23,6 +23,52 @@ namespace APC
         GeneralAttendanceBLL bll = new GeneralAttendanceBLL();
         GeneralAttendanceDTO dto = new GeneralAttendanceDTO();
         GeneralAttendanceDetailDTO detail = new GeneralAttendanceDetailDTO();
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            FormGeneralAttendance open = new FormGeneralAttendance();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+            ClearFilters();
+            FillDateGrid();
+        }
+        private void btnView_Click_1(object sender, EventArgs e)
+        {
+            if (detail.GeneralAttendanceID == 0)
+            {
+                MessageBox.Show("Please choose an attendance from the table");
+            }
+            else
+            {
+                FormViewGeneralAttendance open = new FormViewGeneralAttendance();
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+                FillDateGrid();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (detail.GeneralAttendanceID == 0)
+            {
+                MessageBox.Show("Please choose an attendance from the table");
+            }
+            else
+            {
+                FormGeneralAttendance open = new FormGeneralAttendance();
+                open.isUpdate = true;
+                open.detail = detail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+                FillDateGrid();
+            }
+        }
+
         private void FormAttendanceList_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -48,54 +94,6 @@ namespace APC
                 btnDelete.Hide();
             }
         }
-
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        {
-            FormGeneralAttendance open = new FormGeneralAttendance();
-            this.Hide();
-            open.ShowDialog();
-            this.Visible = true;
-            ClearFilters();
-            FillDateGrid();
-        }
-
-        private void btnView_Click_1(object sender, EventArgs e)
-        {
-            if (detail.GeneralAttendanceID == 0)
-            {
-                MessageBox.Show("Please choose an attendance from the table");
-            }
-            else
-            {
-                FormViewGeneralAttendance open = new FormViewGeneralAttendance();
-                open.detail = detail;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-                ClearFilters();
-                FillDateGrid();
-            }            
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (detail.GeneralAttendanceID == 0)
-            {
-                MessageBox.Show("Please choose an attendance from the table");
-            }
-            else
-            {
-                FormGeneralAttendance open = new FormGeneralAttendance();
-                open.isUpdate = true;
-                open.detail = detail;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-                ClearFilters();
-                FillDateGrid();
-            }            
-        }
-
         private void txtYear_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = General.isNumber(e);
@@ -234,6 +232,11 @@ namespace APC
             this.Hide();
             open.ShowDialog();
             this.Visible = true;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

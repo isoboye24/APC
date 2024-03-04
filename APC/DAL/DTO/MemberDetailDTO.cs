@@ -48,8 +48,8 @@ namespace APC.DAL.DTO
         public DateTime DeadDate { get; set; }
         public double DeadAge { get; set; }
         public string LGA { get; set; }
-        //public string NextOfKin { get; set; }
-        //public int RelationshipToNextOfKinID { get; set; }
-        //public string RelationshipToNextOfKin { get; set; }
+        public string NameOfNextOfKin { get; set; }
+        public int RelationshipToKinID { get; set; }
+        public string RelationshipToKin { get; set; }
     }
 }

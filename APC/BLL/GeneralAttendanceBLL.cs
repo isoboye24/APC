@@ -58,6 +58,10 @@ namespace APC.BLL
         {
             return dao.SelectMonthlyDues(month);
         }
+        public bool CheckMeeting(int day, int month, int year)
+        {
+            return dao.CheckMeeting(day, month, year);
+        }
 
         public decimal SelectYearlyDues(int year)
         {

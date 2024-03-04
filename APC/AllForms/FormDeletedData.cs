@@ -111,9 +111,9 @@ namespace APC.AllForms
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
             dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[40].Visible = false;
-            //dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[40].Visible = false;
+            dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[42].Visible = false;
             #endregion
         }
 
@@ -162,9 +162,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[37].Visible = false;
                 dataGridView1.Columns[38].Visible = false;
                 dataGridView1.Columns[39].Visible = false;
-                //dataGridView1.Columns[39].Visible = false;
-                //dataGridView1.Columns[40].Visible = false;
-                //dataGridView1.Columns[41].Visible = false;
+                dataGridView1.Columns[40].Visible = false;
+                dataGridView1.Columns[41].Visible = false;
+                dataGridView1.Columns[42].Visible = false;
             }
             else if (cmbDeletedData.SelectedIndex == 1)
             {
@@ -318,10 +318,11 @@ namespace APC.AllForms
             {
                 dataGridView1.DataSource = dto.FinancialReports;
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "Total Amount Raised";
-                dataGridView1.Columns[2].HeaderText = "Total Amount Spent";
-                dataGridView1.Columns[3].HeaderText = "Year";
-                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Year";
+                dataGridView1.Columns[2].HeaderText = "Total Amount Raised";
+                dataGridView1.Columns[3].HeaderText = "Total Amount Spent";
+                dataGridView1.Columns[4].HeaderText = "Total Balance";
+                dataGridView1.Columns[5].Visible = false;
             }
             else
             {
@@ -374,9 +375,9 @@ namespace APC.AllForms
                 memberDetail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
                 memberDetail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
                 memberDetail.LGA = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
-                //memberDetail.NextOfKin = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
-                //memberDetail.RelationshipToNextOfKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[40].Value);
-                //memberDetail.RelationshipToNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[41].Value.ToString();
+                memberDetail.NameOfNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[40].Value.ToString();
+                memberDetail.RelationshipToKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[41].Value);
+                memberDetail.RelationshipToKin = dataGridView1.Rows[e.RowIndex].Cells[42].Value.ToString();
             }
             else if (cmbDeletedData.SelectedIndex == 1)
             {
@@ -528,10 +529,11 @@ namespace APC.AllForms
             {
                 financialRepDetail = new FinancialReportDetailDTO();
                 financialRepDetail.FinancialReportID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                financialRepDetail.TotalAmountRaised = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-                financialRepDetail.TotalAmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-                financialRepDetail.Year = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                financialRepDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                financialRepDetail.Year = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                financialRepDetail.TotalAmountRaised = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+                financialRepDetail.TotalAmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                financialRepDetail.Balance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                financialRepDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             }
         }
         private void btnRetrieve_Click(object sender, EventArgs e)

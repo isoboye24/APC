@@ -98,7 +98,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.RelationshipToKinID
                             join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
@@ -135,9 +135,9 @@ namespace APC.DAL.DAO
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 LGA = m.LGAOfCountryOrigin,
-                                //nextOfKin = m.nextOfKin,
-                                //relationshipToNextOfKinID = m.relationshipToKinID,
-                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
+                                nameOfNextOfKin = m.nextOfKin,
+                                relationshipToKinID = m.relationshipToKinID,
+                                relationshipToKin = kin.RelationshipToKin,
                             }).OrderBy(x=>x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -175,9 +175,9 @@ namespace APC.DAL.DAO
                     dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
-                    //dto.NextOfKin = item.nextOfKin;
-                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
-                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
+                    dto.NameOfNextOfKin = item.nameOfNextOfKin;
+                    dto.RelationshipToKinID = item.relationshipToKinID;
+                    dto.RelationshipToKin = item.relationshipToKin;
                     members.Add(dto);
                 }
                 return members;
@@ -201,7 +201,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.RelationshipToKinID
                             join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Former") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
@@ -238,9 +238,9 @@ namespace APC.DAL.DAO
                                 LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
-                                //nextOfKin = m.nextOfKin,
-                                //relationshipToNextOfKinID = m.relationshipToKinID,
-                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
+                                nameOfNextOfKin = m.nextOfKin,
+                                relationshipToKinID = m.relationshipToKinID,
+                                relationshipToKin = kin.RelationshipToKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -278,9 +278,9 @@ namespace APC.DAL.DAO
                     dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
-                    //dto.NextOfKin = item.nextOfKin;
-                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
-                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
+                    dto.NameOfNextOfKin = item.nameOfNextOfKin;
+                    dto.RelationshipToKinID = item.relationshipToKinID;
+                    dto.RelationshipToKin = item.relationshipToKin;
                     members.Add(dto);
                 }
                 return members;
@@ -304,7 +304,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies.Where(x => x.isDeleted == false) on m.countryID equals c.countryID
                             join n in db.NATIONALITies.Where(x => x.isDeleted == false) on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs.Where(x => x.isDeleted == false) on m.permissionID equals perm.permissionID
-                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.RelationshipToKinID
                             join ms in db.MEMBERSHIP_STATUS.Where(x=>x.membershipStatus=="Deceased") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
@@ -341,9 +341,9 @@ namespace APC.DAL.DAO
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
                                 LGA = m.LGAOfCountryOrigin,
-                                //nextOfKin = m.nextOfKin,
-                                //relationshipToNextOfKinID = m.relationshipToKinID,
-                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
+                                nameOfNextOfKin = m.nextOfKin,
+                                relationshipToKinID = m.relationshipToKinID,
+                                relationshipToKin = kin.RelationshipToKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -381,18 +381,11 @@ namespace APC.DAL.DAO
                     dto.MembershipStatus = item.membershipStatus;
                     dto.DeadDate = item.deadDate;
                     dto.LGA = item.LGA;
-                    //dto.NextOfKin = item.nextOfKin;
-                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
-                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
-                    if (dto.DeadDate != null)
-                    {
-                        TimeSpan difference = (DateTime)dto.DeadDate - dto.Birthday;
-                        dto.DeadAge = Math.Floor(difference.TotalDays / 365.25);
-                    }
-                    else if (dto.DeadDate == null)
-                    {
-                        dto.DeadAge = 0;
-                    }
+                    dto.NameOfNextOfKin = item.nameOfNextOfKin;
+                    dto.RelationshipToKinID = item.relationshipToKinID;
+                    dto.RelationshipToKin = item.relationshipToKin;
+                    TimeSpan difference = dto.DeadDate - dto.Birthday;
+                    dto.DeadAge = Math.Floor(difference.TotalDays / 365.25);
                     members.Add(dto);
                 }
                 return members;
@@ -416,7 +409,7 @@ namespace APC.DAL.DAO
                             join c in db.COUNTRies on m.countryID equals c.countryID
                             join n in db.NATIONALITies on m.nationalityID equals n.nationalityID
                             join perm in db.PERMISSIONs on m.permissionID equals perm.permissionID
-                            //join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.ID
+                            join kin in db.NEXT_OF_KIN_RELATIONSHIP on m.relationshipToKinID equals kin.RelationshipToKinID
                             join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                             select new
                             {
@@ -459,9 +452,9 @@ namespace APC.DAL.DAO
                                 LGA = m.LGAOfCountryOrigin,
                                 membershipStatusID = m.membershipStatusID,
                                 membershipStatus = ms.membershipStatus,
-                                //nextOfKin = m.nextOfKin,
-                                //relationshipToNextOfKinID = m.relationshipToKinID,
-                                //relationshipToNextOfKin = kin.RelationToNextOfKin,
+                                nameOfNextOfKin = m.nextOfKin,
+                                relationshipToKinID = m.relationshipToKinID,
+                                relationshipToKin = kin.RelationshipToKin,
                             }).OrderBy(x => x.surname).ToList();
                 foreach (var item in list)
                 {
@@ -505,9 +498,9 @@ namespace APC.DAL.DAO
                     dto.LGA = item.LGA;
                     dto.MembershipStatusID = item.membershipStatusID;
                     dto.MembershipStatus = item.membershipStatus;
-                    //dto.NextOfKin = item.nextOfKin;
-                    //dto.RelationshipToNextOfKinID = item.relationshipToNextOfKinID;
-                    //dto.RelationshipToNextOfKin = item.relationshipToNextOfKin;
+                    dto.NameOfNextOfKin = item.nameOfNextOfKin;
+                    dto.RelationshipToKinID = item.relationshipToKinID;
+                    dto.RelationshipToKin = item.relationshipToKin;
                     members.Add(dto);
                 }
                 return members;
@@ -1087,6 +1080,52 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
+        public decimal GetAmountContributed(int ID)
+        {
+            try
+            {
+                List<decimal> totalAmount = new List<decimal>();
+                int NoPresent = db.PERSONAL_ATTENDANCE.Count(x => x.memberID == ID && x.isDeleted == false && x.attendanceStatusID == 2);
+                if (NoPresent != 0)
+                {
+                    var amountContributed = db.PERSONAL_ATTENDANCE.Where(x => x.memberID == ID && x.isDeleted == false && x.monthlyDues > 0).ToList();
+                    foreach (var item in amountContributed)
+                    {
+                        totalAmount.Add((decimal)item.monthlyDues);
+                    }
+                    decimal totalAmountContributed = totalAmount.Sum();
+                    return totalAmountContributed;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public decimal GetAmountExpected()
+        {
+            try
+            {                
+                int meeting = db.GENERAL_ATTENDANCE.Count(x=>x.isDeleted == false);
+                if (meeting != 0)
+                {
+                    decimal totalAmountExpected = 10 * meeting;
+                    return totalAmountExpected;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool Update(MEMBER entity)
         {
@@ -1118,7 +1157,7 @@ namespace APC.DAL.DAO
                 member.membershipStatusID = entity.membershipStatusID;
                 member.nextOfKin = entity.nextOfKin;
                 member.LGAOfCountryOrigin = entity.LGAOfCountryOrigin;
-                //member.relationshipToKinID = entity.relationshipToKinID;
+                member.relationshipToKinID = entity.relationshipToKinID;
                 db.SaveChanges();
                 return true;
             }

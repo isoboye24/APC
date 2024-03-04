@@ -44,7 +44,15 @@ namespace APC.AllForms
         public bool isUpdate = false;
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!isUpdate)
+            int day = dateTimePickerGenAttDate.Value.Day;
+            int month = dateTimePickerGenAttDate.Value.Month;
+            int year = dateTimePickerGenAttDate.Value.Year;
+            bool newMeeting = bll.CheckMeeting(day, month, year);
+            if (newMeeting)
+            {
+                MessageBox.Show("There is a meeting with the same date");
+            }
+            else if (!isUpdate)
             {
                 GeneralAttendanceDetailDTO generalAttendance = new GeneralAttendanceDetailDTO();
                 generalAttendance.Day = dateTimePickerGenAttDate.Value.Day;

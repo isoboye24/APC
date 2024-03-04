@@ -16,6 +16,9 @@ namespace APC.DAL.DTO
         public List<PersonalAttendanceDetailDTO> PresentMember { get; set; }
         public List<PersonalAttendanceDetailDTO> AbsentMember { get; set; }
         public List<PersonalAttendanceDetailDTO> PersonalAttendances { get; set; }
+        public List<PersonalAttendanceDetailDTO> AmountsContributed { get; set; }
+        public List<PersonalAttendanceDetailDTO> AmountExpected { get; set; }
+        public List<PersonalAttendanceDetailDTO> AmountsBalance { get; set; }
         public List<GeneralAttendanceDetailDTO> GeneralAttendance { get; set; }
         public List<int> Years { get; set; }
     }

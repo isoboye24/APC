@@ -50,7 +50,14 @@ namespace APC.BLL
         {
             return dao.SelectTotalRaisedAmount();
         }
-
+        public decimal SelectTotalRaisedAmountYearly(int year)
+        {
+            return dao.SelectTotalRaisedAmountYealy(year);
+        }
+        public decimal SelectTotalRaisedAmountMonthly(int month)
+        {
+            return dao.SelectTotalRaisedAmountMonthly(month);
+        }
         public decimal SelectTotalSpentAmount()
         {
             return dao.SelectTotalSpentAmount();

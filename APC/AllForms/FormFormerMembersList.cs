@@ -93,9 +93,9 @@ namespace APC.AllForms
             dataGridView1.Columns[37].Visible = false;
             dataGridView1.Columns[38].Visible = false;
             dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[39].Visible = false;
-            //dataGridView1.Columns[40].Visible = false;
-            //dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[40].Visible = false;
+            dataGridView1.Columns[41].Visible = false;
+            dataGridView1.Columns[42].Visible = false;
             #endregion
             GetMemberCounts();
         }
@@ -192,9 +192,9 @@ namespace APC.AllForms
             detail.DeadDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[37].Value);
             detail.DeadAge = Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[38].Value);
             detail.LGA = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
-            //detail.NextOfKin = dataGridView1.Rows[e.RowIndex].Cells[39].Value.ToString();
-            //detail.RelationshipToNextOfKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[40].Value);
-            //detail.RelationshipToNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[41].Value.ToString();
+            detail.NameOfNextOfKin = dataGridView1.Rows[e.RowIndex].Cells[40].Value.ToString();
+            detail.RelationshipToKinID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[41].Value);
+            detail.RelationshipToKin = dataGridView1.Rows[e.RowIndex].Cells[42].Value.ToString();
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)

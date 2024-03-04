@@ -41,5 +41,6 @@ namespace APC.DAL
         public System.DateTime deadDate { get; set; }
         public string nextOfKin { get; set; }
         public string LGAOfCountryOrigin { get; set; }
+        public int relationshipToKinID { get; set; }
     }
 }

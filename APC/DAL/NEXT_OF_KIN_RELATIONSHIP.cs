@@ -14,7 +14,7 @@ namespace APC.DAL
     
     public partial class NEXT_OF_KIN_RELATIONSHIP
     {
-        public int ID { get; set; }
-        public string RelationToNextOfKin { get; set; }
+        public int RelationshipToKinID { get; set; }
+        public string RelationshipToKin { get; set; }
     }
 }

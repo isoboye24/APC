@@ -96,9 +96,9 @@ namespace APC
             dataGridViewFathers.Columns[37].Visible = false;
             dataGridViewFathers.Columns[38].Visible = false;
             dataGridViewFathers.Columns[39].Visible = false;
-            //dataGridViewFathers.Columns[39].Visible = false;
-            //dataGridViewFathers.Columns[40].Visible = false;
-            //dataGridViewFathers.Columns[41].Visible = false;
+            dataGridViewFathers.Columns[40].Visible = false;
+            dataGridViewFathers.Columns[41].Visible = false;
+            dataGridViewFathers.Columns[42].Visible = false;
 
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
@@ -141,9 +141,9 @@ namespace APC
             dataGridViewMothers.Columns[37].Visible = false;
             dataGridViewMothers.Columns[38].Visible = false;
             dataGridViewMothers.Columns[39].Visible = false;
-            //dataGridViewMothers.Columns[39].Visible = false;
-            //dataGridViewMothers.Columns[40].Visible = false;
-            //dataGridViewMothers.Columns[41].Visible = false;
+            dataGridViewMothers.Columns[40].Visible = false;
+            dataGridViewMothers.Columns[41].Visible = false;
+            dataGridViewMothers.Columns[42].Visible = false;
             #endregion
 
             if (isUpdate)
@@ -296,6 +296,7 @@ namespace APC
         OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
         private void btnBrowse_Click_1(object sender, EventArgs e)
         {
+            OpenFileDialog1.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All files (*.*)|*.*";
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 picProfilePic.Load(OpenFileDialog1.FileName);
@@ -303,6 +304,11 @@ namespace APC
                 string unique = Guid.NewGuid().ToString();
                 fileName += unique + OpenFileDialog1.SafeFileName;
             }
-        }        
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

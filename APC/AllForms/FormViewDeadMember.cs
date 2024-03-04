@@ -123,18 +123,12 @@ namespace APC.AllForms
                 txtNationality.Text = detail.NationalityName;
                 txtMaritalStatus.Text = detail.MaritalStatusName;
                 TimeSpan difference;
-                if (detail.DeadDate != null)
-                {
-                    DateTime died = Convert.ToDateTime(detail.DeadDate);
-                    labelDeadDate.Text = died.ToShortDateString();
-                    difference = (DateTime)detail.DeadDate - detail.Birthday;
-                    labelAge.Text = Math.Floor(difference.TotalDays / 365.25).ToString() + " years";
-                }
-                else
-                {
-                    labelDeadDate.Text = detail.DeadDate.ToString();
-                    labelAge.Text = null;
-                }
+                DateTime died = Convert.ToDateTime(detail.DeadDate);
+                labelDeadDate.Text = died.ToShortDateString();
+                difference = detail.DeadDate - detail.Birthday;
+                labelAge.Text = Math.Floor(difference.TotalDays / 365.25).ToString() + " years";
+                txtNameOfNextOfKin.Text = detail.NameOfNextOfKin;
+                txtRelationshipToKin.Text = detail.RelationshipToKin;
             }
         }
 

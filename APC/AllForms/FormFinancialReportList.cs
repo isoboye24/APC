@@ -76,14 +76,17 @@ namespace APC.AllForms
             dto = bll.Select();
             dataGridView1.DataSource = dto.FinancialReports;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "Total Amount Raised";
-            dataGridView1.Columns[2].HeaderText = "Total Amount Spent";
-            dataGridView1.Columns[3].HeaderText = "Year";
-            dataGridView1.Columns[4].Visible = false;
-
-            General.ValueCountInDecimal(labelTotalAmountRaised, bll.SelectTotalRaisedAmount(), 148, 70);
-            General.ValueCountInDecimal(labelTotalAmountSpent, bll.SelectTotalSpentAmount(), 148, 70);
-            General.ValueCountInDecimal(labelTotalBalance, bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount(), 148, 70);
+            dataGridView1.Columns[1].HeaderText = "Year";
+            dataGridView1.Columns[2].HeaderText = "Total Amount Raised";
+            dataGridView1.Columns[3].HeaderText = "Total Amount Spent";
+            dataGridView1.Columns[4].HeaderText = "Total Balance";
+            dataGridView1.Columns[5].Visible = false;
+            labelTotalAmountRaised.Text = bll.SelectTotalRaisedAmount().ToString();
+            labelTotalAmountSpent.Text = bll.SelectTotalSpentAmount().ToString();
+            labelTotalBalance.Text = (bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount()).ToString();
+            //General.ValueCountInDecimal(labelTotalAmountRaised, bll.SelectTotalRaisedAmount(), 148, 70);
+            //General.ValueCountInDecimal(labelTotalAmountSpent, bll.SelectTotalSpentAmount(), 148, 70);
+            //General.ValueCountInDecimal(labelTotalBalance, bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount(), 148, 70);
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();
@@ -94,10 +97,11 @@ namespace APC.AllForms
         {
             detail = new FinancialReportDetailDTO();
             detail.FinancialReportID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            detail.TotalAmountRaised = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-            detail.TotalAmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-            detail.Year = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            detail.Year = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detail.TotalAmountRaised = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            detail.TotalAmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+            detail.Balance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+            detail.Summary = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void txtYear_TextChanged(object sender, EventArgs e)
@@ -124,7 +128,6 @@ namespace APC.AllForms
                         FillDataGrid();
                     }
                 }
-                
             }
         }
     }

@@ -200,8 +200,9 @@
           <Property Name="phoneNumber3" Type="varchar" MaxLength="50" />
           <Property Name="membershipStatusID" Type="int" Nullable="false" />
           <Property Name="deadDate" Type="date" Nullable="false" />
-          <Property Name="nextOfKin" Type="varchar" MaxLength="50" />
-          <Property Name="LGAOfCountryOrigin" Type="varchar" MaxLength="200" />
+          <Property Name="nextOfKin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LGAOfCountryOrigin" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="relationshipToKinID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -228,10 +229,10 @@
         </EntityType>
         <EntityType Name="NEXT_OF_KIN_RELATIONSHIP">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="RelationshipToKinID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RelationToNextOfKin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RelationshipToKinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RelationshipToKin" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -502,8 +503,9 @@
           <Property Name="phoneNumber3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="membershipStatusID" Type="Int32" Nullable="false" />
           <Property Name="deadDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="nextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LGAOfCountryOrigin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="nextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LGAOfCountryOrigin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="relationshipToKinID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="MEMBERSHIP_STATUS">
           <Key>
@@ -530,10 +532,10 @@
         </EntityType>
         <EntityType Name="NEXT_OF_KIN_RELATIONSHIP">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="RelationshipToKinID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RelationToNextOfKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RelationshipToKinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RelationshipToKin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="PERMISSION">
           <Key>
@@ -820,6 +822,7 @@
                 <ScalarProperty Name="deadDate" ColumnName="deadDate" />
                 <ScalarProperty Name="nextOfKin" ColumnName="nextOfKin" />
                 <ScalarProperty Name="LGAOfCountryOrigin" ColumnName="LGAOfCountryOrigin" />
+                <ScalarProperty Name="relationshipToKinID" ColumnName="relationshipToKinID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -852,8 +855,8 @@
           <EntitySetMapping Name="NEXT_OF_KIN_RELATIONSHIP">
             <EntityTypeMapping TypeName="APCModel.NEXT_OF_KIN_RELATIONSHIP">
               <MappingFragment StoreEntitySet="NEXT_OF_KIN_RELATIONSHIP">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="RelationToNextOfKin" ColumnName="RelationToNextOfKin" />
+                <ScalarProperty Name="RelationshipToKinID" ColumnName="RelationshipToKinID" />
+                <ScalarProperty Name="RelationshipToKin" ColumnName="RelationshipToKin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

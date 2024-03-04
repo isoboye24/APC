@@ -79,8 +79,8 @@ namespace APC.BLL
             member.deadDate = entity.DeadDate;
             member.LGAOfCountryOrigin = entity.LGA;
             member.membershipStatusID = entity.MembershipStatusID;
-            //member.nextOfKin = entity.NextOfKin;
-            //member.relationshipToKinID = entity.RelationshipToNextOfKinID;
+            member.nextOfKin = entity.NameOfNextOfKin;
+            member.relationshipToKinID = entity.RelationshipToKinID;
             return memberDAO.Insert(member);
         }
 
@@ -166,6 +166,14 @@ namespace APC.BLL
         {
             return memberDAO.GetNoOfMembersAbsentAttendance(ID);
         }
+        public decimal GetAmountContributed(int ID)
+        {
+            return memberDAO.GetAmountContributed(ID);
+        }
+        public decimal GetAmountExpected()
+        {
+            return memberDAO.GetAmountExpected();
+        }
         public int Select3MonthsAbsentesCount()
         {
             return memberDAO.Select3MonthsAbsentesCount();
@@ -238,8 +246,8 @@ namespace APC.BLL
             member.deadDate = entity.DeadDate;
             member.LGAOfCountryOrigin = entity.LGA;
             member.membershipStatusID = entity.MembershipStatusID;
-            //member.nextOfKin = entity.NextOfKin;
-            //member.relationshipToKinID = entity.RelationshipToNextOfKinID;
+            member.nextOfKin = entity.NameOfNextOfKin;
+            member.relationshipToKinID = entity.RelationshipToKinID;
             return memberDAO.Update(member);
         }
     }

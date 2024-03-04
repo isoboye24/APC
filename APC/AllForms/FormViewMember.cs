@@ -63,6 +63,9 @@ namespace APC.AllForms
         MemberBLL bll = new MemberBLL();
         int attendancePresentCount = 0;
         int attendanceAbsentCount = 0;
+        decimal amountContributed = 0;
+        decimal amountExpected = 0;
+        decimal Balance = 0;
         public bool isFormer = false;
         private void FormViewMember_Load(object sender, EventArgs e)
         {
@@ -119,15 +122,27 @@ namespace APC.AllForms
             {
                 btnViewAbsentAttendance.Visible = true;
             }
-            //if (isFormer)
-            //{
-            //    label13.Hide();
-            //    label18.Hide();
-            //    labelNoOfPresent.Hide();
-            //    labelNoOfAbsent.Hide();
-            //    btnViewPresentAttendance.Hide();
-            //    btnViewAbsentAttendance.Hide();
-            //}
+            amountContributed = bll.GetAmountContributed(detail.MemberID);
+            labelAmountContributed.Text = "€" + amountContributed;
+            btnViewAmountContributed.Hide();
+            if (amountContributed > 0)
+            {
+                btnViewAmountContributed.Visible = true;
+            }
+            amountExpected = bll.GetAmountExpected();
+            labelAmountExpected.Text = "€" + amountExpected + ".00";
+            btnViewAmountExpected.Hide();
+            if (amountExpected > 0)
+            {
+                btnViewAmountExpected.Visible = true;
+            }
+            Balance = amountExpected - amountContributed;
+            labelPersonalBalance.Text = "€" + Balance;
+            btnViewPersonalBalance.Hide();
+            if (Balance > 0)
+            {
+                btnViewPersonalBalance.Visible = true;
+            }
 
             txtPhone2.Hide();
             txtPhone3.Hide();
@@ -169,8 +184,8 @@ namespace APC.AllForms
                 txtNationality.Text = detail.NationalityName;
                 txtMaritalStatus.Text = detail.MaritalStatusName;
                 txtPermission.Text = detail.PermissionName;
-                //txtNextOfKin.Text = detail.NextOfKin;
-                //txtNextOfKinRelationship.Text = detail.RelationshipToNextOfKin;
+                txtNextOfKin.Text = detail.NameOfNextOfKin;
+                txtNextOfKinRelationship.Text = detail.RelationshipToKin;
             }
         }
 
@@ -224,6 +239,45 @@ namespace APC.AllForms
                 FormViewPersonalAttendances open = new FormViewPersonalAttendances();
                 open.detail = detail;
                 open.isAbsent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAmountContributed_Click(object sender, EventArgs e)
+        {
+            if (amountContributed > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAmountContributed = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAmountExpected_Click(object sender, EventArgs e)
+        {
+            if (amountExpected > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAmountExpected = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewPersonalBalance_Click(object sender, EventArgs e)
+        {
+            if (Balance > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isPersonalBalance = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;

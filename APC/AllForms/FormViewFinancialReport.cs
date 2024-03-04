@@ -43,9 +43,9 @@ namespace APC.AllForms
         {
             labelTitle.Text = "Financial Report in " + detail.Year;
             txtSummary.Text = detail.Summary;
-            General.ValueCountInDecimal(labelTotalAmountRaised, detail.TotalAmountRaised, 87, 78);
-            General.ValueCountInDecimal(labelTotalAmountSpent, detail.TotalAmountSpent, 87, 78);
-            General.ValueCountInDecimal(labelTotalBalance, detail.TotalAmountRaised - detail.TotalAmountSpent, 87, 78);
+            labelTotalAmountRaised.Text = detail.TotalAmountRaised.ToString();
+            labelTotalAmountSpent.Text = detail.TotalAmountSpent.ToString();
+            labelTotalBalance.Text = (detail.TotalAmountRaised - detail.TotalAmountSpent).ToString();
         }        
     }
 }

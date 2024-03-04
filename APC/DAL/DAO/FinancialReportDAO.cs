@@ -61,16 +61,41 @@ namespace APC.DAL.DAO
             try
             {
                 List<FinancialReportDetailDTO> financialReport = new List<FinancialReportDetailDTO>();
-                var list = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false);
-                foreach (var item in list)
+                List<int> monthIDCollection = new List<int>();
+                List<int> monthIDs = new List<int>();
+                List<int> yearsCollection = new List<int>();
+                List<int> years = new List<int>();
+                List<decimal> totalDuesCollection = new List<decimal>();
+                List<decimal> totalExpenditures = new List<decimal>();
+
+                var yearlyDue = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false).ToList();
+                foreach (var item in yearlyDue)
                 {
+                    yearsCollection.Add(item.year);
+                }
+                years = yearsCollection.Distinct().OrderByDescending(year => year).ToList();
+                foreach (var yearItem in years)
+                {                    
+                    var yearlyDues = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == yearItem).ToList();
+                    foreach (var due in yearlyDues)
+                    {
+                        totalDuesCollection.Add((decimal)due.monthlyDues);
+                    }
+                    var yearlyExpenditures = db.EXPENDITUREs.Where(x => x.isDeleted == false && x.year == yearItem).ToList();
+                    foreach (var expense in yearlyExpenditures)
+                    {
+                        totalExpenditures.Add(expense.amountSpent);
+                    }
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
-                    dto.FinancialReportID = item.financialReportID;
-                    dto.TotalAmountRaised = item.totalAmountRaised;
-                    dto.TotalAmountSpent = item.totalAmountSpent;
-                    dto.Year = item.year.ToString();
-                    dto.Summary = item.summary;
+                    dto.FinancialReportID += 1;
+                    dto.Summary = db.FINANCIAL_REPORT.FirstOrDefault(x => x.isDeleted == false && x.year == yearItem).summary;                    
+                    dto.Year = yearItem.ToString();
+                    dto.TotalAmountRaised = totalDuesCollection.Sum();
+                    dto.TotalAmountSpent = totalExpenditures.Sum();
+                    dto.Balance = dto.TotalAmountRaised - dto.TotalAmountSpent;                    
                     financialReport.Add(dto);
+                    totalDuesCollection.Clear();
+                    totalExpenditures.Clear();
                 }
                 return financialReport;
             }
@@ -109,12 +134,10 @@ namespace APC.DAL.DAO
             try
             {                
                 List<decimal> totalRaisedAmount = new List<decimal>();
-                var list = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false);
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false);
                 foreach (var item in list)
-                {
-                    FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
-                    dto.FinancialReportID = item.financialReportID;
-                    totalRaisedAmount.Add((decimal)item.totalAmountRaised);
+                {                                     
+                    totalRaisedAmount.Add((decimal)item.monthlyDues);
                 }
                 decimal totalAmount = totalRaisedAmount.Sum();
                 return totalAmount;
@@ -124,7 +147,42 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-
+        public decimal SelectTotalRaisedAmountYealy(int thisYear)
+        {
+            try
+            {
+                List<decimal> totalRaisedAmount = new List<decimal>();
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == thisYear);
+                foreach (var item in list)
+                {
+                    totalRaisedAmount.Add((decimal)item.monthlyDues);
+                }
+                decimal totalAmount = totalRaisedAmount.Sum();
+                return totalAmount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public decimal SelectTotalRaisedAmountMonthly(int thisMonth)
+        {
+            try
+            {
+                List<decimal> totalRaisedAmount = new List<decimal>();
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.monthID == thisMonth);
+                foreach (var item in list)
+                {
+                    totalRaisedAmount.Add((decimal)item.monthlyDues);
+                }
+                decimal totalAmount = totalRaisedAmount.Sum();
+                return totalAmount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public bool CheckTotalRaisedAmountAndTotalSpentAmount(int year)
         {
             try
@@ -162,12 +220,10 @@ namespace APC.DAL.DAO
             try
             {
                 List<decimal> totalSpentAmount = new List<decimal>();
-                var list = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false);
+                var list = db.EXPENDITUREs.Where(x => x.isDeleted == false);
                 foreach (var item in list)
-                {
-                    FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
-                    dto.FinancialReportID = item.financialReportID;
-                    totalSpentAmount.Add((decimal)item.totalAmountSpent);
+                {                                       
+                    totalSpentAmount.Add(item.amountSpent);
                 }
                 decimal totalAmount = totalSpentAmount.Sum();
                 return totalAmount;

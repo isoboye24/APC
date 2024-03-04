@@ -110,6 +110,7 @@ namespace APC.AllForms
         OpenFileDialog OpenFileDialog1 = new OpenFileDialog();
         private void btnBrowse_Click(object sender, EventArgs e)
         {
+            OpenFileDialog1.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All files (*.*)|*.*";
             if (OpenFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 picEventImage.Load(OpenFileDialog1.FileName);
