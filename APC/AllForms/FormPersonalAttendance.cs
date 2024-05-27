@@ -50,12 +50,31 @@ namespace APC
         public bool isUpdate = false;
         private void FormAttendance_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtAttendanceStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMonthlyDues.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSearchSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
 
             #region
             dataGridViewAttendanceStatuses.DataSource = dto.AttendanceStatuses;
             dataGridViewAttendanceStatuses.Columns[0].Visible = false;
-            dataGridViewAttendanceStatuses.Columns[1].HeaderText = "Attend. Status";
+            dataGridViewAttendanceStatuses.Columns[1].HeaderText = "Status";
+            foreach (DataGridViewColumn column in dataGridViewAttendanceStatuses.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
 
             dataGridViewMembers.DataSource = dto.Members;
             dataGridViewMembers.Columns[0].Visible = false;
@@ -101,6 +120,10 @@ namespace APC
             dataGridViewMembers.Columns[40].Visible = false;
             dataGridViewMembers.Columns[41].Visible = false;
             dataGridViewMembers.Columns[42].Visible = false;
+            foreach (DataGridViewColumn column in dataGridViewMembers.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             #endregion
 
             if (isUpdate)

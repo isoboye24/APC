@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -78,6 +79,21 @@ namespace APC.AllForms
         DocumentDTO dto = new DocumentDTO();
         private void FormDocumentList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            txtDocName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtDocType.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
             cmbMonth.DataSource = dto.Months;
             General.ComboBoxProps(cmbMonth, "MonthName", "MonthID");
@@ -92,6 +108,12 @@ namespace APC.AllForms
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].HeaderText = "Date";
             dataGridView1.Columns[8].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
 
             labelDocCount.Text = bll.SelectDocCount().ToString();
             if (LoginInfo.AccessLevel != 4)

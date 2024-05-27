@@ -38,6 +38,14 @@ namespace APC.AllForms
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void FormChildrenOfSingleParent_Load(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
+        }
     }
 }

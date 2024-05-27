@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -66,6 +67,28 @@ namespace APC.AllForms
         }
         private void FormDeadMembersList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfDivisor.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            labelNoOfFemale.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            labelNoOfMen.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbProfession.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.SelectDeadMembers();
             cmbGender.DataSource = dto.Genders;
             General.ComboBoxProps(cmbGender, "GenderName", "genderID");
@@ -126,6 +149,11 @@ namespace APC.AllForms
             dataGridView1.Columns[40].Visible = false;
             dataGridView1.Columns[41].Visible = false;
             dataGridView1.Columns[42].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             #endregion
             GetMemberCounts();            
         }

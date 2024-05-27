@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -42,6 +43,19 @@ namespace APC.AllForms
         decimal Balance = 0;
         private void FormViewPersonalAttendances_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            rbEqualAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            rbLessAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            rbMoreAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            txtAmount.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);           
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalAmount.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelTotalName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             dto = bll.Select(detail.MemberID);
             cmbMonth.DataSource = dto.Months;
             General.ComboBoxProps(cmbMonth, "MonthName", "MonthID");
@@ -65,7 +79,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[5].HeaderText = "Year";
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].Visible = false;
-                //dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView1.Columns[8].Visible = false;
                 dataGridView1.Columns[9].Visible = false;
                 dataGridView1.Columns[10].Visible = false;
@@ -75,6 +88,11 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s present attendance record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfile.ImageLocation = imagePath;
@@ -99,6 +117,11 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s absent attendance record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfile.ImageLocation = imagePath;
@@ -123,6 +146,11 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s contributed amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfile.ImageLocation = imagePath;
@@ -151,6 +179,11 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s expected amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfile.ImageLocation = imagePath;
@@ -178,6 +211,11 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
+                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s balance amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfile.ImageLocation = imagePath;

@@ -103,6 +103,30 @@ namespace APC.AllForms
                 dateTimePickerGenAttDate.Value = detail.AttendanceDate;
                 txtSummary.Text = detail.Summary;
             }
-        }        
+        }
+
+        private void iconMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void picMinimize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }

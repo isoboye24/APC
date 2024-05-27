@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimize = new System.Windows.Forms.PictureBox();
@@ -102,6 +103,7 @@
             this.labelDeceasedDate = new System.Windows.Forms.Label();
             this.dateTimePickerDeceasedDate = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -126,6 +128,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.iconMaximize);
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.picMinimize);
@@ -135,6 +138,21 @@
             this.panel1.Size = new System.Drawing.Size(1051, 51);
             this.panel1.TabIndex = 27;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
+            // 
+            // iconMaximize
+            // 
+            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMaximize.Location = new System.Drawing.Point(969, 7);
+            this.iconMaximize.Name = "iconMaximize";
+            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
+            this.iconMaximize.TabIndex = 13;
+            this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click);
             // 
             // labelTitle
             // 
@@ -151,7 +169,7 @@
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
-            this.picClose.Location = new System.Drawing.Point(1010, 7);
+            this.picClose.Location = new System.Drawing.Point(1009, 7);
             this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(32, 32);
@@ -164,13 +182,14 @@
             // 
             this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
-            this.picMinimize.Location = new System.Drawing.Point(967, 7);
+            this.picMinimize.Location = new System.Drawing.Point(929, 7);
             this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(32, 32);
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // panel3
             // 
@@ -231,7 +250,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel10, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel15, 1, 0);
@@ -250,12 +269,12 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(732, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(728, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 475);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 475);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -271,7 +290,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(279, 231);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(278, 231);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // pictureBox1
@@ -294,7 +313,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(217, 225);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(216, 225);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -310,7 +329,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(211, 39);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(210, 39);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // btnBrowse
@@ -341,7 +360,7 @@
             this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picProfilePic.Location = new System.Drawing.Point(3, 3);
             this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(211, 174);
+            this.picProfilePic.Size = new System.Drawing.Size(210, 174);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProfilePic.TabIndex = 1;
             this.picProfilePic.TabStop = false;
@@ -353,7 +372,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 232);
+            this.groupBox1.Size = new System.Drawing.Size(278, 232);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "APC INFO";
@@ -390,16 +409,17 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88785F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.9345794F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.88785F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(273, 210);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(272, 210);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // cmbMaritalStatus
             // 
+            this.cmbMaritalStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbMaritalStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaritalStatus.FormattingEnabled = true;
             this.cmbMaritalStatus.Location = new System.Drawing.Point(125, 139);
             this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(145, 29);
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(144, 29);
             this.cmbMaritalStatus.TabIndex = 3;
             // 
             // label11
@@ -419,7 +439,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(125, 3);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 29);
+            this.txtName.Size = new System.Drawing.Size(144, 29);
             this.txtName.TabIndex = 0;
             // 
             // label14
@@ -483,7 +503,7 @@
             this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSurname.Location = new System.Drawing.Point(125, 37);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(145, 29);
+            this.txtSurname.Size = new System.Drawing.Size(144, 29);
             this.txtSurname.TabIndex = 0;
             // 
             // cmbPosition
@@ -493,7 +513,7 @@
             this.cmbPosition.FormattingEnabled = true;
             this.cmbPosition.Location = new System.Drawing.Point(125, 71);
             this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(145, 29);
+            this.cmbPosition.Size = new System.Drawing.Size(144, 29);
             this.cmbPosition.TabIndex = 3;
             // 
             // dateTimePickerMemSince
@@ -504,16 +524,17 @@
             this.dateTimePickerMemSince.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerMemSince.Location = new System.Drawing.Point(125, 105);
             this.dateTimePickerMemSince.Name = "dateTimePickerMemSince";
-            this.dateTimePickerMemSince.Size = new System.Drawing.Size(145, 29);
+            this.dateTimePickerMemSince.Size = new System.Drawing.Size(144, 29);
             this.dateTimePickerMemSince.TabIndex = 2;
             // 
             // cmbMembershipStatus
             // 
+            this.cmbMembershipStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbMembershipStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMembershipStatus.FormattingEnabled = true;
             this.cmbMembershipStatus.Location = new System.Drawing.Point(125, 173);
             this.cmbMembershipStatus.Name = "cmbMembershipStatus";
-            this.cmbMembershipStatus.Size = new System.Drawing.Size(145, 29);
+            this.cmbMembershipStatus.Size = new System.Drawing.Size(144, 29);
             this.cmbMembershipStatus.TabIndex = 3;
             // 
             // tableLayoutPanel10
@@ -522,11 +543,11 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(355, 3);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(353, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(366, 475);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(364, 475);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -573,7 +594,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(360, 469);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(358, 469);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // labelAccessLevel
@@ -589,11 +610,12 @@
             // 
             // cmbPermission
             // 
+            this.cmbPermission.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbPermission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPermission.FormattingEnabled = true;
-            this.cmbPermission.Location = new System.Drawing.Point(183, 3);
+            this.cmbPermission.Location = new System.Drawing.Point(182, 3);
             this.cmbPermission.Name = "cmbPermission";
-            this.cmbPermission.Size = new System.Drawing.Size(172, 29);
+            this.cmbPermission.Size = new System.Drawing.Size(173, 29);
             this.cmbPermission.TabIndex = 3;
             // 
             // labelPhone3
@@ -609,10 +631,11 @@
             // 
             // txtPhone3
             // 
+            this.txtPhone3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone3.Location = new System.Drawing.Point(183, 304);
+            this.txtPhone3.Location = new System.Drawing.Point(182, 304);
             this.txtPhone3.Name = "txtPhone3";
-            this.txtPhone3.Size = new System.Drawing.Size(172, 29);
+            this.txtPhone3.Size = new System.Drawing.Size(173, 29);
             this.txtPhone3.TabIndex = 0;
             // 
             // labelPhone2
@@ -628,17 +651,18 @@
             // 
             // txtPhone2
             // 
+            this.txtPhone2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone2.Location = new System.Drawing.Point(183, 261);
+            this.txtPhone2.Location = new System.Drawing.Point(182, 261);
             this.txtPhone2.Name = "txtPhone2";
-            this.txtPhone2.Size = new System.Drawing.Size(172, 29);
+            this.txtPhone2.Size = new System.Drawing.Size(173, 29);
             this.txtPhone2.TabIndex = 0;
             // 
             // labelMorePhone
             // 
             this.labelMorePhone.AutoSize = true;
             this.labelMorePhone.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMorePhone.Location = new System.Drawing.Point(183, 215);
+            this.labelMorePhone.Location = new System.Drawing.Point(182, 215);
             this.labelMorePhone.Name = "labelMorePhone";
             this.labelMorePhone.Size = new System.Drawing.Size(103, 21);
             this.labelMorePhone.TabIndex = 1;
@@ -658,10 +682,11 @@
             // 
             // txtPhone1
             // 
+            this.txtPhone1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone1.Location = new System.Drawing.Point(183, 175);
+            this.txtPhone1.Location = new System.Drawing.Point(182, 175);
             this.txtPhone1.Name = "txtPhone1";
-            this.txtPhone1.Size = new System.Drawing.Size(172, 29);
+            this.txtPhone1.Size = new System.Drawing.Size(173, 29);
             this.txtPhone1.TabIndex = 0;
             // 
             // label3
@@ -677,11 +702,12 @@
             // 
             // cmbRelationshipToNextOfKin
             // 
+            this.cmbRelationshipToNextOfKin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbRelationshipToNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRelationshipToNextOfKin.FormattingEnabled = true;
-            this.cmbRelationshipToNextOfKin.Location = new System.Drawing.Point(183, 132);
+            this.cmbRelationshipToNextOfKin.Location = new System.Drawing.Point(182, 132);
             this.cmbRelationshipToNextOfKin.Name = "cmbRelationshipToNextOfKin";
-            this.cmbRelationshipToNextOfKin.Size = new System.Drawing.Size(172, 29);
+            this.cmbRelationshipToNextOfKin.Size = new System.Drawing.Size(173, 29);
             this.cmbRelationshipToNextOfKin.TabIndex = 3;
             // 
             // label4
@@ -697,10 +723,11 @@
             // 
             // txtNameOfNextOfKin
             // 
+            this.txtNameOfNextOfKin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNameOfNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameOfNextOfKin.Location = new System.Drawing.Point(183, 89);
+            this.txtNameOfNextOfKin.Location = new System.Drawing.Point(182, 89);
             this.txtNameOfNextOfKin.Name = "txtNameOfNextOfKin";
-            this.txtNameOfNextOfKin.Size = new System.Drawing.Size(172, 29);
+            this.txtNameOfNextOfKin.Size = new System.Drawing.Size(173, 29);
             this.txtNameOfNextOfKin.TabIndex = 0;
             // 
             // label12
@@ -716,10 +743,11 @@
             // 
             // txtLGA
             // 
+            this.txtLGA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLGA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLGA.Location = new System.Drawing.Point(183, 46);
+            this.txtLGA.Location = new System.Drawing.Point(182, 46);
             this.txtLGA.Name = "txtLGA";
-            this.txtLGA.Size = new System.Drawing.Size(172, 29);
+            this.txtLGA.Size = new System.Drawing.Size(173, 29);
             this.txtLGA.TabIndex = 0;
             // 
             // tableLayoutPanel15
@@ -735,7 +763,7 @@
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(336, 475);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(334, 475);
             this.tableLayoutPanel15.TabIndex = 4;
             // 
             // tableLayoutPanel5
@@ -772,7 +800,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.89362F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(330, 255);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(328, 255);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label5
@@ -789,11 +817,12 @@
             // dateTimePickerBirthday
             // 
             this.dateTimePickerBirthday.CustomFormat = "12/31/2023";
+            this.dateTimePickerBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirthday.Location = new System.Drawing.Point(173, 3);
+            this.dateTimePickerBirthday.Location = new System.Drawing.Point(172, 3);
             this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
-            this.dateTimePickerBirthday.Size = new System.Drawing.Size(138, 29);
+            this.dateTimePickerBirthday.Size = new System.Drawing.Size(153, 29);
             this.dateTimePickerBirthday.TabIndex = 2;
             // 
             // label7
@@ -809,11 +838,12 @@
             // 
             // cmbCountry
             // 
+            this.cmbCountry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(173, 45);
+            this.cmbCountry.Location = new System.Drawing.Point(172, 45);
             this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(138, 29);
+            this.cmbCountry.Size = new System.Drawing.Size(153, 29);
             this.cmbCountry.TabIndex = 3;
             // 
             // label8
@@ -829,11 +859,12 @@
             // 
             // cmbProfession
             // 
+            this.cmbProfession.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbProfession.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(173, 87);
+            this.cmbProfession.Location = new System.Drawing.Point(172, 87);
             this.cmbProfession.Name = "cmbProfession";
-            this.cmbProfession.Size = new System.Drawing.Size(138, 29);
+            this.cmbProfession.Size = new System.Drawing.Size(153, 29);
             this.cmbProfession.TabIndex = 3;
             // 
             // label9
@@ -849,11 +880,12 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Location = new System.Drawing.Point(173, 129);
+            this.cmbGender.Location = new System.Drawing.Point(172, 129);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(138, 29);
+            this.cmbGender.Size = new System.Drawing.Size(153, 29);
             this.cmbGender.TabIndex = 3;
             // 
             // label10
@@ -869,11 +901,12 @@
             // 
             // cmbEmpStatus
             // 
+            this.cmbEmpStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbEmpStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpStatus.FormattingEnabled = true;
-            this.cmbEmpStatus.Location = new System.Drawing.Point(173, 171);
+            this.cmbEmpStatus.Location = new System.Drawing.Point(172, 171);
             this.cmbEmpStatus.Name = "cmbEmpStatus";
-            this.cmbEmpStatus.Size = new System.Drawing.Size(138, 29);
+            this.cmbEmpStatus.Size = new System.Drawing.Size(153, 29);
             this.cmbEmpStatus.TabIndex = 3;
             // 
             // label15
@@ -889,11 +922,12 @@
             // 
             // cmbNationality
             // 
+            this.cmbNationality.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNationality.FormattingEnabled = true;
-            this.cmbNationality.Location = new System.Drawing.Point(173, 213);
+            this.cmbNationality.Location = new System.Drawing.Point(172, 213);
             this.cmbNationality.Name = "cmbNationality";
-            this.cmbNationality.Size = new System.Drawing.Size(138, 29);
+            this.cmbNationality.Size = new System.Drawing.Size(153, 29);
             this.cmbNationality.TabIndex = 3;
             // 
             // tableLayoutPanel16
@@ -908,30 +942,32 @@
             this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 264);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 4;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(330, 208);
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(328, 208);
             this.tableLayoutPanel16.TabIndex = 4;
             // 
             // txtEmail
             // 
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(3, 137);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(284, 68);
+            this.txtEmail.Size = new System.Drawing.Size(322, 68);
             this.txtEmail.TabIndex = 0;
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 114);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label6.Location = new System.Drawing.Point(3, 113);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(53, 21);
             this.label6.TabIndex = 1;
             this.label6.Text = "Email";
             // 
@@ -939,10 +975,10 @@
             // 
             this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(3, 33);
+            this.txtAddress.Location = new System.Drawing.Point(3, 34);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(324, 68);
+            this.txtAddress.Size = new System.Drawing.Size(322, 66);
             this.txtAddress.TabIndex = 0;
             // 
             // label27
@@ -951,9 +987,9 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(3, 10);
-            this.label27.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(70, 20);
+            this.label27.Size = new System.Drawing.Size(70, 21);
             this.label27.TabIndex = 1;
             this.label27.Text = "Address";
             // 
@@ -1036,6 +1072,7 @@
             // dateTimePickerDeceasedDate
             // 
             this.dateTimePickerDeceasedDate.CustomFormat = "12/31/2023";
+            this.dateTimePickerDeceasedDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerDeceasedDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDeceasedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDeceasedDate.Location = new System.Drawing.Point(153, 3);
@@ -1063,6 +1100,7 @@
             this.Load += new System.EventHandler(this.FormMembers_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1167,5 +1205,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtLGA;
+        private FontAwesome.Sharp.IconPictureBox iconMaximize;
     }
 }

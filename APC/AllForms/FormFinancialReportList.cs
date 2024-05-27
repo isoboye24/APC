@@ -73,6 +73,18 @@ namespace APC.AllForms
         }
         private void FormFinancialReportList_Load_1(object sender, EventArgs e)
         {
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 16, FontStyle.Bold);
+            labelTotalAmountRaised.Font = new Font("Segoe UI", 27, FontStyle.Bold);
+            labelTotalAmountSpent.Font = new Font("Segoe UI", 27, FontStyle.Bold);
+            labelTotalBalance.Font = new Font("Segoe UI", 27, FontStyle.Bold);
+            txtYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
             dataGridView1.DataSource = dto.FinancialReports;
             dataGridView1.Columns[0].Visible = false;
@@ -84,9 +96,11 @@ namespace APC.AllForms
             labelTotalAmountRaised.Text = bll.SelectTotalRaisedAmount().ToString();
             labelTotalAmountSpent.Text = bll.SelectTotalSpentAmount().ToString();
             labelTotalBalance.Text = (bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount()).ToString();
-            //General.ValueCountInDecimal(labelTotalAmountRaised, bll.SelectTotalRaisedAmount(), 148, 70);
-            //General.ValueCountInDecimal(labelTotalAmountSpent, bll.SelectTotalSpentAmount(), 148, 70);
-            //General.ValueCountInDecimal(labelTotalBalance, bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount(), 148, 70);
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();

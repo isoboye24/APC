@@ -147,6 +147,12 @@ namespace APC.AllForms
         
         private void FormManagement_Load(object sender, EventArgs e)
         {
+            int minWidthPercentage = 70;
+            int minHeightPercentage = 70;
+            int minWidth = Screen.PrimaryScreen.Bounds.Width * minWidthPercentage / 100;
+            int minHeight = Screen.PrimaryScreen.Bounds.Height * minHeightPercentage / 100;
+            this.MinimumSize = new Size(minWidth, minHeight);
+
             this.ControlBox = false;
             if (WindowState == FormWindowState.Normal)
             {

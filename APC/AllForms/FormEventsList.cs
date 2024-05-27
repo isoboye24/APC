@@ -68,6 +68,13 @@ namespace APC
         EventsDTO dto = new EventsDTO();
         private void FormEventsList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtEventTitle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtEventYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
 
             dataGridView1.DataSource = dto.Events;
@@ -80,6 +87,11 @@ namespace APC
             dataGridView1.Columns[6].HeaderText = "Summary";
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
         }
         private void FillDataGrid()
         {

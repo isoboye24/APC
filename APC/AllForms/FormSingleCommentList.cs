@@ -24,6 +24,8 @@ namespace APC.AllForms
         public int memberID;
         private void FormSingleCommentList_Load(object sender, EventArgs e)
         {
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.SelectMembersCommentList(memberID);
             dataGridView1.DataSource = dto.Comments;
             dataGridView1.Columns[0].Visible = false;
@@ -39,7 +41,11 @@ namespace APC.AllForms
             dataGridView1.Columns[10].HeaderText = "Month";
             dataGridView1.Columns[11].HeaderText = "Year";
             dataGridView1.Columns[12].Visible = false;
-
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             this.Text = detail.Surname + " " + detail.Name + "'s comments";
         }
 

@@ -70,6 +70,24 @@ namespace APC.AllForms
         CommentBLL bll = new CommentBLL();
         private void FormCommentsList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtComment.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             dto = bll.Select();
             cmbGender.DataSource = dto.Genders;
             General.ComboBoxProps(cmbGender, "GenderName", "GenderID");
@@ -90,6 +108,12 @@ namespace APC.AllForms
             dataGridView1.Columns[10].HeaderText = "Month";
             dataGridView1.Columns[11].HeaderText = "Year";
             dataGridView1.Columns[12].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();

@@ -26,6 +26,9 @@ namespace APC.AllForms
         MemberDetailDTO detail = new MemberDetailDTO();
         private void FormContactList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
             dataGridView1.DataSource = dto.Members;
             dataGridView1.Columns[0].Visible = false;
@@ -71,6 +74,12 @@ namespace APC.AllForms
             dataGridView1.Columns[40].Visible = false;
             dataGridView1.Columns[41].Visible = false;
             dataGridView1.Columns[42].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
         }
 
         private void txtSurname_TextChanged(object sender, EventArgs e)

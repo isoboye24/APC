@@ -115,6 +115,7 @@
             this.iconMaximize.Size = new System.Drawing.Size(32, 32);
             this.iconMaximize.TabIndex = 13;
             this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click);
             // 
             // labelTitle
             // 
@@ -151,6 +152,7 @@
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // tableLayoutPanel1
             // 

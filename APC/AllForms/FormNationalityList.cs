@@ -54,10 +54,20 @@ namespace APC.AllForms
         DualNationalityBLL dualNatBLL = new DualNationalityBLL();
         private void FormNationalityList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
             dataGridView1.DataSource = dto.Nationalities;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Nationality Name";
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();

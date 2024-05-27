@@ -27,6 +27,11 @@ namespace APC
         MemberBLL memberBLL = new MemberBLL();
         private void FormPermissionList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            cmbPermission.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             dto = bll.Select();
             cmbPermission.DataSource = dto.Permissions;
             General.ComboBoxProps(cmbPermission, "Permission", "PermissionID");
@@ -79,6 +84,11 @@ namespace APC
             dataGridView1.Columns[40].Visible = false;
             dataGridView1.Columns[41].Visible = false;
             dataGridView1.Columns[42].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             #endregion
         }
         private void FillDataGrid()

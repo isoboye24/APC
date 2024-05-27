@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC
 {
@@ -71,6 +72,27 @@ namespace APC
 
         private void FormAttendanceList_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbEqualAttend.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbEqualMonDues.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbLessAttend.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbLessMonDues.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbMoreAttend.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            rbMoreMonDues.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            txtMonthlyDues.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNoOfAttend.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnAbsentees.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dto = bll.Select();
             cmbMonth.DataSource = dto.Months;
             General.ComboBoxProps(cmbMonth, "MonthName", "MonthID");
@@ -88,7 +110,11 @@ namespace APC
             dataGridView1.Columns[9].HeaderText = "Balance";
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[11].Visible = false;
-            //dataGridView1.Columns[12].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            }
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();

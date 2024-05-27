@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelMemberNameTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -124,6 +125,7 @@
             this.btnViewPersonalBalance = new System.Windows.Forms.Button();
             this.labelPersonalBalance = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
@@ -191,6 +193,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.iconMaximize);
             this.panel1.Controls.Add(this.labelMemberNameTitle);
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.picMinimize);
@@ -201,11 +204,26 @@
             this.panel1.TabIndex = 32;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown_1);
             // 
+            // iconMaximize
+            // 
+            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMaximize.Location = new System.Drawing.Point(891, 7);
+            this.iconMaximize.Name = "iconMaximize";
+            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
+            this.iconMaximize.TabIndex = 14;
+            this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click);
+            // 
             // picClose
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
-            this.picClose.Location = new System.Drawing.Point(932, 7);
+            this.picClose.Location = new System.Drawing.Point(931, 7);
             this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(32, 32);
@@ -218,13 +236,14 @@
             // 
             this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
-            this.picMinimize.Location = new System.Drawing.Point(889, 7);
+            this.picMinimize.Location = new System.Drawing.Point(851, 7);
             this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(32, 32);
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -644,6 +663,7 @@
             // 
             // txtPhone3
             // 
+            this.txtPhone3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone3.Location = new System.Drawing.Point(138, 433);
             this.txtPhone3.Name = "txtPhone3";
@@ -675,6 +695,7 @@
             // 
             // txtPhone2
             // 
+            this.txtPhone2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone2.Location = new System.Drawing.Point(138, 390);
             this.txtPhone2.Name = "txtPhone2";
@@ -695,6 +716,7 @@
             // 
             // txtPhone1
             // 
+            this.txtPhone1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone1.Location = new System.Drawing.Point(138, 347);
             this.txtPhone1.Name = "txtPhone1";
@@ -715,6 +737,7 @@
             // 
             // txtNextOfKinRelationship
             // 
+            this.txtNextOfKinRelationship.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNextOfKinRelationship.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNextOfKinRelationship.Location = new System.Drawing.Point(138, 304);
             this.txtNextOfKinRelationship.Name = "txtNextOfKinRelationship";
@@ -735,6 +758,7 @@
             // 
             // txtNextOfKin
             // 
+            this.txtNextOfKin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNextOfKin.Location = new System.Drawing.Point(138, 261);
             this.txtNextOfKin.Name = "txtNextOfKin";
@@ -755,6 +779,7 @@
             // 
             // txtNationality
             // 
+            this.txtNationality.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNationality.Location = new System.Drawing.Point(138, 218);
             this.txtNationality.Name = "txtNationality";
@@ -791,6 +816,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Controls.Add(this.btnViewPresentAttendance, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.labelNoOfPresent, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(138, 89);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
@@ -830,6 +856,7 @@
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.Controls.Add(this.btnViewAbsentAttendance, 1, 0);
             this.tableLayoutPanel14.Controls.Add(this.labelNoOfAbsent, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(138, 132);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
@@ -869,6 +896,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.btnNoComments, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.labelNoOfComments, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(138, 175);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
@@ -1137,11 +1165,12 @@
             // labelBirthday
             // 
             this.labelBirthday.AutoSize = true;
+            this.labelBirthday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelBirthday.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBirthday.Location = new System.Drawing.Point(121, 90);
             this.labelBirthday.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.labelBirthday.Name = "labelBirthday";
-            this.labelBirthday.Size = new System.Drawing.Size(96, 21);
+            this.labelBirthday.Size = new System.Drawing.Size(172, 25);
             this.labelBirthday.TabIndex = 1;
             this.labelBirthday.Text = "02/05/1999";
             // 
@@ -1231,6 +1260,7 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel17.Controls.Add(this.btnViewAmountContributed, 1, 0);
             this.tableLayoutPanel17.Controls.Add(this.labelAmountContributed, 0, 0);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 40);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
@@ -1312,6 +1342,7 @@
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel18.Controls.Add(this.btnViewAmountExpected, 1, 0);
             this.tableLayoutPanel18.Controls.Add(this.labelAmountExpected, 0, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(160, 40);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
@@ -1351,11 +1382,12 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel19.Controls.Add(this.btnViewPersonalBalance, 1, 0);
             this.tableLayoutPanel19.Controls.Add(this.labelPersonalBalance, 0, 0);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(317, 40);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(151, 31);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(153, 31);
             this.tableLayoutPanel19.TabIndex = 5;
             // 
             // btnViewPersonalBalance
@@ -1363,10 +1395,10 @@
             this.btnViewPersonalBalance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewPersonalBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPersonalBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewPersonalBalance.Location = new System.Drawing.Point(78, 0);
+            this.btnViewPersonalBalance.Location = new System.Drawing.Point(79, 0);
             this.btnViewPersonalBalance.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.btnViewPersonalBalance.Name = "btnViewPersonalBalance";
-            this.btnViewPersonalBalance.Size = new System.Drawing.Size(70, 28);
+            this.btnViewPersonalBalance.Size = new System.Drawing.Size(71, 28);
             this.btnViewPersonalBalance.TabIndex = 4;
             this.btnViewPersonalBalance.Text = "View";
             this.btnViewPersonalBalance.UseVisualStyleBackColor = true;
@@ -1400,6 +1432,7 @@
             this.Load += new System.EventHandler(this.FormViewMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -1536,5 +1569,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.Button btnViewPersonalBalance;
         private System.Windows.Forms.Label labelPersonalBalance;
+        private FontAwesome.Sharp.IconPictureBox iconMaximize;
     }
 }

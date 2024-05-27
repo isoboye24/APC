@@ -134,6 +134,12 @@ namespace APC
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            int minWidthPercentage = 70;
+            int minHeightPercentage = 70;
+            int minWidth = Screen.PrimaryScreen.Bounds.Width * minWidthPercentage / 100;
+            int minHeight = Screen.PrimaryScreen.Bounds.Height * minHeightPercentage / 100;
+            this.MinimumSize = new Size(minWidth, minHeight);
+
             MemberDTO memberDTO = memberBLL.Select();
             MemberDetailDTO detail = memberDTO.Members.First(x => x.MemberID == LoginInfo.MemberID);
             string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,6 +41,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.tableLayoutPanelTotal = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTotalName = new System.Windows.Forms.Label();
+            this.labelTotalAmount = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,14 +64,12 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.picProfile = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanelTotal = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTotalName = new System.Windows.Forms.Label();
-            this.labelTotalAmount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanelTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -77,7 +79,6 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            this.tableLayoutPanelTotal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -208,6 +209,46 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // tableLayoutPanelTotal
+            // 
+            this.tableLayoutPanelTotal.ColumnCount = 4;
+            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelTotal.Controls.Add(this.labelTotalName, 1, 0);
+            this.tableLayoutPanelTotal.Controls.Add(this.labelTotalAmount, 2, 0);
+            this.tableLayoutPanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelTotal.Location = new System.Drawing.Point(530, 12);
+            this.tableLayoutPanelTotal.Name = "tableLayoutPanelTotal";
+            this.tableLayoutPanelTotal.RowCount = 1;
+            this.tableLayoutPanelTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelTotal.Size = new System.Drawing.Size(410, 38);
+            this.tableLayoutPanelTotal.TabIndex = 4;
+            // 
+            // labelTotalName
+            // 
+            this.labelTotalName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalName.AutoSize = true;
+            this.labelTotalName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalName.Location = new System.Drawing.Point(74, 5);
+            this.labelTotalName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelTotalName.Name = "labelTotalName";
+            this.labelTotalName.Size = new System.Drawing.Size(165, 21);
+            this.labelTotalName.TabIndex = 6;
+            this.labelTotalName.Text = "Total Amt. Contributed";
+            // 
+            // labelTotalAmount
+            // 
+            this.labelTotalAmount.AutoSize = true;
+            this.labelTotalAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalAmount.Location = new System.Drawing.Point(245, 5);
+            this.labelTotalAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.labelTotalAmount.Name = "labelTotalAmount";
+            this.labelTotalAmount.Size = new System.Drawing.Size(23, 25);
+            this.labelTotalAmount.TabIndex = 6;
+            this.labelTotalAmount.Text = "0";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -231,6 +272,9 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(22, 112);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(943, 376);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -493,46 +537,6 @@
             this.picProfile.TabIndex = 0;
             this.picProfile.TabStop = false;
             // 
-            // tableLayoutPanelTotal
-            // 
-            this.tableLayoutPanelTotal.ColumnCount = 4;
-            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanelTotal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelTotal.Controls.Add(this.labelTotalName, 1, 0);
-            this.tableLayoutPanelTotal.Controls.Add(this.labelTotalAmount, 2, 0);
-            this.tableLayoutPanelTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelTotal.Location = new System.Drawing.Point(530, 12);
-            this.tableLayoutPanelTotal.Name = "tableLayoutPanelTotal";
-            this.tableLayoutPanelTotal.RowCount = 1;
-            this.tableLayoutPanelTotal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelTotal.Size = new System.Drawing.Size(410, 38);
-            this.tableLayoutPanelTotal.TabIndex = 4;
-            // 
-            // labelTotalName
-            // 
-            this.labelTotalName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalName.AutoSize = true;
-            this.labelTotalName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalName.Location = new System.Drawing.Point(74, 5);
-            this.labelTotalName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.labelTotalName.Name = "labelTotalName";
-            this.labelTotalName.Size = new System.Drawing.Size(165, 21);
-            this.labelTotalName.TabIndex = 6;
-            this.labelTotalName.Text = "Total Amt. Contributed";
-            // 
-            // labelTotalAmount
-            // 
-            this.labelTotalAmount.AutoSize = true;
-            this.labelTotalAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAmount.Location = new System.Drawing.Point(245, 5);
-            this.labelTotalAmount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.labelTotalAmount.Name = "labelTotalAmount";
-            this.labelTotalAmount.Size = new System.Drawing.Size(23, 25);
-            this.labelTotalAmount.TabIndex = 6;
-            this.labelTotalAmount.Text = "0";
-            // 
             // FormViewPersonalAttendances
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +558,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanelTotal.ResumeLayout(false);
+            this.tableLayoutPanelTotal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -566,8 +572,6 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            this.tableLayoutPanelTotal.ResumeLayout(false);
-            this.tableLayoutPanelTotal.PerformLayout();
             this.ResumeLayout(false);
 
         }

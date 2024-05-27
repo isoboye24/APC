@@ -82,6 +82,12 @@ namespace APC.AllForms
             dataGridView1.Columns[19].Visible = false;
             dataGridView1.Columns[20].Visible = false;
             dataGridView1.Columns[21].Visible = false;
+            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+            }
 
             List<ChildDetailDTO> list = dto.Children;
             foreach (var item in list)

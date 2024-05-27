@@ -56,6 +56,38 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanelCards = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelRealCards = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panelRegMembers = new System.Windows.Forms.TableLayoutPanel();
+            this.labelNoOfRegMem = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelNoOfChildren = new System.Windows.Forms.TableLayoutPanel();
+            this.labelNoOfChildren = new System.Windows.Forms.Label();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelMeetingAttend = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelLastMeetingAttendance = new System.Windows.Forms.Label();
+            this.panelMonthlyDues = new System.Windows.Forms.TableLayoutPanel();
+            this.labelMonthlyDues = new System.Windows.Forms.Label();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelDuesMonthName = new System.Windows.Forms.Label();
+            this.panelYearlyDues = new System.Windows.Forms.TableLayoutPanel();
+            this.labelYearlyDues = new System.Windows.Forms.Label();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTotalDuesYear = new System.Windows.Forms.Label();
+            this.panelMonthlyComment = new System.Windows.Forms.TableLayoutPanel();
+            this.labelMonthlyComments = new System.Windows.Forms.Label();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelCommentMonthName = new System.Windows.Forms.Label();
+            this.panelLastEvent = new System.Windows.Forms.TableLayoutPanel();
+            this.labelLastEventDate = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panelTotalComment = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTotalComments = new System.Windows.Forms.Label();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,38 +96,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panelTotalComment = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelTotalComments = new System.Windows.Forms.Label();
-            this.panelLastEvent = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.labelLastEventDate = new System.Windows.Forms.Label();
-            this.panelMonthlyComment = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelCommentMonthName = new System.Windows.Forms.Label();
-            this.labelMonthlyComments = new System.Windows.Forms.Label();
-            this.panelYearlyDues = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelTotalDuesYear = new System.Windows.Forms.Label();
-            this.labelYearlyDues = new System.Windows.Forms.Label();
-            this.panelMonthlyDues = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelDuesMonthName = new System.Windows.Forms.Label();
-            this.labelMonthlyDues = new System.Windows.Forms.Label();
-            this.panelMeetingAttend = new System.Windows.Forms.TableLayoutPanel();
-            this.labelLastMeetingAttendance = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panelNoOfChildren = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelNoOfChildren = new System.Windows.Forms.Label();
-            this.panelRegMembers = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelNoOfRegMem = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panelMenu.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -106,28 +106,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             this.tableLayoutPanelCards.SuspendLayout();
             this.tableLayoutPanelRealCards.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panelRegMembers.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.panelNoOfChildren.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.panelMeetingAttend.SuspendLayout();
+            this.panelMonthlyDues.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.panelYearlyDues.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.panelMonthlyComment.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
+            this.panelLastEvent.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.panelTotalComment.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.panelDesktop.SuspendLayout();
-            this.panelTotalComment.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.panelLastEvent.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.panelMonthlyComment.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            this.panelYearlyDues.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
-            this.panelMonthlyDues.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.panelMeetingAttend.SuspendLayout();
-            this.panelNoOfChildren.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.panelRegMembers.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -479,7 +479,7 @@
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 16);
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 3);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
             this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
             this.iconCurrentChildForm.TabIndex = 13;
@@ -490,7 +490,7 @@
             this.labelTitleChildForm.AutoSize = true;
             this.labelTitleChildForm.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleChildForm.ForeColor = System.Drawing.Color.White;
-            this.labelTitleChildForm.Location = new System.Drawing.Point(81, 13);
+            this.labelTitleChildForm.Location = new System.Drawing.Point(81, 3);
             this.labelTitleChildForm.Name = "labelTitleChildForm";
             this.labelTitleChildForm.Size = new System.Drawing.Size(166, 40);
             this.labelTitleChildForm.TabIndex = 12;
@@ -608,6 +608,460 @@
             this.tableLayoutPanelRealCards.Size = new System.Drawing.Size(756, 633);
             this.tableLayoutPanelRealCards.TabIndex = 1;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 6;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
+            this.tableLayoutPanel3.Controls.Add(this.panelRegMembers, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panelNoOfChildren, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panelMeetingAttend, 5, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panelMonthlyDues, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panelYearlyDues, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panelMonthlyComment, 5, 3);
+            this.tableLayoutPanel3.Controls.Add(this.panelLastEvent, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.panelTotalComment, 3, 5);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(750, 398);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // panelRegMembers
+            // 
+            this.panelRegMembers.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panelRegMembers.ColumnCount = 1;
+            this.panelRegMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.Controls.Add(this.labelNoOfRegMem, 0, 1);
+            this.panelRegMembers.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.panelRegMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRegMembers.Location = new System.Drawing.Point(21, 10);
+            this.panelRegMembers.Name = "panelRegMembers";
+            this.panelRegMembers.RowCount = 2;
+            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelRegMembers.Size = new System.Drawing.Size(231, 114);
+            this.panelRegMembers.TabIndex = 9;
+            // 
+            // labelNoOfRegMem
+            // 
+            this.labelNoOfRegMem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNoOfRegMem.AutoSize = true;
+            this.labelNoOfRegMem.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfRegMem.ForeColor = System.Drawing.Color.White;
+            this.labelNoOfRegMem.Location = new System.Drawing.Point(185, 57);
+            this.labelNoOfRegMem.Name = "labelNoOfRegMem";
+            this.labelNoOfRegMem.Size = new System.Drawing.Size(43, 50);
+            this.labelNoOfRegMem.TabIndex = 0;
+            this.labelNoOfRegMem.Text = "0";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel8.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Registered Members";
+            // 
+            // panelNoOfChildren
+            // 
+            this.panelNoOfChildren.BackColor = System.Drawing.Color.Green;
+            this.panelNoOfChildren.ColumnCount = 1;
+            this.panelNoOfChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.Controls.Add(this.labelNoOfChildren, 0, 1);
+            this.panelNoOfChildren.Controls.Add(this.tableLayoutPanel9, 0, 0);
+            this.panelNoOfChildren.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNoOfChildren.Location = new System.Drawing.Point(268, 10);
+            this.panelNoOfChildren.Name = "panelNoOfChildren";
+            this.panelNoOfChildren.RowCount = 2;
+            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelNoOfChildren.Size = new System.Drawing.Size(231, 114);
+            this.panelNoOfChildren.TabIndex = 9;
+            // 
+            // labelNoOfChildren
+            // 
+            this.labelNoOfChildren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNoOfChildren.AutoSize = true;
+            this.labelNoOfChildren.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoOfChildren.ForeColor = System.Drawing.Color.White;
+            this.labelNoOfChildren.Location = new System.Drawing.Point(185, 57);
+            this.labelNoOfChildren.Name = "labelNoOfChildren";
+            this.labelNoOfChildren.Size = new System.Drawing.Size(43, 50);
+            this.labelNoOfChildren.TabIndex = 0;
+            this.labelNoOfChildren.Text = "0";
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel9.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "No. of Children";
+            // 
+            // panelMeetingAttend
+            // 
+            this.panelMeetingAttend.BackColor = System.Drawing.Color.DeepPink;
+            this.panelMeetingAttend.ColumnCount = 1;
+            this.panelMeetingAttend.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.Controls.Add(this.label4, 0, 0);
+            this.panelMeetingAttend.Controls.Add(this.labelLastMeetingAttendance, 0, 1);
+            this.panelMeetingAttend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMeetingAttend.Location = new System.Drawing.Point(515, 10);
+            this.panelMeetingAttend.Name = "panelMeetingAttend";
+            this.panelMeetingAttend.RowCount = 2;
+            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMeetingAttend.Size = new System.Drawing.Size(232, 114);
+            this.panelMeetingAttend.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Last Meeting\'s Attendance";
+            // 
+            // labelLastMeetingAttendance
+            // 
+            this.labelLastMeetingAttendance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelLastMeetingAttendance.AutoSize = true;
+            this.labelLastMeetingAttendance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastMeetingAttendance.ForeColor = System.Drawing.Color.White;
+            this.labelLastMeetingAttendance.Location = new System.Drawing.Point(186, 57);
+            this.labelLastMeetingAttendance.Name = "labelLastMeetingAttendance";
+            this.labelLastMeetingAttendance.Size = new System.Drawing.Size(43, 50);
+            this.labelLastMeetingAttendance.TabIndex = 0;
+            this.labelLastMeetingAttendance.Text = "0";
+            // 
+            // panelMonthlyDues
+            // 
+            this.panelMonthlyDues.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelMonthlyDues.ColumnCount = 1;
+            this.panelMonthlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDues, 0, 1);
+            this.panelMonthlyDues.Controls.Add(this.tableLayoutPanel11, 0, 0);
+            this.panelMonthlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonthlyDues.Location = new System.Drawing.Point(21, 140);
+            this.panelMonthlyDues.Name = "panelMonthlyDues";
+            this.panelMonthlyDues.RowCount = 2;
+            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyDues.Size = new System.Drawing.Size(231, 114);
+            this.panelMonthlyDues.TabIndex = 9;
+            // 
+            // labelMonthlyDues
+            // 
+            this.labelMonthlyDues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMonthlyDues.AutoSize = true;
+            this.labelMonthlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyDues.ForeColor = System.Drawing.Color.White;
+            this.labelMonthlyDues.Location = new System.Drawing.Point(185, 57);
+            this.labelMonthlyDues.Name = "labelMonthlyDues";
+            this.labelMonthlyDues.Size = new System.Drawing.Size(43, 50);
+            this.labelMonthlyDues.TabIndex = 0;
+            this.labelMonthlyDues.Text = "0";
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Controls.Add(this.labelDuesMonthName, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel11.TabIndex = 8;
+            // 
+            // labelDuesMonthName
+            // 
+            this.labelDuesMonthName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDuesMonthName.AutoSize = true;
+            this.labelDuesMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDuesMonthName.ForeColor = System.Drawing.Color.White;
+            this.labelDuesMonthName.Location = new System.Drawing.Point(3, 15);
+            this.labelDuesMonthName.Name = "labelDuesMonthName";
+            this.labelDuesMonthName.Size = new System.Drawing.Size(219, 20);
+            this.labelDuesMonthName.TabIndex = 0;
+            this.labelDuesMonthName.Text = "September";
+            // 
+            // panelYearlyDues
+            // 
+            this.panelYearlyDues.BackColor = System.Drawing.Color.DarkRed;
+            this.panelYearlyDues.ColumnCount = 1;
+            this.panelYearlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.Controls.Add(this.labelYearlyDues, 0, 1);
+            this.panelYearlyDues.Controls.Add(this.tableLayoutPanel15, 0, 0);
+            this.panelYearlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelYearlyDues.Location = new System.Drawing.Point(268, 140);
+            this.panelYearlyDues.Name = "panelYearlyDues";
+            this.panelYearlyDues.RowCount = 2;
+            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelYearlyDues.Size = new System.Drawing.Size(231, 114);
+            this.panelYearlyDues.TabIndex = 9;
+            // 
+            // labelYearlyDues
+            // 
+            this.labelYearlyDues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelYearlyDues.AutoSize = true;
+            this.labelYearlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYearlyDues.ForeColor = System.Drawing.Color.White;
+            this.labelYearlyDues.Location = new System.Drawing.Point(185, 57);
+            this.labelYearlyDues.Name = "labelYearlyDues";
+            this.labelYearlyDues.Size = new System.Drawing.Size(43, 50);
+            this.labelYearlyDues.TabIndex = 0;
+            this.labelYearlyDues.Text = "0";
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel15.Controls.Add(this.labelTotalDuesYear, 0, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel15.TabIndex = 8;
+            // 
+            // labelTotalDuesYear
+            // 
+            this.labelTotalDuesYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalDuesYear.AutoSize = true;
+            this.labelTotalDuesYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalDuesYear.ForeColor = System.Drawing.Color.White;
+            this.labelTotalDuesYear.Location = new System.Drawing.Point(3, 15);
+            this.labelTotalDuesYear.Name = "labelTotalDuesYear";
+            this.labelTotalDuesYear.Size = new System.Drawing.Size(180, 20);
+            this.labelTotalDuesYear.TabIndex = 0;
+            this.labelTotalDuesYear.Text = "2023";
+            // 
+            // panelMonthlyComment
+            // 
+            this.panelMonthlyComment.BackColor = System.Drawing.Color.Olive;
+            this.panelMonthlyComment.ColumnCount = 1;
+            this.panelMonthlyComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.Controls.Add(this.labelMonthlyComments, 0, 1);
+            this.panelMonthlyComment.Controls.Add(this.tableLayoutPanel17, 0, 0);
+            this.panelMonthlyComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonthlyComment.Location = new System.Drawing.Point(515, 140);
+            this.panelMonthlyComment.Name = "panelMonthlyComment";
+            this.panelMonthlyComment.RowCount = 2;
+            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelMonthlyComment.Size = new System.Drawing.Size(232, 114);
+            this.panelMonthlyComment.TabIndex = 9;
+            // 
+            // labelMonthlyComments
+            // 
+            this.labelMonthlyComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMonthlyComments.AutoSize = true;
+            this.labelMonthlyComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMonthlyComments.ForeColor = System.Drawing.Color.White;
+            this.labelMonthlyComments.Location = new System.Drawing.Point(186, 57);
+            this.labelMonthlyComments.Name = "labelMonthlyComments";
+            this.labelMonthlyComments.Size = new System.Drawing.Size(43, 50);
+            this.labelMonthlyComments.TabIndex = 0;
+            this.labelMonthlyComments.Text = "0";
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 1;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel17.Controls.Add(this.labelCommentMonthName, 0, 0);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 1;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(226, 51);
+            this.tableLayoutPanel17.TabIndex = 8;
+            // 
+            // labelCommentMonthName
+            // 
+            this.labelCommentMonthName.AutoSize = true;
+            this.labelCommentMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCommentMonthName.ForeColor = System.Drawing.Color.White;
+            this.labelCommentMonthName.Location = new System.Drawing.Point(3, 10);
+            this.labelCommentMonthName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelCommentMonthName.Name = "labelCommentMonthName";
+            this.labelCommentMonthName.Size = new System.Drawing.Size(165, 20);
+            this.labelCommentMonthName.TabIndex = 0;
+            this.labelCommentMonthName.Text = "September Comments";
+            // 
+            // panelLastEvent
+            // 
+            this.panelLastEvent.BackColor = System.Drawing.Color.Indigo;
+            this.panelLastEvent.ColumnCount = 1;
+            this.panelLastEvent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.Controls.Add(this.labelLastEventDate, 0, 1);
+            this.panelLastEvent.Controls.Add(this.tableLayoutPanel12, 0, 0);
+            this.panelLastEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLastEvent.Location = new System.Drawing.Point(21, 270);
+            this.panelLastEvent.Name = "panelLastEvent";
+            this.panelLastEvent.RowCount = 2;
+            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLastEvent.Size = new System.Drawing.Size(231, 114);
+            this.panelLastEvent.TabIndex = 9;
+            // 
+            // labelLastEventDate
+            // 
+            this.labelLastEventDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelLastEventDate.AutoSize = true;
+            this.labelLastEventDate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastEventDate.ForeColor = System.Drawing.Color.White;
+            this.labelLastEventDate.Location = new System.Drawing.Point(64, 57);
+            this.labelLastEventDate.Name = "labelLastEventDate";
+            this.labelLastEventDate.Size = new System.Drawing.Size(164, 45);
+            this.labelLastEventDate.TabIndex = 0;
+            this.labelLastEventDate.Text = "12.2.2024";
+            this.labelLastEventDate.Click += new System.EventHandler(this.labelLastEventDate_Click);
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel12.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel12.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(3, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Last Event";
+            // 
+            // panelTotalComment
+            // 
+            this.panelTotalComment.BackColor = System.Drawing.Color.Black;
+            this.panelTotalComment.ColumnCount = 1;
+            this.panelTotalComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.Controls.Add(this.labelTotalComments, 0, 1);
+            this.panelTotalComment.Controls.Add(this.tableLayoutPanel10, 0, 0);
+            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTotalComment.Location = new System.Drawing.Point(268, 270);
+            this.panelTotalComment.Name = "panelTotalComment";
+            this.panelTotalComment.RowCount = 2;
+            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelTotalComment.Size = new System.Drawing.Size(231, 114);
+            this.panelTotalComment.TabIndex = 9;
+            // 
+            // labelTotalComments
+            // 
+            this.labelTotalComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalComments.AutoSize = true;
+            this.labelTotalComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalComments.ForeColor = System.Drawing.Color.White;
+            this.labelTotalComments.Location = new System.Drawing.Point(185, 57);
+            this.labelTotalComments.Name = "labelTotalComments";
+            this.labelTotalComments.Size = new System.Drawing.Size(43, 50);
+            this.labelTotalComments.TabIndex = 0;
+            this.labelTotalComments.Text = "0";
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
+            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(225, 51);
+            this.tableLayoutPanel10.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 10);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 20);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Comments";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -715,460 +1169,6 @@
             this.panelDesktop.TabIndex = 13;
             this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
             // 
-            // panelTotalComment
-            // 
-            this.panelTotalComment.BackColor = System.Drawing.Color.Black;
-            this.panelTotalComment.ColumnCount = 1;
-            this.panelTotalComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTotalComment.Controls.Add(this.labelTotalComments, 0, 1);
-            this.panelTotalComment.Controls.Add(this.tableLayoutPanel10, 0, 0);
-            this.panelTotalComment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalComment.Location = new System.Drawing.Point(268, 270);
-            this.panelTotalComment.Name = "panelTotalComment";
-            this.panelTotalComment.RowCount = 2;
-            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTotalComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelTotalComment.Size = new System.Drawing.Size(231, 114);
-            this.panelTotalComment.TabIndex = 9;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
-            this.tableLayoutPanel10.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel10.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 10);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Comments";
-            // 
-            // labelTotalComments
-            // 
-            this.labelTotalComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalComments.AutoSize = true;
-            this.labelTotalComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalComments.ForeColor = System.Drawing.Color.White;
-            this.labelTotalComments.Location = new System.Drawing.Point(185, 57);
-            this.labelTotalComments.Name = "labelTotalComments";
-            this.labelTotalComments.Size = new System.Drawing.Size(43, 50);
-            this.labelTotalComments.TabIndex = 0;
-            this.labelTotalComments.Text = "0";
-            // 
-            // panelLastEvent
-            // 
-            this.panelLastEvent.BackColor = System.Drawing.Color.Indigo;
-            this.panelLastEvent.ColumnCount = 1;
-            this.panelLastEvent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelLastEvent.Controls.Add(this.labelLastEventDate, 0, 1);
-            this.panelLastEvent.Controls.Add(this.tableLayoutPanel12, 0, 0);
-            this.panelLastEvent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLastEvent.Location = new System.Drawing.Point(21, 270);
-            this.panelLastEvent.Name = "panelLastEvent";
-            this.panelLastEvent.RowCount = 2;
-            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelLastEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelLastEvent.Size = new System.Drawing.Size(231, 114);
-            this.panelLastEvent.TabIndex = 9;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
-            this.tableLayoutPanel12.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel12.TabIndex = 8;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 10);
-            this.label12.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Last Event";
-            // 
-            // labelLastEventDate
-            // 
-            this.labelLastEventDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelLastEventDate.AutoSize = true;
-            this.labelLastEventDate.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastEventDate.ForeColor = System.Drawing.Color.White;
-            this.labelLastEventDate.Location = new System.Drawing.Point(64, 57);
-            this.labelLastEventDate.Name = "labelLastEventDate";
-            this.labelLastEventDate.Size = new System.Drawing.Size(164, 45);
-            this.labelLastEventDate.TabIndex = 0;
-            this.labelLastEventDate.Text = "12.2.2024";
-            this.labelLastEventDate.Click += new System.EventHandler(this.labelLastEventDate_Click);
-            // 
-            // panelMonthlyComment
-            // 
-            this.panelMonthlyComment.BackColor = System.Drawing.Color.Olive;
-            this.panelMonthlyComment.ColumnCount = 1;
-            this.panelMonthlyComment.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyComment.Controls.Add(this.labelMonthlyComments, 0, 1);
-            this.panelMonthlyComment.Controls.Add(this.tableLayoutPanel17, 0, 0);
-            this.panelMonthlyComment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonthlyComment.Location = new System.Drawing.Point(515, 140);
-            this.panelMonthlyComment.Name = "panelMonthlyComment";
-            this.panelMonthlyComment.RowCount = 2;
-            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyComment.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyComment.Size = new System.Drawing.Size(232, 114);
-            this.panelMonthlyComment.TabIndex = 9;
-            // 
-            // tableLayoutPanel17
-            // 
-            this.tableLayoutPanel17.ColumnCount = 1;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel17.Controls.Add(this.labelCommentMonthName, 0, 0);
-            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 1;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(226, 51);
-            this.tableLayoutPanel17.TabIndex = 8;
-            // 
-            // labelCommentMonthName
-            // 
-            this.labelCommentMonthName.AutoSize = true;
-            this.labelCommentMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommentMonthName.ForeColor = System.Drawing.Color.White;
-            this.labelCommentMonthName.Location = new System.Drawing.Point(3, 10);
-            this.labelCommentMonthName.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelCommentMonthName.Name = "labelCommentMonthName";
-            this.labelCommentMonthName.Size = new System.Drawing.Size(165, 20);
-            this.labelCommentMonthName.TabIndex = 0;
-            this.labelCommentMonthName.Text = "September Comments";
-            // 
-            // labelMonthlyComments
-            // 
-            this.labelMonthlyComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMonthlyComments.AutoSize = true;
-            this.labelMonthlyComments.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthlyComments.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyComments.Location = new System.Drawing.Point(186, 57);
-            this.labelMonthlyComments.Name = "labelMonthlyComments";
-            this.labelMonthlyComments.Size = new System.Drawing.Size(43, 50);
-            this.labelMonthlyComments.TabIndex = 0;
-            this.labelMonthlyComments.Text = "0";
-            // 
-            // panelYearlyDues
-            // 
-            this.panelYearlyDues.BackColor = System.Drawing.Color.DarkRed;
-            this.panelYearlyDues.ColumnCount = 1;
-            this.panelYearlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelYearlyDues.Controls.Add(this.labelYearlyDues, 0, 1);
-            this.panelYearlyDues.Controls.Add(this.tableLayoutPanel15, 0, 0);
-            this.panelYearlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelYearlyDues.Location = new System.Drawing.Point(268, 140);
-            this.panelYearlyDues.Name = "panelYearlyDues";
-            this.panelYearlyDues.RowCount = 2;
-            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelYearlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelYearlyDues.Size = new System.Drawing.Size(231, 114);
-            this.panelYearlyDues.TabIndex = 9;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
-            this.tableLayoutPanel15.Controls.Add(this.labelTotalDuesYear, 0, 0);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 1;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel15.TabIndex = 8;
-            // 
-            // labelTotalDuesYear
-            // 
-            this.labelTotalDuesYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalDuesYear.AutoSize = true;
-            this.labelTotalDuesYear.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalDuesYear.ForeColor = System.Drawing.Color.White;
-            this.labelTotalDuesYear.Location = new System.Drawing.Point(3, 15);
-            this.labelTotalDuesYear.Name = "labelTotalDuesYear";
-            this.labelTotalDuesYear.Size = new System.Drawing.Size(180, 20);
-            this.labelTotalDuesYear.TabIndex = 0;
-            this.labelTotalDuesYear.Text = "2023";
-            // 
-            // labelYearlyDues
-            // 
-            this.labelYearlyDues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelYearlyDues.AutoSize = true;
-            this.labelYearlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYearlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelYearlyDues.Location = new System.Drawing.Point(185, 57);
-            this.labelYearlyDues.Name = "labelYearlyDues";
-            this.labelYearlyDues.Size = new System.Drawing.Size(43, 50);
-            this.labelYearlyDues.TabIndex = 0;
-            this.labelYearlyDues.Text = "0";
-            // 
-            // panelMonthlyDues
-            // 
-            this.panelMonthlyDues.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelMonthlyDues.ColumnCount = 1;
-            this.panelMonthlyDues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyDues.Controls.Add(this.labelMonthlyDues, 0, 1);
-            this.panelMonthlyDues.Controls.Add(this.tableLayoutPanel11, 0, 0);
-            this.panelMonthlyDues.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonthlyDues.Location = new System.Drawing.Point(21, 140);
-            this.panelMonthlyDues.Name = "panelMonthlyDues";
-            this.panelMonthlyDues.RowCount = 2;
-            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyDues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMonthlyDues.Size = new System.Drawing.Size(231, 114);
-            this.panelMonthlyDues.TabIndex = 9;
-            // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.ColumnCount = 1;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Controls.Add(this.labelDuesMonthName, 0, 0);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 1;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel11.TabIndex = 8;
-            // 
-            // labelDuesMonthName
-            // 
-            this.labelDuesMonthName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDuesMonthName.AutoSize = true;
-            this.labelDuesMonthName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDuesMonthName.ForeColor = System.Drawing.Color.White;
-            this.labelDuesMonthName.Location = new System.Drawing.Point(3, 15);
-            this.labelDuesMonthName.Name = "labelDuesMonthName";
-            this.labelDuesMonthName.Size = new System.Drawing.Size(219, 20);
-            this.labelDuesMonthName.TabIndex = 0;
-            this.labelDuesMonthName.Text = "September";
-            // 
-            // labelMonthlyDues
-            // 
-            this.labelMonthlyDues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMonthlyDues.AutoSize = true;
-            this.labelMonthlyDues.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMonthlyDues.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyDues.Location = new System.Drawing.Point(185, 57);
-            this.labelMonthlyDues.Name = "labelMonthlyDues";
-            this.labelMonthlyDues.Size = new System.Drawing.Size(43, 50);
-            this.labelMonthlyDues.TabIndex = 0;
-            this.labelMonthlyDues.Text = "0";
-            // 
-            // panelMeetingAttend
-            // 
-            this.panelMeetingAttend.BackColor = System.Drawing.Color.DeepPink;
-            this.panelMeetingAttend.ColumnCount = 1;
-            this.panelMeetingAttend.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMeetingAttend.Controls.Add(this.label4, 0, 0);
-            this.panelMeetingAttend.Controls.Add(this.labelLastMeetingAttendance, 0, 1);
-            this.panelMeetingAttend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMeetingAttend.Location = new System.Drawing.Point(515, 10);
-            this.panelMeetingAttend.Name = "panelMeetingAttend";
-            this.panelMeetingAttend.RowCount = 2;
-            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMeetingAttend.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelMeetingAttend.Size = new System.Drawing.Size(232, 114);
-            this.panelMeetingAttend.TabIndex = 9;
-            // 
-            // labelLastMeetingAttendance
-            // 
-            this.labelLastMeetingAttendance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelLastMeetingAttendance.AutoSize = true;
-            this.labelLastMeetingAttendance.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastMeetingAttendance.ForeColor = System.Drawing.Color.White;
-            this.labelLastMeetingAttendance.Location = new System.Drawing.Point(186, 57);
-            this.labelLastMeetingAttendance.Name = "labelLastMeetingAttendance";
-            this.labelLastMeetingAttendance.Size = new System.Drawing.Size(43, 50);
-            this.labelLastMeetingAttendance.TabIndex = 0;
-            this.labelLastMeetingAttendance.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(226, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Last Meeting\'s Attendance";
-            // 
-            // panelNoOfChildren
-            // 
-            this.panelNoOfChildren.BackColor = System.Drawing.Color.Green;
-            this.panelNoOfChildren.ColumnCount = 1;
-            this.panelNoOfChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelNoOfChildren.Controls.Add(this.labelNoOfChildren, 0, 1);
-            this.panelNoOfChildren.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.panelNoOfChildren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNoOfChildren.Location = new System.Drawing.Point(268, 10);
-            this.panelNoOfChildren.Name = "panelNoOfChildren";
-            this.panelNoOfChildren.RowCount = 2;
-            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelNoOfChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelNoOfChildren.Size = new System.Drawing.Size(231, 114);
-            this.panelNoOfChildren.TabIndex = 9;
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
-            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 1;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel9.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "No. of Children";
-            // 
-            // labelNoOfChildren
-            // 
-            this.labelNoOfChildren.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNoOfChildren.AutoSize = true;
-            this.labelNoOfChildren.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfChildren.ForeColor = System.Drawing.Color.White;
-            this.labelNoOfChildren.Location = new System.Drawing.Point(185, 57);
-            this.labelNoOfChildren.Name = "labelNoOfChildren";
-            this.labelNoOfChildren.Size = new System.Drawing.Size(43, 50);
-            this.labelNoOfChildren.TabIndex = 0;
-            this.labelNoOfChildren.Text = "0";
-            // 
-            // panelRegMembers
-            // 
-            this.panelRegMembers.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panelRegMembers.ColumnCount = 1;
-            this.panelRegMembers.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelRegMembers.Controls.Add(this.labelNoOfRegMem, 0, 1);
-            this.panelRegMembers.Controls.Add(this.tableLayoutPanel8, 0, 0);
-            this.panelRegMembers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRegMembers.Location = new System.Drawing.Point(21, 10);
-            this.panelRegMembers.Name = "panelRegMembers";
-            this.panelRegMembers.RowCount = 2;
-            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelRegMembers.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelRegMembers.Size = new System.Drawing.Size(231, 114);
-            this.panelRegMembers.TabIndex = 9;
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.07692F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.92308F));
-            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(225, 51);
-            this.tableLayoutPanel8.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Registered Members";
-            // 
-            // labelNoOfRegMem
-            // 
-            this.labelNoOfRegMem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNoOfRegMem.AutoSize = true;
-            this.labelNoOfRegMem.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoOfRegMem.ForeColor = System.Drawing.Color.White;
-            this.labelNoOfRegMem.Location = new System.Drawing.Point(185, 57);
-            this.labelNoOfRegMem.Name = "labelNoOfRegMem";
-            this.labelNoOfRegMem.Size = new System.Drawing.Size(43, 50);
-            this.labelNoOfRegMem.TabIndex = 0;
-            this.labelNoOfRegMem.Text = "0";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 6;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5F));
-            this.tableLayoutPanel3.Controls.Add(this.panelRegMembers, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panelNoOfChildren, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panelMeetingAttend, 5, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panelMonthlyDues, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.panelYearlyDues, 3, 3);
-            this.tableLayoutPanel3.Controls.Add(this.panelMonthlyComment, 5, 3);
-            this.tableLayoutPanel3.Controls.Add(this.panelLastEvent, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.panelTotalComment, 3, 5);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 7;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(750, 398);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1198,6 +1198,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             this.tableLayoutPanelCards.ResumeLayout(false);
             this.tableLayoutPanelRealCards.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panelRegMembers.ResumeLayout(false);
+            this.panelRegMembers.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.panelNoOfChildren.ResumeLayout(false);
+            this.panelNoOfChildren.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.panelMeetingAttend.ResumeLayout(false);
+            this.panelMeetingAttend.PerformLayout();
+            this.panelMonthlyDues.ResumeLayout(false);
+            this.panelMonthlyDues.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.panelYearlyDues.ResumeLayout(false);
+            this.panelYearlyDues.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.panelMonthlyComment.ResumeLayout(false);
+            this.panelMonthlyComment.PerformLayout();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
+            this.panelLastEvent.ResumeLayout(false);
+            this.panelLastEvent.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.panelTotalComment.ResumeLayout(false);
+            this.panelTotalComment.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -1205,37 +1236,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.panelDesktop.ResumeLayout(false);
-            this.panelTotalComment.ResumeLayout(false);
-            this.panelTotalComment.PerformLayout();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
-            this.panelLastEvent.ResumeLayout(false);
-            this.panelLastEvent.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
-            this.panelMonthlyComment.ResumeLayout(false);
-            this.panelMonthlyComment.PerformLayout();
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.tableLayoutPanel17.PerformLayout();
-            this.panelYearlyDues.ResumeLayout(false);
-            this.panelYearlyDues.PerformLayout();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel15.PerformLayout();
-            this.panelMonthlyDues.ResumeLayout(false);
-            this.panelMonthlyDues.PerformLayout();
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.panelMeetingAttend.ResumeLayout(false);
-            this.panelMeetingAttend.PerformLayout();
-            this.panelNoOfChildren.ResumeLayout(false);
-            this.panelNoOfChildren.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
-            this.panelRegMembers.ResumeLayout(false);
-            this.panelRegMembers.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

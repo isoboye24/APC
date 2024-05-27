@@ -45,6 +45,12 @@ namespace APC
         MothersDetailDTO motherDetail = new MothersDetailDTO();
         private void FormChildren_Load(object sender, EventArgs e)
         {
+            int minWidthPercentage = 30;
+            int minHeightPercentage = 30;
+            int minWidth = Screen.PrimaryScreen.Bounds.Width * minWidthPercentage / 100;
+            int minHeight = Screen.PrimaryScreen.Bounds.Height * minHeightPercentage / 100;
+            this.MinimumSize = new Size(minWidth, minHeight);
+
             dto = bll.Select();
 
             cmbGender.DataSource = dto.Genders;
@@ -99,7 +105,12 @@ namespace APC
             dataGridViewFathers.Columns[40].Visible = false;
             dataGridViewFathers.Columns[41].Visible = false;
             dataGridViewFathers.Columns[42].Visible = false;
-
+            //dataGridViewFathers.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            //dataGridViewFathers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
+            //foreach (DataGridViewColumn column in dataGridViewFathers.Columns)
+            //{
+            //    column.HeaderCell.Style.Font = new Font(dataGridViewFathers.Font, FontStyle.Bold);
+            //}
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
             dataGridViewMothers.Columns[1].Visible = false;
@@ -309,6 +320,30 @@ namespace APC
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void iconMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void picMinimize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
         }
     }
 }
