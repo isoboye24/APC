@@ -96,10 +96,9 @@ namespace APC.AllForms
             labelTotalAmountRaised.Text = bll.SelectTotalRaisedAmount().ToString();
             labelTotalAmountSpent.Text = bll.SelectTotalSpentAmount().ToString();
             labelTotalBalance.Text = (bll.SelectTotalRaisedAmount() - bll.SelectTotalSpentAmount()).ToString();
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             if (LoginInfo.AccessLevel != 4)
             {

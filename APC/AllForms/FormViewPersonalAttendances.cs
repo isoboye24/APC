@@ -88,10 +88,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s present attendance record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -117,10 +116,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s absent attendance record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -146,10 +144,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s contributed amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -179,10 +176,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s expected amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
@@ -211,10 +207,9 @@ namespace APC.AllForms
                 dataGridView1.Columns[14].HeaderText = "Expected Dues";
                 dataGridView1.Columns[15].HeaderText = "Balance";
                 dataGridView1.Columns[16].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
                 labelTitle.Text = detail.Surname + " " + detail.Name + "'s balance amount record";
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;

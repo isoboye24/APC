@@ -122,7 +122,7 @@ namespace APC
             dataGridViewMembers.Columns[42].Visible = false;
             foreach (DataGridViewColumn column in dataGridViewMembers.Columns)
             {
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             #endregion
 

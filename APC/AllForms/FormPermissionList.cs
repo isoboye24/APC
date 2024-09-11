@@ -84,10 +84,9 @@ namespace APC
             dataGridView1.Columns[40].Visible = false;
             dataGridView1.Columns[41].Visible = false;
             dataGridView1.Columns[42].Visible = false;
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             #endregion
         }

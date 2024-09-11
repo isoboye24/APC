@@ -84,10 +84,9 @@ namespace APC.AllForms
             dataGridView1.Columns[14].HeaderText = "Expected Dues";
             dataGridView1.Columns[15].HeaderText = "Balance";
             dataGridView1.Columns[16].Visible = false;
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             labelTitle.Text = "Meeting on " + detail.Day + "." + detail.MonthID + "." + detail.Year;
             txtSummary.Text = detail.Summary;

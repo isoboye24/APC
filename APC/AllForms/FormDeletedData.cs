@@ -117,8 +117,6 @@ namespace APC.AllForms
             dataGridView1.Columns[40].Visible = false;
             dataGridView1.Columns[41].Visible = false;
             dataGridView1.Columns[42].Visible = false;
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -174,8 +172,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[40].Visible = false;
                 dataGridView1.Columns[41].Visible = false;
                 dataGridView1.Columns[42].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -186,8 +182,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.Countries;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Country Name";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -198,8 +192,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.Nationalities;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Nationality Name";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -210,8 +202,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.Professions;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Profession Name";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -222,8 +212,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.Positions;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Prosition Name";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -234,8 +222,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.EmploymentStatuses;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Employment Status";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -246,8 +232,6 @@ namespace APC.AllForms
                 dataGridView1.DataSource = dto.MaritalStatuses;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "Marital Status";
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -279,8 +263,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[20].Visible = false;
                 dataGridView1.Columns[20].Visible = false;
                 dataGridView1.Columns[21].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -302,8 +284,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[10].HeaderText = "Month";
                 dataGridView1.Columns[11].HeaderText = "Year";
                 dataGridView1.Columns[12].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -321,8 +301,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[6].Visible = false;
                 dataGridView1.Columns[7].HeaderText = "Date";
                 dataGridView1.Columns[8].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -341,8 +319,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView1.Columns[7].HeaderText = "Picture Caption";
                 dataGridView1.Columns[8].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -360,8 +336,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[6].HeaderText = "Summary";
                 dataGridView1.Columns[7].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -382,8 +356,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[9].HeaderText = "Balance";
                 dataGridView1.Columns[10].Visible = false;
                 dataGridView1.Columns[11].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -400,8 +372,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[5].HeaderText = "Month";
                 dataGridView1.Columns[6].HeaderText = "Year";
                 dataGridView1.Columns[7].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
@@ -416,8 +386,6 @@ namespace APC.AllForms
                 dataGridView1.Columns[3].HeaderText = "Total Amount Spent";
                 dataGridView1.Columns[4].HeaderText = "Total Balance";
                 dataGridView1.Columns[5].Visible = false;
-                dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 14);
                 foreach (DataGridViewColumn column in dataGridView1.Columns)
                 {
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);

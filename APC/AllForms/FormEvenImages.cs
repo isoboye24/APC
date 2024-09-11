@@ -98,11 +98,9 @@ namespace APC.AllForms
             dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView1.Columns[7].HeaderText = "Picture Caption";
             dataGridView1.Columns[8].Visible = false;
-            dataGridView1.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                column.HeaderCell.Style.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             if (LoginInfo.AccessLevel != 4)
             {
