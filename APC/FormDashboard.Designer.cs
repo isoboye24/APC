@@ -32,7 +32,6 @@
             this.btnFormerMembers = new FontAwesome.Sharp.IconButton();
             this.btnDeadMembers = new FontAwesome.Sharp.IconButton();
             this.btnManage = new FontAwesome.Sharp.IconButton();
-            this.btnComments = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnEvents = new FontAwesome.Sharp.IconButton();
@@ -136,7 +135,6 @@
             this.panelMenu.Controls.Add(this.btnFormerMembers);
             this.panelMenu.Controls.Add(this.btnDeadMembers);
             this.panelMenu.Controls.Add(this.btnManage);
-            this.panelMenu.Controls.Add(this.btnComments);
             this.panelMenu.Controls.Add(this.panel4);
             this.panelMenu.Controls.Add(this.btnEvents);
             this.panelMenu.Controls.Add(this.btnMembers);
@@ -217,28 +215,6 @@
             this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManage.UseVisualStyleBackColor = true;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
-            // 
-            // btnComments
-            // 
-            this.btnComments.FlatAppearance.BorderSize = 0;
-            this.btnComments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComments.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnComments.IconChar = FontAwesome.Sharp.IconChar.CommentDots;
-            this.btnComments.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnComments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnComments.IconSize = 24;
-            this.btnComments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.Location = new System.Drawing.Point(3, 164);
-            this.btnComments.Name = "btnComments";
-            this.btnComments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnComments.Size = new System.Drawing.Size(217, 40);
-            this.btnComments.TabIndex = 1;
-            this.btnComments.Text = "    Comments";
-            this.btnComments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnComments.UseVisualStyleBackColor = true;
-            this.btnComments.Click += new System.EventHandler(this.btnComments_Click);
             // 
             // panel4
             // 
@@ -1263,7 +1239,6 @@
         private FontAwesome.Sharp.IconButton btnAttendance;
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton btnExpenditure;
-        private FontAwesome.Sharp.IconButton btnComments;
         private FontAwesome.Sharp.IconButton btnDeadMembers;
         private FontAwesome.Sharp.IconButton btnDocuments;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCards;

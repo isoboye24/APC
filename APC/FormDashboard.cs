@@ -160,23 +160,7 @@ namespace APC
                 btnDocuments.Hide();
                 btnManage.Hide();
                 btnMembers.Text = "    Profile";
-                btnMembers.Location = new Point(0, 118);
-
-                CommentDTO dto = commentBLL.Select();
-                int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
-                if (commentCount < 1)
-                {
-                    btnComments.Hide();
-                }
-                else if (commentCount == 1)
-                {
-                    btnComments.Visible = true;
-                    btnComments.Text = "    Comment";
-                }
-                else
-                {
-                    btnComments.Visible = true;
-                }
+                btnMembers.Location = new Point(0, 118);                
             }
 
             initialDetail.StartPosition = FormStartPosition.Manual;
@@ -413,7 +397,8 @@ namespace APC
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormGeneralAttendanceList());
+            //OpenChildForm(new FormGeneralAttendanceList());
+            OpenChildForm(new FormMeetingBoard());
         }
 
         private void btnEvents_Click(object sender, EventArgs e)
@@ -428,42 +413,6 @@ namespace APC
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormExpenditureList());
-        }
-
-        private void btnComments_Click(object sender, EventArgs e)
-        {
-            int memberCount = memberBLL.SelectAllMembersCount();
-            if (memberCount > 0)
-            {
-                if (!isAdmin && !isEditor)
-                {
-                    CommentDTO dto = commentBLL.Select();
-                    int commentCount = dto.Comments.Count(x => x.MemberID == LoginInfo.MemberID);
-                    CommentDetailDTO detail = dto.Comments.First(x => x.MemberID == LoginInfo.MemberID);
-                    if (commentCount > 1)
-                    {
-                        FormSingleCommentList open = new FormSingleCommentList();
-                        open.memberID = detail.MemberID;
-                        this.Hide();
-                        open.ShowDialog();
-                        this.Visible = true;
-                    }
-                    else
-                    {
-                        FormViewComment open = new FormViewComment();
-                        open.detail = detail;
-                        this.Hide();
-                        open.ShowDialog();
-                        this.Visible = true;
-                    }
-                }
-                else
-                {
-                    buttonWasClicked = true;
-                    ActivateButton(sender, RBGColors.color1);
-                    OpenChildForm(new FormCommentsList());
-                }
-            }
         }
 
         private void btnDeadMembers_Click(object sender, EventArgs e)
@@ -493,16 +442,6 @@ namespace APC
         private void panelLastEvent_Click(object sender, EventArgs e)
         {
             btnEvents.PerformClick();
-        }
-
-        private void panelTotalComment_Click(object sender, EventArgs e)
-        {
-            btnComments.PerformClick();
-        }
-
-        private void panelMonthlyComment_Click(object sender, EventArgs e)
-        {
-            btnComments.PerformClick();
         }
 
         private void panelMonthlyDues_Click(object sender, EventArgs e)
