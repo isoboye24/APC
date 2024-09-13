@@ -41,7 +41,6 @@
             this.btnDeletedData = new FontAwesome.Sharp.IconButton();
             this.btnPermission = new FontAwesome.Sharp.IconButton();
             this.btnNationality = new FontAwesome.Sharp.IconButton();
-            this.btnContact = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnProfession = new FontAwesome.Sharp.IconButton();
@@ -218,7 +217,6 @@
             this.panelMenu.Controls.Add(this.btnDeletedData);
             this.panelMenu.Controls.Add(this.btnPermission);
             this.panelMenu.Controls.Add(this.btnNationality);
-            this.panelMenu.Controls.Add(this.btnContact);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.btnProfession);
@@ -319,28 +317,6 @@
             this.btnNationality.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNationality.UseVisualStyleBackColor = true;
             this.btnNationality.Click += new System.EventHandler(this.btnNationality_Click);
-            // 
-            // btnContact
-            // 
-            this.btnContact.FlatAppearance.BorderSize = 0;
-            this.btnContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContact.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContact.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnContact.IconChar = FontAwesome.Sharp.IconChar.Bomb;
-            this.btnContact.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnContact.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnContact.IconSize = 24;
-            this.btnContact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContact.Location = new System.Drawing.Point(0, 431);
-            this.btnContact.Name = "btnContact";
-            this.btnContact.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnContact.Size = new System.Drawing.Size(200, 40);
-            this.btnContact.TabIndex = 7;
-            this.btnContact.Text = "    Contact";
-            this.btnContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnContact.UseVisualStyleBackColor = true;
-            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
             // 
             // panel1
             // 
@@ -1021,7 +997,6 @@
         private FontAwesome.Sharp.IconButton btnManagement;
         private FontAwesome.Sharp.IconButton btnPermission;
         private FontAwesome.Sharp.IconButton btnNationality;
-        private FontAwesome.Sharp.IconButton btnContact;
         private FontAwesome.Sharp.IconButton btnDeletedData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

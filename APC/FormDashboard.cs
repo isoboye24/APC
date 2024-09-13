@@ -151,16 +151,14 @@ namespace APC
             {
                 tableLayoutPanelRealCards.Hide();
                 btnAttendance.Hide();
-                btnChildren.Hide();
                 btnFinancialReport.Hide();
                 btnExpenditure.Hide();
                 btnEvents.Hide();
-                btnDeadMembers.Hide();
-                btnFormerMembers.Hide();
                 btnDocuments.Hide();
                 btnManage.Hide();
                 btnMembers.Text = "    Profile";
-                btnMembers.Location = new Point(0, 118);                
+                btnMembers.Location = new Point(0, 118);
+                
             }
 
             initialDetail.StartPosition = FormStartPosition.Manual;
@@ -315,7 +313,7 @@ namespace APC
                 {
                     buttonWasClicked = true;
                     ActivateButton(sender, RBGColors.color2);
-                    OpenChildForm(new FormMembersList());
+                    OpenChildForm(new FormMembersBoard());
                 }
 
             }
@@ -397,7 +395,6 @@ namespace APC
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
-            //OpenChildForm(new FormGeneralAttendanceList());
             OpenChildForm(new FormMeetingBoard());
         }
 
@@ -415,23 +412,11 @@ namespace APC
             OpenChildForm(new FormExpenditureList());
         }
 
-        private void btnDeadMembers_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormDeadMembersList());
-        }
-
         private void btnDocuments_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color1);
             OpenChildForm(new FormDocumentList());
-        }
-
-        private void panelNoOfChildren_Click(object sender, EventArgs e)
-        {
-            btnChildren.PerformClick();
         }
 
         private void panelMeetingAttend_Click(object sender, EventArgs e)
@@ -467,13 +452,6 @@ namespace APC
         private void panelLastEvent_Click_1(object sender, EventArgs e)
         {
             btnEvents.PerformClick();
-        }
-
-        private void btnFormerMembers_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormFormerMembersList());
         }
     }
 }

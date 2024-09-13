@@ -133,17 +133,17 @@
     <Compile Include="AllForms\FormDocument.Designer.cs">
       <DependentUpon>FormDocument.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormFormerMembersList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormFormerMembersList.Designer.cs">
-      <DependentUpon>FormFormerMembersList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormMeetingBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FormMeetingBoard.Designer.cs">
       <DependentUpon>FormMeetingBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormMembersBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormMembersBoard.Designer.cs">
+      <DependentUpon>FormMembersBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormSingleCommentList.cs">
       <SubType>Form</SubType>
@@ -249,12 +249,6 @@
     <Compile Include="AllForms\FormComments.Designer.cs">
       <DependentUpon>FormComments.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormContactList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormContactList.Designer.cs">
-      <DependentUpon>FormContactList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,12 +260,6 @@
     </Compile>
     <Compile Include="AllForms\FormCountryList.Designer.cs">
       <DependentUpon>FormCountryList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AllForms\FormDeadMembersList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormDeadMembersList.Designer.cs">
-      <DependentUpon>FormDeadMembersList.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormDeletedData.cs">
       <SubType>Form</SubType>
@@ -602,12 +590,6 @@
     <Compile Include="AllForms\FormMembers.Designer.cs">
       <DependentUpon>FormMembers.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormMembersList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormMembersList.Designer.cs">
-      <DependentUpon>FormMembersList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormPermissionList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,14 +629,14 @@
     <EmbeddedResource Include="AllForms\FormDocumentList.resx">
       <DependentUpon>FormDocumentList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormFormerMembersList.resx">
-      <DependentUpon>FormFormerMembersList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormGeneralAttendance.resx">
       <DependentUpon>FormGeneralAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormMeetingBoard.resx">
       <DependentUpon>FormMeetingBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormMembersBoard.resx">
+      <DependentUpon>FormMembersBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormPersonalAttendance.resx">
       <DependentUpon>FormPersonalAttendance.cs</DependentUpon>
@@ -671,17 +653,11 @@
     <EmbeddedResource Include="AllForms\FormComments.resx">
       <DependentUpon>FormComments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormContactList.resx">
-      <DependentUpon>FormContactList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormCountry.resx">
       <DependentUpon>FormCountry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormCountryList.resx">
       <DependentUpon>FormCountryList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormDeadMembersList.resx">
-      <DependentUpon>FormDeadMembersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormDeletedData.resx">
       <DependentUpon>FormDeletedData.cs</DependentUpon>
@@ -784,9 +760,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormMembers.resx">
       <DependentUpon>FormMembers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormMembersList.resx">
-      <DependentUpon>FormMembersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormPermissionList.resx">
       <DependentUpon>FormPermissionList.cs</DependentUpon>

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.meetingsPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,6 +39,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAbsentees = new System.Windows.Forms.Button();
+            this.labelTotalMeetings = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -81,10 +82,10 @@
             this.btnUpdateComments = new System.Windows.Forms.Button();
             this.btnDeleteComments = new System.Windows.Forms.Button();
             this.btnViewComments = new System.Windows.Forms.Button();
+            this.labelTotalComments = new System.Windows.Forms.Label();
             this.panelDataGridView = new System.Windows.Forms.Panel();
             this.dataGridViewComments = new System.Windows.Forms.DataGridView();
-            this.labelTotalMeetings = new System.Windows.Forms.Label();
-            this.labelTotalComments = new System.Windows.Forms.Label();
+            this.penaltyPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.meetingsPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             this.tabControl1.Controls.Add(this.meetingsPage);
             this.tabControl1.Controls.Add(this.commentPage);
+            this.tabControl1.Controls.Add(this.penaltyPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -249,6 +251,18 @@
             this.btnAbsentees.Text = "View Absentees";
             this.btnAbsentees.UseVisualStyleBackColor = false;
             this.btnAbsentees.Click += new System.EventHandler(this.btnAbsentees_Click);
+            // 
+            // labelTotalMeetings
+            // 
+            this.labelTotalMeetings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalMeetings.AutoSize = true;
+            this.labelTotalMeetings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalMeetings.Location = new System.Drawing.Point(831, 29);
+            this.labelTotalMeetings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelTotalMeetings.Name = "labelTotalMeetings";
+            this.labelTotalMeetings.Size = new System.Drawing.Size(65, 21);
+            this.labelTotalMeetings.TabIndex = 4;
+            this.labelTotalMeetings.Text = "Total: 0";
             // 
             // tableLayoutPanel2
             // 
@@ -511,8 +525,8 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(21, 98);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(899, 374);
             this.dataGridView1.TabIndex = 6;
@@ -832,6 +846,18 @@
             this.btnViewComments.UseVisualStyleBackColor = false;
             this.btnViewComments.Click += new System.EventHandler(this.btnViewComments_Click);
             // 
+            // labelTotalComments
+            // 
+            this.labelTotalComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalComments.AutoSize = true;
+            this.labelTotalComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalComments.Location = new System.Drawing.Point(831, 29);
+            this.labelTotalComments.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelTotalComments.Name = "labelTotalComments";
+            this.labelTotalComments.Size = new System.Drawing.Size(65, 21);
+            this.labelTotalComments.TabIndex = 5;
+            this.labelTotalComments.Text = "Total: 0";
+            // 
             // panelDataGridView
             // 
             this.panelDataGridView.Controls.Add(this.dataGridViewComments);
@@ -849,36 +875,21 @@
             this.dataGridViewComments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewComments.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewComments.Name = "dataGridViewComments";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewComments.RowTemplate.Height = 30;
             this.dataGridViewComments.Size = new System.Drawing.Size(899, 382);
             this.dataGridViewComments.TabIndex = 0;
             this.dataGridViewComments.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComments_RowEnter);
             // 
-            // labelTotalMeetings
+            // penaltyPage
             // 
-            this.labelTotalMeetings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalMeetings.AutoSize = true;
-            this.labelTotalMeetings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalMeetings.Location = new System.Drawing.Point(831, 29);
-            this.labelTotalMeetings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelTotalMeetings.Name = "labelTotalMeetings";
-            this.labelTotalMeetings.Size = new System.Drawing.Size(65, 21);
-            this.labelTotalMeetings.TabIndex = 4;
-            this.labelTotalMeetings.Text = "Total: 0";
-            // 
-            // labelTotalComments
-            // 
-            this.labelTotalComments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalComments.AutoSize = true;
-            this.labelTotalComments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalComments.Location = new System.Drawing.Point(831, 29);
-            this.labelTotalComments.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.labelTotalComments.Name = "labelTotalComments";
-            this.labelTotalComments.Size = new System.Drawing.Size(65, 21);
-            this.labelTotalComments.TabIndex = 5;
-            this.labelTotalComments.Text = "Total: 0";
+            this.penaltyPage.Location = new System.Drawing.Point(4, 30);
+            this.penaltyPage.Name = "penaltyPage";
+            this.penaltyPage.Size = new System.Drawing.Size(949, 566);
+            this.penaltyPage.TabIndex = 2;
+            this.penaltyPage.Text = "Penalties";
+            this.penaltyPage.UseVisualStyleBackColor = true;
             // 
             // FormMeetingBoard
             // 
@@ -970,5 +981,6 @@
         private System.Windows.Forms.DataGridView dataGridViewComments;
         private System.Windows.Forms.Label labelTotalMeetings;
         private System.Windows.Forms.Label labelTotalComments;
+        private System.Windows.Forms.TabPage penaltyPage;
     }
 }

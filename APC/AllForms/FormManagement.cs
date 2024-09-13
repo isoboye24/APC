@@ -298,13 +298,6 @@ namespace APC.AllForms
             OpenChildForm(new FormNationalityList());
         }
 
-        private void btnContact_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormContactList());
-        }
-
         private void btnDeletedData_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;

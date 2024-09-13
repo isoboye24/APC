@@ -156,7 +156,6 @@ namespace APC.AllForms
                 open.ShowDialog();
                 this.Visible = true;
                 ClearFilters();
-                FillDateGrid();
             }
         }
 
@@ -175,7 +174,6 @@ namespace APC.AllForms
                 open.ShowDialog();
                 this.Visible = true;
                 ClearFilters();
-                FillDateGrid();
             }
         }
 
