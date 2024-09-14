@@ -115,10 +115,13 @@ namespace APC.AllForms
             dataGridViewComments.Columns[5].Visible = false;
             dataGridViewComments.Columns[6].Visible = false;
             dataGridViewComments.Columns[7].HeaderText = "Gender";
+            dataGridViewComments.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewComments.Columns[8].Visible = false;
             dataGridViewComments.Columns[9].Visible = false;
             dataGridViewComments.Columns[10].HeaderText = "Month";
+            dataGridViewComments.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewComments.Columns[11].HeaderText = "Year";
+            dataGridViewComments.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewComments.Columns[12].Visible = false;
             foreach (DataGridViewColumn columnComments in dataGridViewComments.Columns)
             {

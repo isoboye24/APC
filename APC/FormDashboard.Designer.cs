@@ -29,12 +29,25 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.tableLayoutPanelSidebar = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAttendance = new FontAwesome.Sharp.IconButton();
+            this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
+            this.btnEvents = new FontAwesome.Sharp.IconButton();
+            this.btnMembers = new FontAwesome.Sharp.IconButton();
+            this.btnDocuments = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
+            this.btnManage = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLogo = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.labelTitleChildForm = new System.Windows.Forms.Label();
+            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -78,24 +91,18 @@
             this.labelNameSurname = new System.Windows.Forms.Label();
             this.labelAccessLevel = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
             this.picProfilePic = new System.Windows.Forms.PictureBox();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
-            this.btnManage = new FontAwesome.Sharp.IconButton();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
-            this.btnEvents = new FontAwesome.Sharp.IconButton();
-            this.btnMembers = new FontAwesome.Sharp.IconButton();
-            this.btnAttendance = new FontAwesome.Sharp.IconButton();
-            this.btnDocuments = new FontAwesome.Sharp.IconButton();
-            this.btnExpenditure = new FontAwesome.Sharp.IconButton();
-            this.btnFinancialReport = new FontAwesome.Sharp.IconButton();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.tableLayoutPanelSidebar.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             this.tableLayoutPanelCards.SuspendLayout();
             this.tableLayoutPanelRealCards.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -118,48 +125,244 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
+            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panelMenu.Controls.Add(this.btnManage);
+            this.panelMenu.Controls.Add(this.tableLayoutPanelSidebar);
             this.panelMenu.Controls.Add(this.panel4);
-            this.panelMenu.Controls.Add(this.btnEvents);
-            this.panelMenu.Controls.Add(this.btnMembers);
-            this.panelMenu.Controls.Add(this.btnAttendance);
             this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Controls.Add(this.btnDocuments);
-            this.panelMenu.Controls.Add(this.btnExpenditure);
-            this.panelMenu.Controls.Add(this.btnFinancialReport);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 700);
             this.panelMenu.TabIndex = 7;
             // 
+            // tableLayoutPanelSidebar
+            // 
+            this.tableLayoutPanelSidebar.ColumnCount = 1;
+            this.tableLayoutPanelSidebar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelSidebar.Controls.Add(this.btnAttendance, 0, 1);
+            this.tableLayoutPanelSidebar.Controls.Add(this.btnFinancialReport, 0, 5);
+            this.tableLayoutPanelSidebar.Controls.Add(this.btnEvents, 0, 7);
+            this.tableLayoutPanelSidebar.Controls.Add(this.btnMembers, 0, 3);
+            this.tableLayoutPanelSidebar.Controls.Add(this.btnDocuments, 0, 9);
+            this.tableLayoutPanelSidebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelSidebar.Location = new System.Drawing.Point(0, 100);
+            this.tableLayoutPanelSidebar.Name = "tableLayoutPanelSidebar";
+            this.tableLayoutPanelSidebar.RowCount = 11;
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.5F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.5F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.5F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.5F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanelSidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43F));
+            this.tableLayoutPanelSidebar.Size = new System.Drawing.Size(220, 471);
+            this.tableLayoutPanelSidebar.TabIndex = 18;
+            // 
+            // btnAttendance
+            // 
+            this.btnAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAttendance.FlatAppearance.BorderSize = 0;
+            this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttendance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendance.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAttendance.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnAttendance.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnAttendance.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAttendance.IconSize = 24;
+            this.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.Location = new System.Drawing.Point(3, 26);
+            this.btnAttendance.Name = "btnAttendance";
+            this.btnAttendance.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnAttendance.Size = new System.Drawing.Size(214, 41);
+            this.btnAttendance.TabIndex = 0;
+            this.btnAttendance.Text = "    Meetings";
+            this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAttendance.UseVisualStyleBackColor = true;
+            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
+            // 
+            // btnFinancialReport
+            // 
+            this.btnFinancialReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFinancialReport.FlatAppearance.BorderSize = 0;
+            this.btnFinancialReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinancialReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinancialReport.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFinancialReport.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            this.btnFinancialReport.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnFinancialReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFinancialReport.IconSize = 24;
+            this.btnFinancialReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinancialReport.Location = new System.Drawing.Point(3, 124);
+            this.btnFinancialReport.Name = "btnFinancialReport";
+            this.btnFinancialReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnFinancialReport.Size = new System.Drawing.Size(214, 41);
+            this.btnFinancialReport.TabIndex = 4;
+            this.btnFinancialReport.Text = "    Reports";
+            this.btnFinancialReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinancialReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFinancialReport.UseVisualStyleBackColor = true;
+            this.btnFinancialReport.Click += new System.EventHandler(this.btnFinancialReport_Click_1);
+            // 
+            // btnEvents
+            // 
+            this.btnEvents.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEvents.FlatAppearance.BorderSize = 0;
+            this.btnEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvents.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnEvents.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
+            this.btnEvents.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnEvents.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEvents.IconSize = 24;
+            this.btnEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvents.Location = new System.Drawing.Point(3, 173);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnEvents.Size = new System.Drawing.Size(214, 41);
+            this.btnEvents.TabIndex = 6;
+            this.btnEvents.Text = "    Events";
+            this.btnEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
+            // 
+            // btnMembers
+            // 
+            this.btnMembers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMembers.FlatAppearance.BorderSize = 0;
+            this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnMembers.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnMembers.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMembers.IconSize = 24;
+            this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMembers.Location = new System.Drawing.Point(3, 75);
+            this.btnMembers.Name = "btnMembers";
+            this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnMembers.Size = new System.Drawing.Size(214, 41);
+            this.btnMembers.TabIndex = 2;
+            this.btnMembers.Text = "    Members";
+            this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMembers.UseVisualStyleBackColor = true;
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click_1);
+            // 
+            // btnDocuments
+            // 
+            this.btnDocuments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDocuments.FlatAppearance.BorderSize = 0;
+            this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.Dochub;
+            this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDocuments.IconSize = 24;
+            this.btnDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.Location = new System.Drawing.Point(3, 222);
+            this.btnDocuments.Name = "btnDocuments";
+            this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDocuments.Size = new System.Drawing.Size(214, 41);
+            this.btnDocuments.TabIndex = 8;
+            this.btnDocuments.Text = "    Documents";
+            this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocuments.UseVisualStyleBackColor = true;
+            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
+            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Controls.Add(this.tableLayoutPanel4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 631);
+            this.panel4.Location = new System.Drawing.Point(0, 571);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(220, 69);
-            this.panel4.TabIndex = 16;
+            this.panel4.Size = new System.Drawing.Size(220, 129);
+            this.panel4.TabIndex = 17;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.btnLogout, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.btnManage, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(220, 129);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.btnLogout.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 24;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 60);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnLogout.Size = new System.Drawing.Size(214, 45);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "    Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
+            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnManage.IconSize = 24;
+            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.Location = new System.Drawing.Point(3, 3);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnManage.Size = new System.Drawing.Size(214, 45);
+            this.btnManage.TabIndex = 9;
+            this.btnManage.Text = "    Settings";
+            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
             // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Controls.Add(this.labelLogo);
-            this.panelLogo.Location = new System.Drawing.Point(-1, 3);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(218, 100);
+            this.panelLogo.Size = new System.Drawing.Size(220, 100);
             this.panelLogo.TabIndex = 12;
             // 
             // label1
@@ -200,6 +403,18 @@
             this.panelTitleBar.TabIndex = 11;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown_1);
             // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 3);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.iconCurrentChildForm.TabIndex = 13;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
             // labelTitleChildForm
             // 
             this.labelTitleChildForm.AutoSize = true;
@@ -210,6 +425,60 @@
             this.labelTitleChildForm.Size = new System.Drawing.Size(166, 40);
             this.labelTitleChildForm.TabIndex = 12;
             this.labelTitleChildForm.Text = "Dashboard";
+            // 
+            // iconMinimize
+            // 
+            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconMinimize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMinimize.Location = new System.Drawing.Point(823, 12);
+            this.iconMinimize.Name = "iconMinimize";
+            this.iconMinimize.Size = new System.Drawing.Size(32, 32);
+            this.iconMinimize.TabIndex = 12;
+            this.iconMinimize.TabStop = false;
+            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
+            this.iconMinimize.MouseEnter += new System.EventHandler(this.iconMinimize_MouseEnter);
+            this.iconMinimize.MouseLeave += new System.EventHandler(this.iconMinimize_MouseLeave);
+            this.iconMinimize.MouseHover += new System.EventHandler(this.iconMinimize_MouseHover);
+            // 
+            // iconMaximize
+            // 
+            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMaximize.Location = new System.Drawing.Point(866, 12);
+            this.iconMaximize.Name = "iconMaximize";
+            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
+            this.iconMaximize.TabIndex = 12;
+            this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click_1);
+            this.iconMaximize.MouseEnter += new System.EventHandler(this.iconMaximize_MouseEnter);
+            this.iconMaximize.MouseLeave += new System.EventHandler(this.iconMaximize_MouseLeave);
+            this.iconMaximize.MouseHover += new System.EventHandler(this.iconMaximize_MouseHover);
+            // 
+            // iconClose
+            // 
+            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconClose.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconClose.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.iconClose.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconClose.Location = new System.Drawing.Point(909, 12);
+            this.iconClose.Name = "iconClose";
+            this.iconClose.Size = new System.Drawing.Size(32, 32);
+            this.iconClose.TabIndex = 12;
+            this.iconClose.TabStop = false;
+            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
+            this.iconClose.MouseEnter += new System.EventHandler(this.iconClose_MouseEnter);
+            this.iconClose.MouseLeave += new System.EventHandler(this.iconClose_MouseLeave);
+            this.iconClose.MouseHover += new System.EventHandler(this.iconClose_MouseHover);
             // 
             // panel2
             // 
@@ -810,16 +1079,6 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(173, 103);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Controls.Add(this.tableLayoutPanelCards);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 61);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(953, 639);
-            this.panelDesktop.TabIndex = 13;
-            this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
-            // 
             // picProfilePic
             // 
             this.picProfilePic.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -830,248 +1089,15 @@
             this.picProfilePic.TabIndex = 1;
             this.picProfilePic.TabStop = false;
             // 
-            // iconCurrentChildForm
+            // panelDesktop
             // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(43, 3);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
-            this.iconCurrentChildForm.TabIndex = 13;
-            this.iconCurrentChildForm.TabStop = false;
-            // 
-            // iconMinimize
-            // 
-            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimize.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconMinimize.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMinimize.Location = new System.Drawing.Point(823, 12);
-            this.iconMinimize.Name = "iconMinimize";
-            this.iconMinimize.Size = new System.Drawing.Size(32, 32);
-            this.iconMinimize.TabIndex = 12;
-            this.iconMinimize.TabStop = false;
-            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
-            this.iconMinimize.MouseEnter += new System.EventHandler(this.iconMinimize_MouseEnter);
-            this.iconMinimize.MouseLeave += new System.EventHandler(this.iconMinimize_MouseLeave);
-            this.iconMinimize.MouseHover += new System.EventHandler(this.iconMinimize_MouseHover);
-            // 
-            // iconMaximize
-            // 
-            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMaximize.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconMaximize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMaximize.Location = new System.Drawing.Point(866, 12);
-            this.iconMaximize.Name = "iconMaximize";
-            this.iconMaximize.Size = new System.Drawing.Size(32, 32);
-            this.iconMaximize.TabIndex = 12;
-            this.iconMaximize.TabStop = false;
-            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click_1);
-            this.iconMaximize.MouseEnter += new System.EventHandler(this.iconMaximize_MouseEnter);
-            this.iconMaximize.MouseLeave += new System.EventHandler(this.iconMaximize_MouseLeave);
-            this.iconMaximize.MouseHover += new System.EventHandler(this.iconMaximize_MouseHover);
-            // 
-            // iconClose
-            // 
-            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconClose.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconClose.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.iconClose.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconClose.Location = new System.Drawing.Point(909, 12);
-            this.iconClose.Name = "iconClose";
-            this.iconClose.Size = new System.Drawing.Size(32, 32);
-            this.iconClose.TabIndex = 12;
-            this.iconClose.TabStop = false;
-            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
-            this.iconClose.MouseEnter += new System.EventHandler(this.iconClose_MouseEnter);
-            this.iconClose.MouseLeave += new System.EventHandler(this.iconClose_MouseLeave);
-            this.iconClose.MouseHover += new System.EventHandler(this.iconClose_MouseHover);
-            // 
-            // btnManage
-            // 
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManage.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnManage.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnManage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnManage.IconSize = 24;
-            this.btnManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.Location = new System.Drawing.Point(3, 578);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnManage.Size = new System.Drawing.Size(217, 40);
-            this.btnManage.TabIndex = 9;
-            this.btnManage.Text = "    Mangement";
-            this.btnManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click_1);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.Gear;
-            this.btnLogout.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 24;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 0);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLogout.Size = new System.Drawing.Size(220, 40);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "    Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnEvents
-            // 
-            this.btnEvents.FlatAppearance.BorderSize = 0;
-            this.btnEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvents.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvents.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnEvents.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
-            this.btnEvents.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnEvents.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEvents.IconSize = 24;
-            this.btnEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvents.Location = new System.Drawing.Point(3, 394);
-            this.btnEvents.Name = "btnEvents";
-            this.btnEvents.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnEvents.Size = new System.Drawing.Size(217, 40);
-            this.btnEvents.TabIndex = 6;
-            this.btnEvents.Text = "    Events";
-            this.btnEvents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEvents.UseVisualStyleBackColor = true;
-            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
-            // 
-            // btnMembers
-            // 
-            this.btnMembers.FlatAppearance.BorderSize = 0;
-            this.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMembers.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnMembers.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.btnMembers.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnMembers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMembers.IconSize = 24;
-            this.btnMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.Location = new System.Drawing.Point(3, 179);
-            this.btnMembers.Name = "btnMembers";
-            this.btnMembers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnMembers.Size = new System.Drawing.Size(217, 40);
-            this.btnMembers.TabIndex = 2;
-            this.btnMembers.Text = "    Members";
-            this.btnMembers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMembers.UseVisualStyleBackColor = true;
-            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click_1);
-            // 
-            // btnAttendance
-            // 
-            this.btnAttendance.FlatAppearance.BorderSize = 0;
-            this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAttendance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttendance.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnAttendance.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnAttendance.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnAttendance.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAttendance.IconSize = 24;
-            this.btnAttendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAttendance.Location = new System.Drawing.Point(3, 118);
-            this.btnAttendance.Name = "btnAttendance";
-            this.btnAttendance.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAttendance.Size = new System.Drawing.Size(217, 40);
-            this.btnAttendance.TabIndex = 0;
-            this.btnAttendance.Text = "    Meetings";
-            this.btnAttendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAttendance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAttendance.UseVisualStyleBackColor = true;
-            this.btnAttendance.Click += new System.EventHandler(this.btnAttendance_Click);
-            // 
-            // btnDocuments
-            // 
-            this.btnDocuments.FlatAppearance.BorderSize = 0;
-            this.btnDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDocuments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocuments.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDocuments.IconChar = FontAwesome.Sharp.IconChar.Dochub;
-            this.btnDocuments.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnDocuments.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDocuments.IconSize = 24;
-            this.btnDocuments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocuments.Location = new System.Drawing.Point(3, 532);
-            this.btnDocuments.Name = "btnDocuments";
-            this.btnDocuments.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDocuments.Size = new System.Drawing.Size(217, 40);
-            this.btnDocuments.TabIndex = 8;
-            this.btnDocuments.Text = "    Documents";
-            this.btnDocuments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocuments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocuments.UseVisualStyleBackColor = true;
-            this.btnDocuments.Click += new System.EventHandler(this.btnDocuments_Click);
-            // 
-            // btnExpenditure
-            // 
-            this.btnExpenditure.FlatAppearance.BorderSize = 0;
-            this.btnExpenditure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpenditure.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpenditure.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnExpenditure.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            this.btnExpenditure.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnExpenditure.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExpenditure.IconSize = 24;
-            this.btnExpenditure.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpenditure.Location = new System.Drawing.Point(3, 348);
-            this.btnExpenditure.Name = "btnExpenditure";
-            this.btnExpenditure.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnExpenditure.Size = new System.Drawing.Size(217, 40);
-            this.btnExpenditure.TabIndex = 5;
-            this.btnExpenditure.Text = "    Expenditure";
-            this.btnExpenditure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExpenditure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExpenditure.UseVisualStyleBackColor = true;
-            this.btnExpenditure.Click += new System.EventHandler(this.btnExpenditure_Click);
-            // 
-            // btnFinancialReport
-            // 
-            this.btnFinancialReport.FlatAppearance.BorderSize = 0;
-            this.btnFinancialReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinancialReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinancialReport.ForeColor = System.Drawing.Color.PaleTurquoise;
-            this.btnFinancialReport.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
-            this.btnFinancialReport.IconColor = System.Drawing.Color.PaleTurquoise;
-            this.btnFinancialReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnFinancialReport.IconSize = 24;
-            this.btnFinancialReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinancialReport.Location = new System.Drawing.Point(3, 302);
-            this.btnFinancialReport.Name = "btnFinancialReport";
-            this.btnFinancialReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnFinancialReport.Size = new System.Drawing.Size(217, 40);
-            this.btnFinancialReport.TabIndex = 4;
-            this.btnFinancialReport.Text = "    Financial Report";
-            this.btnFinancialReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinancialReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFinancialReport.UseVisualStyleBackColor = true;
-            this.btnFinancialReport.Click += new System.EventHandler(this.btnFinancialReport_Click_1);
+            this.panelDesktop.Controls.Add(this.tableLayoutPanelCards);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 61);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(953, 639);
+            this.panelDesktop.TabIndex = 13;
+            this.panelDesktop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDesktop_MouseDown);
             // 
             // FormDashboard
             // 
@@ -1091,11 +1117,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.panelMenu.ResumeLayout(false);
+            this.tableLayoutPanelSidebar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             this.tableLayoutPanelCards.ResumeLayout(false);
             this.tableLayoutPanelRealCards.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1134,12 +1166,8 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1165,7 +1193,6 @@
         private FontAwesome.Sharp.IconButton btnEvents;
         private FontAwesome.Sharp.IconButton btnAttendance;
         private System.Windows.Forms.Panel panel4;
-        private FontAwesome.Sharp.IconButton btnExpenditure;
         private FontAwesome.Sharp.IconButton btnDocuments;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCards;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRealCards;
@@ -1209,5 +1236,7 @@
         private System.Windows.Forms.Label labelTotalComments;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSidebar;
     }
 }

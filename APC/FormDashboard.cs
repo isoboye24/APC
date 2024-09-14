@@ -21,13 +21,12 @@ namespace APC
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        FormManagement managementForm;
         public FormDashboard()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(5, 40);
-            panelMenu.Controls.Add(leftBorderBtn);
+            tableLayoutPanelSidebar.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -60,7 +59,7 @@ namespace APC
                 // Left Border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
+                leftBorderBtn.Visible = false;
                 leftBorderBtn.BringToFront();
                 // Icon Current Child Form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
@@ -152,7 +151,6 @@ namespace APC
                 tableLayoutPanelRealCards.Hide();
                 btnAttendance.Hide();
                 btnFinancialReport.Hide();
-                btnExpenditure.Hide();
                 btnEvents.Hide();
                 btnDocuments.Hide();
                 btnManage.Hide();
@@ -319,44 +317,18 @@ namespace APC
             }
         }
 
-        private void btnChildren_Click_1(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormChildrenList());
-        }
-
         private void btnFinancialReport_Click_1(object sender, EventArgs e)
         {
             buttonWasClicked = true;
             ActivateButton(sender, RBGColors.color2);
-            OpenChildForm(new FormFinancialReportList());
+            OpenChildForm(new FormReportsBoard());
         }
-        FormProperties formDetail = new FormProperties();
+
         private void btnManage_Click_1(object sender, EventArgs e)
         {
-            managementForm = new FormManagement();
-            managementForm.StartPosition = FormStartPosition.Manual;
-            managementForm.Location = this.Location;
-            managementForm.Size = this.Size;
-            managementForm.WindowState = this.WindowState;
-
-            formDetail.StartPosition = FormStartPosition.Manual;
-            formDetail.Location = this.Location;
-            formDetail.Size = this.Size;
-            formDetail.WindowState = this.WindowState;
-            managementForm.formDetail = formDetail;
-
-            if (WindowState == FormWindowState.Normal)
-            {
-                RefreshAllCards(171, 42);
-            }
-            else
-            {
-                RefreshAllCards(350, 42);
-            }
-            this.Hide();
-            managementForm.ShowDialog();
+            buttonWasClicked = true;
+            ActivateButton(sender, RBGColors.color2);
+            OpenChildForm(new FormSettings());            
         }
 
         private void labelLogo_Click(object sender, EventArgs e)
@@ -401,21 +373,14 @@ namespace APC
         private void btnEvents_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
+            ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormEventsList());
-        }
-
-        private void btnExpenditure_Click(object sender, EventArgs e)
-        {
-            buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
-            OpenChildForm(new FormExpenditureList());
         }
 
         private void btnDocuments_Click(object sender, EventArgs e)
         {
             buttonWasClicked = true;
-            ActivateButton(sender, RBGColors.color1);
+            ActivateButton(sender, RBGColors.color2);
             OpenChildForm(new FormDocumentList());
         }
 
