@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.picClose = new System.Windows.Forms.PictureBox();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,14 +45,12 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.picClose = new System.Windows.Forms.PictureBox();
-            this.picMinimize = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,6 +64,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 51);
             this.panel1.TabIndex = 39;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // labelTitle
             // 
@@ -75,6 +76,32 @@
             this.labelTitle.Size = new System.Drawing.Size(165, 25);
             this.labelTitle.TabIndex = 5;
             this.labelTitle.Text = "Add Constitution";
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
+            this.picClose.Location = new System.Drawing.Point(747, 11);
+            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(32, 32);
+            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picClose.TabIndex = 6;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
+            this.picMinimize.Location = new System.Drawing.Point(706, 11);
+            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Size = new System.Drawing.Size(32, 32);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picMinimize.TabIndex = 5;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // panel3
             // 
@@ -247,32 +274,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = global::APC.Properties.Resources.icons8_multiply_32;
-            this.picClose.Location = new System.Drawing.Point(747, 11);
-            this.picClose.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(32, 32);
-            this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picClose.TabIndex = 6;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
-            // picMinimize
-            // 
-            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinimize.Image = global::APC.Properties.Resources.icons8_minimize_24;
-            this.picMinimize.Location = new System.Drawing.Point(706, 11);
-            this.picMinimize.Margin = new System.Windows.Forms.Padding(0, 16, 0, 0);
-            this.picMinimize.Name = "picMinimize";
-            this.picMinimize.Size = new System.Drawing.Size(32, 32);
-            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMinimize.TabIndex = 5;
-            this.picMinimize.TabStop = false;
-            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
-            // 
             // FormConstitution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,13 +291,13 @@
             this.Load += new System.EventHandler(this.FormConstitution_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -81,7 +81,6 @@ namespace APC.AllForms
             btnUpdateConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnViewConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnClearConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            btnSearchConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             #endregion
 
             dto = bll.Select();
@@ -112,11 +111,7 @@ namespace APC.AllForms
             {
                 column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
-            if (LoginInfo.AccessLevel != 4)
-            {
-                btnDelete.Hide();
-                btnDeleteComments.Hide();
-            }            
+                        
             dataGridViewComments.DataSource = commentDTO.Comments;
             dataGridViewComments.Columns[0].Visible = false;
             dataGridViewComments.Columns[1].HeaderText = "Comment";
@@ -153,6 +148,12 @@ namespace APC.AllForms
                 column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
             #endregion
+
+            if (LoginInfo.AccessLevel != 4)
+            {
+                btnDelete.Hide();
+                btnDeleteComments.Hide();
+            }
             RefreshCounts();
         }
         private void RefreshCounts()
@@ -575,7 +576,22 @@ namespace APC.AllForms
 
         private void btnDeleteConstitution_Click(object sender, EventArgs e)
         {
-
+            if (constitutionDetail.ConstitutionID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (constitutionBLL.Delete(constitutionDetail))
+                    {
+                        MessageBox.Show("Constitution was deleted!");
+                        ClearFilters();
+                    }
+                }
+            }
         }
 
         private void btnUpdateConstitution_Click(object sender, EventArgs e)
@@ -596,6 +612,30 @@ namespace APC.AllForms
             }
         }
 
-        
+        private void txtConstitution_TextChanged(object sender, EventArgs e)
+        {
+            List<ConstitutionDetailDTO> list = constitutionDTO.Constitutions;
+            list = list.Where(x => x.ConstitutionText.Contains(txtConstitution.Text.Trim())).ToList();
+            dataGridViewConstitution.DataSource = list;
+        }
+
+        private void txtSection_TextChanged(object sender, EventArgs e)
+        {
+            List<ConstitutionDetailDTO> list = constitutionDTO.Constitutions;
+            list = list.Where(x => x.Section.Contains(txtSection.Text.Trim())).ToList();
+            dataGridViewConstitution.DataSource = list;
+        }
+
+        private void txtFine_TextChanged(object sender, EventArgs e)
+        {
+            List<ConstitutionDetailDTO> list = constitutionDTO.Constitutions;
+            list = list.Where(x => x.Fine.ToString().Contains(txtFine.Text.Trim())).ToList();
+            dataGridViewConstitution.DataSource = list;
+        }
+
+        private void btnClearConstitution_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
+        }
     }
 }

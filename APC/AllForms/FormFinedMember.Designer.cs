@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,6 +85,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(864, 51);
             this.panel1.TabIndex = 43;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // labelTitle
             // 
@@ -373,8 +374,8 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(414, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(406, 427);
             this.dataGridView1.TabIndex = 5;
@@ -454,6 +455,7 @@
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picClose.TabIndex = 6;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // picMinimize
             // 
@@ -466,6 +468,7 @@
             this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMinimize.TabIndex = 5;
             this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
             // 
             // FormFinedMember
             // 
@@ -479,6 +482,8 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFinedMember";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormFinedMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

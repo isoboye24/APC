@@ -14,12 +14,21 @@ namespace APC.BLL
         ConstitutionDAO dao = new ConstitutionDAO();
         public bool Delete(ConstitutionDetailDTO entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CONSTITUTION constit = new CONSTITUTION();
+                constit.constitutionID = entity.ConstitutionID;
+                return dao.Delete(constit);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
         }
 
         public bool GetBack(ConstitutionDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.ConstitutionID);
         }
 
         public bool Insert(ConstitutionDetailDTO entity)

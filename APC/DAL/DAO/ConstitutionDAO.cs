@@ -11,12 +11,34 @@ namespace APC.DAL.DAO
     {
         public bool Delete(CONSTITUTION entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CONSTITUTION constit = db.CONSTITUTIONs.First(x => x.constitutionID == entity.constitutionID);
+                constit.isDeleted = true;
+                constit.deletedDate = DateTime.Today;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CONSTITUTION constit = db.CONSTITUTIONs.First(x => x.constitutionID == ID);
+                constit.isDeleted = false;
+                constit.deletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool Insert(CONSTITUTION entity)
