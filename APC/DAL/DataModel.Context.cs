@@ -28,6 +28,7 @@ namespace APC.DAL
         public virtual DbSet<ATTENDANCE_STATUS> ATTENDANCE_STATUS { get; set; }
         public virtual DbSet<CHILD> Children { get; set; }
         public virtual DbSet<COMMENT> COMMENTs { get; set; }
+        public virtual DbSet<CONSTITUTION> CONSTITUTIONs { get; set; }
         public virtual DbSet<COUNTRY> COUNTRies { get; set; }
         public virtual DbSet<DOCUMENT> DOCUMENTs { get; set; }
         public virtual DbSet<DUAL_NATIONALITY> DUAL_NATIONALITY { get; set; }
@@ -36,6 +37,7 @@ namespace APC.DAL
         public virtual DbSet<EVENT> EVENTS { get; set; }
         public virtual DbSet<EXPENDITURE> EXPENDITUREs { get; set; }
         public virtual DbSet<FINANCIAL_REPORT> FINANCIAL_REPORT { get; set; }
+        public virtual DbSet<FINED_MEMBER> FINED_MEMBER { get; set; }
         public virtual DbSet<GENDER> GENDERs { get; set; }
         public virtual DbSet<GENERAL_ATTENDANCE> GENERAL_ATTENDANCE { get; set; }
         public virtual DbSet<MARITAL_STATUS> MARITAL_STATUS { get; set; }

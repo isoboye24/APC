@@ -127,11 +127,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllForms\FormConstitution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormConstitution.Designer.cs">
+      <DependentUpon>FormConstitution.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormDocument.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FormDocument.Designer.cs">
       <DependentUpon>FormDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormFinedMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormFinedMember.Designer.cs">
+      <DependentUpon>FormFinedMember.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormMeetingBoard.cs">
       <SubType>Form</SubType>
@@ -163,11 +175,23 @@
     <Compile Include="AllForms\FormSingleCommentList.Designer.cs">
       <DependentUpon>FormSingleCommentList.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\FormViewConstitution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewConstitution.Designer.cs">
+      <DependentUpon>FormViewConstitution.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FormViewDocument.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FormViewDocument.Designer.cs">
       <DependentUpon>FormViewDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\FormViewFinedMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\FormViewFinedMember.Designer.cs">
+      <DependentUpon>FormViewFinedMember.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\FormViewMeetingsSummary.cs">
       <SubType>Form</SubType>
@@ -181,7 +205,9 @@
     <Compile Include="AllForms\FormViewPersonalAttendances.Designer.cs">
       <DependentUpon>FormViewPersonalAttendances.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\ConstitutionBLL.cs" />
     <Compile Include="BLL\DocumentBLL.cs" />
+    <Compile Include="BLL\FinedMemberBLL.cs" />
     <Compile Include="BLL\GeneralAttendanceBLL.cs" />
     <Compile Include="BLL\MembershipStatusBLL.cs" />
     <Compile Include="BLL\RelationshipsToKinBLL.cs" />
@@ -197,10 +223,15 @@
     <Compile Include="DAL\COMMENT.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\CONSTITUTION.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\COUNTRY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DAO\ConstitutionDAO.cs" />
     <Compile Include="DAL\DAO\DocumentDAO.cs" />
+    <Compile Include="DAL\DAO\FinedMemberDAO.cs" />
     <Compile Include="DAL\DAO\MembershipStatusDAO.cs" />
     <Compile Include="DAL\DAO\RelationshipToNextOfKinDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
@@ -223,6 +254,8 @@
     </Compile>
     <Compile Include="DAL\DTO\AbsenteesDetailDTO.cs" />
     <Compile Include="DAL\DTO\AbsenteesDTO.cs" />
+    <Compile Include="DAL\DTO\ConstitutionDetailDTO.cs" />
+    <Compile Include="DAL\DTO\ConstitutionDTO.cs" />
     <Compile Include="DAL\DTO\DeletedDataDTO.cs" />
     <Compile Include="DAL\DTO\DocumentDetailDTO.cs" />
     <Compile Include="AllForms\FormDocumentList.cs">
@@ -410,6 +443,8 @@
     <Compile Include="DAL\DTO\EventsDTO.cs" />
     <Compile Include="DAL\DTO\FinancialReportDetailDTO.cs" />
     <Compile Include="DAL\DTO\FinancialReportDTO.cs" />
+    <Compile Include="DAL\DTO\FinedMemberDetailDTO.cs" />
+    <Compile Include="DAL\DTO\FinedMemberDTO.cs" />
     <Compile Include="DAL\DTO\MembershipStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\MembershipStatusDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDetailDTO.cs" />
@@ -470,6 +505,9 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\FINANCIAL_REPORT.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FINED_MEMBER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\GENDER.cs">
@@ -569,11 +607,17 @@
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllForms\FormConstitution.resx">
+      <DependentUpon>FormConstitution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormDocument.resx">
       <DependentUpon>FormDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormDocumentList.resx">
       <DependentUpon>FormDocumentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormFinedMember.resx">
+      <DependentUpon>FormFinedMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormGeneralAttendance.resx">
       <DependentUpon>FormGeneralAttendance.cs</DependentUpon>
@@ -644,11 +688,17 @@
     <EmbeddedResource Include="AllForms\FormSingleCommentList.resx">
       <DependentUpon>FormSingleCommentList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewConstitution.resx">
+      <DependentUpon>FormViewConstitution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewDocument.resx">
       <DependentUpon>FormViewDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewFinancialReport.resx">
       <DependentUpon>FormViewFinancialReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\FormViewFinedMember.resx">
+      <DependentUpon>FormViewFinedMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormViewGeneralAttendance.resx">
       <DependentUpon>FormViewGeneralAttendance.cs</DependentUpon>
@@ -700,11 +750,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AllForms\packages.config" />
+    <None Include="APC_1_TemporaryKey.pfx" />
     <EntityDeploy Include="DAL\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="APC_1_TemporaryKey.pfx" />
     <None Include="DAL\DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
     </None>

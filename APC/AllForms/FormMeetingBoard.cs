@@ -71,6 +71,17 @@ namespace APC.AllForms
             btnViewComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnSearchComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnClearComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            label18.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label19.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label21.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalConstitutions.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            btnAddConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnDeleteConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdateConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnViewConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClearConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearchConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             #endregion
 
             dto = bll.Select();
@@ -127,6 +138,20 @@ namespace APC.AllForms
             {
                 columnComments.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
+
+            constitutionDTO = constitutionBLL.Select();
+            dataGridViewConstitution.DataSource = constitutionDTO.Constitutions;
+            dataGridViewConstitution.Columns[0].Visible = false;
+            dataGridViewConstitution.Columns[1].HeaderText = "Constitution";
+            dataGridViewConstitution.Columns[2].HeaderText = "Section";
+            dataGridViewConstitution.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewConstitution.Columns[3].Visible = false;
+            dataGridViewConstitution.Columns[4].HeaderText = "Fine";
+            dataGridViewConstitution.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            foreach (DataGridViewColumn column in dataGridViewConstitution.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            }
             #endregion
             RefreshCounts();
         }
@@ -134,6 +159,7 @@ namespace APC.AllForms
         {
             labelTotalMeetings.Text = "Total: " + dataGridView1.RowCount.ToString();
             labelTotalComments.Text = "Total: " + dataGridViewComments.RowCount.ToString();
+            labelTotalConstitutions.Text = "Total: " + dataGridViewConstitution.RowCount.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -206,6 +232,13 @@ namespace APC.AllForms
             commentBLL = new CommentBLL();
             commentDTO = commentBLL.Select();
             dataGridViewComments.DataSource = commentDTO.Comments;
+        }
+
+        private void FillDateGridConstitution()
+        {
+            constitutionBLL = new ConstitutionBLL();
+            constitutionDTO = constitutionBLL.Select();
+            dataGridViewConstitution.DataSource = constitutionDTO.Constitutions;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -281,6 +314,13 @@ namespace APC.AllForms
             cmbGenderComments.SelectedIndex = -1;
             cmbMonthComments.SelectedIndex = -1;
             FillDateGridComments();
+
+            txtConstitution.Clear();
+            txtSection.Clear();
+            txtFine.Clear();
+            FillDateGridConstitution();
+
+            RefreshCounts();
         }
 
         private void txtYear_TextChanged(object sender, EventArgs e)
@@ -443,5 +483,119 @@ namespace APC.AllForms
         {
             ClearFilters();
         }
+
+        FinedMemberBLL finedMemberBLL = new FinedMemberBLL();
+        FinedMemberDTO finedMemberDTO = new FinedMemberDTO();
+        FinedMemberDetailDTO finedMemberDetail = new FinedMemberDetailDTO();
+        private void btnAddFinedMember_Click(object sender, EventArgs e)
+        {
+            FormFinedMember open = new FormFinedMember();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+            ClearFilters();
+        }
+
+        private void btnUpdateFinedMember_Click(object sender, EventArgs e)
+        {
+            if (finedMemberDetail.FinedMemberID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                FormFinedMember open = new FormFinedMember();
+                open.detail = finedMemberDetail;
+                open.isUpdate = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }
+        }
+
+        private void btnViewFinedMember_Click(object sender, EventArgs e)
+        {
+            if (finedMemberDetail.FinedMemberID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                FormViewFinedMember open = new FormViewFinedMember();
+                open.detail = finedMemberDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }
+        }
+        private void btnDeleteFinedMember_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        ConstitutionBLL constitutionBLL = new ConstitutionBLL();
+        ConstitutionDTO constitutionDTO = new ConstitutionDTO();
+        ConstitutionDetailDTO constitutionDetail = new ConstitutionDetailDTO();
+        private void btnAddConstitution_Click(object sender, EventArgs e)
+        {
+            FormConstitution open = new FormConstitution();
+            this.Hide();
+            open.ShowDialog();
+            this.Visible = true;
+            ClearFilters();
+        }
+
+        private void dataGridViewConstitution_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            constitutionDetail = new ConstitutionDetailDTO();
+            constitutionDetail.ConstitutionID = Convert.ToInt32(dataGridViewConstitution.Rows[e.RowIndex].Cells[0].Value);
+            constitutionDetail.ConstitutionText = dataGridViewConstitution.Rows[e.RowIndex].Cells[1].Value.ToString();
+            constitutionDetail.Section = dataGridViewConstitution.Rows[e.RowIndex].Cells[2].Value.ToString();
+            constitutionDetail.Fine = Convert.ToDecimal(dataGridViewConstitution.Rows[e.RowIndex].Cells[3].Value);
+        }
+
+        private void btnViewConstitution_Click(object sender, EventArgs e)
+        {
+            if (constitutionDetail.ConstitutionID == 0)
+            {
+                MessageBox.Show("Please choose a constitution from the table.");
+            }
+            else
+            {
+                FormViewConstitution open = new FormViewConstitution();
+                open.detail = constitutionDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }
+        }
+
+        private void btnDeleteConstitution_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateConstitution_Click(object sender, EventArgs e)
+        {
+            if (constitutionDetail.ConstitutionID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                FormConstitution open = new FormConstitution();
+                open.detail = constitutionDetail;
+                open.isUpdate = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+                ClearFilters();
+            }
+        }
+
+        
     }
 }

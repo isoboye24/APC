@@ -43,6 +43,17 @@
           <Property Name="monthID" Type="int" Nullable="false" />
           <Property Name="year" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="CONSTITUTION">
+          <Key>
+            <PropertyRef Name="constitutionID" />
+          </Key>
+          <Property Name="constitutionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="constitution" Type="text" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
+          <Property Name="fine" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="section" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityType Name="COUNTRY">
           <Key>
             <PropertyRef Name="countryID" />
@@ -136,6 +147,21 @@
           <Property Name="deletedDate" Type="date" />
           <Property Name="year" Type="int" Nullable="false" />
           <Property Name="summary" Type="text" />
+        </EntityType>
+        <EntityType Name="FINED_MEMBER">
+          <Key>
+            <PropertyRef Name="finedMemberID" />
+          </Key>
+          <Property Name="finedMemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="amountPaid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="summary" Type="text" />
+          <Property Name="constitutionID" Type="int" Nullable="false" />
+          <Property Name="memberID" Type="int" Nullable="false" />
+          <Property Name="monthID" Type="int" Nullable="false" />
+          <Property Name="day" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="bit" Nullable="false" />
+          <Property Name="deletedDate" Type="date" />
         </EntityType>
         <EntityType Name="GENDER">
           <Key>
@@ -282,6 +308,7 @@
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHILD" EntityType="Self.CHILD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONSTITUTION" EntityType="Self.CONSTITUTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COUNTRY" EntityType="Self.COUNTRY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOCUMENT" EntityType="Self.DOCUMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" Schema="dbo" store:Type="Tables" />
@@ -290,6 +317,7 @@
           <EntitySet Name="EVENTS" EntityType="Self.EVENTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EXPENDITURE" EntityType="Self.EXPENDITURE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FINANCIAL_REPORT" EntityType="Self.FINANCIAL_REPORT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FINED_MEMBER" EntityType="Self.FINED_MEMBER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GENDER" EntityType="Self.GENDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GENERAL_ATTENDANCE" EntityType="Self.GENERAL_ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" Schema="dbo" store:Type="Tables" />
@@ -345,6 +373,17 @@
           <Property Name="day" Type="Int32" Nullable="false" />
           <Property Name="monthID" Type="Int32" Nullable="false" />
           <Property Name="year" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CONSTITUTION">
+          <Key>
+            <PropertyRef Name="constitutionID" />
+          </Key>
+          <Property Name="constitutionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="constitution1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
+          <Property Name="fine" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="section" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="COUNTRY">
           <Key>
@@ -439,6 +478,21 @@
           <Property Name="deletedDate" Type="DateTime" Precision="0" />
           <Property Name="year" Type="Int32" Nullable="false" />
           <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FINED_MEMBER">
+          <Key>
+            <PropertyRef Name="finedMemberID" />
+          </Key>
+          <Property Name="finedMemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="amountPaid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="constitutionID" Type="Int32" Nullable="false" />
+          <Property Name="memberID" Type="Int32" Nullable="false" />
+          <Property Name="monthID" Type="Int32" Nullable="false" />
+          <Property Name="day" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+          <Property Name="deletedDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="GENDER">
           <Key>
@@ -585,6 +639,7 @@
           <EntitySet Name="ATTENDANCE_STATUS" EntityType="Self.ATTENDANCE_STATUS" />
           <EntitySet Name="Children" EntityType="Self.CHILD" />
           <EntitySet Name="COMMENTs" EntityType="Self.COMMENT" />
+          <EntitySet Name="CONSTITUTIONs" EntityType="Self.CONSTITUTION" />
           <EntitySet Name="COUNTRies" EntityType="Self.COUNTRY" />
           <EntitySet Name="DOCUMENTs" EntityType="Self.DOCUMENT" />
           <EntitySet Name="DUAL_NATIONALITY" EntityType="Self.DUAL_NATIONALITY" />
@@ -593,6 +648,7 @@
           <EntitySet Name="EVENTS" EntityType="Self.EVENT" />
           <EntitySet Name="EXPENDITUREs" EntityType="Self.EXPENDITURE" />
           <EntitySet Name="FINANCIAL_REPORT" EntityType="Self.FINANCIAL_REPORT" />
+          <EntitySet Name="FINED_MEMBER" EntityType="Self.FINED_MEMBER" />
           <EntitySet Name="GENDERs" EntityType="Self.GENDER" />
           <EntitySet Name="GENERAL_ATTENDANCE" EntityType="Self.GENERAL_ATTENDANCE" />
           <EntitySet Name="MARITAL_STATUS" EntityType="Self.MARITAL_STATUS" />
@@ -650,6 +706,18 @@
                 <ScalarProperty Name="day" ColumnName="day" />
                 <ScalarProperty Name="monthID" ColumnName="monthID" />
                 <ScalarProperty Name="year" ColumnName="year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONSTITUTIONs">
+            <EntityTypeMapping TypeName="APCModel.CONSTITUTION">
+              <MappingFragment StoreEntitySet="CONSTITUTION">
+                <ScalarProperty Name="constitutionID" ColumnName="constitutionID" />
+                <ScalarProperty Name="constitution1" ColumnName="constitution" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+                <ScalarProperty Name="fine" ColumnName="fine" />
+                <ScalarProperty Name="section" ColumnName="section" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -752,6 +820,22 @@
                 <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
                 <ScalarProperty Name="year" ColumnName="year" />
                 <ScalarProperty Name="summary" ColumnName="summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FINED_MEMBER">
+            <EntityTypeMapping TypeName="APCModel.FINED_MEMBER">
+              <MappingFragment StoreEntitySet="FINED_MEMBER">
+                <ScalarProperty Name="finedMemberID" ColumnName="finedMemberID" />
+                <ScalarProperty Name="amountPaid" ColumnName="amountPaid" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
+                <ScalarProperty Name="constitutionID" ColumnName="constitutionID" />
+                <ScalarProperty Name="memberID" ColumnName="memberID" />
+                <ScalarProperty Name="monthID" ColumnName="monthID" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

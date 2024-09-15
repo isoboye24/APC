@@ -106,6 +106,8 @@ namespace APC.AllForms
             bll = new PersonalAttendanceBLL();
             dto = bll.SelectMembersSet(detail.GeneralAttendanceID);
             dataGridView1.DataSource = dto.PersonalAttendances;
+
+            ShowRecordData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
