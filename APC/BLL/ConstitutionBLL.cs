@@ -47,6 +47,11 @@ namespace APC.BLL
             return dto;
         }
 
+        public List<CONSTITUTION> GetSingleConstitution(int ID)
+        {
+            return dao.GetSingleConstitution(ID);
+        }
+
         public bool Update(ConstitutionDetailDTO entity)
         {
             CONSTITUTION constit = new CONSTITUTION();

@@ -105,12 +105,11 @@ namespace APC
             dataGridViewFathers.Columns[40].Visible = false;
             dataGridViewFathers.Columns[41].Visible = false;
             dataGridViewFathers.Columns[42].Visible = false;
-            //dataGridViewFathers.DefaultCellStyle.Font = new Font("Segoe UI", 9);
-            //dataGridViewFathers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10);
-            //foreach (DataGridViewColumn column in dataGridViewFathers.Columns)
-            //{
-            //    column.HeaderCell.Style.Font = new Font(dataGridViewFathers.Font, FontStyle.Bold);
-            //}
+            foreach (DataGridViewColumn column in dataGridViewFathers.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            }
+
             dataGridViewMothers.DataSource = dto.Mothers;
             dataGridViewMothers.Columns[0].Visible = false;
             dataGridViewMothers.Columns[1].Visible = false;
@@ -155,6 +154,10 @@ namespace APC
             dataGridViewMothers.Columns[40].Visible = false;
             dataGridViewMothers.Columns[41].Visible = false;
             dataGridViewMothers.Columns[42].Visible = false;
+            foreach (DataGridViewColumn column in dataGridViewMothers.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            }
             #endregion
 
             if (isUpdate)
@@ -173,6 +176,11 @@ namespace APC
                 txtFatherSurname.Text = detail.FathersSurname;
                 motherDetail.MemberID = detail.MotherID;
                 fatherDetail.MemberID = detail.FatherID;
+                labelTitle.Text = "Edit Child";
+            }
+            else if (!isUpdate)
+            {
+                labelTitle.Text = "Add Child";
             }
         }
 

@@ -147,12 +147,53 @@ namespace APC.AllForms
             {
                 column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             }
+
+            finedMemberDTO = finedMemberBLL.Select();
+            dataGridViewFinedMembers.DataSource = finedMemberDTO.FineMembers;
+            dataGridViewFinedMembers.Columns[0].Visible = false;
+            dataGridViewFinedMembers.Columns[1].HeaderText = "Name";
+            dataGridViewFinedMembers.Columns[2].HeaderText = "Surname";
+            dataGridViewFinedMembers.Columns[3].HeaderText = "Violated";
+            dataGridViewFinedMembers.Columns[4].Visible = false;
+            dataGridViewFinedMembers.Columns[5].HeaderText = "Fine";
+            dataGridViewFinedMembers.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[6].Visible = false;
+            dataGridViewFinedMembers.Columns[7].HeaderText = "Paid";
+            dataGridViewFinedMembers.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[8].Visible = false;
+            dataGridViewFinedMembers.Columns[9].Visible = false;
+            dataGridViewFinedMembers.Columns[10].HeaderText = "Status";
+            dataGridViewFinedMembers.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[11].Visible = false;
+            dataGridViewFinedMembers.Columns[12].Visible = false;
+            dataGridViewFinedMembers.Columns[13].Visible = false;
+            dataGridViewFinedMembers.Columns[14].Visible = false;
+            dataGridViewFinedMembers.Columns[15].Visible = false;
+            dataGridViewFinedMembers.Columns[16].Visible = false;
+            dataGridViewFinedMembers.Columns[17].Visible = false;
+            dataGridViewFinedMembers.Columns[18].Visible = false;
+            dataGridViewFinedMembers.Columns[19].HeaderText = "Day";
+            dataGridViewFinedMembers.Columns[19].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[20].Visible = false;
+            dataGridViewFinedMembers.Columns[21].HeaderText = "Month";
+            dataGridViewFinedMembers.Columns[21].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[22].HeaderText = "Year";
+            dataGridViewFinedMembers.Columns[22].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewFinedMembers.Columns[23].Visible = false;
+            foreach (DataGridViewColumn column in dataGridViewFinedMembers.Columns)
+            {
+                column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            }
             #endregion
 
             if (LoginInfo.AccessLevel != 4)
             {
                 btnDelete.Hide();
                 btnDeleteComments.Hide();
+                btnAddConstitution.Hide();
+                btnUpdateConstitution.Hide();
+                btnDeleteConstitution.Hide();
+                btnDeleteFinedMember.Hide();
             }
             RefreshCounts();
         }
@@ -161,6 +202,7 @@ namespace APC.AllForms
             labelTotalMeetings.Text = "Total: " + dataGridView1.RowCount.ToString();
             labelTotalComments.Text = "Total: " + dataGridViewComments.RowCount.ToString();
             labelTotalConstitutions.Text = "Total: " + dataGridViewConstitution.RowCount.ToString();
+            labelTotalFineMembers.Text = "Total: " + dataGridViewFinedMembers.RowCount.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -242,6 +284,13 @@ namespace APC.AllForms
             dataGridViewConstitution.DataSource = constitutionDTO.Constitutions;
         }
 
+        private void FillDateGridFinedMembers()
+        {
+            finedMemberBLL = new FinedMemberBLL();
+            finedMemberDTO = finedMemberBLL.Select();
+            dataGridViewFinedMembers.DataSource = finedMemberDTO.FineMembers;
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             List<GeneralAttendanceDetailDTO> list = dto.GeneralAttendance;
@@ -320,6 +369,15 @@ namespace APC.AllForms
             txtSection.Clear();
             txtFine.Clear();
             FillDateGridConstitution();
+
+            txtNameFinedMember.Clear();
+            txtSurnameFinedMember.Clear();
+            txtYearFinedMember.Clear();
+            txtConstitutionSection.Clear();
+            cmbFineStatus.SelectedIndex = -1;
+            cmbMonthFinedMember.SelectedIndex = -1;
+            cmbGenderFinedMember.SelectedIndex = -1;
+            FillDateGridFinedMembers();
 
             RefreshCounts();
         }
@@ -488,6 +546,34 @@ namespace APC.AllForms
         FinedMemberBLL finedMemberBLL = new FinedMemberBLL();
         FinedMemberDTO finedMemberDTO = new FinedMemberDTO();
         FinedMemberDetailDTO finedMemberDetail = new FinedMemberDetailDTO();
+        private void dataGridViewFinedMembers_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            finedMemberDetail = new FinedMemberDetailDTO();
+            finedMemberDetail.FinedMemberID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[0].Value);
+            finedMemberDetail.Name = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[1].Value.ToString();
+            finedMemberDetail.Surname = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[2].Value.ToString();
+            finedMemberDetail.ConstitutionSection = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[3].Value.ToString();
+            finedMemberDetail.ExpectedAmount = Convert.ToDecimal(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[4].Value);
+            finedMemberDetail.ExpectedAmountWithCurrency = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[5].Value.ToString();
+            finedMemberDetail.AmountPaid = Convert.ToDecimal(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[6].Value);
+            finedMemberDetail.AmountPaidWithCurrency = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[7].Value.ToString();
+            finedMemberDetail.Balance = Convert.ToDecimal(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[8].Value);
+            finedMemberDetail.BalanceWithCurrency = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[9].Value.ToString();
+            finedMemberDetail.FineStatus = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[10].Value.ToString();
+            finedMemberDetail.Gender = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[11].Value.ToString();
+            finedMemberDetail.Summary = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[12].Value.ToString();
+            finedMemberDetail.ConstitutionID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[13].Value);
+            finedMemberDetail.Constitution = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[14].Value.ToString();
+            finedMemberDetail.MemberID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[15].Value);
+            finedMemberDetail.PositionID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[16].Value);
+            finedMemberDetail.Position = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[17].Value.ToString();
+            finedMemberDetail.GenderID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[18].Value);
+            finedMemberDetail.Day = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[19].Value);
+            finedMemberDetail.MonthID = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[20].Value);
+            finedMemberDetail.MonthName = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[21].Value.ToString();
+            finedMemberDetail.Year = Convert.ToInt32(dataGridViewFinedMembers.Rows[e.RowIndex].Cells[22].Value);
+            finedMemberDetail.ImagePath = dataGridViewFinedMembers.Rows[e.RowIndex].Cells[23].Value.ToString();
+        }
         private void btnAddFinedMember_Click(object sender, EventArgs e)
         {
             FormFinedMember open = new FormFinedMember();
@@ -525,6 +611,7 @@ namespace APC.AllForms
             {
                 FormViewFinedMember open = new FormViewFinedMember();
                 open.detail = finedMemberDetail;
+                open.constID = finedMemberDetail.ConstitutionID;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;
@@ -533,7 +620,22 @@ namespace APC.AllForms
         }
         private void btnDeleteFinedMember_Click(object sender, EventArgs e)
         {
-
+            if (finedMemberDetail.FinedMemberID == 0)
+            {
+                MessageBox.Show("Please choose a member from the table.");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure?", "Warning!", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (finedMemberBLL.Delete(finedMemberDetail))
+                    {
+                        MessageBox.Show("Fined member was deleted!");
+                        ClearFilters();
+                    }
+                }
+            }
         }
 
         ConstitutionBLL constitutionBLL = new ConstitutionBLL();
@@ -555,6 +657,7 @@ namespace APC.AllForms
             constitutionDetail.ConstitutionText = dataGridViewConstitution.Rows[e.RowIndex].Cells[1].Value.ToString();
             constitutionDetail.Section = dataGridViewConstitution.Rows[e.RowIndex].Cells[2].Value.ToString();
             constitutionDetail.Fine = Convert.ToDecimal(dataGridViewConstitution.Rows[e.RowIndex].Cells[3].Value);
+            constitutionDetail.FineWithCurrency = dataGridViewConstitution.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
         private void btnViewConstitution_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using APC.DAL.DTO;
+﻿using APC.BLL;
+using APC.DAL;
+using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +27,9 @@ namespace APC.AllForms
         private extern static void SendMessage(IntPtr hWnd, int wMsg, int wParam, int IParam);
 
         public ConstitutionDetailDTO detail = new ConstitutionDetailDTO();
+        ConstitutionBLL bll = new ConstitutionBLL();
+        public bool isFinedMemberView = false;
+        public int ID;
 
         private void FormViewConstitution_Load(object sender, EventArgs e)
         {
@@ -37,6 +42,23 @@ namespace APC.AllForms
             txtConstitution.Text = detail.ConstitutionText;
             labelFine.Text = "€ " + detail.Fine;
             labelSection.Text = detail.Section;
+            if (isFinedMemberView)
+            {
+
+                List<CONSTITUTION> singleConstitution = bll.GetSingleConstitution(ID);
+                if (singleConstitution.Count == 0)
+                {
+                    MessageBox.Show("This constitution does not exist.");
+                }
+                else if (singleConstitution.Count > 0)
+                {
+                    CONSTITUTION constit = new CONSTITUTION();
+                    constit = singleConstitution.First();
+                    txtConstitution.Text = constit.constitution1;
+                    labelFine.Text = "€ " + constit.fine;
+                    labelSection.Text = constit.section;
+                }
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

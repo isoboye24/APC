@@ -79,6 +79,40 @@ namespace APC.DAL.DAO
             }            
         }
 
+        public List<CONSTITUTION> GetSingleConstitution(int ID)
+        {
+            try
+            {
+                List<CONSTITUTION> list = db.CONSTITUTIONs.Where(x => x.constitutionID == ID).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<ConstitutionSectionDetailDTO> SelectConstitutionSections()
+        {
+            try
+            {
+                List<ConstitutionSectionDetailDTO> constitutionSections = new List<ConstitutionSectionDetailDTO>();
+                var list = db.CONSTITUTIONs.Where(x => x.isDeleted == false).ToList();
+                foreach (var item in list)
+                {
+                    ConstitutionSectionDetailDTO dto = new ConstitutionSectionDetailDTO();
+                    dto.ConstitutionID = item.constitutionID;
+                    dto.Section = item.section;
+                    constitutionSections.Add(dto);
+                }
+                return constitutionSections;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool Update(CONSTITUTION entity)
         {
             try

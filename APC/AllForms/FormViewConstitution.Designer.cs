@@ -245,7 +245,7 @@
             this.labelSection.Name = "labelSection";
             this.labelSection.Size = new System.Drawing.Size(731, 21);
             this.labelSection.TabIndex = 5;
-            this.labelSection.Text = "Amount";
+            this.labelSection.Text = "Section 1.2";
             this.labelSection.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtConstitution

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.meetingsPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -104,10 +104,10 @@
             this.cmbFineStatus = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtConstitutionSection = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtNameFinedMember = new System.Windows.Forms.TextBox();
-            this.cmbSection = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSurnameFinedMember = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -598,8 +598,8 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(21, 98);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(899, 374);
             this.dataGridView1.TabIndex = 6;
@@ -948,8 +948,8 @@
             this.dataGridViewComments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewComments.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewComments.Name = "dataGridViewComments";
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewComments.RowTemplate.Height = 30;
             this.dataGridViewComments.Size = new System.Drawing.Size(899, 382);
             this.dataGridViewComments.TabIndex = 0;
@@ -1101,11 +1101,12 @@
             this.dataGridViewFinedMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFinedMembers.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewFinedMembers.Name = "dataGridViewFinedMembers";
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewFinedMembers.RowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewFinedMembers.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewFinedMembers.RowTemplate.Height = 30;
             this.dataGridViewFinedMembers.Size = new System.Drawing.Size(905, 330);
             this.dataGridViewFinedMembers.TabIndex = 0;
+            this.dataGridViewFinedMembers.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFinedMembers_RowEnter);
             // 
             // tableLayoutPanel17
             // 
@@ -1198,10 +1199,10 @@
             // 
             this.tableLayoutPanel19.ColumnCount = 1;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.txtConstitutionSection, 0, 3);
             this.tableLayoutPanel19.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.label24, 0, 2);
             this.tableLayoutPanel19.Controls.Add(this.txtNameFinedMember, 0, 1);
-            this.tableLayoutPanel19.Controls.Add(this.cmbSection, 0, 3);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1214,6 +1215,15 @@
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel19.Size = new System.Drawing.Size(167, 128);
             this.tableLayoutPanel19.TabIndex = 0;
+            // 
+            // txtConstitutionSection
+            // 
+            this.txtConstitutionSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtConstitutionSection.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConstitutionSection.Location = new System.Drawing.Point(3, 99);
+            this.txtConstitutionSection.Name = "txtConstitutionSection";
+            this.txtConstitutionSection.Size = new System.Drawing.Size(161, 27);
+            this.txtConstitutionSection.TabIndex = 5;
             // 
             // label23
             // 
@@ -1245,16 +1255,6 @@
             this.txtNameFinedMember.Name = "txtNameFinedMember";
             this.txtNameFinedMember.Size = new System.Drawing.Size(161, 27);
             this.txtNameFinedMember.TabIndex = 2;
-            // 
-            // cmbSection
-            // 
-            this.cmbSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbSection.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(3, 99);
-            this.cmbSection.Name = "cmbSection";
-            this.cmbSection.Size = new System.Drawing.Size(161, 28);
-            this.cmbSection.TabIndex = 1;
             // 
             // tableLayoutPanel20
             // 
@@ -1547,8 +1547,8 @@
             this.dataGridViewConstitution.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewConstitution.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewConstitution.Name = "dataGridViewConstitution";
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewConstitution.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewConstitution.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewConstitution.RowTemplate.Height = 30;
             this.dataGridViewConstitution.Size = new System.Drawing.Size(905, 386);
             this.dataGridViewConstitution.TabIndex = 0;
@@ -1843,7 +1843,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtNameFinedMember;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox cmbSection;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.TextBox txtSurnameFinedMember;
         private System.Windows.Forms.Label label25;
@@ -1855,5 +1854,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtYearFinedMember;
+        private System.Windows.Forms.TextBox txtConstitutionSection;
     }
 }

@@ -256,6 +256,8 @@
     <Compile Include="DAL\DTO\AbsenteesDTO.cs" />
     <Compile Include="DAL\DTO\ConstitutionDetailDTO.cs" />
     <Compile Include="DAL\DTO\ConstitutionDTO.cs" />
+    <Compile Include="DAL\DTO\ConstitutionSectionDetailDTO.cs" />
+    <Compile Include="DAL\DTO\ConstitutionSectionDTO.cs" />
     <Compile Include="DAL\DTO\DeletedDataDTO.cs" />
     <Compile Include="DAL\DTO\DocumentDetailDTO.cs" />
     <Compile Include="AllForms\FormDocumentList.cs">
