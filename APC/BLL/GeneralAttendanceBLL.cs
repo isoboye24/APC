@@ -3,9 +3,12 @@ using APC.DAL.DAO;
 using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace APC.BLL
 {
@@ -83,6 +86,16 @@ namespace APC.BLL
             generalAttendance.summary = entity.Summary;
             generalAttendance.attendanceDate = entity.AttendanceDate;
             return dao.Update(generalAttendance);
+        }
+
+        public void ShowSinglePartsOfSpeechYearly(int newYear, int PartOfSpeechID, Chart newChart, System.Windows.Forms.Label title)
+        {
+            string singlePartOfSpeechQuery = dao.getSinglePartsOfSpeechQuery(newYear);
+            SqlParameter[] singlePartsOfSpeechParameters = new SqlParameter[]
+            {
+                new SqlParameter("@year", SqlDbType.VarChar) { Value = newYear}
+            };
+            General.CreateChart(newChart, singlePartOfSpeechQuery, singlePartsOfSpeechParameters, SeriesChartType.Column, "Hours", "");
         }
     }
 }

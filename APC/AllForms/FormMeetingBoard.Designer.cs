@@ -1224,6 +1224,7 @@
             this.txtConstitutionSection.Name = "txtConstitutionSection";
             this.txtConstitutionSection.Size = new System.Drawing.Size(161, 27);
             this.txtConstitutionSection.TabIndex = 5;
+            this.txtConstitutionSection.TextChanged += new System.EventHandler(this.txtConstitutionSection_TextChanged);
             // 
             // label23
             // 
@@ -1255,6 +1256,7 @@
             this.txtNameFinedMember.Name = "txtNameFinedMember";
             this.txtNameFinedMember.Size = new System.Drawing.Size(161, 27);
             this.txtNameFinedMember.TabIndex = 2;
+            this.txtNameFinedMember.TextChanged += new System.EventHandler(this.txtNameFinedMember_TextChanged);
             // 
             // tableLayoutPanel20
             // 
@@ -1285,6 +1287,7 @@
             this.txtSurnameFinedMember.Name = "txtSurnameFinedMember";
             this.txtSurnameFinedMember.Size = new System.Drawing.Size(161, 27);
             this.txtSurnameFinedMember.TabIndex = 2;
+            this.txtSurnameFinedMember.TextChanged += new System.EventHandler(this.txtSurnameFinedMember_TextChanged);
             // 
             // label25
             // 
@@ -1344,6 +1347,8 @@
             this.txtYearFinedMember.Name = "txtYearFinedMember";
             this.txtYearFinedMember.Size = new System.Drawing.Size(161, 27);
             this.txtYearFinedMember.TabIndex = 4;
+            this.txtYearFinedMember.TextChanged += new System.EventHandler(this.txtYearFinedMember_TextChanged);
+            this.txtYearFinedMember.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtYearFinedMember_KeyPress);
             // 
             // label12
             // 
@@ -1385,6 +1390,7 @@
             this.btnSearchFinedMember.TabIndex = 0;
             this.btnSearchFinedMember.Text = "Search";
             this.btnSearchFinedMember.UseVisualStyleBackColor = false;
+            this.btnSearchFinedMember.Click += new System.EventHandler(this.btnSearchFinedMember_Click);
             // 
             // btnClearFinedMember
             // 
@@ -1400,6 +1406,7 @@
             this.btnClearFinedMember.TabIndex = 0;
             this.btnClearFinedMember.Text = "Clear";
             this.btnClearFinedMember.UseVisualStyleBackColor = false;
+            this.btnClearFinedMember.Click += new System.EventHandler(this.btnClearFinedMember_Click);
             // 
             // constitutionPage
             // 

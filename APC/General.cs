@@ -1,16 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace APC
 {
     public class General
     {
+        static string connectingString = "Server=localhost\\sqlexpress;Database=APC;integrated security=True;encrypt=True;trustservercertificate=True;";
+
+        public static void CreateChart(Chart chart, string query, SqlParameter[] parameters,
+            SeriesChartType chartType, string seriesName, string chartArea)
+        {
+            using (SqlConnection con = new SqlConnection(connectingString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
+                if (parameters != null)
+                {
+                    dataAdapter.SelectCommand.Parameters.AddRange(parameters);
+                }
+
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+
+                chart.DataSource = dt;
+                chart.Series.Clear();
+
+                Series series = new Series(seriesName);
+                series.XValueMember = dt.Columns[0].ColumnName;
+                series.YValueMembers = dt.Columns[1].ColumnName;
+                series.ChartType = chartType;
+                chart.Series.Add(series);
+                chart.DataBind();
+
+                CustomizeChartColumn(series, chartType, chartArea);
+            }
+        }
+        private static void CustomizeChartColumn(Series serie, SeriesChartType chartType, string chartArea)
+        {
+            switch (chartType)
+            {
+                case SeriesChartType.Pie:
+                    foreach (DataPoint point in serie.Points)
+                    {
+                        point.Label = string.Format("{0} ({1:P})", point.AxisLabel,
+                            point.YValues[0] / serie.Points.Sum(x => x.YValues[0]));
+                    }
+                    serie.IsValueShownAsLabel = true;
+                    serie.LabelForeColor = Color.Yellow;
+                    serie.Color = Color.Navy;
+                    serie.ChartArea = chartArea;
+                    break;
+
+                case SeriesChartType.Column:
+                    serie.IsValueShownAsLabel = true;
+                    break;
+            }
+        }
+
+        private static void CustomizeChartPie(Series serie, SeriesChartType chartType, string chartArea)
+        {
+            switch (chartType)
+            {
+                case SeriesChartType.Pie:
+                    foreach (DataPoint point in serie.Points)
+                    {
+                        point.Label = string.Format("{0} ({1:P})", point.AxisLabel,
+                            point.YValues[0] / serie.Points.Sum(x => x.YValues[0]));
+                    }
+                    serie.IsValueShownAsLabel = true;
+                    serie.LabelForeColor = Color.Yellow;
+                    serie.Color = Color.Navy;
+                    serie.ChartArea = chartArea;
+                    break;
+
+                case SeriesChartType.Column:
+                    serie.IsValueShownAsLabel = true;
+                    break;
+            }
+        }
         public static bool isNumber(KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

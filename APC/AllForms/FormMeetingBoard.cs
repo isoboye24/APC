@@ -81,6 +81,23 @@ namespace APC.AllForms
             btnUpdateConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnViewConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnClearConstitution.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label20.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label22.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label23.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label24.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label26.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalFineMembers.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnSearchFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClearFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtNameFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurnameFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtConstitutionSection.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbGenderFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMonthFinedMember.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbFineStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             #endregion
 
             dto = bll.Select();
@@ -92,6 +109,14 @@ namespace APC.AllForms
             General.ComboBoxProps(cmbGenderComments, "GenderName", "GenderID");
             cmbMonthComments.DataSource = commentDTO.Months;
             General.ComboBoxProps(cmbMonthComments, "MonthName", "MonthID");
+
+            finedMemberDTO = finedMemberBLL.Select();
+            cmbMonthFinedMember.DataSource = finedMemberDTO.Months;
+            General.ComboBoxProps(cmbMonthFinedMember, "MonthName", "MonthID");
+            cmbGenderFinedMember.DataSource = finedMemberDTO.Genders;
+            General.ComboBoxProps(cmbGenderFinedMember, "GenderName", "GenderID");
+            cmbFineStatus.Items.Add("Completed");
+            cmbFineStatus.Items.Add("NOT completed");
 
             #region
             dataGridView1.DataSource = dto.GeneralAttendance;
@@ -385,7 +410,7 @@ namespace APC.AllForms
         private void txtYear_TextChanged(object sender, EventArgs e)
         {
             List<GeneralAttendanceDetailDTO> list = dto.GeneralAttendance;
-            list = list.Where(x => x.Year.Contains(txtYear.Text.ToString())).ToList();
+            list = list.Where(x => x.Year.Contains(txtYear.Text.Trim())).ToList();
             dataGridView1.DataSource = list;
         }
 
@@ -499,28 +524,28 @@ namespace APC.AllForms
         private void txtSurnameComments_TextChanged(object sender, EventArgs e)
         {
             List<CommentDetailDTO> list = commentDTO.Comments;
-            list = list.Where(x => x.Surname.Contains(txtSurnameComments.Text)).ToList();
+            list = list.Where(x => x.Surname.Contains(txtSurnameComments.Text.Trim())).ToList();
             dataGridViewComments.DataSource = list;
         }
 
         private void txtNameComments_TextChanged(object sender, EventArgs e)
         {
             List<CommentDetailDTO> list = commentDTO.Comments;
-            list = list.Where(x => x.Name.Contains(txtNameComments.Text)).ToList();
+            list = list.Where(x => x.Name.Contains(txtNameComments.Text.Trim())).ToList();
             dataGridViewComments.DataSource = list;
         }
 
         private void txtYearComments_TextChanged(object sender, EventArgs e)
         {
             List<CommentDetailDTO> list = commentDTO.Comments;
-            list = list.Where(x => x.Year.Contains(txtYearComments.Text.ToString())).ToList();
+            list = list.Where(x => x.Year.Contains(txtYearComments.Text.Trim())).ToList();
             dataGridViewComments.DataSource = list;            
         }
 
         private void txtComment_TextChanged(object sender, EventArgs e)
         {
             List<CommentDetailDTO> list = commentDTO.Comments;
-            list = list.Where(x => x.CommentName.Contains(txtComment.Text)).ToList();
+            list = list.Where(x => x.CommentName.Contains(txtComment.Text.Trim())).ToList();
             dataGridViewComments.DataSource = list;
         }
 
@@ -737,6 +762,66 @@ namespace APC.AllForms
         }
 
         private void btnClearConstitution_Click(object sender, EventArgs e)
+        {
+            ClearFilters();
+        }
+
+        private void txtYearFinedMember_TextChanged(object sender, EventArgs e)
+        {
+            List<FinedMemberDetailDTO> list = finedMemberDTO.FineMembers;
+            list = list.Where(x => x.Year.ToString().Contains(txtYearFinedMember.Text.Trim())).ToList();
+            dataGridViewFinedMembers.DataSource = list;
+        }
+
+        private void txtYearFinedMember_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtNameFinedMember_TextChanged(object sender, EventArgs e)
+        {
+            List<FinedMemberDetailDTO> list = finedMemberDTO.FineMembers;
+            list = list.Where(x => x.Name.Contains(txtNameFinedMember.Text.Trim())).ToList();
+            dataGridViewFinedMembers.DataSource = list;
+        }
+
+        private void txtSurnameFinedMember_TextChanged(object sender, EventArgs e)
+        {
+            List<FinedMemberDetailDTO> list = finedMemberDTO.FineMembers;
+            list = list.Where(x => x.Surname.Contains(txtSurnameFinedMember.Text.Trim())).ToList();
+            dataGridViewFinedMembers.DataSource = list;
+        }
+
+        private void txtConstitutionSection_TextChanged(object sender, EventArgs e)
+        {
+            List<FinedMemberDetailDTO> list = finedMemberDTO.FineMembers;
+            list = list.Where(x => x.ConstitutionSection.Contains(txtConstitutionSection.Text.Trim())).ToList();
+            dataGridViewFinedMembers.DataSource = list;
+        }
+
+        private void btnSearchFinedMember_Click(object sender, EventArgs e)
+        {
+            List<FinedMemberDetailDTO> list = finedMemberDTO.FineMembers;
+            if (cmbGenderFinedMember.SelectedIndex !=-1)
+            {
+                list = list.Where(x => x.GenderID == Convert.ToInt32(cmbGenderFinedMember.SelectedValue)).ToList();
+            }
+            if (cmbMonthFinedMember.SelectedIndex != -1)
+            {
+                list = list.Where(x => x.MonthID == Convert.ToInt32(cmbMonthFinedMember.SelectedValue)).ToList();
+            }
+            if (cmbFineStatus.SelectedIndex == 0)
+            {                
+                list = list.Where(x => x.FineStatus == "Completed").ToList();
+            }
+            if (cmbFineStatus.SelectedIndex == 1)
+            {                
+                list = list.Where(x => x.FineStatus == "NOT completed").ToList();
+            }            
+            dataGridViewFinedMembers.DataSource = list;
+        }
+
+        private void btnClearFinedMember_Click(object sender, EventArgs e)
         {
             ClearFilters();
         }

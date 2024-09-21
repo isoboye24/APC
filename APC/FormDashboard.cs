@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -133,6 +134,23 @@ namespace APC
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            labelName.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelSurname.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelAccessLevel.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelPosition.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelAmountRaisedYearly.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelExpenditureYearly.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
+
+            picProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
+            picProfilePic.BorderStyle = BorderStyle.None;
+            picProfilePic.Width = picProfilePic.Height = 40;
+            picProfilePic.Paint += new PaintEventHandler(picProfilePic_Paint);
+
             int minWidthPercentage = 70;
             int minHeightPercentage = 70;
             int minWidth = Screen.PrimaryScreen.Bounds.Width * minWidthPercentage / 100;
@@ -143,8 +161,10 @@ namespace APC
             MemberDetailDTO detail = memberDTO.Members.First(x => x.MemberID == LoginInfo.MemberID);
             string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
             picProfilePic.ImageLocation = imagePath;
-            labelNameSurname.Text = detail.Name + " " + detail.Surname;
+            labelName.Text = detail.Name;
+            labelSurname.Text = detail.Surname;
             labelAccessLevel.Text = detail.PermissionName;
+            labelPosition.Text = detail.PositionName;
 
             if (!isAdmin && !isEditor)
             {
@@ -173,6 +193,16 @@ namespace APC
             {
                 RefreshAllCards(350, 42);
             }
+        }
+
+       
+
+        private void picProfilePic_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(0, 0, picProfilePic.Width - 1, picProfilePic.Height - 1);
+            Region rg = new Region(gp);
+            picProfilePic.Region = rg;
         }
 
         private void RefreshAllCards(int x, int y)
@@ -204,17 +234,17 @@ namespace APC
 
         private void iconClose_MouseEnter(object sender, EventArgs e)
         {
-            iconClose.BackColor = Color.Orange;
+            iconClose.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconClose_MouseHover(object sender, EventArgs e)
         {
-            iconClose.BackColor = Color.Orange;
+            iconClose.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconClose_MouseLeave(object sender, EventArgs e)
         {
-            iconClose.BackColor = Color.DarkOrange;
+            iconClose.BackColor = Color.DarkOliveGreen;
         }
         private void picBoxMin_Click_1(object sender, EventArgs e)
         {
@@ -227,17 +257,17 @@ namespace APC
 
         private void iconMaximize_MouseEnter(object sender, EventArgs e)
         {
-            iconMaximize.BackColor = Color.Orange;
+            iconMaximize.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconMaximize_MouseHover(object sender, EventArgs e)
         {
-            iconMaximize.BackColor = Color.Orange;
+            iconMaximize.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconMaximize_MouseLeave(object sender, EventArgs e)
         {
-            iconMaximize.BackColor = Color.DarkOrange;
+            iconMaximize.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconMaximize_Click_1(object sender, EventArgs e)
@@ -269,17 +299,17 @@ namespace APC
 
         private void iconMinimize_MouseEnter(object sender, EventArgs e)
         {
-            iconMinimize.BackColor = Color.Orange;
+            iconMinimize.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconMinimize_MouseHover(object sender, EventArgs e)
         {
-            iconMinimize.BackColor = Color.Orange;
+            iconMinimize.BackColor = Color.DarkOliveGreen;
         }
 
         private void iconMinimize_MouseLeave(object sender, EventArgs e)
         {
-            iconMinimize.BackColor = Color.DarkOrange;
+            iconMinimize.BackColor = Color.DarkOliveGreen;
         }
         private bool buttonWasClicked = false;
         private void btnDashboard_Click_1(object sender, EventArgs e)
