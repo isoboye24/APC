@@ -130,6 +130,7 @@ namespace APC
         EventsBLL eventBLL = new EventsBLL();
         FinancialReportBLL finBLL = new FinancialReportBLL();
         FormProperties initialDetail = new FormProperties();
+        GraphBLL graphBLL = new GraphBLL();
         public bool isAdmin = false;
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
@@ -229,7 +230,9 @@ namespace APC
             labelDuesMonthName.Text = "Dues in "+ monthToday + " "+ yearToday;
             labelTotalDuesYear.Text = "Total dues in " + yearToday;
             General.ValueCountInDecimal(labelMonthlyDues, finBLL.SelectTotalRaisedAmountMonthly(todayMonth), x-50, y);            
-            General.ValueCountInDecimal(labelYearlyDues, finBLL.SelectTotalRaisedAmountYearly(todayYear), x-50, y);            
+            General.ValueCountInDecimal(labelYearlyDues, finBLL.SelectTotalRaisedAmountYearly(todayYear), x-50, y);
+
+            //graphBLL.SelectAmountRaised(todayYear, chartAmountRaisedYearly, labelAmountRaisedYearly);
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

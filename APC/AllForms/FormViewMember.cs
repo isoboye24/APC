@@ -31,47 +31,30 @@ namespace APC.AllForms
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void btnViewChildren_Click(object sender, EventArgs e)
-        {
-            if (noOfChildren > 1)
-            {
-                FormViewChildrenList open = new FormViewChildrenList();
-                open.memberID = detail.MemberID;
-                open.isParent = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-            else if(noOfChildren < 2 && noOfChildren > 0)
-            {
-                FormViewChild open = new FormViewChild();
-                open.memberID = detail.MemberID;
-                open.isParent = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }            
-        }
-        public MemberDetailDTO detail = new MemberDetailDTO();
+        
         public bool isView = false;
-        ChildBLL childBLL = new ChildBLL();
-        int noOfChildren = 0;
-        int commentCount = 0;
-        CommentBLL commentBLL = new CommentBLL();
-        CommentDetailDTO commentDetail = new CommentDetailDTO();
-        CommentDTO dto = new CommentDTO();
+        public bool isFormer = false;
+        public MemberDetailDTO detail = new MemberDetailDTO();
         MemberBLL bll = new MemberBLL();
         int attendancePresentCount = 0;
         int attendanceAbsentCount = 0;
         decimal amountContributed = 0;
         decimal amountExpected = 0;
         decimal Balance = 0;
-        public bool isFormer = false;
+        ChildBLL childBLL = new ChildBLL();
+        int noOfChildren = 0;
+        CommentBLL commentBLL = new CommentBLL();
+        CommentDetailDTO commentDetail = new CommentDetailDTO();
+        CommentDTO dto = new CommentDTO();
+        int commentCount = 0;
+        FinedMemberBLL finedMemberBLL = new FinedMemberBLL();
+        int finesCount = 0;
+
         private void FormViewMember_Load(object sender, EventArgs e)
         {
             labelCommentText.Hide();
             labelNoOfComments.Hide();
-            btnNoComments.Hide();
+            btnNoComments.Hide();            
 
             dto = commentBLL.SelectMembersCommentList(detail.MemberID);
             commentCount = dto.Comments.Count(x => x.MemberID == detail.MemberID);
@@ -107,12 +90,29 @@ namespace APC.AllForms
                 btnViewChildren.Visible = true;
             }
 
+            finesCount = finedMemberBLL.SelectAllFinesCount(detail.MemberID);
+            btnViewFines.Hide();
+            labelNoOfFines.Text = finesCount.ToString();
+            if (finesCount > 0)
+            {
+                labelFinesText.Text = "Fine";
+                btnViewFines.Text = "View Fine";
+                btnViewFines.Visible = true;
+            }
+            if (finesCount > 1)
+            {
+                labelFinesText.Text = "Fines";
+                btnViewFines.Text = "View Fines";
+                btnViewFines.Visible = true;
+            }
+
             attendancePresentCount = bll.GetNoOfMembersPresentAttendance(detail.MemberID);
             labelNoOfPresent.Text = attendancePresentCount.ToString();
             btnViewPresentAttendance.Hide();
             if (attendancePresentCount > 0)
             {
                 btnViewPresentAttendance.Visible = true;
+                btnViewPresentAttendance.Text = "View Attendance";
             }
 
             attendanceAbsentCount = bll.GetNoOfMembersAbsentAttendance(detail.MemberID);
@@ -121,6 +121,7 @@ namespace APC.AllForms
             if (attendanceAbsentCount > 0)
             {
                 btnViewAbsentAttendance.Visible = true;
+                btnViewAbsentAttendance.Text = "View Attendance";
             }
             amountContributed = bll.GetAmountContributed(detail.MemberID);
             labelAmountContributed.Text = "€" + amountContributed;
@@ -128,6 +129,7 @@ namespace APC.AllForms
             if (amountContributed > 0)
             {
                 btnViewAmountContributed.Visible = true;
+                btnViewAmountContributed.Text = "View Amount";
             }
             amountExpected = bll.GetAmountExpected();
             labelAmountExpected.Text = "€" + amountExpected + ".00";
@@ -135,6 +137,7 @@ namespace APC.AllForms
             if (amountExpected > 0)
             {
                 btnViewAmountExpected.Visible = true;
+                btnViewAmountExpected.Text = "View Amount";
             }
             Balance = amountExpected - amountContributed;
             labelPersonalBalance.Text = "€" + Balance;
@@ -142,6 +145,7 @@ namespace APC.AllForms
             if (Balance > 0)
             {
                 btnViewPersonalBalance.Visible = true;
+                btnViewPersonalBalance.Text = "View Amount";
             }
 
             txtPhone2.Hide();
@@ -199,91 +203,6 @@ namespace APC.AllForms
             this.Close();
         }
 
-        private void btnViewComments_Click(object sender, EventArgs e)
-        {
-            if (commentCount > 1)
-            {
-                FormSingleCommentList open = new FormSingleCommentList();
-                open.memberID = detail.MemberID;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-            else if (commentCount < 2 && commentCount > 0)
-            {
-                commentDetail = dto.Comments.First(x => x.MemberID == detail.MemberID);
-                FormViewComment open = new FormViewComment();
-                open.detail = commentDetail;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-        private void btnViewAttendance_Click(object sender, EventArgs e)
-        {
-            if (attendancePresentCount > 0)
-            {
-                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                open.detail = detail;
-                open.isPresent = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
-        private void btnViewAbsentAttendance_Click(object sender, EventArgs e)
-        {
-            if (attendanceAbsentCount > 0)
-            {
-                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                open.detail = detail;
-                open.isAbsent = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
-        private void btnViewAmountContributed_Click(object sender, EventArgs e)
-        {
-            if (amountContributed > 0)
-            {
-                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                open.detail = detail;
-                open.isAmountContributed = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
-        private void btnViewAmountExpected_Click(object sender, EventArgs e)
-        {
-            if (amountExpected > 0)
-            {
-                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                open.detail = detail;
-                open.isAmountExpected = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
-        private void btnViewPersonalBalance_Click(object sender, EventArgs e)
-        {
-            if (Balance > 0)
-            {
-                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
-                open.detail = detail;
-                open.isPersonalBalance = true;
-                this.Hide();
-                open.ShowDialog();
-                this.Visible = true;
-            }
-        }
-
         private void iconMaximize_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -305,6 +224,127 @@ namespace APC.AllForms
             else
             {
                 WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void btnViewChildren_Click_1(object sender, EventArgs e)
+        {
+            if (noOfChildren > 1)
+            {
+                FormViewChildrenList open = new FormViewChildrenList();
+                open.memberID = detail.MemberID;
+                open.isParent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else if (noOfChildren < 2 && noOfChildren > 0)
+            {
+                FormViewChild open = new FormViewChild();
+                open.memberID = detail.MemberID;
+                open.isParent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnNoComments_Click(object sender, EventArgs e)
+        {
+            if (commentCount > 1)
+            {
+                FormSingleCommentList open = new FormSingleCommentList();
+                open.memberID = detail.MemberID;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+            else if (commentCount < 2 && commentCount > 0)
+            {
+                commentDetail = dto.Comments.First(x => x.MemberID == detail.MemberID);
+                FormViewComment open = new FormViewComment();
+                open.detail = commentDetail;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewPresentAttendance_Click(object sender, EventArgs e)
+        {
+            if (attendancePresentCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isPresent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAbsentAttendance_Click_1(object sender, EventArgs e)
+        {
+            if (attendanceAbsentCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAbsent = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAmountContributed_Click_1(object sender, EventArgs e)
+        {
+            if (amountContributed > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAmountContributed = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewAmountExpected_Click_1(object sender, EventArgs e)
+        {
+            if (amountExpected > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isAmountExpected = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewPersonalBalance_Click_1(object sender, EventArgs e)
+        {
+            if (Balance > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isPersonalBalance = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
+            }
+        }
+
+        private void btnViewFines_Click(object sender, EventArgs e)
+        {
+            if (finesCount > 0)
+            {
+                FormViewPersonalAttendances open = new FormViewPersonalAttendances();
+                open.detail = detail;
+                open.isPersonalFines = true;
+                this.Hide();
+                open.ShowDialog();
+                this.Visible = true;
             }
         }
     }

@@ -775,7 +775,7 @@ namespace APC.AllForms
 
         private void txtYearFinedMember_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = General.isNumber(e);
         }
 
         private void txtNameFinedMember_TextChanged(object sender, EventArgs e)

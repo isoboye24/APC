@@ -36,6 +36,11 @@ namespace APC.BLL
             return dao.GetBack(entity.FinedMemberID);
         }
 
+        public int SelectAllFinesCount(int ID)
+        {
+            return dao.SelectAllFinesCount(ID);
+        }
+
         public bool Insert(FinedMemberDetailDTO entity)
         {
             FINED_MEMBER finedMember = new FINED_MEMBER();

@@ -1,4 +1,5 @@
 ﻿using APC.BLL;
+using APC.DAL.DAO;
 using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
@@ -38,11 +39,18 @@ namespace APC.AllForms
         public bool isAmountContributed = false;
         public bool isAmountExpected = false;
         public bool isPersonalBalance = false;
+        public bool isPersonalFines = false;
         decimal amountContributed = 0;
         decimal amountExpected = 0;
         decimal Balance = 0;
+
+        decimal paidFinesAmount = 0;
+        decimal expectedFineAmount = 0;
+        decimal fineBalance = 0;
+
         private void FormViewPersonalAttendances_Load(object sender, EventArgs e)
         {
+            #region
             labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
@@ -56,6 +64,8 @@ namespace APC.AllForms
             btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             labelTotalAmount.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             labelTotalName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            #endregion
+
             dto = bll.Select(detail.MemberID);
             cmbMonth.DataSource = dto.Months;
             General.ComboBoxProps(cmbMonth, "MonthName", "MonthID");
@@ -64,9 +74,13 @@ namespace APC.AllForms
             tableLayoutPanelChangingAmount.Hide();
             tableLayoutPanelTotal.Hide();
 
-            amountContributed = memberBLL.GetAmountContributed(detail.MemberID);            
+            amountContributed = memberBLL.GetAmountContributed(detail.MemberID);
             amountExpected = memberBLL.GetAmountExpected();
             Balance = amountExpected - amountContributed;
+
+            paidFinesAmount = memberBLL.GetFinedAmountPaid(detail.MemberID);
+            expectedFineAmount = memberBLL.GetFinedAmountExpected(detail.MemberID);
+            fineBalance = expectedFineAmount - paidFinesAmount;
 
             if (isPresent)
             {
@@ -219,6 +233,52 @@ namespace APC.AllForms
                 labelTotalAmount.Text = "€" + Balance;
                 labelTotalName.Text = "Total Amt. Balance";
             }
+            if (isPersonalFines)
+            {
+                dataGridView1.DataSource = dto.FinedMember;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Name";
+                dataGridView1.Columns[2].HeaderText = "Surname";
+                dataGridView1.Columns[3].HeaderText = "Violated";
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].HeaderText = "Fine";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[6].Visible = false;
+                dataGridView1.Columns[7].HeaderText = "Paid";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].HeaderText = "Balance";
+                dataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[10].HeaderText = "Status";
+                dataGridView1.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].Visible = false;
+                dataGridView1.Columns[13].Visible = false;
+                dataGridView1.Columns[14].Visible = false;
+                dataGridView1.Columns[15].Visible = false;
+                dataGridView1.Columns[16].Visible = false;
+                dataGridView1.Columns[17].Visible = false;
+                dataGridView1.Columns[18].Visible = false;
+                dataGridView1.Columns[19].HeaderText = "Day";
+                dataGridView1.Columns[19].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[20].Visible = false;
+                dataGridView1.Columns[21].HeaderText = "Month";
+                dataGridView1.Columns[21].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[22].HeaderText = "Year";
+                dataGridView1.Columns[22].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[23].Visible = false;
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+                }
+                labelTitle.Text = detail.Surname + " " + detail.Name + "'s fine records";
+                string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
+                picProfile.ImageLocation = imagePath;
+                tableLayoutPanelChangingAmount.Visible = true;
+                tableLayoutPanelTotal.Visible = true;
+                labelTotalAmount.Text = "€ " + fineBalance;
+                labelTotalName.Text = "Total Balance";
+            }
         }
 
         private void ClearFilters()
@@ -231,6 +291,7 @@ namespace APC.AllForms
             rbEqualAttend.Checked = false;
             rbLessAttend.Checked = false;
             rbMoreAttend.Checked = false;
+            bll = new PersonalAttendanceBLL();
             dto = bll.Select(detail.MemberID);
             if (isPresent)
             {
@@ -252,6 +313,10 @@ namespace APC.AllForms
             {
                 dataGridView1.DataSource = dto.AmountsBalance;
             }
+            else if (isPersonalFines)
+            {
+                dataGridView1.DataSource = dto.FinedMember;                
+            }
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -261,18 +326,32 @@ namespace APC.AllForms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dto = bll.Select(detail.MemberID);
+
             List<PersonalAttendanceDetailDTO> list = dto.PresentMember;
+            List<FinedMemberDetailDTO> fineMemberlist = dto.FinedMember;
             if (cmbMonth.SelectedIndex != -1 && cmbYear.SelectedIndex != -1)
             {
                 list = list.Where(x => x.MonthID == Convert.ToInt32(cmbMonth.SelectedValue) && x.Year.Contains(cmbYear.SelectedValue.ToString())).ToList();
+                if (isPersonalFines)
+                {
+                    fineMemberlist = fineMemberlist.Where(x => x.MonthID == Convert.ToInt32(cmbMonth.SelectedValue) && x.Year.ToString().Contains(cmbYear.SelectedValue.ToString())).ToList();
+                }
             }
             if (cmbMonth.SelectedIndex != -1)
             {
                 list = list.Where(x => x.MonthID == Convert.ToInt32(cmbMonth.SelectedValue)).ToList();
+                if (isPersonalFines)
+                {
+                    fineMemberlist = fineMemberlist.Where(x => x.MonthID == Convert.ToInt32(cmbMonth.SelectedValue)).ToList();
+                }
             }
             if (cmbYear.SelectedIndex != -1)
             {
                 list = list.Where(x => x.Year.Contains(cmbYear.SelectedValue.ToString())).ToList();
+                if (isPersonalFines)
+                {
+                    fineMemberlist = fineMemberlist.Where(x => x.Year.ToString().Contains(cmbYear.SelectedValue.ToString())).ToList();
+                }
             }
             if (txtAmount.Text.Trim() != "")
             {
@@ -314,8 +393,34 @@ namespace APC.AllForms
                         MessageBox.Show("There is no result for amount contributed search");
                     }
                 }
+                if (isPersonalFines)
+                {
+                    if (rbLessAttend.Checked)
+                    {
+                        fineMemberlist = fineMemberlist.Where(x => x.Balance < Convert.ToDecimal(txtAmount.Text.Trim())).ToList();
+                    }
+                    else if (rbEqualAttend.Checked)
+                    {
+                        fineMemberlist = fineMemberlist.Where(x => x.Balance == Convert.ToDecimal(txtAmount.Text.Trim())).ToList();
+                    }
+                    else if (rbMoreAttend.Checked)
+                    {
+                        fineMemberlist = fineMemberlist.Where(x => x.Balance > Convert.ToDecimal(txtAmount.Text.Trim())).ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("There is no result for amount contributed search");
+                    }
+                }
             }
-            dataGridView1.DataSource = list;
+            if (!isPersonalFines)
+            {
+                dataGridView1.DataSource = list;
+            }    
+            else if (isPersonalFines)
+            {
+                dataGridView1.DataSource = fineMemberlist;
+            }
         }
 
         private void tableLayoutPanelChangingAmount_Paint(object sender, PaintEventArgs e)

@@ -209,6 +209,7 @@
     <Compile Include="BLL\DocumentBLL.cs" />
     <Compile Include="BLL\FinedMemberBLL.cs" />
     <Compile Include="BLL\GeneralAttendanceBLL.cs" />
+    <Compile Include="BLL\GraphBLL.cs" />
     <Compile Include="BLL\MembershipStatusBLL.cs" />
     <Compile Include="BLL\RelationshipsToKinBLL.cs" />
     <Compile Include="CircularPictureBox.cs">
@@ -232,6 +233,7 @@
     <Compile Include="DAL\DAO\ConstitutionDAO.cs" />
     <Compile Include="DAL\DAO\DocumentDAO.cs" />
     <Compile Include="DAL\DAO\FinedMemberDAO.cs" />
+    <Compile Include="DAL\DAO\GraphDAO.cs" />
     <Compile Include="DAL\DAO\MembershipStatusDAO.cs" />
     <Compile Include="DAL\DAO\RelationshipToNextOfKinDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
@@ -447,6 +449,8 @@
     <Compile Include="DAL\DTO\FinancialReportDTO.cs" />
     <Compile Include="DAL\DTO\FinedMemberDetailDTO.cs" />
     <Compile Include="DAL\DTO\FinedMemberDTO.cs" />
+    <Compile Include="DAL\DTO\GraphAmountDetailDTO.cs" />
+    <Compile Include="DAL\DTO\GraphDTO.cs" />
     <Compile Include="DAL\DTO\MembershipStatusDetailDTO.cs" />
     <Compile Include="DAL\DTO\MembershipStatusDTO.cs" />
     <Compile Include="DAL\DTO\PersonalAttendanceDetailDTO.cs" />

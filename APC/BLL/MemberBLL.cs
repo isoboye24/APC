@@ -23,6 +23,7 @@ namespace APC.BLL
         CountryDAO countryDAO = new CountryDAO();
         MembershipStatusDAO memStatus = new MembershipStatusDAO();
         RelationshipToNextOfKinDAO kinsDAO = new RelationshipToNextOfKinDAO();
+        FinedMemberDAO finedMemberDAO = new FinedMemberDAO();
 
         // These classes are here for the sake of deletedData form
         GeneralAttendanceDAO genAttendDAO = new GeneralAttendanceDAO();
@@ -34,6 +35,7 @@ namespace APC.BLL
         DocumentDAO documentDAO = new DocumentDAO();
         EventsDAO eventDAO = new EventsDAO();
         EventImageDAO eventImageDAO = new EventImageDAO();
+
         public bool Delete(MemberDetailDTO entity)
         {
             MEMBER member = new MEMBER();
@@ -166,10 +168,19 @@ namespace APC.BLL
         {
             return memberDAO.GetNoOfMembersAbsentAttendance(ID);
         }
+        public decimal GetFinedAmountPaid(int ID)
+        {
+            return finedMemberDAO.GetFinedAmountPaid(ID);
+        }
+        public decimal GetFinedAmountExpected(int ID)
+        {
+            return finedMemberDAO.GetFinedAmountExpected(ID);
+        }
         public decimal GetAmountContributed(int ID)
         {
             return memberDAO.GetAmountContributed(ID);
         }
+        // To be edited to make it been specific to each member
         public decimal GetAmountExpected()
         {
             return memberDAO.GetAmountExpected();

@@ -16,6 +16,7 @@ namespace APC.BLL
         AttendanceStatusDAO attendStatusDAO = new AttendanceStatusDAO();
         MonthDAO monthDAO = new MonthDAO();
         PersonalAttendanceDAO dao = new PersonalAttendanceDAO();
+        FinedMemberDAO finedMemeberDAO = new FinedMemberDAO();
         public bool Delete(PersonalAttendanceDetailDTO entity)
         {
             throw new NotImplementedException();
@@ -61,6 +62,7 @@ namespace APC.BLL
             dto.AmountsContributed = dao.AmountsContributed(ID);
             dto.AmountExpected = dao.AmountsExpected(ID);
             dto.AmountsBalance = dao.AmountsBalance(ID);
+            dto.FinedMember = finedMemeberDAO.SelectFinedMember(ID);
             return dto;
         }
 
