@@ -35,6 +35,7 @@ namespace APC.BLL
         DocumentDAO documentDAO = new DocumentDAO();
         EventsDAO eventDAO = new EventsDAO();
         EventImageDAO eventImageDAO = new EventImageDAO();
+        ConstitutionDAO constitutionDAO = new ConstitutionDAO();
 
         public bool Delete(MemberDetailDTO entity)
         {
@@ -150,6 +151,8 @@ namespace APC.BLL
             dto.Expenditures = expenditureDAO.Select(isDeleted);
             dto.FinancialReports = finRepDAO.Select(isDeleted);
             dto.GeneralAttendance = genAttendDAO.Select(isDeleted);
+            dto.Constitutions = constitutionDAO.Select(isDeleted);
+            dto.FinedMembers = finedMemberDAO.Select(isDeleted);
             return dto;
         }
         public int SelectAllMembersCount()

@@ -1,4 +1,5 @@
 ﻿using APC.BLL;
+using APC.DAL.DAO;
 using APC.DAL.DTO;
 using System;
 using System.Collections.Generic;
@@ -209,6 +210,8 @@ namespace APC.AllForms
             cmbDeletedData.Items.Add("General Attendance");
             cmbDeletedData.Items.Add("Expenditure");
             cmbDeletedData.Items.Add("Financial Report");
+            cmbDeletedData.Items.Add("Constitution");
+            cmbDeletedData.Items.Add("Fined Member");
 
             memberDeletedDataDTO = memberDeletedDataBLL.Select(true);
             dataGridView1.DataSource = memberDeletedDataDTO.Members;
@@ -814,6 +817,10 @@ namespace APC.AllForms
         ExpenditureDetailDTO expenditureDeletedDataDetail = new ExpenditureDetailDTO();
         FinancialReportBLL financialRepDeletedDataBLL = new FinancialReportBLL();
         FinancialReportDetailDTO financialRepDeletedDataDetail = new FinancialReportDetailDTO();
+        ConstitutionBLL constitutionDeletedDataBLL = new ConstitutionBLL();
+        ConstitutionDetailDTO constitutionDeletedDataDetail = new ConstitutionDetailDTO();
+        FinedMemberBLL finedMemberDeletedDataBLL = new FinedMemberBLL();
+        FinedMemberDetailDTO finedMemberDeletedDataDetail = new FinedMemberDetailDTO();
 
         private void cmbDeletedData_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1087,6 +1094,59 @@ namespace APC.AllForms
                     column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
                 }
             }
+            else if (cmbDeletedData.SelectedIndex == 15)
+            {
+                dataGridView1.DataSource = memberDeletedDataDTO.Constitutions;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Constitution";
+                dataGridView1.Columns[2].HeaderText = "Section";
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[3].Visible = false;
+                dataGridView1.Columns[4].HeaderText = "Fine";
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+                }
+            }
+            else if (cmbDeletedData.SelectedIndex == 16)
+            {
+                dataGridView1.DataSource = memberDeletedDataDTO.FinedMembers;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Name";
+                dataGridView1.Columns[2].HeaderText = "Surname";
+                dataGridView1.Columns[3].HeaderText = "Violated";
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].HeaderText = "Fine";
+                dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[6].Visible = false;
+                dataGridView1.Columns[7].HeaderText = "Paid";
+                dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].HeaderText = "Status";
+                dataGridView1.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].Visible = false;
+                dataGridView1.Columns[13].Visible = false;
+                dataGridView1.Columns[14].Visible = false;
+                dataGridView1.Columns[15].Visible = false;
+                dataGridView1.Columns[16].Visible = false;
+                dataGridView1.Columns[17].Visible = false;
+                dataGridView1.Columns[18].Visible = false;
+                dataGridView1.Columns[19].HeaderText = "Day";
+                dataGridView1.Columns[19].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[20].Visible = false;
+                dataGridView1.Columns[21].HeaderText = "Month";
+                dataGridView1.Columns[21].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[22].HeaderText = "Year";
+                dataGridView1.Columns[22].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[23].Visible = false;
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.HeaderCell.Style.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+                }
+            }
             else
             {
                 MessageBox.Show("Unknown data");
@@ -1297,6 +1357,43 @@ namespace APC.AllForms
                 financialRepDeletedDataDetail.TotalAmountSpent = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                 financialRepDeletedDataDetail.Balance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
                 financialRepDeletedDataDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            }
+            else if (cmbDeletedData.SelectedIndex == 15)
+            {
+                constitutionDeletedDataDetail = new ConstitutionDetailDTO();
+                constitutionDeletedDataDetail.ConstitutionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                constitutionDeletedDataDetail.ConstitutionText = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                constitutionDeletedDataDetail.Section = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                constitutionDeletedDataDetail.Fine = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                constitutionDeletedDataDetail.FineWithCurrency = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            else if (cmbDeletedData.SelectedIndex == 16)
+            {
+                finedMemberDeletedDataDetail = new FinedMemberDetailDTO();
+                finedMemberDeletedDataDetail.FinedMemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                finedMemberDeletedDataDetail.Name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                finedMemberDeletedDataDetail.Surname = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                finedMemberDeletedDataDetail.ConstitutionSection = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                finedMemberDeletedDataDetail.ExpectedAmount = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+                finedMemberDeletedDataDetail.ExpectedAmountWithCurrency = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                finedMemberDeletedDataDetail.AmountPaid = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+                finedMemberDeletedDataDetail.AmountPaidWithCurrency = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                finedMemberDeletedDataDetail.Balance = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+                finedMemberDeletedDataDetail.BalanceWithCurrency = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                finedMemberDeletedDataDetail.FineStatus = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+                finedMemberDeletedDataDetail.Gender = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+                finedMemberDeletedDataDetail.Summary = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+                finedMemberDeletedDataDetail.ConstitutionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
+                finedMemberDeletedDataDetail.Constitution = dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString();
+                finedMemberDeletedDataDetail.MemberID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[15].Value);
+                finedMemberDeletedDataDetail.PositionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[16].Value);
+                finedMemberDeletedDataDetail.Position = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString();
+                finedMemberDeletedDataDetail.GenderID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[18].Value);
+                finedMemberDeletedDataDetail.Day = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[19].Value);
+                finedMemberDeletedDataDetail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[20].Value);
+                finedMemberDeletedDataDetail.MonthName = dataGridView1.Rows[e.RowIndex].Cells[21].Value.ToString();
+                finedMemberDeletedDataDetail.Year = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[22].Value);
+                finedMemberDeletedDataDetail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[23].Value.ToString();
             }
         }
 
@@ -1578,6 +1675,38 @@ namespace APC.AllForms
                         MessageBox.Show("Financial report was retrieved");
                         memberDeletedDataDTO = memberDeletedDataBLL.Select(true);
                         dataGridView1.DataSource = memberDeletedDataDTO.FinancialReports;
+                    }
+                }
+            }
+            else if (cmbDeletedData.SelectedIndex == 15)
+            {
+                if (constitutionDeletedDataDetail.ConstitutionID == 0)
+                {
+                    MessageBox.Show("Please choose a constitution from the table");
+                }
+                else
+                {
+                    if (constitutionDeletedDataBLL.GetBack(constitutionDeletedDataDetail))
+                    {
+                        MessageBox.Show("Constitution was retrieved");
+                        memberDeletedDataDTO = memberDeletedDataBLL.Select(true);
+                        dataGridView1.DataSource = memberDeletedDataDTO.Constitutions;
+                    }
+                }
+            }
+            else if (cmbDeletedData.SelectedIndex == 16)
+            {
+                if (finedMemberDeletedDataDetail.FinedMemberID == 0)
+                {
+                    MessageBox.Show("Please choose a fined member from the table");
+                }
+                else
+                {
+                    if (finedMemberDeletedDataBLL.GetBack(finedMemberDeletedDataDetail))
+                    {
+                        MessageBox.Show("Fined member was retrieved");
+                        memberDeletedDataDTO = memberDeletedDataBLL.Select(true);
+                        dataGridView1.DataSource = memberDeletedDataDTO.FinedMembers;
                     }
                 }
             }

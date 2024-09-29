@@ -23,5 +23,7 @@ namespace APC.DAL.DTO
         public List<ExpenditureDetailDTO> Expenditures { get; set; }
         public List<FinancialReportDetailDTO> FinancialReports { get; set; }
         public List<GeneralAttendanceDetailDTO> GeneralAttendance { get; set; }
+        public List<ConstitutionDetailDTO> Constitutions { get; set; }
+        public List<FinedMemberDetailDTO> FinedMembers { get; set; }
     }
 }
