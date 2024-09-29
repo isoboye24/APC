@@ -131,8 +131,8 @@ namespace APC.AllForms
                 btnViewAmountContributed.Visible = true;
                 btnViewAmountContributed.Text = "View Amount";
             }
-            amountExpected = bll.GetAmountExpected();
-            labelAmountExpected.Text = "€" + amountExpected + ".00";
+            amountExpected = bll.GetAmountExpected(detail.MemberID);
+            labelAmountExpected.Text = "€" + amountExpected;
             btnViewAmountExpected.Hide();
             if (amountExpected > 0)
             {

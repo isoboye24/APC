@@ -184,9 +184,9 @@ namespace APC.BLL
             return memberDAO.GetAmountContributed(ID);
         }
         // To be edited to make it been specific to each member
-        public decimal GetAmountExpected()
+        public decimal GetAmountExpected(int ID)
         {
-            return memberDAO.GetAmountExpected();
+            return memberDAO.GetAmountExpected(ID);
         }
         public int Select3MonthsAbsentesCount()
         {

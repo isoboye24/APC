@@ -1106,20 +1106,31 @@ namespace APC.DAL.DAO
                 throw ex;
             }
         }
-        public decimal GetAmountExpected()
+        public decimal GetAmountExpected(int ID)
         {
             try
-            {                
-                int meeting = db.GENERAL_ATTENDANCE.Count(x=>x.isDeleted == false);
-                if (meeting != 0)
+            {
+                var memberInfo = db.MEMBERs.FirstOrDefault(x => x.memberID == ID && x.isDeleted == false);
+                decimal totalAmountExpected;
+                List<int> meetingCount = new List<int>();
+
+                if (memberInfo != null)
                 {
-                    decimal totalAmountExpected = 10 * meeting;
-                    return totalAmountExpected;
+                    DateTime membershipDate = (DateTime)memberInfo.membershipDate;
+
+                    int meeting = (from p in db.PERSONAL_ATTENDANCE
+                                   join g in db.GENERAL_ATTENDANCE on p.generalAttendanceID equals g.generalAttendanceID
+                                   join m in db.MEMBERs on p.memberID equals m.memberID
+                                   where m.memberID == ID && g.isDeleted == false && g.attendanceDate > membershipDate
+                                   select p).Count();
+                    if (meeting != 0)
+                    {
+                        meetingCount.Add(meeting);                        
+                    }                    
                 }
-                else
-                {
-                    return 0;
-                }
+                decimal feePerMeeting = 10.0m;
+                totalAmountExpected = feePerMeeting * meetingCount.Sum();
+                return totalAmountExpected;
             }
             catch (Exception ex)
             {

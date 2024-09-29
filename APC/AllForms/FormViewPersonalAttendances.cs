@@ -75,7 +75,7 @@ namespace APC.AllForms
             tableLayoutPanelTotal.Hide();
 
             amountContributed = memberBLL.GetAmountContributed(detail.MemberID);
-            amountExpected = memberBLL.GetAmountExpected();
+            amountExpected = memberBLL.GetAmountExpected(detail.MemberID);
             Balance = amountExpected - amountContributed;
 
             paidFinesAmount = memberBLL.GetFinedAmountPaid(detail.MemberID);
