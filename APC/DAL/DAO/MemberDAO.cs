@@ -983,9 +983,9 @@ namespace APC.DAL.DAO
             {
                 foreach (var memberID in membersAppearingThreeTimes)
                 {
-                    var list = (from m in db.MEMBERs.Where(x => x.memberID == memberID)
+                    var list = (from m in db.MEMBERs.Where(x => x.isDeleted == false && x.memberID == memberID)
                                 join g in db.GENDERs on m.genderID equals g.genderID
-                                join pos in db.POSITIONs.Where(x => x.isDeleted == false) on m.positionID equals pos.positionID
+                                join pos in db.POSITIONs on m.positionID equals pos.positionID
                                 join ms in db.MEMBERSHIP_STATUS.Where(x => x.membershipStatus == "Current") on m.membershipStatusID equals ms.membershipStatusID
                                 select new
                                 {
@@ -1024,22 +1024,41 @@ namespace APC.DAL.DAO
             List<int> members = new List<int>();
             List<int> absentMembers = new List<int>();
             List<string> absentCheckList = new List<string>();
-            var Absentees = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
-                             join mem in db.MEMBERs.Where(x => x.isDeleted == false) on p.memberID equals mem.memberID
-                             join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Absent") on p.attendanceStatusID equals ats.attendanceStatusID
-                             join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).Take(3) on p.generalAttendanceID equals gen.generalAttendanceID
-                             select new
-                             {
-                                 attendanceID = p.attendanceID,
-                                 memberID = mem.memberID,
-                             }).ToList();
-            foreach (var item in Absentees)
+
+            var last3Meetings = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).ThenByDescending(x => x.day).Take(3).ToList();
+            foreach (var meeting in last3Meetings)
             {
-                members.Add(item.memberID);
+                var allAbsentMembers = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.generalAttendanceID == meeting.generalAttendanceID).ToList();
+                foreach (var member in allAbsentMembers)
+                {
+                    members.Add(member.memberID);
+                }
             }
             var membersAppearingThreeTimes = General.FindMembersAppearingThreeTimes(members);
             int memberCount = membersAppearingThreeTimes.Count();
-            return memberCount;
+            if (memberCount > 0)
+            {
+                return memberCount;
+            }
+            else
+            {
+                return 0;
+            }
+
+            //var Absentees = (from p in db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false)
+            //                 join mem in db.MEMBERs.Where(x => x.isDeleted == false) on p.memberID equals mem.memberID
+            //                 join ats in db.ATTENDANCE_STATUS.Where(x => x.attendanceStatus == "Absent") on p.attendanceStatusID equals ats.attendanceStatusID
+            //                 join gen in db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x => x.year).ThenByDescending(x => x.monthID).ThenByDescending(x => x.day).Take(3) on p.generalAttendanceID equals gen.generalAttendanceID
+            //                 select new
+            //                 {
+            //                     attendanceID = p.attendanceID,
+            //                     memberID = mem.memberID,
+            //                 }).ToList();
+            //foreach (var item in Absentees)
+            //{
+            //    members.Add(item.memberID);
+            //}
+
         }
         public int GetNoOfMembersPresentAttendance(int ID)
         {

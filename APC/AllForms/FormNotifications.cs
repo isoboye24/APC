@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -44,8 +46,16 @@ namespace APC.AllForms
         public bool isLogin = false;
         public bool isAdmin = false;
         public bool isEditor = false;
+        public int numbers;
         private void FormNotifications_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtSearchSurname.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            #endregion
+
             dto = bll.Select();
             dataGridView1.DataSource = dto.Absentees;
             dataGridView1.Columns[0].Visible = false;

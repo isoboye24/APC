@@ -80,7 +80,26 @@ namespace APC
         }
         private void FormEmploymentStatus_Load(object sender, EventArgs e)
         {
-            txtEmpStatus.Text = detail.EmploymentStatus;
-        }        
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtEmpStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
+            if (isUpdate)
+            {
+                txtEmpStatus.Text = detail.EmploymentStatus;
+                labelTitle.Text = "Edit Employement Status";
+            }
+            else
+            {
+                labelTitle.Text = "Add Employement Status";
+            }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -564,6 +564,7 @@
             // 
             // txtNameOfNextOfKin
             // 
+            this.txtNameOfNextOfKin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNameOfNextOfKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameOfNextOfKin.Location = new System.Drawing.Point(138, 304);
             this.txtNameOfNextOfKin.Name = "txtNameOfNextOfKin";
@@ -584,6 +585,7 @@
             // 
             // txtRelationshipToKin
             // 
+            this.txtRelationshipToKin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRelationshipToKin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRelationshipToKin.Location = new System.Drawing.Point(138, 347);
             this.txtRelationshipToKin.Name = "txtRelationshipToKin";
@@ -676,6 +678,7 @@
             // 
             // txtSurname
             // 
+            this.txtSurname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSurname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSurname.Location = new System.Drawing.Point(121, 3);
             this.txtSurname.Name = "txtSurname";
@@ -685,6 +688,7 @@
             // 
             // txtName
             // 
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(121, 44);
             this.txtName.Name = "txtName";
@@ -716,6 +720,7 @@
             // 
             // txtNationality
             // 
+            this.txtNationality.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNationality.Location = new System.Drawing.Point(121, 331);
             this.txtNationality.Name = "txtNationality";
@@ -800,6 +805,7 @@
             // 
             // txtGender
             // 
+            this.txtGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGender.Location = new System.Drawing.Point(121, 249);
             this.txtGender.Name = "txtGender";
@@ -842,6 +848,7 @@
             // 
             // txtPosition
             // 
+            this.txtPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPosition.Location = new System.Drawing.Point(121, 290);
             this.txtPosition.Name = "txtPosition";

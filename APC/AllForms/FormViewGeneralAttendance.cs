@@ -60,6 +60,42 @@ namespace APC.AllForms
         PersonalAttendanceDetailDTO personalDetail = new PersonalAttendanceDetailDTO();
         private void FormViewAttendance_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalDuesBalance.Font = new Font("Segoe UI", 22, FontStyle.Bold);
+            labelTotalDuesExpected.Font = new Font("Segoe UI", 22, FontStyle.Bold);
+            labelTotalDuesPaid.Font = new Font("Segoe UI", 22, FontStyle.Bold);
+            labelTotalMembersAbsent.Font = new Font("Segoe UI", 22, FontStyle.Bold);
+            labelTotalMembersPresent.Font = new Font("Segoe UI", 22, FontStyle.Bold);
+
+            rbEqual.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            rbLess.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            rbMore.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMonthlyDues.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            cmbAttendanceStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnViewSummary.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             dto = bll.Select();
 
             cmbAttendanceStatus.DataSource = dto.AttendanceStatuses;

@@ -34,6 +34,7 @@ namespace APC.AllForms
             label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             labelTotalMeetings.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            labelTotalPaidFines.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             rbEqualAttend.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             rbEqualMonDues.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             rbLessAttend.Font = new Font("Segoe UI", 12, FontStyle.Bold);
@@ -224,10 +225,11 @@ namespace APC.AllForms
         }
         private void RefreshCounts()
         {
-            labelTotalMeetings.Text = "Total: " + dataGridView1.RowCount.ToString();
-            labelTotalComments.Text = "Total: " + dataGridViewComments.RowCount.ToString();
-            labelTotalConstitutions.Text = "Total: " + dataGridViewConstitution.RowCount.ToString();
-            labelTotalFineMembers.Text = "Total: " + dataGridViewFinedMembers.RowCount.ToString();
+            labelTotalMeetings.Text = "Rows: " + dataGridView1.RowCount.ToString();
+            labelTotalComments.Text = "Rows: " + dataGridViewComments.RowCount.ToString();
+            labelTotalConstitutions.Text = "Rows: " + dataGridViewConstitution.RowCount.ToString();
+            labelTotalFineMembers.Text = "Rows: " + dataGridViewFinedMembers.RowCount.ToString();
+            labelTotalPaidFines.Text = "Total Paid: " + bll.TotalPaidFines();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

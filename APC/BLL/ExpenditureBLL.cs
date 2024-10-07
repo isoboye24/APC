@@ -57,5 +57,14 @@ namespace APC.BLL
             expenditure.expenditureDate = entity.ExpenditureDate;
             return dao.Update(expenditure);
         }
+
+        public decimal SelectTotalExpendituresYearly(int year)
+        {
+            return dao.SelectTotalExpendituresYearly(year);
+        }
+        public decimal SelectTotalExpenditures()
+        {
+            return dao.SelectTotalExpenditures();
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.financialReportPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,6 +38,7 @@
             this.btnViewFinReport = new System.Windows.Forms.Button();
             this.btnAddFinReport = new System.Windows.Forms.Button();
             this.btnDeleteFinReport = new System.Windows.Forms.Button();
+            this.labelTotalFinReport = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtYearFinReport = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             this.btnUpdateExpReport = new System.Windows.Forms.Button();
             this.btnDeleteExpReport = new System.Windows.Forms.Button();
             this.btnViewExpReport = new System.Windows.Forms.Button();
+            this.labelTotalExpReport = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtYearExpReport = new System.Windows.Forms.TextBox();
@@ -68,8 +70,6 @@
             this.cmbMonthExpReport = new System.Windows.Forms.ComboBox();
             this.btnClearExpReport = new System.Windows.Forms.Button();
             this.dataGridViewExpReport = new System.Windows.Forms.DataGridView();
-            this.labelTotalExpReport = new System.Windows.Forms.Label();
-            this.labelTotalFinReport = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.financialReportPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -222,6 +222,17 @@
             this.btnDeleteFinReport.Text = "Delete";
             this.btnDeleteFinReport.UseVisualStyleBackColor = false;
             this.btnDeleteFinReport.Click += new System.EventHandler(this.btnDeleteFinReport_Click);
+            // 
+            // labelTotalFinReport
+            // 
+            this.labelTotalFinReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalFinReport.AutoSize = true;
+            this.labelTotalFinReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalFinReport.Location = new System.Drawing.Point(876, 37);
+            this.labelTotalFinReport.Name = "labelTotalFinReport";
+            this.labelTotalFinReport.Size = new System.Drawing.Size(40, 17);
+            this.labelTotalFinReport.TabIndex = 4;
+            this.labelTotalFinReport.Text = "Total:";
             // 
             // tableLayoutPanel13
             // 
@@ -427,8 +438,8 @@
             this.dataGridViewFinReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFinReport.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewFinReport.Name = "dataGridViewFinReport";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewFinReport.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewFinReport.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewFinReport.RowTemplate.Height = 30;
             this.dataGridViewFinReport.Size = new System.Drawing.Size(637, 409);
             this.dataGridViewFinReport.TabIndex = 2;
@@ -558,6 +569,17 @@
             this.btnViewExpReport.UseVisualStyleBackColor = false;
             this.btnViewExpReport.Click += new System.EventHandler(this.btnViewExpReport_Click);
             // 
+            // labelTotalExpReport
+            // 
+            this.labelTotalExpReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalExpReport.AutoSize = true;
+            this.labelTotalExpReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalExpReport.Location = new System.Drawing.Point(856, 52);
+            this.labelTotalExpReport.Name = "labelTotalExpReport";
+            this.labelTotalExpReport.Size = new System.Drawing.Size(40, 17);
+            this.labelTotalExpReport.TabIndex = 4;
+            this.labelTotalExpReport.Text = "Total:";
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 10;
@@ -668,34 +690,12 @@
             this.dataGridViewExpReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewExpReport.Location = new System.Drawing.Point(21, 63);
             this.dataGridViewExpReport.Name = "dataGridViewExpReport";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewExpReport.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewExpReport.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewExpReport.RowTemplate.Height = 30;
             this.dataGridViewExpReport.Size = new System.Drawing.Size(899, 396);
             this.dataGridViewExpReport.TabIndex = 4;
             this.dataGridViewExpReport.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewExpReport_RowEnter);
-            // 
-            // labelTotalExpReport
-            // 
-            this.labelTotalExpReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalExpReport.AutoSize = true;
-            this.labelTotalExpReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalExpReport.Location = new System.Drawing.Point(856, 52);
-            this.labelTotalExpReport.Name = "labelTotalExpReport";
-            this.labelTotalExpReport.Size = new System.Drawing.Size(40, 17);
-            this.labelTotalExpReport.TabIndex = 4;
-            this.labelTotalExpReport.Text = "Total:";
-            // 
-            // labelTotalFinReport
-            // 
-            this.labelTotalFinReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTotalFinReport.AutoSize = true;
-            this.labelTotalFinReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalFinReport.Location = new System.Drawing.Point(876, 37);
-            this.labelTotalFinReport.Name = "labelTotalFinReport";
-            this.labelTotalFinReport.Size = new System.Drawing.Size(40, 17);
-            this.labelTotalFinReport.TabIndex = 4;
-            this.labelTotalFinReport.Text = "Total:";
             // 
             // FormReportsBoard
             // 

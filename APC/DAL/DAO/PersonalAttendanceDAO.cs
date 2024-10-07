@@ -474,16 +474,16 @@ namespace APC.DAL.DAO
             }
         }
 
-        public int SelectLastMeetingAttendance(int month, int year)
+        public int SelectLastMeetingAttendance()
         {
             try
             {
                 List<int> lastAttendance = new List<int>();
-                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == year && x.monthID == month);
+                var lastMeeting = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false).OrderByDescending(x=>x.year).OrderByDescending(x => x.monthID).OrderByDescending(x => x.day).FirstOrDefault();
+                var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == lastMeeting.year && x.monthID == lastMeeting.monthID && x.day == lastMeeting.day);
                 foreach (var item in list)
                 {
                     PersonalAttendanceDetailDTO dto = new PersonalAttendanceDetailDTO();
-                    dto.AttendanceID = item.attendanceID;
                     lastAttendance.Add(item.memberID);
                 }
                 int result = lastAttendance.Count();
@@ -491,7 +491,6 @@ namespace APC.DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

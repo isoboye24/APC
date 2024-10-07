@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace APC.DAL.DAO
 {
@@ -31,6 +32,58 @@ namespace APC.DAL.DAO
             {
                 int finesCount = db.FINED_MEMBER.Count(x=>x.memberID == ID && x.isdeleted == false);
                 return finesCount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+        }
+        
+        public decimal SelectTotalFinedCount()
+        {
+            try
+            {
+                int finesCount = db.FINED_MEMBER.Count(x=>x.isdeleted == false);
+                return finesCount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+        }
+
+        public decimal SelectTotalFinedExpected()
+        {
+            try
+            {
+                List<decimal> totalFinesExpected = new List<decimal>();
+                var list = db.FINED_MEMBER.Where(x=>x.isdeleted == false);
+                foreach (var item in list)
+                {
+                    CONSTITUTION fine = db.CONSTITUTIONs.First(x => x.isDeleted == false && x.constitutionID == item.constitutionID);
+                    totalFinesExpected.Add(fine.fine);
+                }
+                decimal totalAmount = totalFinesExpected.Sum();
+                return totalAmount;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+        }
+        
+        public decimal TotalPaidFines()
+        {
+            try
+            {
+                List<decimal> totalPaidFines = new List<decimal>();
+                var allFines = db.FINED_MEMBER.Where(x => x.isdeleted == false).ToList();
+                foreach (var fine in allFines)
+                {
+                    totalPaidFines.Add((decimal)fine.amountPaid);
+                }
+                decimal totalFinesPaid = totalPaidFines.Sum();
+                return totalFinesPaid;
             }
             catch (Exception ex)
             {

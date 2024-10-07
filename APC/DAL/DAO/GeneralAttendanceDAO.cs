@@ -103,20 +103,21 @@ namespace APC.DAL.DAO
                         foreach (var due in monthlyDue)
                         {
                             totalDuesCollection.Add((decimal)due.monthlyDues);
-                            totalExpectedDues.Add((decimal)due.expectedMonthlyDue);                            
+                            totalExpectedDues.Add((decimal)due.expectedMonthlyDue);
                         }
-                        dto.GeneralAttendanceID = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).generalAttendanceID;
-                        dto.Day = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).day;
-                        dto.Summary = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).summary;
-                        dto.AttendanceDate = db.GENERAL_ATTENDANCE.FirstOrDefault(x => x.isDeleted == false && x.monthID == monthItem).attendanceDate;
+                        var meeting = db.GENERAL_ATTENDANCE.Where(x => x.isDeleted == false && x.monthID == monthItem && x.year == yearItem).FirstOrDefault();
+                        dto.GeneralAttendanceID = meeting.generalAttendanceID;
+                        dto.Day = meeting.day;
+                        dto.Summary = meeting.summary;
+                        dto.AttendanceDate = meeting.attendanceDate;
                         dto.MonthID = monthItem;
                         dto.Year = yearItem.ToString();
                         dto.TotalDuesPaid = totalDuesCollection.Sum();                
                         dto.TotalDuesExpected = totalExpectedDues.Sum();
                         dto.TotalDuesBalance = dto.TotalDuesExpected - dto.TotalDuesPaid;
                         dto.Month = General.ConventIntToMonth(monthItem);
-                        dto.TotalMembersPresent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.monthID == monthItem && x.attendanceStatusID == 2);
-                        dto.TotalMembersAbsent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.monthID == monthItem && x.attendanceStatusID == 3);
+                        dto.TotalMembersPresent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.year == yearItem && x.monthID == monthItem && x.attendanceStatusID == 2);
+                        dto.TotalMembersAbsent = db.PERSONAL_ATTENDANCE.Count(x => x.isDeleted == false && x.year == yearItem && x.monthID == monthItem && x.attendanceStatusID == 3);
                         MeetingReports.Add(dto);
                         totalDuesCollection.Clear();
                         totalExpectedDues.Clear();

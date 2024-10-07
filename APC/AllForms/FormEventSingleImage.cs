@@ -122,6 +122,19 @@ namespace APC.AllForms
 
         private void FormEventSingleImage_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtImagePath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtImageCaption.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtImageSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnBrowse.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             txtImagePath.Hide();
             label3.Hide();
             if (isUdate)

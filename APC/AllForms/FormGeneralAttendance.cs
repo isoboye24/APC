@@ -1,6 +1,7 @@
 ﻿using APC.BLL;
 using APC.DAL;
 using APC.DAL.DTO;
+using OfficeOpenXml.Drawing.Chart;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace APC.AllForms
                 
                 if (bll.Insert(generalAttendance))
                 {
-                    MessageBox.Show("Attendance was added");
+                    MessageBox.Show("Meeting was created");
                     dateTimePickerGenAttDate.Value = DateTime.Today;
                     txtSummary.Clear();
                 }
@@ -97,11 +98,24 @@ namespace APC.AllForms
 
         private void FormGeneralAttendance_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            dateTimePickerGenAttDate.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             if (isUpdate)
             {
                 labelTitle.Text = "Edit meeting on " + detail.Day + "." + detail.MonthID +"."+ detail.Year;
                 dateTimePickerGenAttDate.Value = detail.AttendanceDate;
                 txtSummary.Text = detail.Summary;
+            }
+            else
+            {
+                labelTitle.Text = "Add Meeting";
             }
         }
 

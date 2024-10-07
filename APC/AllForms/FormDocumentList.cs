@@ -84,16 +84,20 @@ namespace APC.AllForms
             label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label6.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+
             txtDocName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtDocType.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnDelete.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnSearch.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnClear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             dto = bll.Select();
             cmbMonth.DataSource = dto.Months;
             General.ComboBoxProps(cmbMonth, "MonthName", "MonthID");

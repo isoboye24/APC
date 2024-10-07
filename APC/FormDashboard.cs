@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using APC.AllForms;
 using APC.BLL;
 using APC.DAL.DTO;
@@ -92,6 +93,7 @@ namespace APC
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             labelTitleChildForm.Text = "Dashboard";
+            RefreshAllCards();
         }
 
         private void panelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
@@ -131,21 +133,49 @@ namespace APC
         FinancialReportBLL finBLL = new FinancialReportBLL();
         FormProperties initialDetail = new FormProperties();
         GraphBLL graphBLL = new GraphBLL();
+        ExpenditureBLL expenditureBLL = new ExpenditureBLL();
+        FinedMemberBLL finedMemberBLL = new FinedMemberBLL();
         public bool isAdmin = false;
         public bool isEditor = false;
         private void FormDashboard_Load(object sender, EventArgs e)
         {
+            #region
             labelName.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             labelSurname.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             labelAccessLevel.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             labelPosition.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             label3.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelDuesMonthName.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalDuesYear.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label13.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label16.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label14.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelCommentMonthName.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label5.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             label8.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             label9.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             labelAmountRaisedYearly.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            labelExpenditureYearly.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelExpendituresYearly.Font = new Font("Segoe UI", 14, FontStyle.Bold);
 
+            labelNoOfRegMem.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelNoOfChildren.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelMonthlyDues.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelYearlyDues.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelExpendituresInYear.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelTotalExpenditures.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelLastMeetingAttendance.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelLastEventDate.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelTotalPaidFines.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelTotalFineExpected.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelMonthlyComments.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            labelTotalComments.Font = new Font("Segoe UI", 24, FontStyle.Bold);
+            #endregion
 
             picProfilePic.SizeMode = PictureBoxSizeMode.StretchImage;
             picProfilePic.BorderStyle = BorderStyle.None;
@@ -186,17 +216,8 @@ namespace APC
             initialDetail.WindowState = this.WindowState;
 
             this.ControlBox = false;
-            if (WindowState == FormWindowState.Normal)
-            {
-                RefreshAllCards(171, 42);
-            }
-            else
-            {
-                RefreshAllCards(350, 42);
-            }
-        }
-
-       
+            RefreshAllCards();            
+        }       
 
         private void picProfilePic_Paint(object sender, PaintEventArgs e)
         {
@@ -205,14 +226,25 @@ namespace APC
             Region rg = new Region(gp);
             picProfilePic.Region = rg;
         }
-
-        private void RefreshAllCards(int x, int y)
+        
+        private void RefreshAllCards()
         {
-            General.ValueCount(labelNoOfRegMem, memberBLL.SelectAllMembersCount(), x, y);
-            General.ValueCount(labelTotalComments, commentBLL.SelectAllCommentsCount(), x, y);
-            General.ValueCount(labelMonthlyComments, commentBLL.SelectMonthlyCommentsCount(), x, y);
-            General.ValueCount(labelNoOfChildren, childBLL.SelectAllChildren(), x, y);
-            General.ValueCount(labelLastMeetingAttendance, personalAttendanceBLL.SelectLastMeetingAttendance(DateTime.Now.Month, DateTime.Now.Year), x, y);            
+            string yearlyDues = "SELECT PERSONAL_ATTENDANCE.year, SUM(PERSONAL_ATTENDANCE.monthlyDues)\r\n" +
+            "FROM PERSONAL_ATTENDANCE\r\n" +
+            "WHERE PERSONAL_ATTENDANCE.isDeleted = 0\r\n" +
+            "GROUP BY PERSONAL_ATTENDANCE.year\r\n" +
+            "ORDER BY PERSONAL_ATTENDANCE.year ASC";
+            string yearlyExpenditures = "SELECT EXPENDITURE.year, SUM(EXPENDITURE.amountSpent)\r\n" +
+                "FROM EXPENDITURE\r\n" +
+                "WHERE EXPENDITURE.isDeleted = 0\r\n" +
+                "GROUP BY EXPENDITURE.year\r\n" +
+                "ORDER BY EXPENDITURE.year ASC";
+
+            labelNoOfRegMem.Text = memberBLL.SelectAllMembersCount().ToString();
+            labelTotalComments.Text = commentBLL.SelectAllCommentsCount().ToString();
+            labelMonthlyComments.Text = commentBLL.SelectMonthlyCommentsCount().ToString();
+            labelNoOfChildren.Text = childBLL.SelectAllChildren().ToString();
+            labelLastMeetingAttendance.Text = personalAttendanceBLL.SelectLastMeetingAttendance().ToString();
             labelLastEventDate.Text = eventBLL.SelectRecentEvent();
 
             string monthToday = DateTime.Now.ToString("MMMM");
@@ -229,10 +261,19 @@ namespace APC
             int todayYear = DateTime.Today.Year;
             labelDuesMonthName.Text = "Dues in "+ monthToday + " "+ yearToday;
             labelTotalDuesYear.Text = "Total dues in " + yearToday;
-            General.ValueCountInDecimal(labelMonthlyDues, finBLL.SelectTotalRaisedAmountMonthly(todayMonth), x-50, y);            
-            General.ValueCountInDecimal(labelYearlyDues, finBLL.SelectTotalRaisedAmountYearly(todayYear), x-50, y);
+            label13.Text = "Expenditures in " + yearToday;
 
-            //graphBLL.SelectAmountRaised(todayYear, chartAmountRaisedYearly, labelAmountRaisedYearly);
+            labelMonthlyDues.Text = "€ " + finBLL.SelectTotalRaisedAmountMonthly(todayMonth);
+            labelYearlyDues.Text = "€ " + finBLL.SelectTotalRaisedAmountYearly(todayYear);
+            labelExpendituresInYear.Text = "€ " + expenditureBLL.SelectTotalExpendituresYearly(todayYear);
+            labelTotalExpenditures.Text = "€ " + expenditureBLL.SelectTotalExpenditures();
+            labelTotalFineExpected.Text = "€ " + finedMemberBLL.SelectTotalFinedExpected();
+            labelTotalPaidFines.Text = "€ " + finedMemberBLL.SelectTotalPaidFines();
+
+            labelAmountRaisedYearly.Text = "Dues Raised in each year";
+            labelExpendituresYearly.Text = "Expenditures in each year";
+            General.CreateChart(chartAmountRaisedYearly, yearlyDues, SeriesChartType.Column, "Dues", "");
+            General.CreateChart(chartExpenditures, yearlyExpenditures, SeriesChartType.Column, "Expenses", "");
         }
 
         private void iconClose_MouseEnter(object sender, EventArgs e)

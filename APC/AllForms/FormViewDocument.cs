@@ -36,6 +36,10 @@ namespace APC.AllForms
         public DocumentDetailDTO detail = new DocumentDetailDTO();
         private void FormViewDocument_Load(object sender, EventArgs e)
         {
+            labelWordsCount.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            label1.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             labelWordsCount.Hide();
             this.Text = detail.DocumentName +" (" + detail.Date + ")";
             string filePath = System.Windows.Forms.Application.StartupPath + "\\documents\\" + detail.DocumentPath;

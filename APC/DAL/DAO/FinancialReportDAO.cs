@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 
 namespace APC.DAL.DAO
 {
@@ -37,7 +38,6 @@ namespace APC.DAL.DAO
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -67,6 +67,7 @@ namespace APC.DAL.DAO
                 List<int> years = new List<int>();
                 List<decimal> totalDuesCollection = new List<decimal>();
                 List<decimal> totalExpenditures = new List<decimal>();
+                List<decimal> fines = new List<decimal>();
 
                 var yearlyDue = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false).ToList();
                 foreach (var item in yearlyDue)
@@ -75,27 +76,34 @@ namespace APC.DAL.DAO
                 }
                 years = yearsCollection.Distinct().OrderByDescending(year => year).ToList();
                 foreach (var yearItem in years)
-                {                    
-                    var yearlyDues = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == yearItem).ToList();
+                {
+                    var report = db.FINANCIAL_REPORT.Where(x => x.isDeleted == false && x.year == yearItem).FirstOrDefault();
+                    var yearlyDues = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == report.year).ToList();
                     foreach (var due in yearlyDues)
                     {
                         totalDuesCollection.Add((decimal)due.monthlyDues);
                     }
-                    var yearlyExpenditures = db.EXPENDITUREs.Where(x => x.isDeleted == false && x.year == yearItem).ToList();
+                    var yearlyExpenditures = db.EXPENDITUREs.Where(x => x.isDeleted == false && x.year == report.year).ToList();
                     foreach (var expense in yearlyExpenditures)
                     {
                         totalExpenditures.Add(expense.amountSpent);
                     }
+                    var allFines = db.FINED_MEMBER.Where(x => x.isdeleted == false && x.year == report.year).ToList();
+                    foreach (var fine in allFines)
+                    {
+                        fines.Add((decimal)fine.amountPaid);
+                    }                    
                     FinancialReportDetailDTO dto = new FinancialReportDetailDTO();
-                    dto.FinancialReportID += 1;
-                    dto.Summary = db.FINANCIAL_REPORT.FirstOrDefault(x => x.isDeleted == false && x.year == yearItem).summary;                    
-                    dto.Year = yearItem.ToString();
-                    dto.TotalAmountRaised = totalDuesCollection.Sum();
+                    dto.FinancialReportID = report.financialReportID;
+                    dto.Summary = report.summary;                    
+                    dto.Year = report.year.ToString();
+                    dto.TotalAmountRaised = totalDuesCollection.Sum() + fines.Sum();
                     dto.TotalAmountSpent = totalExpenditures.Sum();
                     dto.Balance = dto.TotalAmountRaised - dto.TotalAmountSpent;                    
                     financialReport.Add(dto);
                     totalDuesCollection.Clear();
                     totalExpenditures.Clear();
+                    fines.Clear();
                 }
                 return financialReport;
             }
@@ -134,12 +142,18 @@ namespace APC.DAL.DAO
             try
             {                
                 List<decimal> totalRaisedAmount = new List<decimal>();
+                List<decimal> fines = new List<decimal>();
                 var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false);
                 foreach (var item in list)
                 {                                     
                     totalRaisedAmount.Add((decimal)item.monthlyDues);
                 }
-                decimal totalAmount = totalRaisedAmount.Sum();
+                var allFines = db.FINED_MEMBER.Where(x => x.isdeleted == false).ToList();
+                foreach (var fine in allFines)
+                {
+                    fines.Add((decimal)fine.amountPaid);
+                }
+                decimal totalAmount = totalRaisedAmount.Sum() + fines.Sum();
                 return totalAmount;
             }
             catch (Exception ex)
@@ -152,12 +166,18 @@ namespace APC.DAL.DAO
             try
             {
                 List<decimal> totalRaisedAmount = new List<decimal>();
+                List<decimal> fines = new List<decimal>();
                 var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.year == thisYear);
                 foreach (var item in list)
                 {
                     totalRaisedAmount.Add((decimal)item.monthlyDues);
                 }
-                decimal totalAmount = totalRaisedAmount.Sum();
+                var allFines = db.FINED_MEMBER.Where(x => x.isdeleted == false && x.year == thisYear).ToList();
+                foreach (var fine in allFines)
+                {
+                    fines.Add((decimal)fine.amountPaid);
+                }
+                decimal totalAmount = totalRaisedAmount.Sum() + fines.Sum();
                 return totalAmount;
             }
             catch (Exception ex)
@@ -170,10 +190,16 @@ namespace APC.DAL.DAO
             try
             {
                 List<decimal> totalRaisedAmount = new List<decimal>();
+                List<decimal> fines = new List<decimal>();
                 var list = db.PERSONAL_ATTENDANCE.Where(x => x.isDeleted == false && x.monthID == thisMonth);
                 foreach (var item in list)
                 {
                     totalRaisedAmount.Add((decimal)item.monthlyDues);
+                }
+                var allFines = db.FINED_MEMBER.Where(x => x.isdeleted == false && x.monthID == thisMonth).ToList();
+                foreach (var fine in allFines)
+                {
+                    fines.Add((decimal)fine.amountPaid);
                 }
                 decimal totalAmount = totalRaisedAmount.Sum();
                 return totalAmount;

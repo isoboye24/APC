@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,50 @@ namespace APC.AllForms
         CommentDetailDTO commentDetail = new CommentDetailDTO();
         private void FormViewDeadMember_Load(object sender, EventArgs e)
         {
+            #region
+            labelMemberNameTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label14.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label15.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelBirthday.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelDeadDate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelMemSince.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfAbsent.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfChildren.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfPresent.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelAge.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNameOfNextOfKin.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtCountry.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMaritalStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtProfession.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtRelationshipToKin.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewAbsentAttendance.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnViewChildren.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnViewPresentAttendance.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnNoComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             noOfChildren = childBLL.SelectAllChildrenCount(detail.MemberID);
             
             btnViewChildren.Hide();
@@ -105,9 +150,6 @@ namespace APC.AllForms
                 labelNoOfComments.Visible = true;
                 btnNoComments.Visible = true;
             }
-
-            if (isView)
-            {
                 labelMemberNameTitle.Text = detail.Surname + " " + detail.Name;
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfilePic.ImageLocation = imagePath;
@@ -129,7 +171,6 @@ namespace APC.AllForms
                 labelAge.Text = Math.Floor(difference.TotalDays / 365.25).ToString() + " years";
                 txtNameOfNextOfKin.Text = detail.NameOfNextOfKin;
                 txtRelationshipToKin.Text = detail.RelationshipToKin;
-            }
         }
 
         private void btnViewChildren_Click(object sender, EventArgs e)

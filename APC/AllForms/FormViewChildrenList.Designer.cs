@@ -192,7 +192,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel2.Controls.Add(this.panel6, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 1, 0);
@@ -225,7 +225,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(319, 503);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(318, 503);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // tableLayoutPanel13
@@ -240,7 +240,7 @@
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(313, 246);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(312, 246);
             this.tableLayoutPanel13.TabIndex = 0;
             // 
             // tableLayoutPanel14
@@ -255,7 +255,7 @@
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(307, 129);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(306, 129);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // picMother
@@ -263,7 +263,7 @@
             this.picMother.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picMother.Location = new System.Drawing.Point(156, 3);
             this.picMother.Name = "picMother";
-            this.picMother.Size = new System.Drawing.Size(148, 123);
+            this.picMother.Size = new System.Drawing.Size(147, 123);
             this.picMother.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMother.TabIndex = 1;
             this.picMother.TabStop = false;
@@ -298,7 +298,7 @@
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(307, 105);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(306, 105);
             this.tableLayoutPanel15.TabIndex = 1;
             // 
             // label8
@@ -330,7 +330,7 @@
             this.txtMothersName.Location = new System.Drawing.Point(108, 3);
             this.txtMothersName.Name = "txtMothersName";
             this.txtMothersName.ReadOnly = true;
-            this.txtMothersName.Size = new System.Drawing.Size(196, 29);
+            this.txtMothersName.Size = new System.Drawing.Size(195, 29);
             this.txtMothersName.TabIndex = 0;
             // 
             // txtMothersSurname
@@ -340,7 +340,7 @@
             this.txtMothersSurname.Location = new System.Drawing.Point(108, 38);
             this.txtMothersSurname.Name = "txtMothersSurname";
             this.txtMothersSurname.ReadOnly = true;
-            this.txtMothersSurname.Size = new System.Drawing.Size(196, 29);
+            this.txtMothersSurname.Size = new System.Drawing.Size(195, 29);
             this.txtMothersSurname.TabIndex = 0;
             // 
             // txtMothersNationality
@@ -350,7 +350,7 @@
             this.txtMothersNationality.Location = new System.Drawing.Point(108, 73);
             this.txtMothersNationality.Name = "txtMothersNationality";
             this.txtMothersNationality.ReadOnly = true;
-            this.txtMothersNationality.Size = new System.Drawing.Size(196, 29);
+            this.txtMothersNationality.Size = new System.Drawing.Size(195, 29);
             this.txtMothersNationality.TabIndex = 0;
             // 
             // label10
@@ -375,7 +375,7 @@
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 245F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(313, 245);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(312, 245);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -390,7 +390,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(307, 239);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(306, 239);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // tableLayoutPanel9
@@ -405,7 +405,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(301, 125);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(300, 125);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // picFather
@@ -413,7 +413,7 @@
             this.picFather.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picFather.Location = new System.Drawing.Point(153, 3);
             this.picFather.Name = "picFather";
-            this.picFather.Size = new System.Drawing.Size(145, 119);
+            this.picFather.Size = new System.Drawing.Size(144, 119);
             this.picFather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFather.TabIndex = 1;
             this.picFather.TabStop = false;
@@ -448,7 +448,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(301, 102);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(300, 102);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // label4
@@ -480,7 +480,7 @@
             this.txtFathersName.Location = new System.Drawing.Point(108, 3);
             this.txtFathersName.Name = "txtFathersName";
             this.txtFathersName.ReadOnly = true;
-            this.txtFathersName.Size = new System.Drawing.Size(190, 29);
+            this.txtFathersName.Size = new System.Drawing.Size(189, 29);
             this.txtFathersName.TabIndex = 0;
             // 
             // txtFathersSurname
@@ -490,7 +490,7 @@
             this.txtFathersSurname.Location = new System.Drawing.Point(108, 37);
             this.txtFathersSurname.Name = "txtFathersSurname";
             this.txtFathersSurname.ReadOnly = true;
-            this.txtFathersSurname.Size = new System.Drawing.Size(190, 29);
+            this.txtFathersSurname.Size = new System.Drawing.Size(189, 29);
             this.txtFathersSurname.TabIndex = 0;
             // 
             // txtFathersNationality
@@ -500,7 +500,7 @@
             this.txtFathersNationality.Location = new System.Drawing.Point(108, 71);
             this.txtFathersNationality.Name = "txtFathersNationality";
             this.txtFathersNationality.ReadOnly = true;
-            this.txtFathersNationality.Size = new System.Drawing.Size(190, 29);
+            this.txtFathersNationality.Size = new System.Drawing.Size(189, 29);
             this.txtFathersNationality.TabIndex = 0;
             // 
             // label3
@@ -537,6 +537,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(13, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(597, 503);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);

@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC
 {
@@ -133,6 +134,20 @@ namespace APC
 
         private void FormEvent_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtTitle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtImagePath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            dateTimePickerEvent.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnBrowse.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             txtImagePath.Hide();
             label4.Hide();
             if (isUpdate)
@@ -140,7 +155,7 @@ namespace APC
                 txtImagePath.Text = detail.CoverImagePath;
                 txtSummary.Text = detail.Summary;
                 txtTitle.Text = detail.EventTitle;
-                labelTitle.Text = "Update "+ detail.EventTitle;
+                labelTitle.Text = "Edit "+ detail.EventTitle;
                 dateTimePickerEvent.Value = detail.EventDate;
                 string imagePath = Application.StartupPath + "\\images\\" + detail.CoverImagePath;
                 picEventCoverImage.ImageLocation = imagePath;

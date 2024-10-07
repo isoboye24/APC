@@ -280,12 +280,6 @@
     <Compile Include="AllForms\FormChildren.Designer.cs">
       <DependentUpon>FormChildren.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllForms\FormChildrenList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllForms\FormChildrenList.Designer.cs">
-      <DependentUpon>FormChildrenList.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllForms\FormChildrenOfSingleParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -639,9 +633,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormChildren.resx">
       <DependentUpon>FormChildren.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllForms\FormChildrenList.resx">
-      <DependentUpon>FormChildrenList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FormChildrenOfSingleParent.resx">
       <DependentUpon>FormChildrenOfSingleParent.cs</DependentUpon>

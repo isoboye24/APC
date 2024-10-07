@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -41,6 +42,21 @@ namespace APC.AllForms
         public FinancialReportDetailDTO detail = new FinancialReportDetailDTO();
         private void FormViewFinancialReport_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalAmountRaised.Font = new Font("Segoe UI", 28, FontStyle.Bold);
+            labelTotalAmountSpent.Font = new Font("Segoe UI", 28, FontStyle.Bold);
+            labelTotalBalance.Font = new Font("Segoe UI", 28, FontStyle.Bold);
+
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             labelTitle.Text = "Financial Report in " + detail.Year;
             txtSummary.Text = detail.Summary;
             labelTotalAmountRaised.Text = detail.TotalAmountRaised.ToString();

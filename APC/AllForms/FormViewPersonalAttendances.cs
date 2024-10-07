@@ -55,15 +55,19 @@ namespace APC.AllForms
             label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelTotalAmount.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            labelTotalName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             rbEqualAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             rbLessAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             rbMoreAttend.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
             txtAmount.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             cmbMonth.Font = new Font("Segoe UI", 12, FontStyle.Regular);
-            cmbYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);           
+            cmbYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);   
+            
             btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            labelTotalAmount.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-            labelTotalName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             #endregion
 
             dto = bll.Select(detail.MemberID);

@@ -92,9 +92,9 @@
             this.labelTitle.Location = new System.Drawing.Point(13, 18);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(230, 25);
+            this.labelTitle.Size = new System.Drawing.Size(128, 25);
             this.labelTitle.TabIndex = 5;
-            this.labelTitle.Text = "Add General Attendance";
+            this.labelTitle.Text = "Add Meeting";
             // 
             // picClose
             // 

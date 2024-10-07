@@ -17,17 +17,12 @@ namespace APC
     {
         static string connectingString = "Server=localhost\\sqlexpress;Database=APC;integrated security=True;encrypt=True;trustservercertificate=True;";
 
-        public static void CreateChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, string query, SqlParameter[] parameters,
-            SeriesChartType chartType, string seriesName, string chartArea)
+        public static void CreateChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, string query,
+             SeriesChartType chartType, string seriesName, string chartArea)
         {
             using (SqlConnection con = new SqlConnection(connectingString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, con);
-                if (parameters != null)
-                {
-                    dataAdapter.SelectCommand.Parameters.AddRange(parameters);
-                }
-
                 DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
 
@@ -46,7 +41,6 @@ namespace APC
         }
         private static void CustomizeChart(System.Windows.Forms.DataVisualization.Charting.Series serie, SeriesChartType chartType, string chartArea)
         {
-
             switch (chartType)
             {
                 case SeriesChartType.Pie:
@@ -63,9 +57,6 @@ namespace APC
 
                 case SeriesChartType.Column:
                     serie.IsValueShownAsLabel = true;
-                    serie.ChartArea = chartArea;
-                    serie.Color = Color.Orange;
-                    serie["PointWidth"] = "0.5";
                     break;
             }
         }
@@ -268,8 +259,8 @@ namespace APC
 
         public static IEnumerable<int> FindMembersAppearingThreeTimes(List<int> list)
         {
-            var groupedMembers = list.GroupBy(x => x);
-            return groupedMembers.Where(group => group.Count() == 3).Select(group => group.Key);
+            var groupedMembers = list.GroupBy(x => x).Where(group => group.Count() > 2).Select(group => group.Key);
+            return groupedMembers;
         }
 
         public static string ConventIntToMonth(int month)

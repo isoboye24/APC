@@ -102,11 +102,28 @@ namespace APC.AllForms
 
         private void FormExpenditure_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtAmountSpent.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            dateTimePickerExpDate.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             if (isUpdate)
             {
+                labelTitle.Text = "Edit Expenditure";
                 txtAmountSpent.Text = detail.AmountSpent.ToString();
                 txtSummary.Text = detail.Summary;
                 dateTimePickerExpDate.Value = detail.ExpenditureDate;
+            }
+            else
+            {
+                labelTitle.Text = "Add Expenditure";
             }
         }        
     }

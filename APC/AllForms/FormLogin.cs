@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APC.DAL;
 using APC.BLL;
+using APC.DAL.DTO;
+using OfficeOpenXml.Drawing.Chart;
 
 namespace APC.AllForms
 {
@@ -71,6 +73,7 @@ namespace APC.AllForms
                             FormNotifications open = new FormNotifications();
                             open.isAdmin = true;
                             open.isLogin = true;
+                            open.numbers = absenteesCount;
                             this.Hide();
                             open.ShowDialog();
                         }
@@ -112,7 +115,14 @@ namespace APC.AllForms
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
 
+            txtPassword.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtUsername.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnEnter.Font = new Font("Segoe UI", 12, FontStyle.Bold);
         }
 
         private void picClose_Click(object sender, EventArgs e)

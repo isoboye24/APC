@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC
 {
@@ -88,7 +89,21 @@ namespace APC
 
         private void FormCountry_Load(object sender, EventArgs e)
         {
-            txtCountry.Text = detail.CountryName;
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtCountry.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
+            if (isUpdate)
+            {
+                txtCountry.Text = detail.CountryName;
+                labelTitle.Text = "Edit Country";
+            }
+            else
+            {
+                labelTitle.Text = "Add Country";
+            }
         }        
     }
 }

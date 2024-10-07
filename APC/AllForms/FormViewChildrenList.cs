@@ -57,7 +57,22 @@ namespace APC.AllForms
         public int memberID;
         public bool isParent = false;
         private void FormViewChildrenList_Load(object sender, EventArgs e)
-        {            
+        {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             dto = bll.SelectViewParentChild(memberID);
             dataGridView1.DataSource = dto.Children;
             dataGridView1.Columns[0].Visible = false;

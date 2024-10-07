@@ -50,6 +50,23 @@ namespace APC
         public bool isUpdate = false;
         private void FormComments_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelCommentDate.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            labelCommentTime.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+
+            txtImagePath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtComment.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurnameReadOnly.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             dto = bll.Select();
             #region
             dataGridView1.DataSource = dto.Members;
@@ -101,7 +118,7 @@ namespace APC
             labelCommentTime.Hide();
 
             if (isUpdate)
-            {                
+            {
                 string imagePath = Application.StartupPath + "\\images\\" + detail.ImagePath;
                 picProfilePic.ImageLocation = imagePath;
                 txtName.Text = detail.Name;
@@ -112,11 +129,13 @@ namespace APC
                 memberDetail.MemberID = detail.MemberID;
                 labelImagePath.Visible = true;
                 txtImagePath.Visible = true;
+                labelTitle.Text = "Edit Comment";
             }
             else
             {
                 labelImagePath.Hide();
                 txtImagePath.Hide();
+                labelTitle.Text = "Add Comment";
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using APC.BLL;
 using APC.DAL.DTO;
+using OfficeOpenXml.Drawing.Chart;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +86,24 @@ namespace APC
 
         private void FormMaritalStatus_Load(object sender, EventArgs e)
         {
-            txtMaritalStatus.Text = detail.MaritalStatus;
+            labelTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtMaritalStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            if (isUpdate)
+            {
+                txtMaritalStatus.Text = detail.MaritalStatus;
+                labelTitle.Text = "Edit Marital Status";
+            }
+            else
+            {
+                labelTitle.Text = "Add Marital Status";
+            }
+            
         }        
     }
 }

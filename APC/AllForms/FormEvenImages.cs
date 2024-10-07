@@ -85,6 +85,16 @@ namespace APC.AllForms
         EventImageDTO dto = new EventImageDTO();
         private void FormEvenImages_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtImageCaption.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnAdd.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnDelete.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnUpdate.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnView.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             dto = bll.SelectSpecificImage(detail.EventID);
 
             dataGridView1.DataSource = dto.EventImages;

@@ -131,6 +131,17 @@ namespace APC.AllForms
             ClearFilters();
         }
 
+        private void dataGridViewFinReport_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            finReportDetail = new FinancialReportDetailDTO();
+            finReportDetail.FinancialReportID = Convert.ToInt32(dataGridViewFinReport.Rows[e.RowIndex].Cells[0].Value);
+            finReportDetail.Year = dataGridViewFinReport.Rows[e.RowIndex].Cells[1].Value.ToString();
+            finReportDetail.TotalAmountRaised = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[2].Value);
+            finReportDetail.TotalAmountSpent = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[3].Value);
+            finReportDetail.Balance = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[4].Value);
+            finReportDetail.Summary = dataGridViewFinReport.Rows[e.RowIndex].Cells[5].Value.ToString();
+        }
+
         private void btnUpdateFinReport_Click(object sender, EventArgs e)
         {
             if (finReportDetail.FinancialReportID == 0)
@@ -164,17 +175,6 @@ namespace APC.AllForms
                 this.Visible = true;
                 ClearFilters();
             }
-        }
-
-        private void dataGridViewFinReport_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            finReportDetail = new FinancialReportDetailDTO();
-            finReportDetail.FinancialReportID = Convert.ToInt32(dataGridViewFinReport.Rows[e.RowIndex].Cells[0].Value);
-            finReportDetail.Year = dataGridViewFinReport.Rows[e.RowIndex].Cells[1].Value.ToString();
-            finReportDetail.TotalAmountRaised = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[2].Value);
-            finReportDetail.TotalAmountSpent = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[3].Value);
-            finReportDetail.Balance = Convert.ToDecimal(dataGridViewFinReport.Rows[e.RowIndex].Cells[4].Value);
-            finReportDetail.Summary = dataGridViewFinReport.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void txtYearFinReport_TextChanged(object sender, EventArgs e)

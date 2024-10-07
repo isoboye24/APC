@@ -40,6 +40,19 @@ namespace APC.AllForms
         public ExpenditureDetailDTO detail = new ExpenditureDetailDTO();
         private void FormViewExpenditure_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtAmountSpent.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtDate.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);            
+            #endregion
+
             txtAmountSpent.Text = detail.AmountSpent.ToString();
             txtSummary.Text = detail.Summary;
             txtDate.Text = detail.Day + "/" + detail.MonthID +"/"+ detail.Year;

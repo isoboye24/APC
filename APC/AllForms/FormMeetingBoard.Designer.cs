@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.meetingsPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -94,6 +94,7 @@
             this.btnUpdateFinedMember = new System.Windows.Forms.Button();
             this.btnDeleteFinedMember = new System.Windows.Forms.Button();
             this.btnViewFinedMember = new System.Windows.Forms.Button();
+            this.labelTotalPaidFines = new System.Windows.Forms.Label();
             this.labelTotalFineMembers = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewFinedMembers = new System.Windows.Forms.DataGridView();
@@ -329,13 +330,13 @@
             // 
             this.labelTotalMeetings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotalMeetings.AutoSize = true;
-            this.labelTotalMeetings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalMeetings.Location = new System.Drawing.Point(831, 29);
+            this.labelTotalMeetings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalMeetings.Location = new System.Drawing.Point(832, 29);
             this.labelTotalMeetings.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.labelTotalMeetings.Name = "labelTotalMeetings";
-            this.labelTotalMeetings.Size = new System.Drawing.Size(65, 21);
+            this.labelTotalMeetings.Size = new System.Drawing.Size(64, 21);
             this.labelTotalMeetings.TabIndex = 4;
-            this.labelTotalMeetings.Text = "Total: 0";
+            this.labelTotalMeetings.Text = "Rows: 0";
             // 
             // tableLayoutPanel2
             // 
@@ -598,8 +599,8 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(21, 98);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(899, 374);
             this.dataGridView1.TabIndex = 6;
@@ -948,8 +949,8 @@
             this.dataGridViewComments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewComments.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewComments.Name = "dataGridViewComments";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewComments.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewComments.RowTemplate.Height = 30;
             this.dataGridViewComments.Size = new System.Drawing.Size(899, 382);
             this.dataGridViewComments.TabIndex = 0;
@@ -1001,7 +1002,8 @@
             this.tableLayoutPanel11.Controls.Add(this.btnUpdateFinedMember, 3, 1);
             this.tableLayoutPanel11.Controls.Add(this.btnDeleteFinedMember, 7, 1);
             this.tableLayoutPanel11.Controls.Add(this.btnViewFinedMember, 5, 1);
-            this.tableLayoutPanel11.Controls.Add(this.labelTotalFineMembers, 8, 1);
+            this.tableLayoutPanel11.Controls.Add(this.labelTotalPaidFines, 8, 1);
+            this.tableLayoutPanel11.Controls.Add(this.labelTotalFineMembers, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(21, 484);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -1072,15 +1074,26 @@
             this.btnViewFinedMember.UseVisualStyleBackColor = false;
             this.btnViewFinedMember.Click += new System.EventHandler(this.btnViewFinedMember_Click);
             // 
+            // labelTotalPaidFines
+            // 
+            this.labelTotalPaidFines.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTotalPaidFines.AutoSize = true;
+            this.labelTotalPaidFines.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPaidFines.Location = new System.Drawing.Point(811, 29);
+            this.labelTotalPaidFines.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.labelTotalPaidFines.Name = "labelTotalPaidFines";
+            this.labelTotalPaidFines.Size = new System.Drawing.Size(91, 21);
+            this.labelTotalPaidFines.TabIndex = 5;
+            this.labelTotalPaidFines.Text = "Total Paid: 0";
+            // 
             // labelTotalFineMembers
             // 
-            this.labelTotalFineMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotalFineMembers.AutoSize = true;
-            this.labelTotalFineMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalFineMembers.Location = new System.Drawing.Point(837, 29);
+            this.labelTotalFineMembers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalFineMembers.Location = new System.Drawing.Point(3, 29);
             this.labelTotalFineMembers.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.labelTotalFineMembers.Name = "labelTotalFineMembers";
-            this.labelTotalFineMembers.Size = new System.Drawing.Size(65, 21);
+            this.labelTotalFineMembers.Size = new System.Drawing.Size(58, 21);
             this.labelTotalFineMembers.TabIndex = 5;
             this.labelTotalFineMembers.Text = "Total: 0";
             // 
@@ -1101,8 +1114,8 @@
             this.dataGridViewFinedMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFinedMembers.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewFinedMembers.Name = "dataGridViewFinedMembers";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewFinedMembers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewFinedMembers.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewFinedMembers.RowTemplate.Height = 30;
             this.dataGridViewFinedMembers.Size = new System.Drawing.Size(905, 330);
             this.dataGridViewFinedMembers.TabIndex = 0;
@@ -1554,8 +1567,8 @@
             this.dataGridViewConstitution.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewConstitution.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewConstitution.Name = "dataGridViewConstitution";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewConstitution.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewConstitution.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewConstitution.RowTemplate.Height = 30;
             this.dataGridViewConstitution.Size = new System.Drawing.Size(905, 386);
             this.dataGridViewConstitution.TabIndex = 0;
@@ -1862,5 +1875,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtYearFinedMember;
         private System.Windows.Forms.TextBox txtConstitutionSection;
+        private System.Windows.Forms.Label labelTotalPaidFines;
     }
 }

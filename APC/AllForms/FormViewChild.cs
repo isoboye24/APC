@@ -39,7 +39,26 @@ namespace APC.AllForms
         public int memberID;
         public bool isParent = false;
         private void FormViewChild_Load(object sender, EventArgs e)
-        {           
+        {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label26.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label27.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             if (isParent)
             {
                 dto = bll.SelectViewParentChild(memberID);

@@ -73,9 +73,9 @@ namespace APC.BLL
             return dto;
         }
 
-        public int SelectLastMeetingAttendance(int month, int year)
+        public int SelectLastMeetingAttendance()
         {
-            return dao.SelectLastMeetingAttendance(month, year);
+            return dao.SelectLastMeetingAttendance();
         }
 
         public bool IsUnique(int personID, int attendanceID)

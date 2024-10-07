@@ -6,10 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -87,10 +89,28 @@ namespace APC.AllForms
 
         private void FormNationality_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            #endregion
+
             if (isUpdate)
             {
                 txtNationality.Text = detail.Nationality;
+                labelTitle.Text = "Edit Nationality";
             }
-        }        
+            else
+            {
+                labelTitle.Text = "Add Nationality";
+            }
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

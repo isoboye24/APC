@@ -42,6 +42,25 @@ namespace APC.AllForms
 
         private void FormChildrenOfSingleParent_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtFathersName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMothersName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtBirthday.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
                 column.HeaderCell.Style.Font = new Font("Segoe UI", 12, FontStyle.Bold);

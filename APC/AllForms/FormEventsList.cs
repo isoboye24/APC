@@ -70,11 +70,14 @@ namespace APC
         {
             label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             txtEventTitle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtEventYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             btnAdd.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnUpdate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnView.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             dto = bll.Select();
 
             dataGridView1.DataSource = dto.Events;

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC.AllForms
 {
@@ -40,6 +41,27 @@ namespace APC.AllForms
 
         private void FormViewFinedMember_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelSectionBtn.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPaidAmount.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelBalance.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelExpectedAmount.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             labelName.Text = detail.Name;
             labelSurname.Text = detail.Surname;
             labelPosition.Text = detail.Position;

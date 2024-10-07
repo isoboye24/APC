@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC
 {
@@ -48,8 +49,69 @@ namespace APC
 
         MemberBLL bll = new MemberBLL();
         MemberDTO dto = new MemberDTO();
+        public MemberDetailDTO detail = new MemberDetailDTO();
+        public bool isUpdate = false;
+        public bool isUpdateDeadMember = false;
         private void FormMembers_Load(object sender, EventArgs e)
-        {            
+        {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label14.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label15.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label19.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label26.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label27.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelAccessLevel.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelDeceasedDate.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelMorePhone.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPhone2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPhone3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtAddress.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtEmail.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtImagePath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtLGA.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNameOfNextOfKin.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone1.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone2.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone3.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            cmbCountry.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbEmpStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMaritalStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbMembershipStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbPermission.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbProfession.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbRelationshipToNextOfKin.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            dateTimePickerBirthday.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            dateTimePickerDeceasedDate.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            dateTimePickerMemSince.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnBrowse.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            #endregion
+
+            #region
             dto = bll.Select();
             cmbCountry.DataSource = dto.Countries;
             General.ComboBoxProps(cmbCountry, "CountryName", "countryID");
@@ -71,6 +133,7 @@ namespace APC
             General.ComboBoxProps(cmbMembershipStatus, "MembershipStatus", "MembershipStatusID");
             cmbRelationshipToNextOfKin.DataSource = dto.RelationshipsToNextOfKin;
             General.ComboBoxProps(cmbRelationshipToNextOfKin, "Relationship", "RelationshipToKinID");
+            #endregion
 
             txtPhone2.Hide();
             txtPhone3.Hide();
@@ -78,6 +141,7 @@ namespace APC
             labelPhone3.Hide();
             txtImagePath.Hide();
             tableLayoutPanelDeceasedDate.Hide();
+            labelTitle.Text = "Add Member";
             if (isUpdateDeadMember)
             {
                 tableLayoutPanelDeceasedDate.Visible = true;
@@ -85,6 +149,7 @@ namespace APC
             }
             if (isUpdate)
             {
+                labelTitle.Text = "Edit Member";
                 txtName.Text = detail.Name;
                 txtSurname.Text = detail.Surname;
                 txtAddress.Text = detail.HouseAddress;
@@ -140,9 +205,7 @@ namespace APC
             labelPhone2.Visible = true;
             labelPhone3.Visible = true;
         }
-        public MemberDetailDTO detail = new MemberDetailDTO();
-        public bool isUpdate = false;
-        public bool isUpdateDeadMember = false;
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Trim() == "")

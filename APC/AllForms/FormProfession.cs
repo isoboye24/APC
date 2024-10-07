@@ -6,10 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace APC
 {
@@ -80,7 +82,22 @@ namespace APC
 
         private void FormProfession_Load(object sender, EventArgs e)
         {
-            txtProfession.Text = detail.Profession;
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtProfession.Font = new Font("Segoe UI", 12, FontStyle.Regular);            
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+            if (isUpdate)
+            {
+                txtProfession.Text = detail.Profession;
+                labelTitle.Text = "Edit Profession";
+            }
+            else
+            {
+                labelTitle.Text = "Add Profession";
+            }
         }        
     }
 }

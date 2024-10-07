@@ -1045,8 +1045,10 @@ namespace APC.AllForms
             deadMembersDetail.DeadDate = Convert.ToDateTime(dataGridViewDeadMembers.Rows[e.RowIndex].Cells[37].Value);
             deadMembersDetail.DeadAge = Convert.ToDouble(dataGridViewDeadMembers.Rows[e.RowIndex].Cells[38].Value);
             deadMembersDetail.LGA = dataGridViewDeadMembers.Rows[e.RowIndex].Cells[39].Value.ToString();
+            deadMembersDetail.NameOfNextOfKin = dataGridViewDeadMembers.Rows[e.RowIndex].Cells[40].Value.ToString();
+            deadMembersDetail.RelationshipToKinID = Convert.ToInt32(dataGridViewDeadMembers.Rows[e.RowIndex].Cells[41].Value);
+            deadMembersDetail.RelationshipToKin = dataGridViewDeadMembers.Rows[e.RowIndex].Cells[42].Value.ToString();
         }
-
         private void txtNameDeadMembers_TextChanged(object sender, EventArgs e)
         {
             List<MemberDetailDTO> list = deadMembersDTO.Members;
@@ -1099,7 +1101,6 @@ namespace APC.AllForms
             {
                 FormViewDeadMember open = new FormViewDeadMember();
                 open.detail = deadMembersDetail;
-                open.isView = true;
                 this.Hide();
                 open.ShowDialog();
                 this.Visible = true;               

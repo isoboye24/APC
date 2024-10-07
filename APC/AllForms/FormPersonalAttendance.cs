@@ -50,6 +50,7 @@ namespace APC
         public bool isUpdate = false;
         private void FormAttendance_Load(object sender, EventArgs e)
         {
+            #region
             labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
@@ -57,16 +58,19 @@ namespace APC
             label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             txtAttendanceStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtMonthlyDues.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtSearchSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            dto = bll.Select();
+            #endregion
 
+            dto = bll.Select();
             #region
             dataGridViewAttendanceStatuses.DataSource = dto.AttendanceStatuses;
             dataGridViewAttendanceStatuses.Columns[0].Visible = false;

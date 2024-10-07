@@ -40,6 +40,16 @@ namespace APC.BLL
         {
             return dao.SelectAllFinesCount(ID);
         }
+        
+        public decimal SelectTotalFinedExpected()
+        {
+            return dao.SelectTotalFinedExpected();
+        }
+
+        public decimal SelectTotalPaidFines()
+        {
+            return dao.TotalPaidFines();
+        }
 
         public bool Insert(FinedMemberDetailDTO entity)
         {

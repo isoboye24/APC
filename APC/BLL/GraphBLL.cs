@@ -15,15 +15,15 @@ namespace APC.BLL
     {
         GraphDAO dao = new GraphDAO();
 
-        public void SelectAmountRaised(int newYear, Chart newChart, System.Windows.Forms.Label title)
-        {
-            string amountRaised = dao.SelectAmountRaised(newYear);
-            SqlParameter[] amountRaisedQueryYearlyParameters = new SqlParameter[]
-            {
-                new SqlParameter("@year", SqlDbType.Int) { Value = newYear}
-            };
-            General.CreateChart(newChart, amountRaised, amountRaisedQueryYearlyParameters, SeriesChartType.Pie, "Amount Raised", "");
-            title.Text = "Amount Raised in " + newYear;
-        }
+        //public void SelectAmountRaised(int newYear, Chart newChart, System.Windows.Forms.Label title)
+        //{
+        //    string amountRaised = dao.SelectAmountRaised(newYear);
+        //    SqlParameter[] amountRaisedQueryYearlyParameters = new SqlParameter[]
+        //    {
+        //        new SqlParameter("@year", SqlDbType.VarChar) { Value = newYear}
+        //    };
+        //    General.CreateChart(newChart, amountRaised, amountRaisedQueryYearlyParameters, SeriesChartType.Column, "Dues", "");
+        //    title.Text = "Dues Raised in " + newYear;
+        //}
     }
 }

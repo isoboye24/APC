@@ -45,6 +45,39 @@ namespace APC
         MothersDetailDTO motherDetail = new MothersDetailDTO();
         private void FormChildren_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label13.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label26.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label27.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtFathersName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtFatherSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtImagePath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMothersName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMothersSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSearchFather.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSearchMother.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            cmbGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            cmbNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            dateTimePickerBirthday.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnBrowse.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             int minWidthPercentage = 30;
             int minHeightPercentage = 30;
             int minWidth = Screen.PrimaryScreen.Bounds.Width * minWidthPercentage / 100;

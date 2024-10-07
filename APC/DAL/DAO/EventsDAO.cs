@@ -103,7 +103,7 @@ namespace APC.DAL.DAO
                                            monthID = e.monthID,
                                            monthName = m.monthName,
                                            year = e.year
-                                       }).OrderByDescending(x => x.year).FirstOrDefault();
+                                       }).OrderByDescending(x => x.year).ThenByDescending(x=>x.monthID).ThenByDescending(x => x.day).FirstOrDefault();
                     List<EventsDetailDTO> dto = new List<EventsDetailDTO>();
 
                     return recentEvent.day + "." + recentEvent.monthID + "." + recentEvent.year;

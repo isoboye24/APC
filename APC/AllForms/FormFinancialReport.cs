@@ -47,10 +47,25 @@ namespace APC
         public bool isUpdate = false;
         private void FormFinancialReport_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtYear.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             if (isUpdate)
             {
+                labelTitle.Text = "Edit Financial Report";
                 txtYear.Text = detail.Year;
                 txtSummary.Text = detail.Summary;
+            }
+            else
+            {
+                labelTitle.Text = "Add Financial Report";
             }
         }
         FinancialReportBLL bll = new FinancialReportBLL();

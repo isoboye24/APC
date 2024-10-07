@@ -96,18 +96,28 @@ namespace APC.AllForms
             btnChangeConstitution.Hide();
             #region
             label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             labelName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             labelSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             labelPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelConstitutionSection.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            labelFine.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
             txtAmount.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtSummary.Font = new Font("Segoe UI", 12, FontStyle.Regular);
             txtSearchSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSection.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             #endregion
 
             dto = bll.Select();
@@ -214,7 +224,7 @@ namespace APC.AllForms
                 finedMember.Year = DateTime.Today.Year;
                 if (bll.Insert(finedMember))
                 {
-                    MessageBox.Show("Member was fined Successfullzy!");
+                    MessageBox.Show("Member was fined successfully!");
                     txtAmount.Clear();
                     txtSearchSurname.Clear();
                     txtSummary.Clear();

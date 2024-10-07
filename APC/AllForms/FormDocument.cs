@@ -142,13 +142,26 @@ namespace APC.AllForms
         }
         private void FormDocument_Load(object sender, EventArgs e)
         {
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            txtDocumentName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtDocumentPath.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnSave.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+
             picFileImage.Hide();
             if (isUpdate)
             {
+                labelTitle.Text = "Edit Document";
                 picFileImage.Visible = true;
                 txtDocumentName.Text = detail.DocumentName;
                 txtDocumentPath.Text = detail.DocumentPath;
-            }            
+            }
+            else
+            {
+                labelTitle.Text = "Add Document";
+            }
         }       
     }
 }

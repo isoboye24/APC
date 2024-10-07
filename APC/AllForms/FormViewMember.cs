@@ -52,6 +52,82 @@ namespace APC.AllForms
 
         private void FormViewMember_Load(object sender, EventArgs e)
         {
+            #region
+            labelMemberNameTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label1.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label7.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label8.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label10.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label11.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label12.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label13.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label14.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label15.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label16.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label17.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label18.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label19.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label20.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label21.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label22.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label23.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label25.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label26.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label27.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPhone2.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPhone3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelBirthday.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelMemSince.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelAmountContributed.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelAmountExpected.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelChildren.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelCommentText.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelFinesText.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfAbsent.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfChildren.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfComments.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfFines.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelNoOfPresent.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            labelPersonalBalance.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+            txtAddress.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtEmail.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtLGA.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtName.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone1.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone2.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPhone3.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtSurname.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtCountry.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtEmpStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtGender.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtMaritalStatus.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNationality.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNextOfKin.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtNextOfKinRelationship.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPassword.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPermission.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtPosition.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtProfession.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            txtUsername.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+
+            btnClose.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnNoComments.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewAbsentAttendance.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewAmountContributed.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewAmountExpected.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewChildren.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewFines.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewPersonalBalance.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            btnViewPresentAttendance.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            #endregion
+
             labelCommentText.Hide();
             labelNoOfComments.Hide();
             btnNoComments.Hide();            

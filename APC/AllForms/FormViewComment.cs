@@ -40,6 +40,20 @@ namespace APC.AllForms
         public CommentDetailDTO detail = new CommentDetailDTO();
         private void FormViewComment_Load(object sender, EventArgs e)
         {
+            #region
+            labelTitle.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            labelDate.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+
+            txtComment.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            txtName.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+            txtSurname.Font = new Font("Segoe UI", 21, FontStyle.Bold);
+
+            btnClose.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            #endregion
+
             txtName.Text = detail.Name;
             txtSurname.Text = detail.Surname;
             txtComment.Text = detail.CommentName;
